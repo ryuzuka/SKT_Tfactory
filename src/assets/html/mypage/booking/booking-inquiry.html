@@ -1,0 +1,48 @@
+<div class="contents my-inquiry" ref="contents">
+  <!-- tab -->
+  <ul class="tabs-page">
+    <li :class="{'active': isTabActive[0]}">
+      <a @click.prevent="clickTab(0)" href="#">{{ $t('my.booking-number-inquiry') }}</a>
+    </li>
+    <li :class="{'active': isTabActive[1]}">
+      <a @click.prevent="clickTab(1)" href="#">{{ $t('my.phone-number-inquiry') }}</a></li>
+  </ul>
+
+  <template v-if="isTabActive[0]">
+    <section class="booking-inquiry">
+      <h2 class="blind">{{ $t('my.booking-number-inquiry') }}</h2>
+      <dl class="form-group">
+        <dt><label for="inquiry1-1">{{ $t('my.applicant') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></dt>
+        <dd class="input-box"><input type="text" id="inquiry1-1" :placeholder="$t('comm.input-name')" ref="applicant"></dd>
+        <dt><label for="inquiry1-2">{{ $t('sev.booking-number')}} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></dt>
+        <dd class="input-box"><input type="text" id="inquiry1-2" :placeholder="$t('my.alert-required-booking-number')" ref="bookingNumber"></dd>
+      </dl>
+      <ul class="texts-info">
+        <li>* {{ $t('my.booking-inquiry-guide1') }}</li>
+        <li>* {{ $t('my.booking-inquiry-guide2') }}</li>
+      </ul>
+    </section>
+  </template>
+
+  <template v-else-if="isTabActive[1]">
+    <section class="booking-inquiry">
+      <h2 class="blind">{{ $t('my.phone-number-inquiry') }}</h2>
+      <dl class="form-group">
+        <dt><label for="inquiry2-1">{{ $t('my.applicant') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></dt>
+        <dd class="input-box"><input type="text" id="inquiry2-1" :placeholder="$t('comm.input-name')" ref="applicant"></dd>
+        <dt><label for="inquiry2-2">{{ $t('my.phone-number') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></dt>
+        <dd class="input-box"><input type="tel" id="inquiry2-2" :placeholder="$t('my.please-input-only-number')" ref="phoneNumber"></dd>
+      </dl>
+      <ul class="texts-info">
+        <li>* {{ $t('my.booking-inquiry-guide1') }}</li>
+        <li>* {{ $t('my.booking-inquiry-guide2') }}</li>
+      </ul>
+    </section>
+  </template>
+
+  <div class="btn-wrap sticky">
+    <a href="#" class="btn-line big" @click="clickButton('login')">{{ $t('my.login-inquiry') }}</a>
+    <a href="#" class="btn-solid big" @click.prevent="clickButton('inquiry')">{{ $t('my.inquiry') }}</a>
+  </div>
+
+</div>

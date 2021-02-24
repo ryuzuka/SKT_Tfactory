@@ -1,0 +1,84 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone7-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">0 Favorite</strong></h2>
+    <p class="desc">11번가에서 0(Young)에게 사랑받은 디지털 기기를 모아둔 0 Favorite 코너입니다. 0(Young)의 취향에 맞는 아이템이 계속 업데이트됩니다. 최신 인기템은 무엇인지 확인해 보세요.
+      제품에 대한 정보와 사용 방법 등 자세한 안내를 원하시면 언제든지 스태프에게 문의해 주세요.</p>
+  </div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../../images/tfactory/zone7-img1.jpg" alt=""></figure>
+    <h3>바로 구매하기</h3>
+    <p class="desc">이제 기다림 없이 바로 구매하세요.
+      상품을 계산대로 가져가지 않아도 휴대폰으로 바로 결제하실 수 있습니다.</p>
+    <ol class="step-list">
+      <li>상품 포장 뒷면의 QR코드를 확인해 주세요.</li>
+      <li>휴대폰 카메라로 QR코드를 스캔해 주세요.</li>
+      <li>연결된 페이지에서 T아이디로 로그인을 하고 일반 결제 또는 SK Pay 결제를 해 주세요.</li>
+      <li>구매 완료! 결제하신 상품은 자동으로 보안이 해제되어 바로 매장 밖으로 가지고 나가실 수 있습니다. </li>
+    </ol>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">1층 좌측 Wall Display</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-1f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone7-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store15">
+            <div class="thumb"><img src="../../../images/tfactory/zone15-top.jpg" alt=""></div>
+            <em>Accessory Zone</em>
+            <p class="subtext">0(Young) 피플의 잇템, 스마트폰 액세서리 쇼핑 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store11">
+            <div class="thumb"><img src="../../../images/tfactory/zone11-top.jpg" alt=""></div>
+            <em>11 STREET</em>
+            <p class="subtext">11번가 인기 상품을 구매하고 혜택까지 받는 쇼핑 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store19">
+            <div class="thumb"><img src="../../../images/tfactory/zone19-top.jpg" alt=""></div>
+            <em>T Factory 24</em>
+            <p class="subtext">스마트폰을 구매하고 구독형 상품을 언제나 만나볼 수 있는 24시간 무인 매장</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

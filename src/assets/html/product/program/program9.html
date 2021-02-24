@@ -1,0 +1,72 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class9-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">OPEN STAGE</em>
+      <h2 class="details-tit">페퍼톤스</h2>
+      <div class="tags">
+        <span class="flag-basic">비 정기</span>
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.band-introduction')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class9-conts.jpg" alt=""></div>
+      <p>
+        강렬하고 상쾌한 사운드를 거쳐 이제 묵직한 청춘의 사운드를 들려주는 그룹 페퍼톤스는 신재평과 이장원으로 이루어진 남성 2인조 음악 그룹이자 프로듀싱 유닛이다. <br><br>
+        멤버 2명 모두 카이스트 전산학과 출신으로 2003년 "후추처럼 기분 좋은 자극을 주겠다"며 의기투합해 '페퍼톤스'를 결성했다.<br><br>
+        홍대 클럽을 중심으로 라이브를 하며 실력을 인정받은 페퍼톤스는 2004년 데뷔 ep &lt;A Preview&gt;를, 2005년 첫 정규 앨범 &lt;Colorful Express&gt;를 발표하며 '우울증을 위한 뉴테라피 2인조'라는 타이틀을 얻게 되었다. 신선하고 청량하게 빛나는 그들의 음악에 새로움에 목 말랐던 사람들은 열광했다.<br><br>
+        2008년 발표한 2집 &lt;New Standard&gt;부터 페퍼톤스 두 사람이 보컬 비중이 늘어났고 보컬뿐만 아니라 연주 부분에서도 게스트 뮤지션의 참여가 다양해지면서 페퍼톤스는 그들이 보여줄 수 있는 진심에 집중하기 시작한다.<br><br>
+        2009년 겨울, 1집과 2집의 객원 보컬 모두가 참여한 앨범 &lt;SOUNDS GOOD!&gt;을 발매했고 또한 2012년엔 밴드의 색채가 강하고 멤버들의 목소리로 채워진 4집&lt;beginner's luck&gt;, ep &lt;open run&gt;을 발매한다. 그리고 2015년 누구나 한번쯤은 겪어봤을 순간들과 공감할 수 있는 상황에서 느껴지는 감정의 변화들을 진솔하고 세련되면서도, 동시에 흡입력 있게 풀어나간 5집 &lt;HIGH-FIVE&gt;를 발매했으며 그리고 세상을 놀라게 할 그들만의 음악을 서서히 쌓아가고 있다.<br><br>
+        진녹색처럼 푸른 청량함, 여름을 닮은 열기와 강렬함을 안고 나날이 깊어지는 그룹 페퍼톤스. 소년은 음악 안에서 청년이 되어간다. 그리고 그들을 닮은 음악 역시 시간이 지날수록 더욱 깊은 맛을 낼 것이다.
+      </p>
+
+      <!-- 201211 수정 -->
+      <div v-if="bookingAvailable">
+        <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+        <p>12월 26일 토요일 저녁 7시 ~ 8시 30분<br>T Factory 2F, 0 Stage</p>
+
+        <h3 class="subtit">{{ $t('prd.guide')}}</h3>
+        <p>코로나 블루를 날려버리고, 해피 엔딩을 맞이하자는 의미로 12월 오픈 스테이지는 당첨고객 대상 무료로 진행됩니다.</p>
+        <ul class="texts-list">
+          <li>응모기간 : 2020년 12월 11일 ~ 19일(토) 오후 6시</li>
+          <li>응모방법 : T Factory 웹 페이지 &gt; 프로그램 &gt; <br>오픈스테이지 페퍼톤스 &gt; 12월 26일 선택 &gt; <br>예약하기 &gt; 신청완료</li>
+          <li>당첨자 발표 : 2020년 12월 20일(일요일)</li>
+        </ul>
+        <ul class="texts-info type2">
+          <li>※당첨되신 분들께는 별도의 안내 MMS가 발송됩니다.</li>
+        </ul>
+
+        <div class="notice">
+          <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+          <ul class="texts-info">
+            <li>* 본 공연은 코로나19 방역 수칙을 준수하고 거리두기를 유지하며 소수의 초청 관람객으로 운영됩니다.</li>
+            <li>* 코로나19 거리두기 단계에 따라 공연 운영사항의 변동 및 관람인원의 제한이 있을 수 있습니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div v-else>
+        <div class="notice">
+          <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+          <ul class="texts-info">
+            <li>※ 본 행사는 코로나19 감염증 확산 방지를 위해 잠정 연기 되었습니다. 추후 진행 일정이 확정되면 다시 안내드리겠습니다.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- //201211 수정 -->
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

@@ -1,0 +1,288 @@
+<div class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <swiper :options="productSwiperOption" ref="productSwiper">
+      <swiper-slide v-for="(slide, index) in colorInfo.slideImg" :key="index">
+        <img :src="slide" alt="">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details" :class="{'active': isScrollActive}">
+    <hr>
+    <!-- info -->
+    <section class="info" ref="info">
+      <h1 class="tit-prd">{{ deviceInfo.modelName }}</h1>
+      <div class="tags">
+        {{deviceInfo.tagNms | makeHashTag}}
+      </div>
+      <ul class="list-colorchip">
+        <li v-for="(colors, index) in deviceInfo.totalColorHexs">
+          <input v-on:change="setColorInfo(index)" type="radio" name="colorchip" v-bind:id="'color'+index"
+                 v-bind:style="{'background-color': '#'+colors.colorHex}"
+                 :checked="index == selectedColor">
+          <label v-bind:for="'color'+index">
+            <em v-if="bestColorSize.color.col_nm === colors.colorName" class="badge-best">Best</em>
+            {{colors.colorName}}</label></li>
+      </ul>
+      <ul class="list-option">
+        <li v-for="(memory, index) in colorInfo.memoryArr" v-on:change="setMemoryinfo(index)">
+          <input type="radio" name="option" v-bind:id="'option'+index" :checked="index == selectedMemory">
+          <label v-bind:for="'option'+index">
+            <em v-if="bestColorSize.size.capa === memory" class="badge-best">Best</em>
+            {{memory}}</label>
+        </li>
+      </ul>
+      <div class="price">
+        <span>{{ $t('prd.price') }}</span><em>{{ detailInfo.priceNew | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+      </div>
+    </section>
+    <!-- //info -->
+    <hr class="divider">
+    <h2 class="blind">{{ $t('prd.product-info') }}</h2>
+    <div class="tab-wrap" :class="{'sticky': isSticky}" ref="tabContainer">
+      <ul class="tabs">
+        <!-- TODO: 5월 버전에 chart 추가 -->
+        <li v-if="chartFlag" :class="{active: isActiveTab[0]}" @click="clickTab(0)">
+          <button type="button">{{ $t('prd.chart-menu') }}</button>
+        </li>
+        <li v-if="deviceInfo.gallaryImgs && deviceInfo.gallaryImgs.length > 0" :class="{active: isActiveTab[1]}"
+            @click="clickTab(1)">
+          <button type="button">{{ $t('prd.gallery-menu') }}</button>
+        </li> <!-- 활성클래스 active -->
+        <li v-if="deviceInfo.cameraImgs && deviceInfo.cameraImgs.length>0"
+            :class="{active: isActiveTab[2]}" @click="clickTab(2)">
+          <button type="button">{{ $t('prd.spec-menu') }}</button>
+        </li>
+      </ul>
+      <section v-if="chartFlag" class="tab-conts chart" :class="{active: isActiveTab[0]}">
+        <h3 class="blind">{{ $t('prd.chart-title') }}</h3>
+
+        <dl class="box-tip">
+          <dt v-if="user_type === 'TID_CERT' && hasAgeProductSale"><em class="tip">TIP</em><em>{{segmentName}}</em>에게 인기 있는 제품은?
+          </dt>
+          <dt v-else><em class="tip">TIP</em>가장 인기 있는 제품은?</dt>
+          <dd>
+            <span>#{{bestColorSize.color.col_nm}}({{bestColorSize.color.ratio | parsePercent}}%)</span>
+            <span>#{{bestColorSize.size.capa}}({{bestColorSize.size.ratio | parsePercent}}%)</span>
+          </dd>
+        </dl>
+
+        <h4 class="tit-tab">
+          <em v-if="user_type === 'TID_CERT' && hasAgeProductSale">{{segmentName}}</em>
+          {{ $t('prd.popular-color') }}
+        </h4>
+        <ul class="list-chart-bar" ref="chartBar"> <!-- 활성 class="active" -->
+          <li v-for="(data, index) in popularColors" :key="index">
+            <span class="item">{{data.col_nm}}</span><span class="per">{{data.ratio | parsePercent}}%</span>
+            <div class="box-badge">
+              <em v-if="colorInfo.colorName === data.col_nm" class="badge-choice">My Choice</em>
+              <em v-if="index === 0" class="badge-best">Best</em>
+            </div>
+            <div class="graph"> <!-- 인기색상 1위는 % 상관없이 width 100% -->
+              <span v-if="index === 0"
+                    :style="{'width':'100%', 'background-color':'#'+data.col_id, 'border-color':'#'+data.col_id}">
+              </span>
+              <span v-else-if="index !== 0"
+                    :style="{'width': parseFloat(data.ratio*100).toFixed(2).toString()+'%', 'background-color':'#'+data.col_id, 'border-color':'#'+data.col_id}">
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <h4 class="tit-tab">
+          <em v-if="user_type === 'TID_CERT' && hasAgeProductSale">{{segmentName}}</em>
+          {{ $t('prd.popular-byte') }}
+        </h4>
+        <div class="chart-box" ref="chartDonut">
+          <ui-chart
+            v-if="this.popularBytes.length !== 0"
+            id="chart"
+            :data="pieChartData"
+          ></ui-chart>
+        </div>
+        <ul v-if="Object.keys(colorInfo).length !== 0" class="list-chart-donut"
+            :class="{col3: popularBytes.length === 3}"> <!-- 3개인 경우 class="col3" 추가 -->
+          <li v-for="(data, index) in popularBytes" :key="index">
+            <span class="circle"></span>
+            <em class="item">{{ data.capa }}</em>
+            <span class="per">{{ data.ratio | parsePercent }}%</span>
+            <em v-if="colorInfo.item[selectedMemory].memory + 'B' === data.capa" class="badge-choice">My Choice</em>
+            <em v-if="index === 0" class="badge-best">Best</em>
+          </li>
+        </ul>
+
+        <!-- //04.14 추가 -->
+      </section>
+      <section class="tab-conts" :class="{active: isActiveTab[1]}"> <!-- 활성클래스 active -->
+        <h3 class="tit-tab">{{deviceInfo.modelName}}로 찍은 <br>바로 그 컷</h3>
+        <div class="gallery">
+          <div class="slider-gallery">
+            <swiper :options="gallerySwiperOption" ref="gallerySwiper">
+              <swiper-slide v-for="(slide, index) in deviceInfo.gallaryImgs" :key="index">
+                <figure>
+                  <img v-bind:src="slide" alt="">
+                  <figcaption>
+                    {{deviceInfo.gallaryNms[index]}}
+                    <!--                  <small>#Captured by {{deviceInfo.modelName}}</small> &lt;!&ndash; 03.27 수정 &ndash;&gt;-->
+                  </figcaption>
+                </figure>
+              </swiper-slide>
+              <div class="swiper-button-prev" slot="button-prev"><span class="blind">{{ $t('prd.prev') }}</span></div>
+              <div class="swiper-button-next" slot="button-next"><span class="blind">{{ $t('prd.next') }}</span></div>
+              <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
+          </div>
+          <div class="slider-thumbs">
+            <swiper :options="galleryThumbSwiperOption" ref="galleryThumbSwiper">
+              <swiper-slide v-for="(slide, index) in deviceInfo.gallaryImgs" :key="index"
+                            :class="{active: isActiveGalleryThumb[index]}">
+                <figure @click="clickGalleryThumbSwiper(index)">
+                  <img v-bind:src="slide" alt="">
+                </figure>
+              </swiper-slide>
+            </swiper>
+          </div>
+        </div>
+      </section>
+      <section class="tab-conts" :class="{active: isActiveTab[2]}">
+        <h3 class="blind">{{ $t('prd.spec-title') }}</h3>
+        <!-- 03.18 추가 -->
+        <div class="box-spec">
+          <dl>
+            <dt class="tit-spec">{{ $t('prd.display-size') }}</dt>
+            <dd class="row-type">
+              <div class="item">
+                <span class="thumb"><img src="../../../assets/images/dummy/@symbol-spec1.png" alt=""></span>
+                <em>
+                  <strong>{{deviceInfo.lcdsize}} inch</strong>
+                </em>
+                <p class="desc">
+                  <small>{{deviceInfo.phoneLength}} mm</small>
+                  {{deviceInfo.lcdinfo}}
+                </p>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="box-spec">
+          <dl>
+            <dt class="tit-spec">{{ $t('prd.camera') }}</dt>
+            <dd>
+              <figure>
+                <div v-for="(slide, index) in deviceInfo.cameraImgs" :key="index">
+                  <img v-bind:src="slide" alt="">
+                </div>
+              </figure>
+            </dd>
+          </dl>
+        </div>
+        <div class="box-spec">
+          <dl>
+            <dt class="tit-spec">{{ $t('prd.network') }}</dt>
+            <dd>
+              <!-- 네트워크 명 -->
+              <ul v-for="networkNms in deviceInfo.networkNms" class="list-spec">
+                <div v-if="networkNms === 'LTE'">
+                  <li class="item">
+                    <span class="thumb"><img src="../../images/spec/LTE_on.png" alt=""></span>
+                    <em>LTE</em>
+                  </li>
+                  <li class="item disabled">
+                    <span class="thumb"><img src="../../images/spec/5G_off.png" alt=""></span>
+                    <em>5G</em>
+                  </li>
+                </div>
+                <div v-else-if="networkNms === '5G'">
+                  <li class="item disabled">
+                    <span class="thumb"><img src="../../images/spec/LTE_off.png" alt=""></span>
+                    <em>LTE</em>
+                  </li>
+                  <li class="item">
+                    <span class="thumb"><img src="../../images/spec/5G_on.png" alt=""></span>
+                    <em>5G</em>
+                  </li>
+                </div>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt class="tit-spec">{{ $t('prd.battery') }}</dt>
+            <dd>
+              <ul class="list-spec">
+                <li class="item">
+                  <span class="thumb"><img src="../../images/spec/Battery_on.png" alt=""></span>
+                  <em>{{deviceInfo.batteryInfo}}</em>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <div class="box-spec">
+          <dl>
+            <dt class="tit-spec">{{ $t('prd.special-features') }}</dt>
+            <dd>
+              <ul class="list-spec">
+                <li class="item" v-for="(info,index) in specialInfo"
+                    :class="{ disabled: info.isDisable }">
+                  <span class="thumb">
+                    <img v-if="info.imageIndex === 0" src="../../../assets/images/spec/01_off.png">
+                    <img v-if="info.imageIndex === 1" src="../../../assets/images/spec/02_off.png">
+                    <img v-if="info.imageIndex === 2" src="../../../assets/images/spec/03_off.png">
+                    <img v-if="info.imageIndex === 3" src="../../../assets/images/spec/04_off.png">
+                    <img v-if="info.imageIndex === 4" src="../../../assets/images/spec/05_off.png">
+                    <img v-if="info.imageIndex === 5" src="../../../assets/images/spec/06_off.png">
+                    <img v-if="info.imageIndex === 6" src="../../../assets/images/spec/07_off.png">
+                    <img v-if="info.imageIndex === 7" src="../../../assets/images/spec/08_off.png">
+<!--                    <img v-if="info.imageIndex === 8" src="../../../assets/images/spec/09_off.png">-->
+<!--                    <img v-if="info.imageIndex === 9" src="../../../assets/images/spec/10_off.png">-->
+
+
+                    <img v-if="info.imageIndex === 8" src="../../../assets/images/spec/01_on.png">
+                    <img v-if="info.imageIndex === 9" src="../../../assets/images/spec/02_on.png">
+                    <img v-if="info.imageIndex === 10" src="../../../assets/images/spec/03_on.png">
+                    <img v-if="info.imageIndex === 11" src="../../../assets/images/spec/04_on.png">
+                    <img v-if="info.imageIndex === 12" src="../../../assets/images/spec/05_on.png">
+                    <img v-if="info.imageIndex === 13" src="../../../assets/images/spec/06_on.png">
+                    <img v-if="info.imageIndex === 14" src="../../../assets/images/spec/07_on.png">
+                    <img v-if="info.imageIndex === 15" src="../../../assets/images/spec/08_on.png">
+<!--                    <img v-if="info.imageIndex === 18" src="../../../assets/images/spec/09_on.png">-->
+<!--                    <img v-if="info.imageIndex === 19" src="../../../assets/images/spec/10_on.png">-->
+
+                    <!--// 10.22 수정 및 추가(이미지 08) -->
+                  </span>
+                  <em><p>{{info.name}}</p></em>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <!-- FIXME: 상품소개(3월 제외), 5월 이모션글로벌 계약 후 진행 -->
+        <!--        <section class="item-details">-->
+        <!--          <h4 class="tit-spec">{{ $t('prd.product-introduction') }}</h4>-->
+        <!--          <div class="item-conts" :class="{'active': isSpecMore}"> &lt;!&ndash; 활성 class="active" &ndash;&gt;-->
+        <!--            <img src="../../../assets/images/dummy/@prd4.jpg" alt="">-->
+        <!--            <img src="../../../assets/images/dummy/@prd4.jpg" alt="">-->
+        <!--          </div>-->
+        <!--          <div class="btn-wrap" v-show="!isSpecMore">-->
+        <!--            <button type="button" class="btn-more" @click.prevent="isSpecMore = true">{{ $t('prd.more-image') }}</button>-->
+        <!--          </div>-->
+        <!--        </section>-->
+        <!-- //03.18 추가 -->
+      </section>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div class="btn-wrap sticky">
+    <!-- 매장 밖 일 경우 -->
+    <a v-on:click="clickCounselingBtn" class="btn-reservation">{{ $t('prd.consultation-reservation') }}</a>
+    <a v-on:click="redirectTWD" class="btn-buy">{{ $t('prd.directshop-order') }}</a>
+
+    <!-- 06.05 추가: 매장 내 일 경우, 07.09 링크 변경 -->
+    <!-- <router-link to="/sev/consult" class="btn-call">{{ $t('prd.apply-counseling') }}</router-link> -->
+  </div>
+  <!-- //button set -->
+</div>

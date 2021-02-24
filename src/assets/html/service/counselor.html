@@ -1,0 +1,83 @@
+<div class="contents" ref="contents">
+  <div class="assign">
+    <div>
+      <p class="tit">
+        <span v-if="status === 0" v-html="$t('sev.counselor-guide1')"><strong>상담원 배정중</strong>입니다<br>잠시만 기다려주세요</span>
+        <span v-else-if="status === 1" v-html="$t('sev.counselor-guide2')">죄송합니다.<br><strong>모든 상담원이<br>상담중</strong>입니다.</span>
+        <span v-else-if="status === 2" v-html="$t('sev.counselor-guide3')"><strong>김상담 매니저</strong>가<br>고객님을 찾아뵙겠습니다</span>
+      </p>
+      <p class="txts" v-if="status !== 2"> <!-- 배정완료 시 display:none -->
+        <span v-if="status === 0">{{ $t('sev.count-guide') }} <span class="counter">00:{{ countText }}</span></span>
+        <span v-else-if="status === 1">{{ $t('sev.please-retry') }}</span>
+      </p>
+    </div>
+    <div class="inner">
+      <!-- bell : 배정중, 재호출(retry 클래스 추가) 시 노출 -->
+      <div class="loader" :class="{'retry': status === 1}" v-if="status !== 2">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle class="line" cx="50" cy="50" r="24" fill="none" stroke="#E8E8E8" stroke-width="1" />
+        </svg>
+        <svg class="bell" width="56px" height="70px" viewBox="0 0 56 70">
+          <defs>
+            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+              <stop stop-color="#EC7068" offset="0%"></stop>
+              <stop stop-color="#E25278" offset="100%"></stop>
+            </linearGradient>
+          </defs>
+          <g>
+            <circle id="Oval" fill="#E66070" cx="28" cy="59" r="9"></circle>
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="55" width="56" height="3"></rect>
+            <path d="M34,6 L34,5.76871254 C34,2.58782609 31.4154905,0 28.2387818,0 L27.7613194,0 C24.5845095,0 22,2.58782609 22,5.76871254 L22,5.99706205 C23.8742348,5.31839595 25.8943694,4.94750528 27.9994941,4.94750528 C30.1040117,4.94750528 32.1247534,5.31930772 34,6 Z" id="Path" fill="#E66070" fill-rule="nonzero"></path>
+            <path d="M53.8718706,55 L2.12808208,55 C1.14915526,55 0.252473767,54.356421 0.0488647282,53.4228541 C-0.152670899,52.4985851 0.279428121,51.5863091 1.15606663,51.1914836 C1.36409895,51.059965 2.92993954,49.9925886 4.49757709,46.7632395 C7.37671672,40.8327719 7.98104715,32.4787764 7.98104715,26.5148902 C7.98104715,15.754211 16.9612701,7 27.9992852,7 C39.0111753,7 47.9748109,15.7120334 48.017385,26.4374074 C48.0183526,26.4631451 48.0189055,26.4890177 48.0189055,26.5148902 C48.0189055,32.4787764 48.6232359,40.8327719 51.5023756,46.7632395 C53.0700131,49.9925886 54.6357155,51.0600997 54.843886,51.1914836 C55.7205245,51.5863091 56.1527618,52.4984503 55.9510879,53.4228541 C55.7474789,54.3562862 54.8509356,55 53.8718706,55 Z" id="Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+          </g>
+        </svg>
+        <svg class="flick" width="22" height="35">
+          <g stroke="#E66070" stroke-width="3" fill="none" fill-rule="evenodd" stroke-linecap="round">
+            <path d="M13.53 1.5l6.114 5.647M1.5 14.702l12.03 2.232M7.515 32.627l9.072-4.243"/>
+          </g>
+        </svg>
+        <svg class="mark" width="56" height="56">
+          <defs>
+            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="c">
+              <stop stop-color="#EC7068" offset="0%"/>
+              <stop stop-color="#E25278" offset="100%"/>
+            </linearGradient>
+            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="d">
+              <stop stop-color="#EC7068" offset="0%"/>
+              <stop stop-color="#E25278" offset="100%"/>
+            </linearGradient>
+            <filter x="-32.5%" y="-27.5%" width="165%" height="165%" filterUnits="objectBoundingBox" id="a">
+              <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" in="shadowBlurOuter1"/>
+            </filter>
+            <rect id="b" x="0" y="0" width="40" height="40" rx="20"/>
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <g transform="translate(8 6)">
+              <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+              <use fill="#FFF" xlink:href="#b"/>
+            </g>
+            <g transform="translate(25 15)">
+              <circle fill="url(#c)" cx="3" cy="19" r="3"/>
+              <rect fill="url(#d)" width="6" height="14" rx="3"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- 상담사 -->
+      <div class="adviser" v-if="status === 2">
+        <p class="info"><i class="ico-map"></i><strong>단말 비교존 A</strong>에서 잠시만 기다려 주세요.</p>
+        <figure>
+          <img src="../../images/dummy/@counselor.png" alt="" />
+          <figcaption>"안녕하세요!<br>언제나 최선을 다하는 김상담입니다.<br>잠시만 기다려 주시면 곧 찾아 뵙겠습니다."</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <a @click.prevent="clickCancel" v-if="status === 0" href="#" class="btn-line big">{{ $t('sev.counselor-cancel') }}</a> <!-- 배정 중 -->
+      <a @click.prevent="clickRetry" v-else href="#" class="btn-line big">{{ $t('sev.counselor-retry') }}</a> <!-- 배정 완료 / 재호출 -->
+    </div>
+  </div>
+</div>

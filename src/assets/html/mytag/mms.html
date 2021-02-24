@@ -1,0 +1,16 @@
+<div class="contents" ref="contents">
+  <h1 class="logo"><span class="blind">T Factory</span></h1>
+  <p class="subtit">{{ $t('mytag.please-input-birth-date') }}</p>
+
+  <div class="input-box">
+    <input ref="certification" type="tel" maxlength="6" id="info1-1" placeholder="예)810101" v-model="birth">
+<!--    <p>-->
+<!--      <input type="checkbox" id="info1-2"><label for="info1-2">{{ $t('mytag.check-terms') }}</label>-->
+<!--      <router-link to="/policy/privacyopt"><i></i><span class="blind">{{ $t('mytag.detail-view') }}</span></router-link>-->
+<!--    </p>-->
+  </div>
+
+  <div class="btn-wrap">
+    <a href="#" class="btn-solid big" @click.prevent="certify">{{ $t('mytag.certification-button') }}</a>
+  </div>
+</div>

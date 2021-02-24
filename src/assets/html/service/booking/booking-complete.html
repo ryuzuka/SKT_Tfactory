@@ -1,0 +1,53 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row complete">
+    <i class="ico-complete"></i>
+
+    <p class="tit">
+      <template v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('sev.program') }} </template>
+      <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }} </template>
+      <template v-else-if="bookingType === 'counseling'">{{ $t('sev.counseling') }} </template>
+<!--      <span v-if="bookingType === 'standby'" v-html="$t('sev.booking-standby-text')"></span>-->
+      <span v-if="modifyFlag" v-html="$t('sev.booking-modify-complete-text')"></span>
+      <span v-else v-html="$t('sev.booking-complete-text')"></span>
+    </p>
+
+    <dl class="details-info">
+      <dt>{{ $t('sev.booking-number') }}</dt>
+      <dd>{{bookingInfo.BOOK_CODE}}</dd>
+
+      <dt v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('sev.student') }}</dt>
+      <dt v-else-if="bookingType === 'experience'">{{ $t('sev.visitor') }}</dt>
+      <dt v-else-if="bookingType === 'counseling'">{{ $t('sev.customer-name') }}</dt>
+
+      <dd v-if="bookingInfo.USER_NICKNAME">{{bookingInfo.USER_NICKNAME}}</dd>
+      <dd v-else="!bookingInfo.USER_NICKNAME && bookingInfo.USER_NAME">{{bookingInfo.USER_NAME}}</dd>
+      <dd v-else="!bookingInfo.USER_NICKNAME && !bookingInfo.USER_NAME">({{bookingInfo.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
+      <!-- 07.09 문구 수정 -->
+      <!-- dt v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('sev.program-shop') }}</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-shop') }}</dt -->
+      <dt>{{ $t('sev.booking-shop') }}</dt>
+      <dd>{{bookingInfo.STORE_NAME}}</dd>
+
+      <dt v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('my.program-name') }}</dt>
+      <dd v-if="bookingType === 'program' || bookingType === 'standby'">{{bookingInfo.PROGRAM_NAME}}</dd>
+
+      <dt v-if="bookingType === 'experience'">{{ $t('sev.tab-experience') }}</dt>
+
+      <dt v-if="bookingType === 'counseling'">{{ $t('my.consult-name') }}</dt>
+      <dd v-if="bookingType === 'counseling'">{{bookingInfo.COUNSELING_NAME}}</dd>
+
+      <dt v-if="bookingType === 'program' || bookingType === 'standby' || bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
+      <dd>{{bookingInfo.DATE}}</dd>
+    </dl>
+
+    <ul class="texts-info">
+      <li v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide1')"></li>
+      <li v-if="bookingType === 'program' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide2')"></li>
+      <li v-if="bookingType === 'counseling'" v-html="$t('sev.booking-complete-guide4')"></li>
+    </ul>
+  </div>
+  <div class="btn-wrap sticky">
+    <router-link to="/" class="btn-line big">{{ $t('comm.go-main') }}</router-link>
+    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.service-booking-list') }}</router-link>
+  </div>
+</div>

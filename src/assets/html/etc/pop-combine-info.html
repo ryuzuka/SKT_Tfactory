@@ -1,0 +1,24 @@
+<div class="vue-dialog">
+  <div class="dialog-content">
+    <div class="dialog-c-title" v-html="$t('etc.check-info')"></div>
+    <div class="dialog-c-text">
+      <strong>[{{ $t('etc.combine-info') }}]</strong>
+      <ul class="dialog-c-list">
+        <li>{{ $t('etc.combine-info0') }}</li>
+        <li>{{ $t('etc.combine-info1') }}</li>
+        <li>{{ $t('etc.combine-info2') }}</li>
+        <li>{{ $t('etc.combine-info3') }}</li>
+      </ul>
+    </div>
+    <!-- 201215 추가 -->
+    <div class="dialog-terms">
+      <input type="checkbox" name="check-agree" id="check-agree" v-model="isAgree">
+      <label for="check-agree">{{ $t('sso.quick-checkin-registration') }}</label>
+    </div>
+    <!-- //201215 추가 -->
+  </div>
+  <div class="vue-dialog-buttons">
+    <button type="button" class="vue-dialog-button btn-line" style="flex: 1 1 50%;" @click="cancel">{{ $t('comm.no') }}</button>
+    <button type="button" class="vue-dialog-button" style="flex: 1 1 50%;" @click="combine">{{ $t('comm.combine') }}</button>
+  </div>
+</div>

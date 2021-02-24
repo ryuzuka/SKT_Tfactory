@@ -1,0 +1,37 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row complete">
+    <i class="ico-complete"></i>
+
+    <p class="tit" v-html="$t('my.complete-booking-modify')">예약 수정이<br> 완료되었습니다.</p>
+
+    <dl class="details-info">
+      <dt>{{ $t('sev.booking-number') }}</dt>
+      <dd>1234567890</dd>
+
+      <dt v-if="bookingType === 'program'">{{ $t('sev.student') }}</dt>
+      <dt v-else-if="bookingType === 'experience'">{{ $t('sev.visitor') }}</dt>
+      <dt v-else-if="bookingType === 'counseling'">{{ $t('sev.customer-name') }}</dt>
+      <dd>김티플</dd>
+
+      <!-- 07.09 문구 수정 -->
+      <!-- <dt v-if="bookingType === 'program'">{{ $t('sev.program-shop') }}</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-shop') }}</dt> -->
+      <dt>{{ $t('sev.booking-shop') }}</dt>
+      <dd>홍대점</dd>
+
+      <dt v-if="bookingType === 'program'">{{ $t('my.program-name') }}</dt>
+      <dt v-if="bookingType === 'experience'">{{ $t('sev.tab-experience') }}</dt>
+      <dt v-if="bookingType === 'counseling'">{{ $t('my.consult-name') }}</dt>
+      <dd>스마트폰 교실</dd>
+
+      <!-- <dt v-if="bookingType === 'program'">{{ $t('sev.booking-date') }}</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-date') }}</dt> -->
+      <dt>{{ $t('sev.booking-date') }}</dt>
+      <dd>2020.02.12 16:00 - 17:00</dd>
+      <!--// 07.09 문구 수정 -->
+    </dl>
+  </div>
+  <div class="btn-wrap sticky">
+    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.service-booking-list') }}</router-link>
+  </div>
+</div>

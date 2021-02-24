@@ -1,0 +1,31 @@
+<div class="popup">
+  <div class="layer-cont">
+    <div class="swiper-pop">
+      <swiper :options="{
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }">
+        <swiper-slide v-for="popUp in popUpList" v-bind:key="popUp.POPUP_ID">
+          <img v-if="popUp.TYPE === 'image'" :src="popUp.BODY" alt="">
+          <article v-if="popUp.TYPE === 'text'" class="notice-text">
+            <h1 class="tit">{{popUp.TITLE}}</h1>
+<!--            <span class="date">2021.01.18</span>-->
+            <div class="conts">
+              <div v-html="popUp.BODY" class="inner">
+<!--               {{popUp.BODY}}-->
+              </div>
+            </div>
+          </article>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
+  </div>
+  <div class="layer-foot">
+    <span class="txt-chk">
+      <input v-model="notForToday" type="checkbox" id="chk-pop"><label for="chk-pop">{{ $t('comm.close-day') }}</label>
+    </span>
+    <a href="#" class="btn-close" @click.prevent="clickClose"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </div>
+</div>

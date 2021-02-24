@@ -1,0 +1,61 @@
+<div class="contents" ref="contents">
+  <div class="setting">
+    <!-- 비로그인 시 -->
+    <template v-if="!isLogin">
+      <div class="setting-header">
+        <p>{{ $t('etc.please-login') }}</p>
+        <a @click="tidLoginRedirect" class="btn-basic xsmall">{{ $t('comm.login') }}</a>
+      </div>
+      <ul class="list-setting">
+        <li>
+          <a @click="settingOpen" v-if="mobileOS === 'A'|| mobileOS === 'I'">
+            <em>{{ $t('etc.app-setting') }}</em>
+            <p>{{ $t('etc.app-setting-text') }}</p>
+          </a>
+        </li>
+      </ul>
+    </template>
+
+    <!-- 로그인 시 -->
+    <template v-if="isLogin">
+      <div class="setting-header">
+        <p v-if="myInfo.USER_TYPE === 'tid_cert'">{{myInfo.TID_SUBS_ID}}</p>
+        <p v-if="myInfo.USER_TYPE ==='mdn'">{{myInfo.MDN}}</p>
+        <a v-if="myInfo.USER_TYPE === 'tid_cert'" @click="tidLogout" class="btn-basic xsmall">{{ $t('comm.logout') }}</a>
+        <a v-if="myInfo.USER_TYPE === 'mdn'" @click="mdnLogout" class="btn-basic xsmall">{{ $t('comm.logout') }}</a>
+      </div>
+      <ul class="list-setting">
+        <li>
+          <router-link v-if="myInfo.USER_TYPE === 'tid_cert'" to="/member">
+            <em>{{ $t('etc.id-member-info-management') }}</em>
+            <p>{{ $t('etc.id-info-management-text') }}</p>
+          </router-link>
+        </li>
+        <li>
+          <router-link v-if="myInfo.USER_TYPE === 'tid_cert'" to="/lineinfo">
+            <em>{{ $t('etc.line-info-management') }}</em>
+            <p>{{ $t('etc.line-info-management-text') }}</p>
+          </router-link>
+        </li>
+        <li>
+          <a @click.prevent="deleteCheckinInfo">
+            <em>{{ $t('etc.checkin-info') }}</em>
+            <p>{{ $t('etc.checkin-info-text') }}</p>
+          </a>
+        </li>
+        <li>
+          <router-link to="/leave">
+            <em>{{ $t('etc.leave-setting') }}</em>
+            <p>{{ $t('etc.leave-text') }}</p>
+          </router-link>
+        </li>
+        <li>
+          <a @click="settingOpen" v-if="mobileOS === 'A'|| mobileOS === 'I'">
+            <em>{{ $t('etc.app-setting') }}</em>
+            <p>{{ $t('etc.app-setting-text') }}</p>
+          </a>
+        </li>
+      </ul>
+    </template>
+  </div>
+</div>

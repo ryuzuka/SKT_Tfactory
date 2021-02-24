@@ -1,0 +1,33 @@
+<div class="contents" ref="contents">
+  <div class="member">
+    <p v-html="$t('etc.id-member-info-management-text')">T아이디는 T Factory에서 사용할 수 있는<br> 계정 서비스 입니다.</p>
+    <dl class="details-info">
+      <dt v-if="myInfo.TID_SUBS_ID">{{ $t('comm.id') }}</dt>
+      <dd>{{myInfo.TID_SUBS_ID}}</dd>
+      <dt v-if="myInfo.MDN">{{ $t('comm.phone-number') }}</dt>
+      <dd v-if="myInfo.MDN">{{myInfo.MDN}}</dd>
+<!--      <dt>{{ $t('comm.email') }}</dt>-->
+<!--      <dd>{{}}</dd>-->
+      <dt v-if="myInfo.NAME">{{ $t('comm.name') }}</dt>
+      <dd>{{myInfo.NAME}}</dd>
+    </dl>
+    <div class="list-terms">
+      <h3>{{ $t('etc.change-agree-list') }}</h3>
+      <ul>
+        <li>
+          <input v-model="USER_INFO_AGREEMENT_YN" type="checkbox" name="agree-terms" id="terms0" @change="onAgree($event, 'USER_INFO_AGREEMENT_YN')">
+          <label for="terms0">개인정보 수집/이용 동의 (선택)</label>
+          <router-link to="/policy/privacyopt"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+        </li>
+        <li>
+          <input v-model="MARKETING_AGREEMENT_YN" type="checkbox" name="agree-terms" id="terms1" @change="onAgree($event, 'MARKETING_AGREEMENT_YN')">
+          <label for="terms1">광고성 정보 수신 동의 (선택)</label>
+          <router-link to="/policy/advg"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <modals-container></modals-container>
+  <v-dialog></v-dialog>
+</div>

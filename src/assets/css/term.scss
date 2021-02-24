@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import "common/variables";
+@import "common/mixins";
+.term-title {
+  line-height: 20px;
+  font-size: 15px;
+  margin: 5px 0;
+  color: #444;
+  font-weight: bold;
+}
+.term-desc {
+  font-weight: normal;
+  font-size: 14px;
+}
+.policy {
+  &-tit {
+    margin-bottom:24px;
+    font-weight:$fw-bold;
+  }
+  &-list {
+    li {
+      margin-bottom:20px;
+      > ul {
+        padding:10px 0 0 10px;
+      }
+    }
+    &:last-child {
+      li:last-of-type {
+        margin-bottom:0;
+      }
+    }
+  }
+  &-subtit {
+    color:#000;
+    margin-bottom:20px;
+  }
+  &-desc {
+    margin-bottom:20px;
+  }
+  &-tbl {
+    margin-bottom:40px;
+    border-bottom:1px solid #787878;
+    th, td {
+      padding:16px 0;
+      border-top:1px solid #787878;
+      word-break:keep-all;
+    }
+    th {
+      width:30%;
+      padding-right:10px;
+      text-align:left;
+    }
+    td { width:70%; }
+  }
+}

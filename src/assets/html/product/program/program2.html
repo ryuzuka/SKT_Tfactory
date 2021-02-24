@@ -1,0 +1,74 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class2-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">TECH CLASS</em>
+      <h2 class="details-tit">갤럭시 S21 'TMI'</h2>
+      <div class="tags">
+        <span class="flag-basic">매주 정기</span>
+        <span class="flag-basic">10명 내</span>
+        <span class="flag-basic">지식 수집형</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.class-introduction')}}</h3>
+      <p>공식 홈페이지에도 없는 갤럭시 S21의 모든 것! <br>
+        알아 두면 쓸 데 있는 재미있는 지식부터<br>
+        갤럭시 S21의 스펙과 기능까지 속속들이 파헤쳐 보세요.
+      </p>
+
+      <h3 class="subtit">{{ $t('prd.class-configuration')}}</h3>
+      <ol class="step-list">
+        <li>갤럭시S21 시리즈 하드웨어 총 정리
+          <ul>
+            <li>1) 갤럭시S21</li>
+            <li>2) 갤럭시S21 플러스</li>
+            <li>3) 갤럭시S21 울트라</li>
+          </ul>
+        </li>
+        <li>갤럭시S21 시리즈 비교분석</li>
+        <li>갤럭시S21 시리즈 특장점 및 기타사항</li>
+        <li>갤럭시S21 TMI</li>
+        <li>Q&amp;A</li>
+      </ol>
+
+      <h3 class="subtit">{{ $t('prd.recommended-target')}}</h3>
+      <ul class="texts-list">
+        <li>갤럭시 S21 시리즈가 어떻게 다른지 궁금하신 고객님</li>
+        <li>갤럭시 S21 시리즈가 무엇이 좋은지 궁금하신 고객님</li>
+        <li>갤럭시 S21 시리즈를 살지 말지 고민 중이신 고객님</li>
+        <li>모바일 기기에 관심이 많으신 고객님</li>
+      </ul>
+
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <p>매주 수요일 오후 3시, 7시(약 20분 소요) <br>T Factory 2층, 애플 CSP</p>
+
+      <h3 class="subtit">{{ $t('prd.leader-introduction')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class2-leader.jpg" alt=""></div>
+      <div class="profile">
+        <em>JAESANG CREW</em>
+        <span>김재상</span>
+        <p>2F Consulting존 총괄</p>
+      </div>
+      <ul class="texts-list">
+        <li>PS&amp;M 디바이스 유통 근무 5년</li>
+        <li>PS&amp;M 사내 교육강사</li>
+        <li>삼성판매주식회사 2년 근무</li>
+        <li>삼성전자판매 백화점 VIP대상 강의</li>
+        <li>Tech/Device 스펙 및 진단 지식 최우수</li>
+        <li>PS&amp;M 우수상담 Contest 다수 수상</li>
+      </ul>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

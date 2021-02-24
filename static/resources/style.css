@@ -1,0 +1,243 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.player_container {
+  width: 100%;
+  height: 50vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.player_container.play {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.player_container.play .vr_cover .cover_img {
+  width: auto;
+  min-height: 100%;
+}
+
+.iframe_container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #000;
+}
+
+.vr_cover {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  background: #4d4d4d;
+}
+
+.vr_cover img {
+  width: auto;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.play_btn {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  cursor: pointer;
+}
+
+.play_btn .play_svg {
+  width: 6vw;
+  height: 6vw;
+}
+
+.instruction_container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.instruction_container .logo_display {
+  width: 25%;
+  max-width: 230px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.instruction_container .instruction {
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+}
+
+.instruction_container .instruction .mobile {
+  display: none;
+}
+
+.instruction_container .start_btn {
+  width: 6%;
+  margin-top: 7%;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* touch device */
+.instruction.touch .desktop {
+  display: none;
+}
+
+.instruction.touch .mobile {
+  display: block;
+}
+
+.close_btn {
+  display: none;
+  position: absolute;
+  width: 1.5vw;
+  height: 1.5vw;
+  top: 1.5%;
+  right: 1.5%;
+  cursor: pointer;
+}
+
+/* ipad */
+@media only screen and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+  .player_container {
+    height: 100%;
+    position: absolute;
+  }
+  .instruction_container .instruction.touch {
+    width: 90%;
+  }
+  .instruction_container .mobile {
+    text-align: center;
+  }
+  .instruction_container .mobile img {
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .instruction_container .mobile img:first-child {
+    margin-right: 15%;
+  }
+  .instruction_container .start_btn {
+    width: 8%;
+    margin-top: 2%;
+  }
+}
+
+/* ipad */
+@media only screen and (min-width: 737px) and (max-width: 1024px) and (orientation: portrait) and (pointer: coarse) {
+  .player_container {
+    height: 100%;
+    position: absolute;
+  }
+  .play_btn .play_svg {
+    width: 9vw;
+    height: 9vw;
+  }
+  .instruction_container .mobile {
+    text-align: center;
+  }
+  .instruction_container .mobile img:first-child {
+    margin-bottom: 15%;
+  }
+  .instruction_container .start_btn {
+    width: 15%;
+  }
+}
+
+/* mobile */
+@media only screen and (max-width: 736px) and (orientation: portrait) and (pointer: coarse) {
+  .player_container {
+    height: 100%;
+    position: absolute;
+  }
+  .play_btn .play_svg {
+    width: 15vw;
+    height: 15vw;
+  }
+  .instruction_container .logo_display {
+    width: 43%;
+  }
+  .instruction_container .mobile {
+    text-align: center;
+  }
+  .instruction_container .mobile img:first-child {
+    margin-bottom: 15%;
+  }
+  .instruction_container .start_btn {
+    width: 15%;
+  }
+  
+  .close_btn {
+    width: 5.5vw;
+    height: 5.5vw;
+    top: 2vw;
+    right: 4%;
+  }
+}
+
+/* mobile */
+@media only screen and (max-width: 823px) and (orientation: landscape) and (pointer: coarse) {
+  .player_container {
+    height: 100%;
+    position: absolute;
+  }
+  .instruction_container .instruction.touch {
+    width: 90%;
+  }
+  .instruction_container .mobile {
+    text-align: center;
+  }
+  .instruction_container .mobile img {
+    width: 35%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .instruction_container .mobile img:first-child {
+    margin-right: 15%;
+  }
+  .instruction_container .start_btn {
+    width: 8%;
+    margin-top: 2%;
+  }
+}

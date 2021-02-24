@@ -1,0 +1,13 @@
+<section class="popup-full img-viewer">
+  <header>
+    <a href="#" class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <swiper :options="imgViewerSwiperOption" ref="imgViewerSwiper">
+      <swiper-slide v-for="(img, index) in data.imgList" :key="index">
+        <figure><img src="../../images/dummy/@zone-img.jpg" alt=""></figure>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+  </div>
+</section>

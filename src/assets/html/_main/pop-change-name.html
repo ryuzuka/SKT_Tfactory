@@ -1,0 +1,15 @@
+<section class="popup">
+  <header>
+    <h1>{{ $t('mytag.name-title') }}</h1>
+    <a href="#" class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <div class="input-box">
+      <input type="text" v-model="changeNickname" :placeholder="$t('comm.input-name')">
+      <p class="desc">{{ $t('mytag.name-info') }}</p>
+    </div>
+  </div>
+  <footer class="btn-wrap">
+    <a href="#" class="btn-line big" @click="clickApply">{{ $t('mytag.name-button-text') }}</a>
+  </footer>
+</section>

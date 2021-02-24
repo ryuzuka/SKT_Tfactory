@@ -1,0 +1,322 @@
+@charset "utf-8";
+@import "common/variables";
+@import "common/mixins";
+
+.pay {
+  .nav-footer {
+    margin-bottom:-40px;
+  }
+  .bottom-sticky {
+    .row + .row {
+      margin-top:12px;
+    }
+    .nav-footer {
+      margin-bottom:-96px;
+      padding-bottom:96px;
+    }
+  }
+  .accordion {
+    margin:-24px -20px 0;
+    dt {
+      @include set-middle;
+      padding:0 16px 0 20px;
+    }
+    dd {
+      display:none;
+      padding:20px;
+      border-top:1px solid $line-color;
+    }
+    .active {
+      display:block;
+    }
+    .btn-accor {
+      padding:13px 0 12px;
+      width:100%;
+      @include ellipse(1);
+      display:inline-block;
+      @include font-set14;
+      text-align:left;
+      i {
+        float:right;
+        width:24px;
+        height:24px;
+        margin-top:-1px;
+        @include iconImg($x:-200px,$y:-150px);
+      }
+      &.active {
+        i {
+          background-position:-225px -150px;
+        }
+      }
+    }
+  }
+  .tit-wrap {
+    margin:-24px -20px 0;
+    padding:17px 20px 16px;
+    border-bottom:1px solid $line-color;
+    & + .item {
+      border-top:0;
+    }
+  }
+  .item {
+    margin:0 -20px;
+    border-top:1px solid $line-color;
+    .product {
+      @include set-middle;
+      position:relative;
+      padding:24px 44px 24px 20px;
+      .thumb {
+        width:96px;
+        height:100%;
+      }
+      .info {
+        width:calc(100% - 96px);
+        padding:8px 0 0 20px;
+      }
+      .tit-company {
+        @include font-set12;
+        color:#787878;
+      }
+      .tit-prd {
+        margin-top:4px;
+        @include font-set16;
+        font-weight:$fw-medium;
+      }
+      .price {
+        margin-top:8px;
+        @include font-set14;
+        em {
+          margin-left:12px;
+          @include font-set16;
+          font-weight:$fw-medium;
+        }
+        .unit {
+          margin-left:1px;
+        }
+      }
+    }
+    .btn-favorite {
+      top:16px;
+      right:20px;
+      z-index:2;
+    }
+    .btn-accor {
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      width:100%;
+      i {
+        position:absolute;
+        top:60px;
+        right:24px;
+        width:16px;
+        height:16px;
+        @include iconImg($x:-250px,$y:-50px);
+        vertical-align:top;
+      }
+      &.active {
+        i {
+          background-position:-150px -200px;
+        }
+      }
+    }
+    .details-info {
+      display:none;
+      padding:20px 28px;
+      background-color:#f8f8f8;
+      &.active {
+        display:block;
+      }
+      dt {
+        width:84px;
+      }
+      dd {
+        width:calc(100% - 84px);
+        padding-left:24px;
+      }
+    }
+  }
+  .box-pay {
+    padding:20px 0;
+    &.payment {
+      padding-bottom:17px;
+      .list-price {
+        dt {
+          color:#787878;
+        }
+      }
+      .total {
+        margin-top:20px;
+        padding-top:16px;
+        border-top:1px solid $line-color;
+        dt {
+          color:#000;
+        }
+        .price {
+          @include font-set16;
+          em {
+            @include font-set20;
+          }
+        }
+      }
+    }
+    &.coupon {
+      @include font-set14;
+      .dropdown {
+        display:inline-block;
+        width:calc(100% - 104px);
+        vertical-align:top;
+      }
+      .xsmall {
+        height:44px;
+        margin-left:8px;
+        padding-top:8px;
+      }
+      .btn-accor {
+        position:absolute;
+        top:2px;
+        right:0;
+        width:16px;
+        height:16px;
+        @include iconImg($x:-250px, $y:-50px);
+        &.active {
+          @include transform(rotate(-180deg));
+        }
+      }
+      .no-coupon {
+        padding:12px 0;
+      }
+    }
+    &.terms {
+      > input[type="checkbox"] + label {
+        color:#000;
+      }
+    }
+    .accordion {
+      margin-bottom:-10px;
+      padding-top:8px;
+      border-top:1px solid $line-color;
+      dt {
+        padding-right:20px;
+      }
+      .btn-accor {
+        padding:8px 0;
+        i {
+          width:16px;
+          height:16px;
+          margin-top:2px;
+          @include iconImg($x:-250px, $y:-50px);
+        }
+        &.active {
+          i {
+            @include transform(rotate(-180deg));
+          }
+        }
+      }
+    }
+  }
+  .list-price {
+    @include set-middle;
+    &:nth-of-type(n+2) {
+      margin-top:16px;
+    }
+    dt, dd {
+      @include font-set14;
+    }
+    dt {
+      width:40%;
+    }
+    dd {
+      width:60%;
+      text-align:right;
+    }
+    .price {
+      display:inline-block;
+      width:auto;
+      em {
+        @include font-set16;
+        font-weight:$fw-medium;
+      }
+      .unit {
+        margin-left:2px;
+      }
+      &.discount {
+        color:$accent;
+      }
+    }
+    .btn-basic {
+      margin-left:20px;
+    }
+    & + .dropdown {
+      margin-top:16px;
+    }
+  }
+  .list-terms {
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid $line-color;
+    li {
+      position:relative;
+      &:nth-child(n+2) {
+        margin-top:16px;
+      }
+    }
+    a i {
+      position:absolute;
+      top:2px;
+      right:0;
+      width:16px;
+      height:16px;
+      @include iconImg($x:-250px, $y:-50px);
+      @include transform(rotate(-90deg));
+    }
+    div {
+      display:none;
+      &.active {
+        display:block;
+      }
+    }
+  }
+  .btn-wrap.sticky {
+    .btn-line.big {
+      //padding-top:19px;
+      .ico-skpay {
+        width:52px;
+        height:17px;
+        @include logoImg($x:0, $y:-20px);
+        vertical-align:text-top;
+      }
+    }
+  }
+
+  // 결제 실패
+  &-fail {
+    .ico-notice {
+      width:64px;
+      height:64px;
+      margin:20px auto 12px;
+      @include iconImg($x:-225px,$y:-275px,$display:block)
+    }
+    .tit {
+      margin-bottom:16px;
+      @include font-set20;
+      font-weight:$fw-medium;
+      text-align:center;
+    }
+    .desc {
+      color:#505050;
+      @include font-set16;
+      text-align:center;
+    }
+    .btn-wrap {
+      padding:32px 0 40px;
+    }
+  }
+}
+.complete {
+  .btn-wrap {
+    padding:8px 0;
+  }
+}

@@ -1,0 +1,169 @@
+<div class="contents bottom-sticky" ref="contents">
+  <section class="row">
+    <div class="tit-wrap">
+      <h2 class="subtit">{{ $t('pay.pay') }} {{ $t('comm.product') }}</h2>
+    </div>
+
+    <div class="item" v-for="(prd, index) in productList" :key="index">
+      <div class="product">
+        <div v-if="prd.IMAGES[0]" class="thumb"><img :src="prd.IMAGES[0]"/></div>
+        <div v-else class="thumb"><img src="../../images/service/Icon Copy@2x.png"/></div>
+        <div class="info">
+          <p class="tit-company">{{prd.MAKER}}</p>
+          <p class="tit-prd">{{prd.NAME}}</p>
+          <div class="price">
+            <span>{{prd.QUANTITY}}{{ $t('comm.piece') }}</span>
+            <em>{{prd.PRICE | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+          </div>
+        </div>
+        <!-- <span class="btn-favorite">
+          <input type="checkbox" name="chk-favorite" id="favorite"><label for="favorite" class="blind">{{ $t('prd.favorite') }}</label>
+        </span> -->
+        <!--        <button type="button" class="btn-accor" :class="{'active': isProductOpen[index]}" @click="activeProduct(index)"><i></i><span class="blind">{{ $t('pay.product-info') }} {{ $t('comm.toggle') }}</span></button>-->
+      </div>
+      <!-- 상품정보 -->
+      <dl class="details-info" :class="{'active': isProductOpen[index]}">
+        <dt>{{ $t('pay.model') }}</dt>
+        <dd>N/A</dd>
+        <dt>{{ $t('pay.color') }}</dt>
+        <dd>N/A</dd>
+        <dt>{{ $t('pay.model-name') }}</dt>
+        <dd>N/A</dd>
+        <dt>{{ $t('pay.feature') }}</dt>
+        <dd>N/A</dd>
+      </dl>
+    </div>
+  </section>
+  <!-- 쿠폰 : 정책 확인 중 -->
+  <!-- 08.21 수정 -->
+  <section class="row coupon">
+    <div class="tit-wrap">
+      <h2 class="subtit">{{ $t('pay.coupon-apply') }}</h2>
+    </div>
+    <div class="box-pay coupon">
+      <!-- 기본 -->
+      <ui-select
+        :placeholder="$t('my.coupon-select')"
+        v-model="selectedCoupon"
+        @change="changeCoupon"
+        :data=couponList
+      ></ui-select>
+      <button type="button" class="btn-basic xsmall" @click="cancelCoupon" :disabled="!selectedCoupon">{{
+        $t('pay.apply-cancel') }}
+      </button> <!-- 쿠폰 선택 시 disabled 삭제 -->
+      <!--// 기본 -->
+
+      <!--      &lt;!&ndash; 선택 가능한 쿠폰이 없을 경우 &ndash;&gt;-->
+      <!--      <p class="no-coupon">{{ $t('pay.coupon-none') }}</p>-->
+      <!--      &lt;!&ndash;// 선택 가능한 쿠폰이 없을 경우 &ndash;&gt;-->
+
+      <!--      &lt;!&ndash; 밴딩머신 일 경우 &ndash;&gt;-->
+      <!--      <p>단말 액세서리 20% 할인 쿠폰</p>-->
+      <!--      &lt;!&ndash;// 밴딩머신 일 경우 &ndash;&gt;-->
+    </div>
+  </section>
+  <!--// 08.21 수정 -->
+  <!-- 결제금액 -->
+  <section class="row">
+    <div class="tit-wrap">
+      <h2 class="subtit">{{ $t('pay.amount-payment') }}</h2>
+    </div>
+    <div class="box-pay payment">
+      <dl class="list-price">
+        <dt>{{ $t('pay.total-price') }}</dt>
+        <dd>
+          <div class="price">
+            <em>{{priceSum | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+          </div>
+        </dd>
+      </dl>
+      <!--      &lt;!&ndash; TODO: 할인 영역-->
+      <dl class="list-price">
+        <dt>{{ $t('pay.total-sale') }}</dt>
+        <dd>
+          <div class="price discount">
+            <em>- {{priceDiscount}}</em><span class="unit">{{ $t('comm.won') }}</span>
+          </div>
+        </dd>
+      </dl>
+      <!--      &ndash;&gt;-->
+      <dl class="list-price total">
+        <dt>{{ $t('pay.total-amount-payment') }}</dt>
+        <dd>
+          <div class="price">
+            <em>{{priceSum-priceDiscount | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+          </div>
+        </dd>
+      </dl>
+    </div>
+  </section>
+  <!-- 약관 동의 -->
+  <!-- 10.12 삭제 -->
+<!--  <section class="row">-->
+<!--    <div class="tit-wrap">-->
+<!--      <h2 class="subtit">{{ $t('pay.agree-terms') }}</h2>-->
+<!--    </div>-->
+<!--    <div class="box-pay terms">-->
+<!--      <input type="checkbox" name="chk-all" id="chk-all" v-model="checkAll" @change="changeTermsCheck('all')"><label for="chk-all">{{ $t('pay.all-agree-terms') }}</label>-->
+<!--      <ul class="list-terms">-->
+<!--        <li>-->
+<!--          <input type="checkbox" name="agree-terms" id="terms1" v-model="termsModel[0]" @change="changeTermsCheck">-->
+<!--          <label for="terms1">{{ $t('pay.terms1') }}</label>-->
+<!--          <router-link to="/terms"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <input type="checkbox" name="agree-terms" id="terms2" v-model="termsModel[1]" @change="changeTermsCheck">-->
+<!--          <label for="terms2">{{ $t('pay.terms2') }}</label>-->
+<!--          <router-link to="/terms"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <input type="checkbox" name="agree-terms" id="terms3" v-model="termsModel[2]" @change="changeTermsCheck">-->
+<!--          <label for="terms3">{{ $t('pay.terms3') }}</label>-->
+<!--          <router-link to="/terms"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <div class="box-pay">-->
+<!--      <dl class="accordion">-->
+<!--        <dt>-->
+<!--          <button type="button" class="btn-accor" :class="{'active': isGuide[0]}" @click="isGuide[0] = isGuide[0] ? Boolean(false) : Boolean(true); $forceUpdate()">{{ $t('pay.term-guide1') }}<i></i></button> &lt;!&ndash; 활성화 시 .active 추가 &ndash;&gt;-->
+<!--        </dt>-->
+<!--        <dd :class="{'active': isGuide[0]}"> &lt;!&ndash; 활성화 시 .active &ndash;&gt;-->
+<!--          TBD-->
+<!--        </dd>-->
+<!--        <dt>-->
+<!--          <button type="button" class="btn-accor" :class="{'active': isGuide[1]}" @click="isGuide[1] = isGuide[1] ? Boolean(false) : Boolean(true); $forceUpdate()">{{ $t('pay.term-guide2') }}<i></i></button> &lt;!&ndash; 활성화 시 .active 추가 &ndash;&gt;-->
+<!--        </dt>-->
+<!--        <dd :class="{'active': isGuide[1]}"> &lt;!&ndash; 활성화 시 .active &ndash;&gt;-->
+<!--          TBD-->
+<!--        </dd>-->
+<!--      </dl>-->
+<!--    </div>-->
+<!--  </section>-->
+  <!--// 10.12 삭제 -->
+  <!-- 환불 안내 -->
+  <div class="row">
+    <dl class="accordion">
+      <dt>
+        <button type="button" class="btn-accor" :class="{'active': isRefundGuide}"
+                @click="isRefundGuide = isRefundGuide ? Boolean(false) : Boolean(true)">{{ $t('pay.refund-guide')
+          }}<i></i></button> <!-- 활성화 시 .active 추가 -->
+      </dt>
+      <dd :class="{'active': isRefundGuide}"> <!-- 활성화 시 .active -->
+        <ul class="texts-info">
+          <li>* {{ $t('pay.refund-guide1') }}</li>
+          <li>* {{ $t('pay.refund-guide2') }}</li>
+          <li>※ {{ $t('pay.refund-guide3') }}</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <div class="btn-wrap sticky">
+    <a href="#" class="btn-solid big" @click.prevent="payButton('PG')">{{ $t('pay.purchase') }}</a>
+    <a href="#" v-if="user_type === 'tid_cert'" class="btn-line big" @click.prevent="payButton('SKPay')"><i
+      class="ico-skpay"></i><span class="blind">SK pay</span> {{ $t('pay.payment') }}</a> <!-- 06.05 문구 변경 -->
+  </div>
+
+  <Footer></Footer>
+</div>

@@ -1,0 +1,77 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone2-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">Factory Gate</strong></h2>
+    <p class="desc">당신의 상상이 현실이 되는 T Factory로 향하는 입구입니다. <br><br>
+      매장 입구에 설치된 초대형 LED 스크린으로 <br>T Factory의 Identity를 표현한 미디어 작품들을 만날 수 있습니다.  </p>
+  </div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../../images/tfactory/zone2-img1.jpg" alt=""></figure>
+    <figure class="thumb"><img src="../../../images/tfactory/zone2-img2.jpg" alt=""></figure>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">1층 전면 매장 출입구</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-1f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone2-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store3">
+            <div class="thumb"><img src="../../../images/tfactory/zone3-top.jpg" alt=""></div>
+            <em>Flex Stage</em>
+            <p class="subtext">빠르게 변화하는 IT 트렌드를 만나볼 수 있는 메인 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store9">
+            <div class="thumb"><img src="../../../images/tfactory/zone9-top.jpg" alt=""></div>
+            <em>Factory Garden</em>
+            <p class="subtext">디지털 콘텐츠의 숲에서 만나는 자연과 함께하는 휴식 공간
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store14">
+            <div class="thumb"><img src="../../../images/tfactory/zone14-top.jpg" alt=""></div>
+            <em>0 Stage</em>
+            <p class="subtext">0(Young) 피플을 위한 AR, VR 체험 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

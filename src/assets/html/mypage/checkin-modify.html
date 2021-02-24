@@ -1,0 +1,16 @@
+<div class="contents" ref="contents">
+  <div class="checkin">
+    <!-- 08.21 수정 -->
+    <div>
+      <p class="tit" v-html="$t('sso.please-quick-checkin')"><strong>빠른 체크인</strong>을 위한<br> 얼굴등록이 완료되었습니다.</p>
+      <p v-html="$t('sso.guide-please-quick-checkin')"></p>
+    </div>
+    <!--// 08.21 수정 -->
+    <div>
+      <a href="#" class="help-txt" @click.prevent="deletePhoto">{{ $t('sso.delete-photo') }}<i></i></a>
+      <div class="btn-wrap">
+        <a href="#" class="btn-solid big">{{ $t('sso.go-modify') }}</a>
+      </div>
+    </div>
+  </div>
+</div>

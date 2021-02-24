@@ -1,0 +1,50 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class13-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">EXHIBITION</em>
+      <h2 class="details-tit">이 달의 악기는?</h2>
+      <p class="desc">클래식 악기 릴레이 체험 전시</p>
+      <div class="tags">
+        <span class="flag-basic">전시 체험형</span>
+        <span class="flag-basic">릴레이 전시</span>
+        <span class="flag-basic">공연 연계</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.exhibition-introduction')}}</h3>
+      <p>
+        T Factory의 문화 공간 프로젝트 전시, 영감 팩토리. <br>
+        빈티지 악기 200여 점을 크라시코의 큐레이션과 함께 선보입니다.
+        클래식 악기가 주는 현대적인 감성을 통해 당신만의 영감을 얻어 보세요!
+
+      </p>
+
+      <h3 class="subtit">{{ $t('prd.instrument')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class13-conts.jpg" alt=""></div>
+      <p>Electric Piano in 1980’s <br>YAMAHA CP-80</p>
+
+      <h3 class="subtit">{{ $t('prd.exhibition-composition')}}</h3>
+      <ol class="step-list">
+        <li>전시</li>
+        <li>체험</li>
+        <li>공연</li>
+        <li>공유</li>
+      </ol>
+
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <p>2월~3월(2달 동안)<br>T Factory 2층, 0 Stage</p>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

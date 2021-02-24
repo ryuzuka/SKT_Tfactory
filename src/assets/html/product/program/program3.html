@@ -1,0 +1,71 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class3-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">TALK CONCERT</em>
+      <h2 class="details-tit">e-스포츠에 대한 모든것</h2>
+      <p class="desc">with 프로 게이머</p>
+      <div class="tags">
+        <span class="flag-basic">토크 콘서트형</span>
+        <span class="flag-basic">15명 내</span>
+        <span class="flag-basic">진로 고민</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.lecture-introduction')}}</h3>
+      <p>이제 스포츠 선수만큼, 아니 그보다 더 유명해지고 있는 e-스포츠 프로게이머!<br>
+        그들은 어떤 삶을 살고 있을까요? <br>어떻게 하면 프로게이머가 될 수 있을까요?<br>
+        e-스포츠의 모든 궁금증을 실제 프로게이머가 풀어드립니다! </p>
+
+      <h3 class="subtit">{{ $t('prd.lecture-composition')}}</h3>
+      <ol class="step-list">
+        <li>프로게이머가 되는 방법 : 제 2의 Faker(T1 소속 대표 프로게이머)를 꿈꾸는 여러분에게</li>
+        <li>프로게이머의 삶(나의 이야기)
+          <ul>
+            <li>- e-스포츠 선수의 하루일과</li>
+            <li>- e-스포츠 선수 삶의 명암</li>
+          </ul>
+        </li>
+        <li>인싸이더가 보는 e-스포츠의 미래</li>
+        <li>Q&amp;A</li>
+      </ol>
+
+      <h3 class="subtit">{{ $t('prd.recommended-target')}}</h3>
+      <ul class="texts-list">
+        <li>게임을 하거나, 보는 것을 좋아하는 모든 사람</li>
+        <li>프로게이머의 연봉부터 삶까지 모든 것을 알고 싶은 사람</li>
+        <li>프로게이머를 꿈꾸거나 색 다른 직업이 궁금한 사람</li>
+      </ul>
+
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <div class="thumb"><img src="../../../images/program/img-media-library.jpg" alt=""></div>
+      <p>매달 넷째 주 화요일  오후 7시
+        <br>T Factory 1층, 미디어 라이브러리</p>
+
+      <h3 class="subtit">{{ $t('prd.lecturer-introduction')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class3-leader.jpg" alt=""></div>
+      <div class="profile">
+        <em>SONNY CREW</em>
+        <span>안상원</span>
+        <p>2F MS 존 및 게임 프로그램 운영</p>
+      </div>
+      <ul class="texts-list">
+        <li>LG 프로게임단 활동 (7.8년)</li>
+        <li>스타크래프트 2 프로게이머 우승경력 보유<br>(국내 4회, 국제 1회)</li>
+        <li>게임대회 진행 MC경력 및 게임 큐레이션 경험</li>
+        <li>게임 개인방송(트위치) 운영, 영상제작/편집/진행</li>
+      </ul>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

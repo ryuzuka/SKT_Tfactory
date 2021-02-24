@@ -1,0 +1,39 @@
+<nav class="nav">
+  <div class="nav-user">
+    <a v-on:click.prevent="tidLoginRedirect">
+      <h1 class="main-tit" ref="aniObj0" :class="{'ani-obj': aniObj[0]}">
+        <!-- 로그인 전 -->
+        <span v-if="!isLogin">{{ $t('comm.login-text-before') }}</span>
+
+        <!-- 로그인 후 -->
+        <template v-else>
+          <span v-if="myInfo.NICKNAME"><em class="usr-name">{{myInfo.NICKNAME}} {{ $t('comm.customer') }}</em></span>
+          <span v-else><em class="usr-name">{{myInfo.NAME}} {{ $t('comm.customer') }}</em></span>
+        </template>
+
+        <br><span v-html="$t('comm.login-text-after1')"></span>
+        <br><span>{{ $t('comm.login-text-after2') }}</span>
+      </h1>
+    </a>
+  </div>
+
+  <div class="nav-contents">
+    <ul class="list-utils" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
+      <li><a @click.prevent="clickPurchaseList">{{ $t('comm.order') }}</a></li>
+      <li><a @click.prevent="clickMyWish">{{ $t('comm.wish') }}</a></li>
+      <li><a @click.prevent="clickCouponList">{{ $t('comm.coupon-management') }}</a></li>
+      <li><a @click.prevent="clickMyReservation">{{ $t('comm.reservation-list') }}</a></li>
+      <li><a @click.prevent="clickFaceRegist">{{ $t('comm.quick-checkin') }}</a></li>
+      <li><a @click.prevent="clickSetting">{{ $t('comm.setting') }}</a></li>
+    </ul>
+<!--    <div class="banner type-img">-->
+<!--      <a href="#"><img src="../../images/dummy/@banner-event.jpg" alt="iPhone 12 출시 특별 혜택 이벤트 응모하고 iPhone 12 받자!"></a>-->
+<!--    </div>-->
+    <div class="banner">
+      <a href="mailto:tshop_help@sktelecom.com?Subject=Tfactory%20문의하기">
+        <p v-html="$t('main.banner-contact1')"></p>
+        <span>{{ $t('main.banner-contact2') }}</span>
+      </a>
+    </div>
+  </div>
+</nav>

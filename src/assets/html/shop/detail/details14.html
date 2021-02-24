@@ -1,0 +1,86 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone14-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">0 Stage</strong></h2>
+    <p class="desc">매장에서 구매한 휴대폰, 액세서리 등을 언박싱할 수 있고, 무료로 제공해 드리는 무선 보조배터리를 이용해 매장 안의 다양한 콘텐츠를 경험하실 수 있습니다.</p></div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../../images/tfactory/zone14-img1.jpg" alt=""></figure>
+    <h3>AR Mirror</h3>
+    <p class="desc">내 안에 숨겨진 또 다른 나의 모습을
+      AR(증강현실) 거울로 찾아 보세요.
+      거울이 움직임과 얼굴을 인식해 머리부터 발끝까지 다양하게 스타일링해 드립니다.
+      SK텔레콤의 5GX AR 기술로 만들어진 증강현실 거울 속 새로운 당신의 모습을 확인해보세요.
+    </p>
+    <h3>Battery Station</h3>
+    <p class="desc">이제 배터리 걱정없이 T Factory를 체험해 보세요.
+      무료로 제공해 드리는 무선 보조배터리를 들고 다니며, 배터리 걱정 없이 매장 안의 다양한 콘텐츠를 경험하실 수 있습니다.</p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone14-img2.jpg" alt=""></figure>
+    <h3>Jump VR</h3>
+    <p class="desc">VR 기기로 SK텔레콤의 Jump VR을 체험하실 수 있습니다.</p>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">2층 중앙 라운지 공간</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-2f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone14-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store3">
+            <div class="thumb"><img src="../../../images/tfactory/zone3-top.jpg" alt=""></div>
+            <em>Flex Stage</em>
+            <p class="subtext">빠르게 변화하는 IT 트렌드를 만나볼 수 있는 메인 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store13">
+            <div class="thumb"><img src="../../../images/tfactory/zone13-top.jpg" alt=""></div>
+            <em>Apple Zone</em>
+            <p class="subtext">아시아 최초 샵인샵 애플 스토어</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store17">
+            <div class="thumb"><img src="../../../images/tfactory/zone17-top.jpg" alt=""></div>
+            <em>5GX Cloud Game</em>
+            <p class="subtext">Xbox 클라우드 게임을 체험할 수 있는 국내 최초 마이크로소프트 스토어</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}
+              </p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

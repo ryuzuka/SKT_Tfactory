@@ -1,0 +1,15 @@
+<div class="contents" ref="contents">
+  <div class="between-box">
+    <div class="top">
+      <p class="tit" v-html="$t(('etc.combine-title'))"></p>
+      <div class="input-box">
+        <input ref="certification" type="tel" maxlength="11" id="info1-1" v-model="number" placeholder="**********">
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <a class="btn-solid big" @click.prevent="sendCertifyNumber">{{ $t(('etc.combine-button-text')) }} <i class="ico-check"></i></a>
+    </div>
+    <!-- //201215 수정 -->
+  </div>
+</div>

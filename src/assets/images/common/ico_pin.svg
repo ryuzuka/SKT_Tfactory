@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="24px" viewBox="0 0 17 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_map">
+            <g id="Group-7">
+                <path d="M8.4,0.25 C6.14912093,0.25 4.11121093,1.15211685 2.63610038,2.61101739 C1.16199518,4.06892364 0.25,6.0829352 0.25,8.30769231 C0.25,11.3036129 2.98585851,16.3927723 8.39950432,23.584313 C13.8138034,16.3934012 16.55,11.3037979 16.55,8.30769231 C16.55,6.0829352 15.6380048,4.06892364 14.1638996,2.61101739 C12.6887891,1.15211685 10.6508791,0.25 8.4,0.25 Z" id="Oval" stroke="#FFFFFF" stroke-width="0.5" fill="#E42122"></path>
+                <circle id="Oval" fill="#FFFFFF" cx="8.4" cy="8.64" r="2.64"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

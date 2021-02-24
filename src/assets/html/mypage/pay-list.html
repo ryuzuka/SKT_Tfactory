@@ -1,0 +1,72 @@
+<div class="contents" ref="contents">
+  <div class="my-pay">
+<!--    <section class="row pay-inquiry">-->
+<!--      <h2 class="blind">{{ $t('my.pay-list-inquiry') }}</h2>-->
+<!--      <div class="input-box inquiry">-->
+<!--        <ui-select-->
+<!--          :data="[-->
+<!--          {text: this.$t('comm.lately') + ' 3' +  this.$t('comm.month'), value: 'value0', selected: true},-->
+<!--          {text: this.$t('comm.lately') + ' 6' +  this.$t('comm.month'), value: 'value1'},-->
+<!--          {text: this.$t('comm.lately') + ' 1' +  this.$t('comm.year'), value: 'value2'}-->
+<!--        ]"-->
+<!--        ></ui-select>-->
+<!--        <ui-select-->
+<!--          :data="[-->
+<!--          {text: this.$t('my.pay-all'), value: 'value0', selected: true},-->
+<!--          {text: this.$t('my.pay-complete'), value: 'value1'},-->
+<!--          {text: this.$t('my.pay-cancel'), value: 'value2'}-->
+<!--        ]"-->
+<!--        ></ui-select>-->
+<!--        <button type="button" class="btn-line" @click="clickInquiry">{{ $t('comm.inquiry') }}</button>-->
+<!--      </div>-->
+<!--    </section>-->
+    <section class="row">
+      <ul class="list-pay">
+
+        <li v-for="(data, index) in listData" :key="index">
+          <h3 class="tit-date">{{data[0].INV_DATE | formatDate}}<span class="blind">{{ $t('my.pay-list') }}</span></h3>
+          <ul class="list-item">
+
+            <li v-for="(pay, idx) in data" :key="idx">
+              <div class="summary">
+                <span v-if="pay.STATUS === 'complete'" class="flag-solid2">{{ $t('my.pay-complete') }}</span>
+                <!-- 구매 완료 -->
+                <span v-if="pay.STATUS === 'canceled'" class="flag-solid3">{{ $t('my.pay-cancel') }}</span>
+                <div class="order">
+                  <em class="order-num">{{pay.INV_NUMBER}}</em>
+                  <span class="store">{{pay.STORE_NAME}}</span>
+                </div>
+              </div>
+              <div class="product">
+                <div v-if="pay.ITEM_LIST[0].IMAGES" class="thumb"><img :src="pay.ITEM_LIST[0].IMAGES" alt=""/></div>
+                <div v-else class="thumb"><img src="../../images/service/Icon Copy@2x.png"/></div>
+                <div class="info">
+                  <span v-if="pay.ITEM_LIST.length === 1">{{pay.ITEM_LIST[0].NAME}}</span>
+                  <span v-else>{{pay.ITEM_LIST[0].NAME}}외 {{pay.ITEM_LIST.length -1}}개</span>
+                  <div class="price">
+                    <em>{{pay.AMOUNT | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+                  </div>
+                </div>
+              </div>
+              <a class="btn-basic small" @click.prevent="readReceipt(pay)">{{ $t('pay.read-receipt') }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a class="btn-more" @click.prevent="clickMore" v-if="listData.length > 0">{{ $t('comm.more') }}</a>
+      </div>
+
+      <p class="no-content" v-if="listData.length === 0">{{ $t('my.pay-list-none') }}</p>
+    </section>
+
+    <div class="row">
+      <h4 class="tit-refund">{{ $t('pay.refund-guide') }}</h4>
+      <ul class="texts-info">
+        <li>* {{ $t('my.refund-guide1') }}</li>
+        <li>* {{ $t('my.refund-guide2') }}</li>
+        <li>* {{ $t('my.refund-guide3') }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

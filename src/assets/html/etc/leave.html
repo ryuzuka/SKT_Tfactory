@@ -1,0 +1,16 @@
+<div class="contents" ref="contents">
+  <div class="member">
+    <p>{{ $t('etc.leave-title') }}</p>
+    <ul class="list-leave">
+      <li>T Factory 회원 탈퇴를 하시면 T Factory에서 제공되는 서비스를 이용하실 수 없습니다. 또한, 고객님이 보유하고 있던 쿠폰은 소멸되며 복구되지 않습니다.</li>
+      <li>회원 탈퇴된 계정의 T Factory 서비스 이용 기록은 모두 삭제되며, 삭제된 데이터는 복구되지 않습니다. 다만 거래 정보가 있는 경우 판매 거래 정보 관리를 위해 아이디, 거래 내역에 대한 기본 정보는 탈퇴 후 5년 동안 보관됩니다.</li>
+      <li>T아이디를 사용하시는 고객님의 경우 T Factory를 탈퇴하더라도 T아이디는 유지됩니다.</li>
+    </ul>
+    <div class="input-box input-agree">
+      <input type="checkbox" id="agree" v-model="isAgree"><label for="agree">{{ $t('etc.leave-agree') }}</label>
+    </div>
+  </div>
+  <div class="btn-wrap sticky">
+    <a class="btn-solid big" @click="withdrawal">{{ $t('etc.leave-btn-text') }}</a>
+  </div>
+</div>

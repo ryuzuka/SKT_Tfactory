@@ -1,0 +1,39 @@
+<div class="contents" ref="contents">
+  <div class="between-box join">
+    <div class="top">
+      <p class="tit" v-html="$t(('etc.join-title'))"></p>
+
+      <!-- 11.27 수정 -->
+      <!-- 회선이 한개 일 경우 -->
+      <p class="single-num" v-if="lineData.length === 1">{{ lineData[0].MDN | mdnFilter}} <span class="badge"
+                                                                                        :class="{'active': selectedLine.MDN_USER_YN}">{{ $t('comm.member') }}</span><span
+        class="badge" :class="{'active': selectedLine.FACE_REGIST_YN}">{{ $t('comm.face') }}</span></p>
+
+      <!-- 회선이 여러개 일 경우 -->
+      <div class="multi-num" v-else>
+        <button type="button" class="btn-dropdown" @click="openList()">
+          <span>{{ selectedLine.MDN | mdnFilter}} <span class="badge" :class="{'active': selectedLine.MDN_USER_YN}">{{ $t('comm.member') }}</span><span
+            class="badge" :class="{'active': selectedLine.FACE_REGIST_YN}">{{ $t('comm.face') }}</span></span>
+          <!-- 활성화 클래스 .active -->
+        </button>
+
+        <ul class="list-dropdown" style="display: block" v-show="isOpen">
+          <li v-for="(line, index) in lineData" :key="index" :class="{'active': line.selected}">
+            <button class="list-button" @click="selectList(index, line.MDN)">
+              {{ line.MDN | mdnFilter}} <span class="badge"
+                                      :class="{'active': line.MDN_USER_YN}">{{ $t('comm.member') }}</span><span
+              class="badge" :class="{'active': line.FACE_REGIST_YN}">{{ $t('comm.face') }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--// 11.27 수정 -->
+    </div>
+
+    <div class="btn-wrap unset">
+      <a @click.prevent="certifyMDN" class="btn-solid big">{{ $t(('etc.request-certification')) }}</a>
+      <router-link to="/join/number" class="btn-line big">{{ $t(('etc.join-different-number')) }}</router-link>
+    </div>
+    <!-- //201215 수정 -->
+  </div>
+</div>

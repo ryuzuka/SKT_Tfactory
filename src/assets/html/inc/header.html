@@ -1,0 +1,33 @@
+<header class="header">
+  <a v-if="type==='back' || type === 'shop'" class="btn-back" href="#" @click.prevent="goBack(routeName, routeParams)"><span class="blind">{{ $t('comm.back') }}</span></a>
+  <a v-if="type==='native'" class="btn-back" @click.prevent="callNativeBack()"><span class="blind">{{ $t('comm.back') }}</span></a>
+  <a v-if="type==='backToStore'" class="btn-back" href="/main/store"><span class="blind">{{ $t('comm.back') }}</span></a>
+
+  <router-link v-else-if="type==='home'" class="btn-home" to="/"><span class="blind">{{ $t('comm.home') }}</span></router-link>
+  <h1 v-else-if="type==='logo'" class="logo"><span class="blind">T Factory</span></h1>
+
+  <template v-if="type === 'shop'">
+    <h1 class="blind">{{ $t('comm.find-shop') }}</h1>
+    <div class="input-box">
+      <input
+        ref="input"
+        type="search"
+        :placeholder="$t('comm.search-placeholder')"
+        v-model="searchText"
+        @keyup="inputEvent($event)"
+        @keypress="inputEvent($event)"
+        @focusin="inputEvent($event)"
+        @focusout="inputEvent($event)"
+      >
+      <button type="button" class="btn-del" v-show="hasSearchText" @click="clickDelete">
+        <span class="blind">{{ $t('comm.delete') }}</span>
+      </button>
+    </div>
+    <button class="btn-search" @click="clickSearch(searchText)" :disabled="!hasSearchText">
+      <span class="blind">{{ $t('comm.search') }}</span>
+    </button>
+  </template>
+
+  <h1 v-if="title" class="page-tit">{{ title }}</h1>
+  <div v-show="isSearchFocus" class="dimm"></div>
+</header>

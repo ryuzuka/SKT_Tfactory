@@ -1,0 +1,51 @@
+<div class="contents" ref="contents">
+  <section class="row faq-header">
+    <div class="tit-wrap">
+      <h2 class="subtit">{{ $t('comm.service-center') }}</h2>
+    </div>
+    <p class="desc" v-html="$t('sev.faq-guide')">휴대폰 국번없이 <em>114</em> 또는 <em>080-011-6000(무료)</em> <br>국번없이 <em>1599-0011(유료)</em></p>
+  </section>
+  <section class="row faq-contents">
+    <div class="tit-wrap">
+      <h2 class="subtit">FAQ</h2>
+    </div>
+    <div class="tab-wrap">
+      <ul class="tabs scroll">
+        <li :class="{'active': isActiveMenu[0]}"><button @click="clickMenu(0)" type="button">전체</button></li>
+        <li :class="{'active': isActiveMenu[1]}"><button @click="clickMenu(1)" type="button">매장 이용</button></li>
+        <li :class="{'active': isActiveMenu[2]}"><button @click="clickMenu(2)" type="button">로그인</button></li>
+        <li :class="{'active': isActiveMenu[3]}"><button @click="clickMenu(3)" type="button">상담/예약</button></li>
+        <li :class="{'active': isActiveMenu[4]}"><button @click="clickMenu(4)" type="button">구매/취소</button></li>
+      </ul>
+      <section class="tab-conts active" v-if="faqList.length > 0">
+        <h3 class="blind">FAQ</h3>
+        <ul class="accrodion-faq">
+          <li v-for="(faq, index) in faqList" :class="{'active': isActiveAccordion[index]}" :key="index">
+            <div class="question">
+              <button type="button" class="btn-accor" @click="activeAccordion(index)">
+                <em class="ico-q"><span class="blind">{{ $t('sev.question') }}</span></em>
+                <span>프로그램 예약 취소는 어디서 하나요? {{ index }}</span>
+                <i class="ico-arrow"></i>
+              </button>
+            </div>
+            <div class="answer">
+              <em class="ico-a"><span class="blind">{{ $t('sev.answer') }}</span></em>
+              프로그램 예약은 아래 방법으로 취소 가능합니다.<br><br>
+
+              [로그인] &gt; [마이페이지] &gt;<br>
+              [서비스 예약 내역] &gt; [프로그램 예약 내역] &gt;<br>
+              [프로그램 취소 버튼]
+              <a href="#" class="btn-basic xsmall">프로그램 예약 내역 바로가기</a>
+            </div>
+          </li>
+        </ul>
+        <div class="btn-wrap">
+          <a href="#" class="btn-more" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
+        </div>
+      </section>
+      <section class="tab-conts" style="display: block" v-else>
+        <p class="no-content">{{ $t('sev.faq-none') }}</p>
+      </section>
+    </div>
+  </section>
+</div>

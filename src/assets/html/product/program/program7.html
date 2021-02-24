@@ -1,0 +1,66 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class7-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">EVENT</em>
+      <h2 class="details-tit"><span>T Factory 숨은 아이폰 덕후를 찾아라!</span> 덕후크루와 한판 승부!</h2>
+      <div class="tags">
+        <span class="flag-basic">아이폰덕력테스트</span>
+        <span class="flag-basic">T팩토리</span>
+      </div>
+      <p class="desc">온라인 ‘아이폰 덕력테스트’를 풀고 T Factory를 <br>방문해주세요.<br>
+        T Factory 덕후 크루가 출제하는 3문제를 모두 맞히면<br>
+        아이폰12 mini를 얻을 수 있는 <br>&lt;덕력 챔피언십&gt; 출전권이 주어집니다!<br>
+          방문 후 점수 인증만 해도 푸짐한 선물을 드립니다!</p>
+      <a href="https://bit.ly/2JWxwIh" target="_blank" class="btn-link-point">이벤트 자세히 보기<i></i></a> <!-- 201211 추가 -->
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.participate')}}</h3>
+      <ol class="step-list">
+        <li>온라인 ‘아이폰 덕력테스트’를 풀고 T Factory를 <br>방문해주세요. </li>
+        <li>스토어 내 ‘덕후 크루’를 발견하면, 온라인 덕력테스트 점수를 보여주세요. </li>
+        <li>덕후 크루가 출제하는 3문제를 풀어주세요!</li>
+        <li>3문제를 모두 맞히고, &lt;덕력 챔피언십&gt; 출전권을 SNS에 인증하면 참여 완료!</li>
+        <li>문제를 틀려도 이벤트 참여를 인증하시면 <br>다양한 선물을 드려요.</li>
+      </ol>
+      <div class="hint">
+        <div class="thumb"><img src="../../../images/program/class7-hint.png" alt=""></div>
+        <div class="texts">
+          <em>HINT</em>
+          <p>덕후 크루는 아이폰 마스터를 인증하는 밴드를 차고 있어요~</p>
+        </div>
+      </div>
+
+      <h3 class="subtit">{{ $t('prd.benefits')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class7-bnf.jpg" alt=""></div>
+      <ul class="texts-list">
+        <li>T Factory 에코백</li>
+        <li>아이폰12 mini가 걸려있는 &lt;덕력 챔피언십&gt; 출전권</li>
+        <li>귀여운 무민 키링</li>
+        <li>홍대 부스트 파크 제휴처 맛집&amp;카페 5천원 쿠폰</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.event-info') }}</h4>
+        <ul class="texts-info">
+          <li>* 본 이벤트는 12월 3일 ~ 17일 간 매장 운영시간에 맞춰 상시로 진행됩니다.</li>
+          <li>* &lt;덕력 챔피언십&gt;은 12월 19일 오후 3시에 개최됩니다. </li>
+          <li>※ 해당 이벤트는 신종 코로나19 바이러스 확산 방지 및 고객 안전을 위해 사전 안내 후 취소 될 수 있습니다. 행사 취소 시, 챔피언십 참가자께는 MMS로 개별 안내 예정입니다.</li>
+          <li>* &lt;덕력 챔피언십&gt;은 OX퀴즈 형식으로 진행되며, 참가자 전원에게는 팩토리 굿즈가 최후의 1인에게는 아이폰mini가 상품으로 주어집니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- 201211 수정 -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+  <!-- //201211 수정 -->
+</div>

@@ -1,0 +1,453 @@
+@charset "utf-8";
+@import "common/variables";
+@import "common/mixins";
+/* popup */
+.vue-dialog {
+  border-radius:4px;
+  div {
+    box-sizing: border-box;
+  }
+  .dialog-flex {
+    width: 100%;
+    height: 100%;
+  }
+  .dialog-content {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 40px 20px;
+    text-align:center;
+  }
+  .dialog-c-title {
+    font-size:18px;
+    font-weight: 500;
+  }
+  .dialog-c-text {
+    padding-top: 16px;
+    font-size:14px;
+    line-height:1.5;
+    color:#959595;
+    a {
+      text-decoration:underline;
+    }
+    strong {
+      display:block;
+      color:#000;
+      font-weight:$fw-default;
+    }
+  }
+  .dialog-c-list {
+    display:inline-block;
+    margin-top:16px;
+    li {
+      text-align:left;
+      &:before {
+        content:'';
+        display:inline-block;
+        margin-right:4px;
+        width:2px;
+        height:2px;
+        border-radius:50%;
+        background-color:#959595;
+        vertical-align:middle;
+      }
+    }
+  }
+  .dialog-terms {
+    margin-top:16px;
+    label {
+      max-width:calc(100% - 28px);
+      font-size:12px;
+      color:#505050;
+    }
+  }
+  .vue-dialog-buttons {
+    display: flex;
+    flex: 0 1 auto;
+    width: 100%;
+    &-none {
+      width: 100%;
+      padding-bottom: 15px;
+    }
+    a, button {
+      padding:16px 0;
+      height:56px;
+      &:last-of-type {
+        border-left:0;
+      }
+    }
+  }
+  .vue-dialog-button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $primary;
+    cursor: pointer;
+    box-sizing: border-box;
+    line-height: 56px;
+    height: 56px;
+    font: inherit;
+    outline: none;
+    color:$primary;
+    &:last-of-type {
+      border:0;
+      color:#fff;
+      background-color:$primary;
+    }
+  }
+}
+.vue-modal-resizer {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  background: transparent;
+  cursor: se-resize;
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    background: transparent;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #ddd;
+    border-left: 10px solid transparent;
+  }
+}
+.vue-modal-resizer.clicked::after {
+  border-bottom: 10px solid #369be9;
+}
+.v--modal-block-scroll {
+  overflow: hidden;
+  width: 100vw;
+}
+.v--modal-overlay {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 1;
+  &.scrollable {
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .v--modal-box {
+      margin-bottom: 2px;
+    }
+  }
+  .v--modal-background-click {
+    width: 100%;
+    //min-height: 100%;
+    //height: auto;
+    height:100%;
+  }
+  .v--modal-box {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height:100%;
+  }
+}
+.v--modal {
+  background-color: #fff;
+  text-align: left;
+  padding: 0;
+  border-radius:4px;
+  &.v--modal-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    top: 0;
+  }
+}
+.v--modal-top-right {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+  transition: all 0.2s;
+}
+.overlay-fade-enter,
+.overlay-fade-leave-active {
+  opacity: 0;
+}
+.nice-modal-fade-enter-active,
+.nice-modal-fade-leave-active {
+  transition: all 0.4s;
+}
+.nice-modal-fade-enter,
+.nice-modal-fade-leave-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+[class^=popup] {
+  header {
+    position:relative;
+  }
+  .btn-close {
+    position:absolute;
+    top:4px;
+    right:4px;
+    width:48px;
+    height:48px;
+    @include iconImg($x:-100px,$y:-50px);
+  }
+}
+.popup {
+  header {
+    padding:32px 20px 8px;
+    background-color:#fff;
+    h1 {
+      @include font-set18;
+      font-weight:$fw-medium;
+    }
+  }
+  .layer-cont {
+    padding:40px 20px;
+    background-color:#fff;
+    .desc {
+      margin-top:16px;
+      @include font-set14;
+      color:#787878;
+    }
+  }
+  footer {
+    background-color:#fff;
+    &.btn-wrap {
+      .btn-line, .btn-solid {
+        border-radius:0;
+      }
+    }
+  }
+  &-full {
+    height:100%;
+    header {
+      min-height:56px;
+      background-color:#fff;
+      h1 {
+        padding:13px 52px 13px 20px;
+        @include font-set20;
+        &:after {
+          content:'';
+          position:absolute;
+          left:0;
+          bottom:-12px;
+          width:100%;
+          height:12px;
+          -webkit-box-shadow:inset 0 1px 0 0 rgba(0,0,0,.04), inset 0 4px 8px 0 rgba(0,0,0,.04);
+          box-shadow:inset 0 1px 0 0 rgba(0,0,0,.04), inset 0 4px 8px 0 rgba(0,0,0,.04);
+          z-index:1;
+        }
+      }
+
+    }
+    .layer-cont {
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      height:calc(100% - 56px);
+      padding:24px 20px 20px;
+      background-color:#fff;
+    }
+  }
+}
+
+/* 서비스예약 */
+.list-service {
+  font-size:0;
+  text-align:center;
+  border:1px solid #d0d0d0;
+  li {
+    display:inline-block;
+    width:calc(100% / 3);
+    font-size:$fs-small;
+    line-height:20px;
+    text-align:center;
+    border-left:1px solid #D0D0D0;
+    &:first-of-type {
+      border-left:none;
+    }
+  }
+  a {
+    display:block;
+    padding:16px 0;
+  }
+  [class^="ico-"] {
+    width:48px;
+    height:48px;
+    @include iconImg($x:0,$y:-125px,$display:block);
+    margin:0 auto 4px;
+  }
+  .ico-program {
+    background-position:-150px -100px;
+  }
+  .ico-experience {
+    background-position:-200px -100px;
+  }
+  .ico-consult {
+    background-position:-250px -100px;
+  }
+}
+
+// 로그인 팝업
+.popup-full {
+  &.login {
+    .layer-cont {
+      padding:24px 32px 20px;
+    }
+  }
+}
+.pop-main {
+  &.v--modal-overlay .v--modal-box { background-color:transparent; }
+  .v--modal { border-radius:0; }
+  .layer {
+    &-cont {
+      position:relative;
+      height:0;
+      padding:0 0 140%;
+      border-radius:4px;
+      background-color:#fff;
+      img {
+        height:100%;
+        border-radius:4px;
+      }
+      .swiper {
+        &-pop {
+          position:absolute;
+          top:0;
+          right:0;
+          left:0;
+          height:100%;
+        }
+        &-container {
+          height:100%;
+          padding:0;
+        }
+        &-slide:only-of-type {
+          .notice-text {
+            &:after { bottom:28px; }
+            .inner { padding-bottom:20px; }
+          }
+        }
+        &-pagination-bullets {
+          bottom:28px;
+        }
+        &-pagination-bullet {
+          border-radius:0;
+          &:only-child {
+            display:none;
+          }
+        }
+      }
+    }
+    &-foot {
+      margin-top:18px;
+      .txt-chk {
+        display:block;
+        line-height:20px;
+        color:#bcbcbc;
+        input[type="checkbox"] {
+          background-color:transparent;
+          &:checked {
+            background-color:$secondary;
+          }
+        }
+        label {
+          margin-top:1px;
+          @include font-set12;
+          color:#bcbcbc;
+        }
+      }
+      .btn-close {
+        top:auto;
+        right:-12px;
+        bottom:-14px;
+        background-position:-300px -275px;
+      }
+    }
+  }
+  .notice-text {
+    @include flexbox;
+    flex-direction:column;
+    height:100%;
+    padding:28px 20px 50px;
+    color:#787878;
+    ::-webkit-scrollbar { width:1px; }
+    ::-webkit-scrollbar-track {background:#e6e6e6;}
+    ::-webkit-scrollbar-thumb {background:#505050}
+    &:after {
+      content:'';
+      display:block;
+      position:absolute;
+      bottom:50px;
+      left:20px;
+      width:calc(100% - 40px);
+      height:48px;
+      background-image:linear-gradient(rgba(255,255,255,0), #fff 50%);
+    }
+    .tit {
+      color:#000;
+      @include font-set16;
+      font-weight:$fw-medium;
+    }
+    .date {
+      display:block;
+      margin-top:4px;
+      @include font-set12;
+    }
+    .conts {
+      position:relative;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      flex:1;
+      margin:16px -4px 0 0;
+    }
+    .inner {
+      padding:0 12px 48px 0;
+      @include font-set14;
+    }
+  }
+}
+
+// 회선 선택
+.list-mobile {
+  margin-top:-32px;
+  li {
+    margin-bottom:12px;
+    &:last-of-type {
+      margin-bottom:0;
+    }
+  }
+}
+
+// QR 체크인
+.qr-chkin {
+  .qr-code {
+    width:264px;
+    margin:24px auto 20px;
+    padding:12px;
+    //background-color: #dcdcdc !important;
+    background:url(~@/assets/images/common/bg_qr.png) repeat 0 0;
+  }
+  .timer {
+    @include font-set16;
+    text-align:center;
+    span {
+      color:$primary;
+      font-weight:$fw-bold;
+    }
+  }
+}

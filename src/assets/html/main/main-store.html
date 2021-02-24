@@ -1,0 +1,275 @@
+<section class="main-store">
+  <div class="top-vis" ref="aniObj0" :class="{'ani-obj': aniObj[0]}">
+    <h1 class="main-tit">
+<!--      <span>Your Inspirational Moments</span><br>-->
+<!--      <span>{{ $t('main.store-title1-text1') }}</span><br>-->
+<!--      <span>{{ $t('main.store-title1-text2') }}</span><br>-->
+      <span>내일을 <br> 만나는 곳</span><br>
+      <span><strong class="point-text">T Factory</strong></span>
+    </h1>
+   <!-- 21.01.12 수정 : swiper로 변경 -->
+    <div class="swiper-top">
+      <swiper :options="storeSwiperOption">
+        <swiper-slide >
+          <div @click.prevent="goStoreDetailPage" class="thumb"><img src="../../images/main/main_banner_01.jpg" alt=""></div>
+        </swiper-slide>
+        <swiper-slide >
+          <div @click.prevent="goStoreDetailPage" class="thumb"><img src="../../images/main/main_banner_02.jpg" alt=""></div>
+        </swiper-slide>
+        <swiper-slide >
+          <div @click.prevent="goStoreDetailPage" class="thumb"><img src="../../images/main/main_banner_03.jpg" alt=""></div>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
+    <!-- //21.01.12 수정 : swiper로 변경 -->
+  </div>
+
+  <!-- 21.02.01 수정 : 위치이동 -->
+  <div class="row">
+    <ul class="list-main-service">
+      <li class="item1">
+        <a href="/static/index.html">
+          <h3 class="subtit" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
+            <span v-html="$t('main.store-title3-text1')"></span><br>
+            <span>{{ $t('main.store-title3-text2') }}</span>
+          </h3>
+          <span class="subtext">{{ $t('main.vr-experience') }}</span>
+          <div class="thumb" ref="aniObj3" :class="{'ani-obj': aniObj[3]}"><img src="../../images/main/store-vr.png" alt="0 Stage 홍대 주변 0을 위한 특별한 공간, 0 Stage입니다."></div> <!-- 21.01.15 수정 : alt 추가 -->
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- //21.02.01 수정 : 위치이동 -->
+
+  <div class="row">
+    <h2 class="subtit" ref="aniObj2" :class="{'ani-obj': aniObj[2]}">
+      <span><strong class="point-text">T Factory</strong></span><br>
+      <span>{{ $t('main.store-title2-text1') }}</span>
+    </h2>
+    <div class="tab-wrap">
+      <!-- 21.01.18 수정 -->
+      <ul class="tabs">
+        <li :class="{'active': tabs[0]}"><button @click="clickTabs(0)" type="button">1F</button></li>
+        <li :class="{'active': tabs[1]}"><button @click="clickTabs(1)" type="button">1.5F</button></li>
+        <li :class="{'active': tabs[2]}"><button @click="clickTabs(2)" type="button">2F</button></li>
+      </ul>
+      <section class="tab-conts" :class="{'active': tabs[0]}">
+        <h3 class="blind">1F</h3>
+        <ul class="list-main" :class="{'ani-obj': tabAniObj[0]}" ref="tabAniObj0">
+          <li v-show="tabsList[0][0].isShow">
+            <router-link to="/shop/detail/store2">
+              <div class="thumb"><img src="../../images/tfactory/zone2-top.jpg" alt=""></div>
+              <em>Factory Gate</em>
+              <p class="subtext">눈을 사로잡는 초대형 아트월,<br> T Factory의 입구</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][1].isShow">
+            <router-link to="/shop/detail/store3">
+              <div class="thumb"><img src="../../images/tfactory/zone3-top.jpg" alt=""></div>
+              <em>Flex Stage</em>
+              <p class="subtext">빠르게 변화하는 IT 트렌드를 <br>
+                만나볼 수 있는 메인 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][2].isShow">
+            <router-link to="/shop/detail/store4">
+              <div class="thumb"><img src="../../images/tfactory/zone4-top.jpg" alt=""></div>
+              <em>Bestsellers</em>
+              <p class="subtext">인기 있는 스마트폰을 직접 보고 <br>만지고 비교하는 디지털 체험 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][3].isShow">
+            <router-link to="/shop/detail/store5">
+              <div class="thumb"><img src="../../images/tfactory/zone5-top.jpg" alt=""></div>
+              <em>Security Pod</em>
+              <p class="subtext">SK텔레콤의 보안기술을 <br>
+                디지털 북으로 만날 수 있는 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][4].isShow">
+            <router-link to="/shop/detail/store6">
+              <div class="thumb"><img src="../../images/tfactory/zone6-top.jpg" alt=""></div>
+              <em>Media Pod</em>
+              <p class="subtext">드라마, 영화의 명장면을<br>
+                명대사 카드로 찾아 볼 수 있는 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][5].isShow">
+            <router-link to="/shop/detail/store7">
+              <div class="thumb"><img src="../../images/tfactory/zone7-top.jpg" alt=""></div>
+              <em>0 Favorite</em>
+              <p class="subtext">0(Young) 피플이 선택한 <br>
+                최신 디지털 제품이 가득한 쇼핑 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][6].isShow">
+            <router-link to="/shop/detail/store8">
+              <div class="thumb"><img src="../../images/tfactory/zone8-top.jpg" alt=""></div>
+              <em>Media Zone</em>
+              <p class="subtext">영화/드라마/음악/e-book 등 <br>
+                미디어 콘텐츠 무한 감상 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][7].isShow">
+            <router-link to="/shop/detail/store19">
+              <div class="thumb"><img src="../../images/tfactory/zone19-top.jpg" alt=""></div>
+              <em>T Factory 24</em>
+              <p class="subtext">스마트폰을 구매하고 구독형 상품을 언제나 <br>만나볼 수 있는 24시간 무인 매장</p>
+            </router-link>
+          </li>
+        </ul>
+        <div class="btn-wrap" v-show="tabsMore[0]">
+          <a href="#" class="btn-more" @click.prevent="clickMore(0)">{{ $t('comm.more') }}</a>
+        </div>
+      </section>
+      <section class="tab-conts" :class="{'active': tabs[1]}">
+        <h3 class="blind">1.5F</h3>
+        <ul class="list-main" :class="{'ani-obj': tabAniObj[1]}" ref="tabAniObj1">
+          <li v-show="tabsList[1][0].isShow">
+            <router-link to="/shop/detail/store9">
+              <div class="thumb"><img src="../../images/tfactory/zone9-top.jpg" alt=""></div>
+              <em>Factory Garden</em>
+              <p class="subtext">디지털 콘텐츠의 숲에서 만나는 <br>
+                자연과 함께하는 휴식 공간
+              </p>
+            </router-link>
+          </li>
+        </ul>
+        <div class="btn-wrap" v-show="tabsMore[1]">
+          <a href="#" class="btn-more" @click.prevent="clickMore(1)">{{ $t('comm.more') }}</a>
+        </div>
+      </section>
+      <section class="tab-conts" :class="{'active': tabs[2]}">
+        <h3 class="blind">2F</h3>
+        <ul class="list-main" :class="{'ani-obj': tabAniObj[2]}" ref="tabAniObj2">
+          <li v-show="tabsList[2][0].isShow">
+            <router-link to="/shop/detail/store10">
+              <div class="thumb"><img src="../../images/tfactory/zone10-top.jpg" alt=""></div>
+              <em>Consulting Lounge</em>
+              <p class="subtext">IT전문가를 만나는 1:1 상담 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][1].isShow">
+            <router-link to="/shop/detail/store11">
+              <div class="thumb"><img src="../../images/tfactory/zone11-top.jpg" alt=""></div>
+              <em>11 STREET</em>
+              <p class="subtext">11번가 인기 상품을 구매하고 <br>혜택까지 받는 쇼핑 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][2].isShow">
+            <router-link to="/shop/detail/store12">
+              <div class="thumb"><img src="../../images/tfactory/zone12-top.jpg" alt=""></div>
+              <em>Data Station</em>
+              <p class="subtext">0(Young) 피플을 위한 데이터 무료 충전소</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][3].isShow">
+            <router-link to="/shop/detail/store13">
+              <div class="thumb"><img src="../../images/tfactory/zone13-top.jpg" alt=""></div>
+              <em>Apple Zone</em>
+              <p class="subtext">아시아 최초 샵인샵 애플 스토어</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][4].isShow">
+            <router-link to="/shop/detail/store14">
+              <div class="thumb"><img src="../../images/tfactory/zone14-top.jpg" alt=""></div>
+              <em>0 Stage</em>
+              <p class="subtext">0(Young) 피플을 위한 AR, VR 체험 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][5].isShow">
+            <router-link to="/shop/detail/store15">
+              <div class="thumb"><img src="../../images/tfactory/zone15-top.jpg" alt=""></div>
+              <em>Accessory Zone</em>
+              <p class="subtext">0(Young) 피플의 잇템, <br>
+                스마트폰 액세서리 쇼핑 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][6].isShow">
+            <router-link to="/shop/detail/store16">
+              <div class="thumb"><img src="../../images/tfactory/zone16-top.jpg" alt=""></div>
+              <em>T1</em>
+              <p class="subtext">SK텔레콤의 e스포츠팀 T1의 <br>
+                초스페셜 MD가 있는 쇼핑 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][7].isShow">
+            <router-link to="/shop/detail/store17">
+              <div class="thumb"><img src="../../images/tfactory/zone17-top.jpg" alt=""></div>
+              <em>5GX Cloud Game</em>
+              <p class="subtext">Xbox 클라우드 게임을 체험할 수 있는 <br>
+                국내 최초 마이크로소프트 스토어</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][8].isShow">
+            <router-link to="/shop/detail/store18">
+              <div class="thumb"><img src="../../images/tfactory/zone18-top.jpg" alt=""></div>
+              <em>Giant Face</em>
+              <p class="subtext">인공지능을 통한 얼굴인식 게임과 <br>
+                맞춤 선곡이 가능한 음악 감상실</p>
+            </router-link>
+          </li>
+        </ul>
+        <div class="btn-wrap" v-show="tabsMore[2]">
+          <a href="#" class="btn-more" @click.prevent="clickMore(2)">{{ $t('comm.more') }}</a>
+        </div>
+      </section>
+      <!-- //21.01.18 수정 -->
+    </div>
+  </div>
+
+  <div class="row">
+    <ul class="list-main-service">
+      <li class="item2">
+        <a href="/shop/detail/store20">
+          <h3 class="subtit" ref="aniObj4" :class="{'ani-obj': aniObj[4]}">
+            <span v-html="$t('main.store-title4-text1')"></span><br>
+            <span>{{ $t('main.store-title4-text2') }}</span>
+          </h3>
+          <span class="subtext">{{ $t('main.apply-store-tour') }}</span>
+          <div class="thumb" ref="aniObj5" :class="{'ani-obj': aniObj[5]}"><img src="../../images/main/store-tour.png" alt=""></div>
+        </a>
+      </li>
+      <li class="item3">
+        <a @click.prevent="clickFlagshipBook">
+          <h3 class="subtit" ref="aniObj6" :class="{'ani-obj': aniObj[6]}">
+            <span>{{ $t('main.store-title5-text1') }}</span><br>
+            <span v-html="$t('main.store-title5-text2')"></span>
+          </h3>
+          <span class="subtext">{{ $t('main.consult-booking') }}</span>
+          <div class="thumb" ref="aniObj7" :class="{'ani-obj': aniObj[7]}"><img src="../../images/main/store-booking.jpg" alt=""></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="banner">
+      <a href="mailto:tshop_help@sktelecom.com?Subject=Tfactory%20문의하기">
+        <p v-html="$t('main.banner-contact1')"></p>
+        <span>{{ $t('main.banner-contact2') }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="row store-info">
+    <a @click.prevent="goStoreDetailPage">
+      <h2 class="subtit" ref="aniObj8" :class="{'ani-obj': aniObj[8]}">
+        <span v-html="$t('main.store-title6-text1')"></span><br>
+        <span>{{ $t('main.store-title6-text2') }}</span>
+      </h2>
+      <span class="subtext">
+        {{ $t('main.store-information') }}
+      </span>
+    </a>
+    <div id="map_div" class="map-area">
+    </div>
+    <!-- 21.01.29 수정 -->
+    <div class="addr">
+      <address><i class="ico-pin"></i>서울 마포구 양화로 144 <br>앰배서더 빌딩 1층</address>
+      <a @click.prevent="openTmap" class="btn-tmap"><span class="blind">{{ $t('shop.t-map-go') }}</span></a>
+    </div>
+    <!-- //21.01.29 수정 -->
+  </div>
+</section>

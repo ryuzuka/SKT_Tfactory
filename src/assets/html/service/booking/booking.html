@@ -1,0 +1,65 @@
+<div class="contents bottom-sticky" ref="contents"> <!-- //04.09 bottom-sticky 추가 -->
+  <!-- tab -->
+  <ul class="tabs-page">
+    <li :class="{'active': isTabActive[0]}">
+      <a @click.prevent="clickTab(0)" v-if="bookingType === 'program'" href="#">{{ $t('sev.tab-program') }}</a>
+      <a @click.prevent="clickTab(0)" v-else-if="bookingType === 'experience'" href="#">{{ $t('sev.tab-experience') }}</a>
+      <a @click.prevent="clickTab(0)" v-else-if="bookingType === 'counseling'" href="#">{{ $t('sev.tab-counseling') }}</a>
+    </li>
+    <li :class="{'active': isTabActive[1]}">
+      <a @click.prevent="clickTab(1)" href="#">{{ $t('sev.near-shop') }}</a></li>
+  </ul>
+
+  <template v-if="isTabActive[0]">
+
+    <template v-if="listData.length > 0">
+      <!-- list -->
+      <ul class="list-thumb">
+        <li v-for="item in listData">
+          <a @click.prevent="clickList(item)">
+            <p class="list-tit">{{item.NAME}}<i></i></p>
+            <div class="summary">
+              <p>{{item.DESCRIPTION}}</p>
+              <div class="thumb"><img :src="item.THUMBNAIL_IMAGE_URL" alt="" /></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="btn-wrap">
+        <a href="#" class="btn-more" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
+      </div>
+    </template>
+
+    <template v-if="listData.length === 0">
+      <!-- list none -->
+      <p v-if="bookingType === 'program'" class="no-content">{{ $t('sev.program-list-none') }}</p>
+      <p v-else-if="bookingType === 'experience'" class="no-content">{{ $t('sev.experience-list-none') }}</p>
+      <p v-else-if="bookingType === 'counseling'" class="no-content">{{ $t('sev.counseling-list-none') }}</p>
+    </template>
+  </template>
+
+  <template v-else-if="isTabActive[1]">
+    <div class="row">
+      <div class="input-box search">
+        <input
+          ref="input"
+          type="search"
+          :placeholder="$t('comm.search-placeholder')"
+          v-model="searchText"
+          @keyup="inputEvent($event)"
+          @keypress="inputEvent($event)"
+          @focusin="inputEvent($event)"
+          @focusout="inputEvent($event)"
+        >
+        <button type="button" class="btn-del" v-show="hasSearchText" @click="clickDelete">
+          <span class="blind">{{ $t('comm.delete') }}</span>
+        </button>
+        <button class="btn-search" @click="clickSearch(searchText)" :disabled="!hasSearchText">
+          <span class="blind">{{ $t('comm.search') }}</span>
+        </button>
+      </div>
+    </div>
+    <Shop :booking-type="bookingType" :select-type="selectType" :search-text="searchText"></Shop>
+  </template>
+</div>

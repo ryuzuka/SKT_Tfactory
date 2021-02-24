@@ -1,0 +1,73 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone12-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">Data Station</strong></h2>
+    <p class="desc">SK텔레콤 0teen 고객님이라면 누구나 데이터를 무료충전부터 다양한 쿠폰까지 특별하고 0(young)한 혜택을 받을 수 있습니다.</p>
+  </div>
+  <article class="row details">
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">2층 Apple Zone 옆 Wall Display</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-2f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone12-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store14">
+            <div class="thumb"><img src="../../../images/tfactory/zone14-top.jpg" alt=""></div>
+            <em>0 Stage</em>
+            <p class="subtext">0(Young) 피플을 위한 AR, VR 체험 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store13">
+            <div class="thumb"><img src="../../../images/tfactory/zone13-top.jpg" alt=""></div>
+            <em>Apple Zone</em>
+            <p class="subtext">아시아 최초 샵인샵 애플 스토어</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store15">
+            <div class="thumb"><img src="../../../images/tfactory/zone15-top.jpg" alt=""></div>
+            <em>Accessory Zone</em>
+            <p class="subtext">0(Young) 피플의 잇템, 스마트폰 액세서리 쇼핑 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

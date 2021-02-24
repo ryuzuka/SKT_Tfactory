@@ -1,0 +1,20 @@
+{
+  "name": "tplace-web",
+  "version": "1.0.0",
+  "description": "T Place 고객용 모바일 Web/App",
+  "author": "MNO AI/DT추진그룹 한민지 <minji.han@sk.com>",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "dd-trace": "^0.24.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.5",
+    "nocache": "^2.1.0",
+    "path": "^0.12.7",
+    "winston": "^3.3.3"
+  }
+}

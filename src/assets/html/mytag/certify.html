@@ -1,0 +1,23 @@
+<div class="contents" ref="contents">
+
+  <template v-if="!startCertify">
+    <p class="tit" v-html="$t('mytag.login-title')"></p>
+    <div class="btn-wrap">
+      <a class="btn-solid big" @click="clickCertifyStart">{{ $t('mytag.login-certification') }}</a> <!-- 인증번호로 로그인 시 노출 -->
+    </div>
+  </template>
+
+  <template v-if="startCertify">
+    <p class="subtit" v-html="$t(('mytag.certification-title'))"></p>
+
+    <div class="input-box">
+      <input v-model="certCode" ref="certification" type="tel" maxlength="4" id="info1-1" placeholder="****">
+    </div>
+
+    <p class="help-txt">{{ $t('mytag.certification-text1') }}<br> <a @click.prevent="reissueButton">{{ $t('mytag.reissue') }}</a>{{ $t('mytag.certification-text2') }}</p>
+
+    <div class="btn-wrap">
+      <a class="btn-solid big" @click="certify">{{ $t('mytag.certification-button') }}</a>
+    </div>
+  </template>
+</div>

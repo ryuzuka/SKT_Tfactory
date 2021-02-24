@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+//== Media queries breakpoints
+$mq-xs:	320px;
+$mq-sm:	360px;
+$mq-md:	640px;
+@mixin mq-small { // 320
+  @media (width:#{$mq-xs}) {
+    @content;
+  }
+}
+@mixin mq-medium { // 320 ~ 360
+  @media (min-width:#{$mq-xs}) and (max-width:#{$mq-sm - 1px}) {
+    @content;
+  }
+}
+@mixin mq-large { // 640 ~
+  @media (min-width:#{$mq-md}) {
+    @content;
+  }
+}
+
+// clear floating
+@mixin clearer {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// transform
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+@mixin transformOrigin($transforms) {
+  -webkit-transform-origin: $transforms;
+  transform-origin: $transforms;
+}
+@mixin transitionDuration($sec) {
+  -webkit-transition-duration: $sec;
+  transition-duration: $sec;
+}
+@mixin transitionFuntion($motion) {
+  -webkit-transition-timing-function: $motion;
+  transition-timing-function: $motion;
+}
+@mixin transitionDelay($sec) {
+  -webkit-transition-delay: $sec;
+  transition-delay: $sec;
+}
+
+// icon image
+@mixin iconImg ($bgSize:350px, $x:0, $y:0, $display: inline-block, $ratio:1) {
+  display: $display;
+  vertical-align:middle;
+  background: {
+    image:url(~@/assets/images/common/icons.svg);
+    size:($bgSize * $ratio) auto;
+    repeat:no-repeat;
+    position:($x * $ratio) ($y * $ratio);
+  }
+}
+
+// logo image
+@mixin logoImg ($bgSize:200px, $x:0, $y:0, $display: inline-block, $ratio:1) {
+  display: $display;
+  vertical-align:middle;
+  background: {
+    image:url(~@/assets/images/common/ico_logo.svg);
+    size:($bgSize * $ratio) auto;
+    repeat:no-repeat;
+    position:($x * $ratio) ($y * $ratio);
+  }
+}
+
+//ellipse
+@mixin ellipse($line) {
+  @if ($line > 1) {
+    white-space:normal;
+    word-wrap:break-word;
+    display:-webkit-box;
+    -webkit-line-clamp:$line;
+    -webkit-box-orient:vertical;
+  } @else {
+    display:block;
+    white-space:nowrap;
+  }
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+// flex setting
+@mixin flexbox {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+}
+@mixin set-middle {
+  @include flexbox;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+// font set
+@mixin font-set36 {
+  font-size:36px;
+  line-height:50px;
+  letter-spacing:-.24px;
+}
+@mixin font-set32 {
+  font-size:32px;
+  line-height:48px;
+  letter-spacing:-.21px;
+}
+@mixin font-set28 {
+  font-size:28px;
+  line-height:42px;
+  letter-spacing:-.22px;
+}
+@mixin font-set24 {
+  font-size:24px;
+  line-height:36px;
+  letter-spacing:-.18px;
+}
+@mixin font-set20 {
+  font-size:20px;
+  line-height:30px;
+  letter-spacing:-.14px;
+}
+@mixin font-set18 {
+  font-size:18px;
+  line-height:28px;
+  letter-spacing:-.12px;
+}
+@mixin font-set16 {
+  font-size:16px;
+  line-height:24px;
+  letter-spacing:-.1px;
+}
+@mixin font-set14 {
+  font-size:14px;
+  line-height:22px;
+  letter-spacing:-.08px;
+}
+@mixin font-set12 {
+  font-size:12px;
+  line-height:18px;
+  letter-spacing:-.06px;
+}

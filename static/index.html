@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SKT T Factory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./resources/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="player_container">
+        <div class="iframe_container">
+            <iframe id="webvr" src="https://eazel.net/show_vr/1bc7c32a3ee6?autoplay=1&fullscreen=1&cb=0" width="100%" height="100%" frameborder="0" allow-fullscreen>
+            </iframe>
+        </div>
+
+        <div class="vr_cover">
+            <img class="cover_img" src="resources/cover.jpg" alt="cover" />
+            <div class="play_btn">
+                <img class="play_svg" src="resources/play_btn.svg" alt="play" /> 
+            </div>
+        </div>
+
+        <div class="instruction_container">
+            <div class="logo_display">
+                <img src="resources/logo.png" alt="logo" />
+            </div>
+            <div class="instruction">
+                <div class="desktop">
+                    <img src="resources/instruction.svg" alt="instruction" />
+                </div>
+                <div class="mobile">
+                    <img src="resources/mobile_instruction_1.svg" alt="instruction" />
+                    <img src="resources/mobile_instruction_2.svg" alt="instruction" />
+                </div>
+                <div class="start_btn">
+                    <img src="resources/start_btn.svg" alt="start" />
+                </div>
+            </div>
+        </div>
+
+        <img class="close_btn" src="resources/close_btn.svg" />
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var ISMOBILE =
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+                .test(navigator.userAgent);
+
+            if (ISMOBILE) {
+                $('.player_container, .vr_cover, .instruction').addClass('touch');
+            }
+
+            $('.play_btn').click(function () {
+                $(this).fadeOut(0);
+                $('.instruction_container').fadeIn(1000);
+                $('.logo_display').delay(3000).fadeOut(1000);
+                $('.instruction').delay(5000).fadeIn(1000);
+                $('.player_container').addClass('play');
+            })
+
+            $('.start_btn').click(function () {
+                $('.instruction_container, .instruction').fadeOut(1000);
+                $('.vr_cover').fadeOut(1000);
+                $('.close_btn').fadeIn(1000);
+            })
+
+            $('.close_btn').click(function () {
+                window.history.back()
+            })
+
+            window.addEventListener('message', function(e){
+                if (e.data === 'audioOpen') {
+                    $('.close_btn').css('display', 'none');
+                } else if (e.data === 'audioClose') {
+                    $('.close_btn').css('display', 'block');
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

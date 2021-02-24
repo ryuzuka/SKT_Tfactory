@@ -1,0 +1,143 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row">
+    <!-- shop info -->
+    <section class="shop-header">
+      <div class="tags">
+        <!--        <span class="flag-recomm">{{ $t('sev.recommendation') }}</span>-->
+        <span v-if="storeDetail.STORE_TYPE === 'T Premium Store'" class="flag-solid6">T 프리미엄 스토어</span>
+      </div>
+      <div class="tit-wrap">
+        <h2 class="tit">{{storeDetail.NAME}}<span class="distance" v-if="locationAgree">{{distance}}</span>
+        </h2>
+        <a @click.prevent="openTmap" class="btn-tmap"><span class="blind">{{ $t('shop.t-map-go') }}</span></a>
+      </div>
+      <div class="shop-addr">
+        <template v-if="addressType === 'road'">
+          <button type="button" class="btn-addr" @click="addressType = 'number'">{{ $t('shop.road-address') }}</button>
+          <address>{{storeDetail.JIBUN_ADDR}}</address>
+        </template>
+        <template v-else>
+          <button type="button" class="btn-addr" @click="addressType = 'road'">{{ $t('shop.number-address') }}</button>
+          <address>{{storeDetail.ROAD_ADDR}}</address>
+        </template>
+      </div>
+      <a class="open-hour" :class="{'active': isOpenHour}"
+         @click.prevent="isOpenHour = isOpenHour ? false : true">
+        <ul>
+          <li>{{storeDetail.todayOpen}}</li>
+          <li class="last">{{storeDetail.othersOpen}}</li>
+        </ul>
+      </a>
+      <div class="rate">
+        <!--        <span class="star-rate"><span style="width:80%;"></span></span> &lt;!&ndash; 평점에 따라 width 값 변경: 1점(20%), 2점(40%), 3점(60%), 4점(80%), 5점(100%) &ndash;&gt;-->
+        <!--        <em>{{ $t('shop.grade') }}</em> <strong>4</strong>(<span class="blind">{{ $t('shop.evaluation-personnel') }}</span><span class="num">0</span>{{ $t('shop.persons') }})-->
+      </div>
+    </section>
+    <!-- 06.30 수정: 위치 이동 -->
+    <div class="contact">
+      <dl>
+        <dt>{{ $t('sev.contact-number') }}</dt>
+        <dd v-if="storeDetail.PHONE_NUMBER">{{storeDetail.PHONE_NUMBER | mdnFilter}}</dd>
+      </dl>
+      <a :href="'tel:' + storeDetail.PHONE_NUMBER" class="btn-tel"><span class="blind">{{ $t('sev.tel') }}</span></a>
+    </div>
+    <!-- //06.30 수정: 위치 이동 -->
+
+    <!-- shop info ADMIN -->
+    <div class="slider-shop" v-if="shopGalleryList.length > 0">
+      <swiper :options="shopGalleryOption" ref="shopGallerySwiper">
+        <swiper-slide v-for="(img, index) in shopGalleryList" :key="index">
+          <figure @click.prevent="readImgViewer(index)"><img src="../../images/dummy/@zone-img.jpg" alt=""></figure>
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"><span class="blind">{{ $t('prd.prev') }}</span></div>
+        <div class="swiper-button-next" slot="button-next"><span class="blind">{{ $t('prd.next') }}</span></div>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
+
+    <ul v-if="storeDetail.INTRODUCE_MSG" class="list-info">
+      <li class="item">
+        <dl>
+          <dt>{{ $t('shop.special-benefit') }}</dt>
+          <dd v-for="msg in storeDetail.INTRODUCE_MSG.split('#^')">{{msg}}</dd>
+        </dl>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- 제공 서비스 -->
+  <div class="row">
+    <ul class="list-info">
+      <li v-if="storeDetail.WORKS" class="item">
+        <dl>
+          <dt>{{ $t('shop.processable-business') }}</dt>
+          <dd class="tags">
+            <span class="flag-line1" v-for="service in storeDetail.WORKS.split(',')">{{service}}</span>
+          </dd>
+        </dl>
+      </li>
+
+      <li v-if="storeDetail.COUNSELINGS" class="item">
+        <dl>
+          <dt>{{ $t('shop.business-counseling') }}</dt>
+          <dd class="tags">
+            <span class="flag-line2" v-for="service in storeDetail.COUNSELINGS.split(',')">{{service}}</span>
+          </dd>
+        </dl>
+      </li>
+
+      <li v-if="storeDetail.EXPERIENCES" class="item">
+        <dl>
+          <dt>{{ $t('sev.experience') }}</dt>
+          <dd class="tags">
+            <span class="flag-line3" v-for="service in storeDetail.EXPERIENCES.split(',')">{{service}}</span>
+          </dd>
+        </dl>
+      </li>
+
+      <li v-if="storeDetail.PROGRAMS" class="item">
+        <dl>
+          <dt>{{ $t('sev.tab-program') }}</dt>
+          <dd class="tags">
+            <span class="flag-line4" v-for="service in storeDetail.PROGRAMS.split(',')">{{service}}</span>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 지도 및 연락처 -->
+  <div class="row">
+    <div id="map_div2" class="map-area">
+      <!--      <button class="btn-location" @click="clickLocation">-->
+      <!--        <img src="../../images/common/btn_location.svg" :alt="$t('shop.move-current-location')">-->
+      <!--      </button>-->
+      <!--      <span class="my-location" style="position:absolute; top:60px; left:200px;">-->
+      <!--        <img src="../../images/common/my_location.svg" :alt="$t('shop.my-location')">-->
+      <!--      </span>-->
+      <!--      <div class="pin active" style="position:absolute;top:70px;left:50px"><span class="blind">01</span></div>-->
+    </div>
+    <ul class="list-info">
+      <li class="item">
+        <dl>
+          <dt>{{ $t('sev.find-directions') }}</dt>
+          <dd>
+            <ul v-if="storeDetail.GUIDE" class="visit">
+              <li>
+                <p v-for="guide in storeDetail.GUIDE.split('#^')">{{guide}}<br></p>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+  <!-- button -->
+  <div class="btn-wrap sticky">
+    <a v-if="storeDetail.ZONE_YN" class="btn-line big" @click.prevent="readZone">ZONE {{ $t('comm.guide') }}</a>
+    <a v-if="storeDetail.BOOKING_YN === 1" @click.prevent="clickCounseling" class="btn-line big">{{ $t('shop.booking-business-counseling') }}
+    </a>
+  </div>
+</div>

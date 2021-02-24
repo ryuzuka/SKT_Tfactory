@@ -1,0 +1,35 @@
+<div class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <swiper v-if="productData.length > 1" :options="productSwiperOption" ref="productSwiper">
+      <swiper-slide v-for="(item, index) in productData" :key="index">
+        <img src="../../images/dummy/@product.jpg" alt="">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+    <img v-else src="../../images/dummy/@product.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <!-- 12.04 수정 -->
+    <div class="details-header">
+      <h2 class="details-tit">T Factory 셀피존 홍대점</h2> <!-- 기타 상세 페이지 일 경우 [어드민에 등록된 상품명] 노출 -->
+      <div class="date">
+        <span class="tag pay">{{ $t('prd.pay') }}</span> <!-- 유료일 경우 노출 -->
+        <span class="tag free">{{ $t('prd.free') }}</span> <!-- 무료일 경우 노출 -->
+        2020.11.21 ~ 2020.11.21
+      </div>
+    </div>
+    <!--// 12.04 수정 -->
+    <div class="details-inner">
+      어드민에 등록된 상세 정보 노출
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div class="btn-wrap sticky">
+    <a href="#" class="btn-solid">체험존 예약</a> <!-- 기타 상세 페이지 일 경우 [어드민에 등록된 버튼명] 노출 -->
+  </div>
+  <!-- //button set -->
+</div>

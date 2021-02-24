@@ -1,0 +1,125 @@
+<section class="main-program">
+  <div class="top-vis" ref="aniObj0" :class="{'ani-obj': aniObj[0]}">
+    <h1 class="main-tit">
+      <span>{{ $t('main.program-title1-text1') }}</span><br>
+      <span>{{ $t('main.program-title1-text2') }}</span><br>
+      <span><strong class="point-text">Event</strong></span>
+    </h1>
+    <!-- 21.01.25 수정 -->
+    <div class="swiper-top">
+      <swiper :options="programSwiperOption">
+<!--        <swiper-slide>-->
+<!--          <a :href="mainBannerUrl[0]">-->
+<!--            <div class="thumb"><img src="../../images/main/event-img-01.jpg" alt=""></div>-->
+<!--            <div class="texts">-->
+<!--              <span class="flag-solid7">SPECIAL</span>-->
+<!--              <strong class="tit">Galaxy S21<br>체험존</strong>-->
+<!--              <p class="desc">T팩토리에서 Galaxy Studio를 만나보세요!</p>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--        </swiper-slide>-->
+        <swiper-slide>
+          <a :href="mainBannerUrl[1]">
+            <div class="thumb"><img src="../../images/program/loveGalaxy.jpg" alt=""></div>
+            <div class="texts">
+              <span class="flag-solid7">SPECIAL</span>
+              <strong class="tit">LOVE GALAXY<br>@T Factory</strong>
+              <p class="desc">갤럭시S21 출시기념 특별 이벤트</p>
+            </div>
+          </a>
+        </swiper-slide>
+        <swiper-slide>
+          <a :href="mainBannerUrl[2]">
+            <div class="thumb"><img src="../../images/main/event-img-03.jpg" alt=""></div>
+            <div class="texts">
+              <span class="flag-solid7">MUSIC CLASS</span>
+              <strong class="tit">갤럭시로<br>한 곡 뚝딱</strong>
+              <p class="desc">워크밴드로 만드는 나만의 음악</p>
+            </div>
+          </a>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
+    <!--
+    text 포함 이미지 사용시 : event-banner-01.jpg ~ event-banner-03.jpg
+    -->
+    <!-- //21.01.25 수정 -->
+  </div>
+
+  <div class="row">
+    <h2 class="subtit" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
+      <span>{{ $t('main.program-title2-text1') }}</span><br>
+      <span><strong class="point-text">Factory Special</strong></span>
+    </h2>
+    <!-- 21.01.15 수정 -->
+    <ul class="list-program wide" ref="listAniObj0" :class="{'all': !isConcertMore, 'ani-obj': listAniObj[0]}">
+      <li v-for="specialClass in specialClasses">
+        <a :href="specialClass.PROGRAM_CLASS_LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
+          <div class="thumb"><img :src="specialClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+          <div class="info">
+            <p class="tit"><em>{{specialClass.PROGRAM_CLASS_NAME}}</em><!-- <span class="flag-basic">모집중</span> --></p>
+            <p class="subtext">{{specialClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div v-if="specialClasses.length > 3" class="btn-wrap" v-show="isConcertMore">
+      <a href="#" class="btn-more" @click.prevent="clickMore('concert')">{{ $t('comm.more') }}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2 class="subtit" ref="aniObj2" :class="{'ani-obj': aniObj[2]}">
+      <span v-html="$t('main.program-title3-text1')"></span><br>
+      <span><strong class="point-text">Factory Today</strong></span>
+    </h2>
+    <ul class="list-program" ref="listAniObj1" :class="{'all': !isSpecialMore, 'ani-obj': listAniObj[1]}">
+      <li v-for="today in todayClasses">
+        <a :href="today.PROGRAM_CLASS_LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
+          <div class="thumb"><img :src="today.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+          <p class="cate"><span>{{today.PROGRAM_CLASS_CATEGORY}}</span>
+            <br>{{today.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+          <p class="tit">{{today.PROGRAM_CLASS_NAME}}</p>
+          <p class="subtext">{{today.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+        </a>
+      </li>
+    </ul>
+    <div v-if="todayClasses.length > 4" class="btn-wrap" v-show="isSpecialMore">
+      <a href="#" class="btn-more" @click.prevent="clickMore('special')">{{ $t('comm.more') }}</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2 class="subtit" ref="aniObj3" :class="{'ani-obj': aniObj[3]}">
+      <span>{{ $t('main.program-title4-text1') }}</span><br>
+      <span><strong class="point-text">Factory Class</strong></span>
+    </h2>
+    <ul class="list-program" ref="listAniObj2" :class="{'all': !isClassMore, 'ani-obj': listAniObj[2]}">
+      <li v-for="crewClass in crewClasses">
+        <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+          <div class="lector">
+            <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+            <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+          </div>
+          <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+          <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+          <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+<!--          <span class="flag-basic">모집중</span>-->
+        </a>
+      </li>
+    </ul>
+    <div v-if="crewClasses.length > 4" class="btn-wrap" v-show="isClassMore">
+      <a href="#" class="btn-more" @click.prevent="clickMore('class')">{{ $t('comm.more') }}</a>
+    </div>
+  </div>
+
+  <div class="row">
+<!--    <div class="banner">-->
+<!--      <a href="#">-->
+<!--        <p v-html="$t('main.banner-crew1')"></p>-->
+<!--        <span>{{ $t('main.banner-crew2') }}</span>-->
+<!--      </a>-->
+<!--    </div>-->
+  </div>
+</section>

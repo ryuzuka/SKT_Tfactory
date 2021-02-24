@@ -1,0 +1,82 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone9-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">Factory Garden</strong></h2>
+    <p class="desc">디지털 콘텐츠로 채워진 콘크리트 건축물 T팩토리에서 자연을 만나 보세요.
+      커피 한 잔의 여유와 함께 휴식을 즐기실 수 있습니다.
+      커피는 2층 컨설팅 존에서 무료로 제공합니다.</p></div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../../images/tfactory/zone9-img1.jpg" alt=""></figure>
+    <figure class="thumb"><img src="../../../images/tfactory/zone9-img2.jpg" alt=""></figure>
+    <h3>Photo Spot</h3>
+    <p class="desc">T Factory에서 가장 멋진 사진을 찍을 수 있는 포토 스팟을 소개합니다. 거울을 통해 더 웅장한 자연 속에 있는 것처럼 연출해 보세요.
+      가장 멋진 인증샷을 남기고 싶으세요? 스태프에게 말씀해 주시면 촬영 전문가가 사진을 찍어 드립니다. </p>
+    <h3>Kinetic Window</h3>
+    <p class="desc">마치 바람이 드나드는 듯한 움직임을 느껴보세요.
+      나비효과 이론에서 영감을 받아 나의 존재 그리고 사람과 사람 사이의 관계에 대한 무한한 가능성의 가치를 움직임으로 표현한 작품입니다.</p>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">1.5층 공간</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-1f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone9-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store18">
+            <div class="thumb"><img src="../../../images/tfactory/zone18-top.jpg" alt=""></div>
+            <em>Giant Face</em>
+            <p class="subtext">인공지능을 통한 얼굴인식 게임과 맞춤 선곡이 가능한 음악 감상실</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store14">
+            <div class="thumb"><img src="../../../images/tfactory/zone14-top.jpg" alt=""></div>
+            <em>0 Stage</em>
+            <p class="subtext">0(Young) 피플을 위한 AR, VR 체험 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store16">
+            <div class="thumb"><img src="../../../images/tfactory/zone16-top.jpg" alt=""></div>
+            <em>T1</em>
+            <p class="subtext">SK텔레콤의 e스포츠팀 T1의 초스페셜 MD가 있는 쇼핑 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

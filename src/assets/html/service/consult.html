@@ -1,0 +1,35 @@
+<div class="contents bottom-sticky" ref="contents">
+  <section class="row booking-contents">
+    <div class="tit-wrap">
+      <h3 class="subtit"><label for="info1-1">{{ $t('sev.contact-number') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></h3>
+    </div>
+    <p class="texts-info" v-html="$t('sev.applicant-info-guide2')"></p> <!-- 07.09 문구 수정 -->
+    <div class="form-group">
+      <div class="modify">
+        <div class="input-box mobile">
+          <ui-select
+            :data="[
+              {text: '010', value: 'value0', selected: true},
+              {text: '011', value: 'value1'},
+              {text: '017', value: 'value2'},
+              {text: '018', value: 'value3'},
+              {text: '019', value: 'value4'},
+            ]"
+          ></ui-select>
+          <input ref="certification" type="tel" maxlength="8" id="info1-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
+<!--          <p>-->
+<!--            <input type="checkbox" id="info1-2" v-model="isCertificationAgree"><label for="info1-2">{{ $t('sev.agree-personal-information') }}</label>-->
+<!--            <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>-->
+<!--          </p>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="btn-wrap sticky">
+    <a  @click.prevent="consultBtnClicked" class="btn-solid big">{{ $t('sev.consult') }}</a>
+  </div>
+
+  <modals-container></modals-container>
+  <v-dialog></v-dialog>
+</div>

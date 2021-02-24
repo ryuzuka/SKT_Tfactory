@@ -1,0 +1,76 @@
+<div class="contents" ref="contents">
+  <div class="my-coupon">
+    <!-- 유의 사항 -->
+    <div class="row">
+      <dl class="accordion">
+        <dt>
+          <button type="button" class="btn-accor" :class="{'active': isCouponGuide}"
+                  @click="isCouponGuide = isCouponGuide ? Boolean(false) : Boolean(true)">{{ $t('my.coupon-guide')
+            }}<i></i></button> <!-- 활성화 시 .active 추가 -->
+        </dt>
+        <dd :class="{'active': isCouponGuide}"> <!-- 활성화 시 .active -->
+          <ul class="texts-info">
+            <li>* {{ $t('my.coupon-guide1') }}</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+
+    <!-- coupon list -->
+    <section class="row">
+      <ul v-if="myCouponList.length!==0" class="list-coupon">
+        <li v-if="myCouponList.length!==0" v-for="coupon in myCouponList">
+          <div v-if="coupon.USE_YN === 0" class="item">
+            <div class="thumb">
+              <img :src="coupon.IMAGE_URL"/>
+              <span v-if="coupon.PASS_DATE" class="flag-solid5">{{ $t('my.coupon-end') }}</span> <!-- 기간만료 -->
+            </div>
+            <div class="info">
+              <p v-if="coupon.CAN_BE_USED_COUPON_NUMBER" class="num">{{coupon.COUPON_NUMBER}}
+                <a class="btn-link"
+                   @click.prevent="copyCoupon(coupon.COUPON_NUMBER)">{{$t('my.coupon-copy')}}</a>
+              </p>
+              <p class="tit"><strong>{{coupon.TITLE}}</strong></p>
+              <p style="margin-bottom: 6px" class="date">{{coupon.START_DATE}} ~ {{coupon.EXPIRE_DATE}}</p>
+              <a v-if="coupon.DETAIL_IMAGE_URL" style="margin-left: 0px;" class="btn-link"
+                 @click.prevent="couponDetail(coupon.DETAIL_IMAGE_URL)">{{$t('my.coupon-registration-process')}}</a>
+            </div>
+          </div>
+          <div v-else class="item" disabled>
+            <div class="thumb">
+              <img :src="coupon.IMAGE_URL"/>
+              <span class="flag-solid5">{{ $t('my.coupon-used') }}</span> <!-- 사용만료 -->
+            </div>
+            <div class="info">
+              <p v-if="coupon.CAN_BE_USED_COUPON_NUMBER" class="num">{{coupon.COUPON_NUMBER}}
+              <p class="tit"><strong>{{coupon.TITLE}}</strong></p>
+              <p class="date">{{coupon.START_DATE}} ~ {{coupon.EXPIRE_DATE}}</p>
+<!--              <p class="btn-link"-->
+<!--                 @click.prevent="couponDetail">{{$t('my.coupon-registration-process')}}</p>-->
+            </div>
+          </div>
+          <p v-html="coupon.DESCRIPTION" class="desc"></p>
+          <div class="btn-wrap">
+            <button v-if="coupon.USE_YN === 1 && coupon.TYPE=='use' " class="btn-basic small" disabled>
+              {{ $t('my.coupon-check') }}
+            </button>
+            <button v-if="coupon.USE_YN === 0 && coupon.TYPE=='use' " class="btn-basic small"
+                    @click="checkCoupon(coupon.COUPON_ID)">{{ $t('my.coupon-check') }}
+            </button>
+            <button v-if="coupon.TYPE=='link' && !coupon.USE_YN" @click.prevent="openLink(coupon.LINK_URL, coupon.LINK_OPEN_TYPE)" class="btn-basic small">{{
+              $t('my.coupon-registration') }}</button> <!-- 쿠폰 등록 -->
+
+<!--            </button>-->
+<!--           <a v-if="coupon.DETAIL_IMAGE_URL" @click="couponDetail" class="btn-basic small">{{-->
+<!--              $t('my.coupon-registration-process') }}</a> &lt;!&ndash; 쿠폰 등록 상세 &ndash;&gt;-->
+          </div>
+        </li>
+      </ul>
+      <!--      <div class="btn-wrap">-->
+      <!--        <a class="btn-more">{{ $t('comm.more') }}</a>-->
+      <!--      </div>-->
+
+      <p v-if="myCouponList.length==0" class="no-content">{{ $t('my.coupon-list-none') }}</p>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="contents" ref="contents">
+  <p class="tit" v-html="$t('sso.login-title')"></p>
+  <p v-html="$t('sso.description')"></p>
+  <p class="help-txt">{{ $t('sso.guide1') }} <a v-on:click="_tidJoinRedirect" >{{ $t('sso.member-join') }}</a> {{ $t('sso.guide2') }}</p>
+  <div v-on:click="_tidLoginRedirect" class="btn-wrap">
+    <a class="btn-solid big">{{ $t('sso.button-text') }} <i class="ico-check"></i></a>
+  </div>
+</div>

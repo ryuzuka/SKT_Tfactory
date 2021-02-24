@@ -1,0 +1,57 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class10-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">OPEN STAGE</em>
+      <h2 class="details-tit">브로콜리 너마저</h2>
+      <div class="tags">
+        <span class="flag-basic">비 정기</span>
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.band-introduction')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class10-conts.jpg" alt=""></div>
+      <p>
+        많은 이들에게 '청춘을 노래하는 밴드'로 널리 알려진 밴드 브로콜리너마저는 2008년 데뷔 이후 1집 '보편적인 노래', 2집 '졸업'으로
+        많은 사랑을 받았으며 최근 3집 '속물들'을 발표하며 활발히 활동하고 있다.<br><br>
+        이제는 '청춘'을 넘어 '삶'을 이야기하는 밴드로서, 진솔한 메시지를 담은 울림이 있는 가사와 담백한 사운드로 대체 불가능한 감성을 꾸준히 선보이고 있다.<br><br>
+        2010년과 2011년 연속으로 한국 대중음악상 모던록 노래 부분을 수상하였으며, '보편적인 노래'는 '시인들이 뽑은 가사가 아름다운 노래'로 꼽히기도 했다.
+      </p>
+
+      <!-- 201211 수정 -->
+      <div v-if="bookingAvailable">
+        <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+        <p>12월 31일 목요일 저녁, T Factory 2F, 0 Stage</p>
+
+        <h3 class="subtit">{{ $t('prd.guide')}}</h3>
+        <p>코로나 블루를 날려버리고, 해피 엔딩을 맞이하자는 의미로
+          12월 오픈 스테이지는 당첨고객 대상 무료로 진행됩니다.</p>
+        <ul class="texts-info type2">
+          <li>* 현재 온라인 라이브 스테이지를 준비 중이며, 자세한 사항은 <br>T Factory 홈페이지에서 12월 20일 이후에 확인하세요.  </li>
+        </ul>
+      </div>
+      <div v-else>
+        <div class="notice">
+          <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+          <ul class="texts-info">
+            <li>※ 본 행사는 코로나19 감염증 확산 방지를 위해 잠정 연기 되었습니다. 추후 진행 일정이 확정되면 다시 안내드리겠습니다.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- //201211 수정 -->
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

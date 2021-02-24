@@ -1,0 +1,82 @@
+<section class="popup-full mytag">
+  <header>
+    <h1>{{ $t('mytag.mytag') }}</h1>
+    <a class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <!-- default -->
+    <div class="survey-default" v-show="!isStart">
+
+      <p v-if="myTag.length == 0" class="tit" v-html="$t('mytag.mytag-title1')"></p>
+      <p v-if="myTag.length > 0" class="tit" v-html="$t('mytag.mytag-title2')"></p>
+
+      <div class="btn-wrap unset">
+        <a class="btn-solid big" @click="start">{{ $t('mytag.mytag-start-button') }}</a>
+        <a class="btn-line big" @click="close">{{ $t('mytag.mytag-next-button') }}</a>
+      </div>
+    </div>
+
+    <!-- 타사 고객 또는 성별, 연령대 정보 없는 경우 : 09.08 추가 -->
+    <div class="survey-chk" v-show="isStart && !sexageKnownFlag">
+      <p class="subtit" v-html="$t('mytag.mytag-birth')"></p>
+      <dl class="birth-wrap">
+        <dt>{{ $t('mytag.mytag-gender') }}</dt>
+        <dd>
+          <ul class="list-option col2">
+            <li><input v-model="selectedSex" value="male" type="radio" name="option1" id="option1-1" checked><label
+              for="option1-1">{{ $t('comm.man') }}</label></li>
+            <li><input v-model="selectedSex" value="female" type="radio" name="option1" id="option1-2"><label
+              for="option1-2">{{ $t('comm.woman') }}</label></li>
+          </ul>
+        </dd>
+        <dt>{{ $t('mytag.mytag-age') }}</dt>
+        <dd>
+          <ul class="list-option col3">
+            <li><input v-model="selectedAge" value="3" type="radio" name="option2" id="option2-1" checked><label
+              for="option2-1">{{ $t('mytag.mytag-age1') }}</label></li>
+            <li><input v-model="selectedAge" value="9" type="radio" name="option2" id="option2-2"><label
+              for="option2-2">{{ $t('mytag.mytag-age2') }}</label></li>
+            <li><input v-model="selectedAge" value="15" type="radio" name="option2" id="option2-3"><label
+              for="option2-3">{{ $t('mytag.mytag-age3') }}</label></li>
+            <li><input v-model="selectedAge" value="21" type="radio" name="option2" id="option2-4"><label
+              for="option2-4">{{ $t('mytag.mytag-age4') }}</label></li>
+            <li><input v-model="selectedAge" value="26" type="radio" name="option2" id="option2-5"><label
+              for="option2-5">{{ $t('mytag.mytag-age5') }}</label></li>
+            <li><input v-model="selectedAge" value="35" type="radio" name="option2" id="option2-6"><label
+              for="option2-6">{{ $t('mytag.mytag-age6') }}</label></li>
+            <li><input v-model="selectedAge" value="45" type="radio" name="option2" id="option2-7"><label
+              for="option2-7">{{ $t('mytag.mytag-age7') }}</label></li>
+            <li><input v-model="selectedAge" value="55" type="radio" name="option2" id="option2-8"><label
+              for="option2-8">{{ $t('mytag.mytag-age8') }}</label></li>
+            <li><input v-model="selectedAge" value="65" type="radio" name="option2" id="option2-9"><label
+              for="option2-9">{{ $t('mytag.mytag-age9') }}</label></li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="btn-wrap sticky">
+        <a class="btn-line big" @click.prevent="prev('start')">{{ $t('mytag.prev') }}</a>
+        <a class="btn-solid big" @click.prevent="next">{{ $t('mytag.next') }}</a>
+      </div>
+    </div>
+    <!--// 타사 고객 또는 성별, 연령대 정보 없는 경우 : 09.08 추가 -->
+
+    <!-- survey -->
+    <div class="survey-chk" v-show="isStart && sexageKnownFlag">
+      <p class="subtit" v-html="$t('mytag.mytag-description')"></p>
+      <div class="tag-wrap">
+        <ul class="tag-option">
+          <!--          <li  v-for="(tag, index) in tagList" v-if="recoTagForColor.includes(tag.MYTAG_ID)" class="type_reco">-->
+          <li v-for="(tag, index) in tagList"
+              :class="recoTagForColor.includes(tag.MYTAG_ID) ? 'type_reco': `type${(index%4 +1)}`">
+            <input v-model="selectedTag" :value=tag type="checkbox" name="option" :id="'option' + index">
+            <label :for="'option' + index">{{tag.NAME}}</label>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-wrap sticky">
+        <a class="btn-line big" @click.prevent="prev('age')">{{ $t('mytag.prev') }}</a>
+        <a class="btn-solid big" @click.prevent="selectComplete">{{ $t('mytag.complete') }}</a>
+      </div>
+    </div>
+  </div>
+</section>

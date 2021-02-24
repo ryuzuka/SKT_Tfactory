@@ -1,0 +1,19 @@
+<div class="contents" ref="contents">
+  <div class="checkin register">
+    <div class="top">
+      <p class="tit" v-html="$t('sso.please-quick-checkin-registraion-face')"></p>
+      <p v-html="$t('sso.guide-quick-checkin-registration')"></p>
+    </div>
+    <div class="info">
+      <div class="terms">
+        <input type="checkbox" name="agree-terms" id="terms0">
+        <label for="terms0">{{ $t('sso.quick-checkin-registration') }}</label>
+        <router-link to="/policy/bio"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+      </div>
+      <p class="help-txt">{{ $t('sso.quick-checkin-registration-text') }}</p>
+      <div class="btn-wrap">
+        <a href="#" class="btn-solid big" @click.prevent="agreePhoto">{{ $t('sso.agree-photo') }}</a>
+      </div>
+    </div>
+  </div>
+</div>

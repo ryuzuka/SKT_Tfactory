@@ -1,0 +1,70 @@
+<div class="contents main" ref="contents">
+  <!-- 21.01.15 수정 -->
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../images/tfactory/zone1-top.jpg" alt=""></div>
+    <h2 class="main-tit"><strong class="point-text">T Factory</strong>를<br>소개합니다</h2>
+    <p class="desc">SK텔레콤의 플래그십 스토어 T팩토리를 소개합니다.
+      T팩토리의 "T"는 기술(Technology)과 미래(Tomorrow)를, "Factory"는 끊임 없이 새로운 콘텐츠가 생산되는 창의적인 공간을 의미합니다.
+      SK텔레콤이 선보이는 다양한 ICT 서비스는 물론, 크루들이 제공하는 흥미로운 클래스까지! 기술과 문화를 아우르는 내일의 즐거움을 체험해 보세요.</p>
+  </div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../images/tfactory/zone1-img1.jpg" alt=""></figure>
+    <h3>첫 번째 Flagship Store</h3>
+    <p class="desc">SK텔레콤의 첫 플래그십 스토어! SK텔레콤이 추구하는 가치를 누구나 자유롭게 경험할 수 있는 공간입니다.</p>
+    <figure class="thumb"><img src="../../images/tfactory/zone1-img2.jpg" alt=""></figure>
+    <figure class="thumb"><img src="../../images/tfactory/zone1-img3.jpg" alt=""></figure>
+    <h3>Your Inspirational Moments</h3>
+    <p class="desc">그리 멀지 않은 내일, 우리의 삶은 어떤 모습일까요?
+      T팩토리는 일상 가까이에 있는 변화를 한 걸음 빠르게 여러분과 함께 만들어 가고자 합니다.
+      T팩토리에서 다양한 콘텐츠를 체험하다 보면,
+      더 나은 내일을 위한 새로운 영감이 떠오를지도 몰라요!</p>
+
+    <!-- 동영상 -->
+    <div class="media">
+      <div class="inner">
+        <iframe src="https://www.youtube.com/embed/hKMcq7MpsDg" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <h3>체험과 휴식이 공존하는 공간</h3>
+    <p class="desc">SK Telecom 플래그십 스토어 T Factory를<br>
+      AI NUGU와 T Factory 크루들이 함께 소개합니다.</p>
+
+    <!-- 지도 : T Factory 상세의 경우 -->
+    <div class="store-info">
+      <h3>홍대 {{ $t('shop.map-title') }}</h3>
+      <div id="map_div" class="map-area">
+      </div>
+      <!-- 21.01.29 수정 -->
+      <div class="addr">
+        <address><i class="ico-pin"></i>서울 마포구 양화로 144 <br>앰배서더 빌딩 1층</address>
+        <a @click.prevent="openTmap" class="btn-tmap"><span class="blind">{{ $t('shop.t-map-go') }}</span></a>
+      </div>
+      <!-- //21.01.29 수정 -->
+    </div>
+  </article>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

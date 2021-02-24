@@ -1,0 +1,97 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone15-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">Accessory Zone</strong></h2>
+    <p class="desc">당신의 스마트 라이프를 더 풍성하게 만들어 줄 제품을 소개합니다.
+      보조배터리, 충전기, 메모리 카드부터 신진 작가들과 함께 작업한 감성적인 폰 케이스까지 만나보세요.</p></div>
+  <article class="row details">
+    <h3>Mobile Acc</h3>
+    <p class="desc">보조배터리, 케이블, 휴대폰 액정 보호 필름 등 스마트한 모바일 라이프에 꼭 필요한 아이템들을 구매하실 수 있습니다.</p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone15-img1.jpg" alt=""></figure>
+    <h3>T Retro Edition</h3>
+    <p class="desc">액세서리 존의 인기 아이템! SK텔레콤의 레전드 브랜드들을 테마로 제작한 T Retro Edition을 만나보세요.</p>
+    <h3>Urban Sophistication</h3>
+    <p class="desc">유머러스하면서도 감각적인 미국 브랜드 Urban Sophistication의 케이스로 힙 지수를 올려보는 것도 좋겠죠.</p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone15-img2.jpg" alt=""></figure>
+    <h3 class="align-type1">Case Yourself</h3>
+    <p class="desc align-type1">T Factory가 엄선한 스티커들로 하나뿐인 나만의 폰 케이스를 꾸며보세요. 함께 비치된 SK텔레콤의 귀여운 로고 스티커들은 무료로 제공됩니다.</p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone15-img3.jpg" alt=""></figure>
+    <h3>GRAFOLIO</h3>
+    <p class="desc">창작자들의 놀이터 Grafolio의 인기 일러스트 작가 작품을 모바일 액세서리로 만날 수 있는 곳입니다. </p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone15-img4.jpg" alt=""></figure>
+    <h3>바로 구매하기</h3>
+    <p class="desc">이제 기다림없이 바로 구매하세요.
+      상품을 계산대로 가져가지 않고도 휴대폰을 이용하여 바로 결제하실 수 있습니다.</p>
+    <ol class="step-list">
+      <li>판매 상품 포장 뒷면의 QR코드를 확인해주세요.</li>
+      <li>휴대폰 카메라로 QR코드를 스캔하세요.</li>
+      <li>연결된 페이지에서 T아이디로 로그인을 하고 일반결제 또는 SK Pay를 이용하여 결제를 해주세요.</li>
+      <li>구매 완료! 결제하신 제품은 자동으로 보안이 해제되어 바로 매장 밖으로 가지고 나가실 수 있습니다.</li>
+    </ol>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">2층 Apple Zone 좌측 Wall Display</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-2f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone15-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store13">
+            <div class="thumb"><img src="../../../images/tfactory/zone13-top.jpg" alt=""></div>
+            <em>Apple Zone</em>
+            <p class="subtext">아시아 최초 샵인샵 애플 스토어</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store7">
+            <div class="thumb"><img src="../../../images/tfactory/zone7-top.jpg" alt=""></div>
+            <em>0 Favorite</em>
+            <p class="subtext">0(Young) 피플이 선택한 최신 디지털 제품이 가득한 쇼핑 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store8">
+            <div class="thumb"><img src="../../../images/tfactory/zone8-top.jpg" alt=""></div>
+            <em>Media Zone</em>
+            <p class="subtext">영화/드라마/음악/e-book 등 미디어 콘텐츠 무한 감상 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}
+              </p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

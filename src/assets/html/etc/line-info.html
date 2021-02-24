@@ -1,0 +1,26 @@
+<div class="contents" ref="contents">
+  <div class="line-header row">
+    <h2 class="tit">{{ $t('etc.line-list') }}</h2>
+    <p v-html="$t('etc.line-text')"></p>
+  </div>
+
+  <div class="row">
+    <ul class="line-list">
+      <li v-for="(line, index) in lineList" :key="index">
+        <span class="standard" v-if="line.REPRESENT_YN">{{ $t('etc.standard') }}</span>
+        <span class="num">{{ line.MDN | mdnFilter}}</span>
+        <button v-if="lineList.length > 1" class="btn-layer" @click="showMore(index)"><span class="blind">{{ $t('comm.more') }}</span></button>
+        <div class="layer-manage" style="display: block" v-show="line.isMore && lineList.length > 1">
+          <ul>
+            <li v-if="!line.REPRESENT_YN"><button @click="setStandardLine(line)">{{ $t('etc.set-standard-line') }}</button></li>
+            <li><button @click="deleteLine(line)">{{ $t('etc.delete-line') }}</button></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <div class="btn-wrap">
+      <router-link to="/combine" class="btn-more">{{ $t('etc.combine') }}</router-link>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="contents" ref="contents">
+  <div class="row pay-fail">
+
+    <i class="ico-notice"></i>
+    <p class="tit" v-html="$t('pay.pay-fail-title')">죄송합니다.<br>결제가 정상적으로<br>이루어지지 않았습니다.</p>
+    <p class="desc" v-html="$t('pay.pay-fail-txt')">구매상품과 결제수단을 확인하신 후<br>다시 시도해 주세요.</p>
+
+    <div @click="retryPayBtn" class="btn-wrap">
+      <a class="btn-line big">다시 시도</a>
+    </div>
+  </div>
+
+  <Footer></Footer>
+
+  <modals-container></modals-container>
+</div>

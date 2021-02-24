@@ -1,0 +1,80 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone19-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">T Factory 24</strong></h2>
+    <p class="desc">
+      365일 24시간 SK텔레콤의 서비스를 체험하고 상품을 구매하실 수 있습니다.
+      늦은 밤에도 T Factory24를 방문하면, 5분 만에 스마트폰 구매 끝!
+    </p>
+  </div>
+  <article class="row details">
+    <h3>(왼쪽) 체험 섹션</h3>
+    <p class="desc">베스트셀러, Game Pass Ultimate, FLO, wavve를 체험하실 수 있습니다.</p>
+    <h3>(오른쪽) 리테일 섹션</h3>
+    <p class="desc">키오스크를 통해 셀프로 기기변경 및 개통하실 수 있습니다. 옆에 있는 자판기에서는 액세서리 및 기기를 구매하실 수 있습니다.</p>
+    <figure class="thumb"><img src="../../../images/tfactory/zone19-img1.jpg" alt=""></figure>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">1층 전면 24시간 무인매장 공간</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-1f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone19-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store4">
+            <div class="thumb"><img src="../../../images/tfactory/zone4-top.jpg" alt=""></div>
+            <em>Bestsellers</em>
+            <p class="subtext">인기 있는 스마트폰을 직접 보고 만지고 비교하는 디지털 체험 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store10">
+            <div class="thumb"><img src="../../../images/tfactory/zone10-top.jpg" alt=""></div>
+            <em>Consulting Zone</em>
+            <p class="subtext">IT전문가를 만나는 1:1 상담 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store3">
+            <div class="thumb"><img src="../../../images/tfactory/zone3-top.jpg" alt=""></div>
+            <em>Flex Stage</em>
+            <p class="subtext">빠르게 변화하는 IT 트렌드를 만나볼 수 있는 메인 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

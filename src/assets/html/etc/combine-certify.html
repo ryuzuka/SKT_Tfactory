@@ -1,0 +1,16 @@
+<div class="contents" ref="contents">
+  <p class="tit" v-html="$t(('mytag.certification-title-6num'))"></p>
+
+  <div class="input-box">
+    <input v-model="certCode" ref="certification" type="tel" maxlength="6" id="info1-1" placeholder="******">
+  </div>
+
+  <p class="help-txt">
+    {{ $t('mytag.certification-text1') }}<br>
+    <router-link to="/combine">{{ $t('mytag.reissue') }}</router-link>{{ $t('mytag.certification-text2') }}
+  </p>
+
+  <div class="btn-wrap">
+    <a class="btn-solid big" href="#none" @click.prevent="certify">{{ $t('mytag.certification-button') }} <i class="ico-check"></i></a>
+  </div>
+</div>

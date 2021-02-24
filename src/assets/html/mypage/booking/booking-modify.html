@@ -1,0 +1,239 @@
+<div class="contents bottom-sticky" ref="contents">
+
+  <section class="row booking-contents">
+    <div class="tit-wrap">
+      <h3 class="subtit">{{ $t('my.shop-name') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
+<!--      <a v-if="bookingType === 'program' || bookingType === 'experience'" class="btn-basic xsmall" @click.prevent="clickChangeShop">{{ $t('sev.change') }}</a> &lt;!&ndash; 04.16 수정 &ndash;&gt;-->
+    </div>
+    <div class="store">
+      <dl class="info">
+        <dt>{{storeInfo.NAME}}</dt>
+        <dd>{{storeInfo.ROAD_ADDR}}</dd>
+      </dl>
+      <a class="btn-map" @click.prevent="clickReadMap"><span class="blind">{{ $t('sev.read-map') }}</span></a>
+    </div>
+  </section>
+
+  <section class="row booking-contents">
+    <div class="tit-wrap">
+      <h3 class="subtit">
+        <template v-if="bookingType === 'program'">{{ $t('sev.program') }} </template>
+        <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }} </template>
+        <template v-else-if="bookingType === 'counseling'">{{ $t('sev.visit-purpose') }} </template>
+        {{ $t('comm.select') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span>
+      </h3>
+    </div>
+    <dl v-if="bookingType === 'program'" class="info">{{bookInfo.PROGRAM_CLASS_NAME}}</dl>
+    <ui-select v-if="bookingType === 'counseling'"
+      v-model="selectedService"
+      :data="counselingList"
+    ></ui-select>
+  </section>
+
+  <!-- 날짜/시간 선택 -->
+  <section class="row booking-contents">
+    <div class="tit-wrap">
+      <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
+      <time v-if="bookingType === 'counseling'" class="date">{{ selectedDateText }}</time>
+    </div>
+
+    <ui-select v-if="bookingType === 'program'"
+               :data="programTimeList"
+               v-model="selectedProgram"
+    ></ui-select>
+
+    <swiper v-if="bookingType === 'counseling'" class="datepicker" :options="swiperOption">
+      <swiper-slide style="width: auto">
+        <ul class="list-date">
+          <li v-for="(date, index) in dateList" :key="index">
+            <input
+              type="radio"
+              name="date"
+              :id="'date' + index"
+              :value="date.year + '.' + date.month + '.' + date.date"
+              :disabled="false"
+              v-model="selectedDate"
+              @change="selectDate(selectedDate)"
+            >
+            <label :for="'date' + index">
+              <span v-if="index === 0">{{ $t('sev.today') }}</span>
+              <span v-if="index > 0">{{ date.day }}</span>
+              <span class="date">{{ parseInt(date.date) }}</span>
+            </label>
+          </li>
+        </ul>
+      </swiper-slide>
+      <div class="swiper-scrollbar" slot="scrollbar"></div>
+    </swiper>
+
+    <!-- 시간 선택 -->
+    <ul v-if="bookingType === 'counseling'" class="list-option col4">
+      <li v-for="(time, index) in timeList">
+        <input
+          type="radio"
+          name="selected-time"
+          :id="'selected-time-' + index"
+          :value="time.TIMETABLE_ID"
+          v-model="selectedTime"
+          @change="selectTime(time.isBooked)"
+          :disabled="time.disabled"
+        >
+        <!-- :value(test) -->
+        <label :for="'selected-time-' + index">{{time.START_TIME}}</label>
+        <span class="num">{{time.BOOKING_COUNT}}/{{time.CAPACITY}}</span>
+      </li>
+
+<!--      &lt;!&ndash; ex) 대기접수 &ndash;&gt;-->
+<!--      <li v-if="bookingType === 'program'">-->
+<!--        <input type="radio" name="option2" id="option2-4" @change="selectTime('standby')">-->
+<!--        <label for="option2-4">10:30</label>-->
+<!--        <span class="info" v-if="bookingType !== 'experience'">{{ $t('sev.standby') }}</span>-->
+<!--      </li>-->
+<!--      <li v-else>-->
+<!--        <input type="radio" name="option2" id="option2-4">-->
+<!--        <label for="option2-4">10:30</label>-->
+<!--        <span class="num" v-if="bookingType !== 'experience'">13/25</span>-->
+<!--      </li>-->
+
+<!--      <li>-->
+<!--        <input type="radio" name="option2" id="option2-5" disabled>-->
+<!--        <label for="option2-5">11:00</label>-->
+<!--        <span class="num" v-if="bookingType !== 'experience'">25/25</span>-->
+<!--      </li>-->
+    </ul>
+
+    <p class="texts-info" v-if="bookingType === 'program'">* {{ $t('sev.date-info') }}</p>
+  </section>
+
+  <!-- 수강생 정보 : 프로그램 선택 -->
+<!--  <template v-if="bookingType === 'program'">-->
+<!--    &lt;!&ndash; 07.09 수정: sms 인증 삭제 &ndash;&gt;-->
+<!--    <section class="row booking-info">-->
+<!--      <div class="tit-wrap">-->
+<!--        <h3 class="subtit">{{ $t('sev.applicant-info') }}</h3>-->
+<!--      </div>-->
+<!--      <dl class="form-group-row">-->
+<!--        <dt>{{ $t('comm.name') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></dt>-->
+<!--        <dd>김티플</dd>-->
+<!--      </dl>-->
+<!--      <dl class="form-group-row">-->
+<!--        <dt><label for="info1-1">{{ $t('sev.contact-number') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></dt>-->
+<!--        <dd class="texts-info" v-html="$t('sev.applicant-info-guide')">* 신청자 연락처로 안내 문자가 전송됩니다. <br>정확한 연락처를 입력해 주세요.</dd>-->
+<!--        <dd class="modify">-->
+<!--          <div class="input-box mobile">-->
+<!--            <ui-select-->
+<!--              :data="[-->
+<!--              {text: '010', value: 'value0', selected: true},-->
+<!--              {text: '011', value: 'value1'},-->
+<!--              {text: '017', value: 'value2'},-->
+<!--              {text: '018', value: 'value3'},-->
+<!--              {text: '019', value: 'value4'},-->
+<!--            ]"-->
+<!--            ></ui-select>-->
+<!--            <input ref="certification" type="tel" maxlength="8" id="info1-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">-->
+<!--            <p>-->
+<!--              <input type="checkbox" id="info1-2"><label for="info1-2">{{ $t('sev.agree-personal-information') }}</label>-->
+<!--              <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </dd>-->
+<!--      </dl>-->
+<!--    </section>-->
+<!--    &lt;!&ndash; // 07.09 수정 &ndash;&gt;-->
+<!--    <section class="row booking-info">-->
+<!--      <div class="tit-wrap">-->
+<!--        <h3 class="subtit">{{ $t('sev.student-info') }}</h3>-->
+<!--      </div>-->
+<!--      <dl class="form-group">-->
+<!--        <dt>-->
+<!--          <label for="info3-1">{{ $t('sev.student') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label>-->
+<!--          <span class="chk-side"><input type="checkbox" id="info3-2" ref="student"><label for="info3-2">{{ $t('sev.applicant-same') }}</label></span>-->
+<!--        </dt>-->
+<!--        <dd class="input-box"><input ref="student" type="text" id="info3-1" :placeholder="$t('comm.input-name')"></dd>-->
+<!--        <dt><label for="info4">{{ $t('sev.student-number') }}</label></dt>-->
+<!--        <dd class="input-box mobile">-->
+<!--          &lt;!&ndash; 07.09 추가 &ndash;&gt;-->
+<!--          <ui-select-->
+<!--            :data="[-->
+<!--              {text: '010', value: 'value0', selected: true},-->
+<!--              {text: '011', value: 'value1'},-->
+<!--              {text: '017', value: 'value2'},-->
+<!--              {text: '018', value: 'value3'},-->
+<!--              {text: '019', value: 'value4'},-->
+<!--            ]"-->
+<!--          ></ui-select>-->
+<!--          &lt;!&ndash; //07.09 추가 &ndash;&gt;-->
+<!--          <input type="tel" maxlength="8"  id="info4" :placeholder="$t('comm.only-number')"> &lt;!&ndash; 07.09 maxlength 추가 &ndash;&gt;-->
+<!--        </dd>-->
+<!--        <dt>{{ $t('sev.applicant-relationship') }}</dt>-->
+<!--        <dd class="input-box">-->
+<!--          <ui-select-->
+<!--            :data="[-->
+<!--                {text: $t('sev.principal'), value: 'value0', selected: true},-->
+<!--                {text: $t('sev.spouse'), value: 'value1'},-->
+<!--                {text: $t('sev.parent'), value: 'value2'},-->
+<!--                {text: $t('sev.children'), value: 'value3'},-->
+<!--                {text: $t('sev.grand-parent'), value: 'value4'},-->
+<!--                {text: $t('comm.etc'), value: 'value5'}-->
+<!--              ]"-->
+<!--          ></ui-select>-->
+<!--        </dd>-->
+<!--      </dl>-->
+<!--      <dl class="form-group">-->
+<!--        <dt>{{ $t('sev.student-age-group') }}</dt>-->
+<!--        <dd>-->
+<!--          <ul class="list-option col3">-->
+<!--            <li><input type="radio" name="option" id="option1" checked><label for="option1">20{{ $t('sev.age-group-under') }}</label></li>-->
+<!--            <li><input type="radio" name="option" id="option2"><label for="option2">20{{ $t('sev.age-group') }}</label></li>-->
+<!--            <li><input type="radio" name="option" id="option3"><label for="option3">30{{ $t('sev.age-group') }}</label></li>-->
+<!--            <li><input type="radio" name="option" id="option4"><label for="option4">40{{ $t('sev.age-group') }}</label></li>-->
+<!--            <li><input type="radio" name="option" id="option5"><label for="option5">50{{ $t('sev.age-group') }}</label></li>-->
+<!--            <li><input type="radio" name="option" id="option6"><label for="option6">60{{ $t('sev.age-group-over') }}</label></li>-->
+<!--          </ul>-->
+<!--        </dd>-->
+<!--        <dt>{{ $t('sev.student-sex') }}</dt>-->
+<!--        <dd>-->
+<!--          <input type="radio" name="rdo1" id="rdo1-1" checked><label for="rdo1-1">{{ $t('comm.man') }}</label>-->
+<!--          <input type="radio" name="rdo1" id="rdo1-2"><label for="rdo1-2">{{ $t('comm.woman') }}</label>-->
+<!--        </dd>-->
+<!--      </dl>-->
+<!--    </section>-->
+<!--  </template>-->
+
+  <template>
+    <section class="row booking-contents">
+      <div class="tit-wrap">
+        <h3 class="subtit"><label for="info2-1">{{ $t('sev.contact-number') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></h3>
+      </div>
+      <p class="texts-info" v-html="$t('sev.applicant-info-guide2')"></p>
+      <div class="form-group">
+        <div class="modify">
+          <div class="input-box mobile">
+            <ui-select
+              :data="[
+              {text: '010', value: 'value0', selected: true},
+              {text: '011', value: 'value1'},
+              {text: '017', value: 'value2'},
+              {text: '018', value: 'value3'},
+              {text: '019', value: 'value4'},
+            ]" class="reverse"
+            ></ui-select>
+            <input ref="certification" type="tel" maxlength="8" id="info2-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
+<!--            <p>-->
+<!--              <input type="checkbox" id="info2-2" v-model="isCertificationAgree"><label for="info2-2">{{ $t('sev.agree-personal-information') }}</label>-->
+<!--              <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>-->
+<!--            </p>-->
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+  <!-- //06.05 추가, 07.09 수정 -->
+
+  <div class="btn-wrap sticky">
+    <!-- 프로그램, 체험존 -->
+    <a v-if="bookingType === 'program'" class="btn-solid big" @click.prevent="nextButton">{{ $t('my.modify-complete') }} <i class="ico-check"></i></a>
+    <!-- 상담 -->
+    <a v-else class="btn-solid big" @click.prevent="nextButton">{{ $t('comm.next') }}</a> <!-- 설문 팝업으로 이동 -->
+  </div>
+</div>

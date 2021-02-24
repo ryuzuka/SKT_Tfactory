@@ -1,0 +1,50 @@
+<div class="contents" ref="contents">
+  <p class="subtit" v-html="$t(('mytag.reissue-title'))"></p>
+  <div class="input-box">
+    <input ref="certification" type="tel" maxlength="11" id="info1-1" v-model="number" placeholder="**********">
+    <!-- 10.12 약관 수정 -->
+    <div v-if="!couponFlag" class="terms">
+      <div class="agree-box">
+        <input type="checkbox" name="terms-privacy" id="privacy-all" v-model="checkAll[0]" @change="changeTermsCheck(0, 'all')"><label
+        for="privacy-all">전체 동의</label>
+        <ul class="list-terms">
+          <li>
+            <input type="checkbox" name="terms-privacy" id="terms1-1" v-model="termsModel[0][0]"
+                   @change="changeTermsCheck(0)" required>
+            <label for="terms1-1">서비스 이용 약관(필수)</label>
+            <router-link to="/policy/service"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+          </li>
+          <li>
+            <input type="checkbox" name="terms-privacy" id="terms1-2" v-model="termsModel[0][1]"
+                   @change="changeTermsCheck(0)" required>
+            <label for="terms1-2">개인정보 수집/이용 동의(필수)</label>
+            <router-link to="/policy/privacy"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+          </li>
+          <li>
+            <input type="checkbox" name="terms-privacy" id="terms1-3" v-model="termsModel[0][2]"
+                   @change="changeTermsCheck(0)">
+            <label for="terms1-3">개인정보 수집/이용 동의(선택)</label>
+            <router-link to="/policy/privacyopt"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+          </li>
+          <li>
+            <input type="checkbox" name="terms-privacy" id="terms1-4" v-model="termsModel[0][3]"
+                   @change="changeTermsCheck(0)">
+            <label for="terms1-4">광고성 정보 수신 동의(선택)</label>
+            <router-link to="/policy/advg"><i></i><span class="blind">{{ $t('etc.detail-view') }}</span></router-link>
+          </li>
+        </ul>
+      </div>
+
+      <div class="agree-box">
+        <input type="checkbox" name="terms-kids" id="terms-kids" v-model="termsModel[1]" required>
+        <label for="terms-kids">만 14세 이상입니다.(필수)</label>
+      </div>
+
+    </div>
+    <!--// 10.12 약관 수정 -->
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn-solid big" @click="sendCertifyNumber">{{ $t(('mytag.button-send-certification')) }}</a>
+  </div>
+</div>

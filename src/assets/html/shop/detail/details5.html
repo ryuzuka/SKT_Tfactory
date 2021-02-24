@@ -1,0 +1,80 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone5-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">Security Pod</strong></h2>
+    <p class="desc">하늘에서 내려오는 디지털 북을 손끝으로 넘겨보세요. 마치 살아 있는 책처럼 당신의 손짓 하나하나에 반응하는 디지털 북에서 홈 보안, 정보 보안 등 SK ICT 패밀리사가 제공하는
+      다양한 보안 서비스를 만나실 수 있습니다.</p></div>
+  <article class="row details">
+    <h3>이용 방법</h3>
+    <ol class="step-list">
+      <li>디지털 북을 펼치면 SK텔레콤의 보안 서비스 이야기가 시작됩니다.</li>
+      <li>손 아이콘을 따라 터치하며 이야기를 진행해 보세요.</li>
+      <li>더 알고 싶은 서비스는 카메라로 QR코드를 스캔해 보세요.</li>
+    </ol>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">1층 좌측 체험 Room</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-1f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone5-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store6">
+            <div class="thumb"><img src="../../../images/tfactory/zone6-top.jpg" alt=""></div>
+            <em>Media Pod</em>
+            <p class="subtext">드라마, 영화의 명장면을 명대사 카드로 찾아 볼 수 있는 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store3">
+            <div class="thumb"><img src="../../../images/tfactory/zone3-top.jpg" alt=""></div>
+            <em>Flex Stage</em>
+            <p class="subtext">빠르게 변화하는 IT 트렌드를 만나볼 수 있는 메인 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store8">
+            <div class="thumb"><img src="../../../images/tfactory/zone8-top.jpg" alt=""></div>
+            <em>Media Zone</em>
+            <p class="subtext">영화/드라마/음악/e-book 등 미디어 콘텐츠 무한 감상 공간</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}
+              </p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

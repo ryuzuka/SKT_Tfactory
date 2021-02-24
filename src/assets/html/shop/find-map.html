@@ -1,0 +1,43 @@
+<section class="find-map">
+  <h2 class="blind">{{ $t('sev.read-map') }}</h2>
+
+  <div id="map_div" class="map-area">
+    <button class="btn-research" @click="findlocalLocation">{{ $t('shop.find-local-map') }}</button>
+    <button class="btn-location" :class="{'up': listMap.length > 0}" @click="clickLocation"><img src="../../images/common/btn_location.svg" :alt="$t('shop.move-current-location')"></button>
+    <span class="my-location" style="position:absolute; top:60px; left:200px;"></span>
+
+    <!-- ex) shop point -->
+<!--    <div v-for="(shop, index) in listMap" :key="index" class="pin" :class="{'active': index === activeIndex}" @click="clickShopPoint(index)">-->
+<!--      <span class="blind">shop</span>-->
+<!--    </div>-->
+  </div>
+
+  <div class="shop-list">
+    <swiper :options="shopInfoSwiperOption" ref="shopInfoSwiper">
+      <swiper-slide v-for="(shop, index) in listMap" :key="index" :class="{'recomm': shop.recommendation}">
+        <div class="tit">
+          <span class="flag-recomm" v-if="shop.recommendation">{{ $t('sev.recommendation') }}</span>{{shop.NAME}}
+        </div>
+        <span v-if="localLocationAgree" class="distance">{{shop.distance}}</span> <!-- 위치정보 미동의 시 비노출 -->
+        <div class="shop-addr">
+          <template v-if="addressType[index].type === 'road'">
+            <button type="button" class="btn-addr" @click="toggleAddressType(index)">{{ $t('shop.road-address') }}</button> <!-- toggle: 도로명 / 지번 -->
+            <address>{{shop.JIBUN_ADDR}}</address>
+          </template>
+          <template v-else>
+            <button type="button" class="btn-addr" @click="toggleAddressType(index)">{{ $t('shop.number-address') }}</button> <!-- toggle: 도로명 / 지번 -->
+            <address>{{shop.ROAD_ADDR}}</address>
+          </template>
+        </div>
+        <div ref="tags" class="tags"> <!-- 해당 지점 해당 태그 노출(처리업무: .flag-line1, 전문상담업무: .flag-line2, 체험존: .flag-line3, 교육 프로그램: .flag-line4) -->
+          <span v-if="shop.STORE_TYPE === 'T Premium Store'" class="flag-solid6">T 프리미엄 스토어</span>
+          <span class="flag-line1" v-for="service in shop.WORKS">{{service}}</span>
+          <span class="flag-line2" v-for="service in shop.COUNSELINGS">{{service}}</span>
+          <span class="flag-line3" v-for="service in shop.EXPERIENCES">{{service}}</span>
+          <span class="flag-line4" v-for="service in shop.PROGRAMS">{{service}}</span>
+        </div>
+        <a href="" @click.prevent="clickShop(shop.STORE_ID)" class="btn-shop-detail"><span class="blind">{{ $t('shop.shop-detail-go') }}</span></a>
+      </swiper-slide>
+    </swiper>
+  </div>
+</section>

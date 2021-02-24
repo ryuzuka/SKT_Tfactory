@@ -1,0 +1,14 @@
+<section class="popup-full qr-chkin">
+  <header>
+    <h1>{{ $t('main.qr-chkin') }}</h1>
+    <a class="btn-close" @click="clickClose"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <div class="qr-code"><qrcode-vue :size="size" :value="oneTimeCertKey"></qrcode-vue>
+    </div>
+    <div class="timer">{{ $t('main.timer') }} <span>00:{{ count | countFilter }}</span></div>
+  </div>
+  <footer class="btn-wrap">
+    <a class="btn-solid big" @click="clickClose">{{ $t('comm.close') }}</a>
+  </footer>
+</section>

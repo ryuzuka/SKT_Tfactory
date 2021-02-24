@@ -1,0 +1,76 @@
+<div class="contents main" ref="contents">
+  <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
+  <div class="top-vis">
+    <div class="thumb"><img src="../../../images/tfactory/zone16-top.jpg" alt=""></div>
+    <h2 class="main-tit zone"><strong class="point-text">T1</strong></h2>
+    <p class="desc">T팩토리에서만 판매하는 특별한 T1 MD를 만나보세요.
+      프로게이머 Faker도 직접 다녀간 MD 숍으로, T팩토리를 위해 특별 제작한 레어템과 T1의 우승 트로피도 보실 수 있습니다.
+    </p>
+  </div>
+  <article class="row details">
+    <figure class="thumb"><img src="../../../images/tfactory/zone16-img1.jpg" alt=""></figure>
+    <div class="img-floor">
+      <h3>{{ $t('shop.location') }}</h3>
+      <p class="location">2층 창측 Wall Display</p>
+      <div class="inner">
+        <img src="../../../images/tfactory/zone-2f.jpg" alt="">
+        <div class="pins">
+          <img src="../../../images/tfactory/zone16-pin.png" alt="">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+    <h3 class="subtit"><strong class="point-text">T Factory</strong>{{ $t('shop.tour') }}</h3>
+    <div class="scroll-wrap">
+      <ul class="list-main scroll">
+        <li>
+          <a href="/shop/detail/store17">
+            <div class="thumb"><img src="../../../images/tfactory/zone17-top.jpg" alt=""></div>
+            <em>5GX Cloud Game</em>
+            <p class="subtext">Xbox 클라우드 게임을 체험할 수 있는 국내 최초 마이크로소프트 스토어</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store3">
+            <div class="thumb"><img src="../../../images/tfactory/zone3-top.jpg" alt=""></div>
+            <em>Flex Stage</em>
+            <p class="subtext">빠르게 변화하는 IT 트렌드를 만나볼 수 있는 메인 공간</p>
+          </a>
+        </li>
+        <li>
+          <a href="/shop/detail/store12">
+            <div class="thumb"><img src="../../../images/tfactory/zone12-top.jpg" alt=""></div>
+            <em>Data Station</em>
+            <p class="subtext">0(Young) 피플을 위한 데이터 무료 충전소</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- program -->
+  <div class="row programs">
+    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
+    <div class="scroll-wrap">
+      <ul class="list-program scroll">
+        <li v-for="crewClass in classList">
+          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+            <div class="lector">
+              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
+              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            </div>
+            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
+            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <!--            <span class="flag-basic">모집중</span>-->
+          </a>
+        </li>
+      </ul>
+      <div class="btn-wrap">
+        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<section class="find-list">
+  <h2 class="blind">{{ $t('shop.list-view') }}</h2>
+
+  <div class="row">
+    <ul class="shop-list">
+      <li v-for="(shop, index) in listShop" :key="index" :class="{'recomm': shop.recommendation}">
+        <div class="tit">
+          <span class="flag-recomm" v-if="shop.recommendation">{{ $t('sev.recommendation') }}</span>
+          <span>{{shop.NAME}}</span>
+        </div>
+        <span v-if="locationAgree" class="distance">{{shop.distance}}</span>
+        <div class="shop-addr">
+          <template v-if="addressType[index].type === 'road'">
+            <button type="button" class="btn-addr" @click="toggleAddressType(index)">{{ $t('shop.road-address') }}</button>
+            <address>{{shop.JIBUN_ADDR}}</address>
+          </template>
+          <template v-else>
+            <button type="button" class="btn-addr" @click="toggleAddressType(index)">{{ $t('shop.number-address') }}</button>
+            <address>{{shop.ROAD_ADDR}}</address>
+          </template>
+        </div>
+        <div class="tags">
+          <span v-if="shop.STORE_TYPE === 'T Premium Store'" class="flag-solid6">T 프리미엄 스토어</span>
+          <span class="flag-line1" v-for="service in shop.WORKS">{{service}}</span>
+          <span class="flag-line2" v-for="service in shop.COUNSELINGS">{{service}}</span>
+          <span class="flag-line3" v-for="service in shop.EXPERIENCES">{{service}}</span>
+          <span class="flag-line4" v-for="service in shop.PROGRAMS">{{service}}</span>
+        </div>
+        <a class="btn-shop-detail" @click.prevent="clickShop(shop.STORE_ID)"><span class="blind">{{ $t('shop.shop-detail-go') }}</span></a>
+      </li>
+    </ul>
+
+    <!-- 더보기 -->
+    <div class="btn-wrap">
+      <a href="#" class="btn-more" @click.prevent="clickMore" v-if="listShop.length > 0">{{ $t('comm.more') }}</a>
+    </div>
+  </div>
+</section>

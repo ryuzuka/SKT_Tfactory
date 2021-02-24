@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_map" transform="translate(-50.000000, -75.000000)">
+            <g id="Group-4" transform="translate(50.000000, 75.000000)">
+                <circle id="Oval" stroke="#E8E8E8" stroke-width="1.2" fill="#FFFFFF" cx="24" cy="24" r="23.4"></circle>
+                <g id="ic/24//map/bk_nomal" transform="translate(12.000000, 12.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Group" stroke-width="1" transform="translate(3.000000, 3.000000)">
+                        <path d="M9.16981132,0 C14.0518868,0.0424528302 18,4.0754717 18,8.95754717 C18,13.7941375 14.1916319,17.7298235 9.35000257,17.9894982 L9.08490566,18 L9,18 C4.03301887,18 0,13.9669811 0,9 C0,4.12171496 3.89026852,0.144334208 8.73482283,0.00384047076 L9.16981132,0 Z M9.75047126,1.52815322 L9.75,6 L8.25,6 L8.25021097,1.5371057 C4.70960437,1.88940274 1.88940274,4.70960437 1.5371057,8.25021097 L6,8.25 L6,9.75 L1.53716139,9.75034851 C1.88970861,13.2907808 4.70993124,16.1107562 8.25047532,16.4629206 L8.25,12 L9.75,12 L9.75094756,16.4510545 C13.3098524,16.0407924 16.0906554,13.2530715 16.458613,9.75029509 L12,9.75 L12,8.25 L16.4665789,8.25007197 C16.1295342,4.69797868 13.2832345,1.84097691 9.75047126,1.52815322 Z" id="Combined-Shape" fill="#000000"></path>
+                        <g id="Group-5" transform="translate(8.250000, 1.000000)" fill="#000000">
+                            <rect id="Rectangle" x="0" y="0" width="1.5" height="5"></rect>
+                            <rect id="Rectangle-Copy" x="0" y="11" width="1.5" height="5"></rect>
+                        </g>
+                        <g id="Group-5" transform="translate(0.250000, 1.000000)"></g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,45 @@
+<div class="contents" ref="contents">
+  <div class="row complete">
+    <i class="ico-complete"></i> <!-- 09.10 수정: 아이콘 공통사용으로 위치 변경 -->
+
+    <template v-if="isVm">
+      <!-- 밴딩머신일 경우 -->
+      <p class="tit" v-html="$t('pay.pay-complete-text-vm')">구매가 완료되었습니다.<br>상품 나오는 곳을 확인하세요.</p>
+    </template>
+    <template v-else>
+      <!-- Instant buy -->
+      <p class="tit" v-html="$t('pay.pay-complete-text')">구매가 완료되었습니다.<br>이제 상품을 매장 밖으로<br>가져가실 수 있습니다.</p>
+    </template>
+
+    <dl class="details-info">
+      <dt>{{ $t('pay.pay-number') }}</dt>
+      <dd>{{inv_no}}</dd>
+      <dt>{{ $t('pay.product-name') }}</dt>
+      <dd>{{item_nm}}</dd>
+    </dl>
+
+    <div class="btn-wrap">
+      <router-link to="/my/paylist" class="btn-line big">{{ $t('pay.pay-list-inquiry') }}</router-link>
+      <a class="btn-line big" @click.prevent="clickReadReceipt">{{ $t('pay.read-receipt') }}</a>
+    </div>
+  </div>
+  <div class="row complete">
+    <dl class="accordion">
+      <dt>
+        <button type="button" class="btn-accor" :class="{'active': isOpen}" @click="isOpen = isOpen ? Boolean(false) : Boolean(true)">{{ $t('pay.refund-guide') }}<i></i></button> <!-- 활성화 시 .active 추가 -->
+      </dt>
+      <dd :class="{'active': isOpen}"> <!-- 활성화 시 .active -->
+        <ul class="texts-info">
+          <li>* {{ $t('pay.refund-guide1') }}</li>
+          <li>* {{ $t('pay.refund-guide2') }}</li>
+          <li>※ {{ $t('pay.refund-guide3') }}</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+
+  <Footer></Footer>
+
+  <modals-container></modals-container>
+  <v-dialog></v-dialog>
+</div>

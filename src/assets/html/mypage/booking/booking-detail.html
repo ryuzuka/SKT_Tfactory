@@ -1,0 +1,115 @@
+<div class="contents bottom-sticky my-detail" ref="contents">
+  <section class="row">
+    <!-- flag type / 06.05 문구 및 컬러 변경 -->
+    <span class="flag-solid2" v-if="status === 'success'">{{ $t('sev.apply-complete') }}</span>
+    <span class="flag-solid5" v-else-if="status === 'cancel'">{{ $t('comm.cancel') }}</span>
+    <span class="flag-solid5" v-else-if="status === 'complete' || status === 'end'">{{ $t('sev.end') }}</span>
+    <span class="flag-solid5" v-else-if="status === 'complete' || status === 'not'">{{ $t('sev.not-visit') }}</span>
+    <!-- // 04.09 미방문 추가 -->
+    <span class="flag-solid3" v-else-if="status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>
+
+    <h2 class="tit-order">{{ $t('sev.booking-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2>
+  </section>
+  <section class="row">
+    <dl class="details-info">
+      <dt>{{ $t('sev.booking-shop') }}</dt>
+      <dd>{{bookingDetail.STORE_NAME}}</dd>
+
+      <dt v-if="bookingType === 'program'">{{ $t('my.program-name') }}</dt>
+      <dd v-if="bookingType === 'program'">{{bookingDetail.PROGRAM_CLASS_NAME}}</dd>
+
+      <dt v-if="bookingType === 'experience'">{{ $t('sev.tab-experience') }}</dt>
+      <dt v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">
+        {{$t('my.consult-name') }}
+      </dt>
+      <dd v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">
+        {{bookingDetail.COUNSELING_NAME}}
+      </dd>
+
+      <dt v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'counseling'">{{
+        $t('sev.booking-date') }}
+      </dt>
+      <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
+      <dd>{{bookingDetail.DATE}}</dd>
+    </dl>
+
+    <!-- 프로그램 -->
+    <dl class="details-info" v-if="bookingType === 'program'">
+      <dt>{{ $t('sev.applicant') }}</dt>
+      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+<!--      <dt>{{ $t('sev.student') }}</dt>-->
+<!--      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>-->
+<!--      <dt>{{ $t('sev.applicant-relationship') }}</dt>-->
+<!--      <dd>본인</dd>-->
+<!--      <dt>{{ $t('sev.student-age-group') }}</dt>-->
+<!--      <dd>-</dd>-->
+<!--      <dt>{{ $t('sev.student-sex') }}</dt>-->
+<!--      <dd>남성</dd>-->
+    </dl>
+
+    <!-- 체험존 -->
+    <dl class="details-info" v-else-if="bookingType === 'experience'">
+      <dt>{{ $t('sev.visitor') }}</dt>
+      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>
+    </dl>
+
+    <!-- 06.05 추가: 상담 신청 -->
+    <!-- 상담 -->
+    <dl class="details-info"
+        v-else-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">
+      <dt>{{ $t('sev.customer-name') }}</dt>
+      <dd v-if="bookingDetail.USER_NICKNAME">{{bookingDetail.USER_NICKNAME}} ({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      <dd v-else="!bookingDetail.USER_NICKNAME && bookingDetail.USER_NAME">{{bookingDetail.USER_NAME}} ({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      <dd v-else="!bookingDetail.USER_NICKNAME && !bookingDetail.USER_NAME">({{bookingDetail.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
+    </dl>
+
+    <dl class="details-info"
+        v-if="(bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field') &&
+      (status !== 'cancel')">
+      <dt>{{ $t('my.counselor') }}</dt>
+      <dd v-if="bookingDetail.OPERATOR_ID !== null" class="counselor">
+        <figure>
+          <img :src="bookingDetail.OPERATOR_IMAGE_URL" alt="">
+          <figcaption>{{bookingDetail.OPERATOR_NAME}} 매니저</figcaption>
+        </figure>
+        <p v-if="bookingDetail.OPERATOR_INTRODUCE_MSG">"{{bookingDetail.OPERATOR_INTRODUCE_MSG}}"</p>
+      </dd>
+      <dd v-else>상담원 배정 중입니다.</dd>
+    </dl>
+
+    <!-- 07.09 수정: 공통으로 변경 -->
+    <dl class="details-info">
+      <dt>{{ $t('sev.booking-location') }}</dt>
+      <dd>{{bookingDetail.ZONE_NAME}}</dd>
+      <!-- 09.18 안내도 영역 수정 -->
+      <dd class="img-store">
+        <div class="inner">
+          <img :src="bookingDetail.ZONE_FLOOR_IMAGE_URL">
+          <img :src="bookingDetail.ZONE_MARKER_IMAGE_URL">
+        </div>
+      </dd>
+      <!--// 09.18 안내도 영역 수정 -->
+    </dl>
+    <template v-if="bookingType === 'counseling'">
+      <p class="texts-info" v-if="status ==='success'">* {{ $t('my.booking-success-guide') }}</p> <!-- 예약 성공일 때 노출 -->
+    </template>
+    <template v-else-if="bookingType === 'field_buy' || bookingType === 'field'">
+      <p class="texts-info" v-if="status ==='success'">* {{ $t('my.consult-success-guide') }}</p>
+      <!-- 예약 성공, 대기 일 떄 노출 -->
+    </template>
+  </section>
+
+  <div class="btn-wrap sticky" v-if="status === 'success'">
+    <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field' ">
+      <a class="btn-line big" @click.prevent="clickCancel">{{ $t('my.booking-cancel') }}</a>
+      <router-link :to="'/my/booking/' + bookingType + '/modify?store_id=' + bookingDetail.STORE_ID + '&book_id=' + bookingDetail.BOOK_ID"
+                   class="btn-line big">{{ $t('my.booking-modify') }}
+      </router-link>
+    </template>
+
+    <template v-if="bookingDetail.STATUS == 'operator_assigned' || (bookingType === 'field_buy' || bookingType === 'field')">
+      <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
+    </template>
+
+  </div>
+</div>

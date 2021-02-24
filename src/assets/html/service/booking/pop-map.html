@@ -1,0 +1,68 @@
+<section class="popup-full shop-detail"> <!-- 04.09 수정: shop-detail 클래스 추가 -->
+  <header>
+    <h1 v-html="$t('sev.read-map')"></h1>
+    <a class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <section class="shop-header">
+      <div class="tags">
+        <!--        <span class="flag-recomm">{{ $t('sev.recommendation') }}</span>-->
+        <span v-if="storeDetail.STORE_TYPE === 'T Premium Store'" class="flag-solid6">T 프리미엄 스토어</span>
+      </div>
+      <div class="tit-wrap">
+        <h2 class="tit">{{storeDetail.NAME}}</h2>
+        <a @click.prevent="openTmap" class="btn-tmap"><span class="blind">{{ $t('shop.t-map-go') }}</span></a>
+      </div>
+      <div class="shop-addr">
+        <template v-if="addressType === 'road'">
+          <button type="button" class="btn-addr" @click="addressType = 'number'">{{ $t('shop.road-address') }}</button>
+          <address>{{storeDetail.JIBUN_ADDR}}</address>
+        </template>
+        <template v-else>
+          <button type="button" class="btn-addr" @click="addressType = 'road'">{{ $t('shop.number-address') }}</button>
+          <address>{{storeDetail.ROAD_ADDR}}</address>
+        </template>
+      </div>
+      <a class="open-hour" :class="{'active': isOpenHour}" @click.prevent="isOpenHour = isOpenHour ? false : true">
+        <ul>
+          <li>{{storeDetail.todayOpen}}</li>
+          <li class="last">{{storeDetail.othersOpen}}</li>
+        </ul>
+      </a>
+      <div class="tags">
+        <span v-if="storeDetail.WORKS" class="flag-line1" v-for="service in storeDetail.WORKS">{{service}}</span>
+        <span v-if="storeDetail.COUNSELINGS" class="flag-line2"
+              v-for="service in storeDetail.COUNSELINGS">{{service}}</span>
+        <span v-if="storeDetail.EXPERIENCES" class="flag-line3"
+              v-for="service in storeDetail.EXPERIENCES">{{service}}</span>
+        <span v-if="storeDetail.PROGRAMS" class="flag-line4" v-for="service in storeDetail.PROGRAMS">{{service}}</span>
+      </div>
+    </section>
+    <div class="contact">
+      <dl>
+        <dt>{{ $t('sev.contact-number') }}</dt>
+        <dd v-if="storeDetail.PHONE_NUMBER">{{storeDetail.PHONE_NUMBER | mdnFilter}}</dd>
+      </dl>
+      <a :href="'tel:' + storeDetail.PHONE_NUMBER" class="btn-tel"><span class="blind">{{ $t('sev.tel') }}</span></a>
+    </div>
+    <div id="map_div" class="map-area">
+<!--      <button class="btn-location"><img src="../../../images/common/btn_location.svg"-->
+<!--                                        :alt="$t('shop.move-current-location')"></button>-->
+      <!--      <div class="pin active" style="position:absolute;top:70px;left:50px"><span class="blind">01</span></div>-->
+    </div>
+    <ul class="list-info">
+      <li class="item">
+        <dl>
+          <dt>{{ $t('sev.find-directions') }}</dt>
+          <dd>
+            <ul v-if="storeDetail.GUIDE" class="visit">
+              <li>
+                <p v-for="guide in storeDetail.GUIDE.split('#^')">{{guide}}<br></p>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</section>

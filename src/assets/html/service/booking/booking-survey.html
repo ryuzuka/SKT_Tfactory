@@ -1,0 +1,34 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row">
+    <p class="texts-req">{{ $t('sev.survey-guide') }} ({{ $t('comm.select')}})</p>
+    <ol class="list-survey">
+      <li v-for="(question, questionIndex) in questionList">
+        <p class="tit">{{question.QUESTION}}</p>
+        <span v-if="question.QUESTION_TYPE === 'multiple_choice'"
+              class="texts-info">({{ $t('sev.mutiple-select') }})</span>
+        <ul class="list-answer" v-if="question.QUESTION_TYPE !== 'essay'">
+          <li v-for="(answer, answerIndex) in question.CHOICE">
+            <input v-if="question.QUESTION_TYPE === 'choice'"
+                   :name="questionIndex"
+                   type="radio"
+                   v-model="question.ANSWER[0]"
+                   :value=answerIndex>
+            <input v-if="question.QUESTION_TYPE === 'multiple_choice'"
+                   type="checkbox"
+                   v-model="question.ANSWER"
+                   :value=answerIndex>
+            <label>{{answer}}</label>
+          </li>
+        </ul>
+        <textarea style="height: 120px" v-if="question.QUESTION_TYPE === 'essay'" v-model="question.ANSWER" cols="30" rows="10"
+                  placeholder="답변을 입력해 주세요. (최대 200자까지 입력 가능)"></textarea>
+      </li>
+    </ol>
+  </div>
+  <div class="btn-wrap sticky">
+    <a class="btn-line big" @click.prevent="bookCounseling">{{ $t('sev.pass-survey') }}</a>
+    <a class="btn-line big" @click.prevent="clickComplete" v-if="isModify">{{ $t('my.booking-modify-complete')
+      }}</a>
+    <a href="#" class="btn-solid big" @click.prevent="clickComplete" v-else>{{ $t('sev.booking-complete') }}</a>
+  </div>
+</div>

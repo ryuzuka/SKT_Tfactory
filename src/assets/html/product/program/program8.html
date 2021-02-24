@@ -1,0 +1,47 @@
+<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class8-slide1.jpg" alt="">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">FACTORY CONCERT</em>
+      <h2 class="details-tit">나상현씨밴드</h2>
+      <p class="desc">T Factory 콘서트의 시작</p>
+      <div class="tags">
+        <span class="flag-basic">공연 관람형</span>
+        <span class="flag-basic">소규모 콘서트</span>
+        <span class="flag-basic">홍대 인디 밴드</span>
+      </div>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">{{ $t('prd.band-introduction')}}</h3>
+      <div class="thumb"><img src="../../../images/program/class8-conts.jpg" alt=""></div>
+      <p>친숙하지만 뻔하지 않은, <br>우리들을 노래하는 나상현씨밴드.<br>
+        나상현씨(기타,보컬)을 중심으로 강현웅(드럼), 백승렬(베이스)이 모여 3인조로 노래를 연주하는 나상현씨밴드.<br>
+        2014년에 결성된 그들은 밴드음악을 기반으로 다양한 장르적 방향성을 통해 보통의 이야기들을 풀어낸다.<br>
+        2019년 채널A &lt;보컬플레이2&gt;를 통해 서울대밴드로 이름을 알렸으며,
+        2020년에는 제 31회 유재하 음악경연대회 장려상, 그린플러그드 신인 그린프렌즈 우승,
+        인디스땅스 TOP13 등 경연에서도 좋은 성과를 거두고 있다.<br>
+        2019년부터 지난 2년간 40여 곡을 발표할 만큼 활발한 창작활동을 보여주고 있다.</p>
+
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <p>2월 중(자세한 날짜 및 시간은 추후 공지 예정)<br>T Factory 2층, 0 Stage</p>
+
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 이 행사는 코로나19 방역 수칙에 따라 연기될 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div v-if="bookingAvailable" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <!-- //button set -->
+</div>

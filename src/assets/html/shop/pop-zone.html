@@ -1,0 +1,84 @@
+<section class="popup-full zone">
+  <header>
+    <h1>ZONE {{ $t('comm.guide') }}</h1>
+    <a href="#" class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <h2 class="tit-floor">T Factory 홍대 {{ $t('shop.stratified') }} {{ $t('comm.guide') }}</h2> <!-- 10.06 매장명 추가 -->
+    <dl class="accordion">
+      <template v-for="(floor, index) in floors">
+        <dt>
+          <button type="button" class="btn-accor" :class="{'active': isActiveFloors[index]}" @click="clickFloor(index)">
+            {{floor[0].FLOOR}}{{ $t('shop.floor') }}<i class="ico-arrow"></i></button>
+        </dt>
+        <dd :class="{'active': isActiveFloors[index]}">
+          <!-- 09.18 안내도 영역 수정 -->
+          <div class="img-floor">
+            <div class="inner">
+              <!-- 지도 -->
+              <img :src="floor[0].FLOOR_IMAGE_URL" :alt="$t('shop.stratified-map')">
+
+              <div class="pins" :class="{active: isActiveContent[index][0]}"> <!-- 활성화 .active -->
+                <img v-for="(zone, zoneIndex) in floorsZone[zoneCategory[0]]" :src="zone.FLOOR_POSITION_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (zoneIndex+1)">
+                <img v-for="(zone, pinIndex) in floorsZone[zoneCategory[0]]" :src="zone.MARKER_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (100+pinIndex)">
+              </div>
+
+              <div class="pins" :class="{active: isActiveContent[index][1]}">
+                <img v-for="(zone, zoneIndex) in floorsZone[zoneCategory[1]]" :src="zone.FLOOR_POSITION_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (zoneIndex+1)">
+                <img v-for="(zone, pinIndex) in floorsZone[zoneCategory[1]]" :src="zone.MARKER_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (100+pinIndex)">
+              </div>
+
+              <div class="pins" :class="{active: isActiveContent[index][2]}">
+                <img v-for="(zone, zoneIndex) in floorsZone[zoneCategory[2]]" :src="zone.FLOOR_POSITION_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (zoneIndex+1)">
+                <img v-for="(zone, pinIndex) in floorsZone[zoneCategory[2]]" :src="zone.MARKER_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (100+pinIndex)">
+              </div>
+
+              <div class="pins" :class="{active: isActiveContent[index][3]}">
+                <img v-for="(zone, zoneIndex) in floorsZone[zoneCategory[3]]" :src="zone.FLOOR_POSITION_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (zoneIndex+1)">
+                <img v-for="(zone, pinIndex) in floorsZone[zoneCategory[3]]" :src="zone.MARKER_IMAGE_URL" alt="" class="pin"
+                     :style="'z-index:' + (100+pinIndex)">
+              </div>
+            </div>
+          </div>
+          <!--// 09.18 안내도 영역 수정 -->
+
+          <div class="btn-wrap">
+            <button type="button" class="btn-basic small" :class="{'active': isActiveContent[index][0]}"
+                    @click="clickContent(index, 0)">시그니처
+            </button> <!-- 시그니처 --> <!-- 활성화 .active -->
+            <button type="button" class="btn-basic small" :class="{'active': isActiveContent[index][1]}"
+                    @click="clickContent(index, 1)">체험
+            </button> <!-- 체험 -->
+            <button type="button" class="btn-basic small" :class="{'active': isActiveContent[index][2]}"
+                    @click="clickContent(index, 2)">휴대폰/업무
+            </button>  <!-- 휴대폰 구매/업무 -->
+            <button type="button" class="btn-basic small" :class="{'active': isActiveContent[index][3]}"
+                    @click="clickContent(index, 3)">쇼핑
+            </button>  <!-- 쇼핑 -->
+          </div>
+
+          <ol v-for="(category, categoryIndex) in zoneCategory" class="list-zone"
+              v-show="isActiveContent[index][categoryIndex]">
+            <!-- 관련 zone 이 있을 경우 -->
+            <li v-for="(zone, zoneIndex) in floorsZone[category]" v-if="zone.ZONE_CATEGORY_NAME === category">
+              <strong class="tit"><em class="num">{{zone.POSITION}}</em>{{zone.NAME}}</strong>
+              <img v-if="zone.IMAGE_URL" :src="zone.IMAGE_URL" alt="">
+              <p v-html="zone.DESCRIPTION" class="desc"></p>
+            </li>
+
+            <li v-if="!floorsZone[category]">
+              <p class="no-content">{{ $t('shop.zone-none') }}</p>
+            </li>
+          </ol>
+        </dd>
+      </template>
+    </dl>
+  </div>
+</section>

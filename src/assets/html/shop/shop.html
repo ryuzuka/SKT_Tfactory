@@ -1,0 +1,49 @@
+<div class="shop-inner" ref="contents">
+  <!-- filter -->
+  <div class="filter-area">
+    <span class="num">{{ $t('comm.total') }}
+      <strong v-if="findType === 'list'">{{ listShop.length }}</strong>
+      <strong v-else>{{ listMap.length }}</strong>
+      {{ $t('comm.piece') }}
+    </span>
+    <button type="button" class="btn-filter" :class="{'active': isFilterActive}" @click.prevent="openFilter">
+      <span v-html="filterText"></span>
+    </button>
+    <div class="sort">
+      <button type="button" class="btn-list" :class="{'active': findType === 'list'}" @click="toggleFindType('list')"><span class="blind">{{ $t('shop.list-view') }}</span></button>
+      <button type="button" class="btn-map" :class="{'active': findType === 'map'}" @click="toggleFindType('map')"><span class="blind">{{ $t('shop.map-view') }}</span></button>
+    </div>
+  </div>
+
+  <!-- 위치 정보 제공 동의 -->
+  <template v-if="isSearch">
+    <p class="no-content" v-if="findType === 'list' && listShop.length === 0">{{ $t('shop.none-shop-list') }}</p>
+    <!-- list -->
+    <find-list
+      v-if="listShop.length > 0"
+      v-show="findType === 'list'"
+      :booking-type="bookingType"
+      :select-type="selectType"
+      :list-shop="listShop"
+      :location-agree="locationAgree"
+      :selected-service="selectedService"
+    ></find-list>
+    <!-- map -->
+    <find-map
+      ref="findMap"
+      v-show="findType === 'map'"
+      :booking-type="bookingType"
+      :select-type="selectType"
+      :list-map="listMap"
+      :find-type="findType"
+      :location-agree="locationAgree"
+      :selected-service="selectedService"
+      :lat="lat"
+      :long="long"
+      @set-location="initGeoLocation"
+      @set-latlong="setLatLongFromMap"
+    ></find-map>
+  </template>
+  <!-- 위치 정보 제공 미동의 -->
+  <p class="no-keywords" v-if="!isSearch" v-html="$t('shop.find-shop-guide')">매장명 또는 주소 키워드를 입력하여<br> 검색해주세요.</p>
+</div>

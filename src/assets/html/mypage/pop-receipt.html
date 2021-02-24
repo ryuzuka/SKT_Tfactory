@@ -1,0 +1,113 @@
+<section class="popup-full receipt">
+  <header>
+    <h1 v-html="$t('my.receipt')"></h1>
+    <a class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <div class="row">
+      <dl class="details-info">
+        <dt>{{ $t('my.shop-name') }}</dt>
+        <dd>{{data.receipt.STORE_NAME}}</dd>
+        <dt>{{ $t('my.shop-number') }}</dt>
+        <dd>02-7470-0001</dd>
+        <dt>{{ $t('my.representative') }}</dt>
+        <dd>허선영</dd>
+        <dt>{{ $t('my.registration-number') }}</dt>
+        <dd>104-86-20016</dd>
+      </dl>
+    </div>
+    <div class="row">
+      <h2 class="tit-order">{{ $t('pay.pay-number') }} {{data.receipt.INV_NUMBER}}</h2>
+      <table class="tbl-receipt">
+        <caption class="blind">{{ $t('my.pay-product-list') }}</caption>
+        <colgroup>
+          <col style="width:33%"><col style="width:22%"><col style="width:17%"><col>
+        </colgroup>
+        <thead>
+        <tr>
+          <th scope="col">{{ $t('pay.product-name') }}</th>
+          <th scope="col">{{ $t('my.unit-price') }}</th>
+          <th scope="col">{{ $t('my.amount') }}</th>
+          <th scope="col">{{ $t('my.sum') }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="item in RECEIPT.ITEM_LIST">
+          <td>{{item.NAME}}</td>
+          <td>{{item.PRICE | currency}}</td>
+          <td>{{item.QUANTITY}}</td>
+          <td>{{item.PRICE * item.QUANTITY | currency}}</td>
+        </tr>
+        <tr v-if="originalSum !== RECEIPT.AMOUNT">
+          <td>쿠폰 할인</td>
+          <td></td>
+          <td></td>
+          <td>-{{originalSum - RECEIPT.AMOUNT| currency}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- TODO: 할인관련 기능 개발 -->
+<!--      <div class="box-pay discount">-->
+<!--        <dl class="list-price">-->
+<!--          <dt>깜짝 할인 쿠폰</dt>-->
+<!--          <dd>-->
+<!--            <div class="price discount">-->
+<!--              <em>-5,000</em><span class="unit">{{ $t('comm.won') }}</span>-->
+<!--            </div>-->
+<!--          </dd>-->
+<!--        </dl>-->
+<!--        <dl class="list-price">-->
+<!--          <dt>애플 10% 할인 쿠폰</dt>-->
+<!--          <dd>-->
+<!--            <div class="price discount">-->
+<!--              <em>-18,000</em><span class="unit">{{ $t('comm.won') }}</span>-->
+<!--            </div>-->
+<!--          </dd>-->
+<!--        </dl>-->
+<!--      </div>-->
+      <div v-if="RECEIPT.CREDIT_CARD" class="box-pay payment">
+        <dl class="list-price">
+          <dt>{{ $t('my.total-sum') }}</dt>
+          <dd>
+            <div class="price">
+              <em>{{RECEIPT.CREDIT_CARD.SUB_TOTAL | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="list-price">
+          <dt>{{ $t('my.surtax') }}</dt>
+          <dd>
+            <div class="price">
+              <em>{{RECEIPT.CREDIT_CARD.TAX | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="list-price total">
+          <dt>{{ $t('my.payment') }}</dt>
+          <dd>
+            <div class="price">
+              <em>{{RECEIPT.CREDIT_CARD.PAYMENT | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div v-if="RECEIPT.CREDIT_CARD" class="row">
+      <dl class="list-info">
+        <dt>{{ $t('my.approval-amount') }}</dt>
+        <dd>{{RECEIPT.CREDIT_CARD.PAY_MONTH}} / {{RECEIPT.CREDIT_CARD.PAYMENT | currency}}{{ $t('comm.won') }}</dd>
+        <dt v-if="RECEIPT.CREDIT_CARD.ISSUER_NAME !== 'null'">{{ $t('my.card-company') }}</dt>
+        <dd v-if="RECEIPT.CREDIT_CARD.ISSUER_NAME !== 'null'">{{RECEIPT.CREDIT_CARD.ISSUER_NAME}}</dd>
+        <dt>{{ $t('my.card-number') }}</dt>
+        <dd>{{RECEIPT.CREDIT_CARD.CARD_NUMBER}}</dd>
+        <dt>{{ $t('my.approval-number') }}</dt>
+        <dd>{{RECEIPT.INV_NUMBER}}</dd>
+        <dt>{{ $t('my.transaction-date') }}</dt>
+        <dd>{{RECEIPT.EDIT_YMDT}}</dd> <!-- 04.17 날짜 표기 방식 수정 -->
+      </dl>
+      <div class="receipt-area">
+        <barcode :value="invoicNumber"></barcode>
+      </div>
+    </div>
+  </div>
+</section>

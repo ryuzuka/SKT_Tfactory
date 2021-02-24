@@ -1,0 +1,16 @@
+<section class="popup service">
+  <header>
+    <h1 v-html="$t('sev.title')"></h1>
+    <a href="#" class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont">
+    <ul class="list-service">
+      <li><a @click.prevent="clickMenu('program')"><i class="ico-program"></i>{{ $t('sev.program') }}<br>{{ $t('comm.reservation') }}</a></li>
+      <li><a @click.prevent="clickMenu('experience')"><i class="ico-experience"></i>{{ $t('sev.experience') }}<br>{{ $t('comm.reservation') }}</a></li>
+      <li><a @click.prevent="clickMenu('counseling')"><i class="ico-consult"></i>{{ $t('sev.counseling') }}<br>{{ $t('comm.reservation') }}</a></li>
+    </ul>
+  </div>
+  <footer class="btn-wrap">
+    <a @click.prevent="clickMyBookingList" class="btn-line big">{{ $t('sev.btn-text') }}</a>
+  </footer>
+</section>

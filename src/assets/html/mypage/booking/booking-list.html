@@ -1,0 +1,60 @@
+<div class="contents my-booking" ref="contents">
+  <ul class="my-booking-list">
+    <li v-for="(data, index) in listData" :key="index" :class="{'completed': data.status === 'complete' || data.status === 'end' || data.status === 'not', 'end': data.status === 'end'}">
+      <router-link :to="'/my/booking/' + data.type + '/detail/' + data.status + '?BOOK_ID=' + data.BOOK_ID">
+        <p class="list-tit">
+          <span class="flag-solid2" v-if="data.status === 'success'">{{ $t('sev.apply-complete') }}</span>                      <!-- success: 신청 완료 -->
+          <span class="flag-solid5" v-else-if="data.status === 'cancel'">{{ $t('comm.cancel') }}</span>                         <!-- cancel: 취소 -->
+          <span class="flag-solid5" v-else-if="data.status === 'complete' || data.status === 'end'">{{ $t('sev.end') }}</span>  <!-- complete: 종료 / end: 종료 & 설문조사 등록 완료 -->
+          <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>
+          <span class="flag-solid3" v-else-if="data.status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>
+
+          <template v-if="data.type === 'program'">{{ $t('sev.booking-program') }}<i></i></template>        <!-- 프로그램 -->
+          <template v-if="data.type === 'experience'">{{ $t('sev.booking-experience') }}<i></i></template>  <!-- 체험존 -->
+          <template v-if="data.type === 'counseling'">{{ $t('sev.booking-counseling') }}<i></i></template>  <!-- 상담 예약 -->
+          <template v-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-application') }}<i></i></template>    <!-- 상담 신청 -->
+        </p>
+        <dl class="details-info">
+          <dt v-if="data.type === 'program' || data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-number') }}</dt>
+          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-number') }}</dt>
+          <dd>{{data.BOOK_CODE}}</dd>
+
+          <dt>{{ $t('sev.booking-shop') }}</dt>
+          <dd>{{data.STORE_NAME}}</dd>
+
+          <dt>{{ $t('sev.booking-location') }}</dt>
+          <dd>{{data.ZONE_NAME}}</dd>
+
+          <dt v-if="data.type === 'counseling'">{{ $t('sev.booking-type-for-list') }}</dt>
+          <dd v-if="data.type === 'counseling'">{{data.COUNSELING_NAME}}</dd>
+          <dt v-if="data.type === 'program'">{{ $t('my.program-name') }}</dt>
+          <dd v-if="data.type === 'program'">{{data.PROGRAM_NAME}}</dd>
+
+          <dt v-if="data.type === 'program' || data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-date') }}</dt>
+          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-application-date') }}</dt> <!-- 06.30 문구 수정 -->
+          <dd>{{data.date}}</dd>
+        </dl>
+      </router-link>
+
+<!--      &lt;!&ndash; 설문조사 등록 &ndash;&gt;-->
+<!--      <button class="btn-line medium" @click="clickInquiry" v-if="data.status === 'complete'">-->
+<!--        {{ $t('my.inquiry-registration') }}-->
+<!--      </button>-->
+
+<!--      &lt;!&ndash; 설문조사 완료 &ndash;&gt;-->
+<!--      <button class="btn-line medium" @click="clickInquiry" v-else-if="data.status === 'end'" :disabled="data.status === 'end'">-->
+<!--        {{ $t('my.inquiry-completed') }}-->
+<!--      </button>-->
+    </li>
+  </ul>
+  <br>
+<!--  <p style="float: right; font-size: 12px; color: #787878;">-->
+<!--    <router-link to="/useterm"><a class="btn-link" style="padding-right: 5px">서비스이용약관</a></router-link>-->
+<!--    <a style="margin-right:10px" href="https://privacy.sktelecom.com/view.do?ctg=policy&name=policy" class="btn-link">개인정보처리방침</a>-->
+<!--  </p>-->
+  <div class="btn-wrap">
+    <a href="#" class="btn-more" v-if="listData.length > 0" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
+  </div>
+
+  <p class="no-content" v-if="listData.length === 0">{{ $t('my.booking-list-none') }}</p>
+</div>

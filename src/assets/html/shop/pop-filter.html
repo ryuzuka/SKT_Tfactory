@@ -1,0 +1,77 @@
+<section class="popup-full filter">
+  <header>
+    <h1>{{ $t('shop.filter-title') }}</h1>
+    <a class="btn-close" @click.prevent="$emit('close')"><span class="blind">{{ $t('comm.close') }}</span></a>
+  </header>
+  <div class="layer-cont" ref="filter">
+    <div class="filter-area">
+      <p>{{ $t('shop.please-select-filter') }}</p>
+      <button class="btn-reset" @click="reset">{{ $t('comm.reset') }}</button>
+    </div>
+    <div class="row">
+      <h2>{{ $t('shop.shop-type') }}</h2>
+      <ul class="input-box">
+        <li v-for="key in Object.keys(STORE_FILTER.STORE_TYPES)">
+          <input type="radio" :value=key
+                 v-model="filterData.STORE_TYPE"><label>{{STORE_FILTER.STORE_TYPES[key]}}</label>
+        </li>
+      </ul>
+      <dl>
+        <dt>{{ $t('shop.processable-business') }}</dt>
+        <dd>
+          <ul class="list-option flexible type1">
+            <li v-for="(work, workIndex) in Object.keys(STORE_FILTER.STORE_WORKS)">
+              <input type="checkbox" :value=work v-model="filterData.WORKS" :id="'option-'+workIndex">
+              <label :for="'option-'+workIndex">{{STORE_FILTER.STORE_WORKS[work]}}</label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>{{ $t('shop.business-counseling') }}</dt>
+        <dd>
+          <ul class="list-option flexible type2">
+            <li v-for="(counseling, counselingIndex) in Object.keys(STORE_FILTER.STORE_COUNSELINGS)">
+              <input type="checkbox" :value=counseling v-model="filterData.COUNSELINGS" :id="'option-'+counselingIndex">
+              <label :for="'option-'+counselingIndex">{{STORE_FILTER.STORE_COUNSELINGS[counseling]}}</label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>{{ $t('sev.experience') }}</dt>
+        <dd>
+          <ul class="list-option flexible type3">
+            <li v-for="(experience, experienceIndex) in Object.keys(STORE_FILTER.STORE_EXPERIENCES)">
+              <input type="checkbox" :value=experience v-model="filterData.EXPERIENCES" :id="'option-'+experienceIndex">
+              <label :for="'option-'+experienceIndex">{{STORE_FILTER.STORE_EXPERIENCES[experience]}}</label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <dl>
+        <dt>{{ $t('sev.tab-program') }}</dt>
+        <dd>
+          <ul class="list-option flexible type4">
+            <li v-for="(program, programIndex) in Object.keys(STORE_FILTER.STORE_PROGRAMS)">
+              <input type="checkbox" :value=program v-model="filterData.PROGRAMS" :id="'option-'+programIndex">
+              <label :for="'option-'+programIndex">{{STORE_FILTER.STORE_PROGRAMS[program]}}</label>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <!-- 08.21 추가 -->
+      <dl>
+        <dt>{{ $t('comm.etc') }}</dt>
+        <dd>
+          <ul class="list-option flexible type5">
+            <li><input type="checkbox" name="option6" id="option6-1"><label for="option6-1">주차 가능</label></li>
+            <li><input type="checkbox" name="option6" id="option6-2"><label for="option6-2">장애인 경사로 설치</label></li>
+          </ul>
+        </dd>
+      </dl>
+      <!--// 08.21 추가 -->
+    </div>
+  </div>
+  <div class="btn-wrap sticky"><a class="btn-solid big" @click="applyFilter">{{ $t('comm.apply') }}</a></div>
+</section>

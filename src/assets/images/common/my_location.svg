@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>my_location</title>
+    <defs>
+        <circle id="path-1" cx="24" cy="24" r="7"></circle>
+        <filter x="-50.0%" y="-35.7%" width="200.0%" height="200.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_map" transform="translate(0.000000, -75.000000)">
+            <g id="my_location" transform="translate(0.000000, 75.000000)">
+                <circle id="Oval" fill="#3617CE" opacity="0.149999991" cx="24" cy="24" r="24"></circle>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <circle stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="square" fill="#3617CE" fill-rule="evenodd" cx="24" cy="24" r="6.25"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

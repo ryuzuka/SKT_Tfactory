@@ -1,0 +1,127 @@
+<div class="contents" ref="contents">
+  <div class="wish">
+
+    <!-- 04.27 탭 추가 -->
+    <ul class="tabs-page" v-if="isSKT" >
+      <li :class="{'active': isActiveTab[0]}"><a href="#" @click.prevent="clickTab(0)">T Factory</a></li>
+      <li :class="{'active': isActiveTab[1]}"><a href="#" @click.prevent="clickTab(1)"><span class="ico-logo">T</span>다이렉트 샵</a></li>
+    </ul>
+    <!-- //04.27 탭 추가 -->
+
+    <p v-if="(isActiveTab[0] && favoriteList.length < 1) || (isActiveTab[1] && directShopList.length < 1)" style="display: block" class="no-content">{{ $t('my.wish-list-none') }}</p>
+    <template v-else>
+      <section v-show="isActiveTab[0]"> <!-- 04.27 section 및 h2 추가 -->
+        <h2 class="blind">T Factory</h2>
+        <ul v-show="favoriteList.length>0" class="wish-list">
+          <li v-for="(deviceInfo, index) in favoriteList">
+          <!-- TODO: 단말상품 (v-if="prd.type==='device'") -->
+          <template>
+            <div class="product">
+              <div class="thumb"><img v-bind:src="deviceInfo.deviceImgs[0]" alt=""/></div>
+              <div class="info">
+                <p class="tit-prd">{{deviceInfo.modelName}}</p>
+                <p class="tags">
+                  <span v-for="tag in deviceInfo.tagNms">{{tag | makeHashTag}}</span>
+                </p>
+                <div class="price">
+                  <span>{{ $t('prd.price')}}</span>
+                  <div>
+                    <em>{{deviceInfo.priceNew | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+                  </div>
+                </div>
+                <!-- //price -->
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <!-- 단말상품 버튼 타입: 자세히보기 -->
+              <router-link :to="{ name: 'Product', params: { productId: deviceInfo.productGrpId }}"class="btn-basic small">{{ $t('my.detail-view') }}</router-link>
+<!--              03.09 단말상품 버튼 타입 추가: 자세히보기 & 다이렉트샵 구매-->
+              <a @click.prevent="openTWD(deviceInfo.twdPageLink)" class="btn-tworld" v-html="$t('my.directshop-purchase')"><span class="blind">T</span> 다이렉트샵 구매</a>
+            </div>
+            <a class="btn-del" @click.prevent="clickDelete(deviceInfo.productGrpId)"><span class="blind">{{ $t('comm.delete') }}</span></a>
+          </template>
+
+          <!-- TODO: 요금제 -->
+<!--          <template v-else-if="prd.type==='fee'">-->
+<!--            <div class="product">-->
+<!--              <div class="thumb"><img src="../../images/dummy/@prd1.jpg" alt=""/></div>-->
+<!--              <div class="info">-->
+<!--                <p class="tit-prd">FLO 앤 데이터</p>-->
+<!--                &lt;!&ndash; price &ndash;&gt;-->
+<!--                <div class="price">-->
+<!--                  <span>{{ $t('my.fee') }}</span>-->
+<!--                  <div>-->
+<!--                    <em>7,500</em><span class="unit">{{ $t('comm.won') }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; //price &ndash;&gt;-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="btn-wrap">-->
+<!--              <a href="#" class="btn-tworld" v-html="$t('my.tworld-view')"> &lt;!&ndash; T world 상세로 이동 &ndash;&gt;-->
+<!--                <span class="blind">T</span> World 에서 보기-->
+<!--              </a>-->
+<!--            </div>-->
+<!--            <a href="#" class="btn-del" @click.prevent="clickDelete"><span class="blind">{{ $t('comm.delete') }}</span></a>-->
+<!--          </template>-->
+
+          <!-- TODO: 악세서리 -->
+<!--          <template v-else-if="prd.type==='accessory'">-->
+<!--            <div class="product">-->
+<!--              <div class="thumb"><img src="../../images/dummy/@prd1.jpg" alt=""/></div>-->
+<!--              <div class="info">-->
+<!--                <p class="tit-prd">상품명입니다. 최대 2줄까지 나오고 이후엔 말줄임해요. 길어져라</p>-->
+<!--                <div class="acc">-->
+<!--                  <span class="brand">브랜드명은 최대 글자수 제한이 없대요.</span><span class="model">모델명도 길어지면 길어지는대로 노출된대요</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="btn-wrap">-->
+<!--              &lt;!&ndash; 단말상품 버튼 타입: 11번가에서 구매 &ndash;&gt;-->
+<!--              <a href="#" class="btn-11st" v-html="$t('my.11st-purchase')"><span class="blind">11번가</span> 에서 구매</a>-->
+<!--              &lt;!&ndash; 03.09 악세서리 버튼 타입 추가: 다이렉트샵 구매-->
+<!--              <a href="#" class="btn-tworld" v-html="$t('my.directshop-purchase')"><span class="blind">T</span> 다이렉트샵 구매</a>-->
+<!--              &ndash;&gt;-->
+<!--            </div>-->
+<!--            <a href="#" class="btn-del" @click.prevent="clickDelete"><span class="blind">{{ $t('comm.delete') }}</span></a>-->
+<!--          </template>-->
+          </li>
+        </ul>
+      </section>
+
+      <!-- 04.27 T 다이렉트 샵 추가 -->
+      <section v-show="isActiveTab[1]">
+        <h2 class="blind">T {{ $t('my.direct-shop') }}</h2>
+        <ul v-show="directShopList.length>0" class="wish-list">
+          <li v-for="(deviceInfo, index) in directShopList">
+            <div class="product">
+              <div class="thumb"><img :src="deviceInfo.img" alt=""/></div>
+              <div class="info">
+                <p class="tit-prd">{{deviceInfo.modelName}}</p>
+                <p class="tags">
+                  <span v-for="tag in deviceInfo.tagNms">{{tag | makeHashTag}}</span>
+                </p>
+                <div class="price">
+                  <span>{{ $t('prd.price') }}</span>
+                  <div>
+                    <em>{{deviceInfo.price | currency}}</em><span class="unit">{{ $t('comm.won') }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <router-link :to="{ name: 'Product', params: { productId: deviceInfo.productGrpid }}" class="btn-basic small">{{ $t('my.detail-view') }}</router-link>
+              <a @click.prevent="openTWD(deviceInfo.twdPageLink)" class="btn-tworld" v-html="$t('my.directshop-purchase')"><span class="blind">T</span> 다이렉트샵 구매</a>
+            </div>
+<!--            <a class="btn-del" @click.prevent="clickDelete"><span class="blind">{{ $t('comm.delete') }}</span></a>-->
+          </li>
+        </ul>
+      </section>
+      <!-- //04.27 T 다이렉트 샵 추가 -->
+
+      <div class="btn-wrap">
+        <a href="#" class="btn-more" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
+      </div>
+    </template>
+  </div>
+</div>

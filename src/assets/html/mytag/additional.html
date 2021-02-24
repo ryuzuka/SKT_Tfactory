@@ -1,0 +1,129 @@
+<div class="contents" ref="contents">
+  <div class="additional-user">
+    <p class="phone-num">{{myInfo.MDN | mdnFilter}}</p>
+    <p v-if="modelName" class="device">{{modelName}}</p>
+    <span v-if="vasInfo.subscriptionNm">{{vasInfo.subscriptionNm}}</span>
+  </div>
+
+  <section class="additional">
+    <h2><span>{{myInfo.NAME}}</span> 고객님,<br><span>T Factory</span> 홍대를 이용해 주셔서 감사합니다.</h2>
+    <div class="row">
+      <div class="recomm">
+        <h3>{{ $t('mytag.recomm-additional') }} <span class="date">{{date}} {{ $t('mytag.base-day') }}</span></h3>
+        <ul>
+          <!-- 아이콘
+            .ico-opt.type1 : wavve
+            .ico-opt.type2 : x cloud
+            .ico-opt.type3 : flo
+            .ico-opt.type4 : 컬러링
+            .ico-opt.type5 : 휴대폰 보험
+            .ico-opt.type6 : 통화 부가서비스
+          -->
+          <li>
+            <a @click.prevent="openTworld(vasInfo.vcolorSvcId)" class="item">
+              <div>
+                <span class="tag">#V컬러링 데이터 요금제</span>
+                <p class="name">{{vasInfo.vcolorSvcNm}}</p>
+              </div>
+              <div>
+                <span v-if="myVAS[vasInfo.vcolorSvcId]" class="flag-solid4">이용중</span>
+                <p v-if="!myVAS[vasInfo.vcolorSvcId]" class="price">
+                  <span>{{vasInfo.vcolorBaseAmt | priceFilter}} 원</span>{{vasInfo.vcolorSvcAmt | priceFilter}} 원/월</p>
+                <i class="ico-opt type4"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a @click.prevent="openTworld(vasInfo.xcloudSvcId)" class="item">
+              <div>
+                <span class="tag">#클라우드 서비스</span>
+                <p class="name">{{vasInfo.xcloudSvcNm}}</p>
+              </div>
+              <div>
+                <span v-if="myVAS[vasInfo.xcloudSvcId]" class="flag-solid4">이용중</span>
+                <p v-if="!myVAS[vasInfo.xcloudSvcId]" class="price">
+                  <span v-if="vasInfo.xcloudDisRate!==0">{{vasInfo.xcloudBaseAmt | priceFilter}} 원</span>{{vasInfo.xcloudSvcAmt | priceFilter}} 원/월</p>
+                <i class="ico-opt type2"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a @click.prevent="openTworld(vasInfo.wavveSvcId)" class="item">
+              <div>
+                <span class="tag">#영상 스트리밍</span>
+                <p class="name">{{vasInfo.wavveSvcNm}}</p>
+              </div>
+              <div>
+                <span v-if="myVAS[vasInfo.wavveSvcId]" class="flag-solid4">이용중</span>
+                <p v-if="!myVAS[vasInfo.wavveSvcId]" class="price">
+                  <span v-if="vasInfo.wavveDisRate!==0">{{vasInfo.wavveBaseAmt | priceFilter}} 원</span>{{vasInfo.wavveSvcAmt | priceFilter}} 원/월</p>
+                <i class="ico-opt type1"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a @click.prevent="openTworld(vasInfo.floSvcId)" class="item">
+              <div>
+                <span class="tag">#음악 스트리밍</span>
+                <p class="name">{{vasInfo.floSvcNm}}</p>
+              </div>
+              <div>
+                <span v-if="myVAS[vasInfo.floSvcId]" class="flag-solid4">이용중</span>
+                <p v-if="!myVAS[vasInfo.floSvcId]" class="price">
+                  <span v-if="vasInfo.floDisRate!==0">{{vasInfo.floBaseAmt | priceFilter}} 원</span>{{vasInfo.floSvcAmt | priceFilter}} 원/월</p>
+                <i class="ico-opt type3"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a @click.prevent="openTworld(vasInfo.insrnSvcId)" class="item">
+              <div>
+                <span class="tag">#휴대폰 보험</span>
+                <p class="name">{{vasInfo.insrnSvcNm | priceFilter}}</p>
+              </div>
+              <div>
+                <!--                <span v-if="myVAS[vasInfo.insrnSvcId]" class="flag-solid4">이용중</span>-->
+                <!--                <p v-if="!myVAS[vasInfo.insrnSvcId]" class="price">? 원/월</p>-->
+                <i class="ico-opt type5"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a @click.prevent="openTworld(vasInfo.callpkSvcId)" class="item">
+              <div>
+                <span class="tag">#통화 부가서비스</span>
+                <p class="name">{{vasInfo.callpkSvcNm}}</p>
+              </div>
+              <div>
+                <span v-if="myVAS[vasInfo.callpkSvcId]" class="flag-solid4">이용중</span>
+                <p v-if="!myVAS[vasInfo.callpkSvcId]" class="price"><span v-if="vasInfo.callpkDisRate!==0"></span>{{vasInfo.callpkSvcAmt
+                  | priceFilter}}
+                  원/월</p>
+                <i class="ico-opt type6"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="aiPickVASInfo.length>0" class="ai-picks">
+        <h3><span class="ico-ai"><span class="blind">Ai PICKS</span></span>{{ $t('mytag.recomm-ai') }}</h3>
+        <div class="ai-slide">
+          <swiper :options="aiSwiperOption">
+            <swiper-slide v-for="(vas, vasIndex) in aiPickVAS" :key="vas.id">
+              <a @click.prevent="openTworld(vas.id)">
+                <dl class="info">
+                  <dt>{{vas.name}}</dt>
+                  <dd style="font-size: 11px" class="desc">{{aiPickVASInfo[vasIndex].description}}</dd>
+                  <dd class="price">{{aiPickVASInfo[vasIndex].price}}</dd>
+                </dl>
+                <div class="thumb"><img src="../../images/common/additional_default.svg" alt=""></div>
+              </a>
+            </swiper-slide>
+            <div class="swiper-pagination type2" slot="pagination"></div>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
