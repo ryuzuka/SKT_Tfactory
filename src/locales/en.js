@@ -348,7 +348,7 @@ export default {
     'recommended-target': '추천 대상',
     'schedule-place': '일정 & 장소',
     'leader-introduction': '클래스 리더 소개',
-    'participate': '참여방법',
+    'participate': '참여 방법',
     'lecture-introduction': '강연 소개',
     'lecture-composition': '강연 구성',
     'notice': '유의사항',

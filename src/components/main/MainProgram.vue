@@ -35,7 +35,7 @@ export default {
       crewClasses: [],
       todayClasses: [],
       specialClasses: [],
-      mainBannerKor: ['갤럭시 스튜디오', 'Love Galaxy@T팩토리', '갤럭시로 한 곡 뚝딱!'],
+      mainBannerKor: ['Welcome to ⓥStudio!', '갤럭시로 한 곡 뚝딱!'],
       mainBannerUrl: []
     }
   },

@@ -248,6 +248,18 @@
               <router-link class="link" to='/experience/program13'>이달의 악기는?<br>클래식 악기 릴레이 체험 전시</router-link>
               <div class="date"><span>1.25</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program14'>SAVE THE MOMENT</router-link>
+              <div class="date"><span>2.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program15'>Welcome to ⓥ Studio!</router-link>
+              <div class="date"><span>2.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program16'>나의 ⓥTYPE 찾기</router-link>
+              <div class="date"><span>2.26</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
