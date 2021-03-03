@@ -1,34 +1,48 @@
-<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents"> <!-- 201211 수정 -->
+<div class="contents bottom-sticky" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
-    <img src="../../../images/program/class8-slide1.jpg" alt="">
+    <img src="../../../images/program/class8-slide1.jpg" alt="T Factory x FLO 나상현씨 밴드">
   </div>
   <!-- //slide -->
   <!-- details -->
   <div class="details">
     <div class="details-header">
-      <em class="flag-solid7">FACTORY CONCERT</em>
-      <h2 class="details-tit">나상현씨밴드</h2>
-      <p class="desc">T Factory 콘서트의 시작</p>
+      <em class="flag-solid7">CONCERT</em>
+      <h2 class="details-tit">T Factory x FLO : 나상현씨밴드</h2>
+      <p class="desc">
+        T Factory CONCERT의 시작<br>
+        이번 T Factory x FLO 소규모 콘서트는<br>
+        나상현씨밴드와 함께합니다.
+      </p>
       <div class="tags">
         <span class="flag-basic">공연 관람형</span>
         <span class="flag-basic">소규모 콘서트</span>
-        <span class="flag-basic">홍대 인디 밴드</span>
+        <span class="flag-basic">홍대 인디밴드</span>
       </div>
     </div>
     <div class="details-inner">
-      <h3 class="subtit">{{ $t('prd.band-introduction')}}</h3>
+      <h3 class="subtit">T Factory x FLO 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class8-conts2.png" alt="T Factory x FLO Special Concert"></div>
+      <p>
+        T Factory x FLO는 T Factory와 FLO가 함께 만들어가는 팬 초청 소규모 콘서트입니다. <br>
+        선정된 아티스트의 팬심고사를 통과한 팬들 중 추첨을 통해 아티스트와 함께하는 소규모 콘서트에 초청합니다.
+      </p>
+      <h3 class="subtit">아티스트 소개</h3>
       <div class="thumb"><img src="../../../images/program/class8-conts.jpg" alt=""></div>
-      <p>친숙하지만 뻔하지 않은, <br>우리들을 노래하는 나상현씨밴드.<br>
-        나상현씨(기타,보컬)을 중심으로 강현웅(드럼), 백승렬(베이스)이 모여 3인조로 노래를 연주하는 나상현씨밴드.<br>
+      <p>
+        친숙하지만 뻔하지 않은, <br>우리들을 노래하는 나상현씨밴드.<br>
+        나상현씨(기타,보컬)을 중심으로 강현웅(드럼), 백승렬(베이스)이 모여 3인조로 노래를 연주한다.<br>
         2014년에 결성된 그들은 밴드음악을 기반으로 다양한 장르적 방향성을 통해 보통의 이야기들을 풀어낸다.<br>
         2019년 채널A &lt;보컬플레이2&gt;를 통해 서울대밴드로 이름을 알렸으며,
         2020년에는 제 31회 유재하 음악경연대회 장려상, 그린플러그드 신인 그린프렌즈 우승,
         인디스땅스 TOP13 등 경연에서도 좋은 성과를 거두고 있다.<br>
-        2019년부터 지난 2년간 40여 곡을 발표할 만큼 활발한 창작활동을 보여주고 있다.</p>
-
+        2019년부터 지난 2년간 40여 곡을 발표할 만큼 활발한 창작활동을 보여주고 있다.
+      </p>
+      <h3 class="subtit">모집 및 발표</h3>
+      <p>~ 3월 9일(화) 18시까지 응모 가능<br>당첨자는 3월 10일(수) 중 개별 연락
+      </p>
       <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
-      <p>3월 중(자세한 날짜 및 시간은 추후 공지 예정)<br>T Factory 2층, 0 Stage</p>
+      <p>3월 12일(금) 19시<br>T Factory 2층, 0 Stage</p>
 
       <div class="notice">
         <h4 class="subtit">{{ $t('prd.notice')}}</h4>
@@ -40,8 +54,8 @@
   </div>
   <!-- //details -->
   <!-- button set -->
-  <div v-if="bookingAvailable" class="btn-wrap sticky">
-    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  <div class="btn-wrap sticky">
+    <a href="https://bd3ig7ut4mo.typeform.com/to/KUwJqguI" class="btn-solid" target="_blank">콘서트 응모하기</a>
   </div>
   <!-- //button set -->
 </div>
