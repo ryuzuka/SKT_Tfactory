@@ -64,7 +64,8 @@
   </div>
   -->
   <div class="btn-wrap sticky">
-    <a href="https://bd3ig7ut4mo.typeform.com/to/KUwJqguI" class="btn-solid" target="_blank">콘서트 응모하기</a>
+    <a v-if="isLogin" href="https://bd3ig7ut4mo.typeform.com/to/KUwJqguI" class="btn-solid" target="_blank">콘서트 응모하기</a>
+    <a v-else href="#none" @click.prevent="login" class="btn-solid">콘서트 응모하기</a>
   </div>
   <!-- //button set -->
 </div>

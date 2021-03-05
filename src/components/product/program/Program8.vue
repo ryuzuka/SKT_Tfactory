@@ -8,12 +8,14 @@ export default {
   data () {
     return {
       bookingAvailable: false,
-      isLogin: ''
+      isLogin: false
     }
   },
   mounted () {
     STORE.getProgramClass(this.$route.query.classId).then(result => {
-      this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
+      if (result.PROGRAM_CLASS) {
+        this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
+      }
     })
 
     this.$store.watch(() => {
@@ -27,12 +29,16 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID +
-            '&classId=' + this.$route.query.classId)
+        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
       } else {
         localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
         this.$router.push({'name': 'Login'})
       }
+    },
+    login () {
+      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
+      localStorage.setItem('previous_url', prevURL)
+      this.$router.push({name: 'Login'})
     }
   }
 }
