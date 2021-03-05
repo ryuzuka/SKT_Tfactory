@@ -1,6 +1,6 @@
 <template>
   <div class="wrap experience">
-    <Header type="back"></Header>
+    <Header type="backToProgram"></Header>
 
     <program1 v-if="programId === 'program1'"></program1>
     <program2 v-else-if="programId === 'program2'"></program2>
