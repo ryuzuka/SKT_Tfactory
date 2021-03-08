@@ -11,8 +11,10 @@
     </div>
     <ul class="list-footer">
       <li><a href="/policy/service">{{ $t('comm.terms') }}</a></li>
-      <li><a href="https://privacy.sktelecom.com/view.do?ctg=policy&name=policy"><strong>
-        {{$t('comm.personal-information') }} {{ $t('comm.policy') }}</strong></a>
+      <li>
+        <a @click.prevent="openSysUrl"><strong>
+          {{$t('comm.personal-information') }} {{ $t('comm.policy') }}</strong>
+        </a>
       </li>
       <li><a href="/policy/conflict">{{ $t('comm.conflict-process') }}</a></li>
     </ul>
@@ -21,11 +23,24 @@
 </template>
 
 <script>
+import * as NATIVE from '../../js/native.js'
 export default {
   name: 'Footer',
   data () {
     return {
       isInfo: false
+    }
+  },
+  methods: {
+    openSysUrl () {
+      console.log('hhh')
+      const mobileOS = this.$cookies.get('platform')
+      const redirectURL = 'https://privacy.sktelecom.com/view.do?ctg=policy&name=policy'
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOepn(mobileOS, redirectURL)
+      } else {
+        window.location.href = redirectURL
+      }
     }
   }
 }

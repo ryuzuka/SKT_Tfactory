@@ -100,6 +100,16 @@ export const faceRegistTermsClose = (mobileOS) => {
   callNativeScheme(mobileOS, scheme)
 }
 
+export const sysBrowserOepn = (mobileOS, redirectURL) => {
+  let scheme = {
+    'function': 'sysBrowserOpen',
+    'message': {
+      'redirectURL': redirectURL
+    }
+  }
+  callNativeScheme(mobileOS, scheme)
+}
+
 /* eslint no-undef: "off" */
 const callNativeScheme = (mobileOS, scheme) => {
   console.log('[INFO] callNativeScheme: ' + scheme)
