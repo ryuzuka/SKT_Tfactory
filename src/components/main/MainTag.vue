@@ -208,6 +208,7 @@ export default {
               }
             }
           })
+          console.log(this.historyList)
         })
       })
     },
