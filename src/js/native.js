@@ -100,7 +100,7 @@ export const faceRegistTermsClose = (mobileOS) => {
   callNativeScheme(mobileOS, scheme)
 }
 
-export const sysBrowserOepn = (mobileOS, redirectURL) => {
+export const sysBrowserOpen = (mobileOS, redirectURL) => {
   let scheme = {
     'function': 'sysBrowserOpen',
     'message': {

@@ -33,11 +33,10 @@ export default {
   },
   methods: {
     openSysUrl () {
-      console.log('hhh')
       const mobileOS = this.$cookies.get('platform')
       const redirectURL = 'https://privacy.sktelecom.com/view.do?ctg=policy&name=policy'
       if (mobileOS === 'A' || mobileOS === 'I') {
-        NATIVE.sysBrowserOepn(mobileOS, redirectURL)
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
       } else {
         window.location.href = redirectURL
       }
