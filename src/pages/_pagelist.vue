@@ -222,7 +222,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program8'>나상현씨밴드<br>T Factory 콘서트의 시작</router-link>
-              <div class="date"><span>12.9</span><span>1.25</span></div>
+              <div class="date"><span>12.9</span><span>3.11</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program9'>페퍼톤스</router-link>
@@ -230,7 +230,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program10'>브로콜리 너마저</router-link>
-              <div class="date"><span>12.9</span><span>12.15</span></div>
+              <div class="date"><span>12.9</span><span>3.11</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program11'>갤럭시 스튜디오 [Galaxy S21 체험존] T팩토리에서 Galaxy Studio를
@@ -250,7 +250,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program14'>SAVE THE MOMENT</router-link>
-              <div class="date"><span>2.26</span></div>
+              <div class="date"><span>2.26</span><span>3.11</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program15'>Welcome to ⓥ Studio!</router-link>
