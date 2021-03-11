@@ -12,10 +12,6 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      localStorage.removeItem('previous_url')
-    })
-
     STORE.getProgramClass(this.$route.query.classId).then(result => {
       if (result.PROGRAM_CLASS) {
         this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
