@@ -1,4 +1,4 @@
-<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents" ref="contents">
+<div class="contents bottom-sticky" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class17-slide1.jpg" alt="너도 이제 크리에이터 크리에이터를 꿈꾸는 모두를 위한 무료강연">
@@ -9,17 +9,17 @@
     <div class="details-header">
       <em class="flag-solid7">LECTURE</em>
       <h2 class="details-tit">너도 이제 크리에이터</h2>
+      <div class="tags">
+        <span class="flag-basic">특별 초빙</span>
+        <span class="flag-basic">지식 수집형</span>
+        <span class="flag-basic">크리에이터</span>
+      </div>
       <p class="desc">
         틱톡 크리에이터가 되고 싶어? <br>
         평소 크리에이터의 삶이 궁금했던 분,<br>
         크리에이터를 꿈꾸는 분들을 위해<br>
         T Factory에서 준비한 특별 초청 강연
       </p>
-      <div class="tags">
-        <span class="flag-basic">특별 초빙</span>
-        <span class="flag-basic">지식 수집형</span>
-        <span class="flag-basic">크리에이터</span>
-      </div>
     </div>
     <div class="details-inner">
       <h3 class="subtit">{{ $t('prd.lecture-introduction')}}</h3>
@@ -68,7 +68,7 @@
   </div>
   <!-- //details -->
   <!-- button set -->
-  <div v-if="bookingAvailable" class="btn-wrap sticky">
+  <div class="btn-wrap sticky">
     <a href="https://bd3ig7ut4mo.typeform.com/to/NhyXESSY" class="btn-solid" target="_blank">프로그램 응모</a>
   </div>
   <!-- //button set -->
