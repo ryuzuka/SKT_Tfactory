@@ -69,7 +69,11 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <a href="https://bd3ig7ut4mo.typeform.com/to/NhyXESSY" class="btn-solid" target="_blank">프로그램 응모</a>
+    <button v-if="expired" type="button" class="btn-solid disabled" disabled>프로그램 응모 마감</button>
+    <template v-else>
+      <a v-if="isLogin" href="https://bd3ig7ut4mo.typeform.com/to/NhyXESSY" class="btn-solid" target="_blank">프로그램 응모</a>
+      <a v-else href="#none" @click.prevent="login" class="btn-solid">프로그램 응모</a>
+    </template>
   </div>
   <!-- //button set -->
 </div>

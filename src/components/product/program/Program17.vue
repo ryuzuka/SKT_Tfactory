@@ -8,7 +8,13 @@ export default {
   data () {
     return {
       bookingAvailable: false,
-      isLogin: ''
+      isLogin: false,
+      expired: false
+    }
+  },
+  created () {
+    if (parseInt(this.$moment().format('YYYYMMDD')) >= 20210318) {
+      this.expired = true
     }
   },
   mounted () {
@@ -27,12 +33,16 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID +
-            '&classId=' + this.$route.query.classId)
+        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
       } else {
         localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
         this.$router.push({'name': 'Login'})
       }
+    },
+    login () {
+      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
+      localStorage.setItem('previous_url', prevURL)
+      this.$router.push({name: 'Login'})
     }
   }
 }
