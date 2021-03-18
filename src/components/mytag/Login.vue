@@ -40,7 +40,7 @@ export default {
   methods: {
     _tidLoginRedirect () {
       localStorage.setItem('previous_url', '/main/mytag')
-      let callback = window.location.href
+      let callback = window.location.origin + '/mytag/login'
       let mobileOS = this.$cookies.get('platform')
       if (mobileOS === 'A' || mobileOS === 'I') {
         NATIVE.tidLogin_native(mobileOS, callback)
@@ -49,7 +49,7 @@ export default {
       }
     },
     _tidJoinRedirect () {
-      let callback = window.location.href
+      let callback = window.location.origin + '/mytag/login'
       let mobileOS = this.$cookies.get('platform')
 
       if (mobileOS === 'A' || mobileOS === 'I') {
