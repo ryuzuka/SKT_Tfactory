@@ -158,6 +158,10 @@ img {
   .instruction_container .mobile img:first-child {
     margin-right: 15%;
   }
+  .instruction_container .mobile img:nth-child(3) {
+    width: 30%;
+    margin-top: 3%;
+  }
   .instruction_container .start_btn {
     width: 8%;
     margin-top: 2%;
@@ -174,11 +178,18 @@ img {
     width: 9vw;
     height: 9vw;
   }
+  .instruction_container .instruction {
+    width: 45%;
+  }
   .instruction_container .mobile {
     text-align: center;
   }
   .instruction_container .mobile img:first-child {
     margin-bottom: 15%;
+  }
+  .instruction_container .mobile img:nth-child(3) {
+    width: 84%;
+    margin-top: 10%;
   }
   .instruction_container .start_btn {
     width: 15%;
@@ -203,6 +214,10 @@ img {
   }
   .instruction_container .mobile img:first-child {
     margin-bottom: 15%;
+  }
+  .instruction_container .mobile img:nth-child(3) {
+    width: 84%;
+    margin-top: 10%;
   }
   .instruction_container .start_btn {
     width: 15%;
@@ -235,6 +250,10 @@ img {
   }
   .instruction_container .mobile img:first-child {
     margin-right: 15%;
+  }
+  .instruction_container .mobile img:nth-child(3) {
+    width: 30%;
+    margin-top: 3%;
   }
   .instruction_container .start_btn {
     width: 8%;

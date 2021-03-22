@@ -34,6 +34,7 @@
                 <div class="mobile">
                     <img src="resources/mobile_instruction_1.svg" alt="instruction" />
                     <img src="resources/mobile_instruction_2.svg" alt="instruction" />
+                    <img src="resources/mobile_instruction_3.svg" alt="instruction" />
                 </div>
                 <div class="start_btn">
                     <img src="resources/start_btn.svg" alt="start" />
@@ -73,9 +74,9 @@
             })
 
             window.addEventListener('message', function(e){
-                if (e.data === 'audioOpen') {
+                if (e.data === 'audioOpen' || e.data === 'mapOpen') {
                     $('.close_btn').css('display', 'none');
-                } else if (e.data === 'audioClose') {
+                } else if (e.data === 'audioClose' || e.data === 'mapClose') {
                     $('.close_btn').css('display', 'block');
                 }
             })
