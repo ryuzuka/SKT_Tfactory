@@ -14,7 +14,7 @@ export default {
     }
   },
   created () {
-    if (parseInt(this.$moment().format('YYYYMMDDHHMM')) >= 202103241800) {
+    if (parseInt(this.$moment().format('YYYYMMDD')) >= 20210331) {
       this.expired = true
     }
   },
