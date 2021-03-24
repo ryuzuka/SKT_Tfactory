@@ -695,6 +695,17 @@
         margin-top:8px;
         color:#787878;
         @include font-set14;
+        &.type2 {
+          margin-top:20px;
+          em {
+            display:block;
+            margin-bottom:4px;
+            color:#000;
+          }
+          & + .desc {
+            margin-top:16px;
+          }
+        }
       }
     }
     &-tit {
@@ -706,6 +717,14 @@
         margin-bottom:4px;
         @include font-set16;
         font-weight:$fw-medium;
+      }
+      .pipe {
+        display:inline-block;
+        width:2px;
+        height:20px;
+        margin:-6px 10px 0;
+        background-color:#000;
+        vertical-align:middle;
       }
     }
     [class^="flag"] {

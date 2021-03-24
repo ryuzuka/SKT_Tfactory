@@ -194,7 +194,7 @@
           <ul>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program1'>이번주 속도왕은 바로 나!<br>팩토리 속도왕</router-link>
-              <div class="date"><span>12.9</span><span>1.25</span></div>
+              <div class="date"><span>12.9</span><span>3.24</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program2'>갤럭시S21 'TMI'</router-link>
@@ -263,6 +263,10 @@
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program17'>너도 이제 크리에이터</router-link>
               <div class="date"><span>3.15</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program18'>4월의 덕콘 | 안예은</router-link>
+              <div class="date"><span>3.24</span></div>
             </li>
           </ul>
 
