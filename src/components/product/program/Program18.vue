@@ -44,6 +44,11 @@ export default {
         localStorage.setItem('previous_url', prevURL)
         this.$router.push({name: 'Login'})
       }
+    },
+    login () {
+      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
+      localStorage.setItem('previous_url', prevURL)
+      this.$router.push({name: 'Login'})
     }
   }
 }

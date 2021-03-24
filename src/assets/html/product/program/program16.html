@@ -34,8 +34,11 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <a v-if="mobileOS === null" href="https://vstudio.brightbell.co.kr/event/" target="_blank" class="btn-solid">내 캐릭터타입 찾아보기</a>
-    <a v-else @click.prevent="bookProgram" class="btn-solid">내 캐릭터타입 찾아보기</a>
+    <a v-if="isLogin" href="https://vstudio.brightbell.co.kr/event/" class="btn-solid" target="_blank">내 캐릭터타입 찾아보기</a>
+    <a v-else href="#none" @click.prevent="login" class="btn-solid">내 캐릭터타입 찾아보기</a>
+
+<!--    <a v-if="mobileOS === null" href="https://vstudio.brightbell.co.kr/event/" target="_blank" class="btn-solid">내 캐릭터타입 찾아보기</a>-->
+<!--    <a v-else @click.prevent="bookProgram" class="btn-solid">내 캐릭터타입 찾아보기</a>-->
   </div>
   <!-- //button set -->
 </div>
