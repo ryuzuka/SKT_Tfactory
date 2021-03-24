@@ -10,7 +10,8 @@ export default {
     return {
       bookingAvailable: false,
       isLogin: '',
-      expired: false
+      expired: false,
+      mobileOS: null
     }
   },
   created () {
@@ -19,6 +20,8 @@ export default {
     }
   },
   mounted () {
+    this.mobileOS = this.$cookies.get('platform')
+
     STORE.getProgramClass(this.$route.query.classId).then(result => {
       this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
     })
@@ -34,9 +37,8 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        let mobileOS = this.$cookies.get('platform')
         let redirectURL = 'https://bd3ig7ut4mo.typeform.com/to/p0ohMjin'
-        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+        NATIVE.sysBrowserOpen(this.mobileOS, redirectURL)
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
         localStorage.setItem('previous_url', prevURL)

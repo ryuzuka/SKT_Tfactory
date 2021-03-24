@@ -9,10 +9,13 @@ export default {
   data () {
     return {
       bookingAvailable: false,
-      isLogin: ''
+      isLogin: '',
+      mobileOS: null
     }
   },
   mounted () {
+    this.mobileOS = this.$cookies.get('platform')
+
     STORE.getProgramClass(this.$route.query.classId).then(result => {
       this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
     })
