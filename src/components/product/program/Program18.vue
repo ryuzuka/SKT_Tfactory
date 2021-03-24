@@ -2,13 +2,20 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
+import * as NATIVE from '../../../js/native.js'
 
 export default {
   name: 'Program18',
   data () {
     return {
       bookingAvailable: false,
-      isLogin: ''
+      isLogin: '',
+      expired: false
+    }
+  },
+  created () {
+    if (parseInt(this.$moment().format('YYYYMMDDHHMM')) >= 202103241800) {
+      this.expired = true
     }
   },
   mounted () {
@@ -27,16 +34,14 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
+        let mobileOS = this.$cookies.get('platform')
+        let redirectURL = 'https://bd3ig7ut4mo.typeform.com/to/p0ohMjin'
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
       } else {
-        localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
-        this.$router.push({'name': 'Login'})
+        let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
+        localStorage.setItem('previous_url', prevURL)
+        this.$router.push({name: 'Login'})
       }
-    },
-    login () {
-      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
-      localStorage.setItem('previous_url', prevURL)
-      this.$router.push({name: 'Login'})
     }
   }
 }
