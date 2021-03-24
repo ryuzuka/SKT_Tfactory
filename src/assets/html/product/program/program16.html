@@ -1,4 +1,4 @@
-<div v-bind:class="{ 'bottom-sticky': bookingAvailable }" class="contents bottom-sticky" ref="contents">
+<div class="contents bottom-sticky" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class15-slide1.jpg" alt="">
@@ -34,9 +34,6 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <a @click.prevent="bookProgram" class="btn-solid">내 캐릭터타입 찾아보기</a>
-  </div>
-  <div v-if="bookingAvailable" class="btn-wrap sticky">
     <a @click.prevent="bookProgram" class="btn-solid">내 캐릭터타입 찾아보기</a>
   </div>
   <!-- //button set -->

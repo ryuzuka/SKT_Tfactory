@@ -2,6 +2,7 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
+import * as NATIVE from '../../../js/native.js'
 
 export default {
   name: 'Program16',
@@ -27,10 +28,13 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID +
-            '&classId=' + this.$route.query.classId)
+        let mobileOS = this.$cookies.get('platform')
+        let redirectURL = 'https://vstudio.brightbell.co.kr/event/'
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
       } else {
-        localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
+        // localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
+        let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
+        localStorage.setItem('previous_url', prevURL)
         this.$router.push({'name': 'Login'})
       }
     }
