@@ -254,7 +254,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program15'>Welcome to ⓥ Studio!</router-link>
-              <div class="date"><span>2.26</span></div>
+              <div class="date"><span>2.26</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program16'>나의 ⓥTYPE 찾기</router-link>
@@ -267,6 +267,22 @@
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program18'>4월의 덕콘 | 안예은</router-link>
               <div class="date"><span>3.24</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program19'>4월의 덕콘 | 불고기디스코</router-link>
+              <div class="date"><span>3.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program20'>4월의 덕콘 | 후추스</router-link>
+              <div class="date"><span>3.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program21'>4월의 덕콘 | 페퍼톤스</router-link>
+              <div class="date"><span>3.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
+              <div class="date"><span>3.30</span></div>
             </li>
           </ul>
 

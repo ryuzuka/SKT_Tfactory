@@ -1,0 +1,72 @@
+<div class="contents bottom-sticky" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class19-slide1.jpg" alt="T Factory X FLO | 2021.04 불고기디스코">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+      <h2 class="details-tit">4월의 덕콘<i class="pipe"></i>불고기디스코</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">인디밴드</span>
+      </div>
+      <p class="desc type2">
+        <em>[T Factory X FLO 덕콘] 04</em>
+        입덕을 부르는 아티스트, 불고기디스코의 매력에 빠져보세요.
+      </p>
+      <p class="desc type2">
+        <em>4월의 덕콘</em>
+        03. 덕후콘 - 안예은<br>
+        04. 입덕콘 - 불고기디스코<br>
+        05. 입덕콘 - 후추스<br>
+        06. 덕후콘 - 페퍼톤스
+      </p>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">T Factory x FLO 덕콘</h3>
+      <div class="thumb"><img src="../../../images/program/class18-conts2.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <p>
+        T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다. <br>
+        매월 입덕하고 싶은 아티스트와 덕후팬이 많은 아티스트를 선정하여 콘서트를 진행합니다. <br>
+        본 콘서트는 무료로 진행되며, 선정된 아티스트가 직접 낸 팬심고사를 통과한 팬들 중 추첨을 통해 초청권을 드립니다.
+      </p>
+      <h3 class="subtit">불고기디스코 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class19-conts.jpg" alt=""></div>
+      <p>
+        한국을 대표하는 맛있는 음식 ‘불고기’와 남녀노소 흥이 나는 ‘디스코’를 결합시킨 이름이다. <br>
+        불고기(bulgogi)를 영어로 표기할 때 한국 정서를 아는 외국인들에게 거리낌이 없기도 바란다.<br>
+        그들의 장르를 그저 디스코라 정의할 수는 없으나,
+        그들의 관계 속 분위기와 음악을 대하는 자세에 디스코만큼 어울리는 수식어가 없다. <br>
+        마치 디스코 음악에 춤을 추듯 우리 모두가 즐길 수 있는 음악을 연주하고 노래하고 싶다는 5인조 밴드 <br>BULGOGIDISCO!
+      </p>
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <ul class="texts-list">
+        <li>일정 : 4월 10일(토) 19시</li>
+        <li>응모기간 : 4월 1일(목) ~ 4월 6일(화)</li>
+        <li>당첨자 발표 : 4월 7일(수)</li>
+        <li>장소 : T Factory 2층, 0 Stage</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 본 공연은 팬심고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자에게만 개별 연락이 갈 예정입니다.</li>
+          <li>* 정부의 방역지침 변경이 있을시 공연의 주요내용도 변경이 있을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //details -->
+  <!-- button set -->
+  <div class="btn-wrap sticky">
+    <button v-if="expired" type="button" class="btn-solid" disabled>콘서트 응모 마감</button>
+    <template v-else>
+      <a v-if="isLogin" href="https://bd3ig7ut4mo.typeform.com/to/kBLwBL06" class="btn-solid" target="_blank">COMING SOON</a>
+      <a v-else href="#none" @click.prevent="login" class="btn-solid">COMING SOON</a>
+    </template>
+  </div>
+  <!-- //button set -->
+</div>
