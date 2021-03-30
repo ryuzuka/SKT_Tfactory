@@ -67,11 +67,7 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <button v-if="expired" type="button" class="btn-solid" disabled>콘서트 응모 마감</button>
-    <template v-else>
-      <a v-if="isLogin" href="#" class="btn-solid" target="_blank">COMING SOON</a>
-      <a v-else href="#none" @click.prevent="login" class="btn-solid">COMING SOON</a>
-    </template>
+    <a href="#none" @click.prevent="$event => $event.preventDefault()" class="btn-solid">COMING SOON</a>
   </div>
   <!-- //button set -->
 </div>

@@ -10,13 +10,19 @@ export default {
     return {
       bookingAvailable: false,
       isLogin: '',
+      mobileOS: null,
       expired: false,
-      mobileOS: null
+      commingSoon: false,
+      entryDate: [20210407, 20210413]
     }
   },
   created () {
-    if (parseInt(this.$moment().format('YYYYMMDD')) >= 20210413) {
+    let date = parseInt(this.$moment().format('YYYYMMDD'))
+    if (date > this.entryDate[1]) {
       this.expired = true
+    }
+    if (date < this.entryDate[0]) {
+      this.commingSoon = true
     }
   },
   mounted () {

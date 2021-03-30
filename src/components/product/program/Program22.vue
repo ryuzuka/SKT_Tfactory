@@ -27,8 +27,7 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID +
-          '&classId=' + this.$route.query.classId)
+        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
       } else {
         localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
         this.$router.push({'name': 'Login'})

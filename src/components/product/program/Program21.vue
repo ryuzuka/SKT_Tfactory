@@ -10,13 +10,7 @@ export default {
     return {
       bookingAvailable: false,
       isLogin: '',
-      expired: false,
       mobileOS: null
-    }
-  },
-  created () {
-    if (parseInt(this.$moment().format('YYYYMMDD')) >= 20210420) {
-      this.expired = true
     }
   },
   mounted () {

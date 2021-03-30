@@ -64,8 +64,11 @@
   <div class="btn-wrap sticky">
     <button v-if="expired" type="button" class="btn-solid" disabled>콘서트 응모 마감</button>
     <template v-else>
-      <a v-if="isLogin" href="https://bd3ig7ut4mo.typeform.com/to/kBLwBL06" class="btn-solid" target="_blank">COMING SOON</a>
-      <a v-else href="#none" @click.prevent="login" class="btn-solid">COMING SOON</a>
+      <a v-if="commingSoon" href="#none" @click.prevent="$event => $event.preventDefault()" class="btn-solid">COMING SOON</a>
+      <template v-else>
+        <a v-if="isLogin" href="https://bd3ig7ut4mo.typeform.com/to/kBLwBL06" class="btn-solid" target="_blank">콘서트 응모하기</a>
+        <a v-else href="#none" @click.prevent="login" class="btn-solid">콘서트 응모하기</a>
+      </template>
     </template>
   </div>
   <!-- //button set -->
