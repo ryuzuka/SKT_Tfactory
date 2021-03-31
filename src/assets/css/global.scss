@@ -890,6 +890,18 @@
     border:1px solid rgba(64, 134, 214, 0.2);
     color:#4086D6;
   }
+  &-line5 {
+    border:1px solid #3617CE;
+    color:#3617CE;
+  }
+  &-line6 {
+    border:1px solid #000;
+    color:#000;
+  }
+  &-line7 {
+    border:1px solid #E8E8E8;
+    color:#505050;
+  }
 }
 // complete
 .complete {
@@ -980,6 +992,10 @@
       background-color:#bcbcbc;
       vertical-align:middle;
     }
+  }
+  & + .text-sel {
+    margin-top:-4px;
+    @include font-set16;
   }
 }
 

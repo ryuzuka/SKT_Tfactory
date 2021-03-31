@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <Header type="back" :title="$t('my.booking-service-list')"></Header>
+    <Header type="back" :title="$t('sev.application-booking-list')"></Header>
     <MyBookingList></MyBookingList>
 
     <modals-container></modals-container>
