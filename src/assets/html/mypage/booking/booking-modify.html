@@ -23,7 +23,10 @@
         {{ $t('comm.select') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span>
       </h3>
     </div>
-    <dl v-if="bookingType === 'program'" class="info">{{bookInfo.PROGRAM_CLASS_NAME}}</dl>
+    <!-- 21.03.30 수정 -->
+    <!-- <dl v-if="bookingType === 'program'" class="info">{{bookInfo.PROGRAM_CLASS_NAME}}</dl> -->
+    <p v-if="bookingType === 'program'" class="text-sel">{{bookInfo.PROGRAM_CLASS_NAME}}</p>
+    <!-- //21.03.30 수정 -->
     <ui-select v-if="bookingType === 'counseling'"
       v-model="selectedService"
       :data="counselingList"
@@ -37,12 +40,7 @@
       <time v-if="bookingType === 'counseling'" class="date">{{ selectedDateText }}</time>
     </div>
 
-    <ui-select v-if="bookingType === 'program'"
-               :data="programTimeList"
-               v-model="selectedProgram"
-    ></ui-select>
-
-    <swiper v-if="bookingType === 'counseling'" class="datepicker" :options="swiperOption">
+    <swiper v-if="bookingType === 'program' || bookingType === 'counseling'" class="datepicker" :options="swiperOption"> <!-- 21.03.30 수정 -->
       <swiper-slide style="width: auto">
         <ul class="list-date">
           <li v-for="(date, index) in dateList" :key="index">
@@ -102,7 +100,11 @@
 <!--      </li>-->
     </ul>
 
-    <p class="texts-info" v-if="bookingType === 'program'">* {{ $t('sev.date-info') }}</p>
+    <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+    <p class="text-sel">2021년 3월 27일 (토) 19시</p>
+    <!-- //21.03.30 추가 -->
+
+    <p class="texts-info" v-if="bookingType === 'program'" v-html="$t('sev.date-info2')"></p>
   </section>
 
   <!-- 수강생 정보 : 프로그램 선택 -->
@@ -219,10 +221,12 @@
             ]" class="reverse"
             ></ui-select>
             <input ref="certification" type="tel" maxlength="8" id="info2-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
-<!--            <p>-->
-<!--              <input type="checkbox" id="info2-2" v-model="isCertificationAgree"><label for="info2-2">{{ $t('sev.agree-personal-information') }}</label>-->
-<!--              <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>-->
-<!--            </p>-->
+            <!-- 21.03.30 추가 -->
+            <p>
+              <input type="checkbox" id="info2-2" v-model="isCertificationAgree"><label for="info2-2">{{ $t('sev.agree-personal-information') }}</label>
+              <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>
+            </p>
+            <!-- //21.03.30 추가 -->
           </div>
         </div>
       </div>

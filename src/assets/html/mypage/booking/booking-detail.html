@@ -9,6 +9,7 @@
     <span class="flag-solid3" v-else-if="status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>
 
     <h2 class="tit-order">{{ $t('sev.booking-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2>
+    <!-- <h2 class="tit-order">{{ $t('sev.application-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2> --><!-- 21.03.30 추가 : 신청 상세일경우  -->
   </section>
   <section class="row">
     <dl class="details-info">
@@ -31,11 +32,16 @@
       </dt>
       <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
       <dd>{{bookingDetail.DATE}}</dd>
+
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+      <dt>{{ $t('sev.application-date') }}</dt>
+      <dd>2020.02.12. 16:00</dd>
+      <!-- //21.03.30 추가 -->
     </dl>
 
     <!-- 프로그램 -->
     <dl class="details-info" v-if="bookingType === 'program'">
-      <dt>{{ $t('sev.applicant') }}</dt>
+      <dt>{{ $t('sev.student') }}</dt> <!-- 21.03.30 수정 -->
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
 <!--      <dt>{{ $t('sev.student') }}</dt>-->
 <!--      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>-->
@@ -45,6 +51,10 @@
 <!--      <dd>-</dd>-->
 <!--      <dt>{{ $t('sev.student-sex') }}</dt>-->
 <!--      <dd>남성</dd>-->
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+      <dt>{{ $t('sev.applicant') }}</dt>
+      <dd>김티플(010-1234-5678)</dd>
+      <!-- //21.03.30 추가 -->
     </dl>
 
     <!-- 체험존 -->
@@ -101,15 +111,24 @@
 
   <div class="btn-wrap sticky" v-if="status === 'success'">
     <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field' ">
-      <a class="btn-line big" @click.prevent="clickCancel">{{ $t('my.booking-cancel') }}</a>
+      <a class="btn-line big" @click.prevent="clickCancel">{{ $t('comm.cancel') }}</a> <!-- 21.03.30 수정 -->
       <router-link :to="'/my/booking/' + bookingType + '/modify?store_id=' + bookingDetail.STORE_ID + '&book_id=' + bookingDetail.BOOK_ID"
-                   class="btn-line big">{{ $t('my.booking-modify') }}
+                   class="btn-line big">{{ $t('comm.modify') }} <!-- 21.03.30 수정 -->
       </router-link>
     </template>
 
     <template v-if="bookingDetail.STATUS == 'operator_assigned' || (bookingType === 'field_buy' || bookingType === 'field')">
       <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
     </template>
-
   </div>
+
+  <!-- 21.03.30 추가 : 만족도 조사 -->
+  <div class="btn-wrap sticky">
+    <!-- 설문조사 등록 -->
+    <button type="button" class="btn-line big">{{ $t('my.satisfaction-registration') }}</button>
+
+    <!-- 설문조사 완료 -->
+<!--    <button type="button" class="btn-line big disabled">{{ $t('my.satisfaction-completed') }}</button>-->
+  </div>
+  <!-- //21.03.30 추가 : 만족도 조사 -->
 </div>

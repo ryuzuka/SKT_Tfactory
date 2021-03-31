@@ -2,9 +2,19 @@
   <div class="row complete">
     <i class="ico-complete"></i>
 
-    <p class="tit" v-html="$t('my.complete-booking-modify')">예약 수정이<br> 완료되었습니다.</p>
+    <!-- 21.03.30 수정 -->
+    <p class="tit" v-html="$t('my.complete-booking-modify')">예약 수정이<br> 완료되었습니다.</p> <!-- 예약 수정 -->
+    <p class="tit" v-html="$t('my.complete-application-modify')"></p> <!-- 신청 수정 -->
+    <!-- //21.03.30 수정 -->
 
     <dl class="details-info">
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+      <dt>{{ $t('sev.application-number') }}</dt>
+      <dd>1234567890</dd>
+      <dt>{{ $t('sev.applicant') }}</dt>
+      <dd>김티플</dd>
+      <!-- //21.03.30 추가 -->
+
       <dt>{{ $t('sev.booking-number') }}</dt>
       <dd>1234567890</dd>
 
@@ -29,9 +39,14 @@
       <dt>{{ $t('sev.booking-date') }}</dt>
       <dd>2020.02.12 16:00 - 17:00</dd>
       <!--// 07.09 문구 수정 -->
+
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+      <dt>{{ $t('sev.application-date') }}</dt>
+      <dd>2020.02.12. 16:00</dd>
+      <!-- //21.03.30 추가 -->
     </dl>
   </div>
   <div class="btn-wrap sticky">
-    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.service-booking-list') }}</router-link>
+    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.application-booking-list') }}</router-link>
   </div>
 </div>
