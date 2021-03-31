@@ -5,8 +5,14 @@
         <p class="list-tit">
           <span class="flag-solid2" v-if="data.status === 'success'">{{ $t('sev.apply-complete') }}</span>                      <!-- success: 신청 완료 -->
           <span class="flag-solid5" v-else-if="data.status === 'cancel'">{{ $t('comm.cancel') }}</span>                         <!-- cancel: 취소 -->
-          <span class="flag-solid5" v-else-if="data.status === 'complete' || data.status === 'end'">{{ $t('sev.end') }}</span>  <!-- complete: 종료 / end: 종료 & 설문조사 등록 완료 -->
-          <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>
+          <span class="flag-solid3" v-else-if="data.status === 'complete' || data.status === 'end'">{{ $t('sev.end') }}</span>  <!-- complete: 종료 / end: 종료 & 설문조사 등록 완료 -->
+          <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>                          <!-- 미방문 -->
+
+          <span class="flag-solid2" v-else-if="data.status === 'success'">{{ $t('sev.booking-complete') }}</span>                    <!-- 21.03.30 추가 : 예약 완료 -->
+          <span class="flag-solid2" v-else-if="data.status === 'success'">{{ $t('sev.winning') }}</span>                             <!-- 21.03.30 추가 : 당첨 -->
+          <span class="flag-solid5" v-else-if="data.status === 'success'">{{ $t('sev.waiting') }}</span>                             <!-- 21.03.30 추가 : 대기 -->
+          <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-drawn') }}</span>                          <!-- 21.03.30 추가 : 미당첨 -->
+
           <span class="flag-solid3" v-else-if="data.status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>
 
           <template v-if="data.type === 'program'">{{ $t('sev.booking-program') }}<i></i></template>        <!-- 프로그램 -->
@@ -36,15 +42,13 @@
         </dl>
       </router-link>
 
-<!--      &lt;!&ndash; 설문조사 등록 &ndash;&gt;-->
-<!--      <button class="btn-line medium" @click="clickInquiry" v-if="data.status === 'complete'">-->
-<!--        {{ $t('my.inquiry-registration') }}-->
-<!--      </button>-->
+      <!-- 21.03.30 추가 : 만족도 조사 -->
+      <!-- 설문조사 등록 -->
+      <button class="btn-line medium">{{ $t('my.satisfaction-registration') }}</button>
 
-<!--      &lt;!&ndash; 설문조사 완료 &ndash;&gt;-->
-<!--      <button class="btn-line medium" @click="clickInquiry" v-else-if="data.status === 'end'" :disabled="data.status === 'end'">-->
-<!--        {{ $t('my.inquiry-completed') }}-->
-<!--      </button>-->
+      <!-- 설문조사 완료 -->
+      <button class="btn-line medium disabled">{{ $t('my.satisfaction-completed') }}</button>
+      <!-- //21.03.30 추가 -->
     </li>
   </ul>
   <br>
