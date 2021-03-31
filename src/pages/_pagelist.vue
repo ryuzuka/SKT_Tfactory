@@ -194,7 +194,7 @@
           <ul>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program1'>이번주 속도왕은 바로 나!<br>팩토리 속도왕</router-link>
-              <div class="date"><span>12.9</span><span>3.24</span></div>
+              <div class="date"><span>12.9</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program2'>갤럭시S21 'TMI'</router-link>
@@ -282,6 +282,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
+              <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
               <div class="date"><span>3.30</span></div>
             </li>
           </ul>
@@ -330,7 +331,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/program/date/shop'>예약일시 - 프로그램 (프로그램 선택)</router-link>
-              <div class="date"><span>3.17</span><span>11.24</span></div>
+              <div class="date"><span>3.17</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/experience/date/service'>예약일시 - 체험존 (매장 선택)</router-link>
@@ -370,7 +371,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/program/complete'>예약 완료 - 프로그램</router-link>
-              <div class="date"><span>3.17</span><span>7.9</span></div>
+              <div class="date"><span>3.17</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/experience/complete'>예약 완료 - 체험존</router-link>
@@ -417,12 +418,12 @@
               <div class="date"><span>3.27</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/my/booking/list'>서비스 예약 내역</router-link>
-              <div class="date"><span>3.27</span><span>7.9</span></div>
+              <router-link class="link" to='/my/booking/list'>예약/신청 내역</router-link>
+              <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/booking/program/modify'>예약 수정 - 프로그램</router-link>
-              <div class="date"><span>3.27</span><span>7.9</span></div>
+              <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/booking/experience/modify'>예약 수정 - 체험존</router-link>
@@ -438,7 +439,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/booking/program/complete'>수정 완료 - 프로그램</router-link>
-              <div class="date"><span>3.27</span><span>7.9</span></div>
+              <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/booking/experience/complete'>수정 완료 - 체험존</router-link>

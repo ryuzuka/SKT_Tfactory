@@ -276,7 +276,7 @@
         margin-left:12px;
       }
     }
-    .tit-wrap + .texts-info {
+    .tit-wrap texts-info {
       margin-top:-10px;
     }
     .texts-info + .form-group {
@@ -284,6 +284,11 @@
     }
     .dropdown + .texts-info {
       margin-top:20px;
+    }
+    .text-sel + .texts-info {
+      margin-top:24px;
+      padding-top:12px;
+      border-top:1px solid #e8e8e8;
     }
   }
   &-info {

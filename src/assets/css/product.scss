@@ -670,9 +670,11 @@
   .details {
     &-header {
       padding:32px 20px 30px;
+      font-size:0;
       .date {
         margin-top:6px;
       }
+      [class*="flag-line"] { margin-left:8px; }
       .tag {
         display:inline-block;
         margin-right:4px;
