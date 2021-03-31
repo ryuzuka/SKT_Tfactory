@@ -107,7 +107,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/main/program'>메인 - PROGRAM</router-link>
-              <div class="date"><span>7.31</span><span>1.25</span></div>
+              <div class="date"><span>7.31</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/main/mytag'>메인 - MY TAG</router-link>
