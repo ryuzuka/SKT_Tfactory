@@ -2,16 +2,18 @@
   <div class="row complete">
     <i class="ico-complete"></i>
 
-    <p class="tit" v-html="$t('my.complete-booking-modify')">예약 수정이<br> 완료되었습니다.</p>        <!-- 예약 수정 -->
-    <!-- p class="tit" v-html="$t('my.complete-application-modify')">신청 수정이<br> 완료되었습니다.</p>     신청 수정 -->
+    <!-- 21.03.30 수정 -->
+    <p class="tit" v-html="$t('my.complete-booking-modify')">예약 수정이<br> 완료되었습니다.</p> <!-- 예약 수정 -->
+    <p class="tit" v-html="$t('my.complete-application-modify')"></p> <!-- 신청 수정 -->
+    <!-- //21.03.30 수정 -->
 
     <dl class="details-info">
-      <!-- 21.03.30 추가 : 프로그램 신청 시
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
       <dt>{{ $t('sev.application-number') }}</dt>
       <dd>1234567890</dd>
       <dt>{{ $t('sev.applicant') }}</dt>
       <dd>김티플</dd>
-      // 21.03.30 추가 -->
+      <!-- //21.03.30 추가 -->
 
       <dt>{{ $t('sev.booking-number') }}</dt>
       <dd>1234567890</dd>
@@ -21,6 +23,9 @@
       <dt v-else-if="bookingType === 'counseling'">{{ $t('sev.customer-name') }}</dt>
       <dd>김티플</dd>
 
+      <!-- 07.09 문구 수정 -->
+      <!-- <dt v-if="bookingType === 'program'">{{ $t('sev.program-shop') }}</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-shop') }}</dt> -->
       <dt>{{ $t('sev.booking-shop') }}</dt>
       <dd>홍대점</dd>
 
@@ -29,13 +34,16 @@
       <dt v-if="bookingType === 'counseling'">{{ $t('my.consult-name') }}</dt>
       <dd>스마트폰 교실</dd>
 
+      <!-- <dt v-if="bookingType === 'program'">{{ $t('sev.booking-date') }}</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-date') }}</dt> -->
       <dt>{{ $t('sev.booking-date') }}</dt>
       <dd>2020.02.12 16:00 - 17:00</dd>
+      <!--// 07.09 문구 수정 -->
 
-      <!-- 21.03.30 추가 : 프로그램 신청 시
+      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
       <dt>{{ $t('sev.application-date') }}</dt>
       <dd>2020.02.12. 16:00</dd>
-      //21.03.30 추가 -->
+      <!-- //21.03.30 추가 -->
     </dl>
   </div>
   <div class="btn-wrap sticky">
