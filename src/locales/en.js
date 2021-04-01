@@ -125,7 +125,7 @@ export default {
     'logout': '로그아웃',
     'pass': '건너뛰기',
     'close-day': '오늘 하루 보지 않겠습니다.',
-    'reservation-list': '예약 내역',
+    'reservation-list': '예약/신청 내역',
     'not-allow': '허용 안 함',
     'find-store': '매장찾기',
     'thanks': '를 이용해주셔서 감사합니다.',
