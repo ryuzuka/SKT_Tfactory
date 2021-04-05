@@ -35,7 +35,7 @@ export default {
       crewClasses: [],
       todayClasses: [],
       specialClasses: [],
-      mainBannerKor: ['Welcome to ⓥStudio!', '갤럭시로 한 곡 뚝딱'],
+      mainBannerKor: ['Welcome to ⓥStudio!', '폰으로 한 곡 뚝딱!'],
       mainBannerUrl: []
     }
   },
@@ -98,28 +98,23 @@ export default {
     getProgramList () {
       STORE.getProgramClassList().then(result => {
         result.CLASSES.forEach((program) => {
-          if (program.DISPLAY_IN_CLASS) {
+          program.PROGRAM_CLASS_TAGS = program.PROGRAM_CLASS_TAGS.split(',')
+
+          if (program.TYPE === 'class') {
             this.crewClasses.push(program)
-          } else if (program.DISPLAY_IN_SPECIAL) {
-            this.specialClasses.push(program)
-          } else if (program.DISPLAY_IN_TODAY) {
+          }
+          if (program.TYPE === 'today') {
             this.todayClasses.push(program)
+          }
+          if (program.TYPE === 'special') {
+            this.specialClasses.push(program)
           }
 
           this.mainBannerKor.forEach((banner, bannerIndex) => {
-            if (banner === program.NAME) {
-              this.mainBannerUrl[bannerIndex] = program.LINK_URL + '?classId=' + program.PROGRAM_CLASS_ID
+            if (banner === program.PROGRAM_CLASS_NAME) {
+              this.mainBannerUrl[bannerIndex] = program.PROGRAM_CLASS_LINK_URL + '?classId=' + program.PROGRAM_CLASS_ID
             }
           })
-        })
-        this.crewClasses.sort(function (a, b) {
-          return a['ORDER_IN_CLASS'] - b['ORDER_IN_CLASS']
-        })
-        this.specialClasses.sort(function (a, b) {
-          return a['ORDER_IN_SPECIAL'] - b['ORDER_IN_SPECIAL']
-        })
-        this.todayClasses.sort(function (a, b) {
-          return a['ORDER_IN_TODAY'] - b['ORDER_IN_TODAY']
         })
       })
     }

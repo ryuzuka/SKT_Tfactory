@@ -172,7 +172,7 @@ export const getProgramClass = (classId) => {
 }
 
 export const getProgramClassBook = (classId) => {
-  return axios.get(STORE_URL + '/programClass/listBooks?PROGRAM_CLASS_ID=' + classId, COMMON.getHeader()).then(response => {
+  return axios.get(STORE_URL + '/programClass/listBooks?PROGRAM_CLASS_ID=' + classId).then(response => {
     return response.data
   })
 }
@@ -191,12 +191,6 @@ export const getProgramTimeTable = (storeId, programId) => {
 
 export const bookProgram = (request) => {
   return axios.post(STORE_URL + '/programBook/book', request, COMMON.getHeader()).then(response => {
-    return response.data
-  })
-}
-
-export const applyProgram = (applyInfo) => {
-  return axios.post(STORE_URL + '/programBook/apply', applyInfo, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
