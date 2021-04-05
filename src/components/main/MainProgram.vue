@@ -35,7 +35,7 @@ export default {
       crewClasses: [],
       todayClasses: [],
       specialClasses: [],
-      mainBannerKor: ['Welcome to ⓥStudio!', '갤럭시로 한 곡 뚝딱!'],
+      mainBannerKor: ['Welcome to ⓥStudio!', '폰으로 한 곡 뚝딱!'],
       mainBannerUrl: []
     }
   },

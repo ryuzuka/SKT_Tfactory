@@ -13,7 +13,7 @@ import Header from '../../components/common/Header'
 import BookingInfo from '../../components/service/booking/BookingInfo'
 
 export default {
-  name: 'page-booking',
+  name: 'page-booking-info',
   components: {
     Header,
     BookingInfo

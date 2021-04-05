@@ -45,10 +45,15 @@
         <a :href="specialClass.PROGRAM_CLASS_LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
           <div class="thumb"><img :src="specialClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
           <div class="info">
-            <!-- 21.03.30 추가 : flag-line5 : 모집중, flag-line6 : 모집예정, flag-line7 : 모집마감 -->
-            <span class="flag-line5">모집중</span>
-            <!-- //21.03.30 추가 -->
-            <p class="tit"><em>{{specialClass.PROGRAM_CLASS_NAME}}</em><!-- <span class="flag-basic">모집중</span> --></p>
+
+            <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
+            <span v-else-if="specialClass.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
+            <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
+
+            <p class="tit">
+                <em>{{specialClass.PROGRAM_CLASS_NAME}}</em>
+                <!-- <span class="flag-basic">모집중</span> -->
+            </p>
             <p class="subtext">{{specialClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
           </div>
         </a>
@@ -72,9 +77,10 @@
             <br>{{today.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
           <p class="tit">{{today.PROGRAM_CLASS_NAME}}</p>
           <p class="subtext">{{today.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
-          <!-- 21.03.30 추가 : flag-line5 : 모집중, flag-line6 : 모집예정, flag-line7 : 모집마감 -->
-          <span class="flag-line6">모집예정</span>
-          <!-- //21.03.30 추가 -->
+
+            <span v-if="today.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
+            <span v-else-if="today.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
+            <span v-else="today.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
         </a>
       </li>
     </ul>
@@ -98,6 +104,10 @@
           <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
           <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
           <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+
+          <span v-if="crewClass.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
+          <span v-else-if="crewClass.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
+          <span v-else="crewClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
         </a>
       </li>
     </ul>

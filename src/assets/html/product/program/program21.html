@@ -8,6 +8,11 @@
   <div class="details">
     <div class="details-header">
       <em class="flag-solid7">CONCERT</em>
+
+      <span v-if="programInfo.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
+      <span v-else-if="programInfo.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
+      <span v-else="programInfo.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
+
       <h2 class="details-tit">4월의 덕콘<i class="pipe"></i>페퍼톤스</h2>
       <div class="tags">
         <span class="flag-basic">공연관람형</span>
@@ -67,7 +72,11 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <a href="#none" @click.prevent="$event => $event.preventDefault()" class="btn-solid">COMING SOON</a>
+    <template v-if="programInfo.APPLY_PROGRESS === 'ONGOING'">
+      <a href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
+    </template>
+    <button v-else-if="programInfo.APPLY_PROGRESS === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
+    <button v-else="programInfo.APPLY_PROGRESS === 'NOT_STARTED'" class="btn-solid disabled" disabled>신청 기간이 아닙니다.</button>
   </div>
   <!-- //button set -->
 </div>
