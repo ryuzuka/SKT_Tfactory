@@ -10,7 +10,7 @@ import Header from '../../components/common/Header'
 import BookingComplete from '../../components/service/booking/BookingComplete'
 
 export default {
-  name: 'page-complete',
+  name: 'page-booking-complete',
   components: {
     Header,
     BookingComplete
