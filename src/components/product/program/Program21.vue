@@ -2,58 +2,69 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
-import * as NATIVE from '../../../js/native.js'
+import _ from 'lodash'
 
 export default {
   name: 'Program21',
   data () {
     return {
-      bookingAvailable: false,
-      isLogin: '',
-      mobileOS: null,
-      expired: false,
-      commingSoon: false,
-      entryDate: [20210415, 20210420]
-    }
-  },
-  created () {
-    let date = parseInt(this.$moment().format('YYYYMMDD'))
-    if (date > this.entryDate[1]) {
-      this.expired = true
-    }
-    if (date < this.entryDate[0]) {
-      this.commingSoon = true
+      isApply: false,
+      mobileOS: this.$cookies.get('platform'),
+      userId: this.$cookies.get('MY_INFO').USER_ID,
+      classId: this.$route.query.classId,
+      programInfo: {},
+      isLogin: ''
     }
   },
   mounted () {
-    STORE.getProgramClass(this.$route.query.classId).then(result => {
-      // this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
-    })
+    this.mobileOS = this.$cookies.get('platform')
 
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
+        STORE.getProgramClassBook(this.classId).then(result => {
+          if (_.find(result.PROGRAM_CLASS, {USER_ID: this.userId})) {
+            this.isApply = true
+          }
+        })
+        //
       } else if (this.$store.getters.CONSTANTS.session_alive === false) {
         this.isLogin = false
       }
     })
+
+    STORE.getProgramClass(this.classId).then(result => {
+      this.programInfo = result.PROGRAM_CLASS
+      // this.programInfo.APPLY_PROGRESS = 'ONGOING'
+    })
   },
   methods: {
+    alertAlreadyApply () {
+      this.$modal.show('dialog', {
+        title: `이미 신청하신 프로그램입니다.
+                <div class="dialog-c-text">신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.</div>`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
+    },
     bookProgram () {
       if (this.isLogin) {
-        let mobileOS = this.$cookies.get('platform')
-        let redirectURL = ''
-        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+        if (this.isApply) {
+          // 이미 신청하신 프로그램입니다.
+          this.alertAlreadyApply()
+        } else {
+          // 프로그램 신청
+          this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
+        }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
         localStorage.setItem('previous_url', prevURL)
         this.$router.push({name: 'Login'})
       }
-    },
-    login () {
-      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
-      localStorage.setItem('previous_url', prevURL)
-      this.$router.push({name: 'Login'})
     }
   }
 }
