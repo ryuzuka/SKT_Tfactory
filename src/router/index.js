@@ -47,6 +47,7 @@ import PayComplete from '../pages/pay/page-pay-complete'
 import PayFail from '../pages/pay/page-pay-fail'
 
 // sev
+import ProgramApplication from '../pages/service/page-program-application'
 import Booking from '../pages/service/page-booking'
 import BookingDate from '../pages/service/page-booking-date'
 import BookingInfo from '../pages/service/page-booking-info'
@@ -178,6 +179,7 @@ export default new Router({
     {path: '/pay/fail', name: 'PayFail', component: PayFail}, // 결제 실패
 
     // sev
+    {path: '/sev/programApplication', name: 'ProgramApplication', component: ProgramApplication}, // 프로그램 신청
     {path: '/sev/booking/:type', name: 'Booking', component: Booking}, // 프로그램, 체험존, 상담 예약 - type: program, experience, counseling
     {path: '/sev/booking/:type/date/:selectType', name: 'BookingDate', component: BookingDate}, // 예약 일자
     {path: '/sev/booking/:type/complete', name: 'BookingComplete', component: BookingComplete}, // 예약 완료

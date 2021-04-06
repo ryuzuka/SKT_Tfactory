@@ -10,39 +10,35 @@ export default {
     return {
       isApply: false,
       mobileOS: this.$cookies.get('platform'),
-      userId: this.$cookies.get('MY_INFO').USER_ID,
       classId: this.$route.query.classId,
       programInfo: {},
-      isLogin: ''
+      isLogin: false,
+      statusFlag: 'NOT_STARTED'
     }
   },
   mounted () {
-    this.mobileOS = this.$cookies.get('platform')
-
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
+
         STORE.getProgramClassBook(this.classId).then(result => {
-          if (_.find(result.PROGRAM_CLASS, {USER_ID: this.userId})) {
+          if (_.find(result.PROGRAM_CLASS, {USER_ID: this.$cookies.get('MY_INFO').USER_ID})) {
             this.isApply = true
           }
         })
-        //
-      } else if (this.$store.getters.CONSTANTS.session_alive === false) {
-        this.isLogin = false
       }
     })
 
     STORE.getProgramClass(this.classId).then(result => {
       this.programInfo = result.PROGRAM_CLASS
-      // this.programInfo.APPLY_PROGRESS = 'ONGOING'
+      this.statusFlag = this.programInfo.APPLY_PROGRESS
     })
   },
   methods: {
     alertAlreadyApply () {
       this.$modal.show('dialog', {
         title: `이미 신청하신 프로그램입니다.
-                <div class="dialog-c-text">신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.</div>`,
+                <div class='dialog-c-text'>신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.</div>`,
         buttons: [{
           title: '확인',
           handler: () => {
@@ -70,6 +66,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 @import 'src/assets/css/product';
 </style>
