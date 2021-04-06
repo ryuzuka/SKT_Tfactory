@@ -182,6 +182,7 @@ export default new Router({
     {path: '/pay/fail', name: 'PayFail', component: PayFail}, // 결제 실패
 
     // sev
+    {path: '/sev/programApplication', name: 'ProgramApplication', component: ProgramApplication}, // 프로그램 신청
     {path: '/sev/booking/:type', name: 'Booking', component: Booking}, // 프로그램, 체험존, 상담 예약 - type: program, experience, counseling
     {path: '/sev/booking/:type/date/:selectType', name: 'BookingDate', component: BookingDate}, // 예약 일자
     {path: '/sev/booking/:type/complete', name: 'BookingComplete', component: BookingComplete}, // 예약 완료
