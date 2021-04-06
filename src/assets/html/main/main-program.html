@@ -42,8 +42,8 @@
     <!-- 21.01.15 수정 -->
     <ul class="list-program wide" ref="listAniObj0" :class="{'all': !isConcertMore, 'ani-obj': listAniObj[0]}">
       <li v-for="specialClass in specialClasses">
-        <a :href="specialClass.PROGRAM_CLASS_LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
-          <div class="thumb"><img :src="specialClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+        <a :href="specialClass.LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
+          <div class="thumb"><img :src="specialClass.THUMBNAIL_IMAGE_URL" alt=""></div>
           <div class="info">
 
             <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
@@ -51,10 +51,9 @@
             <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
 
             <p class="tit">
-                <em>{{specialClass.PROGRAM_CLASS_NAME}}</em>
-                <!-- <span class="flag-basic">모집중</span> -->
+              <em>{{specialClass.NAME}}</em>
             </p>
-            <p class="subtext">{{specialClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+            <p class="subtext">{{specialClass.SCHEDULE_GUIDE}}</p>
           </div>
         </a>
       </li>
@@ -71,12 +70,12 @@
     </h2>
     <ul class="list-program" ref="listAniObj1" :class="{'all': !isSpecialMore, 'ani-obj': listAniObj[1]}">
       <li v-for="today in todayClasses">
-        <a :href="today.PROGRAM_CLASS_LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
-          <div class="thumb"><img :src="today.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
-          <p class="cate"><span>{{today.PROGRAM_CLASS_CATEGORY}}</span>
-            <br>{{today.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
-          <p class="tit">{{today.PROGRAM_CLASS_NAME}}</p>
-          <p class="subtext">{{today.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+        <a :href="today.LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
+          <div class="thumb"><img :src="today.THUMBNAIL_IMAGE_URL" alt=""></div>
+          <p class="cate"><span>{{today.CATEGORY}}</span>
+            <br>{{today.THUMBNAIL_SUBTITLE}}</p>
+          <p class="tit">{{today.NAME}}</p>
+          <p class="subtext">{{today.SCHEDULE_GUIDE}}</p>
 
             <span v-if="today.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
             <span v-else-if="today.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
@@ -96,18 +95,14 @@
     </h2>
     <ul class="list-program" ref="listAniObj2" :class="{'all': !isClassMore, 'ani-obj': listAniObj[2]}">
       <li v-for="crewClass in crewClasses">
-        <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+        <a :href="crewClass.LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
           <div class="lector">
             <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
-            <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            <p class="cate"><span>{{crewClass.THUMBNAIL_TITLE}}</span>{{crewClass.THUMBNAIL_SUBTITLE}}</p>
           </div>
-          <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
-          <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
-          <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
-
-          <span v-if="crewClass.APPLY_PROGRESS === 'ONGOING'" class="flag-line5">모집중</span>
-          <span v-else-if="crewClass.APPLY_PROGRESS === 'OVER'" class="flag-line7">모집마감</span>
-          <span v-else="crewClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-line6">모집예정</span>
+          <div class="thumb"><img :src="crewClass.THUMBNAIL_IMAGE_URL" alt=""></div>
+          <p class="tit">{{crewClass.NAME}}</p>
+          <p class="subtext">{{crewClass.SCHEDULE_GUIDE}}</p>
         </a>
       </li>
     </ul>
