@@ -20,9 +20,6 @@ export default {
   },
   data () {
     return {
-      bookingType: this.$route.params.type,
-      selectType: this.$route.params.selectType,
-      selectedService: this.$route.params.selectedService
     }
   },
   created () {
