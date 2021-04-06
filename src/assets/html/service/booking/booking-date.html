@@ -25,7 +25,7 @@
                  v-model="selectedService"
                  :data="counselingList"
       ></ui-select>
-      <p v-if="bookingType === 'program' && selectedService" class="text-sel">{{selectedService.PROGRAM_CLASS_NAME}}</p>
+      <p v-if="bookingType === 'program' && selectedService">{{selectedService.PROGRAM_CLASS_NAME}}</p>
     </section>
   </template>
 
@@ -35,7 +35,11 @@
         class="blind">{{ $t('comm.required') }}</span></span></h3>
       <time v-if="bookingType === 'counseling'" class="date">{{ selectedDateText }}</time>
     </div>
-    <swiper v-if="bookingType === 'program' || bookingType === 'counseling'" class="datepicker" :options="swiperOption"> <!-- 21.03.30 수정 -->
+    <ui-select v-if="bookingType === 'program'"
+               :data="programTimeList"
+               v-model="selectedProgram"
+    ></ui-select>
+    <swiper v-if="bookingType === 'counseling'" class="datepicker" :options="swiperOption">
       <swiper-slide style="width: auto">
         <ul class="list-date">
           <li v-for="(date, index) in dateList" :key="index">
@@ -58,7 +62,7 @@
       </swiper-slide>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
-    <ul class="list-option col4" v-if="bookingType === 'program' || bookingType === 'counseling'">
+    <ul class="list-option col4" v-if="bookingType === 'counseling'">
       <li v-for="(time, index) in timeList">
         <input
           type="radio"
@@ -76,18 +80,8 @@
         </template>
       </li>
     </ul>
-    <p class="texts-info" v-if="bookingType === 'program'" v-html="$t('sev.date-info2')"></p>
+    <p class="texts-info" v-if="bookingType === 'program'">* {{ $t('sev.date-info') }}</p>
   </section>
-
-  <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-  <section class="row booking-contents">
-    <div class="tit-wrap">
-      <h3 class="subtit">{{ $t('sev.select-date') }}</h3>
-    </div>
-    <p class="text-sel">2021년 3월 27일 (토) 19시</p>
-    <p class="texts-info" v-if="bookingType === 'program'" v-html="$t('sev.date-info2')"></p>
-  </section>
-  <!-- //21.03.30 추가 -->
 
   <section class="row booking-contents">
     <div class="tit-wrap">
@@ -109,19 +103,13 @@
         ></ui-select>
         <input ref="certification" type="tel" maxlength="8" id="info1-1" :placeholder="$t('comm.only-number')"
                v-model="contactNumber">
-        <!-- 21.03.30 추가 -->
-        <p>
-          <input type="checkbox" id="info1-2" v-model="isCertificationAgree"><label for="info1-2">{{ $t('sev.agree-personal-information') }}</label>
-          <a href="#" class="btn-link">{{ $t('comm.read-terms') }}</a>
-        </p>
-        <!-- //21.03.30 추가 -->
       </div>
     </div>
   </section>
 
   <div class="btn-wrap sticky">
-    <a v-if="bookingType === 'counseling'" class="btn-solid big" @click.prevent="nextButton">{{ $t('comm.next') }}</a> <!-- 21.03.30 수정 : 상담, 프로그램 신청의 경우 -->
-    <a v-else-if="bookingType === 'program'" class="btn-solid big" @click.prevent="nextButton">{{ $t('comm.reservation') }}</a> <!-- 21.03.30 수정 : 프로그램 예약의 경우 -->
+    <a v-if="bookingType === 'program' || bookingType === 'counseling'" class="btn-solid big"
+       @click.prevent="nextButton">{{ $t('comm.next') }}</a>
     <a v-else class="btn-solid big" @click.prevent="nextButton">{{ $t('sev.apply-complete') }} <i
       class="ico-check"></i></a>
   </div>
