@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <Header type="back" title="프로그램 신청"></Header>
-    <program-application></program-application>
+    <booking-application></booking-application>
 
     <modals-container></modals-container>
     <v-dialog></v-dialog>
@@ -10,13 +10,13 @@
 
 <script>
 import Header from '../../components/common/Header'
-import ProgramApplication from '../../components/service/ProgramApplication'
+import BookingApplication from '../../components/service/booking/BookingApplication'
 
 export default {
   name: 'page-program-application',
   components: {
     Header,
-    ProgramApplication
+    BookingApplication
   },
   data () {
     return {
