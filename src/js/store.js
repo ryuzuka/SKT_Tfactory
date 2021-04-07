@@ -195,6 +195,12 @@ export const bookProgram = (request) => {
   })
 }
 
+export const applyProgram = (applyInfo) => {
+  return axios.post(STORE_URL + '/programBook/apply', applyInfo, COMMON.getHeader()).then(response => {
+    return response.data
+  })
+}
+
 export const modifyProgram = (request) => {
   return axios.post(STORE_URL + '/programBook/update', request, COMMON.getHeader()).then(response => {
     return response.data

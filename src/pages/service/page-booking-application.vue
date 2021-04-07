@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <Header type="back" title="프로그램 신청"></Header>
-    <booking-application></booking-application>
+    <Booking-application></Booking-application>
 
     <modals-container></modals-container>
     <v-dialog></v-dialog>
