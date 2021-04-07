@@ -53,7 +53,8 @@ import BookingInfo from '../pages/service/page-booking-info'
 import BookingSurvey from '../pages/service/page-booking-survey'
 import BookingSurveyComplete from '../pages/service/page-booking-survey-complete'
 import BookingComplete from '../pages/service/page-booking-complete'
-import BookingApplication from '../pages/service/page-booking-application'
+import BookingProgramApplication from '../pages/service/page-booking-application'
+import BookingProgramApplicationSurvey from '../pages/service/page-booking-application-survey'
 import ReadMap from '../components/service/booking/ModalReadMap'
 import Counselor from '../pages/service/page-counselor'
 import Faq from '../pages/service/page-faq'
@@ -185,7 +186,8 @@ export default new Router({
     {path: '/sev/booking/:type/info', name: 'BookingInfo', component: BookingInfo}, // 신청 정보
     {path: '/sev/booking/:type/survey', name: 'Survey', component: BookingSurvey}, // 기초 설문
     {path: '/sev/booking/:type/surveycomplete', name: 'SurveyComplete', component: BookingSurveyComplete}, // 기초 설문
-    {path: '/sev/booking/application', name: 'BookingApplication', component: BookingApplication}, // 프로그램 신청
+    {path: '/sev/booking/program/application', name: 'BookingProgramApplication', component: BookingProgramApplication}, // 프로그램 신청
+    {path: '/sev/booking/program/applicationSurvey', name: 'BookingProgramApplicationSurvey', component: BookingProgramApplicationSurvey}, // 프로그램 신청 설문 조사
     {path: '/sev/counselor', name: 'Counselor', component: Counselor}, // 상담원 호출
     {path: '/sev/faq', name: 'faq', component: Faq}, // 이용 안내
     {path: '/sev/consult', name: 'Consult', component: Consult}, // 상담 신청하기

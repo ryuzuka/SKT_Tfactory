@@ -16,7 +16,7 @@
         프로그램 선택
       </h3>
     </div>
-    <p>{{ programInfo.PROGRAM_NAME }} | {{ programInfo.PROGRAM_TUTOR_NAME }}</p>
+    <p>{{ programInfo.PROGRAM_NAME }}</p>
   </section>
 
   <section class="row booking-contents">
@@ -65,6 +65,7 @@
   </section>
 
   <div class="btn-wrap sticky">
-    <a class="btn-solid big" @click.prevent="next">{{ $t('comm.next') }}</a>
+    <a v-if="programInfo.SURVEY_YN" class="btn-solid big" @click.prevent="next('survey')">{{ $t('comm.next') }}</a>
+    <a v-if="!programInfo.SURVEY_YN" class="btn-solid big" @click.prevent="next('apply')">신청</a>
   </div>
 </div>
