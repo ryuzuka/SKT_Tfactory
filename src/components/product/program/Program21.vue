@@ -37,8 +37,8 @@ export default {
   methods: {
     alertAlreadyApply () {
       this.$modal.show('dialog', {
-        title: `이미 신청하신 프로그램입니다.
-                <div class='dialog-c-text'>신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.</div>`,
+        title: `이미 신청하신 프로그램입니다.`,
+        text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
         buttons: [{
           title: '확인',
           handler: () => {
@@ -54,7 +54,7 @@ export default {
           this.alertAlreadyApply()
         } else {
           // 프로그램 신청
-          this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
+          this.$router.push('/sev/booking/application?classId=' + this.$route.query.classId)
         }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
