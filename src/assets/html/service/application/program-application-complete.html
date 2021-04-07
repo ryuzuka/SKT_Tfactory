@@ -1,0 +1,29 @@
+<div class="contents" ref="contents">
+  <div class="row">
+    <p v-if="surveyAnswer.length > 0" class="texts-req">{{ $t('sev.survey-guide') }}</p>
+    <ol v-if="surveyAnswer.length > 0" class="list-survey details">
+      <li v-for="survey in surveyAnswer">
+        <p class="tit">{{ survey.QUESTION }}</p>
+        <div v-if="survey.QUESTION_TYPE === 'essay'" class="box-answer">
+          {{JSON.parse(survey.RESPONSE)}}
+        </div>
+        <div v-if="survey.QUESTION_TYPE === 'choice'" class="box-answer">
+          <p>
+            <span class="ico-rdo"></span>
+            {{survey.CHOICE[JSON.parse(survey.RESPONSE)[0]]}}
+          </p>
+        </div>
+        <div v-if="survey.QUESTION_TYPE === 'multiple_choice'" class="box-answer">
+          <p v-for="(answer, answerIndex) in JSON.parse(survey.RESPONSE)">
+            <span class="ico-chk"></span>{{survey.CHOICE[JSON.parse(survey.RESPONSE)[answerIndex]]}}
+          </p>
+        </div>
+      </li>
+    </ol>
+<!--    <p>{{debugMsg}}</p>-->
+
+    <p v-if="surveyAnswer.length === 0 && !errMsg" class="texts-req">기초설문 응답 내용이 없습니다.</p>
+    <p v-if="errMsg" class="texts-req">{{errMsg}}</p>
+  </div>
+</div>
+

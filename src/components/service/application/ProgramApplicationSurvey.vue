@@ -1,10 +1,10 @@
-<template src="../../../assets/html/service/booking/booking-application-survey.html"></template>
+<template src="../../../assets/html/service/application/program-application-survey.html"></template>
 
 <script>
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'BookingApplicationSurvey',
+  name: 'ProgramApplicationSurvey',
   data () {
     return {
       isModify: false,
@@ -106,6 +106,8 @@ export default {
     }
   },
   mounted () {
+    /** ************************ TODO ************************ **/
+    // 설문조사 api 호출? 아니면 programInfo response?
     this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
     this.contactNumber = sessionStorage.getItem('contactNumber')
     this.questionList = JSON.parse(sessionStorage.getItem('surveyQuestions'))
