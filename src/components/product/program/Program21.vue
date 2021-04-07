@@ -32,6 +32,7 @@ export default {
     STORE.getProgramClass(this.classId).then(result => {
       this.programInfo = result.PROGRAM_CLASS
       this.statusFlag = this.programInfo.APPLY_PROGRESS
+      this.statusFlag = 'ONGOING'
     })
   },
   methods: {
@@ -54,7 +55,7 @@ export default {
           this.alertAlreadyApply()
         } else {
           // 프로그램 신청
-          this.$router.push('/sev/booking/application?classId=' + this.$route.query.classId)
+          this.$router.push('/sev/booking/program/application?classId=' + this.$route.query.classId)
         }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
