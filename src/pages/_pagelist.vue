@@ -326,7 +326,7 @@
               <div class="date"><span>3.17</span><span>6.30</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/programApplication'>프로그램 신청</router-link>
+              <router-link class="link" to='/sev/booking/application'>프로그램 신청</router-link>
               <div class="date"><span>4.5</span><span>4.5</span></div>
             </li>
             <li class="pagelist-item">
