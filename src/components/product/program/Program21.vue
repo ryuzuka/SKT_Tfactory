@@ -11,6 +11,7 @@ export default {
       isApply: false,
       mobileOS: this.$cookies.get('platform'),
       classId: this.$route.query.classId,
+      storeId: '',
       programInfo: {},
       isLogin: false,
       statusFlag: 'NOT_STARTED'
@@ -31,8 +32,8 @@ export default {
 
     STORE.getProgramClass(this.classId).then(result => {
       this.programInfo = result.PROGRAM_CLASS
+      this.storeId = this.programInfo.STORE_ID
       this.statusFlag = this.programInfo.APPLY_PROGRESS
-      this.statusFlag = 'ONGOING'
     })
   },
   methods: {
@@ -55,7 +56,7 @@ export default {
           this.alertAlreadyApply()
         } else {
           // 프로그램 신청
-          this.$router.push('/sev/booking/program/application?classId=' + this.$route.query.classId)
+          this.$router.push('/sev/program/application?storeId=' + this.storeId + '&classId=' + this.$route.query.classId)
         }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
