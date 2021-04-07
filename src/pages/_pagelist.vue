@@ -284,6 +284,10 @@
               <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
               <div class="date"><span>3.30</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program23'>오큘러스 퀘스트 2 한정 판매</router-link>
+              <div class="date"><span>4.7</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
