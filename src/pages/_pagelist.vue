@@ -333,6 +333,14 @@
               <div class="date"><span>4.5</span><span>4.5</span></div>
             </li>
             <li class="pagelist-item">
+              <router-link class="link" to='/sev/program/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
+              <div class="date"><span>4.8</span><span>4.8</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/sev/program/applicationComplete'>프로그램 완료</router-link>
+              <div class="date"><span>4.8</span><span>4.8</span></div>
+            </li>
+            <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/program/date/service'>예약일시 - 프로그램 (매장 선택)</router-link>
               <div class="date"><span>3.17</span><span>11.24</span></div>
             </li>
