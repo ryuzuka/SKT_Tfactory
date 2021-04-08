@@ -7,47 +7,19 @@ export default {
   name: 'ProgramApplicationComplete',
   data () {
     return {
-      surveyAnswer: [],
-      errMsg: null
-      // debugMsg: ''
+      storeId: this.$route.query.store_id,
+      classId: this.$route.query.classId,
+      bookId: this.$route.query.bookId,
+      bookInfo: {}
     }
   },
   methods: {
-    getSurvey () {
-      // this.debugMsg = this.debugMsg + ' getSurvey() =>'
-      // this.debugMsg = this.debugMsg + ' saleCnslGrpId=' + this.$route.query.saleCnslGrpId + '=>'
-
-      if (!this.$route.query.saleCnslGrpId) {
-        this.$loading.stop()
-        this.errMsg = 'saleCnslGrpId is undefined'
-      }
-      if (this.$route.query.saleCnslGrpId) {
-        // this.debugMsg = this.debugMsg + ' getCounselingSurveyInfo =>'
-        STORE.getCounselingSurveyInfo(this.$route.query.saleCnslGrpId).then(response => {
-          // this.debugMsg = this.debugMsg + '[Result]' + JSON.stringify(response)
-          this.$loading.stop()
-          this.surveyAnswer = response.BASIC_SURVEY
-        }).catch(err => {
-          // this.debugMsg = this.debugMsg + '[Error]' + err
-          this.$loading.stop()
-          this.errMsg = err + '/n' + err.response.data
-        })
-      }
-    }
   },
+  created () {},
   mounted () {
-    /** ************************ TODO ************************ **/
-    this.$loading.start()
-    this.getSurvey()
-
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible') {
-        window.app.$children[0].$children[0].$children[1].getSurvey()
-      }
+    STORE.getPrgramBookInfo(this.bookId).then(result => {
+      this.bookInfo = result['PROGRAM_BOOK']
     })
-  },
-  created () {
-    // this.debugMsg = this.debugMsg + 'created =>'
   }
 }
 </script>
