@@ -868,6 +868,16 @@
     background-color:$secondary;
     font-weight:$fw-bold;
   }
+  &-solid8 {
+     background-color:#3617ce;
+  }
+  &-solid9 {
+    color:#787878;
+    background-color:#e8e8e8;
+  }
+  &-solid10 {
+    background-color:#000;
+  }
   &-basic {
     padding:2px 6px;
     border:1px solid $line-color;
