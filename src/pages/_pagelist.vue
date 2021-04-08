@@ -282,7 +282,6 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
-              <router-link class="link" to='/experience/program22'>Xbox 컨트롤러 TO-GO</router-link>
               <div class="date"><span>3.30</span></div>
             </li>
           </ul>
@@ -326,7 +325,7 @@
               <div class="date"><span>3.17</span><span>6.30</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/booking/application'>프로그램 신청</router-link>
+              <router-link class="link" to='/sev/program/application'>프로그램 신청</router-link>
               <div class="date"><span>4.5</span><span>4.5</span></div>
             </li>
             <li class="pagelist-item">
