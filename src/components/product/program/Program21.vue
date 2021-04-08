@@ -56,7 +56,7 @@ export default {
           this.alertAlreadyApply()
         } else {
           // 프로그램 신청
-          this.$router.push('/sev/program/application?storeId=' + this.storeId + '&classId=' + this.$route.query.classId)
+          this.$router.push('/sev/program/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
         }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
