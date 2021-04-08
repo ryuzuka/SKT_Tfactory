@@ -15,7 +15,7 @@ export default {
   },
   data () {
     return {
-      storeId: this.$route.query.storeId,
+      storeId: '',
       classId: this.$route.query.classId,
       userId: '',
       storeInfo: {},
@@ -24,7 +24,9 @@ export default {
       attendeeNum: 1,
       firstNum: '010',
       lastNum: '',
-      contactNumber: ''
+      contactNumber: '',
+      scheduleId: '',
+      bookId: ''
     }
   },
   mounted () {
@@ -34,21 +36,19 @@ export default {
       }
     })
 
-    this.setStoreInfo(this.storeId)
     this.getProgramClass(this.classId)
-    //
-  },
-  watch: {
-    firstNum (firstNum) {
-      this.contactNumber = firstNum + this.lastNum
-    },
-    lastNum (lastNum) {
-      this.contactNumber = this.firstNum + lastNum
-    }
   },
   methods: {
-    setStoreInfo (storeId) {
-      STORE.getStoreInfo(storeId).then(result => {
+    getProgramClass (classId) {
+      STORE.getProgramClass(classId).then(result => {
+        this.programInfo = result.PROGRAM_CLASS
+        this.storeId = this.programInfo.STORE_ID
+        this.setStoreInfo()
+        this.checkProgramBook()
+      })
+    },
+    setStoreInfo () {
+      STORE.getStoreInfo(this.storeId).then(result => {
         this.storeInfo = result.STORE
         if (this.storeInfo.IMAGES) {
           this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
@@ -57,9 +57,9 @@ export default {
         }
       })
     },
-    getProgramClass (classId) {
-      STORE.getProgramClass(classId).then(result => {
-        this.programInfo = result.PROGRAM_CLASS
+    checkProgramBook () {
+      STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
+        this.scheduleId = result.SCHEDULE_LIST[0].PROGRAM_SCHEDULE_ID
       })
     },
     alertRequiredNumber () {
@@ -82,38 +82,44 @@ export default {
       }, {})
     },
     next (type) {
+      sessionStorage.setItem('scheduleId', this.scheduleId)
       sessionStorage.setItem('attendeeNum', this.attendeeNum)
-      sessionStorage.setItem('contactNumber', this.firstNum + this.lastNum)
-      //
-      if (!this.lastNum) {
+      sessionStorage.setItem('contactNumber', this.contactNumber)
+
+      if (!this.lastNum || this.lastNum.length < 8) {
         this.alertRequiredNumber()
       } else {
         if (type === 'apply') {
-          /** ************************ TODO ************************ **/
           // 신청
-          // let applyInfo = {
-          //   'PROGRAM_SCHEDULE_ID': 80,
-          //   'STORE_ID': parseInt(this.storeId),
-          //   'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-          //   'USER_PHONE_NUMBER': this.contactNumber
-          // }
-          // STORE.applyProgram(applyInfo).then(result => {
-          //   console.log(result)
-          // })
-          this.$router.push('/sev/program/applicationComplete?&classId=' + this.$route.query.classId)
-          //
+          let applyInfo = {
+            'STORE_ID': parseInt(this.storeId),
+            'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+            'PROGRAM_SCHEDULE_ID': this.scheduleId,
+            'ATTENDEE_NUM': this.attendeeNum,
+            'USER_PHONE_NUMBER': this.contactNumber
+          }
+          STORE.applyProgram(applyInfo).then(result => {
+            this.bookId = result.BOOK_ID
+            this.$router.push('/sev/program/applicationComplete?&store_id=' + this.storeId + 'classId=' + this.$route.query.classId + '&bookId=' + this.bookId)
+          })
         } else if (type === 'survey') {
           // 기초 설문
           sessionStorage.setItem('surveyQuestions', JSON.stringify(this.programInfo.SURVEY_QUESTIONS))
-          this.$router.push('/sev/program/applicationSurvey?&classId=' + this.classId)
+          this.$router.push('/sev/program/applicationSurvey?store_id=' + this.storeId + '&classId=' + this.classId)
         }
       }
-    }
-  },
-  filters: {
+    },
     mdnFilter (data) {
       let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
       return mdn
+    }
+  },
+  watch: {
+    firstNum (firstNum) {
+      this.contactNumber = this.mdnFilter(firstNum + this.lastNum)
+    },
+    lastNum (lastNum) {
+      this.contactNumber = this.mdnFilter(this.firstNum + lastNum)
     }
   }
 }
