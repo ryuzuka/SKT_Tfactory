@@ -59,8 +59,7 @@ export default {
     },
     getProgramClass (classId) {
       STORE.getProgramClass(classId).then(result => {
-        // this.programInfo = result.PROGRAM_CLASS
-        this.programInfo = this.testData.PROGRAM_CLASS
+        this.programInfo = result.PROGRAM_CLASS
       })
     },
     alertRequiredNumber () {
@@ -90,9 +89,10 @@ export default {
         this.alertRequiredNumber()
       } else {
         if (type === 'apply') {
+          /** ************************ TODO ************************ **/
           // 신청
           // let applyInfo = {
-          //   'PROGRAM_SCHEDULE_ID': 80, /** ************************ TODO ************************ **/
+          //   'PROGRAM_SCHEDULE_ID': 80,
           //   'STORE_ID': parseInt(this.storeId),
           //   'USER_NAME': this.$cookies.get('MY_INFO').NAME,
           //   'USER_PHONE_NUMBER': this.contactNumber

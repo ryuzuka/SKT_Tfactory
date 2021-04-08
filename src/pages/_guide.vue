@@ -313,9 +313,9 @@
         <span class="flag-line2">전문상담업무</span>
         <span class="flag-line3">체험존</span>
         <span class="flag-line4">교육 프로그램</span>
-        <span class="flag-line5">모집중</span>
-        <span class="flag-line6">모집예정</span>
-        <span class="flag-line7">모집마감</span>
+        <span class="flag-solid8">모집중</span>
+        <span class="flag-solid9">모집마감</span>
+        <span class="flag-solid10">모집예정</span>
         <span class="flag-basic">프로그램</span>
       </section>
 
