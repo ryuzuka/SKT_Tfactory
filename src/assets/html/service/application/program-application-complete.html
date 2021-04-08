@@ -1,29 +1,36 @@
-<div class="contents" ref="contents">
-  <div class="row">
-    <p v-if="surveyAnswer.length > 0" class="texts-req">{{ $t('sev.survey-guide') }}</p>
-    <ol v-if="surveyAnswer.length > 0" class="list-survey details">
-      <li v-for="survey in surveyAnswer">
-        <p class="tit">{{ survey.QUESTION }}</p>
-        <div v-if="survey.QUESTION_TYPE === 'essay'" class="box-answer">
-          {{JSON.parse(survey.RESPONSE)}}
-        </div>
-        <div v-if="survey.QUESTION_TYPE === 'choice'" class="box-answer">
-          <p>
-            <span class="ico-rdo"></span>
-            {{survey.CHOICE[JSON.parse(survey.RESPONSE)[0]]}}
-          </p>
-        </div>
-        <div v-if="survey.QUESTION_TYPE === 'multiple_choice'" class="box-answer">
-          <p v-for="(answer, answerIndex) in JSON.parse(survey.RESPONSE)">
-            <span class="ico-chk"></span>{{survey.CHOICE[JSON.parse(survey.RESPONSE)[answerIndex]]}}
-          </p>
-        </div>
-      </li>
-    </ol>
-<!--    <p>{{debugMsg}}</p>-->
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row complete">
+    <i class="ico-complete"></i>
 
-    <p v-if="surveyAnswer.length === 0 && !errMsg" class="texts-req">기초설문 응답 내용이 없습니다.</p>
-    <p v-if="errMsg" class="texts-req">{{errMsg}}</p>
+    <p class="tit">
+      프로그램 신청이<br>완료되었습니다.
+    </p>
+
+    <dl class="details-info">
+      <dt>신청 번호</dt>
+      <dd>1234567890</dd>
+
+      <dt>신청자</dt>
+      <dd>김티플</dd>
+
+      <dt>매장</dt>
+      <dd>123123123123</dd>
+
+      <dt>프로그램 명</dt>
+      <dt>4월의 덕콘</dt>
+
+      <dt>예약 일시</dt>
+      <dt>2020.02.12</dt>
+    </dl>
+
+    <ul class="texts-info">
+      <li v-html="$t('sev.booking-complete-guide7')"></li>
+      <li v-html="$t('sev.booking-complete-guide8')"></li>
+      <li v-html="$t('sev.booking-complete-guide9')"></li>
+    </ul>
+  </div>
+  <div class="btn-wrap sticky">
+    <router-link to="/" class="btn-line big">{{ $t('comm.go-main') }}</router-link>
+    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.application-booking-list') }}</router-link>
   </div>
 </div>
-
