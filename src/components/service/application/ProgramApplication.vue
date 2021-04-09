@@ -17,7 +17,6 @@ export default {
     return {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
-      userId: '',
       storeInfo: {},
       storeImageUrl: '',
       programInfo: {},
@@ -61,7 +60,7 @@ export default {
         if (this.storeInfo.IMAGES) {
           this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
         } else {
-          this.storeImageUrl = 'url(' + require('@/assets/images/dummy/@img_shop.jpg') + ')'
+          this.storeImageUrl = 'url(' + require(`@/assets/images/dummy/@img_shop.jpg`) + ')'
         }
       })
     },
@@ -96,25 +95,26 @@ export default {
     next (type) {
       if (this.lastNum.length < 8) {
         this.alertRequiredNumber()
-      } else {
-        if (type === 'survey') {
-          // 기초 설문
-          sessionStorage.setItem('attendeeNum', this.attendeeNum)
-          sessionStorage.setItem('contactNumber', this.contactNumber)
-          this.$router.push('/sev/program/applicationSurvey?classId=' + this.$route.query.classId)
-        } else if (type === 'apply') {
-          // 신청
-          let applyInfo = {
-            'STORE_ID': this.storeId,
-            'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-            'PROGRAM_SCHEDULE_ID': this.scheduleId,
-            'ATTENDEE_NUM': this.attendeeNum,
-            'USER_PHONE_NUMBER': this.contactNumber
-          }
-          STORE.applyProgram(applyInfo).then(result => {
-            this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
-          })
+        return
+      }
+
+      if (type === 'survey') {
+        // 기초 설문
+        sessionStorage.setItem('attendeeNum', this.attendeeNum)
+        sessionStorage.setItem('contactNumber', this.contactNumber)
+        this.$router.push('/sev/program/applicationSurvey?classId=' + this.classId)
+      } else if (type === 'apply') {
+        // 신청
+        let applyInfo = {
+          'STORE_ID': this.storeId,
+          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+          'PROGRAM_SCHEDULE_ID': this.scheduleId,
+          'ATTENDEE_NUM': this.attendeeNum,
+          'USER_PHONE_NUMBER': this.contactNumber
         }
+        STORE.applyProgram(applyInfo).then(result => {
+          this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+        })
       }
     }
   }
