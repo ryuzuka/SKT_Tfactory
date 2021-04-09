@@ -49,18 +49,19 @@ export default {
       })
     },
     bookProgram () {
-      if (this.isLogin) {
-        if (this.isApply) {
-          // 이미 신청하신 프로그램입니다.
-          this.alertAlreadyApply()
-        } else {
-          // 프로그램 신청
-          this.$router.push('/sev/program/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
-        }
-      } else {
+      if (!this.isLogin) {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
         localStorage.setItem('previous_url', prevURL)
         this.$router.push({name: 'Login'})
+        return
+      }
+
+      if (this.isApply) {
+        // 이미 신청하신 프로그램입니다.
+        this.alertAlreadyApply()
+      } else {
+        // 프로그램 신청
+        this.$router.push('/sev/program/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
       }
     }
   }
