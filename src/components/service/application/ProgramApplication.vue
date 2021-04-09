@@ -15,7 +15,7 @@ export default {
   },
   data () {
     return {
-      storeId: '',
+      storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
       userId: '',
       storeInfo: {},
@@ -25,8 +25,7 @@ export default {
       firstNum: '010',
       lastNum: '',
       contactNumber: '',
-      scheduleId: '',
-      bookId: ''
+      scheduleId: ''
     }
   },
   mounted () {
@@ -36,20 +35,29 @@ export default {
       }
     })
 
-    this.getProgramClass(this.classId)
+    this.getProgramClass()
+    this.setStoreInfo()
+    this.checkProgramBook()
+  },
+  watch: {
+    firstNum (firstNum) {
+      this.contactNumber = this.mdnFilter(firstNum + this.lastNum)
+    },
+    lastNum (lastNum) {
+      this.contactNumber = this.mdnFilter(this.firstNum + lastNum)
+    }
   },
   methods: {
-    getProgramClass (classId) {
-      STORE.getProgramClass(classId).then(result => {
-        this.programInfo = result.PROGRAM_CLASS
-        this.storeId = this.programInfo.STORE_ID
-        this.setStoreInfo()
-        this.checkProgramBook()
+    getProgramClass () {
+      STORE.getProgramClass(this.classId).then(result => {
+        this.programInfo = result['PROGRAM_CLASS']
+        this.storeId = this.programInfo['STORE_ID']
+        this.surveyYn = this.programInfo['SURVEY_YN']
       })
     },
     setStoreInfo () {
       STORE.getStoreInfo(this.storeId).then(result => {
-        this.storeInfo = result.STORE
+        this.storeInfo = result['STORE']
         if (this.storeInfo.IMAGES) {
           this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
         } else {
@@ -59,7 +67,7 @@ export default {
     },
     checkProgramBook () {
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
-        this.scheduleId = result.SCHEDULE_LIST[0].PROGRAM_SCHEDULE_ID
+        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
       })
     },
     alertRequiredNumber () {
@@ -81,45 +89,33 @@ export default {
         type: 'full'
       }, {})
     },
+    mdnFilter (data) {
+      let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
+      return mdn
+    },
     next (type) {
-      sessionStorage.setItem('scheduleId', this.scheduleId)
-      sessionStorage.setItem('attendeeNum', this.attendeeNum)
-      sessionStorage.setItem('contactNumber', this.contactNumber)
-
-      if (!this.lastNum || this.lastNum.length < 8) {
+      if (this.lastNum.length < 8) {
         this.alertRequiredNumber()
       } else {
-        if (type === 'apply') {
+        if (type === 'survey') {
+          // 기초 설문
+          sessionStorage.setItem('attendeeNum', this.attendeeNum)
+          sessionStorage.setItem('contactNumber', this.contactNumber)
+          this.$router.push('/sev/program/applicationSurvey?classId=' + this.$route.query.classId)
+        } else if (type === 'apply') {
           // 신청
           let applyInfo = {
-            'STORE_ID': parseInt(this.storeId),
+            'STORE_ID': this.storeId,
             'USER_NAME': this.$cookies.get('MY_INFO').NAME,
             'PROGRAM_SCHEDULE_ID': this.scheduleId,
             'ATTENDEE_NUM': this.attendeeNum,
             'USER_PHONE_NUMBER': this.contactNumber
           }
           STORE.applyProgram(applyInfo).then(result => {
-            this.bookId = result.BOOK_ID
-            this.$router.push('/sev/program/applicationComplete?&store_id=' + this.storeId + 'classId=' + this.$route.query.classId + '&bookId=' + this.bookId)
+            this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
           })
-        } else if (type === 'survey') {
-          // 기초 설문
-          sessionStorage.setItem('surveyQuestions', JSON.stringify(this.programInfo.SURVEY_QUESTIONS))
-          this.$router.push('/sev/program/applicationSurvey?store_id=' + this.storeId + '&classId=' + this.classId)
         }
       }
-    },
-    mdnFilter (data) {
-      let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
-      return mdn
-    }
-  },
-  watch: {
-    firstNum (firstNum) {
-      this.contactNumber = this.mdnFilter(firstNum + this.lastNum)
-    },
-    lastNum (lastNum) {
-      this.contactNumber = this.mdnFilter(this.firstNum + lastNum)
     }
   }
 }
