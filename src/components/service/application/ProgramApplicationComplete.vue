@@ -7,8 +7,6 @@ export default {
   name: 'ProgramApplicationComplete',
   data () {
     return {
-      storeId: this.$route.query.store_id,
-      classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
       bookInfo: {}
     }
@@ -19,6 +17,7 @@ export default {
   mounted () {
     STORE.getPrgramBookInfo(this.bookId).then(result => {
       this.bookInfo = result['PROGRAM_BOOK']
+      this.bookInfo.DATE = this.$moment(this.bookInfo.DATE).format('YYYY.MM.DD HH:mm')
     })
   }
 }
