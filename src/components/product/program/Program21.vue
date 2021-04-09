@@ -2,7 +2,6 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
-import _ from 'lodash'
 
 export default {
   name: 'Program21',
@@ -23,7 +22,7 @@ export default {
         this.isLogin = true
 
         STORE.getProgramClassBook(this.classId).then(result => {
-          if (_.find(result.PROGRAM_CLASS, {USER_ID: this.$cookies.get('MY_INFO').USER_ID})) {
+          if (result['PROGRAM_CLASS'].length > 0) {
             this.isApply = true
           }
         })
@@ -31,9 +30,9 @@ export default {
     })
 
     STORE.getProgramClass(this.classId).then(result => {
-      this.programInfo = result.PROGRAM_CLASS
-      this.storeId = this.programInfo.STORE_ID
-      this.statusFlag = this.programInfo.APPLY_PROGRESS
+      this.programInfo = result['PROGRAM_CLASS']
+      this.storeId = this.programInfo['STORE_ID']
+      this.statusFlag = this.programInfo['APPLY_PROGRESS']
     })
   },
   methods: {
@@ -56,7 +55,7 @@ export default {
           this.alertAlreadyApply()
         } else {
           // 프로그램 신청
-          this.$router.push('/sev/program/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
+          this.$router.push('/sev/program/application?classId=' + this.$route.query.classId)
         }
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
