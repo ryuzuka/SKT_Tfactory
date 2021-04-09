@@ -172,7 +172,7 @@ export const getProgramClass = (classId) => {
 }
 
 export const getProgramClassBook = (classId) => {
-  return axios.get(STORE_URL + '/programClass/listBooks?PROGRAM_CLASS_ID=' + classId).then(response => {
+  return axios.get(STORE_URL + '/programClass/listBooks?PROGRAM_CLASS_ID=' + classId, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
