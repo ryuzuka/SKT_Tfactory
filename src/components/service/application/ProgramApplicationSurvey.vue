@@ -10,29 +10,28 @@ export default {
       storeId: '',
       classId: this.$route.query.classId,
       questionList: [],
-      contactNumber: '',
+      scheduleId: '',
       attendeeNum: 1,
-      scheduleId: ''
+      contactNumber: ''
     }
   },
   mounted () {
-    this.contactNumber = sessionStorage.getItem('contactNumber')
     this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
+    this.contactNumber = sessionStorage.getItem('contactNumber')
 
     this.getProgramClass()
   },
   methods: {
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
-        this.programInfo = result.PROGRAM_CLASS
+        result = result['PROGRAM_CLASS']
 
-        this.storeId = this.programInfo['STORE_ID']
-        this.questionList = this.programInfo['SURVEY_QUESTIONS']
-        if (this.questionList) {
-          this.questionList.forEach(question => {
-            question.ANSWER = []
-          })
-        }
+        this.storeId = result['STORE_ID']
+        this.questionList = result['SURVEY_QUESTIONS']
+        this.questionList.forEach(question => {
+          question.ANSWER = []
+        })
+
         this.checkProgramBook()
       })
     },
@@ -41,18 +40,7 @@ export default {
         this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
       })
     },
-    canNotWriteOver200Error () {
-      this.$modal.show('dialog', {
-        title: this.$t('my.alert-booking-failed-200'),
-        buttons: [{
-          title: this.$t('comm.yes'),
-          handler: () => {
-            this.$modal.hide('dialog')
-          }
-        }]
-      })
-    },
-    clickComplete () {
+    clickApplicationButton () {
       let BASIC_SURVEY_RESPONSE = []
       let over200Flag = false
 
@@ -78,6 +66,17 @@ export default {
         this.$store.state.constants.COUNSELING.BASIC_SURVEY_RESPONSE = BASIC_SURVEY_RESPONSE
         this.applyProgram(BASIC_SURVEY_RESPONSE)
       }
+    },
+    canNotWriteOver200Error () {
+      this.$modal.show('dialog', {
+        title: this.$t('my.alert-booking-failed-200'),
+        buttons: [{
+          title: this.$t('comm.yes'),
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
     },
     applyProgram (surveyResponse) {
       // 신청
