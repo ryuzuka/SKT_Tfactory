@@ -80,6 +80,11 @@ export default {
         this.isOpen = false
         this.selectedText = ''
         this.localValue = ''
+      } else {
+        this.selectValue(value)
+        this.$nextTick(() => {
+          this.isOpen = false
+        })
       }
     }
   },
