@@ -433,6 +433,10 @@
               <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
+              <router-link class="link" to='/my/program/applicationModify'>신청 수정</router-link>
+              <div class="date"><span>4.11</span><span>4.11</span></div>
+            </li>
+            <li class="pagelist-item">
               <router-link class="link" to='/my/booking/program/modify'>예약 수정 - 프로그램</router-link>
               <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
