@@ -1,14 +1,14 @@
-<template src="../../../assets/html/service/application/program-application.html"></template>
+<template src="../../../assets/html/mypage/application/application-modify.html"></template>
 
 <script>
-import Consult from '../Consult'
-import ModalReadMap from '../booking/ModalReadMap'
+import Consult from '../../service/Consult'
+import ModalReadMap from '../../service/booking/ModalReadMap'
 import UiSelect from '../../../ui/UiSelect'
 
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'ProgramApplication',
+  name: 'ApplicationModify',
   mixins: [Consult],
   components: {
     UiSelect
@@ -16,7 +16,8 @@ export default {
   data () {
     return {
       storeId: this.$route.query.store_id,
-      classId: this.$route.query.classId,
+      bookId: this.$route.query.bookId,
+      classId: '',
       storeInfo: {},
       storeImageUrl: '',
       programInfo: {},
@@ -35,8 +36,7 @@ export default {
     })
 
     this.setStoreInfo()
-    this.getProgramClass()
-    this.checkProgramBook()
+    this.getProgramBookInfo()
   },
   watch: {
     firstNum (firstNum) {
@@ -57,10 +57,16 @@ export default {
         }
       })
     },
-    getProgramClass () {
-      STORE.getProgramClass(this.classId).then(result => {
-        this.programInfo = result['PROGRAM_CLASS']
-        this.surveyYn = this.programInfo['SURVEY_YN']
+    getProgramBookInfo () {
+      STORE.getPrgramBookInfo(this.bookId).then(result => {
+        this.programInfo = result['PROGRAM_BOOK']
+        this.classId = this.programInfo['PROGRAM_CLASS_ID']
+        this.attendeeNum = this.programInfo['ATTENDEE_NUM']
+        let number = this.programInfo['USER_PHONE_NUMBER']
+        this.firstNum = number.substr(0, 3)
+        this.lastNum = number.substring(3)
+
+        this.checkProgramBook()
       })
     },
     checkProgramBook () {
@@ -91,30 +97,27 @@ export default {
       let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
       return mdn
     },
-    next (type) {
+    next () {
       if (this.lastNum.length < 8) {
         this.alertRequiredNumber()
         return
       }
 
-      if (type === 'survey') {
-        // 기초 설문
-        sessionStorage.setItem('attendeeNum', this.attendeeNum)
-        sessionStorage.setItem('contactNumber', this.contactNumber)
-        this.$router.push('/sev/program/applicationSurvey?classId=' + this.classId)
-      } else if (type === 'apply') {
-        // 신청
-        let applyInfo = {
-          'STORE_ID': this.storeId,
-          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-          'PROGRAM_SCHEDULE_ID': this.scheduleId,
-          'ATTENDEE_NUM': this.attendeeNum,
-          'USER_PHONE_NUMBER': this.contactNumber
-        }
-        STORE.applyProgram(applyInfo).then(result => {
-          this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
-        })
+      // 기초 설문
+      // sessionStorage.setItem('attendeeNum', this.attendeeNum)
+      // sessionStorage.setItem('contactNumber', this.contactNumber)
+      // this.$router.push('/sev/program/applicationSurvey?classId=' + this.classId)
+      // 신청
+      let applyInfo = {
+        'BOOK_ID': this.bookId,
+        'PROGRAM_SCHEDULE_ID': this.scheduleId,
+        'USER_NAME': this.programInfo['USER_NAME'],
+        'ATTENDEE_NUM': this.attendeeNum,
+        'USER_PHONE_NUMBER': this.contactNumber
       }
+      STORE.modifyProgram(applyInfo).then(result => {
+        this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+      })
     }
   }
 }
