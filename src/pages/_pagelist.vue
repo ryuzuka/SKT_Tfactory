@@ -345,7 +345,7 @@
               <div class="date"><span>4.8</span><span>4.8</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/program/applicationComplete'>프로그램 완료</router-link>
+              <router-link class="link" to='/sev/applicationComplete'>프로그램 신청 - 완료</router-link>
               <div class="date"><span>4.8</span><span>4.8</span></div>
             </li>
             <li class="pagelist-item">
@@ -449,7 +449,7 @@
               <div class="date"><span>4.11</span><span>4.11</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/my/program/applicationModify'>신청 수정</router-link>
+              <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
               <div class="date"><span>4.11</span><span>4.11</span></div>
             </li>
             <li class="pagelist-item">
