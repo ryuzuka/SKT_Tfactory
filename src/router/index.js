@@ -47,15 +47,15 @@ import PayComplete from '../pages/pay/page-pay-complete'
 import PayFail from '../pages/pay/page-pay-fail'
 
 // sev
+import Application from '../pages/service/page-application'
+import ApplicationSurvey from '../pages/service/page-application-survey'
+import ApplicationComplete from '../pages/service/page-application-complete'
 import Booking from '../pages/service/page-booking'
 import BookingDate from '../pages/service/page-booking-date'
 import BookingInfo from '../pages/service/page-booking-info'
 import BookingSurvey from '../pages/service/page-booking-survey'
 import BookingSurveyComplete from '../pages/service/page-booking-survey-complete'
 import BookingComplete from '../pages/service/page-booking-complete'
-import ProgramApplication from '../pages/service/page-program-application'
-import ProgramApplicationSurvey from '../pages/service/page-program-application-survey'
-import ProgramApplicationComplete from '../pages/service/page-program-application-complete'
 import ReadMap from '../components/service/booking/ModalReadMap'
 import Counselor from '../pages/service/page-counselor'
 import Faq from '../pages/service/page-faq'
@@ -193,9 +193,9 @@ export default new Router({
     {path: '/sev/consult', name: 'Consult', component: Consult}, // 상담 신청하기
     {path: '/sev/consult/complete', name: 'ConsultComplete', component: ConsultComplete}, // 상담 신청 완료
     // sev - 프로그램 신청
-    {path: '/sev/program/application', name: 'ProgramApplication', component: ProgramApplication}, // 프로그램 신청
-    {path: '/sev/program/applicationSurvey', name: 'ProgramApplicationSurvey', component: ProgramApplicationSurvey}, // 프로그램 신청 설문 조사
-    {path: '/sev/program/applicationComplete', name: 'ProgramApplicationComplete', component: ProgramApplicationComplete}, // 프로그램 신청 완료
+    {path: '/sev/application', name: 'Application', component: Application}, // 프로그램 신청
+    {path: '/sev/applicationSurvey', name: 'ApplicationSurvey', component: ApplicationSurvey}, // 프로그램 신청 설문 조사
+    {path: '/sev/applicationComplete', name: 'ApplicationComplete', component: ApplicationComplete}, // 프로그램 신청 완료
 
     // my
     {path: '/my/wish', name: 'Wish', component: Wish}, // 관심상품
@@ -211,7 +211,7 @@ export default new Router({
     {path: '/my/register', name: 'CheckinRegister', component: CheckinRegister}, // 빠른 체크인 얼굴 등록
     {path: '/my/coupon', name: 'MyCouponList', component: MyCouponList}, // 쿠폰 관리
     // sev - 프로그램 신청 수정
-    {path: '/my/application/modify', name: 'MyApplicationModify', component: MyApplicationModify}, // 예약 수정
+    {path: '/my/applicationModify', name: 'MyApplicationModify', component: MyApplicationModify}, // 예약 수정
 
     // sso
     {path: '/sso/login', name: 'Login', component: Login}, // 로그인
