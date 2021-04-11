@@ -34,8 +34,8 @@ export default {
       }
     })
 
-    this.getProgramClass()
     this.setStoreInfo()
+    this.getProgramClass()
     this.checkProgramBook()
   },
   watch: {
@@ -47,13 +47,6 @@ export default {
     }
   },
   methods: {
-    getProgramClass () {
-      STORE.getProgramClass(this.classId).then(result => {
-        this.programInfo = result['PROGRAM_CLASS']
-        this.storeId = this.programInfo['STORE_ID']
-        this.surveyYn = this.programInfo['SURVEY_YN']
-      })
-    },
     setStoreInfo () {
       STORE.getStoreInfo(this.storeId).then(result => {
         this.storeInfo = result['STORE']
@@ -62,6 +55,12 @@ export default {
         } else {
           this.storeImageUrl = 'url(' + require(`@/assets/images/dummy/@img_shop.jpg`) + ')'
         }
+      })
+    },
+    getProgramClass () {
+      STORE.getProgramClass(this.classId).then(result => {
+        this.programInfo = result['PROGRAM_CLASS']
+        this.surveyYn = this.programInfo['SURVEY_YN']
       })
     },
     checkProgramBook () {

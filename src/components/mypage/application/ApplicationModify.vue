@@ -15,7 +15,7 @@ export default {
   },
   data () {
     return {
-      storeId: '',
+      storeId: this.$route.query.store_id,
       bookId: this.$route.query.bookId,
       classId: '',
       storeInfo: {},
@@ -35,6 +35,7 @@ export default {
       }
     })
 
+    this.setStoreInfo()
     this.getProgramBookInfo()
   },
   watch: {
@@ -46,6 +47,16 @@ export default {
     }
   },
   methods: {
+    setStoreInfo () {
+      STORE.getStoreInfo(this.storeId).then(result => {
+        this.storeInfo = result['STORE']
+        if (this.storeInfo.IMAGES) {
+          this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
+        } else {
+          this.storeImageUrl = 'url(' + require(`@/assets/images/dummy/@img_shop.jpg`) + ')'
+        }
+      })
+    },
     getProgramBookInfo () {
       STORE.getPrgramBookInfo(this.bookId).then(result => {
         this.programInfo = result['PROGRAM_BOOK']
@@ -55,31 +66,7 @@ export default {
         this.firstNum = number.substr(0, 3)
         this.lastNum = number.substring(3)
 
-        this.getProgramClass()
-      })
-    },
-    getProgramClass () {
-      STORE.getProgramClass(this.classId).then(result => {
-        result = result['PROGRAM_CLASS']
-
-        this.storeId = result['STORE_ID']
-        this.questionList = result['SURVEY_QUESTIONS']
-        this.questionList.forEach(question => {
-          question.ANSWER = []
-        })
-
-        this.setStoreInfo()
         this.checkProgramBook()
-      })
-    },
-    setStoreInfo () {
-      STORE.getStoreInfo(this.storeId).then(result => {
-        this.storeInfo = result['STORE']
-        if (this.storeInfo.IMAGES) {
-          this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
-        } else {
-          this.storeImageUrl = 'url(' + require(`@/assets/images/dummy/@img_shop.jpg`) + ')'
-        }
       })
     },
     checkProgramBook () {

@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <Header type="back" title="신청 수정"></Header>
+    <Header type="back" title="프로그램 신청"></Header>
     <My-Application-Modify></My-Application-Modify>
 
     <modals-container></modals-container>
