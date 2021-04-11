@@ -1,8 +1,7 @@
 <template>
   <div class="wrap">
-    <Header type="back" title="프로그램 신청"></Header>
-    <Program-application></Program-application>
-
+    <Header type="back" :title="$t('sev.survey')"></Header>
+    <Application-Survey></Application-Survey>
     <modals-container></modals-container>
     <v-dialog></v-dialog>
   </div>
@@ -10,13 +9,13 @@
 
 <script>
 import Header from '../../components/common/Header'
-import ProgramApplication from '../../components/service/application/ProgramApplication'
+import ApplicationSurvey from '../../components/service/application/ApplicationSurvey'
 
 export default {
-  name: 'page-program-application',
+  name: 'page-application-survey',
   components: {
     Header,
-    ProgramApplication
+    ApplicationSurvey
   },
   data () {
     return {

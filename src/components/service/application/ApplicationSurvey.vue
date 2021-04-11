@@ -1,10 +1,10 @@
-<template src="../../../assets/html/service/application/program-application-survey.html"></template>
+<template src="../../../assets/html/service/application/application-survey.html"></template>
 
 <script>
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'ProgramApplicationSurvey',
+  name: 'ApplicationSurvey',
   data () {
     return {
       storeId: '',
@@ -89,7 +89,7 @@ export default {
         'BASIC_SURVEY_RESPONSE': surveyResponse
       }
       STORE.applyProgram(applyInfo).then(result => {
-        this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+        this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
       })
     }
   }

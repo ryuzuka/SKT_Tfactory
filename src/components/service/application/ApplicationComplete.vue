@@ -1,10 +1,10 @@
-<template src="../../../assets/html/service/application/program-application-complete.html"></template>
+<template src="../../../assets/html/service/application/application-complete.html"></template>
 
 <script>
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'ProgramApplicationComplete',
+  name: 'ApplicationComplete',
   data () {
     return {
       bookId: this.$route.query.bookId,

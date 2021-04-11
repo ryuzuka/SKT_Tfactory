@@ -1,19 +1,19 @@
 <template>
   <div class="wrap">
     <Header title="프로그램 신청"></Header>
-    <Program-application-complete></Program-application-complete>
+    <Application-Complete></Application-Complete>
   </div>
 </template>
 
 <script>
 import Header from '../../components/common/Header'
-import ProgramApplicationComplete from '../../components/service/application/ProgramApplicationComplete'
+import ApplicationComplete from '../../components/service/application/ApplicationComplete'
 
 export default {
-  name: 'page-program-application-complete',
+  name: 'page-application-complete',
   components: {
     Header,
-    ProgramApplicationComplete
+    ApplicationComplete
   },
   data () {
     return {

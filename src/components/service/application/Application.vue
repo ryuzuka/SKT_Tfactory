@@ -1,4 +1,4 @@
-<template src="../../../assets/html/service/application/program-application.html"></template>
+<template src="../../../assets/html/service/application/application.html"></template>
 
 <script>
 import Consult from '../Consult'
@@ -8,7 +8,7 @@ import UiSelect from '../../../ui/UiSelect'
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'ProgramApplication',
+  name: 'Application',
   mixins: [Consult],
   components: {
     UiSelect
@@ -60,7 +60,6 @@ export default {
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
         this.programInfo = result['PROGRAM_CLASS']
-        this.surveyYn = this.programInfo['SURVEY_YN']
       })
     },
     checkProgramBook () {
@@ -101,7 +100,7 @@ export default {
         // 기초 설문
         sessionStorage.setItem('attendeeNum', this.attendeeNum)
         sessionStorage.setItem('contactNumber', this.contactNumber)
-        this.$router.push('/sev/program/applicationSurvey?classId=' + this.classId)
+        this.$router.push('/sev/applicationSurvey?classId=' + this.classId)
       } else if (type === 'apply') {
         // 신청
         let applyInfo = {
@@ -112,7 +111,7 @@ export default {
           'USER_PHONE_NUMBER': this.contactNumber
         }
         STORE.applyProgram(applyInfo).then(result => {
-          this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
         })
       }
     }

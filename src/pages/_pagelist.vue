@@ -325,15 +325,15 @@
               <div class="date"><span>3.17</span><span>6.30</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/program/application'>프로그램 신청</router-link>
+              <router-link class="link" to='/sev/application'>프로그램 신청</router-link>
               <div class="date"><span>4.5</span><span>4.5</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/program/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
+              <router-link class="link" to='/sev/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
               <div class="date"><span>4.8</span><span>4.8</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/program/applicationComplete'>프로그램 완료</router-link>
+              <router-link class="link" to='/sev/applicationComplete'>프로그램 신청 - 완료</router-link>
               <div class="date"><span>4.8</span><span>4.8</span></div>
             </li>
             <li class="pagelist-item">
@@ -433,7 +433,7 @@
               <div class="date"><span>3.27</span><span>3.30</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/my/program/applicationModify'>신청 수정</router-link>
+              <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
               <div class="date"><span>4.11</span><span>4.11</span></div>
             </li>
             <li class="pagelist-item">
