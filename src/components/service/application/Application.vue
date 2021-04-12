@@ -100,18 +100,19 @@ export default {
         // 기초 설문
         sessionStorage.setItem('attendeeNum', this.attendeeNum)
         sessionStorage.setItem('contactNumber', this.contactNumber)
-        this.$router.push('/sev/applicationSurvey?classId=' + this.classId)
+        this.$router.push('/sev/applicationSurvey?store_id=' + this.storeId + '&classId=' + this.classId)
       } else if (type === 'apply') {
         // 신청
         let applyInfo = {
-          'STORE_ID': this.storeId,
+          'STORE_ID': parseInt(this.storeId),
+          'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
           'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-          'PROGRAM_SCHEDULE_ID': this.scheduleId,
+          'USER_PHONE_NUMBER': this.contactNumber,
           'ATTENDEE_NUM': this.attendeeNum,
-          'USER_PHONE_NUMBER': this.contactNumber
+          'BASIC_SURVEY_RESPONSE': []
         }
         STORE.applyProgram(applyInfo).then(result => {
-          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          this.$router.push('/sev/applicationComplete?store_id=' + this.storeId + '&bookId=' + result.BOOK_ID)
         })
       }
     }
