@@ -7,8 +7,9 @@ export default {
   name: 'ApplicationSurvey',
   data () {
     return {
-      storeId: '',
+      storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
+      bookId: this.$route.query.bookId,
       questionList: [],
       scheduleId: '',
       attendeeNum: 1,
@@ -19,20 +20,16 @@ export default {
     this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
     this.contactNumber = sessionStorage.getItem('contactNumber')
 
-    this.getProgramClass()
+    this.getSurveyQuestions()
+    this.checkProgramBook()
   },
   methods: {
-    getProgramClass () {
-      STORE.getProgramClass(this.classId).then(result => {
-        result = result['PROGRAM_CLASS']
-
-        this.storeId = result['STORE_ID']
-        this.questionList = result['SURVEY_QUESTIONS']
+    getSurveyQuestions () {
+      STORE.getQuestions(this.classId, 'program').then(result => {
+        this.questionList = result['QUESTIONS']
         this.questionList.forEach(question => {
           question.ANSWER = []
         })
-
-        this.checkProgramBook()
       })
     },
     checkProgramBook () {
@@ -80,17 +77,28 @@ export default {
     },
     applyProgram (surveyResponse) {
       // 신청
-      let applyInfo = {
-        'STORE_ID': this.storeId,
+      let info = {
+        'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
         'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-        'PROGRAM_SCHEDULE_ID': this.scheduleId,
-        'ATTENDEE_NUM': this.attendeeNum,
         'USER_PHONE_NUMBER': this.contactNumber,
+        'ATTENDEE_NUM': this.attendeeNum,
         'BASIC_SURVEY_RESPONSE': surveyResponse
       }
-      STORE.applyProgram(applyInfo).then(result => {
-        this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
-      })
+      if (this.bookId) {
+        // 수정
+        info['BOOK_ID'] = parseInt(this.bookId)
+        STORE.modifyProgram(info).then(result => {
+          this.bookId = result['BOOK_ID']
+          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+        })
+      } else {
+        // 신청
+        info['STORE_ID'] = parseInt(this.storeId)
+        STORE.applyProgram(info).then(result => {
+          this.bookId = result['BOOK_ID']
+          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+        })
+      }
     }
   }
 }

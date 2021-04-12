@@ -15,7 +15,7 @@ export default {
   },
   data () {
     return {
-      storeId: '',
+      storeId: this.$route.query.store_id,
       bookId: this.$route.query.bookId,
       classId: '',
       storeImageUrl: '',
@@ -62,12 +62,6 @@ export default {
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
         this.programInfo = result['PROGRAM_CLASS']
-
-        this.storeId = this.programInfo['STORE_ID']
-        this.questionList = this.programInfo['SURVEY_QUESTIONS']
-        this.questionList.forEach(question => {
-          question.ANSWER = []
-        })
 
         this.setStoreInfo()
         this.checkProgramBook()
@@ -121,18 +115,19 @@ export default {
         // 기초 설문
         sessionStorage.setItem('attendeeNum', this.attendeeNum)
         sessionStorage.setItem('contactNumber', this.contactNumber)
-        this.$router.push('/sev/applicationSurvey?classId=' + this.classId)
+        this.$router.push('/sev/applicationSurvey?store_id=' + this.storeId + '&classId=' + this.classId + '&bookId=' + this.bookId)
       } else {
         // 신청
         let applyInfo = {
-          'BOOK_ID': this.bookId,
-          'PROGRAM_SCHEDULE_ID': this.scheduleId,
+          'BOOK_ID': parseInt(this.bookId),
+          'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
           'USER_NAME': this.programBookInfo['USER_NAME'],
           'ATTENDEE_NUM': this.attendeeNum,
-          'USER_PHONE_NUMBER': this.contactNumber
+          'USER_PHONE_NUMBER': this.contactNumber,
+          'BASIC_SURVEY_RESPONSE': []
         }
         STORE.modifyProgram(applyInfo).then(result => {
-          this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+          this.$router.push('/sev/applicationComplete?store_id=' + this.storeId + ' &bookId=' + result.BOOK_ID)
         })
       }
     }
