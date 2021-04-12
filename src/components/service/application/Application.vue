@@ -91,7 +91,7 @@ export default {
       return mdn
     },
     next (type) {
-      if (this.lastNum.length < 8) {
+      if (this.lastNum.length < 7) {
         this.alertRequiredNumber()
         return
       }

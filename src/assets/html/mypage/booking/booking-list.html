@@ -6,8 +6,7 @@
           <span class="flag-solid2" v-if="data.status === 'apply'">{{ $t('sev.apply-complete') }}</span>                              <!-- apply: 신청 완료 -->
           <span class="flag-solid2" v-else-if="data.status === 'success'">{{ $t('sev.booking-complete') }}</span>                     <!-- ordered, operator_assigned: 예약 완료 -->
           <span class="flag-solid5" v-else-if="data.status === 'cancel'">{{ $t('comm.cancel') }}</span>                               <!-- canceled: 취소 -->
-          <span class="flag-solid3" v-else-if="data.status === 'complete'">{{ $t('sev.end') }}</span>                                 <!-- completed: 종료 -->
-          <span class="flag-solid3" v-else-if="data.status === 'end'">{{ $t('sev.end') }}</span>                                      <!-- end: 종료 -->
+          <span class="flag-solid3" v-else-if="data.status === 'complete' || data.status === 'end'">{{ $t('sev.end') }}</span>        <!-- completed, end: 종료 -->
           <span class="flag-solid3" v-else-if="data.status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>                  <!-- counseling: 상담중 -->
           <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>                                <!-- no_show: 미방문 -->
           <span class="flag-solid5" v-else-if="data.status === 'standby'">{{ $t('sev.waiting') }}</span>                              <!-- : 대기 -->
