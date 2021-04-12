@@ -40,7 +40,6 @@ export default {
       this.programInfo = result['PROGRAM_CLASS']
       this.storeId = this.programInfo['STORE_ID']
       this.statusFlag = this.programInfo['APPLY_PROGRESS']
-      this.statusFlag = 'ONGOING'
     })
   },
   methods: {
