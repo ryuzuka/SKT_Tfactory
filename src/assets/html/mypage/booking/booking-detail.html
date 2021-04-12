@@ -10,8 +10,8 @@
     <span class="flag-solid2" v-else-if="status === 'selected'">{{ $t('sev.winning') }}</span>                                      <!-- 당첨 -->
     <span class="flag-solid5" v-else-if="status === 'not_selected'">{{ $t('sev.not-drawn') }}</span>                                <!-- 미당첨 -->
 
-    <h2 class="tit-order">{{ $t('sev.booking-number') }} <em>{{ bookingDetail.BOOK_CODE }}</em></h2>
-      <!-- <h2 class="tit-order">{{ $t('sev.application-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2> --><!-- 21.03.30 추가 : 신청 상세일경우  -->
+    <h2 v-if="status === 'apply'" class="tit-order">{{ $t('sev.application-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2>
+    <h2 v-else class="tit-order">{{ $t('sev.booking-number') }} <em>{{ bookingDetail.BOOK_CODE }}</em></h2>
   </section>
   <section class="row">
     <dl class="details-info">
@@ -25,20 +25,29 @@
       <dt v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ $t('my.consult-name') }}</dt>
       <dd v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ bookingDetail.COUNSELING_NAME }}</dd>
 
-      <dt v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
-      <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
-      <dd>{{ bookingDetail.DATE }}</dd>
+      <template v-if="status === 'apply'">
+        <!-- 21.03.30 추가 : 프로그램 신청 시 -->
+        <dt>{{ $t('sev.application-date') }}</dt>
+        <dd>{{ bookingDetail.DATE }}</dd>
+      </template>
+      <template v-else>
+        <dt v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
+        <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
+        <dd>{{ bookingDetail.DATE }}</dd>
+      </template>
 
-      <!-- 21.03.30 추가 : 프로그램 신청 시
-      <dt>{{ $t('sev.application-date') }}</dt>
-      <dd>2020.02.12. 16:00</dd>
-      //21.03.30 추가 -->
     </dl>
 
     <!-- 프로그램 -->
     <dl class="details-info" v-if="bookingType === 'program'">
-      <dt>{{ $t('sev.student') }}</dt> <!-- 21.03.30 수정 -->
-      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      <template v-if="status === 'apply'">
+        <dt>{{ $t('sev.applicant') }}</dt>
+        <dd>김티플(010-1234-5678)</dd>
+      </template>
+      <template v-else>
+        <dt>{{ $t('sev.student') }}</dt>
+        <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      </template>
       <!--
       <dt>{{ $t('sev.student') }}</dt>
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>
@@ -49,10 +58,6 @@
       <dt>{{ $t('sev.student-sex') }}</dt>
       <dd>남성</dd>
       -->
-      <!-- 21.03.30 추가 : 프로그램 신청 시
-      <dt>{{ $t('sev.applicant') }}</dt>
-      <dd>김티플(010-1234-5678)</dd>
-      //21.03.30 추가 -->
     </dl>
 
     <!-- 체험존 -->
@@ -61,7 +66,6 @@
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>
     </dl>
 
-    <!-- 06.05 추가: 상담 신청 -->
     <!-- 상담 -->
     <dl class="details-info" v-else-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">
       <dt>{{ $t('sev.customer-name') }}</dt>
@@ -82,7 +86,6 @@
       <dd v-else>상담원 배정 중입니다.</dd>
     </dl>
 
-    <!-- 07.09 수정: 공통으로 변경 -->
     <dl class="details-info">
       <dt>{{ $t('sev.booking-location') }}</dt>
       <dd>{{bookingDetail.ZONE_NAME}}</dd>
@@ -93,8 +96,8 @@
           <img :src="bookingDetail.ZONE_MARKER_IMAGE_URL">
         </div>
       </dd>
-      <!--// 09.18 안내도 영역 수정 -->
     </dl>
+
     <template v-if="bookingType === 'counseling'">
       <p class="texts-info" v-if="status ==='success'">* {{ $t('my.booking-success-guide') }}</p> <!-- 예약 성공일 때 노출 -->
     </template>
@@ -103,22 +106,22 @@
     </template>
   </section>
 
-  <div class="btn-wrap sticky" v-if="status === 'success'">
+  <div class="btn-wrap sticky" v-if="status === 'apply'">
+    <router-link to="/my/booking/list" class="btn-line big">취소</router-link>
+    <router-link :to="'/my/applicationModify?bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
+  </div>
+  <div class="btn-wrap sticky" v-else-if="status === 'success'">
     <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field' ">
-      <a class="btn-line big" @click.prevent="clickCancel">{{ $t('comm.cancel') }}</a> <!-- 21.03.30 수정 -->
+      <a class="btn-line big" @click.prevent="clickCancel">{{ $t('comm.cancel') }}</a>
       <router-link
         :to="'/my/booking/' + bookingType + '/modify?store_id=' + bookingDetail.STORE_ID + '&book_id=' + bookingDetail.BOOK_ID"
-        class="btn-line big">{{ $t('comm.modify') }} <!-- 21.03.30 수정 -->
+        class="btn-line big">{{ $t('comm.modify') }}
       </router-link>
     </template>
 
     <template v-if="bookingDetail.STATUS == 'operator_assigned' || (bookingType === 'field_buy' || bookingType === 'field')">
       <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
     </template>
-  </div>
-  <div class="btn-wrap sticky" v-else-if="status === 'apply'">
-    <router-link to="/my/booking/list" class="btn-line big">취소</router-link>
-    <router-link :to="'/my/applicationModify?bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
   </div>
 
 
