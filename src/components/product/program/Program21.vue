@@ -40,6 +40,7 @@ export default {
       this.programInfo = result['PROGRAM_CLASS']
       this.storeId = this.programInfo['STORE_ID']
       this.statusFlag = this.programInfo['APPLY_PROGRESS']
+      this.statusFlag = 'ONGOING'
     })
   },
   methods: {
@@ -68,7 +69,7 @@ export default {
         this.alertAlreadyApply()
       } else {
         // 프로그램 신청
-        this.$router.push('/sev/program/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
+        this.$router.push('/sev/application?store_id=' + this.storeId + '&classId=' + this.$route.query.classId)
       }
     }
   }
