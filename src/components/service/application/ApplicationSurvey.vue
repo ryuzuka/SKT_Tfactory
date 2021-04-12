@@ -13,15 +13,20 @@ export default {
       questionList: [],
       scheduleId: '',
       attendeeNum: 1,
-      contactNumber: ''
+      contactNumber: '',
+      isSurvey: true
     }
   },
   mounted () {
     this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
     this.contactNumber = sessionStorage.getItem('contactNumber')
 
-    this.getSurveyQuestions()
     this.checkProgramBook()
+    if (this.bookId) {
+      this.getProgramBookInfo()
+    } else {
+      this.getSurveyQuestions()
+    }
   },
   methods: {
     getSurveyQuestions () {
@@ -35,6 +40,39 @@ export default {
     checkProgramBook () {
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
         this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
+      })
+    },
+    getProgramBookInfo () {
+      STORE.getPrgramBookInfo(this.bookId).then(result => {
+        this.programBookInfo = result['PROGRAM_BOOK']
+        this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
+
+        let number = this.programBookInfo['USER_PHONE_NUMBER']
+        this.firstNum = number.substr(0, 3)
+        this.lastNum = number.substring(3)
+        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+
+        if (!this.programBookInfo['BASIC_SURVEY'] || this.programBookInfo['BASIC_SURVEY'].length < 1) {
+          this.isSurvey = false
+        } else {
+          this.questionList = this.programBookInfo['BASIC_SURVEY']
+          this.questionList.forEach(question => {
+            question.ANSWER = question.RESPONSE
+          })
+        }
+
+        this.checkProgramBook()
+      })
+    },
+    canNotWriteOver200Error () {
+      this.$modal.show('dialog', {
+        title: this.$t('my.alert-booking-failed-200'),
+        buttons: [{
+          title: this.$t('comm.yes'),
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
       })
     },
     clickApplicationButton () {
@@ -64,19 +102,7 @@ export default {
         this.applyProgram(BASIC_SURVEY_RESPONSE)
       }
     },
-    canNotWriteOver200Error () {
-      this.$modal.show('dialog', {
-        title: this.$t('my.alert-booking-failed-200'),
-        buttons: [{
-          title: this.$t('comm.yes'),
-          handler: () => {
-            this.$modal.hide('dialog')
-          }
-        }]
-      })
-    },
     applyProgram (surveyResponse) {
-      // 신청
       let info = {
         'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
         'USER_NAME': this.$cookies.get('MY_INFO').NAME,
@@ -88,14 +114,12 @@ export default {
         // 수정
         info['BOOK_ID'] = parseInt(this.bookId)
         STORE.modifyProgram(info).then(result => {
-          this.bookId = result['BOOK_ID']
           this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
         })
       } else {
         // 신청
         info['STORE_ID'] = parseInt(this.storeId)
         STORE.applyProgram(info).then(result => {
-          this.bookId = result['BOOK_ID']
           this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
         })
       }
