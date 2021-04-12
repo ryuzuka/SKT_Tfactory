@@ -20,7 +20,7 @@ export default {
       classId: '',
       storeInfo: {},
       storeImageUrl: '',
-      programInfo: {},
+      programBookInfo: {},
       attendeeNum: 1,
       firstNum: '010',
       lastNum: '',
@@ -48,10 +48,10 @@ export default {
   methods: {
     getProgramBookInfo () {
       STORE.getPrgramBookInfo(this.bookId).then(result => {
-        this.programInfo = result['PROGRAM_BOOK']
-        this.classId = this.programInfo['PROGRAM_CLASS_ID']
-        this.attendeeNum = this.programInfo['ATTENDEE_NUM']
-        let number = this.programInfo['USER_PHONE_NUMBER']
+        this.programBookInfo = result['PROGRAM_BOOK']
+        this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
+        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+        let number = this.programBookInfo['USER_PHONE_NUMBER']
         this.firstNum = number.substr(0, 3)
         this.lastNum = number.substring(3)
 
@@ -110,27 +110,30 @@ export default {
       let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
       return mdn
     },
-    next () {
+    next (type) {
       if (this.lastNum.length < 8) {
         this.alertRequiredNumber()
         return
       }
 
-      // 기초 설문
-      // sessionStorage.setItem('attendeeNum', this.attendeeNum)
-      // sessionStorage.setItem('contactNumber', this.contactNumber)
-      // this.$router.push('/sev/program/applicationSurvey?classId=' + this.classId)
-      // 신청
-      let applyInfo = {
-        'BOOK_ID': this.bookId,
-        'PROGRAM_SCHEDULE_ID': this.scheduleId,
-        'USER_NAME': this.programInfo['USER_NAME'],
-        'ATTENDEE_NUM': this.attendeeNum,
-        'USER_PHONE_NUMBER': this.contactNumber
+      if (type === 'survey') {
+        // 기초 설문
+        sessionStorage.setItem('attendeeNum', this.attendeeNum)
+        sessionStorage.setItem('contactNumber', this.contactNumber)
+        this.$router.push('/sev/applicationSurvey?classId=' + this.classId)
+      } else {
+        // 신청
+        let applyInfo = {
+          'BOOK_ID': this.bookId,
+          'PROGRAM_SCHEDULE_ID': this.scheduleId,
+          'USER_NAME': this.programBookInfo['USER_NAME'],
+          'ATTENDEE_NUM': this.attendeeNum,
+          'USER_PHONE_NUMBER': this.contactNumber
+        }
+        STORE.modifyProgram(applyInfo).then(result => {
+          this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
+        })
       }
-      STORE.modifyProgram(applyInfo).then(result => {
-        this.$router.push('/sev/program/applicationComplete?&bookId=' + result.BOOK_ID)
-      })
     }
   }
 }

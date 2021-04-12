@@ -19,14 +19,14 @@
         프로그램 선택
       </h3>
     </div>
-    <p>{{ programInfo.PROGRAM_NAME }}</p>
+    <p>{{ programBookInfo.PROGRAM_NAME }}</p>
   </section>
 
   <section class="row booking-contents">
     <div class="tit-wrap">
       <h3 class="subtit">날짜/시간</h3>
     </div>
-    <p class="text-sel">{{ programInfo.PROGRAM_CLASS_SCHEDULE_GUIDE }}</p>
+    <p class="text-sel">{{ programBookInfo.PROGRAM_CLASS_SCHEDULE_GUIDE }}</p>
     <p class="texts-info" v-html="$t('sev.date-info2')"></p>
   </section>
 
@@ -69,6 +69,7 @@
   </section>
 
   <div class="btn-wrap sticky">
-    <a class="btn-solid big" @click.prevent="next()">다음</a>
+    <a v-if="programBookInfo.SURVEY_YN" class="btn-solid big" @click.prevent="next('survey')">{{ $t('comm.next') }}</a>
+    <a v-else class="btn-solid big" @click.prevent="next('apply')">신청</a>
   </div>
 </div>
