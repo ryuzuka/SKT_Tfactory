@@ -330,15 +330,15 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/application'>프로그램 신청</router-link>
-              <div class="date"><span>4.5</span><span>4.5</span></div>
+              <div class="date"><span>4.5</span><span>21.4.12</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
-              <div class="date"><span>4.8</span><span>4.8</span></div>
+              <div class="date"><span>4.8</span><span>21.4.12</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/applicationComplete'>프로그램 신청 - 완료</router-link>
-              <div class="date"><span>4.8</span><span>4.8</span></div>
+              <div class="date"><span>4.8</span><span>21.4.12</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/sev/program/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
@@ -446,7 +446,7 @@
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
-              <div class="date"><span>4.11</span><span>4.11</span></div>
+              <div class="date"><span>4.11</span><span>21.4.12</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
@@ -461,7 +461,7 @@
               <div class="date"><span>3.27</span><span>6.5</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/my/booking/counseling/modify'>예약 수정 - 상담</router-link>
+              <router-link class="link" to='/my/booking/counseling/modify'>예약 수정 - 상담</router-link>k
               <div class="date"><span>3.27</span><span>7.9</span></div>
             </li>
             <li class="pagelist-item">
