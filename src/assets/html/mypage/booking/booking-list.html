@@ -54,7 +54,7 @@
 <!--    <router-link to="/useterm"><a class="btn-link" style="padding-right: 5px">서비스이용약관</a></router-link>-->
 <!--    <a style="margin-right:10px" href="https://privacy.sktelecom.com/view.do?ctg=policy&name=policy" class="btn-link">개인정보처리방침</a>-->
 <!--  </p>-->
-  <div class="btn-wrap">
+  <div class="btn-wrap" v-if="isMore">
     <a href="#" class="btn-more" v-if="listData.length > 0" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
   </div>
 

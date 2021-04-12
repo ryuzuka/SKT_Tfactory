@@ -37,7 +37,8 @@ export default {
       loading: null,
       isLoading: false,
       listData: [],
-      lastIndex: 0
+      lastIndex: 0,
+      isMore: true
     }
   },
   methods: {
@@ -56,6 +57,9 @@ export default {
           this.lastIndex = booking.BOOK_ID
         })
         this.listData = this.listData.concat(result['BOOKING'])
+        if (result['BOOKING'].length < 10) {
+          this.isMore = false
+        }
       })
     }
   },
