@@ -2,6 +2,7 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
+import _ from 'lodash'
 
 export default {
   name: 'Program21',
@@ -17,12 +18,18 @@ export default {
     }
   },
   mounted () {
+    let status = ''
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
 
         STORE.getProgramClassBook(this.classId).then(result => {
           if (result['PROGRAM_CLASS'].length > 0) {
+            _.forEach(result['PROGRAM_CLASS'], (value, index) => {
+              status = value['STATUS']
+            })
+          }
+          if (status === 'apply') {
             this.isApply = true
           }
         })
