@@ -116,6 +116,12 @@
       <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
     </template>
   </div>
+  <div class="btn-wrap sticky" v-else-if="status === 'apply'">
+    <router-link to="/my/booking/list" class="btn-line big">취소</router-link>
+    <router-link :to="'/my/applicationModify?bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
+  </div>
+
+
 
   <!-- 21.03.30 추가 : 만족도 조사
   <div class="btn-wrap sticky">
