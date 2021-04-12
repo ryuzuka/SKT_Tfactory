@@ -67,8 +67,8 @@ export const getAvailableDate = (storeId, day) => {
   })
 }
 
-export const getQuestions = (counselingId) => {
-  return axios.get(STORE_URL + '/basicSurveyQuestion/questions?COUNSELING_ID=' + counselingId, COMMON.getHeader()).then(response => {
+export const getQuestions = (counselingId, type) => {
+  return axios.get(STORE_URL + '/basicSurveyQuestion/questions?COUNSELING_ID=' + counselingId + '&TYPE=' + type, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
