@@ -3,7 +3,7 @@
     <span>
       <a v-if="nickname" class="name" @click.prevent="changeName">{{nickname}}</a>
       <a v-else-if="userInfo.NAME" class="name" @click.prevent="changeName">{{userInfo.NAME}}</a>
-      <a v-else class="name" @click.prevent="changeName">{{(userInfo.MDN).substring(9, 13)}}</a>
+      <a v-else class="name" @click.prevent="changeName">{{ userInfo['MDN'].toString().substring(9, 13) }}</a>
       {{ $t('main.tag-title1-text1') }}
     </span>
     <br><span><strong class="point-text">MY TAG</strong></span>
