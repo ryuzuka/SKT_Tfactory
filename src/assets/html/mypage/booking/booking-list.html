@@ -10,9 +10,8 @@
           <span class="flag-solid3" v-else-if="data.status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>                  <!-- counseling: 상담중 -->
           <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>                                <!-- no_show: 미방문 -->
           <span class="flag-solid5" v-else-if="data.status === 'standby'">{{ $t('sev.waiting') }}</span>                              <!-- : 대기 -->
-          <span class="flag-solid2" v-else-if="data.status === ''">{{ $t('sev.winning') }}</span>                                     <!-- : 당첨 -->
-          <span class="flag-solid5" v-else-if="data.status === ''">{{ $t('sev.not-drawn') }}</span>                                   <!-- : 미당첨 -->
-
+          <span class="flag-solid2" v-else-if="data.status === 'selected'">{{ $t('sev.winning') }}</span>                             <!-- : 당첨 -->
+          <span class="flag-solid5" v-else-if="data.status === 'not_selected'">{{ $t('sev.not-drawn') }}</span>                       <!-- : 미당첨 -->
 
           <template v-if="data.type === 'program'">{{ $t('sev.booking-program') }}<i></i></template>                                  <!-- 프로그램 -->
           <template v-if="data.type === 'experience'">{{ $t('sev.booking-experience') }}<i></i></template>                            <!-- 체험존 -->

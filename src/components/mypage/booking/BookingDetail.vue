@@ -13,8 +13,8 @@ import * as STORE from '../../../js/store.js'
  * not: 미방문
  * counseling: 상담중
  * standby: 대기
- * not: 당첨
- * not: 미당첨
+ * selected: 당첨
+ * not_selected: 미당첨
  */
 
 export default {

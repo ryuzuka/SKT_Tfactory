@@ -4,31 +4,30 @@
 import * as STORE from '../../../js/store.js'
 
 /**
- * success: 예약성공 ORDERED 상담요청
- * cancel: 예약취소 CANCELED 취소
- * complete: 완료 COMPLETED 상담완료
- * end: 설문조사 등록 완료 SATISFACTION_SURVEYED 후기작성완료
- * not: 미방문 NO_SHOW 미방문
- * standby: 대기접수
- * apply: 예약 완료: 신청완료
- * 대기
- * 당첨
- * 미당첨
+ * ordered: '예약 완료',
+ * canceled: '취소',
+ * canceled_by_operator: '취소(관리자)',
+ * operator_assigned: '상담원 배정',
+ * counseling: '상담중',
+ * completed: '참석 완료',
+ * no_show: '노쇼',
+ * apply: '응모',
+ * selected: '당첨',
+ * not_selected: '미당첨'
  */
 
 let BOOKING_STATUS = {
-  'ordered': 'success', // 예약 완료
-  'operator_assigned': 'success', // 예약 완료
   'apply': 'apply', // 신청완료
+  'ordered': 'success', // 예약 완료
   'canceled': 'cancel', // 취소
+  'canceled_by_operator': 'cancel', // 취소
   'completed': 'complete', // 종료
   'end': 'complete', // 종료
   'counseling': 'counseling', // 상담중
   'no_show': 'not', // 미방문
-  '대기': 'standby', // 대기
-  '당첨': '당첨', // 당첨
-  '미당첨': '미당첨', // 미당첨
-  'canceled_by_operator': 'cancel' // 취소
+  'standby': 'standby', // 대기
+  'selected': 'selected', // 당첨
+  'not_selected': 'not_selected' // 미당첨
 }
 
 export default {
