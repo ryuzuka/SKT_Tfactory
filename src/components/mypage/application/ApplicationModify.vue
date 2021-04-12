@@ -18,8 +18,9 @@ export default {
       storeId: '',
       bookId: this.$route.query.bookId,
       classId: '',
-      storeInfo: {},
       storeImageUrl: '',
+      storeInfo: {},
+      programInfo: {},
       programBookInfo: {},
       attendeeNum: 1,
       firstNum: '010',
@@ -60,10 +61,10 @@ export default {
     },
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
-        result = result['PROGRAM_CLASS']
+        this.programInfo = result['PROGRAM_CLASS']
 
-        this.storeId = result['STORE_ID']
-        this.questionList = result['SURVEY_QUESTIONS']
+        this.storeId = this.programInfo['STORE_ID']
+        this.questionList = this.programInfo['SURVEY_QUESTIONS']
         this.questionList.forEach(question => {
           question.ANSWER = []
         })
