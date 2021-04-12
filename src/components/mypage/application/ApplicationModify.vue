@@ -23,7 +23,7 @@ export default {
       programInfo: {},
       programBookInfo: {},
       attendeeNum: 1,
-      firstNum: '010',
+      firstNum: '',
       lastNum: '',
       contactNumber: '',
       scheduleId: ''
@@ -36,6 +36,7 @@ export default {
       }
     })
 
+    this.setStoreInfo()
     this.getProgramBookInfo()
   },
   watch: {
@@ -47,26 +48,6 @@ export default {
     }
   },
   methods: {
-    getProgramBookInfo () {
-      STORE.getPrgramBookInfo(this.bookId).then(result => {
-        this.programBookInfo = result['PROGRAM_BOOK']
-        this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
-        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
-        let number = this.programBookInfo['USER_PHONE_NUMBER']
-        this.firstNum = number.substr(0, 3)
-        this.lastNum = number.substring(3)
-
-        this.getProgramClass()
-      })
-    },
-    getProgramClass () {
-      STORE.getProgramClass(this.classId).then(result => {
-        this.programInfo = result['PROGRAM_CLASS']
-
-        this.setStoreInfo()
-        this.checkProgramBook()
-      })
-    },
     setStoreInfo () {
       STORE.getStoreInfo(this.storeId).then(result => {
         this.storeInfo = result['STORE']
@@ -75,6 +56,25 @@ export default {
         } else {
           this.storeImageUrl = 'url(' + require(`@/assets/images/dummy/@img_shop.jpg`) + ')'
         }
+      })
+    },
+    getProgramBookInfo () {
+      STORE.getPrgramBookInfo(this.bookId).then(result => {
+        this.programBookInfo = result['PROGRAM_BOOK']
+        this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
+
+        let number = this.programBookInfo['USER_PHONE_NUMBER']
+        this.firstNum = number.substr(0, 3)
+        this.lastNum = number.substring(3)
+        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+
+        this.getProgramClass()
+        this.checkProgramBook()
+      })
+    },
+    getProgramClass () {
+      STORE.getProgramClass(this.classId).then(result => {
+        this.programInfo = result['PROGRAM_CLASS']
       })
     },
     checkProgramBook () {
@@ -116,8 +116,8 @@ export default {
         sessionStorage.setItem('attendeeNum', this.attendeeNum)
         sessionStorage.setItem('contactNumber', this.contactNumber)
         this.$router.push('/sev/applicationSurvey?store_id=' + this.storeId + '&classId=' + this.classId + '&bookId=' + this.bookId)
-      } else {
-        // 신청
+      } else if (type === 'modify') {
+        // 수정
         let applyInfo = {
           'BOOK_ID': parseInt(this.bookId),
           'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),

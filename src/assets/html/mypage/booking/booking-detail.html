@@ -111,12 +111,9 @@
     <router-link :to="'/my/applicationModify?store_id=' + bookingDetail.STORE_ID + '&bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
   </div>
   <div class="btn-wrap sticky" v-else-if="status === 'success'">
-    <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field' ">
+    <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field'">
       <a class="btn-line big" @click.prevent="clickCancel">{{ $t('comm.cancel') }}</a>
-      <router-link
-        :to="'/my/booking/' + bookingType + '/modify?store_id=' + bookingDetail.STORE_ID + '&book_id=' + bookingDetail.BOOK_ID"
-        class="btn-line big">{{ $t('comm.modify') }}
-      </router-link>
+      <router-link :to="'/my/booking/' + bookingType + '/modify?store_id=' + bookingDetail.STORE_ID + '&book_id=' + bookingDetail.BOOK_ID" class="btn-line big">{{ $t('comm.modify') }}</router-link>
     </template>
 
     <template v-if="bookingDetail.STATUS == 'operator_assigned' || (bookingType === 'field_buy' || bookingType === 'field')">
