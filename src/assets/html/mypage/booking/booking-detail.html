@@ -1,17 +1,17 @@
 <div class="contents bottom-sticky my-detail" ref="contents">
   <section class="row">
-    <span class="flag-solid2" v-if="status === 'apply'">{{ $t('sev.apply-complete') }}</span>                           <!-- 신청 완료 -->
-    <span class="flag-solid2" v-else-if="status === 'success'">{{ $t('sev.booking-complete') }}</span>                  <!-- 예약 완료 -->
-    <span class="flag-solid5" v-else-if="status === 'cancel'">{{ $t('comm.cancel') }}</span>                            <!-- 취소 -->
-    <span class="flag-solid5" v-else-if="status === 'complete' || status === 'end'">{{ $t('sev.end') }}</span>          <!-- 종료 -->
-    <span class="flag-solid3" v-else-if="status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>               <!-- 상담중 -->
-    <span class="flag-solid5" v-else-if="status === 'not'">{{ $t('sev.not-visit') }}</span>                             <!-- 미방문 -->
-    <span class="flag-solid5" v-else-if="status === 'standby'">{{ $t('sev.waiting') }}</span>                           <!-- 대기 -->
-    <span class="flag-solid5" v-else-if="status === ''">{{ $t('sev.winning') }}</span>                                  <!-- 당첨 -->
-    <span class="flag-solid5" v-else-if="status === ''">{{ $t('sev.not-drawn') }}</span>                                <!-- 미당첨 -->
+    <span class="flag-solid2" v-if="status === 'apply'">{{ $t('sev.apply-complete') }}</span>                                       <!-- 신청 완료 -->
+    <span class="flag-solid2" v-else-if="status === 'success'">{{ $t('sev.booking-complete') }}</span>                              <!-- 예약 완료 -->
+    <span class="flag-solid5" v-else-if="status === 'cancel'">{{ $t('comm.cancel') }}</span>                                        <!-- 취소 -->
+    <span class="flag-solid5" v-else-if="status === 'complete'">{{ $t('sev.end') }}</span>                                          <!-- 종료 -->
+    <span class="flag-solid3" v-else-if="status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>                           <!-- 상담중 -->
+    <span class="flag-solid5" v-else-if="status === 'not'">{{ $t('sev.not-visit') }}</span>                                         <!-- 미방문 -->
+    <span class="flag-solid5" v-else-if="status === 'standby'">{{ $t('sev.waiting') }}</span>                                       <!-- 대기 -->
+    <span class="flag-solid2" v-else-if="status === 'selected'">{{ $t('sev.winning') }}</span>                                      <!-- 당첨 -->
+    <span class="flag-solid5" v-else-if="status === 'not_selected'">{{ $t('sev.not-drawn') }}</span>                                <!-- 미당첨 -->
 
     <h2 class="tit-order">{{ $t('sev.booking-number') }} <em>{{ bookingDetail.BOOK_CODE }}</em></h2>
-    <!-- <h2 class="tit-order">{{ $t('sev.application-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2> --><!-- 21.03.30 추가 : 신청 상세일경우  -->
+      <!-- <h2 class="tit-order">{{ $t('sev.application-number') }} <em>{{bookingDetail.BOOK_CODE}}</em></h2> --><!-- 21.03.30 추가 : 신청 상세일경우  -->
   </section>
   <section class="row">
     <dl class="details-info">
@@ -116,6 +116,12 @@
       <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
     </template>
   </div>
+  <div class="btn-wrap sticky" v-else-if="status === 'apply'">
+    <router-link to="/my/booking/list" class="btn-line big">취소</router-link>
+    <router-link :to="'/my/applicationModify?bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
+  </div>
+
+
 
   <!-- 21.03.30 추가 : 만족도 조사
   <div class="btn-wrap sticky">
