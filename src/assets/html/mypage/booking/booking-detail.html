@@ -40,14 +40,9 @@
 
     <!-- 프로그램 -->
     <dl class="details-info" v-if="bookingType === 'program'">
-      <template v-if="status === 'apply'">
-        <dt>{{ $t('sev.applicant') }}</dt>
-        <dd>김티플(010-1234-5678)</dd>
-      </template>
-      <template v-else>
-        <dt>{{ $t('sev.student') }}</dt>
-        <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
-      </template>
+      <dt v-if="status === 'apply'">{{ $t('sev.applicant') }}</dt>
+      <dt v-else>{{ $t('sev.student') }}</dt>
+      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
       <!--
       <dt>{{ $t('sev.student') }}</dt>
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>
