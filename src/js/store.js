@@ -159,6 +159,12 @@ export const cancelOnSiteCounseling = (bookId) => {
 }
 
 /** 03. 프로그램 관련 기능 **/
+export const getProgramBanner = () => {
+  return axios.get(STORE_URL + '/rollingBanner/list?STORE_ID=' + process.env.MYTAG_STORE_ID, COMMON.getHeader()).then(response => {
+    return response.data
+  })
+}
+
 export const getProgramClassList = () => {
   return axios.get(STORE_URL + '/programClass/list?STORE_ID=' + process.env.FLAGSHIP_STORE_ID).then(response => {
     return response.data
