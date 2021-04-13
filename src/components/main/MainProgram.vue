@@ -36,7 +36,8 @@ export default {
       todayClasses: [],
       specialClasses: [],
       mainBannerKor: ['Welcome to ⓥStudio!', '갤럭시로 한 곡 뚝딱'],
-      mainBannerUrl: []
+      mainBannerUrl: [],
+      mainBannerList: []
     }
   },
   watch: {
@@ -124,10 +125,16 @@ export default {
           return a['ORDER_IN_TODAY'] - b['ORDER_IN_TODAY']
         })
       })
+    },
+    getProgramBanner () {
+      STORE.getProgramBanner().then(result => {
+        this.mainBannerList = result['CLASSES']
+      })
     }
   },
   mounted () {
     this.scroll()
+    this.getProgramBanner()
     this.getProgramList()
 
     STORE.getPopUpContent().then(result => {
