@@ -2,6 +2,7 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
+import _ from 'lodash'
 
 export default {
   name: 'ApplicationSurvey',
@@ -53,11 +54,10 @@ export default {
 
         this.questionList = this.programBookInfo['BASIC_SURVEY']
         this.questionList.forEach(question => {
-          question.ANSWER = question.RESPONSE
-          if (question.QUESTION_TYPE !== 'essay') {
-            question.ANSWER = JSON.parse(question.RESPONSE)
-          } else {
+          if (question.QUESTION_TYPE === 'essay') {
             question.ANSWER = question.RESPONSE
+          } else {
+            question.ANSWER = parseInt(question.RESPONSE)
           }
         })
 
@@ -103,25 +103,41 @@ export default {
       }
     },
     applyProgram (surveyResponse) {
-      let info = {
-        'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
-        'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-        'USER_PHONE_NUMBER': this.contactNumber,
-        'ATTENDEE_NUM': this.attendeeNum,
-        'BASIC_SURVEY_RESPONSE': surveyResponse
-      }
-      if (this.bookId) {
-        // 수정
-        info['BOOK_ID'] = parseInt(this.bookId)
-        STORE.modifyProgram(info).then(result => {
-          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+      let response = ''
+      _.forEach(surveyResponse, data => {
+        response = data.RESPONSE
+      })
+      if (response === '') {
+        this.$modal.show('dialog', {
+          title: '기초설문 응답 내용이 없습니다.',
+          buttons: [{
+            title: this.$t('comm.yes'),
+            handler: () => {
+              this.$modal.hide('dialog')
+            }
+          }]
         })
       } else {
-        // 신청
-        info['STORE_ID'] = parseInt(this.storeId)
-        STORE.applyProgram(info).then(result => {
-          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
-        })
+        let info = {
+          'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
+          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+          'USER_PHONE_NUMBER': this.contactNumber,
+          'ATTENDEE_NUM': this.attendeeNum,
+          'BASIC_SURVEY_RESPONSE': surveyResponse
+        }
+        if (this.bookId) {
+          // 수정
+          info['BOOK_ID'] = parseInt(this.bookId)
+          STORE.modifyProgram(info).then(result => {
+            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          })
+        } else {
+          // 신청
+          info['STORE_ID'] = parseInt(this.storeId)
+          STORE.applyProgram(info).then(result => {
+            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          })
+        }
       }
     }
   }

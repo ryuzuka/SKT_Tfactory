@@ -1,6 +1,6 @@
 <div class="contents bottom-sticky" ref="contents">
   <div class="row">
-    <p class="texts-req">{{ $t('sev.survey-guide') }} ({{ $t('comm.select')}})</p>
+    <p class="texts-req">{{ $t('sev.survey-guide') }} ({{ $t('comm.required')}})</p>
     <ol class="list-survey">
       <li v-for="(question, questionIndex) in questionList">
         <p class="tit">{{question.QUESTION}}</p>
@@ -10,7 +10,7 @@
           <li v-for="(answer, answerIndex) in question.CHOICE">
             <input
               v-if="question.QUESTION_TYPE === 'choice'"
-              v-model="question.ANSWER[0]"
+              v-model="question.ANSWER"
               type="radio"
               :name="questionIndex"
               :value=answerIndex
