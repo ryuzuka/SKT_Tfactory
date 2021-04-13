@@ -13,8 +13,7 @@ export default {
       questionList: [],
       scheduleId: '',
       attendeeNum: 1,
-      contactNumber: '',
-      isSurvey: true
+      contactNumber: ''
     }
   },
   mounted () {
@@ -52,14 +51,15 @@ export default {
         this.lastNum = number.substring(3)
         this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
 
-        if (!this.programBookInfo['BASIC_SURVEY'] || this.programBookInfo['BASIC_SURVEY'].length < 1) {
-          this.isSurvey = false
-        } else {
-          this.questionList = this.programBookInfo['BASIC_SURVEY']
-          this.questionList.forEach(question => {
+        this.questionList = this.programBookInfo['BASIC_SURVEY']
+        this.questionList.forEach(question => {
+          question.ANSWER = question.RESPONSE
+          if (question.QUESTION_TYPE !== 'essay') {
+            question.ANSWER = JSON.parse(question.RESPONSE)
+          } else {
             question.ANSWER = question.RESPONSE
-          })
-        }
+          }
+        })
 
         this.checkProgramBook()
       })
