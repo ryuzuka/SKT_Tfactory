@@ -97,12 +97,14 @@ export default {
     },
     getProgramList () {
       STORE.getProgramClassList().then(result => {
-        result.CLASSES.forEach((program) => {
+        result.CLASSES.forEach(program => {
           if (program.DISPLAY_IN_CLASS) {
             this.crewClasses.push(program)
-          } else if (program.DISPLAY_IN_SPECIAL) {
+          }
+          if (program.DISPLAY_IN_SPECIAL) {
             this.specialClasses.push(program)
-          } else if (program.DISPLAY_IN_TODAY) {
+          }
+          if (program.DISPLAY_IN_TODAY) {
             this.todayClasses.push(program)
           }
 
