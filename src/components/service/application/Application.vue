@@ -20,11 +20,12 @@ export default {
       storeInfo: {},
       storeImageUrl: '',
       programInfo: {},
-      attendeeNum: 1,
+      attendeeNum: '',
       firstNum: '010',
       lastNum: '',
       contactNumber: '',
-      scheduleId: ''
+      scheduleId: '',
+      attendeeList: [{text: '1', value: 1}]
     }
   },
   mounted () {
@@ -64,7 +65,27 @@ export default {
     },
     checkProgramBook () {
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
-        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
+        result = result['SCHEDULE_LIST'][0]
+        this.scheduleId = result.PROGRAM_SCHEDULE_ID
+        for (let i = 0; i < result['MAX_ATTENDEE_PER_APPLY']; ++i) {
+          if (i > 0) {
+            this.attendeeList.push({text: String(i + 1), value: i + 1})
+          }
+        }
+      })
+    },
+    alertRequiredAttendee () {
+      return new Promise(resolve => {
+        this.$modal.show('dialog', {
+          title: '참여인원을 선택해 주세요.',
+          buttons: [{
+            title: this.$t('comm.confirm'),
+            handler: () => {
+              resolve()
+              this.$modal.hide('dialog')
+            }
+          }]
+        })
       })
     },
     alertRequiredNumber () {
@@ -91,6 +112,11 @@ export default {
       return mdn
     },
     next (type) {
+      if (!this.attendeeNum) {
+        this.alertRequiredAttendee()
+        return
+      }
+
       if (this.lastNum.length < 7) {
         this.alertRequiredNumber()
         return
