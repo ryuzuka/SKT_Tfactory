@@ -46,9 +46,11 @@
           <div class="thumb"><img :src="specialClass.THUMBNAIL_IMAGE_URL" alt=""></div>
           <div class="info">
 
-            <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
-            <span v-else-if="specialClass.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-            <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+            <template v-if="specialClass.BOOKING_TYPE === 'select'">
+              <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="specialClass.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+            </template>
 
             <p class="tit">
               <em>{{specialClass.NAME}}</em>
@@ -73,9 +75,12 @@
         <a :href="today.LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
           <div class="thumb">
             <img :src="today.THUMBNAIL_IMAGE_URL" alt="">
-            <span v-if="today.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
-            <span v-else-if="today.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-            <span v-else="today.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+
+            <template v-if="today.BOOKING_TYPE === 'select'">
+              <span v-if="today.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="today.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else="today.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+            </template>
           </div>
           <p class="cate"><span>{{today.CATEGORY}}</span>
             <br>{{today.THUMBNAIL_SUBTITLE}}</p>
