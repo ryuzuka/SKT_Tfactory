@@ -5,33 +5,21 @@
       <span>{{ $t('main.program-title1-text2') }}</span><br>
       <span><strong class="point-text">Event</strong></span>
     </h1>
-    <!-- 21.01.25 수정 -->
     <div class="swiper-top">
       <swiper :options="programSwiperOption">
-        <swiper-slide>
-          <a :href="mainBannerUrl[0]">
-            <div class="thumb"><img src="../../images/program/Vstudio_vmd2.png" alt=""></div>
+        <swiper-slide v-for="(banner, index) in mainBannerList" :key="index">
+          <router-link :to="String(banner['LINK_URL'])">
+            <div class="thumb"><img :src="banner['IMAGE_URL']" alt=""></div>
             <div class="texts">
-              <span class="flag-solid7">FLEX STAGE</span>
-              <strong class="tit">Welcome to <br>ⓥ Studio!</strong>
-              <p class="desc">나에게 딱 맞는 숏폼 만들고 선물받자</p>
+              <span class="flag-solid7">{{ banner['CHIP_TEXT'] }}</span>
+              <strong class="tit" v-html="banner['MAIN_TEXT']"></strong>
+              <p class="desc">{{ banner['SUB_TEXT'] }}</p>
             </div>
-          </a>
-        </swiper-slide>
-        <swiper-slide>
-          <a :href="mainBannerUrl[1]">
-            <div class="thumb"><img src="../../images/main/event-img-03.jpg" alt=""></div>
-            <div class="texts">
-              <span class="flag-solid7">MUSIC CLASS</span>
-              <strong class="tit">갤럭시로<br>한 곡 뚝딱</strong>
-              <p class="desc">워크밴드로 만드는 나만의 음악</p>
-            </div>
-          </a>
+          </router-link>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
-    <!-- //21.01.25 수정 -->
   </div>
 
   <div class="row">
@@ -39,7 +27,6 @@
       <span>{{ $t('main.program-title2-text1') }}</span><br>
       <span><strong class="point-text">Factory Special</strong></span>
     </h2>
-    <!-- 21.01.15 수정 -->
     <ul class="list-program wide" ref="listAniObj0" :class="{'all': !isConcertMore, 'ani-obj': listAniObj[0]}">
       <li v-for="specialClass in specialClasses">
         <a :href="specialClass.LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
