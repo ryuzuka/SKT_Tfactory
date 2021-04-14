@@ -103,13 +103,15 @@ export default {
       }
     },
     applyProgram (surveyResponse) {
-      let response = ''
+      let isResponse = true
       _.forEach(surveyResponse, data => {
-        response = data.RESPONSE
+        if (!data.RESPONSE) {
+          isResponse = false
+        }
       })
-      if (response === '') {
+      if (!isResponse) {
         this.$modal.show('dialog', {
-          title: '기초설문 응답 내용이 없습니다.',
+          title: '답변하지 않은 항목이 있습니다.',
           buttons: [{
             title: this.$t('comm.yes'),
             handler: () => {

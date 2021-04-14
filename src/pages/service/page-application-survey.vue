@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <Header type="back" :title="$t('sev.survey')"></Header>
+    <Header type="back" :title="''"></Header>
     <Application-Survey></Application-Survey>
     <modals-container></modals-container>
     <v-dialog></v-dialog>
