@@ -1,4 +1,4 @@
-<div class="contents bottom-sticky" ref="contents">
+<div v-bind:class="{ 'bottom-sticky': bookingType }" class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class21-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
@@ -71,7 +71,10 @@
   </div>
   <!-- //details -->
   <!-- button set -->
-  <div class="btn-wrap sticky">
+  <div v-if="bookingType === 'basic'" class="btn-wrap sticky">
+    <a @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
+  </div>
+  <div v-else-if="bookingType === 'select'" class="btn-wrap sticky">
     <a v-if="statusFlag === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
     <button v-else-if="statusFlag === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
     <button v-else-if="statusFlag === 'NOT_STARTED'" class="btn-solid disabled" disabled>신청 기간이 아닙니다.</button>
