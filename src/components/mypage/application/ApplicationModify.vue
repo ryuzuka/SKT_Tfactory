@@ -22,12 +22,12 @@ export default {
       storeInfo: {},
       programInfo: {},
       programBookInfo: {},
-      firstNum: '010',
+      attendeeNum: '010',
+      firstNum: '',
       lastNum: '',
       contactNumber: '',
-      scheduleId: '',
-      attendeeNum: 1,
-      attendeeList: [{text: '1', value: 1}]
+      attendeeList: [{text: '1', value: 1}],
+      scheduleId: ''
     }
   },
   mounted () {
@@ -84,9 +84,10 @@ export default {
         for (let i = 0; i < result['MAX_ATTENDEE_PER_APPLY']; ++i) {
           this.attendeeList[i] = {text: String(i + 1), value: i + 1}
         }
-      })
-      this.$nextTick(() => {
-        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+
+        this.$nextTick(() => {
+          this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+        })
       })
     },
     alertRequiredAttendee () {
@@ -131,7 +132,6 @@ export default {
         this.alertRequiredNumber()
         return
       }
-
       if (type === 'survey') {
         // 기초 설문
         sessionStorage.setItem('attendeeNum', this.attendeeNum)
