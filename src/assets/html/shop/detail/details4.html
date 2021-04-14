@@ -53,28 +53,6 @@
       </ul>
     </div>
   </div>
-  <!-- program -->
-  <div class="row programs">
-    <h3 class="subtit">{{ $t('shop.program-title') }} <strong class="point-text">Class</strong></h3>
-    <div class="scroll-wrap">
-      <ul class="list-program scroll">
-        <li v-for="crewClass in classList">
-          <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
-            <div class="lector">
-              <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
-              <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}
-              </p>
-            </div>
-            <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
-            <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
-            <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
-            <!--            <span class="flag-basic">모집중</span>-->
-          </a>
-        </li>
-      </ul>
-      <div class="btn-wrap">
-        <a v-if="classList.length > 4" href="#" class="btn-more small"><span class="blind">더 보기</span></a>
-      </div>
-    </div>
-  </div>
+
+  <Store-Class></Store-Class>
 </div>
