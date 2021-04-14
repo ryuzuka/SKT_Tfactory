@@ -42,10 +42,10 @@ export default {
   },
   watch: {
     firstNum (firstNum) {
-      this.contactNumber = this.mdnFilter(firstNum + this.lastNum)
+      this.contactNumber = firstNum + this.lastNum
     },
     lastNum (lastNum) {
-      this.contactNumber = this.mdnFilter(this.firstNum + lastNum)
+      this.contactNumber = this.firstNum + lastNum
     }
   },
   methods: {
@@ -121,10 +121,6 @@ export default {
       this.$modal.show(ModalReadMap, {}, {
         type: 'full'
       }, {})
-    },
-    mdnFilter (data) {
-      let mdn = data.replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')
-      return mdn
     },
     next (type) {
       if (!this.attendeeNum) {

@@ -8,6 +8,8 @@ import Consult from '../Consult'
 import ModalConsign from './ModalConsign' // 08.19 개인정보취급위탁 추가
 
 import * as STORE from '../../../js/store.js'
+import * as TID from '../../../js/tid.js'
+import * as USER from '../../../js/user.js'
 
 export default {
   name: 'BookingDate',
@@ -49,12 +51,37 @@ export default {
         scrollbar: {
           el: '.swiper-scrollbar'
         }
-      },
-      questionList: [],
-      surveyYn: false
+      }
     }
   },
   mounted () {
+    /** ******* T world 예약 관련 ******* */
+    /** ************** */
+
+    if (this.$route.query.sso_login_id) {
+      sessionStorage.setItem('SVC_NUM', this.$route.query.svc_num)
+      localStorage.setItem('STORE_CODE', this.$route.query.store_code)
+      let callback = window.location.origin + window.location.pathname
+      TID.loginRedirectSso(this.$route.query.sso_login_id, callback)
+    }
+
+    if (this.$route.query.id_token) {
+      USER.signInOrUpTID(this.$route.query).then(result => {
+        if (result.RET_CODE === 0) {
+          this.$cookies.set('USER_AUTH', result)
+          this.setUserInfo()
+          STORE.getStoreId(localStorage.getItem('STORE_CODE')).then(storeId => {
+            this.storeID = storeId
+            this.setStoreInfo()
+          })
+        } else {
+          this.$router.push({name: 'Error500'})
+        }
+      })
+    }
+    /** ************** */
+    /** ************** */
+
     if (this.$route.query.store_id) {
       this.storeID = this.$route.query.store_id
       this.setStoreInfo()
@@ -65,7 +92,6 @@ export default {
 
     if (this.$props.bookingType === 'program' && this.$route.query.classId) {
       this.getProgramClass(this.$route.query.classId)
-      this.getSurveyQuestions()
     }
 
     this.selectedService = this.$route.query.selectedService
@@ -73,14 +99,6 @@ export default {
     this.dateList = this.getDates(this.$moment(), this.$moment().add(29, 'day'))
   },
   methods: {
-    getSurveyQuestions () {
-      STORE.getQuestions(this.$route.query.classId, 'program').then(result => {
-        this.questionList = result['QUESTIONS']
-        this.questionList.forEach(question => {
-          question.ANSWER = []
-        })
-      })
-    },
     openModal () {
       this.$modal.show(ModalConsign, {
         test: 'test'
@@ -134,7 +152,6 @@ export default {
     getProgramClass (classId) {
       STORE.getProgramClass(classId).then(result => {
         this.selectedService = result.PROGRAM_CLASS
-        this.surveyYn = result.PROGRAM_CLASS.SURVEY_YN
         this.getProgramTimetable(classId, result.PROGRAM_CLASS.PROGRAM_CLASS_CAN_BE_USED_TIME)
       })
     },
@@ -271,34 +288,28 @@ export default {
             'BOOK_ID': parseInt(this.$route.query.book_id),
             'PROGRAM_SCHEDULE_ID': this.selectedProgram.ID,
             'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-            'USER_PHONE_NUMBER': '010' + this.contactNumber,
-            'BASIC_SURVEY_RESPONSE': this.questionList
+            'USER_PHONE_NUMBER': '010' + this.contactNumber
           }
           STORE.modifyProgram(bookInfo).then(result => {
-            this.next(this.bookingType, result.BOOK_ID, this.surveyYn)
+            this.next(this.bookingType, result.BOOK_ID)
           })
         } else {
           bookInfo = {
             'STORE_ID': parseInt(this.storeID),
             'PROGRAM_SCHEDULE_ID': this.selectedProgram.ID,
             'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-            'USER_PHONE_NUMBER': '010' + this.contactNumber,
-            'BASIC_SURVEY_RESPONSE': this.questionList
+            'USER_PHONE_NUMBER': '010' + this.contactNumber
           }
           STORE.bookProgram(bookInfo).then(result => {
-            this.next(this.bookingType, result.BOOK_ID, this.surveyYn)
+            this.next(this.bookingType, result.BOOK_ID)
           })
         }
       }
     },
-    next (type, bookID, isSurvey) {
+    next (type, bookID) {
       let url = '/sev/booking/' + type
       if (type === 'program') {
-        if (isSurvey) {
-          url = '/sev/applicationSurvey?store_id=' + this.storeID + '&classId=' + this.$route.query.classId
-        } else {
-          url += '/complete?PROGRAM_BOOK_ID=' + bookID
-        }
+        url += '/complete?PROGRAM_BOOK_ID=' + bookID
         this.$router.push(url)
       } else if (type === 'experience') {
         url += '/complete'
