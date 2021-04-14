@@ -1,23 +1,11 @@
 <template src="../../../assets/html/shop/detail/details16.html"></template>
 
 <script>
-import * as STORE from '../../../js/store.js'
-
+import StoreClass from './StoreClass'
 export default {
   name: 'Store16',
-  data () {
-    return {
-      classList: []
-    }
-  },
-  mounted () {
-    STORE.getProgramClassList().then(result => {
-      result.CLASSES.forEach((crewClass) => {
-        if (crewClass.TYPE === 'class') {
-          this.classList.push(crewClass)
-        }
-      })
-    })
+  components: {
+    StoreClass
   }
 }
 </script>
