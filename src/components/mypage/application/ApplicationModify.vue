@@ -22,10 +22,10 @@ export default {
       storeInfo: {},
       programInfo: {},
       programBookInfo: {},
-      attendeeNum: '010',
-      firstNum: '',
+      firstNum: '010',
       lastNum: '',
       contactNumber: '',
+      attendeeNum: 1,
       attendeeList: [{text: '1', value: 1}],
       scheduleId: ''
     }
@@ -64,10 +64,6 @@ export default {
         this.programBookInfo = result['PROGRAM_BOOK']
         this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
 
-        let number = this.programBookInfo['USER_PHONE_NUMBER']
-        this.firstNum = number.substr(0, 3)
-        this.lastNum = number.substring(3)
-
         this.getProgramClass()
         this.checkProgramBook()
       })
@@ -87,6 +83,9 @@ export default {
 
         this.$nextTick(() => {
           this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
+          let number = this.programBookInfo['USER_PHONE_NUMBER']
+          this.firstNum = number.substr(0, 3)
+          this.lastNum = number.substring(3)
         })
       })
     },
