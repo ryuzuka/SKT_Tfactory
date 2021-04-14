@@ -36,6 +36,7 @@
     </div>
     <div class="form-group">
       <ui-select
+        v-if="attendeeNum"
         id="attendee-num"
         v-model="attendeeNum"
         :data="attendeeList"
@@ -50,16 +51,16 @@
     <p class="texts-info" v-html="$t('sev.applicant-info-guide2')"></p>
     <div class="form-group">
       <div class="input-box mobile">
-<!--        <ui-select-->
-<!--          v-model="firstNum"-->
-<!--          :data="[-->
-<!--              {text: '010', value: '010'},-->
-<!--              {text: '011', value: '011'},-->
-<!--              {text: '017', value: '017'},-->
-<!--              {text: '019', value: '019'},-->
-<!--            ]"-->
-<!--          class="reverse"-->
-<!--        ></ui-select>-->
+        <ui-select
+          v-model="firstNum"
+          :data="[
+              {text: '010', value: '010'},
+              {text: '011', value: '011'},
+              {text: '017', value: '017'},
+              {text: '019', value: '019'},
+            ]"
+          class="reverse"
+        ></ui-select>
         <input v-model="lastNum" ref="certification" type="tel" maxlength="8" id="info1-2" :placeholder="$t('comm.only-number')">
       </div>
     </div>

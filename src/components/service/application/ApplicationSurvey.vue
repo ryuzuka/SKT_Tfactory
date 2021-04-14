@@ -52,6 +52,11 @@ export default {
         this.lastNum = number.substring(3)
         this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
 
+        if (this.bookId) {
+          this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
+          this.contactNumber = sessionStorage.getItem('contactNumber')
+        }
+
         this.questionList = this.programBookInfo['BASIC_SURVEY']
         this.questionList.forEach(question => {
           if (question.QUESTION_TYPE === 'essay') {
