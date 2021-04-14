@@ -8,13 +8,14 @@ export default {
   name: 'Program21',
   data () {
     return {
-      isApply: false,
       mobileOS: this.$cookies.get('platform'),
       classId: this.$route.query.classId,
       storeId: '',
       programInfo: {},
       isLogin: false,
-      statusFlag: 'NOT_STARTED'
+      statusFlag: 'NOT_STARTED',
+      bookingType: '',
+      isApply: false
     }
   },
   mounted () {
@@ -40,6 +41,7 @@ export default {
       this.programInfo = result['PROGRAM_CLASS']
       this.storeId = this.programInfo['STORE_ID']
       this.statusFlag = this.programInfo['APPLY_PROGRESS']
+      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
     })
   },
   methods: {

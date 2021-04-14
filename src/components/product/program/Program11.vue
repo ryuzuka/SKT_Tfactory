@@ -8,13 +8,14 @@ export default {
   name: 'Program11',
   data () {
     return {
-      bookingAvailable: false,
       programClass: null,
-      isApply: false,
       classId: this.$route.query.classId,
       storeId: '',
       programInfo: {},
-      isLogin: false
+      isLogin: false,
+      statusFlag: 'NOT_STARTED',
+      bookingType: '',
+      isApply: false
     }
   },
   mounted () {
@@ -38,7 +39,8 @@ export default {
 
     STORE.getProgramClass(this.$route.query.classId).then(result => {
       this.programClass = result['PROGRAM_CLASS']
-      this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
+      this.statusFlag = result['PROGRAM_CLASS']['APPLY_PROGRESS']
+      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
     })
   },
   methods: {
