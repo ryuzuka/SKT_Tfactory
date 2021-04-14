@@ -22,12 +22,12 @@ export default {
       storeInfo: {},
       programInfo: {},
       programBookInfo: {},
-      attendeeNum: '',
-      firstNum: '',
+      firstNum: '010',
       lastNum: '',
       contactNumber: '',
-      attendeeList: [{text: '1', value: 1}],
-      scheduleId: ''
+      scheduleId: '',
+      attendeeNum: 1,
+      attendeeList: [{text: '1', value: 1}]
     }
   },
   mounted () {
@@ -67,7 +67,6 @@ export default {
         let number = this.programBookInfo['USER_PHONE_NUMBER']
         this.firstNum = number.substr(0, 3)
         this.lastNum = number.substring(3)
-        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
 
         this.getProgramClass()
         this.checkProgramBook()
@@ -83,10 +82,11 @@ export default {
         result = result['SCHEDULE_LIST'][0]
         this.scheduleId = result.PROGRAM_SCHEDULE_ID
         for (let i = 0; i < result['MAX_ATTENDEE_PER_APPLY']; ++i) {
-          if (i > 0) {
-            this.attendeeList.push({text: String(i + 1), value: i + 1})
-          }
+          this.attendeeList[i] = {text: String(i + 1), value: i + 1}
         }
+      })
+      this.$nextTick(() => {
+        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
       })
     },
     alertRequiredAttendee () {

@@ -105,7 +105,7 @@ export default {
     applyProgram (surveyResponse) {
       let isResponse = true
       _.forEach(surveyResponse, data => {
-        if (!data.RESPONSE) {
+        if (!String(data.RESPONSE)) {
           isResponse = false
         }
       })
