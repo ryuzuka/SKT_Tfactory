@@ -3,25 +3,14 @@
     <i class="ico-complete"></i>
 
     <p class="tit">
-      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-      <span v-html="$t('sev.complete-text')"></span>
-      <!-- //21.03.30 추가 -->
       <template v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('sev.program') }} </template>
       <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }} </template>
       <template v-else-if="bookingType === 'counseling'">{{ $t('sev.counseling') }} </template>
-<!--      <span v-if="bookingType === 'standby'" v-html="$t('sev.booking-standby-text')"></span>-->
       <span v-if="modifyFlag" v-html="$t('sev.booking-modify-complete-text')"></span>
       <span v-else v-html="$t('sev.booking-complete-text')"></span>
     </p>
 
     <dl class="details-info">
-      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-      <dt>{{ $t('sev.application-number') }}</dt>
-      <dd>1234567890</dd>
-      <dt>{{ $t('sev.applicant') }}</dt>
-      <dd>김티플</dd>
-      <!-- //21.03.30 추가 -->
-
       <dt>{{ $t('sev.booking-number') }}</dt>
       <dd>{{bookingInfo.BOOK_CODE}}</dd>
 
@@ -32,9 +21,7 @@
       <dd v-if="bookingInfo.USER_NICKNAME">{{bookingInfo.USER_NICKNAME}}</dd>
       <dd v-else="!bookingInfo.USER_NICKNAME && bookingInfo.USER_NAME">{{bookingInfo.USER_NAME}}</dd>
       <dd v-else="!bookingInfo.USER_NICKNAME && !bookingInfo.USER_NAME">({{bookingInfo.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
-      <!-- 07.09 문구 수정 -->
-      <!-- dt v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('sev.program-shop') }}</dt>
-      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.visit-shop') }}</dt -->
+
       <dt>{{ $t('sev.booking-shop') }}</dt>
       <dd>{{bookingInfo.STORE_NAME}}</dd>
 
@@ -48,24 +35,13 @@
 
       <dt v-if="bookingType === 'program' || bookingType === 'standby' || bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
       <dd>{{bookingInfo.DATE}}</dd>
+      </dl>
 
-      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-      <dt>{{ $t('sev.application-date') }}</dt>
-      <dd>2020.02.12. 16:00</dd>
-      <!-- //21.03.30 추가 -->
-    </dl>
-
-    <ul class="texts-info">
-      <li v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide5')"></li>
-      <li v-if="bookingType === 'program' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide6')"></li>
-      <li v-if="bookingType === 'counseling'" v-html="$t('sev.booking-complete-guide4')"></li>
-
-      <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-      <li v-html="$t('sev.booking-complete-guide7')"></li>
-      <li v-html="$t('sev.booking-complete-guide8')"></li>
-      <li v-html="$t('sev.booking-complete-guide9')"></li>
-      <!-- //21.03.30 추가 -->
-    </ul>
+      <ul class="texts-info">
+        <li v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide5')"></li>
+        <li v-if="bookingType === 'program' || bookingType === 'standby'" v-html="$t('sev.booking-complete-guide6')"></li>
+        <li v-if="bookingType === 'counseling'" v-html="$t('sev.booking-complete-guide4')"></li>
+      </ul>
   </div>
   <div class="btn-wrap sticky">
     <router-link to="/" class="btn-line big">{{ $t('comm.go-main') }}</router-link>
