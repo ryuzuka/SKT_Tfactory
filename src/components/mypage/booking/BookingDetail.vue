@@ -4,13 +4,19 @@
 import * as STORE from '../../../js/store.js'
 
 /**
- * success: 신청완료
+ * success: 예약 완료
+ * ordered: 예약완료
+ * apply: 신청 완료
  * cancel: 취소
  * complete: 종료
- * standby: 대기
- * not: 미방문
  * end: 종료 & 설문조사 등록 완료
+ * not: 미방문
+ * counseling: 상담중
+ * standby: 대기
+ * selected: 당첨
+ * not_selected: 미당첨
  */
+
 export default {
   name: 'MyBookingDetail',
   props: {

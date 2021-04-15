@@ -1,43 +1,54 @@
 <template src="../../../assets/html/product/program/program4.html"></template>
 
 <script>
-import * as STORE from '../../../js/store.js'
+import _ from 'lodash'
+
+import * as STORE from '../../../js/store'
+import Program from './Program'
 
 export default {
   name: 'Program4',
+  components: {
+    Program
+  },
   data () {
     return {
-      bookingAvailable: false,
-      isLogin: ''
+      classId: this.$route.query.classId,
+      bookingType: '',
+      statusFlag: '',
+      isLogin: false,
+      isApply: false
     }
   },
   mounted () {
-    STORE.getProgramClass(this.$route.query.classId).then(result => {
-      this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
-    })
-
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
-      } else if (this.$store.getters.CONSTANTS.session_alive === false) {
-        this.isLogin = false
       }
     })
-  },
-  methods: {
-    bookProgram () {
-      if (this.isLogin) {
-        this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID +
-            '&classId=' + this.$route.query.classId)
-      } else {
-        localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.$route.query.classId)
-        this.$router.push({'name': 'Login'})
+
+    let status = ''
+    STORE.getProgramClassBook(this.classId).then(result => {
+      if (result['PROGRAM_CLASS'].length === 0) return
+
+      _.forEach(result['PROGRAM_CLASS'], program => {
+        status = program['STATUS']
+      })
+      if (status === 'apply') {
+        this.isApply = true
       }
-    }
+    })
+
+    STORE.getProgramClass(this.classId).then(result => {
+      if (!result['PROGRAM_CLASS']) return
+
+      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
+      this.statusFlag = result['PROGRAM_CLASS']['APPLY_PROGRESS']
+    })
   }
 }
 </script>
 
 <style lang="scss">
-  @import 'src/assets/css/product';
+@import 'src/assets/css/product';
 </style>

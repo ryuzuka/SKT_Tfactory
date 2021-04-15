@@ -1,60 +1,50 @@
 <template src="../../../assets/html/product/program/program21.html"></template>
 
 <script>
-import * as STORE from '../../../js/store.js'
-import * as NATIVE from '../../../js/native.js'
+import _ from 'lodash'
+
+import * as STORE from '../../../js/store'
+import Program from './Program'
 
 export default {
   name: 'Program21',
+  components: {
+    Program
+  },
   data () {
     return {
-      bookingAvailable: false,
-      isLogin: '',
-      mobileOS: null,
-      expired: false,
-      commingSoon: false,
-      entryDate: [20210415, 20210420]
-    }
-  },
-  created () {
-    let date = parseInt(this.$moment().format('YYYYMMDD'))
-    if (date > this.entryDate[1]) {
-      this.expired = true
-    }
-    if (date < this.entryDate[0]) {
-      this.commingSoon = true
+      classId: this.$route.query.classId,
+      bookingType: '',
+      statusFlag: '',
+      isLogin: false,
+      isApply: false
     }
   },
   mounted () {
-    STORE.getProgramClass(this.$route.query.classId).then(result => {
-      // this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
-    })
-
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
-      } else if (this.$store.getters.CONSTANTS.session_alive === false) {
-        this.isLogin = false
       }
     })
-  },
-  methods: {
-    bookProgram () {
-      if (this.isLogin) {
-        let mobileOS = this.$cookies.get('platform')
-        let redirectURL = ''
-        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
-      } else {
-        let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
-        localStorage.setItem('previous_url', prevURL)
-        this.$router.push({name: 'Login'})
+
+    let status = ''
+    STORE.getProgramClassBook(this.classId).then(result => {
+      if (result['PROGRAM_CLASS'].length === 0) return
+
+      _.forEach(result['PROGRAM_CLASS'], program => {
+        status = program['STATUS']
+      })
+      if (status === 'apply') {
+        this.isApply = true
       }
-    },
-    login () {
-      let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
-      localStorage.setItem('previous_url', prevURL)
-      this.$router.push({name: 'Login'})
-    }
+    })
+
+    STORE.getProgramClass(this.classId).then(result => {
+      if (!result['PROGRAM_CLASS']) return
+
+      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
+      this.statusFlag = result['PROGRAM_CLASS']['APPLY_PROGRESS']
+    })
   }
 }
 </script>

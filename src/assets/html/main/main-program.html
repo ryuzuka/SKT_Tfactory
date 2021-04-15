@@ -5,36 +5,21 @@
       <span>{{ $t('main.program-title1-text2') }}</span><br>
       <span><strong class="point-text">Event</strong></span>
     </h1>
-    <!-- 21.01.25 수정 -->
     <div class="swiper-top">
       <swiper :options="programSwiperOption">
-        <swiper-slide>
-          <a :href="mainBannerUrl[0]">
-            <div class="thumb"><img src="../../images/program/Vstudio_vmd2.png" alt=""></div>
+        <swiper-slide v-for="(banner, index) in mainBannerList" :key="index">
+          <router-link :to="String(banner['LINK_URL'])">
+            <div class="thumb"><img :src="banner['IMAGE_URL']" alt=""></div>
             <div class="texts">
-              <span class="flag-solid7">FLEX STAGE</span>
-              <strong class="tit">Welcome to <br>ⓥ Studio!</strong>
-              <p class="desc">나에게 딱 맞는 숏폼 만들고 선물받자</p>
+              <span class="flag-solid7">{{ banner['CHIP_TEXT'] }}</span>
+              <strong class="tit" v-html="banner['MAIN_TEXT']"></strong>
+              <p class="desc">{{ banner['SUB_TEXT'] }}</p>
             </div>
-          </a>
-        </swiper-slide>
-        <swiper-slide>
-          <a :href="mainBannerUrl[1]">
-            <div class="thumb"><img src="../../images/main/event-img-03.jpg" alt=""></div>
-            <div class="texts">
-              <span class="flag-solid7">MUSIC CLASS</span>
-              <strong class="tit">갤럭시로<br>한 곡 뚝딱</strong>
-              <p class="desc">워크밴드로 만드는 나만의 음악</p>
-            </div>
-          </a>
+          </router-link>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
-    <!--
-    text 포함 이미지 사용시 : event-banner-01.jpg ~ event-banner-03.jpg
-    -->
-    <!-- //21.01.25 수정 -->
   </div>
 
   <div class="row">
@@ -42,14 +27,22 @@
       <span>{{ $t('main.program-title2-text1') }}</span><br>
       <span><strong class="point-text">Factory Special</strong></span>
     </h2>
-    <!-- 21.01.15 수정 -->
     <ul class="list-program wide" ref="listAniObj0" :class="{'all': !isConcertMore, 'ani-obj': listAniObj[0]}">
       <li v-for="specialClass in specialClasses">
-        <a :href="specialClass.PROGRAM_CLASS_LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
-          <div class="thumb"><img :src="specialClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
+        <a :href="specialClass.LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
+          <div class="thumb"><img :src="specialClass.THUMBNAIL_IMAGE_URL" alt=""></div>
           <div class="info">
-            <p class="tit"><em>{{specialClass.PROGRAM_CLASS_NAME}}</em><!-- <span class="flag-basic">모집중</span> --></p>
-            <p class="subtext">{{specialClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+
+            <template v-if="specialClass.BOOKING_TYPE === 'select'">
+              <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="specialClass.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+            </template>
+
+            <p class="tit">
+              <em>{{specialClass.NAME}}</em>
+            </p>
+            <p class="subtext">{{specialClass.SCHEDULE_GUIDE}}</p>
           </div>
         </a>
       </li>
@@ -66,12 +59,20 @@
     </h2>
     <ul class="list-program" ref="listAniObj1" :class="{'all': !isSpecialMore, 'ani-obj': listAniObj[1]}">
       <li v-for="today in todayClasses">
-        <a :href="today.PROGRAM_CLASS_LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
-          <div class="thumb"><img :src="today.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
-          <p class="cate"><span>{{today.PROGRAM_CLASS_CATEGORY}}</span>
-            <br>{{today.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
-          <p class="tit">{{today.PROGRAM_CLASS_NAME}}</p>
-          <p class="subtext">{{today.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
+        <a :href="today.LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
+          <div class="thumb">
+            <img :src="today.THUMBNAIL_IMAGE_URL" alt="">
+
+            <template v-if="today.BOOKING_TYPE === 'select'">
+              <span v-if="today.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="today.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else="today.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+            </template>
+          </div>
+          <p class="cate"><span>{{today.CATEGORY}}</span>
+            <br>{{today.THUMBNAIL_SUBTITLE}}</p>
+          <p class="tit">{{today.NAME}}</p>
+          <p class="subtext">{{today.SCHEDULE_GUIDE}}</p>
         </a>
       </li>
     </ul>
@@ -87,15 +88,14 @@
     </h2>
     <ul class="list-program" ref="listAniObj2" :class="{'all': !isClassMore, 'ani-obj': listAniObj[2]}">
       <li v-for="crewClass in crewClasses">
-        <a :href="crewClass.PROGRAM_CLASS_LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+        <a :href="crewClass.LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
           <div class="lector">
             <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
-            <p class="cate"><span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_TILE}}</span>{{crewClass.PROGRAM_CLASS_THUMBNAIL_SUBTITLE}}</p>
+            <p class="cate"><span>{{crewClass.THUMBNAIL_TITLE}}</span>{{crewClass.THUMBNAIL_SUBTITLE}}</p>
           </div>
-          <div class="thumb"><img :src="crewClass.PROGRAM_CLASS_THUMBNAIL_IMAGE_URL" alt=""></div>
-          <p class="tit">{{crewClass.PROGRAM_CLASS_NAME}}</p>
-          <p class="subtext">{{crewClass.PROGRAM_CLASS_SCHEDULE_GUIDE}}</p>
-<!--          <span class="flag-basic">모집중</span>-->
+          <div class="thumb"><img :src="crewClass.THUMBNAIL_IMAGE_URL" alt=""></div>
+          <p class="tit">{{crewClass.NAME}}</p>
+          <p class="subtext">{{crewClass.SCHEDULE_GUIDE}}</p>
         </a>
       </li>
     </ul>
@@ -105,11 +105,13 @@
   </div>
 
   <div class="row">
-<!--    <div class="banner">-->
-<!--      <a href="#">-->
-<!--        <p v-html="$t('main.banner-crew1')"></p>-->
-<!--        <span>{{ $t('main.banner-crew2') }}</span>-->
-<!--      </a>-->
-<!--    </div>-->
-  </div>
+    <!--
+    <div class="banner">
+      <a href="#">
+        <p v-html="$t('main.banner-crew1')"></p>
+        <span>{{ $t('main.banner-crew2') }}</span>
+      </a>
+    </div>
+    -->
+    </div>
 </section>

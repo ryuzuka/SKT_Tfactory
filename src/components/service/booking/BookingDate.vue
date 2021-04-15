@@ -45,13 +45,15 @@ export default {
       selectedProgram: '',
       selectedDate: this.$moment().format('YYYY.MM.DD'),
       selectedDateText: this.$moment().format('YYYY.MM.DD'),
+      modifyScheduleId: 0,
       swiperOption: {
         freeMode: true,
         slidesPerView: 'auto',
         scrollbar: {
           el: '.swiper-scrollbar'
         }
-      }
+      },
+      bookingModify: false
     }
   },
   mounted () {
@@ -181,6 +183,13 @@ export default {
           }
           this.programTimeList.push(time)
         })
+
+        if (this.modifyScheduleId !== 0) {
+          let scheduleIndex = this.programTimeList.findIndex(time => time.value.ID === this.modifyScheduleId)
+          this.$nextTick(() => {
+            this.selectedProgram = this.programTimeList[scheduleIndex].value
+          })
+        }
       })
     },
     clickModify () {
@@ -188,7 +197,6 @@ export default {
       this.isTimeout = true
       this.contactNumber = ''
       this.certificationNumber = ''
-      this.clearTimer()
     },
     getDates (startDate, stopDate) {
       let dateArray = []
@@ -244,6 +252,7 @@ export default {
     clickMore () {
     },
     nextButton () {
+      // alert(JSON.stringify(this.selectedProgram))
       if (!this.selectedService) {
         this.alertSelectService()
         return
@@ -469,9 +478,11 @@ export default {
   watch: {
     selectedProgram (programId) {
       if (programId && programId.ALREADY_BOOKED) {
-        this.alertExperienceOnceToday()
-        this.selectedProgram = null
-        return
+        if (!this.bookingModify) {
+          this.alertExperienceOnceToday()
+          this.selectedProgram = null
+          return
+        }
       }
       if (programId && programId.OVER_BOOKED) {
         this.alertAnotherTime()

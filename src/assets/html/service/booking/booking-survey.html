@@ -27,8 +27,7 @@
   </div>
   <div class="btn-wrap sticky">
     <a class="btn-line big" @click.prevent="bookCounseling">{{ $t('sev.pass-survey') }}</a>
-    <a class="btn-line big" @click.prevent="clickComplete" v-if="isModify">{{ $t('my.booking-modify-complete')
-      }}</a>
-    <a href="#" class="btn-solid big" @click.prevent="clickComplete" v-else>{{ $t('sev.booking-complete') }}</a>
+    <a class="btn-line big" @click.prevent="clickComplete" v-if="isModify">{{ $t('comm.modify')}}</a> <!-- 21.03.30 수정 -->
+    <a href="#" class="btn-solid big" @click.prevent="clickComplete" v-else>{{ $t('comm.reservation') }}</a> <!-- 21.03.30 수정 -->
   </div>
 </div>

@@ -67,8 +67,8 @@ export const getAvailableDate = (storeId, day) => {
   })
 }
 
-export const getQuestions = (counselingId) => {
-  return axios.get(STORE_URL + '/basicSurveyQuestion/questions?COUNSELING_ID=' + counselingId, COMMON.getHeader()).then(response => {
+export const getQuestions = (counselingId, type) => {
+  return axios.get(STORE_URL + '/basicSurveyQuestion/questions?COUNSELING_ID=' + counselingId + '&TYPE=' + type, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
@@ -159,6 +159,12 @@ export const cancelOnSiteCounseling = (bookId) => {
 }
 
 /** 03. 프로그램 관련 기능 **/
+export const getProgramBanner = () => {
+  return axios.get(STORE_URL + '/rollingBanner/list?STORE_ID=' + process.env.FLAGSHIP_STORE_ID, COMMON.getHeader()).then(response => {
+    return response.data
+  })
+}
+
 export const getProgramClassList = () => {
   return axios.get(STORE_URL + '/programClass/list?STORE_ID=' + process.env.FLAGSHIP_STORE_ID).then(response => {
     return response.data
@@ -167,6 +173,12 @@ export const getProgramClassList = () => {
 
 export const getProgramClass = (classId) => {
   return axios.get(STORE_URL + '/programClass/info?PROGRAM_CLASS_ID=' + classId).then(response => {
+    return response.data
+  })
+}
+
+export const getProgramClassBook = (classId) => {
+  return axios.get(STORE_URL + '/programClass/listBooks?PROGRAM_CLASS_ID=' + classId, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
@@ -185,6 +197,12 @@ export const getProgramTimeTable = (storeId, programId) => {
 
 export const bookProgram = (request) => {
   return axios.post(STORE_URL + '/programBook/book', request, COMMON.getHeader()).then(response => {
+    return response.data
+  })
+}
+
+export const applyProgram = (applyInfo) => {
+  return axios.post(STORE_URL + '/programBook/apply', applyInfo, COMMON.getHeader()).then(response => {
     return response.data
   })
 }

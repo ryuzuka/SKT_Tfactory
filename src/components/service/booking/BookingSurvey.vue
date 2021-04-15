@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted () {
-    STORE.getQuestions(this.$store.state.constants.COUNSELING.COUNSELING_ID).then(result => {
+    STORE.getQuestions(this.$store.state.constants.COUNSELING.COUNSELING_ID, this.$route.params.type).then(result => {
       this.questionList = result.QUESTIONS
       this.questionList.forEach(question => {
         question.ANSWER = []

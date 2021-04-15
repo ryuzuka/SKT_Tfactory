@@ -17,7 +17,7 @@ import Header from '../../components/common/Header'
 import BookingDate from '../../components/service/booking/BookingDate'
 
 export default {
-  name: 'page-booking',
+  name: 'page-booking-date',
   components: {
     Header,
     BookingDate

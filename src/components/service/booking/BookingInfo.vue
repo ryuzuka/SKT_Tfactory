@@ -29,7 +29,6 @@ export default {
       this.isTimeout = true
       this.contactNumber = ''
       this.certificationNumber = ''
-      this.clearTimer()
     },
     async clickComplete () {
       // test

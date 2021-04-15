@@ -1,0 +1,36 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row complete">
+    <i class="ico-complete"></i>
+
+    <p class="tit">
+      프로그램 신청이<br>완료되었습니다.
+    </p>
+
+    <dl class="details-info">
+      <dt>신청 번호</dt>
+      <dd>{{ bookInfo['BOOK_CODE'] }}</dd>
+
+      <dt>신청자</dt>
+      <dd>{{ bookInfo['USER_NAME'] }}</dd>
+
+      <dt>매장</dt>
+      <dd>{{ bookInfo['STORE_NAME'] }}</dd>
+
+      <dt>프로그램 명</dt>
+      <dd>{{ bookInfo['PROGRAM_NAME'] }}</dd>
+
+      <dt>예약 일시</dt>
+      <dd style="width: 160px">{{ bookInfo['DATE'] }}</dd>
+    </dl>
+
+    <ul class="texts-info">
+      <li v-html="$t('sev.booking-complete-guide7')"></li>
+      <li v-html="$t('sev.booking-complete-guide8')"></li>
+      <li v-html="$t('sev.booking-complete-guide9')"></li>
+    </ul>
+  </div>
+  <div class="btn-wrap sticky">
+    <router-link to="/" class="btn-line big">{{ $t('comm.go-main') }}</router-link>
+    <router-link to="/my/booking/list" class="btn-line big">{{ $t('sev.application-booking-list') }}</router-link>
+  </div>
+</div>
