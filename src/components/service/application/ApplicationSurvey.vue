@@ -2,7 +2,7 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
-import _ from 'lodash'
+// import _ from 'lodash'
 
 export default {
   name: 'ApplicationSurvey',
@@ -29,17 +29,17 @@ export default {
     }
   },
   methods: {
+    checkProgramBook () {
+      STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
+        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
+      })
+    },
     getSurveyQuestions () {
       STORE.getQuestions(this.classId, 'program').then(result => {
         this.questionList = result['QUESTIONS']
         this.questionList.forEach(question => {
           question.ANSWER = []
         })
-      })
-    },
-    checkProgramBook () {
-      STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
-        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
       })
     },
     getProgramBookInfo () {
@@ -62,11 +62,9 @@ export default {
           if (question.QUESTION_TYPE === 'essay') {
             question.ANSWER = question.RESPONSE
           } else {
-            question.ANSWER = parseInt(question.RESPONSE)
+            question.ANSWER = JSON.parse(question.RESPONSE)
           }
         })
-
-        this.checkProgramBook()
       })
     },
     canNotWriteOver200Error () {
