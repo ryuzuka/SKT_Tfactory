@@ -15,9 +15,9 @@
           </a>
         </li>
       </ul>
-      <!-- div class="btn-wrap" v-show="isClassMore">
-        <a href="#" class="btn-more" @click.prevent="clickMore('class')">{{ $t('comm.more') }}</a>
-      </div-->
+      <div class="btn-wrap" v-show="isClassMore">
+        <router-link class="btn-more" to="/main/program"></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       classList: [],
-      isClassMore: true
+      isClassMore: false
     }
   },
   methods: {},
@@ -40,7 +40,7 @@ export default {
     STORE.getProgramClassList().then(result => {
       result = result['CLASSES']
 
-      _.forEach(result, program => {
+      _.forEach(result, (program, index) => {
         if (program['DISPLAY_IN_CLASS'] === 1) {
           this.classList.push(program)
         }
@@ -48,6 +48,10 @@ export default {
       this.classList.sort(function (a, b) {
         return a['ORDER_IN_TODAY'] - b['ORDER_IN_TODAY']
       })
+      if (this.classList.length > 3) {
+        this.isClassMore = true
+        this.classList = this.classList.splice(0, 3)
+      }
     })
   }
 }
