@@ -341,14 +341,6 @@
               <div class="date"><span>4.8</span><span>21.4.12</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/sev/program/applicationSurvey'>프로그램 신청 - 기초 설문</router-link>
-              <div class="date"><span>4.8</span><span>4.8</span></div>
-            </li>
-            <li class="pagelist-item">
-              <router-link class="link" to='/sev/applicationComplete'>프로그램 신청 - 완료</router-link>
-              <div class="date"><span>4.8</span><span>4.8</span></div>
-            </li>
-            <li class="pagelist-item">
               <router-link class="link" to='/sev/booking/program/date/service'>예약일시 - 프로그램 (매장 선택)</router-link>
               <div class="date"><span>3.17</span><span>11.24</span></div>
             </li>
@@ -447,10 +439,6 @@
             <li class="pagelist-item">
               <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
               <div class="date"><span>4.11</span><span>21.4.12</span></div>
-            </li>
-            <li class="pagelist-item">
-              <router-link class="link" to='/my/applicationModify'>프로그램 신청 - 수정</router-link>
-              <div class="date"><span>4.11</span><span>4.11</span></div>
             </li>
             <li class="pagelist-item">
               <router-link class="link" to='/my/booking/program/modify'>예약 수정 - 프로그램</router-link>
