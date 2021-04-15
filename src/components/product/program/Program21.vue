@@ -10,14 +10,24 @@ export default {
     return {
       bookingAvailable: false,
       isLogin: '',
-      mobileOS: null
+      mobileOS: null,
+      expired: false,
+      commingSoon: false,
+      entryDate: [20210415, 20210420]
+    }
+  },
+  created () {
+    let date = parseInt(this.$moment().format('YYYYMMDD'))
+    if (date > this.entryDate[1]) {
+      this.expired = true
+    }
+    if (date < this.entryDate[0]) {
+      this.commingSoon = true
     }
   },
   mounted () {
-    this.mobileOS = this.$cookies.get('platform')
-
     STORE.getProgramClass(this.$route.query.classId).then(result => {
-      this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
+      // this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
     })
 
     this.$store.watch(() => {
@@ -31,8 +41,9 @@ export default {
   methods: {
     bookProgram () {
       if (this.isLogin) {
-        let redirectURL = ''
-        NATIVE.sysBrowserOpen(this.mobileOS, redirectURL)
+        let mobileOS = this.$cookies.get('platform')
+        let redirectURL = 'https://bd3ig7ut4mo.typeform.com/to/PJD5rrNe'
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
         localStorage.setItem('previous_url', prevURL)
