@@ -52,7 +52,8 @@ export default {
         scrollbar: {
           el: '.swiper-scrollbar'
         }
-      }
+      },
+      bookingModify: false
     }
   },
   mounted () {
@@ -184,11 +185,11 @@ export default {
         })
 
         if (this.modifyScheduleId !== 0) {
-          let schedule = this.programTimeList.findIndex(time => time.value.ID === this.modifyScheduleId)
-          this.programTimeList[0].selected = false
-          this.programTimeList[schedule].selected = true
+          let scheduleIndex = this.programTimeList.findIndex(time => time.value.ID === this.modifyScheduleId)
+          this.$nextTick(() => {
+            this.selectedProgram = this.programTimeList[scheduleIndex].value
+          })
         }
-        console.log(this.programTimeList)
       })
     },
     clickModify () {
@@ -196,7 +197,6 @@ export default {
       this.isTimeout = true
       this.contactNumber = ''
       this.certificationNumber = ''
-      this.clearTimer()
     },
     getDates (startDate, stopDate) {
       let dateArray = []
@@ -478,9 +478,11 @@ export default {
   watch: {
     selectedProgram (programId) {
       if (programId && programId.ALREADY_BOOKED) {
-        this.alertExperienceOnceToday()
-        this.selectedProgram = null
-        return
+        if (!this.bookingModify) {
+          this.alertExperienceOnceToday()
+          this.selectedProgram = null
+          return
+        }
       }
       if (programId && programId.OVER_BOOKED) {
         this.alertAnotherTime()
