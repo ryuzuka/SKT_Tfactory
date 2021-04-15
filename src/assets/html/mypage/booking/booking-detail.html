@@ -86,8 +86,8 @@
   </section>
 
   <div class="btn-wrap sticky" v-if="status === 'apply'">
-    <a class="btn-line big" @click.prevent="clickCancel">취소</a>
-    <router-link :to="'/my/applicationModify?store_id=' + bookingDetail.STORE_ID + '&bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
+      <a v-if="bookingDetail.APPLY_PROGRESS === 'ONGOING'" class="btn-line big" @click.prevent="clickCancel">취소</a>
+      <router-link :to="'/my/applicationModify?store_id=' + bookingDetail.STORE_ID + '&bookId=' + bookingDetail.BOOK_ID" class="btn-line big">수정</router-link>
   </div>
   <div class="btn-wrap sticky" v-else-if="status === 'success'">
     <template v-if="bookingDetail.STATUS == 'ordered' && bookingType !== 'field_buy' && bookingType !== 'field'">
