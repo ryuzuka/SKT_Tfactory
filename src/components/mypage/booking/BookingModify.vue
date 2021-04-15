@@ -21,7 +21,9 @@ export default {
 
     if (this.$route.query.book_id && this.$props.bookingType === 'program') {
       STORE.getPrgramBookInfo(this.$route.query.book_id).then(result => {
+        console.log(result.PROGRAM_BOOK)
         this.bookInfo = result.PROGRAM_BOOK
+        this.modifyScheduleId = this.bookInfo.PROGRAM_SCHEDULE_ID
         // this.selectedService = this.bookInfo.PROGRAM_ID
         this.getProgramClass(this.bookInfo.PROGRAM_CLASS_ID)
       })

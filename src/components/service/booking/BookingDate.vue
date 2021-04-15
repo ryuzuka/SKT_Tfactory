@@ -45,6 +45,7 @@ export default {
       selectedProgram: '',
       selectedDate: this.$moment().format('YYYY.MM.DD'),
       selectedDateText: this.$moment().format('YYYY.MM.DD'),
+      modifyScheduleId: 0,
       swiperOption: {
         freeMode: true,
         slidesPerView: 'auto',
@@ -181,6 +182,13 @@ export default {
           }
           this.programTimeList.push(time)
         })
+
+        if (this.modifyScheduleId !== 0) {
+          let schedule = this.programTimeList.findIndex(time => time.value.ID === this.modifyScheduleId)
+          this.programTimeList[0].selected = false
+          this.programTimeList[schedule].selected = true
+        }
+        console.log(this.programTimeList)
       })
     },
     clickModify () {
@@ -244,6 +252,7 @@ export default {
     clickMore () {
     },
     nextButton () {
+      // alert(JSON.stringify(this.selectedProgram))
       if (!this.selectedService) {
         this.alertSelectService()
         return
