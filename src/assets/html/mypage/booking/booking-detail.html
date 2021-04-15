@@ -25,16 +25,10 @@
       <dt v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ $t('my.consult-name') }}</dt>
       <dd v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ bookingDetail.COUNSELING_NAME }}</dd>
 
-      <template v-if="status === 'apply'">
-        <!-- 21.03.30 추가 : 프로그램 신청 시 -->
-        <dt>{{ $t('sev.application-date') }}</dt>
-        <dd>{{ bookingDetail.DATE }}</dd>
-      </template>
-      <template v-else>
-        <dt v-if="bookingType === 'program' || bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
-        <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
-        <dd>{{ bookingDetail.DATE }}</dd>
-      </template>
+      <dt v-if="bookingType === 'program'">프로그램일시</dt>
+      <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
+      <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
+      <dd>{{ bookingDetail.DATE }}</dd>
 
     </dl>
 
@@ -43,16 +37,6 @@
       <dt v-if="status === 'apply'">{{ $t('sev.applicant') }}</dt>
       <dt v-else>{{ $t('sev.student') }}</dt>
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
-      <!--
-      <dt>{{ $t('sev.student') }}</dt>
-      <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER}})</dd>
-      <dt>{{ $t('sev.applicant-relationship') }}</dt>
-      <dd>본인</dd>
-      <dt>{{ $t('sev.student-age-group') }}</dt>
-      <dd>-</dd>
-      <dt>{{ $t('sev.student-sex') }}</dt>
-      <dd>남성</dd>
-      -->
     </dl>
 
     <!-- 체험존 -->
