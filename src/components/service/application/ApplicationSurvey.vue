@@ -62,7 +62,11 @@ export default {
           if (question.QUESTION_TYPE === 'essay') {
             question.ANSWER = question.RESPONSE
           } else {
-            question.ANSWER = JSON.parse(question.RESPONSE)
+            if (question.QUESTION_TYPE === 'choice') {
+              question.ANSWER = parseInt(question.RESPONSE)
+            } else if (question.QUESTION_TYPE === 'multiple_choice') {
+              question.ANSWER = JSON.parse(question.RESPONSE)
+            }
           }
         })
       })
