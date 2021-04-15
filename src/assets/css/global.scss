@@ -121,6 +121,31 @@
       margin:-4px 4px 0 0;
       @include iconImg($x:-50px,$y:-100px);
     }
+    &-store {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      &:before,
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: #505050;
+      }
+      &:before {
+        background-image: none;
+        margin: 0;
+        width: 2px;
+        height: 16px;
+      }
+      &:after{
+        content:'';
+        display: block;
+        width: 16px;
+        height: 2px;
+      }
+    }
     &.small {
       display:inline-block;
       width:40px;
