@@ -16,7 +16,7 @@
         </li>
       </ul>
       <div class="btn-wrap" v-show="isClassMore">
-        <router-link class="btn-more" to="/main/program"></router-link>
+        <router-link class="btn-more btn-more-store" to="/main/program"></router-link>
       </div>
     </div>
   </div>
