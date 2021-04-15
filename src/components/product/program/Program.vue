@@ -4,7 +4,7 @@
     <template v-else-if="bookingType === 'select'">
       <a v-if="statusFlag === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
       <button v-else-if="statusFlag === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
-      <button v-else-if="statusFlag === 'NOT_STARTED'" class="btn-solid disabled" disabled>신청 기간이 아닙니다.</button>
+      <button v-else-if="statusFlag === 'NOT_STARTED'" class="btn-solid disabled" disabled>COMING SOON</button>
     </template>
   </div>
 </template>
