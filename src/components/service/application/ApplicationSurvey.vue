@@ -2,7 +2,7 @@
 
 <script>
 import * as STORE from '../../../js/store.js'
-// import _ from 'lodash'
+import _ from 'lodash'
 
 export default {
   name: 'ApplicationSurvey',
