@@ -34,7 +34,8 @@
           <dt v-if="data.type === 'program'">{{ $t('my.program-name') }}</dt>
           <dd v-if="data.type === 'program'">{{data.PROGRAM_NAME}}</dd>
 
-          <dt v-if="data.type === 'program' || data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-date') }}</dt>
+          <dt v-if="data.type === 'program'">프로그램일시</dt>
+          <dt v-else-if="data.type === 'program' || data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-date') }}</dt>
           <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-application-date') }}</dt> <!-- 06.30 문구 수정 -->
           <dd>{{data.date}}</dd>
         </dl>
