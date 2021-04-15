@@ -42,7 +42,7 @@ export default {
     bookProgram () {
       if (this.isLogin) {
         let mobileOS = this.$cookies.get('platform')
-        let redirectURL = 'https://bd3ig7ut4mo.typeform.com/to/PJD5rrNe'
+        let redirectURL = ''
         NATIVE.sysBrowserOpen(mobileOS, redirectURL)
       } else {
         let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
