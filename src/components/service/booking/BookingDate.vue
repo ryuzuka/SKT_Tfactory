@@ -336,11 +336,14 @@ export default {
         }
         this.selectedTimeList[time.TIMETABLE_ID] = timeDuration
 
-        let temp = time.START_TIME.slice(0, 2).concat(time.START_TIME.slice(3, 5))
-
-        if (parseInt(timezone().tz('Asia/Seoul').add(70, 'm').format('HHmm')) >= parseInt(temp) &&
-            this.selectedDate === this.$moment().format('YYYY.MM.DD')) {
-          time.disabled = true
+        let tempTime = time.START_TIME.slice(0, 2).concat(time.START_TIME.slice(3, 5))
+        if (this.selectedDate === this.$moment().format('YYYY.MM.DD')) {
+          if (parseInt(timezone().tz('Asia/Seoul').add(70, 'm').format('HHmm')) >= parseInt(tempTime)) {
+            time.disabled = true
+          }
+          if (parseInt(timezone().tz('Asia/Seoul').format('HHmm')) > 2250) {
+            time.disabled = true
+          }
         }
 
         if (time.CAPACITY <= time.BOOKING_COUNT) {
