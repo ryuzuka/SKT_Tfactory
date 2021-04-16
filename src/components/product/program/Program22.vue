@@ -24,18 +24,18 @@ export default {
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
-      }
-    })
 
-    let status = ''
-    STORE.getProgramClassBook(this.classId).then(result => {
-      if (result['PROGRAM_CLASS'].length === 0) return
+        let status = ''
+        STORE.getProgramClassBook(this.classId).then(result => {
+          if (result['PROGRAM_CLASS'].length === 0) return
 
-      _.forEach(result['PROGRAM_CLASS'], program => {
-        status = program['STATUS']
-      })
-      if (status === 'apply') {
-        this.isApply = true
+          _.forEach(result['PROGRAM_CLASS'], program => {
+            status = program['STATUS']
+          })
+          if (status === 'apply') {
+            this.isApply = true
+          }
+        })
       }
     })
 
