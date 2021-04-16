@@ -1,8 +1,6 @@
 <template src="../../../assets/html/product/program/program23.html"></template>
 
 <script>
-import * as STORE from '../../../js/store.js'
-
 export default {
   name: 'Program23',
   data () {
@@ -12,10 +10,6 @@ export default {
     }
   },
   mounted () {
-    STORE.getProgramClass(this.$route.query.classId).then(result => {
-      this.bookingAvailable = result.PROGRAM_CLASS.PROGRAM_CLASS_BOOKING_YN
-    })
-
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
