@@ -743,15 +743,37 @@
       color:#787878;
       @include font-set14;
       //word-break:keep-all;
+      &.type2{
+        padding: 32px 20px 48px;
+        p{
+          margin-top:8px;
+        }
+
+      }
+      .details-tit{
+        margin-top: 4px;
+        color:#000;
+      }
       .subtit {
         margin:48px 0 12px;
         color:#000;
         @include font-set20;
         font-weight:$fw-medium;
+        &.type2{
+          margin:32px 0 8px;
+          color: #000;
+          @include font-set16;
+        }
       }
       > .subtit:first-child { margin-top:0; }
       p {
         margin-top:12px;
+        &.event{
+          margin: 0;
+          color:#3617ce;
+          @include font-set16;
+          font-weight:$fw-bold;
+        }
         em { text-decoration:underline; }
       }
       .thumb { margin:12px 0; }
