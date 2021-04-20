@@ -19,6 +19,7 @@ import * as STORE from '../../../js/store.js'
 let BOOKING_STATUS = {
   'apply': 'apply', // 신청완료
   'ordered': 'success', // 예약 완료
+  'operator_assigned': 'success', // 예약 완료 (상담원 배정 완료)
   'canceled': 'cancel', // 취소
   'canceled_by_operator': 'cancel', // 취소
   'completed': 'complete', // 종료
@@ -52,6 +53,7 @@ export default {
         result['BOOKING'].forEach((booking) => {
           booking.type = booking.TYPE
           let STATUS = booking['STATUS']
+          console.log(STATUS)
           booking.status = BOOKING_STATUS[STATUS.toString()]
           booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD HH:mm')
           this.lastIndex = booking.BOOK_ID
