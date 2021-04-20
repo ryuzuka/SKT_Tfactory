@@ -53,7 +53,6 @@ export default {
         result['BOOKING'].forEach((booking) => {
           booking.type = booking.TYPE
           let STATUS = booking['STATUS']
-          console.log(STATUS)
           booking.status = BOOKING_STATUS[STATUS.toString()]
           booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD HH:mm')
           this.lastIndex = booking.BOOK_ID
