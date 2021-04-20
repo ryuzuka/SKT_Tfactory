@@ -35,6 +35,18 @@ export default {
     })
   },
   methods: {
+    alertAlreadyApply () {
+      this.$modal.show('dialog', {
+        title: `이미 신청하신 프로그램입니다.`,
+        text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
+    },
     bookProgram () {
       if (this.isLogin) {
         if (this.isApply) {
