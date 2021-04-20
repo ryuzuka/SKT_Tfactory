@@ -289,7 +289,7 @@
               <div class="date"><span>4.7</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program24'>EVENT1 사전예약하고 버즈 프로 받자!</router-link>
+              <router-link class="link" to='/experience/program24'>Stage Q 사전예약 이벤트</router-link>
               <div class="date"><span>4.16</span></div>
             </li>
           </ul>
