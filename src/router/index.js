@@ -77,6 +77,7 @@ import CheckinModify from '../pages/mypage/page-checkin-modify'
 import CheckinRegister from '../pages/mypage/page-checkin-register'
 import MyCouponList from '../pages/mypage/page-coupon-list'
 import MyApplicationModify from '../pages/mypage/page-application-modify'
+import SatisfactionSurvey from '../pages/mypage/page-satisfaction-survey'
 
 // sso
 import Login from '../pages/sso/page-login'
@@ -210,6 +211,7 @@ export default new Router({
     {path: '/my/modify', name: 'CheckinModify', component: CheckinModify}, // 빠른 체크인 수정
     {path: '/my/register', name: 'CheckinRegister', component: CheckinRegister}, // 빠른 체크인 얼굴 등록
     {path: '/my/coupon', name: 'MyCouponList', component: MyCouponList}, // 쿠폰 관리
+    {path: '/my/satisfaction', name: 'SatisfactionSurvey', component: SatisfactionSurvey}, // 만족도 조사
     // sev - 프로그램 신청 수정
     {path: '/my/applicationModify', name: 'MyApplicationModify', component: MyApplicationModify}, // 예약 수정
 
