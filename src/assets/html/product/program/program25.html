@@ -1,4 +1,4 @@
-<div :class="{'bottom-sticky': bookingType}" class="contents bottom-sticky" ref="contents">
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class25-slide1.jpg" alt="T Factory X FLO 덕콘 | 2021.05 SURL">
@@ -68,9 +68,14 @@
     </div>
   </div>
   <!-- //details -->
+
   <!-- button set -->
-  <div class="btn-wrap sticky">
-    <a href="" class="btn-solid" target="_blank">프로그램 신청</a>
-  </div>
-  <!-- //button set -->
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+  <!-- // button set -->
 </div>
