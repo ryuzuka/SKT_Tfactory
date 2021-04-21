@@ -504,6 +504,10 @@
               <router-link class="link" to='/my/coupon'>쿠폰 관리</router-link>
               <div class="date"><span>8.21</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/my/satisfaction'>만족도 조사</router-link>
+              <div class="date"><span>21.4.21</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">shop</h2>
