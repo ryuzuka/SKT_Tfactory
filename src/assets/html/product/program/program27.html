@@ -1,0 +1,72 @@
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class21-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+
+      <h2 class="details-tit">5월의 덕콘<i class="pipe"></i>형태</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">인디밴드</span>
+      </div>
+      <p class="desc type2">
+        <em>[T Factory X FLO 덕콘] 09</em>
+        찐덕들만 초청하여 진행하는 덕콘 아홉 번째, 형태과 함께합니다.
+      </p>
+      <p class="desc type2">
+        <em>5월의 덕콘</em>
+        07. SURL<br>
+        08. 신지훈<br>
+        09. 형태<br>
+        10. 프롬<br>
+        11. 블루파프리카
+      </p>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">T Factory x FLO 덕콘</h3>
+      <div class="thumb"><img src="../../../images/program/class18-conts2.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <p>
+        T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다. <br>
+        매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다. <br>
+        본 콘서트 신청 시 아티스트가 직접 낸 덕력고사를 풀어야하며, 덕력고사를 통과한 팬들 중 추첨을 통해 소수의 인원을 선정하여 초청합니다. <br>
+        ※ 본 콘서트는 코로나19 방역 수칙을 준수합니다.
+      </p>
+      <h3 class="subtit">형태 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class21-conts.jpg" alt=""></div>
+      <p>
+        버스커버스커의 멤버였던 김형태가 싱글앨범을 발매하고 솔로 가수 '형태'로 활동을 시작하였다.
+      </p>
+      <p>
+        첫 앨범에서 곡들마다 연주 및 작사, 영상 제작에도 직접 참여하였으며, 음악 활동 뿐만 아니라 방송과 광고 연기 등 다방면에 걸쳐 활동을 넓혀 가고 있다.<br>
+        2020년 세 번째 싱글[Ferris Wheel], 네 번째 싱글[Don’t Say No]를 발매하며 박재범, 해쉬스완 등 힙합 뮤지션과의 협업을 통해 음악에 경계란 없다는 것을 증명했다.
+      </p>
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <ul class="texts-list">
+        <li>일정 : 5월 21일(금) 오후 7시</li>
+        <li>응모기간 : 5월 10일(월) ~ 5월 16일(일)</li>
+        <li>당첨자 발표: 5월 17일(월)</li>
+        <li>장소: T Factory 2층, 0 Stage</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 본 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
+          <li>* 정부의 방역지침 변경이 있을시 공연의 주요내용도 변경이 있을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+</div>
