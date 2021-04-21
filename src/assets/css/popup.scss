@@ -317,9 +317,12 @@
     &-cont {
       position:relative;
       height:0;
-      padding:0 0 140%;
+      padding:0 0 65vh;
       border-radius:4px;
       background-color:#fff;
+      @media (max-width:750px) {
+        padding:0 0 140%;
+      }
       img {
         height:100%;
         border-radius:4px;
