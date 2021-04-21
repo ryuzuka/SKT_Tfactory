@@ -26,7 +26,7 @@
       <dd>{{bookingInfo.STORE_NAME}}</dd>
 
       <dt v-if="bookingType === 'program' || bookingType === 'standby'">{{ $t('my.program-name') }}</dt>
-      <dd v-if="bookingType === 'program' || bookingType === 'standby'">{{bookingInfo.PROGRAM_NAME}}</dd>
+      <dd v-if="bookingType === 'program' || bookingType === 'standby'">{{bookingInfo.PROGRAM_CLASS_NAME}}</dd>
 
       <dt v-if="bookingType === 'experience'">{{ $t('sev.tab-experience') }}</dt>
 
