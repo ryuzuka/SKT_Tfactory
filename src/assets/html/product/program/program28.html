@@ -1,0 +1,85 @@
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class21-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details">
+    <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+
+      <h2 class="details-tit">5월의 덕콘<i class="pipe"></i>프롬</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">인디밴드</span>
+      </div>
+      <p class="desc type2">
+        <em>[T Factory X FLO 덕콘] 10</em>
+        찐덕들만 초청하여 진행하는 덕콘 열 번째, 프롬과 함께합니다.
+      </p>
+      <p class="desc type2">
+        <em>5월의 덕콘</em>
+        07. SURL<br>
+        08. 신지훈<br>
+        09. 형태<br>
+        10. 프롬<br>
+        11. 블루파프리카
+      </p>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">T Factory x FLO 덕콘</h3>
+      <div class="thumb"><img src="../../../images/program/class18-conts2.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <p>
+        T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다. <br>
+        매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다. <br>
+        본 콘서트 신청 시 아티스트가 직접 낸 덕력고사를 풀어야하며, 덕력고사를 통과한 팬들 중 추첨을 통해 소수의 인원을 선정하여 초청합니다. <br>
+        ※ 본 콘서트는 코로나19 방역 수칙을 준수합니다.
+      </p>
+      <h3 class="subtit">프롬 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class21-conts.jpg" alt=""></div>
+      <p>
+        프롬, 계절과 달을 노래하는 싱어송라이터.<br>
+        독특한 음색과 음악성으로 큰 페스티벌 무대 라인업과 헬로루키에 선정되며 이름을 알렸다.<br>
+        한국대중음악상 여러 부문에 걸쳐 노미네이트 되는 등 음악성을 인정받으며 데뷔한 이후.<br>
+        계속해서 여러장르의 아티스트와의 콜라보, 프롬만의 다양한 음악적 시도로 대중성과 예술성을 동시에 갖춘 아티스트로 평론가와 팬들의 꾸준한 사랑을 받고 있다.
+      </p>
+      <p>
+        20년 9월 발매한 마지막 EP 앨범 [CELLOPHANE] 은 K-Indie차트 1위에 올랐고, 김필과 함께한 타이틀곡 ALIENS 의 뮤직비디오는 작품성있고 위트있는 애니메이션으로 만들어져,<br>
+        세계적 스트리밍사이트 VIMEO 스태프들이 직접 선정하는 비메오 스태프 픽스에 선정되었다.<br>
+        또한 캐나다 몬트리올 국제 예술 영화제에 오피셜셀렉션되어 상영되기도 했다.
+      </p>
+      <ul class="texts-list" style="margin-top:20px;">
+        <li>프롬 Fromm.</li>
+        <li>2013 1집 Arrival</li>
+        <li>2015 2집 정규 Moonbow</li>
+        <li>2016 EP Erica</li>
+        <li>2017 EP Reve</li>
+        <li>2018 EP Midnight Candy</li>
+        <li>2020 EP CELLOPHANE</li>
+      </ul>
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <ul class="texts-list">
+        <li>일정 : 5월 22일(토) 오후 7시</li>
+        <li>응모기간 : 5월 10일(월) ~ 5월 16일(일)</li>
+        <li>당첨자 발표: 5월 17일(월)</li>
+        <li>장소: T Factory 2층, 0 Stage</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 본 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
+          <li>* 정부의 방역지침 변경이 있을시 공연의 주요내용도 변경이 있을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+</div>
