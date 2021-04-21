@@ -206,6 +206,7 @@ export default {
     STORE.getPopUpContent().then(result => {
       let today = this.$moment().format('YYYYMMDD')
 
+      result = {'RET_CODE': 0, 'POPUP_LIST': [{'POPUP_ID': 4, 'TYPE': 'text', 'TITLE': '■ 4월의 덕콘 | 페퍼톤스 신청 결과 안내', 'BODY': '<b>4월의 덕콘 l 페퍼톤스</b>에 많은 관심을 가져주시고<br>\n응모해주신 모든 분들께 감사드립니다.<br>\n아래 당첨자 명단 및 유의사항 확인 부탁드립니다.\n<Br><br>\n○ 덕콘은 당첨되신 분들에 한해 참석 가능합니다.<br>\n <font size=-2>　  (당일 현장 관객 모집과 스탠딩은 운영되지 않습니다.)</font><br>\n○ 아래 당첨되신 분들께 참석여부 확인을 위해<br>\n　개별 연락을 드립니다. MMS를 확인해주세요.<br>\n○ 덕콘은 1인 1매, 본인에 한해 참석 가능하며, <br>\n　타인 양도는 불가합니다. <font size=-2>(당첨MMS 및 신분증 확인)</font><br>\n○ 덕콘 당일 <b>인스타그램 라이브</b>가 운영되오니 <br>\n　많은 시청 부탁드립니다. <br>\n  <font size=-1><u><b>라이브계정: www.instagram.com/tfactory_sampler</u></b>\n<br><br>\n<b>당첨자 명단</b> <br>\n이*진 4483　문*현 6540　박*진 0245　최*영 0773 <br>\n백*연 0829　김*지 1791　이*은 2353　반*연 8607 <br>\n윤*선 5811　김*곤 1331　김*현 0681　문*희 2494<br>\n김*정 7323　이*빈 3998　오*지 8531　김*영 0240<br>\n정*수 3112　손*아 1137　성*서 2681　심*정 1477<br>\n이*인 4034　신*원 1604　민*정 9959　전*영 0363<br>\n고*영 4617　서*지 7220　문*혜 2458　서*주 1362<br>\n박*모 8087　고*선 6752　김*희 5867　윤*경 5992<br> \n임*혜 1011　배*경 5001　이*연 0406　손*나 7005<br>\n이*나 2417　박*현 1139　김*람 2923　이*원 3019 <br>\n<br></font>\n감사합니다.', 'LANDING_TYPE': 'none', 'LANDING_URL': ''}]}
       if (result.POPUP_LIST.length > 0 && localStorage.getItem('popUpDate') !== today.toString()) {
         this.openPopup(result.POPUP_LIST)
       }
