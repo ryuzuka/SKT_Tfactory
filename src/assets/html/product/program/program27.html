@@ -1,7 +1,7 @@
-<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+<div :class="{'bottom-sticky': bookingType}" class="contents bottom-sticky" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
-    <img src="../../../images/program/class21-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+    <img src="../../../images/program/class27-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
   </div>
   <!-- //slide -->
   <!-- details -->
@@ -13,10 +13,10 @@
       <div class="tags">
         <span class="flag-basic">공연관람형</span>
         <span class="flag-basic">소규모콘서트</span>
-        <span class="flag-basic">인디밴드</span>
+        <span class="flag-basic">아티스트</span>
       </div>
       <p class="desc type2">
-        <em>[T Factory X FLO 덕콘] 09</em>
+        <em>[T Factory X FLO 덕콘] 아홉 번째</em>
         찐덕들만 초청하여 진행하는 덕콘 아홉 번째, 형태과 함께합니다.
       </p>
       <p class="desc type2">
@@ -30,7 +30,7 @@
     </div>
     <div class="details-inner">
       <h3 class="subtit">T Factory x FLO 덕콘</h3>
-      <div class="thumb"><img src="../../../images/program/class18-conts2.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <div class="thumb"><img src="../../../images/program/class25-conts2.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
       <p>
         T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다. <br>
         매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다. <br>
@@ -38,14 +38,14 @@
         ※ 본 콘서트는 코로나19 방역 수칙을 준수합니다.
       </p>
       <h3 class="subtit">형태 소개</h3>
-      <div class="thumb"><img src="../../../images/program/class21-conts.jpg" alt=""></div>
+      <div class="thumb"><img src="../../../images/program/class27-conts.jpg" alt=""></div>
       <p>
         버스커버스커의 멤버였던 김형태가 싱글앨범을 발매하고 솔로 가수 '형태'로 활동을 시작하였다.
       </p>
       <p>
-        첫 앨범에서 곡들마다 연주 및 작사, 영상 제작에도 직접 참여하였으며, 음악 활동 뿐만 아니라 방송과 광고 연기 등 다방면에 걸쳐 활동을 넓혀 가고 있다.<br>
-        2020년 세 번째 싱글[Ferris Wheel], 네 번째 싱글[Don’t Say No]를 발매하며 박재범, 해쉬스완 등 힙합 뮤지션과의 협업을 통해 음악에 경계란 없다는 것을 증명했다.
+        첫 앨범에서 곡들마다 연주 및 작사, 영상 제작에도 직접 참여하였으며, 음악 활동 뿐만 아니라 방송과 광고 연기 등 다방면에 걸쳐 활동을 넓혀 가고 있다.
       </p>
+ 
       <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
       <ul class="texts-list">
         <li>일정 : 5월 21일(금) 오후 7시</li>
@@ -62,11 +62,10 @@
       </div>
     </div>
   </div>
-  <Program
-    :class-id="classId"
-    :booking-type="bookingType"
-    :status-flag="statusFlag"
-    :is-login="isLogin"
-    :is-apply="isApply"
-  ></Program>
+  <!-- //details -->
+  <!-- button set -->
+  <div class="btn-wrap sticky">
+    <a href="" class="btn-solid" target="_blank">프로그램 신청</a>
+  </div>
+  <!-- //button set -->
 </div>
