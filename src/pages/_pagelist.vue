@@ -296,6 +296,18 @@
               <router-link class="link" to='/experience/program25'>5월의 덕콘 | SURL</router-link>
               <div class="date"><span>4.21</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program26'>5월의 덕콘 | 신지훈</router-link>
+              <div class="date"><span>4.21</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program27'>5월의 덕콘 | 형태</router-link>
+              <div class="date"><span>4.21</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program28'>5월의 덕콘 | 프롬</router-link>
+              <div class="date"><span>4.21</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
