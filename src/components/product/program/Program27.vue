@@ -4,13 +4,18 @@
 import _ from 'lodash'
 
 import * as STORE from '../../../js/store'
+import Program from './Program'
 
 export default {
-  name: 'Program27',
+  name: 'Program25',
+  components: {
+    Program
+  },
   data () {
     return {
       classId: this.$route.query.classId,
-      bookingAvailable: false,
+      bookingType: '',
+      statusFlag: '',
       isLogin: false,
       isApply: false
     }
@@ -32,6 +37,13 @@ export default {
           }
         })
       }
+    })
+
+    STORE.getProgramClass(this.classId).then(result => {
+      if (!result['PROGRAM_CLASS']) return
+
+      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
+      this.statusFlag = result['PROGRAM_CLASS']['APPLY_PROGRESS']
     })
   },
   methods: {

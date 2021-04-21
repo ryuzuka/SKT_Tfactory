@@ -1,4 +1,4 @@
-<div :class="{'bottom-sticky': bookingType}" class="contents bottom-sticky" ref="contents">
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class27-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
@@ -45,7 +45,7 @@
       <p>
         첫 앨범에서 곡들마다 연주 및 작사, 영상 제작에도 직접 참여하였으며, 음악 활동 뿐만 아니라 방송과 광고 연기 등 다방면에 걸쳐 활동을 넓혀 가고 있다.
       </p>
- 
+
       <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
       <ul class="texts-list">
         <li>일정 : 5월 21일(금) 오후 7시</li>
@@ -63,9 +63,14 @@
     </div>
   </div>
   <!-- //details -->
+
   <!-- button set -->
-  <div class="btn-wrap sticky">
-    <a href="" class="btn-solid" target="_blank">프로그램 신청</a>
-  </div>
-  <!-- //button set -->
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+  <!-- // button set -->
 </div>
