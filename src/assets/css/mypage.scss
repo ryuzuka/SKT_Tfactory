@@ -648,13 +648,31 @@
           line-height: 30px;
         }
       }
+      dd{
+        padding: 0;
+      }
       .rate{
+        margin-top: 20px;
+        height: 36px;
         .star-rate{
+          width: 180px;
+          height: 100%;
           left: 50%;
           transform: translateX(-50%);
+          background-image: url(~@/assets/images/mypage/star-d.svg);
+          background-repeat: repeat-x;
+          background-size: 36px;
+          background-position: 0 0;
+          span{
+            background-image: url(~@/assets/images/mypage/star-o.svg);
+            background-repeat: repeat-x;
+            background-size: 36px;
+            background-position: 0 0;
+          }
         }
       }
       .subtxt{
+        margin-top: 8px;
         text-align: center;
         @include font-set14;
       }
