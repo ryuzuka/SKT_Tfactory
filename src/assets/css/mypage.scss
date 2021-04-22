@@ -628,3 +628,42 @@
     @include transform(translateY(0));
   }
 }
+.satisfaction{
+  &-survey {
+    padding: 0 32px;
+    .form-group{
+      margin-top: 68px;
+      &::before{
+        left: 0;
+        width: 82.2222vw;
+      }
+      dt{
+        padding-top: 28px;
+        @include font-set16;
+        &.subtit{
+          margin-top: 68px;
+          text-align: center;
+          @include font-set20;
+          font-family: $fw-medium;
+          line-height: 30px;
+        }
+      }
+      .rate{
+        .star-rate{
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      .subtxt{
+        text-align: center;
+        @include font-set14;
+      }
+      textarea{
+        margin-top: 20px;
+        width: 100%;
+        height: 110px;
+      }
+    }
+    
+  }
+}
