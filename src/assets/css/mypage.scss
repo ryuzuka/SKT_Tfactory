@@ -486,6 +486,10 @@
         padding:0;
         //padding:3.88888888889% 12.77777777778%;
       }
+      p{
+        @include font-set12;
+        color: #787878;
+      }
     }
     .counselor {
       figure {
@@ -682,6 +686,5 @@
         height: 110px;
       }
     }
-    
   }
 }
