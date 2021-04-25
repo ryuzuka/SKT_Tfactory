@@ -11,20 +11,20 @@ export default {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
-      type: this.$route.query.type,
+      applicationType: this.$route.query.type,
       questionList: [],
       scheduleId: '',
-      attendeeNum: 1,
+      attendeeNum: '',
       contactNumber: ''
     }
   },
   mounted () {
-    if (this.type === 'select') {
+    if (this.applicationType === 'select') {
       this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
         this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
       })
-    } else if (this.type === 'basic') {
+    } else if (this.applicationType === 'basic') {
       this.scheduleId = sessionStorage.getItem('scheduleId')
     }
     this.contactNumber = sessionStorage.getItem('contactNumber')
@@ -51,7 +51,7 @@ export default {
         this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
 
         this.contactNumber = sessionStorage.getItem('contactNumber')
-        if (this.type === 'select') {
+        if (this.applicationType === 'select') {
           this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
         }
 
@@ -124,47 +124,54 @@ export default {
             }
           }]
         })
+
+        return
+      }
+
+      let bookInfo = {
+        'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
+        'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+        'USER_PHONE_NUMBER': this.contactNumber,
+        'BASIC_SURVEY_RESPONSE': surveyResponse
+      }
+
+      if (this.bookId) {
+        /** 수정 **/
+        bookInfo['BOOK_ID'] = parseInt(this.bookId)
+        if (this.applicationType === 'select') {
+          bookInfo['ATTENDEE_NUM'] = this.attendeeNum
+        }
+        STORE.modifyProgram(bookInfo).then(result => {
+          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+        }).catch(() => {
+          this.alretError()
+        })
       } else {
-        let info = {
-          'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
-          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-          'USER_PHONE_NUMBER': this.contactNumber,
-          'BASIC_SURVEY_RESPONSE': surveyResponse
-        }
-        if (this.type === 'select') {
-          info['ATTENDEE_NUM'] = this.attendeeNum
-        }
-        if (this.bookId) {
-          // 수정
-          info['BOOK_ID'] = parseInt(this.bookId)
-          STORE.modifyProgram(info).then(result => {
-            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+        /** 신청 **/
+        bookInfo['STORE_ID'] = parseInt(this.storeId)
+        if (this.applicationType === 'basic') {
+          // 예약
+          STORE.bookProgram(bookInfo).then(result => {
+            this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
+          }).catch(err => {
+            if (err.response.data.RET_CODE === 18006) {
+              this.alertAlreadyApply()
+            } else {
+              this.alretError()
+            }
           })
-        } else {
-          info['STORE_ID'] = parseInt(this.storeId)
-          if (this.type === 'basic') {
-            // 예약
-            STORE.bookProgram(info).then(result => {
-              this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
-            }).catch(err => {
-              if (err.response.data.RET_CODE === 18006) {
-                this.alertAlreadyApply()
-              } else {
-                this.alretError()
-              }
-            })
-          } else if (this.type === 'select') {
-            // 응모
-            STORE.applyProgram(info).then(result => {
-              this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
-            }).catch(err => {
-              if (err.response.data.RET_CODE === 18006) {
-                this.alertAlreadyApply()
-              } else {
-                this.alretError()
-              }
-            })
-          }
+        } else if (this.applicationType === 'select') {
+          // 응모
+          bookInfo['ATTENDEE_NUM'] = this.attendeeNum
+          STORE.applyProgram(bookInfo).then(result => {
+            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          }).catch(err => {
+            if (err.response.data.RET_CODE === 18006) {
+              this.alertAlreadyApply()
+            } else {
+              this.alretError()
+            }
+          })
         }
       }
     },
