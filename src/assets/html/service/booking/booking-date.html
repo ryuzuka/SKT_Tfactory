@@ -152,7 +152,7 @@
   <div class="btn-wrap sticky">
     <a v-if="isSurvey" class="btn-solid big" @click.prevent="nextButton">다음</a>
     <a v-else class="btn-solid big" @click.prevent="nextButton">
-      <template v-if="applicationType === 'basic'">예약</template>
+      <template v-if="programType === 'basic'">예약</template>
       <template v-else>신청</template>
     </a>
   </div>

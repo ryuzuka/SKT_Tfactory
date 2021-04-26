@@ -31,13 +31,13 @@ export default {
       bookingDetail: {
         USER_PHONE_NUMBER: ''
       },
-      applicationType: ''
+      programType: ''
     }
   },
   created () {
     STORE.getBookingInfo(this.$route.query.BOOK_ID).then(result => {
       this.bookingDetail = result.BOOK_INFO
-      this.applicationType = this.bookingDetail.BOOKING_TYPE
+      this.programType = this.bookingDetail.BOOKING_TYPE
       this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD HH:mm')
       if (!this.bookingDetail.OPERATOR_IMAGE_URL) {
         this.bookingDetail.OPERATOR_IMAGE_URL = require('@/assets/images/service/icon_T.png')

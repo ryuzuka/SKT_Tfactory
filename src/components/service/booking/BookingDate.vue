@@ -56,7 +56,7 @@ export default {
       },
       bookingModify: false,
       isSurvey: false,
-      applicationType: ''
+      programType: ''
     }
   },
   mounted () {
@@ -90,7 +90,7 @@ export default {
       STORE.getProgramClass(classId).then(result => {
         this.selectedService = result['PROGRAM_CLASS']
         this.isSurvey = this.selectedService['SURVEY_YN']
-        this.applicationType = this.selectedService['BOOKING_TYPE']
+        this.programType = this.selectedService['BOOKING_TYPE']
         this.getProgramList(classId)
       })
     },
