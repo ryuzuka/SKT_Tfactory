@@ -44,8 +44,8 @@ export default {
       selectedTime: '',
       selectedTimeList: [],
       selectedProgram: '',
-      selectedDate: '',
-      selectedDateText: '',
+      selectedDate: this.$moment().format('YYYY.MM.DD'),
+      selectedDateText: this.$moment().format('YYYY.MM.DD'),
       modifyScheduleId: 0,
       swiperOption: {
         freeMode: true,
