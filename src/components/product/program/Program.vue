@@ -63,11 +63,7 @@ export default {
           }
         }
       } else {
-        if (this.bookingType === 'basic') {
-          localStorage.setItem('previous_url', '/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
-        } else if (this.bookingType === 'select') {
-          localStorage.setItem('previous_url', '/sev/application?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
-        }
+        localStorage.setItem('previous_url', this.$route.path + '?classId=' + this.classId)
         this.$router.push({'name': 'Login'})
       }
     }

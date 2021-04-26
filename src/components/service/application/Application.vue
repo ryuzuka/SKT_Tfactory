@@ -6,7 +6,6 @@ import ModalReadMap from '../booking/ModalReadMap'
 import UiSelect from '../../../ui/UiSelect'
 
 import * as STORE from '../../../js/store.js'
-import _ from 'lodash'
 
 export default {
   name: 'Application',
@@ -26,8 +25,7 @@ export default {
       contactNumber: '',
       scheduleId: '',
       attendeeNum: 1,
-      attendeeList: [{text: '1', value: 1}],
-      isApply: false
+      attendeeList: [{text: '1', value: 1}]
     }
   },
   mounted () {
@@ -63,19 +61,6 @@ export default {
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
         this.programInfo = result['PROGRAM_CLASS']
-
-        let status = ''
-        STORE.getProgramClassBook(this.classId).then(result => {
-          if (result['PROGRAM_CLASS'].length === 0) return
-
-          _.forEach(result['PROGRAM_CLASS'], program => {
-            status = program['STATUS']
-          })
-          if (status === 'apply') {
-            this.isApply = true
-            this.alertAlreadyApply()
-          }
-        })
       })
     },
     checkProgramBook () {
