@@ -6,6 +6,7 @@ import ModalReadMap from '../booking/ModalReadMap'
 import UiSelect from '../../../ui/UiSelect'
 
 import * as STORE from '../../../js/store.js'
+import _ from 'lodash'
 
 export default {
   name: 'Application',
@@ -25,7 +26,8 @@ export default {
       contactNumber: '',
       scheduleId: '',
       attendeeNum: 1,
-      attendeeList: [{text: '1', value: 1}]
+      attendeeList: [{text: '1', value: 1}],
+      isApply: false
     }
   },
   mounted () {
@@ -61,6 +63,19 @@ export default {
     getProgramClass () {
       STORE.getProgramClass(this.classId).then(result => {
         this.programInfo = result['PROGRAM_CLASS']
+
+        let status = ''
+        STORE.getProgramClassBook(this.classId).then(result => {
+          if (result['PROGRAM_CLASS'].length === 0) return
+
+          _.forEach(result['PROGRAM_CLASS'], program => {
+            status = program['STATUS']
+          })
+          if (status === 'apply') {
+            this.isApply = true
+            this.alertAlreadyApply()
+          }
+        })
       })
     },
     checkProgramBook () {
@@ -133,8 +148,39 @@ export default {
         }
         STORE.applyProgram(applyInfo).then(result => {
           this.$router.push('/sev/applicationComplete?store_id=' + this.storeId + '&bookId=' + result.BOOK_ID)
+        }).catch(err => {
+          if (err.response.data.RET_CODE === 18006) {
+            this.alertAlreadyApply()
+          } else {
+            this.alretError()
+          }
         })
       }
+    },
+    alertAlreadyApply () {
+      this.$modal.show('dialog', {
+        title: `이미 신청하신 프로그램입니다.`,
+        text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+            this.$router.push(this.programInfo['PROGRAM_CLASS_LINK_URL'] + '?classId=' + this.classId)
+          }
+        }]
+      })
+    },
+    alretError () {
+      this.$modal.show('dialog', {
+        title: `오류가 발생했습니다.<br>관리자에게 문의해주세요.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+            this.$router.push({'name': 'MyBookingList'})
+          }
+        }]
+      })
     }
   }
 }

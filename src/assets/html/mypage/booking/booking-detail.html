@@ -99,6 +99,7 @@
       <a v-if="status === 'success'" class="btn-line big" @click.prevent="clickCancel">{{ $t('my.consult-cancel') }}</a>
     </template>
   </div>
+<!--  <section class="row" v-if="bookingDetail['STATUS'] === 'canceled'">-->
   <section class="row">
     <dl class="details-info type2">
       <dt>취소사유</dt>
@@ -106,7 +107,9 @@
       <dd style="margin-top:8px;width: 100%;">
         <p>*아래와 같은 이유로 관리자에 의해 취소되었습니다.</p>
       </dd>
-      <dd style="margin-top:12px;width: 100%;">띄어쓰기 포함 최대 30자 정도가 노출됩니다. 띄어쓰기 포함 최대 30자 정도가 노출됩니다.</dd>
+      <dd style="margin-top:12px;width: 100%;">
+        띄어쓰기 포함 최대 30자 정도가 노출됩니다. 띄어쓰기 포함 최대 30자 정도가 노출됩니다.
+      </dd>
     </dl>
   </section>
 

@@ -1,39 +1,42 @@
-<template src="../../../assets/html/service/application/application-survey.html"></template>
+<template src="../../assets/html/service/program-survey.html"></template>
 
 <script>
-import * as STORE from '../../../js/store.js'
+import * as STORE from '../../js/store.js'
 import _ from 'lodash'
 
 export default {
-  name: 'ApplicationSurvey',
+  name: 'ProgramSurvey',
   data () {
     return {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
+      applicationType: this.$route.query.type,
       questionList: [],
       scheduleId: '',
-      attendeeNum: 1,
+      attendeeNum: '',
       contactNumber: ''
     }
   },
   mounted () {
-    this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
+    if (this.applicationType === 'select') {
+      this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
+      STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
+        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
+      })
+    } else if (this.applicationType === 'basic') {
+      this.scheduleId = sessionStorage.getItem('scheduleId')
+    }
     this.contactNumber = sessionStorage.getItem('contactNumber')
-
-    this.checkProgramBook()
     if (this.bookId) {
+      // 수정
       this.getProgramBookInfo()
     } else {
+      // 신청
       this.getSurveyQuestions()
     }
   },
   methods: {
-    checkProgramBook () {
-      STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
-        this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
-      })
-    },
     getSurveyQuestions () {
       STORE.getQuestions(this.classId, 'program').then(result => {
         this.questionList = result['QUESTIONS']
@@ -47,24 +50,19 @@ export default {
         this.programBookInfo = result['PROGRAM_BOOK']
         this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
 
-        let number = this.programBookInfo['USER_PHONE_NUMBER']
-        this.firstNum = number.substr(0, 3)
-        this.lastNum = number.substring(3)
-        this.attendeeNum = this.programBookInfo['ATTENDEE_NUM']
-
-        if (this.bookId) {
+        this.contactNumber = sessionStorage.getItem('contactNumber')
+        if (this.applicationType === 'select') {
           this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
-          this.contactNumber = sessionStorage.getItem('contactNumber')
         }
 
         this.questionList = this.programBookInfo['BASIC_SURVEY']
         this.questionList.forEach(question => {
-          if (question.QUESTION_TYPE === 'essay') {
+          if (question['QUESTION_TYPE'] === 'essay') {
             question.ANSWER = question.RESPONSE
           } else {
-            if (question.QUESTION_TYPE === 'choice') {
+            if (question['QUESTION_TYPE'] === 'choice') {
               question.ANSWER = parseInt(question.RESPONSE)
-            } else if (question.QUESTION_TYPE === 'multiple_choice') {
+            } else if (question['QUESTION_TYPE'] === 'multiple_choice') {
               question.ANSWER = JSON.parse(question.RESPONSE)
             }
           }
@@ -126,26 +124,46 @@ export default {
             }
           }]
         })
-      } else {
-        let info = {
-          'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
-          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-          'USER_PHONE_NUMBER': this.contactNumber,
-          'ATTENDEE_NUM': this.attendeeNum,
-          'BASIC_SURVEY_RESPONSE': surveyResponse
+
+        return
+      }
+
+      let bookInfo = {
+        'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
+        'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+        'USER_PHONE_NUMBER': this.contactNumber,
+        'BASIC_SURVEY_RESPONSE': surveyResponse
+      }
+
+      if (this.bookId) {
+        /** 수정 **/
+        bookInfo['BOOK_ID'] = parseInt(this.bookId)
+        if (this.applicationType === 'select') {
+          bookInfo['ATTENDEE_NUM'] = this.attendeeNum
         }
-        if (this.bookId) {
-          // 수정
-          info['BOOK_ID'] = parseInt(this.bookId)
-          STORE.modifyProgram(info).then(result => {
-            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
-          }).catch(() => {
-            this.alretError()
+        STORE.modifyProgram(bookInfo).then(result => {
+          this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+        }).catch(() => {
+          this.alretError()
+        })
+      } else {
+        /** 신청 **/
+        bookInfo['STORE_ID'] = parseInt(this.storeId)
+        if (this.applicationType === 'basic') {
+          // 예약
+          STORE.bookProgram(bookInfo).then(result => {
+            this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
+          }).catch(err => {
+            if (err.response.data.RET_CODE === 18006) {
+              this.alertAlreadyApply()
+            } else {
+              this.alretError()
+            }
           })
-        } else {
-          // 신청
-          info['STORE_ID'] = parseInt(this.storeId)
-          STORE.applyProgram(info).then(result => {
+        } else if (this.applicationType === 'select') {
+          // 응모
+          bookInfo['ATTENDEE_NUM'] = this.attendeeNum
+          STORE.applyProgram(bookInfo).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
           }).catch(err => {
             if (err.response.data.RET_CODE === 18006) {
@@ -176,7 +194,6 @@ export default {
           title: '확인',
           handler: () => {
             this.$modal.hide('dialog')
-            this.$router.push({'name': 'MyBookingList'})
           }
         }]
       })

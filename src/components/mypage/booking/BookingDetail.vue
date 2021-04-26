@@ -105,7 +105,6 @@ export default {
                   this.showCancelSuccessDialog()
                 }
               }).catch((err) => {
-                console.log(err.response.data)
                 if (err.response.data.RET_CODE === 14000) {
                   this.showCancelFailedWithOverTime()
                 } else {

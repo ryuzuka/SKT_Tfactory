@@ -1,0 +1,42 @@
+<div class="contents bottom-sticky" ref="contents">
+  <div class="row">
+    <p class="texts-req">프로그램 신청을 위해 아래 항목에 모두 답변해주세요. (필수)</p>
+    <ol class="list-survey">
+      <li v-for="(question, questionIndex) in questionList">
+        <p class="tit">{{question.QUESTION}}</p>
+        <span v-if="question.QUESTION_TYPE === 'multiple_choice'" class="texts-info">({{ $t('sev.mutiple-select') }})</span>
+
+        <ul class="list-answer" v-if="question.QUESTION_TYPE !== 'essay'">
+          <li v-for="(answer, answerIndex) in question.CHOICE">
+            <input
+              v-if="question.QUESTION_TYPE === 'choice'"
+              v-model="question.ANSWER"
+              type="radio"
+              :name="questionIndex"
+              :value=answerIndex
+            >
+            <input
+              v-if="question.QUESTION_TYPE === 'multiple_choice'"
+              v-model="question.ANSWER"
+              type="checkbox"
+              :value=answerIndex
+            >
+            <label>{{answer}}</label>
+          </li>
+        </ul>
+        <textarea
+          v-if="question.QUESTION_TYPE === 'essay'"
+          v-model="question.ANSWER"
+          cols="30"
+          rows="10"
+          placeholder="답변을 입력해 주세요. (최대 200자까지 입력 가능)"
+          style="height: 120px"
+        ></textarea>
+      </li>
+    </ol>
+  </div>
+  <div class="btn-wrap sticky">
+     <a v-if="applicationType === 'basic'" href="#" class="btn-solid big" @click.prevent="clickApplicationButton">{{ bookId ? $t('comm.modify') : '예약' }}</a>
+     <a v-else-if="'select'" href="#" class="btn-solid big" @click.prevent="clickApplicationButton">{{ bookId ? $t('comm.modify') : $t('comm.application') }}</a>
+  </div>
+</div>

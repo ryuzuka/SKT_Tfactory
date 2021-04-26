@@ -1,6 +1,5 @@
 <div class="contents bottom-sticky" ref="contents">
-  <div :class="'booking-header' + ' ' + selectType" v-if="selectType === 'shop'"
-       :style="{'background-image': storeImageUrl }">
+  <div :class="'booking-header' + ' ' + selectType" v-if="selectType === 'shop'" :style="{'background-image': storeImageUrl }">
     <h2 class="blind">{{ $t('sev.shop-info') }}</h2>
     <div class="store">
       <dl class="info">
@@ -11,35 +10,82 @@
     </div>
   </div>
 
-  <template v-if="selectType === 'shop'">
-    <section class="row booking-contents">
-      <div class="tit-wrap">
-        <h3 class="subtit">
-          <template v-if="bookingType === 'program'">{{ $t('sev.program') }}</template>
-          <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }}</template>
-          <template v-else-if="bookingType === 'counseling'">{{ $t('sev.visit-purpose') }}</template>
-          {{ $t('comm.select') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span>
-        </h3>
-      </div>
-      <ui-select v-if="bookingType === 'counseling'"
-                 v-model="selectedService"
-                 :data="counselingList"
-      ></ui-select>
-      <p v-if="bookingType === 'program' && selectedService">{{selectedService.PROGRAM_CLASS_NAME}}</p>
-    </section>
-  </template>
-
   <section class="row booking-contents">
     <div class="tit-wrap">
-      <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span
-        class="blind">{{ $t('comm.required') }}</span></span></h3>
-      <time v-if="bookingType === 'counseling'" class="date">{{ selectedDateText }}</time>
+      <h3 class="subtit">
+        <template v-if="bookingType === 'program'">{{ $t('sev.program') }}</template>
+        <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }}</template>
+        <template v-else-if="bookingType === 'counseling'">{{ $t('sev.visit-purpose') }}</template>
+        {{ $t('comm.select') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span>
+      </h3>
     </div>
-    <ui-select v-if="bookingType === 'program'"
-               :data="programTimeList"
-               v-model="selectedProgram"
+
+    <p v-if="bookingType === 'program' && selectedService">{{selectedService.PROGRAM_CLASS_NAME}}</p>
+    <ui-select
+      v-else-if="bookingType === 'counseling'"
+      v-model="selectedService"
+      :data="counselingList"
     ></ui-select>
-    <swiper v-if="bookingType === 'counseling'" class="datepicker" :options="swiperOption">
+  </section>
+
+  <!-- 날짜/시간 선택 -->
+  <!-- 프로그램 예약 -->
+  <section class="row booking-contents" v-if="bookingType === 'program'">
+    <div class="tit-wrap">
+      <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
+      <time class="date">{{ selectedDateText }}</time>
+    </div>
+    <swiper class="datepicker" :options="swiperOption">
+      <swiper-slide style="width: auto">
+        <ul class="list-date">
+          <li v-for="(date, index) in dateList" :key="index">
+            <input
+              type="radio"
+              name="date"
+              :id="'date' + index"
+              :value="date.year + '.' + date.month + '.' + date.date"
+              :disabled="date.disabled"
+              v-model="selectedDate"
+              @change="changeProgramDate(selectedDate)"
+            >
+            <label :for="'date' + index">
+              <span v-if="index === 0">{{ $t('sev.today') }}</span>
+              <span v-if="index > 0">{{ date.day }}</span>
+              <span class="date">{{ parseInt(date.date) }}</span>
+            </label>
+          </li>
+        </ul>
+      </swiper-slide>
+      <div class="swiper-scrollbar" slot="scrollbar"></div>
+    </swiper>
+    <ul class="list-option col4">
+      <li v-for="(program, index) in programList">
+        <input
+          type="radio"
+          name="selected-program"
+          :id="'selected-program-' + index"
+          :value="program.PROGRAM_SCHEDULE_ID"
+          v-model="selectedProgram"
+          @change="changeProgram(program)"
+          :disabled="program.disabled"
+        >
+        <label :for="'selected-program-' + index">{{program.START_TIME}}</label>
+        <span v-if="program.standby" class="info">{{ $t('sev.standby') }}</span>
+        <span v-else class="num">{{program.BOOKING_COUNT}}/{{program.CAPACITY}}</span>
+      </li>
+    </ul>
+    <p class="texts-info">* {{ $t('sev.date-info') }}</p>
+  </section>
+
+  <!-- 날짜/시간 선택 -->
+  <!-- 상담 예약 -->
+  <section class="row booking-contents" v-if="bookingType === 'counseling'">
+    <div class="tit-wrap">
+      <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
+      <time class="date">{{ selectedDateText }}</time>
+    </div>
+
+    <swiper class="datepicker" :options="swiperOption">
       <swiper-slide style="width: auto">
         <ul class="list-date">
           <li v-for="(date, index) in dateList" :key="index">
@@ -62,7 +108,7 @@
       </swiper-slide>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
-    <ul class="list-option col4" v-if="bookingType === 'counseling'">
+    <ul class="list-option col4">
       <li v-for="(time, index) in timeList">
         <input
           type="radio"
@@ -74,13 +120,9 @@
           :disabled="time.disabled"
         >
         <label :for="'selected-time-' + index">{{time.START_TIME}}</label>
-        <template v-if="bookingType !== 'experience'">
-          <span v-if="time.standby && bookingType === 'program'" class="info">{{ $t('sev.standby') }}</span>
-          <span v-else class="num">{{time.BOOKING_COUNT}}/{{time.CAPACITY}}</span>
-        </template>
+        <span class="num">{{time.BOOKING_COUNT}}/{{time.CAPACITY}}</span>
       </li>
     </ul>
-    <p class="texts-info" v-if="bookingType === 'program'">* {{ $t('sev.date-info') }}</p>
   </section>
 
   <section class="row booking-contents">
@@ -108,9 +150,10 @@
   </section>
 
   <div class="btn-wrap sticky">
-    <a v-if="bookingType === 'program' || bookingType === 'counseling'" class="btn-solid big"
-       @click.prevent="nextButton">{{ $t('comm.next') }}</a>
-    <a v-else class="btn-solid big" @click.prevent="nextButton">{{ $t('sev.apply-complete') }} <i
-      class="ico-check"></i></a>
+    <a v-if="isSurvey" class="btn-solid big" @click.prevent="nextButton">다음</a>
+    <a v-else class="btn-solid big" @click.prevent="nextButton">
+      <template v-if="applicationType === 'basic'">예약</template>
+      <template v-else>신청</template>
+    </a>
   </div>
 </div>

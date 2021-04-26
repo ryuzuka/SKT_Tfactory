@@ -1,9 +1,6 @@
 <div class="contents bottom-sticky" ref="contents">
-
   <section class="row booking-contents">
-    <div class="tit-wrap">
-      <h3 class="subtit">{{ $t('my.shop-name') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
-    </div>
+    <div class="tit-wrap"><h3 class="subtit">{{ $t('my.shop-name') }}</h3></div>
     <div class="store">
       <dl class="info">
         <dt>{{storeInfo.NAME}}</dt>
@@ -19,31 +16,76 @@
         <template v-if="bookingType === 'program'">{{ $t('sev.program') }} </template>
         <template v-else-if="bookingType === 'experience'">{{ $t('sev.experience') }} </template>
         <template v-else-if="bookingType === 'counseling'">{{ $t('sev.visit-purpose') }} </template>
-        {{ $t('comm.select') }} <span class="required"><span class="blind">{{ $t('comm.required') }}</span></span>
+        {{ $t('comm.select') }}
       </h3>
     </div>
 
     <p v-if="bookingType === 'program'" class="text-sel">{{bookInfo.PROGRAM_CLASS_NAME}}</p>
-    <ui-select v-if="bookingType === 'counseling'"
+    <ui-select
+      v-else-if="bookingType === 'counseling'"
       v-model="selectedService"
       :data="counselingList"
     ></ui-select>
   </section>
 
   <!-- 날짜/시간 선택 -->
-  <section class="row booking-contents">
+  <!-- 프로그램 예약 -->
+  <section class="row booking-contents" v-if="bookingType === 'program'">
     <div class="tit-wrap">
       <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
-      <time v-if="bookingType === 'counseling'" class="date">{{ selectedDateText }}</time>
+      <time class="date">{{ selectedDateText }}</time>
+    </div>
+    <swiper class="datepicker" :options="swiperOption">
+      <swiper-slide style="width: auto">
+        <ul class="list-date">
+          <li v-for="(date, index) in dateList" :key="index">
+            <input
+              type="radio"
+              name="date"
+              :id="'date' + index"
+              :value="date.year + '.' + date.month + '.' + date.date"
+              :disabled="date.disabled"
+              v-model="selectedDate"
+              @change="changeProgramDate(selectedDate)"
+            >
+            <label :for="'date' + index">
+              <span v-if="index === 0">{{ $t('sev.today') }}</span>
+              <span v-if="index > 0">{{ date.day }}</span>
+              <span class="date">{{ parseInt(date.date) }}</span>
+            </label>
+          </li>
+        </ul>
+      </swiper-slide>
+      <div class="swiper-scrollbar" slot="scrollbar"></div>
+    </swiper>
+    <ul class="list-option col4">
+      <li v-for="(program, index) in programList">
+        <input
+          type="radio"
+          name="selected-program"
+          :id="'selected-program-' + index"
+          :value="program.PROGRAM_SCHEDULE_ID"
+          v-model="selectedProgram"
+          @change="changeProgram(program)"
+          :disabled="program.disabled"
+        >
+        <label :for="'selected-program-' + index">{{program.START_TIME}}</label>
+        <span v-if="program.standby" class="info">{{ $t('sev.standby') }}</span>
+        <span v-else class="num">{{program.BOOKING_COUNT}}/{{program.CAPACITY}}</span>
+      </li>
+    </ul>
+    <p class="texts-info">* {{ $t('sev.date-info') }}</p>
+  </section>
+
+  <!-- 날짜/시간 선택 -->
+  <!-- 상담 예약 -->
+  <section class="row booking-contents" v-if="bookingType === 'counseling'">
+    <div class="tit-wrap">
+      <h3 class="subtit">{{ $t('sev.select-date') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></h3>
+      <time class="date">{{ selectedDateText }}</time>
     </div>
 
-    <ui-select
-      v-if="bookingType === 'program'"
-      v-model="selectedProgram"
-      :data="programTimeList"
-    ></ui-select>
-
-    <swiper v-if="bookingType === 'counseling'" class="datepicker" :options="swiperOption">
+    <swiper class="datepicker" :options="swiperOption">
       <swiper-slide style="width: auto">
         <ul class="list-date">
           <li v-for="(date, index) in dateList" :key="index">
@@ -66,8 +108,7 @@
       </swiper-slide>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
-
-    <ul v-if="bookingType === 'counseling'" class="list-option col4">
+    <ul class="list-option col4">
       <li v-for="(time, index) in timeList">
         <input
           type="radio"
@@ -82,39 +123,36 @@
         <span class="num">{{time.BOOKING_COUNT}}/{{time.CAPACITY}}</span>
       </li>
     </ul>
-
-    <p class="texts-info" v-if="bookingType === 'program'">* {{ $t('sev.date-info') }}</p>
   </section>
 
-  <template>
-    <section class="row booking-contents">
-      <div class="tit-wrap">
-        <h3 class="subtit"><label for="info2-1">{{ $t('sev.contact-number') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></h3>
-      </div>
-      <p class="texts-info" v-html="$t('sev.applicant-info-guide2')"></p>
-      <div class="form-group">
-        <div class="modify">
-          <div class="input-box mobile">
-            <ui-select
-              :data="[
-              {text: '010', value: 'value0', selected: true},
-              {text: '011', value: 'value1'},
-              {text: '017', value: 'value2'},
-              {text: '018', value: 'value3'},
-              {text: '019', value: 'value4'},
-            ]" class="reverse"
-            ></ui-select>
-            <input ref="certification" type="tel" maxlength="8" id="info2-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
-          </div>
+  <section class="row booking-contents">
+    <div class="tit-wrap">
+      <h3 class="subtit"><label for="info2-1">{{ $t('sev.contact-number') }}<span class="required"><span class="blind">{{ $t('comm.required') }}</span></span></label></h3>
+    </div>
+    <p class="texts-info" v-html="$t('sev.applicant-info-guide2')"></p>
+    <div class="form-group">
+      <div class="modify">
+        <div class="input-box mobile">
+          <ui-select
+            :data="[
+            {text: '010', value: 'value0', selected: true},
+            {text: '011', value: 'value1'},
+            {text: '017', value: 'value2'},
+            {text: '018', value: 'value3'},
+            {text: '019', value: 'value4'},
+          ]" class="reverse"
+          ></ui-select>
+          <input ref="certification" type="tel" maxlength="8" id="info2-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
         </div>
       </div>
-    </section>
-  </template>
+    </div>
+  </section>
 
   <div class="btn-wrap sticky">
-    <!-- 프로그램, 체험존 -->
-    <a v-if="bookingType === 'program'" class="btn-solid big" @click.prevent="nextButton">{{ $t('my.modify-complete') }} <i class="ico-check"></i></a>
-    <!-- 상담 -->
-    <a v-else class="btn-solid big" @click.prevent="nextButton">{{ $t('comm.next') }}</a> <!-- 설문 팝업으로 이동 -->
+    <a class="btn-solid big" @click.prevent="nextButton">
+      <template v-if="isSurvey">다음</template>
+      <template v-else>수정</template>
+      <i class="ico-check"></i>
+    </a>
   </div>
 </div>

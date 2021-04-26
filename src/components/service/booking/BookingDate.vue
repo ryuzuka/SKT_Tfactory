@@ -8,8 +8,7 @@ import Consult from '../Consult'
 import ModalConsign from './ModalConsign' // 08.19 개인정보취급위탁 추가
 
 import * as STORE from '../../../js/store.js'
-import * as TID from '../../../js/tid.js'
-import * as USER from '../../../js/user.js'
+import _ from 'lodash'
 
 export default {
   name: 'BookingDate',
@@ -24,8 +23,10 @@ export default {
   },
   data () {
     return {
+      storeId: this.$route.query.store_id,
+      classId: this.$route.query.classId,
+      selectedService: this.$route.query.selectedService,
       storeInfo: {},
-      storeID: 0,
       storeImageUrl: '',
       counselingList: [],
       counselingListName: [],
@@ -35,11 +36,11 @@ export default {
       days: [this.$t('sev.sun'), this.$t('sev.mon'), this.$t('sev.tue'), this.$t('sev.wed'), this.$t('sev.thu'), this.$t('sev.fri'), this.$t('sev.sat')],
       dateList: [],
       timeList: [],
+      programList: [],
       programTimeList: [{text: '날짜/시간을 선택해주세요.', value: 'value0', selected: true}],
       HHforNow: 0,
       accordionData: [{}],
       isActiveAccordion: [false],
-      selectedService: '',
       selectedTime: '',
       selectedTimeList: [],
       selectedProgram: '',
@@ -53,66 +54,185 @@ export default {
           el: '.swiper-scrollbar'
         }
       },
-      bookingModify: false
+      bookingModify: false,
+      isSurvey: false,
+      applicationType: ''
     }
   },
   mounted () {
-    /** ******* T world 예약 관련 ******* */
-    /** ************** */
-
-    if (this.$route.query.sso_login_id) {
-      sessionStorage.setItem('SVC_NUM', this.$route.query.svc_num)
-      localStorage.setItem('STORE_CODE', this.$route.query.store_code)
-      let callback = window.location.origin + window.location.pathname
-      TID.loginRedirectSso(this.$route.query.sso_login_id, callback)
-    }
-
-    if (this.$route.query.id_token) {
-      USER.signInOrUpTID(this.$route.query).then(result => {
-        if (result.RET_CODE === 0) {
-          this.$cookies.set('USER_AUTH', result)
-          this.setUserInfo()
-          STORE.getStoreId(localStorage.getItem('STORE_CODE')).then(storeId => {
-            this.storeID = storeId
-            this.setStoreInfo()
-          })
-        } else {
-          this.$router.push({name: 'Error500'})
-        }
-      })
-    }
-    /** ************** */
-    /** ************** */
-
-    if (this.$route.query.store_id) {
-      this.storeID = this.$route.query.store_id
+    if (this.storeId) {
       this.setStoreInfo()
     }
-    if (this.$route.query.selectedService) {
+
+    if (this.selectedService) {
       this.setCounselingInfo()
     }
 
-    if (this.$props.bookingType === 'program' && this.$route.query.classId) {
-      this.getProgramClass(this.$route.query.classId)
+    if (this.bookingType === 'program' && this.classId) {
+      this.getProgramClass(this.classId)
     }
 
-    this.selectedService = this.$route.query.selectedService
     this.HHforNow = timezone().tz('Asia/Seoul').format('HH')
     this.dateList = this.getDates(this.$moment(), this.$moment().add(29, 'day'))
   },
   methods: {
     openModal () {
-      this.$modal.show(ModalConsign, {
-        test: 'test'
-      }, {
-        type: 'full'
-      }, {
+      this.$modal.show(ModalConsign, {}, {type: 'full'}, {
         'before-open': () => { console.log('before-open') },
         'opened': () => { console.log('opened') },
         'before-close': () => { console.log('before-close') },
         'closed': () => { console.log('closed') },
         'event-test': (e) => { console.log('event-test', e) }
       })
+    },
+    // --- program
+    getProgramClass (classId) {
+      STORE.getProgramClass(classId).then(result => {
+        this.selectedService = result['PROGRAM_CLASS']
+        this.isSurvey = this.selectedService['SURVEY_YN']
+        this.applicationType = this.selectedService['BOOKING_TYPE']
+        this.getProgramList(classId)
+      })
+    },
+    getProgramList (classId) {
+      STORE.getProgramTimeTable(this.storeId, classId).then(result => {
+        this.scheduleList = result['SCHEDULE_LIST']
+        _.forEach(this.dateList, date => {
+          date.disabled = true
+          this.scheduleList.forEach(program => {
+            if (this.$moment(program['START_YMDT']).format('MMDD') === date.month + date.date) {
+              date.disabled = false
+            }
+          })
+        })
+        this.$forceUpdate()
+        this.$emit('set-program-time-table')
+      })
+    },
+    changeProgramDate (date) {
+      let moment = this.$moment(date.replace(/\./g, ''))
+      this.selectedDateText = (moment.month() + 1) + this.$t('sev.month') + ' ' + String(moment.date()) + this.$t('sev.date') + ' ' + this.days[moment.day()] + this.$t('sev.day')
+
+      this.programList = []
+      _.forEach(this.scheduleList, (program, index) => {
+        if (this.selectedDate === this.$moment(program.START_YMDT).format('YYYY.MM.DD')) {
+          program.START_TIME = this.$moment(program.START_YMDT).format('HH:mm')
+          program.isBooked = this.ALREADY_BOOKED
+          if (parseInt(program.CAPACITY) <= parseInt(program.BOOKING_COUNT)) {
+            program.disabled = true
+          }
+          if (program.ALREADY_BOOKED) {
+            program.isBooked = true
+          }
+          this.programList[index] = program
+        }
+      })
+    },
+    changeProgram (program) {
+      if (program.isBooked) {
+        this.alertExperienceOnceToday()
+        this.$nextTick(() => {
+          this.selectedProgram = null
+        })
+      }
+    },
+    // program --- //
+    nextButton () {
+      // 방문 목적을 선택해주세요.
+      if (!this.selectedService) {
+        this.alertSelectService()
+        return
+      }
+
+      // 예약 정보를 연락처로 보내드립니다. 연락처를 입력해주세요.
+      if (!this.contactNumber || this.contactNumber.length < 7) {
+        this.alertContactNumber()
+        return
+      }
+
+      if (this.bookingType === 'counseling') {
+        /** counseling **********************************************************************************/
+
+        // 예약 날짜/시간을 선택해주세요.
+        if (!this.selectedTime) {
+          this.alertSelectTime()
+          return
+        }
+
+        if (this.selectedTime === 'BOOKED') {
+          // 같은 시간대에 예약 내역이 존재합니다.
+          this.alertCounselingOnceToday()
+          return
+        }
+
+        this.$store.state.constants.COUNSELING_MODIFY.MODIFY_FLAG = this.$route.path.includes('modify')
+        this.$store.state.constants.COUNSELING = {
+          'STORE_ID': this.storeId,
+          'DAY': (this.selectedDate).split('.').join('-'),
+          'TIMETABLE_ID': this.selectedTime,
+          'COUNSELING_ID': this.selectedService,
+          'MDN': this.contactNumber
+        }
+        this.next(this.bookingType)
+      } else if (this.bookingType === 'program') {
+        /** program **********************************************************************************/
+
+        // 예약 날짜/시간을 선택해주세요.
+        if (!this.selectedProgram) {
+          this.alertSelectTime()
+          return
+        }
+
+        let bookInfo = {
+          'PROGRAM_SCHEDULE_ID': this.selectedProgram,
+          'USER_NAME': this.$cookies.get('MY_INFO').NAME,
+          'USER_PHONE_NUMBER': '010' + this.contactNumber
+        }
+
+        if (this.$route.path.includes('modify')) {
+          bookInfo.BOOK_ID = parseInt(this.$route.query.book_id)
+          if (this.isSurvey) {
+            sessionStorage.setItem('scheduleId', this.selectedProgram)
+            sessionStorage.setItem('contactNumber', '010' + this.contactNumber)
+            this.$router.push('/sev/programSurvey?type=basic&store_id=' + this.storeId + '&classId=' + this.classId + '&bookId=' + bookInfo.BOOK_ID)
+          } else {
+            STORE.modifyProgram(bookInfo).then(result => {
+              this.next(this.bookingType, result.BOOK_ID)
+            }).catch(() => {
+              this.alretError()
+            })
+          }
+        } else {
+          bookInfo.STORE_ID = parseInt(this.storeId)
+          if (this.selectedService.SURVEY_YN) {
+            sessionStorage.setItem('scheduleId', this.selectedProgram)
+            sessionStorage.setItem('contactNumber', '010' + this.contactNumber)
+            this.$router.push('/sev/programSurvey?type=basic&store_id=' + this.storeId + '&classId=' + this.classId)
+          } else {
+            STORE.bookProgram(bookInfo).then(result => {
+              this.$router.push('/sev/booking/program/complete?PROGRAM_BOOK_ID=' + result.BOOK_ID)
+            }).catch(err => {
+              if (err.response.data.RET_CODE === 18006) {
+                this.alertAlreadyApply()
+              } else {
+                this.alretError()
+              }
+            })
+          }
+        }
+      }
+    },
+    next (type, bookID) {
+      let url = '/sev/booking/' + type
+      if (type === 'program') {
+        url += '/complete?PROGRAM_BOOK_ID=' + bookID
+        this.$router.push(url)
+      } else if (type === 'experience') {
+        url += '/complete'
+      } else if (type === 'counseling') {
+        url += '/survey'
+        this.$router.push(url)
+      }
     },
     setUserInfo () {
       let myInfo = this.$cookies.get('MY_INFO')
@@ -123,7 +243,7 @@ export default {
       })
     },
     setStoreInfo () {
-      STORE.getStoreInfo(this.storeID).then(result => {
+      STORE.getStoreInfo(this.storeId).then(result => {
         this.storeInfo = result.STORE
         if (this.storeInfo.IMAGES) {
           this.storeImageUrl = 'url(' + JSON.parse(this.storeInfo.IMAGES)[0] + ')'
@@ -131,15 +251,9 @@ export default {
           this.storeImageUrl = 'url(' + require('@/assets/images/dummy/@img_shop.jpg') + ')'
         }
       })
-
-      this.selectDate(this.selectedDate)
-
       if (this.bookingType === 'counseling') {
         this.getCounselingList()
-      }
-      if (this.bookingType === 'experience') {
-      }
-      if (this.selectType === 'service') {
+        this.selectDate(this.selectedDate)
       }
     },
     setCounselingInfo () {
@@ -149,47 +263,6 @@ export default {
             this.counseling = counseling
           }
         })
-      })
-    },
-    getProgramClass (classId) {
-      STORE.getProgramClass(classId).then(result => {
-        this.selectedService = result.PROGRAM_CLASS
-        this.getProgramTimetable(classId, result.PROGRAM_CLASS.PROGRAM_CLASS_CAN_BE_USED_TIME)
-      })
-    },
-    getProgramTimetable (classId, canBeUsedTime) {
-      STORE.getProgramTimeTable(this.$route.query.store_id, classId).then(result => {
-        result.SCHEDULE_LIST.forEach(schedule => {
-          let OVER_BOOKED = false
-          if (schedule.BOOKING_COUNT === schedule.CAPACITY) {
-            OVER_BOOKED = true
-          }
-
-          let timeText = ''
-          if (canBeUsedTime) {
-            timeText = this.$moment(schedule.START_YMDT).format('YYYY.MM.DD(ddd) HH:mm') + '-' + this.$moment(schedule.END_YMDT).format('HH:mm') +
-              ' (' + schedule.BOOKING_COUNT + '/' + schedule.CAPACITY + ')'
-          } else {
-            timeText = this.$moment(schedule.START_YMDT).format('YYYY.MM.DD(ddd)') + ' (' + schedule.BOOKING_COUNT + '/' + schedule.CAPACITY + ')'
-          }
-
-          let time = {
-            text: timeText,
-            value: {
-              ID: schedule.PROGRAM_SCHEDULE_ID,
-              ALREADY_BOOKED: schedule.ALREADY_BOOKED,
-              OVER_BOOKED: OVER_BOOKED
-            }
-          }
-          this.programTimeList.push(time)
-        })
-
-        if (this.modifyScheduleId !== 0) {
-          let scheduleIndex = this.programTimeList.findIndex(time => time.value.ID === this.modifyScheduleId)
-          this.$nextTick(() => {
-            this.selectedProgram = this.programTimeList[scheduleIndex].value
-          })
-        }
       })
     },
     clickModify () {
@@ -214,9 +287,6 @@ export default {
       }
       return dateArray
     },
-    clickChangeShop () {
-      console.log('TODO - 매장 변경')
-    },
     clickReadMap () {
       this.$modal.show(ModalReadMap, {}, {
         type: 'full'
@@ -226,105 +296,15 @@ export default {
       let moment = this.$moment(date.replace(/\./g, ''))
       this.selectedDateText = (moment.month() + 1) + this.$t('sev.month') + ' ' + String(moment.date()) + this.$t('sev.date') + ' ' + this.days[moment.day()] + this.$t('sev.day')
 
-      STORE.getAvailableDate(this.storeID, date.split('.').join('-'))
-        .then(result => {
-          this.setTimeTable(result)
-        })
+      STORE.getAvailableDate(this.storeId, date.split('.').join('-')).then(result => {
+        this.setTimeTable(result)
+      })
     },
     selectTime (isBooked) {
       if (isBooked) {
+        // 같은 시간대에 예약 내역이 존재합니다.
         this.alertCounselingOnceToday()
         this.selectedTime = 'BOOKED'
-      }
-    },
-    activeAccordion (idx) {
-      this.isActiveAccordion = this.isActiveAccordion.map((val, index) => {
-        if (idx === index) {
-          val = (val === true) ? Boolean(false) : Boolean(true)
-        } else {
-          val = false
-        }
-        return val
-      })
-    },
-    clickMyLocation () {
-    },
-    clickMore () {
-    },
-    nextButton () {
-      // alert(JSON.stringify(this.selectedProgram))
-      if (!this.selectedService) {
-        this.alertSelectService()
-        return
-      }
-      if (!this.contactNumber || this.contactNumber.length !== 8) {
-        this.alertContactNumber()
-        return
-      }
-
-      if (this.$props.bookingType === 'counseling') {
-        if (this.selectedTime === 'BOOKED') {
-          this.alertCounselingOnceToday()
-          return
-        }
-
-        if (!this.selectedTime) {
-          this.alertSelectTime()
-          return
-        }
-
-        this.$store.state.constants.COUNSELING_MODIFY.MODIFY_FLAG = this.$route.path.includes('modify')
-        this.$store.state.constants.COUNSELING = {
-          'STORE_ID': this.storeID,
-          'DAY': (this.selectedDate).split('.').join('-'),
-          'TIMETABLE_ID': this.selectedTime,
-          'COUNSELING_ID': this.selectedService,
-          'MDN': this.contactNumber
-        }
-        this.next(this.bookingType)
-      }
-
-      if (this.$props.bookingType === 'program') {
-        if (this.selectedProgram === 'value0') {
-          this.alertSelectTime()
-          return
-        }
-
-        let bookInfo = {}
-
-        if (this.$route.path.includes('modify')) {
-          bookInfo = {
-            'BOOK_ID': parseInt(this.$route.query.book_id),
-            'PROGRAM_SCHEDULE_ID': this.selectedProgram.ID,
-            'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-            'USER_PHONE_NUMBER': '010' + this.contactNumber
-          }
-          STORE.modifyProgram(bookInfo).then(result => {
-            this.next(this.bookingType, result.BOOK_ID)
-          })
-        } else {
-          bookInfo = {
-            'STORE_ID': parseInt(this.storeID),
-            'PROGRAM_SCHEDULE_ID': this.selectedProgram.ID,
-            'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-            'USER_PHONE_NUMBER': '010' + this.contactNumber
-          }
-          STORE.bookProgram(bookInfo).then(result => {
-            this.next(this.bookingType, result.BOOK_ID)
-          })
-        }
-      }
-    },
-    next (type, bookID) {
-      let url = '/sev/booking/' + type
-      if (type === 'program') {
-        url += '/complete?PROGRAM_BOOK_ID=' + bookID
-        this.$router.push(url)
-      } else if (type === 'experience') {
-        url += '/complete'
-      } else if (type === 'counseling') {
-        url += '/survey'
-        this.$router.push(url)
       }
     },
     setTimeTable (table) {
@@ -355,7 +335,7 @@ export default {
       })
     },
     getCounselingList () {
-      STORE.getCounselingListForStore(this.storeID).then(result => {
+      STORE.getCounselingListForStore(this.storeId).then(result => {
         result.STORE_COUNSELING_LIST.forEach(type => {
           this.counselingListName[type.COUNSELING_ID] = type.NAME
           let counseling = {
@@ -364,6 +344,16 @@ export default {
           }
           this.counselingList.push(counseling)
         })
+      })
+    },
+    activeAccordion (idx) {
+      this.isActiveAccordion = this.isActiveAccordion.map((val, index) => {
+        if (idx === index) {
+          val = (val === true) ? Boolean(false) : Boolean(true)
+        } else {
+          val = false
+        }
+        return val
       })
     },
     getExperienceList () {
@@ -378,6 +368,7 @@ export default {
       this.$router.push({name: 'Terms'})
     },
     alertSelectService () {
+      // 방문 목적을 선택해주세요.
       return new Promise(resolve => {
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-select-booking-service'),
@@ -392,6 +383,7 @@ export default {
       })
     },
     alertSelectTime () {
+      // 예약 날짜/시간을 선택해주세요.
       return new Promise(resolve => {
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-select-booking-date'),
@@ -406,6 +398,7 @@ export default {
       })
     },
     alertCounselingOnceToday () {
+      // 같은 시간대에 예약 내역이 존재합니다.
       return new Promise(resolve => {
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-counseling-once-today'),
@@ -420,6 +413,7 @@ export default {
       })
     },
     alertContactNumber () {
+      // 예약 정보를 연락처로 보내드립니다. 연락처를 입력해주세요.
       return new Promise(resolve => {
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-contact-number'),
@@ -434,6 +428,7 @@ export default {
       })
     },
     alertCertificationAgree () {
+      // 필수 약관에 동의해주세요.
       return new Promise(resolve => {
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-certification-agree'),
@@ -449,7 +444,7 @@ export default {
     },
     alertExperienceOnceToday () {
       return new Promise(resolve => {
-        // 체험존 예약은 하루 한번만 가능합니다.
+        // 해당 시간에 신청 내역이 있습니다.
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-experience-once-today'),
           buttons: [{
@@ -464,7 +459,7 @@ export default {
     },
     alertAnotherTime () {
       return new Promise(resolve => {
-        // 수강 정원이 초과되어 해당 시간에 예약이 불가능합니다. 다른시간을 선택 해주세요.
+        // 해당 시간에 신청이 불가능 합니다. 다른 시간을 선택 해주세요.
         this.$modal.show('dialog', {
           title: this.$t('sev.alert-choose-another-time'),
           buttons: [{
@@ -476,22 +471,45 @@ export default {
           }]
         })
       })
+    },
+    alertAlreadyApply () {
+      this.$modal.show('dialog', {
+        title: `이미 신청하신 프로그램입니다.`,
+        text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
+    },
+    alretError () {
+      this.$modal.show('dialog', {
+        title: `오류가 발생했습니다.<br>관리자에게 문의해주세요.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
     }
   },
   watch: {
-    selectedProgram (programId) {
-      if (programId && programId.ALREADY_BOOKED) {
-        if (!this.bookingModify) {
-          this.alertExperienceOnceToday()
-          this.selectedProgram = null
-          return
-        }
-      }
-      if (programId && programId.OVER_BOOKED) {
-        this.alertAnotherTime()
-        this.selectedProgram = null
-      }
-    }
+    // selectedProgram (programId) {
+    //   if (programId && programId.ALREADY_BOOKED) {
+    //     if (!this.bookingModify) {
+    //       this.alertExperienceOnceToday()
+    //       this.selectedProgram = null
+    //       return
+    //     }
+    //   }
+    //   if (programId && programId.OVER_BOOKED) {
+    //     this.alertAnotherTime()
+    //     this.selectedProgram = null
+    //   }
+    // }
   },
   filters: {
     mdnFilter (data) {

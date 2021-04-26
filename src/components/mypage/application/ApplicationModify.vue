@@ -148,8 +148,22 @@ export default {
         }
         STORE.modifyProgram(applyInfo).then(result => {
           this.$router.push('/sev/applicationComplete?store_id=' + this.storeId + ' &bookId=' + result.BOOK_ID)
+        }).catch(() => {
+          this.alretError()
         })
       }
+    },
+    alretError () {
+      this.$modal.show('dialog', {
+        title: `오류가 발생했습니다.<br>관리자에게 문의해주세요.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+            this.$router.push({'name': 'MyBookingList'})
+          }
+        }]
+      })
     }
   }
 }
