@@ -139,15 +139,47 @@ export default {
           info['BOOK_ID'] = parseInt(this.bookId)
           STORE.modifyProgram(info).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          }).catch(() => {
+            this.alretError()
           })
         } else {
           // 신청
           info['STORE_ID'] = parseInt(this.storeId)
           STORE.applyProgram(info).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+          }).catch(err => {
+            if (err.response.data.RET_CODE === 18006) {
+              this.alertAlreadyApply()
+            } else {
+              this.alretError()
+            }
           })
         }
       }
+    },
+    alertAlreadyApply () {
+      this.$modal.show('dialog', {
+        title: `이미 신청하신 프로그램입니다.`,
+        text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
+    },
+    alretError () {
+      this.$modal.show('dialog', {
+        title: `오류가 발생했습니다.<br>관리자에게 문의해주세요.`,
+        buttons: [{
+          title: '확인',
+          handler: () => {
+            this.$modal.hide('dialog')
+            this.$router.push({'name': 'MyBookingList'})
+          }
+        }]
+      })
     }
   }
 }
