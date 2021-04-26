@@ -26,8 +26,8 @@
       <dd v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ bookingDetail.COUNSELING_NAME }}</dd>
 
       <dt v-if="bookingType === 'program'">
-        <template v-if="applicationType === 'basic'">프로그램 일시</template>
-        <template v-else-if="applicationType === 'select'">신청 일시</template>
+        <template v-if="programType === 'basic'">프로그램 일시</template>
+        <template v-else-if="programType === 'select'">신청 일시</template>
       </dt>
       <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
       <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>

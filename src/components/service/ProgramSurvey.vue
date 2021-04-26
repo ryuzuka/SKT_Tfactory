@@ -11,7 +11,7 @@ export default {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
-      applicationType: this.$route.query.type,
+      programType: this.$route.query.type,
       questionList: [],
       scheduleId: '',
       attendeeNum: '',
@@ -19,12 +19,12 @@ export default {
     }
   },
   mounted () {
-    if (this.applicationType === 'select') {
+    if (this.programType === 'select') {
       this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
         this.scheduleId = result['SCHEDULE_LIST'][0].PROGRAM_SCHEDULE_ID
       })
-    } else if (this.applicationType === 'basic') {
+    } else if (this.programType === 'basic') {
       this.scheduleId = sessionStorage.getItem('scheduleId')
     }
     this.contactNumber = sessionStorage.getItem('contactNumber')
@@ -51,7 +51,7 @@ export default {
         this.classId = this.programBookInfo['PROGRAM_CLASS_ID']
 
         this.contactNumber = sessionStorage.getItem('contactNumber')
-        if (this.applicationType === 'select') {
+        if (this.programType === 'select') {
           this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
         }
 
@@ -138,7 +138,7 @@ export default {
       if (this.bookId) {
         /** 수정 **/
         bookInfo['BOOK_ID'] = parseInt(this.bookId)
-        if (this.applicationType === 'select') {
+        if (this.programType === 'select') {
           bookInfo['ATTENDEE_NUM'] = this.attendeeNum
         }
         STORE.modifyProgram(bookInfo).then(result => {
@@ -149,14 +149,14 @@ export default {
       } else {
         /** 신청 **/
         bookInfo['STORE_ID'] = parseInt(this.storeId)
-        if (this.applicationType === 'basic') {
+        if (this.programType === 'basic') {
           // 예약
           STORE.bookProgram(bookInfo).then(result => {
             this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
           }).catch(() => {
             this.alretError()
           })
-        } else if (this.applicationType === 'select') {
+        } else if (this.programType === 'select') {
           // 응모
           bookInfo['ATTENDEE_NUM'] = this.attendeeNum
           STORE.applyProgram(bookInfo).then(result => {

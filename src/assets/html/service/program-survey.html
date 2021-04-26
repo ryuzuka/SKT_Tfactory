@@ -36,7 +36,7 @@
     </ol>
   </div>
   <div class="btn-wrap sticky">
-     <a v-if="applicationType === 'basic'" href="#" class="btn-solid big" @click.prevent="clickApplicationButton">{{ bookId ? $t('comm.modify') : '예약' }}</a>
+     <a v-if="programType === 'basic'" href="#" class="btn-solid big" @click.prevent="clickApplicationButton">{{ bookId ? $t('comm.modify') : '예약' }}</a>
      <a v-else-if="'select'" href="#" class="btn-solid big" @click.prevent="clickApplicationButton">{{ bookId ? $t('comm.modify') : $t('comm.application') }}</a>
   </div>
   <!--
