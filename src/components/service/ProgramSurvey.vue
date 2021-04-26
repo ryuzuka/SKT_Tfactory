@@ -153,12 +153,8 @@ export default {
           // 예약
           STORE.bookProgram(bookInfo).then(result => {
             this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
-          }).catch(err => {
-            if (err.response.data.RET_CODE === 18006) {
-              this.alertAlreadyApply()
-            } else {
-              this.alretError()
-            }
+          }).catch(() => {
+            this.alretError()
           })
         } else if (this.applicationType === 'select') {
           // 응모

@@ -127,7 +127,7 @@ export default {
           }]
         })
       } else {
-        let info = {
+        let bookInfo = {
           'PROGRAM_SCHEDULE_ID': parseInt(this.scheduleId),
           'USER_NAME': this.$cookies.get('MY_INFO').NAME,
           'USER_PHONE_NUMBER': this.contactNumber,
@@ -136,16 +136,16 @@ export default {
         }
         if (this.bookId) {
           // 수정
-          info['BOOK_ID'] = parseInt(this.bookId)
-          STORE.modifyProgram(info).then(result => {
+          bookInfo['BOOK_ID'] = parseInt(this.bookId)
+          STORE.modifyProgram(bookInfo).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
           }).catch(() => {
             this.alretError()
           })
         } else {
           // 신청
-          info['STORE_ID'] = parseInt(this.storeId)
-          STORE.applyProgram(info).then(result => {
+          bookInfo['STORE_ID'] = parseInt(this.storeId)
+          STORE.applyProgram(bookInfo).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
           }).catch(err => {
             if (err.response.data.RET_CODE === 18006) {
