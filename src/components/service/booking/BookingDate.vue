@@ -473,7 +473,7 @@ export default {
     },
     alretError () {
       this.$modal.show('dialog', {
-        title: `오류가 발생했습니다.<br>관리자에게 문의해주세요.`,
+        title: `오류가 발생했습니다.<br>문의 070-7470-0001`,
         buttons: [{
           title: '확인',
           handler: () => {
