@@ -30,17 +30,20 @@ export default {
       status: this.$route.params.status,
       bookingDetail: {
         USER_PHONE_NUMBER: ''
-      }
+      },
+      applicationType: ''
     }
   },
   created () {
     STORE.getBookingInfo(this.$route.query.BOOK_ID).then(result => {
       this.bookingDetail = result.BOOK_INFO
+      this.applicationType = this.bookingDetail.BOOKING_TYPE
       this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD HH:mm')
       if (!this.bookingDetail.OPERATOR_IMAGE_URL) {
         this.bookingDetail.OPERATOR_IMAGE_URL = require('@/assets/images/service/icon_T.png')
       }
       this.$store.getters.CONSTANTS.COUNSELING_MODIFY.BOOK_ID = result.BOOK_INFO.BOOK_ID
+      this.$parent.$emit('change-application-type', {type: this.bookingDetail['BOOKING_TYPE']})
     })
   },
   methods: {

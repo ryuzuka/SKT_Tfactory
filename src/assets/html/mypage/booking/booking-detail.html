@@ -18,18 +18,20 @@
       <dt>{{ $t('sev.booking-shop') }}</dt>
       <dd>{{ bookingDetail.STORE_NAME }}</dd>
 
-      <dt v-if="bookingType === 'program'">{{ $t('my.program-name') }}</dt>
+      <dt v-if="bookingType === 'program'">프로그램 명</dt>
       <dd v-if="bookingType === 'program'">{{ bookingDetail.PROGRAM_CLASS_NAME }}</dd>
 
       <dt v-if="bookingType === 'experience'">{{ $t('sev.tab-experience') }}</dt>
       <dt v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ $t('my.consult-name') }}</dt>
       <dd v-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">{{ bookingDetail.COUNSELING_NAME }}</dd>
 
-      <dt v-if="bookingType === 'program'">프로그램일시</dt>
+      <dt v-if="bookingType === 'program'">
+        <template v-if="applicationType === 'basic'">프로그램 일시</template>
+        <template v-else-if="applicationType === 'select'">신청 일시</template>
+      </dt>
       <dt v-else-if="bookingType === 'experience' || bookingType === 'counseling'">{{ $t('sev.booking-date') }}</dt>
       <dt v-else-if="bookingType === 'field_buy' || bookingType === 'field'">{{ $t('sev.apply-date') }}</dt>
       <dd>{{ bookingDetail.DATE }}</dd>
-
     </dl>
 
     <!-- 프로그램 -->
