@@ -724,7 +724,7 @@ export default {
     'consult-cancel': '신청 취소',
     'booking-modify': '예약 수정',
     'booking-modify-complete': '예약 수정 완료',
-    'program-name': '프로그램명',
+    'program-name': '프로그램 명',
     'consult-name': '상담 유형',
     'booking-success-guide': '상담원 배정 후에는 예약 내용을 수정하실 수 없습니다.',
     'consult-success-guide': '상담원 배정 후에는 신청을 취소하실 수 없습니다.',

@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted () {
-    this.$parent.$on('change-application-type', e => {
+    this.$on('change-application-type', e => {
       if (e.type === 'select') {
         this.applicationType = 'select'
       }
