@@ -8,6 +8,7 @@ import * as STORE from '../../../js/store.js'
  * ordered: 예약완료
  * apply: 신청 완료
  * cancel: 취소
+ * canceled_by_operator: 취소(관리자)
  * complete: 종료
  * end: 종료 & 설문조사 등록 완료
  * not: 미방문
