@@ -509,6 +509,11 @@
         color:#787878;
       }
     }
+    &.type2{
+      &::after{
+        border: none;
+      }
+    }
     &:after {
       content:'';
       display:block;
