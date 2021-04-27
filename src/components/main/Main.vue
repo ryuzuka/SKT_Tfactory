@@ -93,6 +93,7 @@ export default {
     })
   },
   created () {
+    this.resize()
     this.$EventBus.$on('change-main-menu', menu => {
       this.changeMenu(menu)
     })
