@@ -1,5 +1,12 @@
 <template>
+  
   <div class="contents bottom-sticky" ref="contents">
+    <header class="header notice">
+      <p>T Factory는 모바일에 최적화되어 있습니다. 모바일 웹 또는 앱으로 접속하시는 것을 권장드립니다.</p>
+      <button class="btn-close">
+        <span class="blind">닫기</span>
+      </button>
+    </header>
     <MainStore :scroll-top="scrollTop" v-if="menuName === 'store'"></MainStore>
     <MainProgram :scroll-top="scrollTop" v-else-if="menuName === 'program'"></MainProgram>
     <MainTag :scroll-top="scrollTop" v-else-if="menuName === 'mytag'"></MainTag>
@@ -88,4 +95,5 @@ export default {
 
 <style lang="scss">
   @import 'src/assets/css/main';
+  @import 'src/assets/css/layout';
 </style>
