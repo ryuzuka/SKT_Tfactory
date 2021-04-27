@@ -65,9 +65,9 @@
           name="selected-program"
           :id="'selected-program-' + index"
           :value="program.PROGRAM_SCHEDULE_ID"
+          :disabled="program.disabled"
           v-model="selectedProgram"
           @change="changeProgram(program)"
-          :disabled="program.disabled"
         >
         <label :for="'selected-program-' + index">{{program.START_TIME}}</label>
         <span v-if="program.standby" class="info">{{ $t('sev.standby') }}</span>

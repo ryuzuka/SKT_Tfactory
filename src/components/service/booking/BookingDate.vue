@@ -97,19 +97,28 @@ export default {
     getProgramList (classId) {
       STORE.getProgramTimeTable(this.storeId, classId).then(result => {
         this.scheduleList = result['SCHEDULE_LIST']
-        _.forEach(this.dateList, date => {
-          date.disabled = true
-          this.scheduleList.forEach(program => {
-            if (this.$moment(program['START_YMDT']).format('MMDD') === date.month + date.date) {
-              date.disabled = false
-            }
+        if (this.scheduleList.length > 0) {
+          _.forEach(this.dateList, date => {
+            date.disabled = true
+            this.scheduleList.forEach(program => {
+              if (this.$moment(program['START_YMDT']).format('MMDD') === date.month + date.date) {
+                date.disabled = false
+              }
+            })
           })
-        })
-        this.selectedDate = this.$moment(this.scheduleList[0]['START_YMDT']).format('YYYY.MM.DD')
-        this.$forceUpdate()
-        this.$nextTick(() => {
-          this.changeProgramDate(this.selectedDate)
-        })
+          this.selectedDate = this.$moment(this.scheduleList[0]['START_YMDT']).format('YYYY.MM.DD')
+          this.$forceUpdate()
+          this.$nextTick(() => {
+            this.changeProgramDate(this.selectedDate)
+          })
+        } else {
+          _.forEach(this.dateList, date => {
+            date.disabled = true
+          })
+          this.selectedDate = ''
+          this.selectedDateText = ''
+          this.$forceUpdate()
+        }
       })
     },
     changeProgramDate (date) {
@@ -117,17 +126,14 @@ export default {
       this.selectedDateText = (moment.month() + 1) + this.$t('sev.month') + ' ' + String(moment.date()) + this.$t('sev.date') + ' ' + this.days[moment.day()] + this.$t('sev.day')
 
       this.programList = []
-      _.forEach(this.scheduleList, (program, index) => {
-        if (this.selectedDate === this.$moment(program.START_YMDT).format('YYYY.MM.DD')) {
-          program.START_TIME = this.$moment(program.START_YMDT).format('HH:mm')
-          program.isBooked = this.ALREADY_BOOKED
-          if (parseInt(program.CAPACITY) <= parseInt(program.BOOKING_COUNT)) {
+      _.forEach(this.scheduleList, program => {
+        if (this.selectedDate === this.$moment(program['START_YMDT']).format('YYYY.MM.DD')) {
+          program.START_TIME = this.$moment(program['START_YMDT']).format('HH:mm')
+          program.isBooked = this['ALREADY_BOOKED']
+          if (parseInt(program['BOOKING_COUNT']) >= parseInt(program['CAPACITY'])) {
             program.disabled = true
           }
-          if (program.ALREADY_BOOKED) {
-            program.isBooked = true
-          }
-          this.programList[index] = program
+          this.programList.push(program)
         }
       })
     },
