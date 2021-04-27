@@ -3,6 +3,12 @@
 <script>
 export default {
   name: 'Checkin',
+  data () {
+    return {
+      score: 100,
+      comment: ''
+    }
+  },
   methods: {
   }
 }
