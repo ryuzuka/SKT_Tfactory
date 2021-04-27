@@ -672,11 +672,18 @@
           background-repeat: repeat-x;
           background-size: 36px;
           background-position: 0 0;
-          span{
+          font-size: 0;
+          input{
             background-image: url(~@/assets/images/mypage/star-o.svg);
             background-repeat: repeat-x;
             background-size: 36px;
             background-position: 0 0;
+            border: none;
+            width: 36px;
+            height: 36px;
+            &:checked{
+              opacity: 0;
+            }
           }
         }
       }
