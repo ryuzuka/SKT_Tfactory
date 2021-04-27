@@ -308,6 +308,10 @@
               <router-link class="link" to='/experience/program28'>5월의 덕콘 | 프롬</router-link>
               <div class="date"><span>4.21</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program29'>5월의 덕콘 | 블루파프리카</router-link>
+              <div class="date"><span>4.27</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
