@@ -19,6 +19,12 @@ export default {
     }
   },
   mounted () {
+    this.contactNumber = sessionStorage.getItem('contactNumber')
+    if (!this.contactNumber) {
+      this.$router.push('/sev/booking/program/date/shop?store_id=' + this.storeId + '&classId=' + this.classId)
+      return
+    }
+
     if (this.programType === 'select') {
       this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
@@ -27,7 +33,6 @@ export default {
     } else if (this.programType === 'basic') {
       this.scheduleId = sessionStorage.getItem('scheduleId')
     }
-    this.contactNumber = sessionStorage.getItem('contactNumber')
     if (this.bookId) {
       // 수정
       this.getProgramBookInfo()
