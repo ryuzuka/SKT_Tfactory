@@ -25,6 +25,7 @@ export default {
     return {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
+      bookId: this.$route.query.book_id,
       selectedService: this.$route.query.selectedService,
       storeInfo: {},
       storeImageUrl: '',
@@ -106,7 +107,11 @@ export default {
               }
             })
           })
-          this.selectedDate = this.$moment(this.scheduleList[0]['START_YMDT']).format('YYYY.MM.DD')
+          if (this.bookId) {
+            this.selectedDate = this.$moment(this.bookInfo['DATE']).format('YYYY.MM.DD')
+          } else {
+            this.selectedDate = this.$moment(this.scheduleList[0]['START_YMDT']).format('YYYY.MM.DD')
+          }
           this.$forceUpdate()
           this.$nextTick(() => {
             this.changeProgramDate(this.selectedDate)
