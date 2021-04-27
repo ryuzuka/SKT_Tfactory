@@ -110,6 +110,22 @@
     margin:12px 0;
     @include logoImg($x:0, $y:-120px);
   }
+  &.notice{
+    padding: 12px 20px;
+    height: unset;
+    background-color: #3617ce;
+    color: #e8e8e8;
+    @include font-set14;
+    .btn-close{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url(~@/assets/images/main/btn-close.svg);
+      width: 16px;
+      height: 16px;
+    }
+  }
 }
 .contents {
   padding:56px 0 40px;
