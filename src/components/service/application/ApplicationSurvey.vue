@@ -21,6 +21,11 @@ export default {
     this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
     this.contactNumber = sessionStorage.getItem('contactNumber')
 
+    if (!this.contactNumber) {
+      this.$router.push('/sev/application?store_id=' + this.storeId + '&classId=' + this.classId)
+      return
+    }
+
     this.checkProgramBook()
     if (this.bookId) {
       this.getProgramBookInfo()
