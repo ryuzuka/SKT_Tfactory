@@ -1,6 +1,6 @@
 <template>
   <div class="wrap checkin">
-    <Header type="home" title="만족도 조사"></Header> <!-- 08.21 수정 -->
+    <Header type="back" title="만족도 조사"></Header> <!-- 08.21 수정 -->
     <satisfaction-Survey></satisfaction-Survey>
   </div>
 </template>

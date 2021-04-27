@@ -5,21 +5,25 @@
       <dd>
         <div class="rate">
           <div class="star-rate">
-            <span style="width:70%;"></span>
-            <input type="radio" name="star-rate">
-            <input type="radio" name="star-rate">
-            <input type="radio" name="star-rate">
-            <input type="radio" name="star-rate">
-            <input type="radio" name="star-rate">
+            <span :style="{width: score + '%'}"></span>
+            <input type="radio" name="star-rate" v-model="score" :value="20">
+            <input type="radio" name="star-rate" v-model="score" :value="40">
+            <input type="radio" name="star-rate" v-model="score" :value="60">
+            <input type="radio" name="star-rate" v-model="score" :value="80">
+            <input type="radio" name="star-rate" v-model="score" :value="100">
           </div>
         </div>
-        <p class="subtxt">많이 아쉬워요.</p>
+        <p class="subtxt" v-show="score === 20">많이 아쉬워요.</p>
+        <p class="subtxt" v-show="score === 40">아쉬워요.</p>
+        <p class="subtxt" v-show="score === 60">보통이에요.</p>
+        <p class="subtxt" v-show="score === 80">만족해요!</p>
+        <p class="subtxt" v-show="score === 100">최고예요!</p>
       </dd>
     </dl>
     <dl class="form-group">
       <dt>추가 의견을 말씀해주세요.</dt>
       <dd>
-        <textarea placeholder="작성해주신 의견은 공개되지 않으며 T Factory 내부에서만 활용됩니다."></textarea>
+        <textarea placeholder="작성해주신 의견은 공개되지 않으며 T Factory 내부에서만 활용됩니다." v-model="comment"></textarea>
       </dd>
     </dl>
   </section>
