@@ -1,11 +1,10 @@
 <template>
-  
   <div class="contents bottom-sticky" ref="contents">
-    <header class="header notice">
-      <p>T Factory는 모바일에 최적화되어 있습니다. 모바일 웹 또는 앱으로 접속하시는 것을 권장드립니다.</p>
-      <button class="btn-close">
-        <span class="blind">닫기</span>
-      </button>
+    <header class="header notice" v-if="!isMobile">
+        <p>T Factory는 모바일에 최적화되어 있습니다. 모바일 웹 또는 앱으로 접속하시는 것을 권장드립니다.</p>
+        <button class="btn-close" @click="isMobile = true">
+          <span class="blind">닫기</span>
+        </button>
     </header>
     <MainStore :scroll-top="scrollTop" v-if="menuName === 'store'"></MainStore>
     <MainProgram :scroll-top="scrollTop" v-else-if="menuName === 'program'"></MainProgram>
@@ -38,7 +37,8 @@ export default {
     return {
       scrollTop: 0,
       menuName: this.$route.params.menu || 'store',
-      mainIndex: -1
+      mainIndex: -1,
+      isMobile: false
     }
   },
   methods: {
@@ -75,6 +75,9 @@ export default {
         }
         this.menuName = menu
       }
+    },
+    resize () {
+      this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
     }
   },
   mounted () {
@@ -83,6 +86,10 @@ export default {
 
     window.addEventListener('scroll', e => {
       this.scrollTop = e.currentTarget.scrollY
+    })
+
+    window.addEventListener('resize', () => {
+      this.resize()
     })
   },
   created () {
