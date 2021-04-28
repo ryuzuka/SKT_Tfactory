@@ -158,8 +158,8 @@ export const cancelOnSiteCounseling = (bookId) => {
   })
 }
 
-export const surveySatisfaction = (bookId) => {
-  return axios.get(STORE_URL + '/satisfactionSurvey/register?BOOK_ID=' + bookId).then(response => {
+export const surveySatisfaction = (bookId, star, comment) => {
+  return axios.get(STORE_URL + '/satisfactionSurvey/register?BOOK_ID=' + bookId + '&STAR=' + star + '&RESPONSE=' + comment, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
