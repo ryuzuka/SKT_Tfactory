@@ -145,7 +145,7 @@ export default {
           STORE.modifyProgram(bookInfo).then(result => {
             this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
           }).catch(() => {
-            this.alretError()
+            this.alertError()
           })
         } else {
           // 신청
@@ -156,7 +156,7 @@ export default {
             if (err.response.data.RET_CODE === 18006) {
               this.alertAlreadyApply()
             } else {
-              this.alretError()
+              this.alertError()
             }
           })
         }
@@ -174,7 +174,7 @@ export default {
         }]
       })
     },
-    alretError () {
+    alertError () {
       this.$modal.show('dialog', {
         title: `오류가 발생했습니다.<br>문의 070-7470-0001`,
         buttons: [{
