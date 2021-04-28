@@ -81,9 +81,6 @@ export default {
     }
   },
   mounted () {
-    this.changeMenu(this.menuName)
-    this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
-
     window.addEventListener('scroll', e => {
       this.scrollTop = e.currentTarget.scrollY
     })
@@ -91,9 +88,12 @@ export default {
     window.addEventListener('resize', () => {
       this.resize()
     })
+
+    this.resize()
+    this.changeMenu(this.menuName)
+    this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
   },
   created () {
-    this.resize()
     this.$EventBus.$on('change-main-menu', menu => {
       this.changeMenu(menu)
     })
