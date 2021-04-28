@@ -158,6 +158,12 @@ export const cancelOnSiteCounseling = (bookId) => {
   })
 }
 
+export const surveySatisfaction = (bookId) => {
+  return axios.get(STORE_URL + '/satisfactionSurvey/register?BOOK_ID=' + bookId).then(response => {
+    return response.data
+  })
+}
+
 /** 03. 프로그램 관련 기능 **/
 export const getProgramBanner = () => {
   return axios.get(STORE_URL + '/rollingBanner/list?STORE_ID=' + process.env.FLAGSHIP_STORE_ID, COMMON.getHeader()).then(response => {
