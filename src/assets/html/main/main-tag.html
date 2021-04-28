@@ -1,34 +1,34 @@
 <section class="main-tag">
-  <h1 class="main-tit" ref="aniObj0" :class="{'ani-obj': aniObj[0]}">
+    <h1 class="main-tit" ref="aniObj0" :class="{'ani-obj': aniObj[0]}">
     <span>
-      <a v-if="nickname" class="name" @click.prevent="changeName">{{nickname}}</a>
-      <a v-else-if="userInfo.NAME" class="name" @click.prevent="changeName">{{userInfo.NAME}}</a>
+      <a v-if="nickname" class="name" @click.prevent="changeName">{{ nickname }}</a>
+      <a v-else-if="userInfo.NAME" class="name" @click.prevent="changeName">{{ userInfo.NAME }}</a>
       <a v-else class="name" @click.prevent="changeName">{{ String(userInfo['MDN']).substring(9, 13) }}</a>
       {{ $t('main.tag-title1-text1') }}
     </span>
-    <br><span><strong class="point-text">MY TAG</strong></span>
-  </h1>
-  <div class="qr">
-    <a @click.prevent="clickQR">
-      <qrcode-vue :value="oneTimeCertKey"></qrcode-vue>
-    </a>
-  </div>
-  <!-- tag -->
-  <div class="tag-wrap">
-    <div class="tag-header">
-      <div class="user">
-        <a v-if="myTag.length === 0" class="btn-survey" @click.prevent="openMyTag"
-           v-html="$t('main.tag-description')"></a>
-        <a v-if="myTag.length > 0" class="tags" @click.prevent="openMyTag">
-          <span v-for="tag in myTag" class="flag-type">{{tag.NAME}}</span>
+        <br><span><strong class="point-text">MY TAG</strong></span>
+    </h1>
+    <div class="qr">
+        <a @click.prevent="clickQR">
+            <qrcode-vue :value="oneTimeCertKey"></qrcode-vue>
         </a>
-      </div>
     </div>
-  </div>
+    <!-- tag -->
+    <div class="tag-wrap">
+        <div class="tag-header">
+            <div class="user">
+                <a v-if="myTag.length === 0" class="btn-survey" @click.prevent="openMyTag"
+                   v-html="$t('main.tag-description')"></a>
+                <a v-if="myTag.length > 0" class="tags" @click.prevent="openMyTag">
+                    <span v-for="tag in myTag" class="flag-type">{{ tag.NAME }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-  <!-- banner -->
-  <div class="noti">
-    <swiper v-if="hasNoti" :options="{
+    <!-- banner -->
+    <div class="noti">
+        <swiper v-if="hasNoti" :options="{
       slidesPerView: 1,
       spaceBetween: 20,
       autoplay: {
@@ -41,186 +41,203 @@
       }
     }" ref="notiSwiper">
 
-      <!-- 취향 서베이 유도 -->
-      <swiper-slide v-if="updateMyTag">
-        <a>
-          <p class="desc">#Tag 선택하시고<br> 맞춤 정보를 이용해보세요!</p>
-        </a>
-      </swiper-slide>
+            <!-- 취향 서베이 유도 -->
+            <swiper-slide v-if="updateMyTag">
+                <a>
+                    <p class="desc">#Tag 선택하시고<br> 맞춤 정보를 이용해보세요!</p>
+                </a>
+            </swiper-slide>
 
-      <!-- 오늘 예약 -->
-      <swiper-slide :key="booking.BOOK_ID" v-if="todayBooking.length > 0" v-for="booking in todayBooking">
-        <a @click.prevent="clickBookingDetail(booking.BOOK_ID, booking.TYPE)">
-          <div class="desc">
-            <span class="date">{{booking.DATE}} </span>
-            <span class="code">{{booking.STORE_NAME}} {{booking.ZONE_NAME}}</span>
-            <p v-if="booking.TYPE === 'counseling'">{{booking.COUNSELING_NAME}} [{{booking.BOOK_CODE}}]</p>
-            <p v-if="booking.TYPE === 'program'">{{booking.PROGRAM_CLASS_NAME}} [{{booking.BOOK_CODE}}]</p>
-          </div>
-        </a>
-      </swiper-slide>
+            <!-- 오늘 예약 -->
+            <swiper-slide :key="booking.BOOK_ID" v-if="todayBooking.length > 0" v-for="booking in todayBooking">
+                <a @click.prevent="clickBookingDetail(booking.BOOK_ID, booking.TYPE)">
+                    <div class="desc">
+                        <span class="date">{{ booking.DATE }} </span>
+                        <span class="code">{{ booking.STORE_NAME }} {{ booking.ZONE_NAME }}</span>
+                        <p v-if="booking.TYPE === 'counseling'">{{ booking.COUNSELING_NAME }}
+                            [{{ booking.BOOK_CODE }}]</p>
+                        <p v-if="booking.TYPE === 'program'">{{ booking.PROGRAM_CLASS_NAME }}
+                            [{{ booking.BOOK_CODE }}]</p>
+                    </div>
+                </a>
+            </swiper-slide>
 
-      <!-- T아이디 전환 -->
-      <swiper-slide v-if="mdnUserFlag">
-        <a href="#" @click.prevent="tidMigration">
-          <p class="desc">T아이디로 바꾸고<br>SK텔레콤의 모든 서비스를 이용해보세요!</p>
-        </a>
-      </swiper-slide>
+            <!-- T아이디 전환 -->
+            <swiper-slide v-if="mdnUserFlag">
+                <a href="#" @click.prevent="tidMigration">
+                    <p class="desc">T아이디로 바꾸고<br>SK텔레콤의 모든 서비스를 이용해보세요!</p>
+                </a>
+            </swiper-slide>
 
-      <!-- 다른날 예약 -->
-      <swiper-slide :key="booking.BOOK_ID" v-if="otherDayBooking.length > 0" v-for="booking in otherDayBooking">
-        <a @click.prevent="clickBookingDetail(booking.BOOK_ID, booking.TYPE)">
-          <div class="desc">
-            <span class="date">{{booking.DATE}} </span>
-            <span class="code">{{booking.STORE_NAME}} {{booking.ZONE_NAME}}</span>
-            <p v-if="booking.TYPE === 'counseling'">{{booking.COUNSELING_NAME}} [{{booking.BOOK_CODE}}]</p>
-            <p v-if="booking.TYPE === 'program'">{{booking.PROGRAM_CLASS_NAME}} [{{booking.BOOK_CODE}}]</p>          </div>
-        </a>
-      </swiper-slide>
+            <!-- 다른날 예약 -->
+            <swiper-slide :key="booking.BOOK_ID" v-if="otherDayBooking.length > 0" v-for="booking in otherDayBooking">
+                <a @click.prevent="clickBookingDetail(booking.BOOK_ID, booking.TYPE)">
+                    <div class="desc">
+                        <span class="date">{{ booking.DATE }} </span>
+                        <span class="code">{{ booking.STORE_NAME }} {{ booking.ZONE_NAME }}</span>
+                        <p v-if="booking.TYPE === 'counseling'">{{ booking.COUNSELING_NAME }}
+                            [{{ booking.BOOK_CODE }}]</p>
+                        <p v-if="booking.TYPE === 'program'">{{ booking.PROGRAM_CLASS_NAME }}
+                            [{{ booking.BOOK_CODE }}]</p></div>
+                </a>
+            </swiper-slide>
 
-      <!-- 사후 플랜 -->
-<!--      <swiper-slide>-->
-<!--        <a>-->
-<!--          <p class="desc" v-html="$t('main.tag-notice2')">구매하신 휴대폰을 더 잘 사용할 수 있는<br> 부가서비스를 확인해보세요!</p>-->
-<!--        </a>-->
-<!--      </swiper-slide>-->
+            <!-- 사후 플랜 -->
+            <!--      <swiper-slide>-->
+            <!--        <a>-->
+            <!--          <p class="desc" v-html="$t('main.tag-notice2')">구매하신 휴대폰을 더 잘 사용할 수 있는<br> 부가서비스를 확인해보세요!</p>-->
+            <!--        </a>-->
+            <!--      </swiper-slide>-->
 
-      <div class="swiper-pagination type2" slot="pagination"></div>
-    </swiper>
-  </div>
+            <div class="swiper-pagination type2" slot="pagination"></div>
+        </swiper>
+    </div>
 
-  <h2 class="main-tit sec" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
-    <span>{{ $t('main.tag-title2-text1') }} <strong class="point-text">T Factory</strong></span>
-  </h2>
-  <!-- tabs -->
-  <div class="tab-wrap">
-    <ul class="tabs-page">
-      <li :class="{'active': isTabActive[0]}"><a @click.prevent="clickTab(0)">{{ $t('main.tab-title1') }}</a></li>
-      <li :class="{'active': isTabActive[1]}"><a @click.prevent="clickTab(1)">{{ $t('main.tab-title2') }}</a></li>
-    </ul>
+    <h2 class="main-tit sec" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
+        <span>{{ $t('main.tag-title2-text1') }} <strong class="point-text">T Factory</strong></span>
+    </h2>
+    <!-- tabs -->
+    <div class="tab-wrap">
+        <ul class="tabs-page">
+            <li :class="{'active': isTabActive[0]}"><a @click.prevent="clickTab(0)">{{ $t('main.tab-title1') }}</a></li>
+            <li :class="{'active': isTabActive[1]}"><a @click.prevent="clickTab(1)">{{ $t('main.tab-title2') }}</a></li>
+        </ul>
 
-    <section class="recomm" v-if="isTabActive[0]">
-      <h3 class="blind">{{ $t('main.tab-title1') }}</h3>
-      <ul class="list-main">
-        <li v-for="recommend in recommendList">
-          <a :href="recommend.ZONE_LANDING_URL">
-            <div class="thumb"><img :src="recommend.ZONE_IMAGE_URL" alt=""></div>
-            <em>{{recommend.ZONE_NAME}}</em>
-            <p class="subtext">{{recommend.RECOMMEND}}</p>
-          </a>
-        </li>
-      </ul>
-    </section>
+        <section class="recomm" v-if="isTabActive[0]">
+            <h3 class="blind">{{ $t('main.tab-title1') }}</h3>
+            <ul class="list-main">
+                <li v-for="recommend in recommendList">
+                    <a :href="recommend.ZONE_LANDING_URL">
+                        <div class="thumb"><img :src="recommend.ZONE_IMAGE_URL" alt=""></div>
+                        <em>{{ recommend.ZONE_NAME }}</em>
+                        <p class="subtext">{{ recommend.RECOMMEND }}</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-    <section class="log" v-else-if="isTabActive[1]">
-      <h2 class="blind">{{ $t('main.tab-title2') }}</h2>
-      <div v-for="(date, dateIndex) in historyDate" class="log-history">
-        <button class="btn-log" :class="{active: !isActiveLog[dateIndex]}" @click.prevent="clickLog(dateIndex)">{{date}}
-          <span v-if="date === today" class="today">today</span></button>
-        <div class="log-inner" :class="{active: isActiveLog[dateIndex]}">
-          <!-- 21.01.12 수정 : 체험존 텍스트, 이미지 분리 및 타입별 수정 -->
-          <ul>
-            <!-- 체험존 -->
-            <li v-if="!history.DISABLE" v-for="history in historyList[date]">
-              <div class="thumb-zone">
-                <img v-if="history.ICON_IMAGE_URL" :src="history.ICON_IMAGE_URL" alt="">
-                <img v-else src="../../images/main/zone-default.svg" alt="">
-              </div>
-              <div class="detail">
-                <p v-if="history.EXP_CODE === 'EXP_TPA_DQR' && historyDqr[dateIndex] > 1">{{history.PET_NAME}} 외
-                  {{historyDqr[dateIndex] - 1}}개 구경했습니다.</p>
-                <p v-else-if="history.EXP_CODE === 'EXP_DCK_FVD' && historyFvd[dateIndex] > 1">{{history.PET_NAME}} 외
-                  {{historyFvd[dateIndex] - 1}}개 관심 상품으로 저장했습니다.</p>
-                <p v-else>{{history.MESSAGE}}</p>
-                <span class="time">{{history.TIME}}</span>
-              </div>
-              <span @click.prevent="clickLikeTimeline(history.TIMELINE_ID, history.LIKE_YN, date)" class="btn-favorite">
+        <section class="log" v-else-if="isTabActive[1]">
+            <h2 class="blind">{{ $t('main.tab-title2') }}</h2>
+            <div v-for="(date, dateIndex) in historyDate" class="log-history">
+                <button class="btn-log" :class="{active: !isActiveLog[dateIndex]}" @click.prevent="clickLog(dateIndex)">
+                    {{ date }}
+                    <span v-if="date === today" class="today">today</span></button>
+                <div class="log-inner" :class="{active: isActiveLog[dateIndex]}">
+                    <!-- 21.01.12 수정 : 체험존 텍스트, 이미지 분리 및 타입별 수정 -->
+                    <ul>
+                        <!-- 체험존 -->
+                        <li v-if="!history.DISABLE" v-for="history in historyList[date]">
+                            <div class="thumb-zone">
+                                <img v-if="history.ICON_IMAGE_URL" :src="history.ICON_IMAGE_URL" alt="">
+                                <img v-else src="../../images/main/zone-default.svg" alt="">
+                            </div>
+                            <div class="detail">
+                                <p v-if="history.EXP_CODE === 'EXP_TPA_DQR' && historyDqr[dateIndex] > 1">
+                                    {{ history.PET_NAME }} 외
+                                    {{ historyDqr[dateIndex] - 1 }}개 구경했습니다.</p>
+                                <p v-else-if="history.EXP_CODE === 'EXP_DCK_FVD' && historyFvd[dateIndex] > 1">
+                                    {{ history.PET_NAME }} 외
+                                    {{ historyFvd[dateIndex] - 1 }}개 관심 상품으로 저장했습니다.</p>
+                                <p v-else>{{ history.MESSAGE }}</p>
+                                <span class="time">{{ history.TIME }}</span>
+                            </div>
+                            <span @click.prevent="clickLikeTimeline(history.TIMELINE_ID, history.LIKE_YN, date)"
+                                  class="btn-favorite">
                 <input :checked="historyLike[history.TIMELINE_ID]" type="checkbox" id="favorite1">
                 <label for="favorite1" class="blind">{{ $t('prd.favorite') }}</label>
               </span>
-              <div v-on:click="goLandingURL(history.LANDING_URL)" v-if="history.EXP_CODE === 'EXP_TPA_DQR' || history.EXP_CODE === 'EXP_DCK_FVD'" class="log-banner">
-                <span class="name-prd">{{history.PET_NAME}}</span>
-                <div class="thumb"><img :src="history.IMAGE_URL" alt=""></div>
-              </div>
-              <div v-if="history.TYPE === 'text'" class="btn-wrap">
-                <a v-on:click="goLandingURL(history.LANDING_URL)" class="btn-basic small">{{history.BUTTON}}</a>
-              </div>
-<!--              <p class="desc">iPhone 12 Pro Max. 5G. A14 Bionic. Ceramic Shield. 프로급 카메라 시스템. LiDAR 스캐너. 야간 모드 인물 사진. Dolby Vision 녹화.</p>-->
-            </li>
+                            <div v-on:click="goLandingURL(history.LANDING_URL)"
+                                 v-if="history.EXP_CODE === 'EXP_TPA_DQR' || history.EXP_CODE === 'EXP_DCK_FVD'"
+                                 class="log-banner">
+                                <span class="name-prd">{{ history.PET_NAME }}</span>
+                                <div class="thumb"><img :src="history.IMAGE_URL" alt=""></div>
+                            </div>
+                            <div v-on:click="goLandingURL(history.LANDING_URL)"
+                                 v-if="history.TYPE === 'image' && history.EXP_CODE !== 'EXP_TPA_DQR' && history.EXP_CODE !== 'EXP_DCK_FVD'"
+                                 style="flex-direction: column"
+                                 class="log-banner">
+                               <div><img :src="history.IMAGE_URL" alt=""></div>
+                            </div>
+                            <div v-if="history.TYPE === 'text'" class="btn-wrap">
+                                <a v-on:click="goLandingURL(history.LANDING_URL)"
+                                   class="btn-basic small">{{ history.BUTTON }}</a>
+                            </div>
+                            <!--              <p class="desc">iPhone 12 Pro Max. 5G. A14 Bionic. Ceramic Shield. 프로급 카메라 시스템. LiDAR 스캐너. 야간 모드 인물 사진. Dolby Vision 녹화.</p>-->
+                        </li>
 
-            <!-- 이벤트 -->
-<!--            <li>-->
-<!--              <div class="thumb-zone">-->
-<!--                <img src="../../images/main/zone-default.svg" alt="">-->
-<!--              </div>-->
-<!--              <div class="detail">-->
-<!--                <p>이벤트 참여 쿠폰 받아가세요.</p>-->
-<!--                <span class="time">15:20</span>-->
-<!--                <span class="btn-favorite">-->
-<!--                  <input type="checkbox" id="favorite2">-->
-<!--                  <label for="favorite2" class="blind">{{ $t('prd.favorite') }}</label>-->
-<!--                </span>-->
-<!--              </div>-->
-<!--              <div class="log-banner img"> &lt;!&ndash; 통이미지 사용하는 경우 class img 추가 &ndash;&gt;-->
-<!--                <div class-thumb>-->
-<!--                  <img src="../../images/dummy/@timeline2.png" alt="덕후크루와 한판 승부! 숨은 아이폰 덕후를 찾아라! ">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="btn-wrap">-->
-<!--                <a href="#" class="btn-basic small">쿠폰함 가기</a>-->
-<!--              </div>-->
-<!--            </li>-->
+                        <!-- 이벤트 -->
+                        <!--            <li>-->
+                        <!--              <div class="thumb-zone">-->
+                        <!--                <img src="../../images/main/zone-default.svg" alt="">-->
+                        <!--              </div>-->
+                        <!--              <div class="detail">-->
+                        <!--                <p>이벤트 참여 쿠폰 받아가세요.</p>-->
+                        <!--                <span class="time">15:20</span>-->
+                        <!--                <span class="btn-favorite">-->
+                        <!--                  <input type="checkbox" id="favorite2">-->
+                        <!--                  <label for="favorite2" class="blind">{{ $t('prd.favorite') }}</label>-->
+                        <!--                </span>-->
+                        <!--              </div>-->
+                        <!--              <div class="log-banner img"> &lt;!&ndash; 통이미지 사용하는 경우 class img 추가 &ndash;&gt;-->
+                        <!--                <div class-thumb>-->
+                        <!--                  <img src="../../images/dummy/@timeline2.png" alt="덕후크루와 한판 승부! 숨은 아이폰 덕후를 찾아라! ">-->
+                        <!--                </div>-->
+                        <!--              </div>-->
+                        <!--              <div class="btn-wrap">-->
+                        <!--                <a href="#" class="btn-basic small">쿠폰함 가기</a>-->
+                        <!--              </div>-->
+                        <!--            </li>-->
 
-            <!-- 상담 -->
-<!--            <li>-->
-<!--              <div class="thumb-zone">-->
-<!--                <img src="../../images/main/zone-default.svg" alt="">-->
-<!--              </div>-->
-<!--              <div class="detail">-->
-<!--                <p>보안 상담을 받으셨어요.</p>-->
-<!--                <span class="time">15:20</span>-->
-<!--                <span class="btn-favorite">-->
-<!--                  <input type="checkbox" id="favorite3">-->
-<!--                  <label for="favorite3" class="blind">{{ $t('prd.favorite') }}</label>-->
-<!--                </span>-->
-<!--              </div>-->
+                        <!-- 상담 -->
+                        <!--            <li>-->
+                        <!--              <div class="thumb-zone">-->
+                        <!--                <img src="../../images/main/zone-default.svg" alt="">-->
+                        <!--              </div>-->
+                        <!--              <div class="detail">-->
+                        <!--                <p>보안 상담을 받으셨어요.</p>-->
+                        <!--                <span class="time">15:20</span>-->
+                        <!--                <span class="btn-favorite">-->
+                        <!--                  <input type="checkbox" id="favorite3">-->
+                        <!--                  <label for="favorite3" class="blind">{{ $t('prd.favorite') }}</label>-->
+                        <!--                </span>-->
+                        <!--              </div>-->
 
-<!--              &lt;!&ndash; 통이미지 사용시 &ndash;&gt;-->
-<!--              <div class="log-banner img">-->
-<!--                <div class="thumb">-->
-<!--                  <img src="../../images/main/counseling03.png" alt="친절하고 편리한 상담 보안상담">-->
-<!--                  &lt;!&ndash; 상담 유형-->
-<!--                  휴대폰상담 : counseling01.png-->
-<!--                  유선상담 : counseling02.png-->
-<!--                  보안상담 : counseling03.png-->
-<!--                  일반업무 상담 : counseling04.png-->
-<!--                  &ndash;&gt;-->
-<!--                </div>-->
-<!--              </div>-->
+                        <!--              &lt;!&ndash; 통이미지 사용시 &ndash;&gt;-->
+                        <!--              <div class="log-banner img">-->
+                        <!--                <div class="thumb">-->
+                        <!--                  <img src="../../images/main/counseling03.png" alt="친절하고 편리한 상담 보안상담">-->
+                        <!--                  &lt;!&ndash; 상담 유형-->
+                        <!--                  휴대폰상담 : counseling01.png-->
+                        <!--                  유선상담 : counseling02.png-->
+                        <!--                  보안상담 : counseling03.png-->
+                        <!--                  일반업무 상담 : counseling04.png-->
+                        <!--                  &ndash;&gt;-->
+                        <!--                </div>-->
+                        <!--              </div>-->
 
-<!--              &lt;!&ndash; 텍스트, 이미지 분리 &ndash;&gt;-->
-<!--              &lt;!&ndash;-->
-<!--              <div class="log-banner">-->
-<!--                <span class="name-counseling"><em>친절하고 편리한 상담</em>휴대폰 상담</span>-->
-<!--                <div class="thumb">-->
-<!--                  <img src="../../images/main/counseling.png" alt="">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              &ndash;&gt;-->
-<!--            </li>-->
-          </ul>
-          <!-- //21.01.12 수정 : 체험존 텍스트, 이미지 분리 -->
-        </div>
-<!--        <button class="btn-log" :class="{active: isActiveLog[1]}" @click.prevent="clickLog(1)">20.07.01 (수)</button>-->
-<!--        <div class="log-inner" :class="{active: isActiveLog[1]}">-->
-<!--        </div>-->
-      </div>
+                        <!--              &lt;!&ndash; 텍스트, 이미지 분리 &ndash;&gt;-->
+                        <!--              &lt;!&ndash;-->
+                        <!--              <div class="log-banner">-->
+                        <!--                <span class="name-counseling"><em>친절하고 편리한 상담</em>휴대폰 상담</span>-->
+                        <!--                <div class="thumb">-->
+                        <!--                  <img src="../../images/main/counseling.png" alt="">-->
+                        <!--                </div>-->
+                        <!--              </div>-->
+                        <!--              &ndash;&gt;-->
+                        <!--            </li>-->
+                    </ul>
+                    <!-- //21.01.12 수정 : 체험존 텍스트, 이미지 분리 -->
+                </div>
+                <!--        <button class="btn-log" :class="{active: isActiveLog[1]}" @click.prevent="clickLog(1)">20.07.01 (수)</button>-->
+                <!--        <div class="log-inner" :class="{active: isActiveLog[1]}">-->
+                <!--        </div>-->
+            </div>
 
-      <p v-if="JSON.stringify(historyList) === '{}'" class="no-content" v-html="$t('main.history-none')">
-      </p>
-      <div class="btn-wrap">
-        <a href="/shop/detail?store_id=19868" class="btn-basic small">{{ $t('main.store-information') }}</a>
-      </div>
-    </section>
-  </div>
+            <p v-if="JSON.stringify(historyList) === '{}'" class="no-content" v-html="$t('main.history-none')">
+            </p>
+            <div class="btn-wrap">
+                <a href="/shop/detail?store_id=19868" class="btn-basic small">{{ $t('main.store-information') }}</a>
+            </div>
+        </section>
+    </div>
 </section>
