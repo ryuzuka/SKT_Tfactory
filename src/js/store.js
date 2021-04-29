@@ -159,11 +159,14 @@ export const cancelOnSiteCounseling = (bookId) => {
 }
 
 export const surveySatisfaction = (bookId, star, comment) => {
-  let path = STORE_URL + '/satisfactionSurvey/register?BOOK_ID=' + bookId + '&STAR=' + star
-  if (comment) {
-    path += '&RESPONSE=' + comment
+  let request = {
+    BOOK_ID: parseInt(bookId),
+    STAR: parseInt(star)
   }
-  return axios.get(path, COMMON.getHeader()).then(response => {
+  if (comment) {
+    request.RESPONSE = comment
+  }
+  return axios.post(STORE_URL + '/satisfactionSurvey/register', request, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
