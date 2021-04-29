@@ -158,19 +158,6 @@ export const cancelOnSiteCounseling = (bookId) => {
   })
 }
 
-export const surveySatisfaction = (bookId, star, comment) => {
-  let request = {
-    BOOK_ID: parseInt(bookId),
-    STAR: parseInt(star)
-  }
-  if (comment) {
-    request.RESPONSE = comment
-  }
-  return axios.post(STORE_URL + '/satisfactionSurvey/register', request, COMMON.getHeader()).then(response => {
-    return response.data
-  })
-}
-
 /** 03. 프로그램 관련 기능 **/
 export const getProgramBanner = () => {
   return axios.get(STORE_URL + '/rollingBanner/list?STORE_ID=' + process.env.FLAGSHIP_STORE_ID, COMMON.getHeader()).then(response => {
@@ -236,6 +223,19 @@ export const cancelProgram = (bookId) => {
     BOOK_ID: bookId
   }
   return axios.post(STORE_URL + '/programBook/cancel', request, COMMON.getHeader()).then(response => {
+    return response.data
+  })
+}
+
+export const surveySatisfaction = (bookId, star, comment) => {
+  let request = {
+    BOOK_ID: parseInt(bookId),
+    REVIEW_SCORE: parseInt(star)
+  }
+  if (comment) {
+    request.REVIEW_COMMENT = comment
+  }
+  return axios.post(STORE_URL + '/programBook/review', request, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
