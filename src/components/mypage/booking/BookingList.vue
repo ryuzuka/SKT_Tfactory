@@ -27,6 +27,7 @@ let BOOKING_STATUS = {
   'canceled_by_operator': 'cancel', // 취소
   'completed': 'complete', // 종료
   'satisfaction_surveyed': 'complete', // 종료
+  'satisfaction_expired': 'complete', // 종료
   'end': 'complete', // 종료
   'counseling': 'counseling', // 상담중
   'no_show': 'not', // 미방문
