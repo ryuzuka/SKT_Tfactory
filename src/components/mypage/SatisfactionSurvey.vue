@@ -9,8 +9,14 @@ export default {
     return {
       bookId: parseInt(this.$route.query.bookId),
       star: 5,
-      comment: ''
+      comment: '',
+      programName: ''
     }
+  },
+  mounted () {
+    STORE.getPrgramBookInfo(this.bookId).then(result => {
+      this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
+    })
   },
   methods: {
     confirmSubmit () {
