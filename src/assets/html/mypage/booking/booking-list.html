@@ -42,8 +42,8 @@
       </router-link>
 
       <!-- 만족도 조사 -->
-      <button v-if="data.status === 'completed'" class="btn-line medium" @click="clickSatisfaction(data.BOOK_ID)">{{ $t('my.satisfaction-registration') }}</button>
-      <button v-if="data.status === 'satisfaction_surveyed'" class="btn-line medium disabled">{{ $t('my.satisfaction-completed') }}</button>
+      <button v-if="data.STATUS === 'completed'" class="btn-line medium" @click="clickSatisfaction(data.BOOK_ID)">{{ $t('my.satisfaction-registration') }}</button>
+      <button v-if="data.STATUS === 'satisfaction_surveyed'" class="btn-line medium disabled">{{ $t('my.satisfaction-completed') }}</button>
     </li>
   </ul>
   <div class="btn-wrap" v-if="isMore">
