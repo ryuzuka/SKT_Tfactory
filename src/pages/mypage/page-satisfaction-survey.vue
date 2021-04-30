@@ -2,6 +2,8 @@
   <div class="wrap checkin">
     <Header type="back" title="만족도 조사"></Header> <!-- 08.21 수정 -->
     <satisfaction-Survey></satisfaction-Survey>
+    <modals-container></modals-container>
+    <v-dialog></v-dialog>
   </div>
 </template>
 

@@ -213,7 +213,7 @@ export default {
             STORE.modifyProgram(bookInfo).then(result => {
               this.next(this.bookingType, result.BOOK_ID)
             }).catch(() => {
-              this.alretError()
+              this.alertError()
             })
           }
         } else {
@@ -226,7 +226,7 @@ export default {
             STORE.bookProgram(bookInfo).then(result => {
               this.$router.push('/sev/booking/program/complete?PROGRAM_BOOK_ID=' + result.BOOK_ID)
             }).catch(() => {
-              this.alretError()
+              this.alertError()
             })
           }
         }
@@ -482,7 +482,7 @@ export default {
         })
       })
     },
-    alretError () {
+    alertError () {
       this.$modal.show('dialog', {
         title: `오류가 발생했습니다.<br>문의 070-7470-0001`,
         buttons: [{

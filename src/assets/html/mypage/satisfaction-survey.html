@@ -1,23 +1,23 @@
 <div class="contents bottom-sticky" ref="contents">
   <section class="satisfaction-survey">
     <dl class="form-group">
-      <dt class="subtit" style="padding: 0;">스마트폰 TMI 어떠셨나요?</dt>
+      <dt class="subtit" style="padding: 0;">{{ programName }} 어떠셨나요?</dt>
       <dd>
         <div class="rate">
           <div class="star-rate">
-            <span :style="{width: score + '%'}"></span>
-            <input type="radio" name="star-rate" v-model="score" :value="20">
-            <input type="radio" name="star-rate" v-model="score" :value="40">
-            <input type="radio" name="star-rate" v-model="score" :value="60">
-            <input type="radio" name="star-rate" v-model="score" :value="80">
-            <input type="radio" name="star-rate" v-model="score" :value="100">
+            <span :style="{width: (20 * star) + '%'}"></span>
+            <input type="radio" name="star-rate" v-model="star" :value="1">
+            <input type="radio" name="star-rate" v-model="star" :value="2">
+            <input type="radio" name="star-rate" v-model="star" :value="3">
+            <input type="radio" name="star-rate" v-model="star" :value="4">
+            <input type="radio" name="star-rate" v-model="star" :value="5">
           </div>
         </div>
-        <p class="subtxt" v-show="score === 20">많이 아쉬워요.</p>
-        <p class="subtxt" v-show="score === 40">아쉬워요.</p>
-        <p class="subtxt" v-show="score === 60">보통이에요.</p>
-        <p class="subtxt" v-show="score === 80">만족해요!</p>
-        <p class="subtxt" v-show="score === 100">최고예요!</p>
+        <p class="subtxt" v-show="star === 1">많이 아쉬워요.</p>
+        <p class="subtxt" v-show="star === 2">아쉬워요.</p>
+        <p class="subtxt" v-show="star === 3">보통이에요.</p>
+        <p class="subtxt" v-show="star === 4">만족해요!</p>
+        <p class="subtxt" v-show="star === 5">최고예요!</p>
       </dd>
     </dl>
     <dl class="form-group">
@@ -30,7 +30,7 @@
 
   <!-- button set -->
   <div class="btn-wrap sticky">
-      <a href="" class="btn-solid" target="_blank">제출</a>
+      <a href="" class="btn-solid" target="_blank" @click.prevent="confirmSubmit">제출</a>
   </div>
   <!-- //button set -->
 </div>

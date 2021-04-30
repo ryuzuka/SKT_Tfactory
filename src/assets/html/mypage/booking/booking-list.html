@@ -6,12 +6,12 @@
           <span class="flag-solid2" v-if="data.status === 'apply'">{{ $t('sev.apply-complete') }}</span>                              <!-- apply: 신청 완료 -->
           <span class="flag-solid2" v-else-if="data.status === 'success'">{{ $t('sev.booking-complete') }}</span>                     <!-- ordered, operator_assigned: 예약 완료 -->
           <span class="flag-solid5" v-else-if="data.status === 'cancel'">{{ $t('comm.cancel') }}</span>                               <!-- canceled: 취소 -->
-          <span class="flag-solid3" v-else-if="data.status === 'complete' || data.status === 'end'">{{ $t('sev.end') }}</span>        <!-- completed, end: 종료 -->
+          <span class="flag-solid3" v-else-if="data.status === 'complete'">{{ $t('sev.end') }}</span>                                 <!-- completed, end, satisfaction_surveyed: 종료 -->
           <span class="flag-solid3" v-else-if="data.status === 'counseling'">{{ $t('sev.doing-counseling') }}</span>                  <!-- counseling: 상담중 -->
           <span class="flag-solid5" v-else-if="data.status === 'not'">{{ $t('sev.not-visit') }}</span>                                <!-- no_show: 미방문 -->
-          <span class="flag-solid5" v-else-if="data.status === 'standby'">{{ $t('sev.waiting') }}</span>                              <!-- : 대기 -->
-          <span class="flag-solid2" v-else-if="data.status === 'selected'">{{ $t('sev.winning') }}</span>                             <!-- : 당첨 -->
-          <span class="flag-solid5" v-else-if="data.status === 'not_selected'">{{ $t('sev.not-drawn') }}</span>                       <!-- : 미당첨 -->
+          <span class="flag-solid5" v-else-if="data.status === 'standby'">{{ $t('sev.waiting') }}</span>                              <!-- standby: 대기 -->
+          <span class="flag-solid2" v-else-if="data.status === 'selected'">{{ $t('sev.winning') }}</span>                             <!-- selected: 당첨 -->
+          <span class="flag-solid5" v-else-if="data.status === 'not_selected'">{{ $t('sev.not-drawn') }}</span>                       <!-- not_selected: 미당첨 -->
 
           <template v-if="data.type === 'program'">{{ $t('sev.booking-program') }}<i></i></template>                                  <!-- 프로그램 -->
           <template v-if="data.type === 'experience'">{{ $t('sev.booking-experience') }}<i></i></template>                            <!-- 체험존 -->
@@ -36,25 +36,17 @@
 
           <dt v-if="data.type === 'program'">프로그램시 일시</dt>
           <dt v-else-if="data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-date') }}</dt>
-          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-application-date') }}</dt> <!-- 06.30 문구 수정 -->
+          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-application-date') }}</dt>
           <dd>{{data.date}}</dd>
         </dl>
       </router-link>
 
-      <!-- 21.03.30 추가 : 만족도 조사 -->
-      <!-- 설문조사 등록 -->
-      <!-- <button class="btn-line medium">{{ $t('my.satisfaction-registration') }}</button> -->
-
-      <!-- 설문조사 완료 -->
-      <!-- <button class="btn-line medium disabled">{{ $t('my.satisfaction-completed') }}</button> -->
-      <!-- //21.03.30 추가 -->
+      <!-- 만족도 조사 -->
+      <button v-if="data.STATUS === 'completed'" class="btn-line medium" @click="clickSatisfaction(data.BOOK_ID)">만족도 조사 등록</button>
+      <button v-else-if="data.STATUS === 'satisfaction_surveyed'" class="btn-line medium disabled">만족도 조사 완료</button>
+      <button v-else-if="data.STATUS === 'satisfaction_expired'" class="btn-line medium disabled">만족도 조사 기간 만료</button>
     </li>
   </ul>
-  <br>
-<!--  <p style="float: right; font-size: 12px; color: #787878;">-->
-<!--    <router-link to="/useterm"><a class="btn-link" style="padding-right: 5px">서비스이용약관</a></router-link>-->
-<!--    <a style="margin-right:10px" href="https://privacy.sktelecom.com/view.do?ctg=policy&name=policy" class="btn-link">개인정보처리방침</a>-->
-<!--  </p>-->
   <div class="btn-wrap" v-if="isMore">
     <a href="#" class="btn-more" v-if="listData.length > 0" @click.prevent="clickMore">{{ $t('comm.more') }}</a>
   </div>

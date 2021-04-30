@@ -4,8 +4,11 @@
 import * as STORE from '../../../js/store.js'
 
 /**
+ * apply: '신청 완료',
  * ordered: '예약 완료',
  * canceled: '취소',
+ * completed, end: '종료',
+ * satisfaction_surveyed: '만족도 조사 완료',
  * canceled_by_operator: '취소(관리자)',
  * operator_assigned: '상담원 배정',
  * counseling: '상담중',
@@ -23,6 +26,8 @@ let BOOKING_STATUS = {
   'canceled': 'cancel', // 취소
   'canceled_by_operator': 'cancel', // 취소
   'completed': 'complete', // 종료
+  'satisfaction_surveyed': 'complete', // 종료
+  'satisfaction_expired': 'complete', // 종료
   'end': 'complete', // 종료
   'counseling': 'counseling', // 상담중
   'no_show': 'not', // 미방문
@@ -62,6 +67,9 @@ export default {
           this.isMore = false
         }
       })
+    },
+    clickSatisfaction (bookId) {
+      this.$router.push('/my/satisfaction?bookId=' + bookId)
     }
   },
   mounted () {
