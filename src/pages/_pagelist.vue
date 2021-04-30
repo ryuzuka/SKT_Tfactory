@@ -317,6 +317,10 @@
               <div class="date"><span>4.29</span></div>
             </li>
             <li class="pagelist-item">
+              <router-link class="link" to='/experience/program31'>Stage Q 참여 인증 이벤트</router-link>
+              <div class="date"><span>4.29</span></div>
+            </li>
+            <li class="pagelist-item">
               <router-link class="link" to='/experience/program31'>도전하라 stage Q</router-link>
               <div class="date"><span>4.29</span></div>
             </li>
