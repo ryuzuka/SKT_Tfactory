@@ -1,4 +1,4 @@
-<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+<div class="contents sticky" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class30-slide1.jpg" alt="">
@@ -58,7 +58,8 @@
   <!-- //details -->
   <!-- button set -->
   <div class="btn-wrap sticky">
-    <a href="" class="btn-solid">Q레벨 테스트하기</a>
+    <a v-if="isLogin" href="http://www.stage-q.co.kr/" target="_blank" class="btn-solid">Q레벨 테스트하기</a>
+    <button v-else @click="login" class="btn-solid">Q레벨 테스트하기</button>
   </div>
   <!-- //button set -->
 </div>
