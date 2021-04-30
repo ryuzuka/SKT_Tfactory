@@ -240,19 +240,6 @@ export const surveySatisfaction = (bookId, star, comment) => {
   })
 }
 
-export const surveySatisfaction = (bookId, star, comment) => {
-  let request = {
-    BOOK_ID: parseInt(bookId),
-    REVIEW_SCORE: parseInt(star)
-  }
-  if (comment) {
-    request.REVIEW_COMMENT = comment
-  }
-  return axios.post(STORE_URL + '/programBook/review', request, COMMON.getHeader()).then(response => {
-    return response.data
-  })
-}
-
 /* 공지사항 */
 export const getPopUpContent = (storeId) => {
   return axios.get(ADMIN_URL + '/popup/now?STORE_ID=' + process.env.MYTAG_STORE_ID).then(response => {
