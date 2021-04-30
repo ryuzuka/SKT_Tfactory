@@ -775,6 +775,9 @@
           font-weight:$fw-bold;
         }
         em { text-decoration:underline; }
+        span{
+          font-family: 'Noto Sans KR';
+        }
       }
       .thumb { margin:12px 0; }
       .notice {
