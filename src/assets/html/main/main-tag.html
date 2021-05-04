@@ -153,10 +153,16 @@
                                 <div class="thumb"><img :src="history.IMAGE_URL" alt=""></div>
                             </div>
                             <div v-on:click="goLandingURL(history.LANDING_URL)"
+                                 v-if="history.TYPE === 'image' && history.EXP_CODE !== 'EXP_TPA_DQR' && history.EXP_CODE !== 'EXP_DCK_FVD'&& history.LANDING_URL"
+                                 style="flex-direction: column"
+                                 class="log-banner">
+                                <div><img :src="history.IMAGE_URL" alt=""></div>
+                            </div>
+                            <div
                                  v-if="history.TYPE === 'image' && history.EXP_CODE !== 'EXP_TPA_DQR' && history.EXP_CODE !== 'EXP_DCK_FVD'"
                                  style="flex-direction: column"
                                  class="log-banner">
-                               <div><img :src="history.IMAGE_URL" alt=""></div>
+                                <div><img :src="history.IMAGE_URL" alt=""></div>
                             </div>
                             <div v-if="history.TYPE === 'text'" class="btn-wrap">
                                 <a v-on:click="goLandingURL(history.LANDING_URL)"
