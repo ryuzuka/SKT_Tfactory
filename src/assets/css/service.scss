@@ -329,7 +329,7 @@
         width: 82.233vw;
       }
       dt{
-        padding-top: 20px;
+        padding-top: 28px;
         @include font-set16;
       }
       dd{
@@ -337,6 +337,12 @@
         padding: 0;
         label[for^="rdo1"]{
           color: #787878;
+        }
+        input[type=text]{
+          padding: 11px 16px 11px 15px
+        }
+        .btn-dropdown{
+          padding: 11px 16px  11px 15px
         }
       }
       .list-option{
