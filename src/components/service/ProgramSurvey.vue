@@ -20,10 +20,10 @@ export default {
   },
   mounted () {
     this.contactNumber = sessionStorage.getItem('contactNumber')
-    // if (!this.contactNumber) {
-    //   this.$router.push('/sev/booking/program/date/shop?store_id=' + this.storeId + '&classId=' + this.classId)
-    //   return
-    // }
+    if (!this.contactNumber) {
+      this.$router.push('/sev/booking/program/date/shop?store_id=' + this.storeId + '&classId=' + this.classId)
+      return
+    }
 
     if (this.programType === 'select') {
       this.attendeeNum = parseInt(sessionStorage.getItem('attendeeNum'))
