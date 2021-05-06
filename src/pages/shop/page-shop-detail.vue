@@ -24,7 +24,11 @@
     <Store19 v-else-if="storeId === 'store19'"></Store19>
     <Store20 v-else-if="storeId === 'store20'"></Store20>
 
-    <Footer></Footer> <!-- 21.01.08 추가 -->
+    <!--
+      21.01.08 추가
+      CREW TOUR(store20) - footer 삭제
+    -->
+    <Footer v-if="storeId !== 'store20'"></Footer>
 
     <modals-container></modals-container>
     <v-dialog></v-dialog>
