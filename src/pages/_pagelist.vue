@@ -321,7 +321,7 @@
               <div class="date"><span>4.29</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program31'>도전하라 stage Q</router-link>
+              <router-link class="link" to='/experience/program32'>도전하라 stage Q</router-link>
               <div class="date"><span>4.29</span></div>
             </li>
           </ul>

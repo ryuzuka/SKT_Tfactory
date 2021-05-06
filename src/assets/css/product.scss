@@ -796,6 +796,34 @@
         }
       }
     }
+    .list-program {
+      &:after { @include clearer; }
+      li {
+        float:left;
+        width:calc((100% - 8px) / 2);
+        &:nth-of-type(odd) { clear:left; }
+        &:nth-of-type(even) { margin-left:8px; }
+        &:nth-of-type(n+3) { margin-top:32px; }
+      }
+      .thumb { margin-bottom:12px; }
+      .cate {
+        @include font-set12;
+        span {
+          margin-right:6px;
+          color:$secondary;
+          font-weight:$fw-medium;
+          text-transform:uppercase;
+        }
+        & + .tit { margin-bottom:4px; }
+      }
+      .tit {
+        @include ellipse(2);
+        margin:2px 0;
+        @include font-set16;
+        font-weight:$fw-bold;
+      }
+      .subtext { @include font-set12; }
+    }
   }
   .btn-link-point {
     display:inline-block;
