@@ -3,19 +3,34 @@
 <script>
 import * as STORE from '../../js/store.js'
 import _ from 'lodash'
+import UiSelect from '../../ui/UiSelect'
 
 export default {
   name: 'ProgramSurvey',
+  components: {
+    UiSelect
+  },
   data () {
     return {
       storeId: this.$route.query.store_id,
       classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
       programType: this.$route.query.type,
+      isCrewTour: Boolean(this.$route.query.crew_tour),
       questionList: [],
       scheduleId: '',
       attendeeNum: '',
-      contactNumber: ''
+      contactNumber: '',
+      crewType: 0,
+      crewName: '',
+      attendance: 1,
+      tourType: 0,
+      crewTourSurvey: [
+        {RESPONSE: [0]},
+        {RESPONSE: ''},
+        {RESPONSE: [1]},
+        {RESPONSE: [0]}
+      ]
     }
   },
   mounted () {
@@ -85,31 +100,36 @@ export default {
         }]
       })
     },
-    clickApplicationButton () {
-      let BASIC_SURVEY_RESPONSE = []
+    clickApplicationButton (type) {
       let over200Flag = false
 
-      if (this.questionList) {
-        this.questionList.forEach(question => {
-          if (JSON.stringify(question.ANSWER).length > 202) {
-            over200Flag = true
-            this.canNotWriteOver200Error()
-          }
+      if (type === 'crewTour') {
+        console.log(this.crewTourSurvey)
+      } else {
+        let BASIC_SURVEY_RESPONSE = []
 
-          if (question.ANSWER.length === 0) {
-            question.ANSWER = ''
-          }
-          let answer = {
-            'BASIC_SURVEY_QUESTION_ID': question.BASIC_SURVEY_QUESTION_ID,
-            'RESPONSE': typeof (question.ANSWER) === 'object' ? JSON.stringify(question.ANSWER) : question.ANSWER
-          }
-          BASIC_SURVEY_RESPONSE.push(answer)
-        })
+        if (this.questionList) {
+          this.questionList.forEach(question => {
+            if (JSON.stringify(question.ANSWER).length > 202) {
+              over200Flag = true
+              this.canNotWriteOver200Error()
+            }
+
+            if (question.ANSWER.length === 0) {
+              question.ANSWER = ''
+            }
+            let answer = {
+              'BASIC_SURVEY_QUESTION_ID': question.BASIC_SURVEY_QUESTION_ID,
+              'RESPONSE': typeof (question.ANSWER) === 'object' ? JSON.stringify(question.ANSWER) : question.ANSWER
+            }
+            BASIC_SURVEY_RESPONSE.push(answer)
+          })
+        }
       }
 
       if (!over200Flag) {
-        this.$store.state.constants.COUNSELING.BASIC_SURVEY_RESPONSE = BASIC_SURVEY_RESPONSE
-        this.applyProgram(BASIC_SURVEY_RESPONSE)
+        // this.$store.state.constants.COUNSELING.BASIC_SURVEY_RESPONSE = BASIC_SURVEY_RESPONSE
+        // this.applyProgram(BASIC_SURVEY_RESPONSE)
       }
     },
     applyProgram (surveyResponse) {
@@ -129,7 +149,6 @@ export default {
             }
           }]
         })
-
         return
       }
 
@@ -198,6 +217,11 @@ export default {
           }
         }]
       })
+    },
+    changeAttendType (value) {
+      if (value === 0) {
+        this.crewTourSurvey[1].RESPONSE = ''
+      }
     }
   }
 }

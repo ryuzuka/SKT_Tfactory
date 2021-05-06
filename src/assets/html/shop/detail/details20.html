@@ -1,4 +1,4 @@
-<div class="contents main" ref="contents">
+<div class="contents main bottom-sticky" ref="contents">
   <h1 class="blind">{{ $t('shop.shop-detail') }}</h1>
   <div class="top-vis">
     <h2 class="main-tit zone"><strong class="point-text">Crew Tour</strong></h2>
@@ -14,6 +14,6 @@
     <div class="thumb"><img src="../../../images/main/crewTour.png" alt=""></div>
   </div>
   <div class="btn-wrap sticky">
-    <a :href="'tel:07074700003'" class="btn-solid">크루투어 예약</a>
+    <button class="btn-solid" @click.prevent="reserve">크루투어 예약</button>
   </div>
 </div>
