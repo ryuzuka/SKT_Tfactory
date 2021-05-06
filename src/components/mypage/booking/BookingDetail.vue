@@ -49,7 +49,8 @@ export default {
   methods: {
     showCancelSuccessDialog () {
       this.$modal.show('dialog', {
-        title: this.$t('my.alert-cancel-booking-complete'),
+        // title: this.$t('my.alert-cancel-booking-complete'),
+        title: '취소가 완료되었습니다.',
         buttons: [{
           title: this.$t('comm.yes'),
           handler: () => {
@@ -85,7 +86,8 @@ export default {
     },
     clickCancel () {
       this.$modal.show('dialog', {
-        title: this.$t('my.alert-cancel-booking'),
+        // title: this.$t('my.alert-cancel-booking'),
+        title: '취소하시겠습니까?',
         buttons: [{
           title: this.$t('comm.yes'),
           handler: () => {
