@@ -1,28 +1,27 @@
 <div class="contents bottom-sticky" ref="contents">
+  <!-- 크루투어 -->
   <section v-if="isCrewTour" class="booking-survey">
     <p class="subtxt">원활한 투어 진행을 위한 사전 질문입니다.</p>
     <dl class="form-group">
       <dt style="padding: 0;">참여 형태</dt>
       <dd>
-        <input type="radio" name="rdo1" id="rdo1-1" v-model="crewTourSurvey[0].RESPONSE[0]" :value="0" @change="changeAttendType(0)"><label for="rdo1-1">개인</label>
-        <input type="radio" name="rdo1" id="rdo1-2" v-model="crewTourSurvey[0].RESPONSE[0]" :value="1" @change="changeAttendType(1)"><label for="rdo1-2">단체</label>
+        <input type="radio" name="rdo1" id="rdo1-1" v-model="attendType" :value="0" @change="changeAttendType(0)"><label for="rdo1-1">개인</label>
+        <input type="radio" name="rdo1" id="rdo1-2" v-model="attendType" :value="1" @change="changeAttendType(1)"><label for="rdo1-2">단체</label>
       </dd>
     </dl>
-    <dl class="form-group" v-show="crewTourSurvey[0].RESPONSE[0] === 1">
+    <dl class="form-group" v-show="attendType === 1">
       <dt>단체명</dt>
       <dd class="input-box">
-        <input type="text" maxlength="20" placeholder="소속 단체명을 입력해주세요. (최대 20자)" v-model="crewTourSurvey[1].RESPONSE">
+        <input type="text" maxlength="20" placeholder="소속 단체명을 입력해주세요. (최대 20자)" v-model="crewName" @change="changeCrewName">
       </dd>
     </dl>
     <dl class="form-group">
       <dt>참석 인원</dt>
-      <dd data-v-8f97b1fe="" class="dropdown">
+      <dd class="dropdown">
         <ui-select
-          v-model="crewTourSurvey[2].RESPONSE[0]"
-          :data="[
-              {text: '1', value: 1},
-              {text: '2', value: 2},
-            ]"
+          v-model="attendance"
+          :data="attendanceData"
+          @change="changeAttendance"
         ></ui-select>
       </dd>
     </dl>
@@ -31,20 +30,24 @@
       <dd>
         <ul class="list-option col3">
           <li>
-            <input type="radio" name="option" id="option1" v-model="crewTourSurvey[3].RESPONSE[0]" :value="0">
+            <input type="radio" name="option" id="option1" v-model="tourType" :value="0">
             <label for="option1"><span>캐주얼</span><br>당일 투어 팀의<br>특색에 맞게</label>
           </li>
           <li>
-            <input type="radio" name="option" id="option2" v-model="crewTourSurvey[3].RESPONSE[0]" :value="1">
+            <input type="radio" name="option" id="option2" v-model="tourType" :value="1">
             <label for="option2"><span>포멀</span><br>T Factory의 A to Z를 <br>단계별로</label>
           </li>
         </ul>
       </dd>
     </dl>
     <div class="btn-wrap sticky">
-      <a href="" class="btn-solid" target="_blank" @click.prevent="clickApplicationButton('crewTour')">신청</a>
+      <a href="" class="btn-solid" target="_blank" @click.prevent="clickApplicationButton('crewTour')">
+        {{ bookId ? '수정' : '신청' }}
+      </a>
     </div>
   </section>
+
+  <!-- 기초 설문 -->
   <div v-else class="row">
     <p class="texts-req">프로그램 신청을 위해 아래 항목에 모두 답변해주세요. (필수)</p>
     <ol class="list-survey">
