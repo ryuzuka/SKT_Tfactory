@@ -32,7 +32,7 @@ export default {
           _.forEach(result['PROGRAM_CLASS'], program => {
             status = program['STATUS']
           })
-          if (status === 'apply') {
+          if (status === 'apply' || status === 'ordered') {
             this.isApply = true
           }
         })

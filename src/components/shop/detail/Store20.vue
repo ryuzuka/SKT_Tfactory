@@ -25,7 +25,7 @@ export default {
           _.forEach(result['PROGRAM_CLASS'], program => {
             status = program['STATUS']
           })
-          if (status === 'apply') {
+          if (status === 'ordered') {
             this.isApply = true
           }
         })
@@ -51,7 +51,7 @@ export default {
           // 이미 신청하신 프로그램입니다.
           this.alertAlreadyApply()
         } else {
-          this.$router.push('/sev/booking/program/date/shop?crew_tour=true&store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
+          this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
         }
       } else {
         localStorage.setItem('previous_url', this.$route.path + '?classId=' + this.classId)

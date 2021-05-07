@@ -27,7 +27,6 @@ export default {
       classId: this.$route.query.classId,
       bookId: this.$route.query.book_id,
       selectedService: this.$route.query.selectedService,
-      isCrewTour: Boolean(this.$route.query.crew_tour),
       storeInfo: {},
       storeImageUrl: '',
       counselingList: [],
@@ -219,14 +218,10 @@ export default {
           }
         } else {
           bookInfo.STORE_ID = parseInt(this.storeId)
-          if (this.selectedService.SURVEY_YN) {
+          if (this.isSurvey) {
             sessionStorage.setItem('scheduleId', this.selectedProgram)
             sessionStorage.setItem('contactNumber', '010' + this.contactNumber)
-            let path = '/sev/programSurvey?type=basic&store_id=' + this.storeId + '&classId=' + this.classId
-            if (this.isCrewTour) {
-              path += '&crew_tour=true'
-            }
-            this.$router.push(path)
+            this.$router.push('/sev/programSurvey?type=basic&store_id=' + this.storeId + '&classId=' + this.classId)
           } else {
             STORE.bookProgram(bookInfo).then(result => {
               this.$router.push('/sev/booking/program/complete?PROGRAM_BOOK_ID=' + result.BOOK_ID)
