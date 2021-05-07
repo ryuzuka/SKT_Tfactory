@@ -16,21 +16,25 @@ export default {
       classId: this.$route.query.classId,
       bookId: this.$route.query.bookId,
       programType: this.$route.query.type,
-      isCrewTour: Boolean(this.$route.query.crew_tour),
+      isCrewTour: Boolean(this.$route.query.crewTour),
       questionList: [],
       scheduleId: '',
       attendeeNum: '',
       contactNumber: '',
-      crewType: 0,
+      attendType: 0,
       crewName: '',
-      attendance: 1,
+      prevCrewName: '',
       tourType: 0,
-      crewTourSurvey: [
-        {RESPONSE: [0]},
-        {RESPONSE: ''},
-        {RESPONSE: [1]},
-        {RESPONSE: [0]}
-      ]
+      attendance: '0',
+      prevAttendance: ['0', '0'],
+      attendanceData: []
+    }
+  },
+  created () {
+    /** 크루투어 **/
+    if (parseInt(this.classId) === 94) {
+      this.isCrewTour = true
+      this.setAttendanceData(this.attendType)
     }
   },
   mounted () {
@@ -57,6 +61,39 @@ export default {
     }
   },
   methods: {
+    changeAttendType (type) {
+      if (type === 0) {
+        this.crewName = ''
+      } else if (type === 1) {
+        this.crewName = this.prevCrewName
+      }
+      this.attendance = this.prevAttendance[type]
+      this.setAttendanceData(type)
+    },
+    changeCrewName () {
+      this.prevCrewName = this.crewName
+    },
+    changeAttendance () {
+      this.prevAttendance[this.attendType] = this.attendance
+    },
+    setAttendanceData (type) {
+      let data = []
+
+      let maxAttendance = 0
+      if (type === 0) {
+        maxAttendance = 2
+      } else if (type === 1) {
+        maxAttendance = this.questionList[2]['CHOICE'].length
+      }
+      for (let i = 0; i < maxAttendance; ++i) {
+        if (i === 0) {
+          data[i] = {text: String(i + 1), value: String(i), selected: true}
+        } else {
+          data[i] = {text: String(i + 1), value: String(i)}
+        }
+      }
+      this.attendanceData = data
+    },
     getSurveyQuestions () {
       STORE.getQuestions(this.classId, 'program').then(result => {
         this.questionList = result['QUESTIONS']
@@ -76,17 +113,27 @@ export default {
         }
 
         this.questionList = this.programBookInfo['BASIC_SURVEY']
-        this.questionList.forEach(question => {
-          if (question['QUESTION_TYPE'] === 'essay') {
-            question.ANSWER = question.RESPONSE
-          } else {
-            if (question['QUESTION_TYPE'] === 'choice') {
-              question.ANSWER = parseInt(question.RESPONSE)
-            } else if (question['QUESTION_TYPE'] === 'multiple_choice') {
-              question.ANSWER = JSON.parse(question.RESPONSE)
+
+        if (this.isCrewTour) {
+          this.attendType = parseInt(this.questionList[0]['RESPONSE'])
+          this.crewName = this.questionList[1]['RESPONSE']
+          this.attendance = this.questionList[2]['RESPONSE']
+          this.prevAttendance[this.attendType] = this.attendance
+          this.tourType = parseInt(this.questionList[3]['RESPONSE'])
+          this.setAttendanceData(this.attendType)
+        } else {
+          this.questionList.forEach(question => {
+            if (question['QUESTION_TYPE'] === 'essay') {
+              question.ANSWER = question.RESPONSE
+            } else {
+              if (question['QUESTION_TYPE'] === 'choice') {
+                question.ANSWER = parseInt(question.RESPONSE)
+              } else if (question['QUESTION_TYPE'] === 'multiple_choice') {
+                question.ANSWER = JSON.parse(question.RESPONSE)
+              }
             }
-          }
-        })
+          })
+        }
       })
     },
     canNotWriteOver200Error () {
@@ -101,20 +148,31 @@ export default {
       })
     },
     clickApplicationButton (type) {
+      let BASIC_SURVEY_RESPONSE = []
       let over200Flag = false
 
-      if (type === 'crewTour') {
-        console.log(this.crewTourSurvey)
-      } else {
-        let BASIC_SURVEY_RESPONSE = []
-
-        if (this.questionList) {
+      if (this.questionList) {
+        if (type === 'crewTour') {
+          this.questionList.forEach((question, index) => {
+            BASIC_SURVEY_RESPONSE[index] = {
+              BASIC_SURVEY_QUESTION_ID: question.BASIC_SURVEY_QUESTION_ID
+            }
+            if (index === 0) {
+              BASIC_SURVEY_RESPONSE[index].RESPONSE = this.attendType
+            } else if (index === 1) {
+              BASIC_SURVEY_RESPONSE[index].RESPONSE = this.crewName
+            } else if (index === 2) {
+              BASIC_SURVEY_RESPONSE[index].RESPONSE = parseInt(this.attendance)
+            } else if (index === 3) {
+              BASIC_SURVEY_RESPONSE[index].RESPONSE = this.tourType
+            }
+          })
+        } else {
           this.questionList.forEach(question => {
             if (JSON.stringify(question.ANSWER).length > 202) {
               over200Flag = true
               this.canNotWriteOver200Error()
             }
-
             if (question.ANSWER.length === 0) {
               question.ANSWER = ''
             }
@@ -126,17 +184,19 @@ export default {
           })
         }
       }
-
       if (!over200Flag) {
-        // this.$store.state.constants.COUNSELING.BASIC_SURVEY_RESPONSE = BASIC_SURVEY_RESPONSE
-        // this.applyProgram(BASIC_SURVEY_RESPONSE)
+        this.$store.state.constants.COUNSELING.BASIC_SURVEY_RESPONSE = BASIC_SURVEY_RESPONSE
+        this.applyProgram(BASIC_SURVEY_RESPONSE)
       }
     },
     applyProgram (surveyResponse) {
       let isResponse = true
-      _.forEach(surveyResponse, data => {
+      _.forEach(surveyResponse, (data, index) => {
         if (!String(data.RESPONSE)) {
           isResponse = false
+          if (this.isCrewTour && this.attendType === 0) {
+            isResponse = true
+          }
         }
       })
       if (!isResponse) {
@@ -217,11 +277,6 @@ export default {
           }
         }]
       })
-    },
-    changeAttendType (value) {
-      if (value === 0) {
-        this.crewTourSurvey[1].RESPONSE = ''
-      }
     }
   }
 }
