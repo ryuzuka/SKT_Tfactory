@@ -243,8 +243,12 @@ export default {
           // 예약
           STORE.bookProgram(bookInfo).then(result => {
             this.$router.push('/sev/booking/program/complete?&BOOK_ID=' + result.BOOK_ID)
-          }).catch(() => {
-            this.alertError()
+          }).catch(err => {
+            if (err.response.data.RET_CODE === 18006) {
+              this.alertAlreadyApply()
+            } else {
+              this.alertError()
+            }
           })
         } else if (this.programType === 'select') {
           // 응모
@@ -269,6 +273,7 @@ export default {
           title: '확인',
           handler: () => {
             this.$modal.hide('dialog')
+            this.$router.push('/shop/detail/store20')
           }
         }]
       })
