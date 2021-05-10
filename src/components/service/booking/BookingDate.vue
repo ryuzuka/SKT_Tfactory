@@ -134,7 +134,7 @@ export default {
       _.forEach(this.scheduleList, program => {
         if (this.selectedDate === this.$moment(program['START_YMDT']).format('YYYY.MM.DD')) {
           program.START_TIME = this.$moment(program['START_YMDT']).format('HH:mm')
-          program.isBooked = this['ALREADY_BOOKED']
+          program.isBooked = program['ALREADY_BOOKED']
           if (parseInt(program['BOOKING_COUNT']) >= parseInt(program['CAPACITY'])) {
             program.disabled = true
           }
