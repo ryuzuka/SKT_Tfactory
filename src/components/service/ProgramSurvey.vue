@@ -36,7 +36,7 @@ export default {
     if (process.env.NODE_ENV === 'development') {
       crewTourClassId = 94
     } else {
-      crewTourClassId = 94
+      crewTourClassId = 55
     }
     if (crewTourClassId === parseInt(this.classId)) {
       this.isCrewTour = true

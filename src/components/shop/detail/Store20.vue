@@ -17,7 +17,7 @@ export default {
     if (process.env.NODE_ENV === 'development') {
       this.classId = 94
     } else {
-      this.classId = 94
+      this.classId = 55
     }
   },
   mounted () {
