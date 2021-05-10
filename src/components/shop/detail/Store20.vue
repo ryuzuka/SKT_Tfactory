@@ -8,9 +8,16 @@ export default {
   name: 'Store20',
   data () {
     return {
-      classId: this.$route.query.classId,
+      classId: null,
       isLogin: false,
       isApply: false
+    }
+  },
+  created () {
+    if (process.env.NODE_ENV === 'development') {
+      this.classId = 94
+    } else {
+      this.classId = 94
     }
   },
   mounted () {

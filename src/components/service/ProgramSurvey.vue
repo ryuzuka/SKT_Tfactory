@@ -32,7 +32,13 @@ export default {
   },
   created () {
     /** 크루투어 **/
-    if (parseInt(this.classId) === 94) {
+    let crewTourClassId = null
+    if (process.env.NODE_ENV === 'development') {
+      crewTourClassId = 94
+    } else {
+      crewTourClassId = 94
+    }
+    if (crewTourClassId === parseInt(this.classId)) {
       this.isCrewTour = true
       this.setAttendanceData(this.attendType)
     }
