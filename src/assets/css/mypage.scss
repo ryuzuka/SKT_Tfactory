@@ -641,10 +641,13 @@
   &-survey {
     padding: 0 32px;
     .form-group{
-      margin-top: 68px;
-      &::before{
-        left: 0;
-        width: 82.2222vw;
+      text-align: center;
+      &+.form-group{
+        margin-top: 68px;
+        &::before{
+          left: 0;
+          width: 100%;
+        }
       }
       dt{
         padding-top: 28px;
@@ -666,8 +669,6 @@
         .star-rate{
           width: 180px;
           height: 100%;
-          left: 50%;
-          transform: translateX(-50%);
           background-image: url(~@/assets/images/mypage/star-d.svg);
           background-repeat: repeat-x;
           background-size: 36px;
