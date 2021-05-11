@@ -97,6 +97,10 @@
               <router-link class="link" to='/policy/service'>서비스 이용약관_인스턴트바이 반영</router-link>
               <div class="date"><span>10.12</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/qrcode'>QR CODE</router-link>
+              <div class="date"><span>21.5.11</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">main 9월</h2>

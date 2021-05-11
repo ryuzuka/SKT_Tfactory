@@ -110,6 +110,7 @@ import Join from '../pages/etc/page-join'
 import JoinNumber from '../pages/etc/page-join-number'
 import JoinCertify from '../pages/etc/page-join-certify'
 import LineInfo from '../pages/etc/page-line-info'
+import Qrcode from '../pages/etc/page-qrcode'
 
 // event
 import EventList from '../pages/event/page-event-list'
@@ -248,6 +249,7 @@ export default new Router({
     {path: '/join/number', name: 'JoinNumber', component: JoinNumber}, // 회원 가입 - 인증 번호
     {path: '/join/certify', name: 'JoinCertify', component: JoinCertify}, // 회원 가입 - 인증 번호
     {path: '/lineinfo', name: 'LineInfo', component: LineInfo}, // 회선 정보 관리
+    {path: '/qrcode', name: 'Qrcode', component: Qrcode}, // Qrcode
 
     // event
     {path: '/event/list', name: 'EventList', component: EventList}, // 목록
