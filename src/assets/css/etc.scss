@@ -461,3 +461,54 @@
     }
   }
 }
+.qr-code {
+  position: relative;
+  height: 100vh;
+  .contents{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  .tit {
+    margin-bottom: 8px;
+    @include font-set32;
+    font-weight: $fw-bold;
+    .logo {
+      width:188px;
+      height:56px;
+      @include logoImg($x:0, $y:-160px);
+    }
+  }
+  .sub-txt {
+    margin-bottom: 60px;
+    @include font-set16;
+    color: #787878;
+  }
+  .qr-img {
+    margin: 0 auto 25px;
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.16);
+    border: solid 1px #d0d0d0;
+  }
+  a{
+    position: relative;
+    @include font-set14;
+    color: #3617ce;
+    &::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+      margin-left:7px;
+      width: 10px;
+      height: 10px;
+      @include iconImg($x:-200px, $y:-176px);
+    }
+  }
+}
