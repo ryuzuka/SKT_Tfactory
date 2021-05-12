@@ -1,11 +1,11 @@
 <template>
   <div class="contents bottom-sticky" ref="contents">
-    <header class="header notice" v-if="!isMobile">
+    <!-- header class="header notice" v-if="!isMobile">
         <p>T Factory는 모바일에 최적화되어 있습니다. 모바일 웹 또는 앱으로 접속하시는 것을 권장드립니다.</p>
         <button class="btn-close" @click="isMobile = true">
           <span class="blind">닫기</span>
         </button>
-    </header>
+    </header-->
     <MainStore :scroll-top="scrollTop" v-if="menuName === 'store'"></MainStore>
     <MainProgram :scroll-top="scrollTop" v-else-if="menuName === 'program'"></MainProgram>
     <MainTag :scroll-top="scrollTop" v-else-if="menuName === 'mytag'"></MainTag>
@@ -37,8 +37,8 @@ export default {
     return {
       scrollTop: 0,
       menuName: this.$route.params.menu || 'store',
-      mainIndex: -1,
-      isMobile: false
+      mainIndex: 0,
+      isMobile: this.$store.state.isMobile
     }
   },
   methods: {
@@ -75,28 +75,26 @@ export default {
         }
         this.menuName = menu
       }
-    },
-    resize () {
-      this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
     }
   },
   mounted () {
     window.addEventListener('scroll', e => {
       this.scrollTop = e.currentTarget.scrollY
     })
-
-    window.addEventListener('resize', () => {
-      this.resize()
-    })
-
-    this.resize()
-    this.changeMenu(this.menuName)
-    this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
-  },
-  created () {
     this.$EventBus.$on('change-main-menu', menu => {
       this.changeMenu(menu)
     })
+
+    let isQrGuide = Boolean(sessionStorage.getItem('isQrGuide'))
+    if (this.isMobile) {
+      this.changeMenu(this.menuName)
+    } else {
+      if (!isQrGuide) {
+        this.$router.push({name: 'Qrcode'})
+      } else {
+        this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
+      }
+    }
   }
 }
 </script>

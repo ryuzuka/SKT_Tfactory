@@ -6,6 +6,12 @@ export default {
   data () {
     return {}
   },
+  methods: {
+    clickView () {
+      sessionStorage.setItem('isQrGuide', 'true')
+      this.$router.push('/')
+    }
+  },
   created () {},
   mounted () {}
 }

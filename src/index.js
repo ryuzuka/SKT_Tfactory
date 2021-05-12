@@ -46,6 +46,7 @@ Vue.prototype.$EventBus = new Vue()
 const store = new Vuex.Store({
   state: {
     'constants': constants,
+    'isMobile': /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent),
     'isLoading': false
   },
   getters: {
