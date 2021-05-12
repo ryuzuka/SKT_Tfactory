@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     clickView () {
-      sessionStorage.setItem('isQrGuide', 'true')
+      sessionStorage.setItem('qrCode', 'true')
       this.$router.push('/')
     }
   },
