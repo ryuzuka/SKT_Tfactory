@@ -7,12 +7,16 @@ export default {
     return {}
   },
   methods: {
-    clickView () {
+    goMain () {
       sessionStorage.setItem('qrCode', 'true')
       this.$router.push('/')
     }
   },
-  created () {},
+  created () {
+    if (this.$store.state.isMobile) {
+      this.goMain()
+    }
+  },
   mounted () {}
 }
 </script>
