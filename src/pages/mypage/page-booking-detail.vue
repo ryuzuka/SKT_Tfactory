@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
-    <Header v-if="programType === 'basic'" type="back" :title="$t('my.booking-list-detail')"></Header> <!-- 21.03.30 수정 : 예약 상세 내역 -->
-    <Header v-else-if="programType === 'select'" type="back" :title="$t('my.application-list-detail')"></Header> <!-- 21.03.30 추가 : 신청 상세 내역 -->
+    <Header v-if="programType === 'basic'" type="back" title="예약/신청 내역 상세"></Header> <!-- 21.03.30 수정 : 예약 상세 내역 -->
+    <Header v-else-if="programType === 'select'" type="back" title="예약/신청 내역 상세"></Header> <!-- 21.03.30 추가 : 신청 상세 내역 -->
     <MyBookingDetail :booking-type="bookingType"></MyBookingDetail>
 
     <modals-container></modals-container>
