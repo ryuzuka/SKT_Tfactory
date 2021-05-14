@@ -88,6 +88,7 @@ export default {
     let qrCode = Boolean(sessionStorage.getItem('qrCode'))
     if (this.isMobile) {
       this.changeMenu(this.menuName)
+      this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
     } else {
       if (!qrCode) {
         this.$router.push({name: 'Qrcode'})
