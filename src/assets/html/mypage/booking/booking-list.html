@@ -6,6 +6,7 @@
           <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>                         <!-- apply -->
           <span class="flag-solid2" v-else-if="data.status === 'success'">예약완료</span>                  <!-- ordered -->
           <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>                 <!-- completed, end, satisfaction_surveyed -->
+          <span class="flag-solid3" v-else-if="data.status === 'end'">종료</span>                         <!-- completed, satisfaction_surveyed -->
           <span class="flag-solid5" v-else-if="data.status === 'cancel'">취소</span>                      <!-- canceled: 취소 -->
           <span class="flag-solid5" v-else-if="data.status === 'standby'">접수대기</span>                  <!-- standby: 접수대기 -->
           <span class="flag-solid2" v-else-if="data.status === 'operator_assigned'">접수완료</span>        <!-- operator_assigned -->
@@ -26,8 +27,8 @@
           <dt v-if="data.type === 'program'">예약 번호</dt>
           <dt v-if="data.type === 'program' && data['BOOKING_TYPE'] === 'basic'">예약 번호</dt>
           <dt v-else-if="data.type === 'program' && data['BOOKING_TYPE'] === 'select'">신청 번호</dt>
-          <dt v-else-if="data.type === 'experience' || data.type === 'counseling'">{{ $t('sev.booking-number') }}</dt>
-          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">{{ $t('sev.consult-number') }}</dt>
+          <dt v-else-if="data.type === 'experience' || data.type === 'counseling'">예약 번호</dt>
+          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">접수 번호</dt>
           <dd>{{data.BOOK_CODE}}</dd>
 
           <dt>{{ $t('sev.booking-shop') }}</dt>
