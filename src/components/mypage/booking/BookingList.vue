@@ -21,17 +21,17 @@ import * as STORE from '../../../js/store.js'
 
 let BOOKING_STATUS = {
   'apply': 'apply', // 신청완료
-  'ordered': 'success', // 예약 완료
-  'operator_assigned': 'success', // 예약 완료 (상담원 배정 완료)
+  'ordered': 'success', // 예약완료
   'canceled': 'cancel', // 취소
   'canceled_by_operator': 'cancel', // 취소
-  'completed': 'complete', // 종료
-  'satisfaction_surveyed': 'complete', // 종료
-  'satisfaction_expired': 'complete', // 종료
+  'completed': 'complete', // 참여완료
+  'satisfaction_surveyed': 'complete', // 참여완료
+  'satisfaction_expired': 'complete', // 참여완료
   'end': 'complete', // 종료
   'counseling': 'counseling', // 상담중
   'no_show': 'not', // 미방문
-  'standby': 'standby', // 대기
+  'standby': 'standby', // 접수대기
+  'operator_assigned': 'operator_assigned', // 접수완료 (상담원 배정 완료)
   'selected': 'selected', // 당첨
   'not_selected': 'not_selected' // 미당첨
 }
@@ -63,6 +63,7 @@ export default {
           this.lastIndex = booking.BOOK_ID
         })
         this.listData = this.listData.concat(result['BOOKING'])
+        console.log(this.listData)
         if (result['BOOKING'].length < 10) {
           this.isMore = false
         }
