@@ -2,6 +2,8 @@
 
 <script>
 
+import * as NATIVE from '../../../js/native'
+
 export default {
   name: 'Program30',
   components: {
@@ -24,6 +26,15 @@ export default {
       let prevURL = window.location.pathname + '?classId=' + this.$route.query.classId
       localStorage.setItem('previous_url', prevURL)
       this.$router.push({name: 'Login'})
+    },
+    openSysUrl () {
+      const redirectURL = 'https://www.stage-q.co.kr'
+      const mobileOS = this.$cookies.get('platform')
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+      } else {
+        window.open(redirectURL, '_blank')
+      }
     }
   }
 }
