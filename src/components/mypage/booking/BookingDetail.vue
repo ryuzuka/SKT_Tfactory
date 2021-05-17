@@ -4,19 +4,17 @@
 import * as STORE from '../../../js/store.js'
 
 /**
- * success: 예약 완료
- * ordered: 예약완료
- * apply: 신청 완료
+ * apply: 신청완료
+ * success: 예약완료(program), 접수대기(counseling) - 상담원 배정중
+ * complete: 참여완료
+ * operator_assigned: 접수완료 (상담원 배정 완료)
  * cancel: 취소
  * canceled_by_operator: 취소(관리자)
- * complete: 참여완료
- * end: 종료
- * not: 미방문
  * counseling: 상담중
- * standby: 접수대기
- * operator_assigned: 접수완료
+ * not: 미방문
  * selected: 당첨
  * not_selected: 미당첨
+ * end: 종료
  */
 
 export default {
