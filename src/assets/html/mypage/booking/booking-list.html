@@ -4,12 +4,14 @@
       <router-link :to="'/my/booking/' + data.type + '/detail/' + data.status + '?BOOK_ID=' + data.BOOK_ID">
         <p class="list-tit">
           <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>                         <!-- apply -->
-          <span class="flag-solid2" v-else-if="data.status === 'success'">예약완료</span>                  <!-- ordered -->
-          <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>                 <!-- completed, end, satisfaction_surveyed -->
-          <span class="flag-solid3" v-else-if="data.status === 'end'">종료</span>                         <!-- completed, satisfaction_surveyed -->
-          <span class="flag-solid5" v-else-if="data.status === 'cancel'">취소</span>                      <!-- canceled: 취소 -->
-          <span class="flag-solid5" v-else-if="data.status === 'standby'">접수대기</span>                  <!-- standby: 접수대기 -->
+          <span class="flag-solid2" v-else-if="data.status === 'success'">                               <!-- ordered -->
+              <template v-if="data.type === 'program'">예약완료</template>                                 <!-- ordered: program 예약완료 -->
+              <template v-else-if="data.type === 'counseling'">접수대기</template>                         <!-- ordered: 상담신청 상담원 배정 전 -->
+          </span>
           <span class="flag-solid2" v-else-if="data.status === 'operator_assigned'">접수완료</span>        <!-- operator_assigned -->
+          <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>                 <!-- completed, satisfaction_surveyed -->
+          <span class="flag-solid3" v-else-if="data.status === 'end'">종료</span>                         <!-- end -->
+          <span class="flag-solid5" v-else-if="data.status === 'cancel'">취소</span>                      <!-- canceled: 취소 -->
           <span class="flag-solid3" v-else-if="data.status === 'counseling'">상담중</span>                 <!-- counseling: 상담중 -->
           <span class="flag-solid5" v-else-if="data.status === 'not'">미방문</span>                        <!-- no_show: 미방문 -->
           <span class="flag-solid2" v-else-if="data.status === 'selected'">당첨</span>                    <!-- selected: 당첨 -->
@@ -25,7 +27,7 @@
         <dl class="details-info">
 
           <dt v-if="data.type === 'program'">예약 번호</dt>
-          <dt v-if="data.type === 'program' && data['BOOKING_TYPE'] === 'basic'">예약 번호</dt>
+          <dt v-else-if="data.type === 'program' && data['BOOKING_TYPE'] === 'basic'">예약 번호</dt>
           <dt v-else-if="data.type === 'program' && data['BOOKING_TYPE'] === 'select'">신청 번호</dt>
           <dt v-else-if="data.type === 'experience' || data.type === 'counseling'">예약 번호</dt>
           <dt v-else-if="data.type === 'field_buy' || data.type =='field'">접수 번호</dt>

@@ -1,11 +1,13 @@
 <div class="contents bottom-sticky my-detail" ref="contents">
   <section class="row">
     <span class="flag-solid2" v-if="status === 'apply'">신청완료</span>
-    <span class="flag-solid2" v-else-if="status === 'success'">예약완료</span>
+    <span class="flag-solid2" v-else-if="status === 'success'">
+        <template v-if="bookingDetail['TYPE'] === 'program'">예약완료</template>
+        <template v-else-if="bookingDetail['TYPE'] === 'counseling'">접수대기</template>
+    </span>
     <span class="flag-solid5" v-else-if="status === 'complete'">참여완료</span>
-    <span class="flag-solid5" v-else-if="status === 'cancel' || status === 'canceled_by_operator'">취소</span>
-    <span class="flag-solid5" v-else-if="status === 'standby'">접수대기</span>
     <span class="flag-solid5" v-else-if="status === 'operator_assigned'">접수완료</span>
+    <span class="flag-solid5" v-else-if="status === 'cancel' || status === 'canceled_by_operator'">취소</span>
     <span class="flag-solid3" v-else-if="status === 'counseling'">상담중</span>
     <span class="flag-solid5" v-else-if="status === 'not'">미방문</span>
     <span class="flag-solid2" v-else-if="status === 'selected'">당첨</span>
@@ -42,6 +44,7 @@
       <dt v-if="bookingType === 'program' && bookingDetail['BOOKING_TYPE'] === 'basic'">참여자</dt>
       <dt v-else-if="bookingType === 'program' && bookingDetail['BOOKING_TYPE'] === 'select'">참여자/인원</dt>
       <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      <!-- dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}}) 외 {{ 0 }}인</dd -->
     </dl>
 
     <!-- 체험존 -->
