@@ -3,7 +3,7 @@
     <a v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
     <template v-else-if="bookingType === 'select'">
       <a v-if="statusFlag === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
-      <button v-else-if="statusFlag === 'OVER'" class="btn-solid disabled" disabled>콘서트 응모 마감</button>
+      <button v-else-if="statusFlag === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
       <button v-else-if="statusFlag === 'NOT_STARTED'" class="btn-solid disabled" disabled>오픈 예정</button>
     </template>
   </div>
