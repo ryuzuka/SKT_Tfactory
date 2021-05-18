@@ -1,8 +1,7 @@
 <div class="contents my-booking" ref="contents">
   <ul class="my-booking-list">
-    <li v-for="(data, index) in listData" :key="index" :class="{'completed': data.status === 'complete' || data.status === 'end' || data.status === 'not', 'end': data.status === 'end'}">
+    <li v-for="(data, index) in listData" :key="index" :class="{'completed': data.status === 'complete' || data.status === 'not', 'end': data['STATUS'] === 'satisfaction_surveyed'}">
       <router-link :to="'/my/booking/' + data.type + '/detail/' + data.status + '?BOOK_ID=' + data.BOOK_ID">
-
         <p class="list-tit">
           <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>                         <!-- apply -->
           <span class="flag-solid2" v-else-if="data.status === 'success'">
@@ -46,8 +45,8 @@
             <dd>{{data.date}}</dd>
           </template>
           <template v-else>
-            <dt>상담 유형</dt>
-            <dd>{{data.COUNSELING_NAME}}</dd>
+            <dt v-if="data.type === 'counseling'">상담 유형</dt>
+            <dd v-if="data.type === 'counseling'">{{data.COUNSELING_NAME}}</dd>
             <dt>상담 일시</dt>
             <dd>{{data.date}}</dd>
           </template>

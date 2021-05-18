@@ -43,7 +43,7 @@
         <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
       </template>
       <template v-else-if="bookingDetail['BOOKING_TYPE'] === 'select'">
-        <dt>참여자/인원</dt>
+        <dt>참여자</dt>
         <dd v-if="parseInt(bookingDetail['ATTENDEE_NUM']) > 1">{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}}) 외 {{ parseInt(bookingDetail['ATTENDEE_NUM']) - 1 }}인</dd>
         <dd v-else>{{bookingDetail.USER_NAME}}</dd>
       </template>
@@ -59,8 +59,8 @@
     <dl class="details-info" v-else-if="bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field'">
       <dt>{{ $t('sev.customer-name') }}</dt>
       <dd v-if="bookingDetail.USER_NICKNAME">{{bookingDetail.USER_NICKNAME}} ({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
-      <dd v-else="!bookingDetail.USER_NICKNAME && bookingDetail.USER_NAME">{{bookingDetail.USER_NAME}} ({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
-      <dd v-else="!bookingDetail.USER_NICKNAME && !bookingDetail.USER_NAME">({{bookingDetail.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
+      <dd v-else-if="!bookingDetail.USER_NICKNAME && bookingDetail.USER_NAME">{{bookingDetail.USER_NAME}} ({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
+      <dd v-else-if="!bookingDetail.USER_NICKNAME && !bookingDetail.USER_NAME">({{bookingDetail.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
     </dl>
 
     <dl class="details-info" v-if="(bookingType === 'counseling' || bookingType === 'field_buy' || bookingType === 'field') && (status !== 'cancel')">
