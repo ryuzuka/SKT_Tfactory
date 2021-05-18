@@ -116,13 +116,13 @@ export default {
           })
         })
         this.crewClasses.sort(function (a, b) {
-          return a['ORDER_IN_CLASS'] - b['ORDER_IN_CLASS']
+          return b['ORDER_IN_CLASS'] - a['ORDER_IN_CLASS']
         })
         this.specialClasses.sort(function (a, b) {
-          return a['ORDER_IN_SPECIAL'] - b['ORDER_IN_SPECIAL']
+          return b['ORDER_IN_SPECIAL'] - a['ORDER_IN_SPECIAL']
         })
         this.todayClasses.sort(function (a, b) {
-          return a['ORDER_IN_TODAY'] - b['ORDER_IN_TODAY']
+          return b['ORDER_IN_TODAY'] - a['ORDER_IN_TODAY']
         })
       })
     },
