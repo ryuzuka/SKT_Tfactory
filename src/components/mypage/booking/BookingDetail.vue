@@ -5,9 +5,9 @@ import * as STORE from '../../../js/store.js'
 
 /**
  * apply: 신청완료
- * success: 예약완료(program), 접수대기(counseling) - 상담원 배정중
+ * success: 예약완료, 접수대기(상담원 배정중 - field, field_buy)
+ * operator_assigned: 접수완료(상담원 배정 완료)
  * complete: 참여완료
- * operator_assigned: 접수완료 (상담원 배정 완료)
  * cancel: 취소
  * canceled_by_operator: 취소(관리자)
  * counseling: 상담중
@@ -40,6 +40,9 @@ export default {
       this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD HH:mm')
       if (!this.bookingDetail.OPERATOR_IMAGE_URL) {
         this.bookingDetail.OPERATOR_IMAGE_URL = require('@/assets/images/service/icon_T.png')
+      }
+      if (!this.bookingDetail.ATTENDEE_NUM) {
+        this.bookingDetail.ATTENDEE_NUM = 1
       }
       this.$store.getters.CONSTANTS.COUNSELING_MODIFY.BOOK_ID = result.BOOK_INFO.BOOK_ID
       this.$parent.$emit('change-application-type', {type: this.bookingDetail['BOOKING_TYPE']})
