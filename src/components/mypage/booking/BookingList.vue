@@ -5,17 +5,17 @@ import * as STORE from '../../../js/store.js'
 
 /**
  * apply: '신청완료',
- * ordered: '예약완료(program), 접수대기(counseling) - 상담원 배정중',
- * canceled: '취소',
- * completed: '참여완료',
- * end: '종료',
- * satisfaction_surveyed: '만족도 조사 완료',
- * canceled_by_operator: '취소(관리자)',
- * operator_assigned: '접수완료(상담원 배정 완료)',
- * counseling: '상담중',
- * no_show: '미방문',
- * selected: '당첨',
+ * ordered: '예약완료, 접수대기(상담원 배정중 - field, field_buy)'
+ * operator_assigned: '접수완료(상담원 배정 완료)'
+ * completed: '참여완료'
+ * canceled: '취소'
+ * canceled_by_operator: '취소(관리자)'
+ * satisfaction_surveyed: '만족도 조사 완료'
+ * counseling: '상담중'
+ * no_show: '미방문'
+ * selected: '당첨'
  * not_selected: '미당첨'
+ * end: '종료'
  */
 
 let BOOKING_STATUS = {
@@ -52,7 +52,7 @@ export default {
     },
     getBookingList () {
       STORE.getMyBookingList(this.lastIndex).then(result => {
-        result['BOOKING'].forEach((booking) => {
+        result['BOOKING'].forEach(booking => {
           booking.type = booking.TYPE
           let STATUS = booking['STATUS']
           booking.status = BOOKING_STATUS[STATUS.toString()]
