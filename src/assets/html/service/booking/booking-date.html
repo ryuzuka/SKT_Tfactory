@@ -143,17 +143,13 @@
             ]"
           class="reverse"
         ></ui-select>
-        <input ref="certification" type="tel" maxlength="8" id="info1-1" :placeholder="$t('comm.only-number')"
-               v-model="contactNumber">
+        <input ref="certification" type="tel" maxlength="8" id="info1-1" :placeholder="$t('comm.only-number')" v-model="contactNumber">
       </div>
     </div>
   </section>
 
   <div class="btn-wrap sticky">
     <a v-if="isSurvey" class="btn-solid big" @click.prevent="nextButton">다음</a>
-    <a v-else class="btn-solid big" @click.prevent="nextButton">
-      <template v-if="programType === 'basic'">예약</template>
-      <template v-else>신청</template>
-    </a>
+    <a v-else class="btn-solid big" @click.prevent="nextButton">예약</a>
   </div>
 </div>

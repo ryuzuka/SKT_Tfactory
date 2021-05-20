@@ -4,18 +4,17 @@
 import * as STORE from '../../../js/store.js'
 
 /**
- * success: 예약 완료
- * ordered: 예약완료
- * apply: 신청 완료
+ * apply: 신청완료
+ * success: 예약완료, 접수대기(상담원 배정중 - field, field_buy)
+ * operator_assigned: 접수완료(상담원 배정 완료)
+ * complete: 참여완료
  * cancel: 취소
  * canceled_by_operator: 취소(관리자)
- * complete: 종료
- * end: 종료 & 설문조사 등록 완료
- * not: 미방문
  * counseling: 상담중
- * standby: 대기
+ * not: 미방문
  * selected: 당첨
  * not_selected: 미당첨
+ * end: 종료
  */
 
 export default {
@@ -42,6 +41,9 @@ export default {
       if (!this.bookingDetail.OPERATOR_IMAGE_URL) {
         this.bookingDetail.OPERATOR_IMAGE_URL = require('@/assets/images/service/icon_T.png')
       }
+      if (!this.bookingDetail.ATTENDEE_NUM) {
+        this.bookingDetail.ATTENDEE_NUM = 1
+      }
       this.$store.getters.CONSTANTS.COUNSELING_MODIFY.BOOK_ID = result.BOOK_INFO.BOOK_ID
       this.$parent.$emit('change-application-type', {type: this.bookingDetail['BOOKING_TYPE']})
     })
@@ -49,7 +51,6 @@ export default {
   methods: {
     showCancelSuccessDialog () {
       this.$modal.show('dialog', {
-        // title: this.$t('my.alert-cancel-booking-complete'),
         title: '취소가 완료되었습니다.',
         buttons: [{
           title: this.$t('comm.yes'),
@@ -86,7 +87,6 @@ export default {
     },
     clickCancel () {
       this.$modal.show('dialog', {
-        // title: this.$t('my.alert-cancel-booking'),
         title: '취소하시겠습니까?',
         buttons: [{
           title: this.$t('comm.yes'),
@@ -127,10 +127,6 @@ export default {
           title: this.$t('comm.no')
         }]
       })
-    },
-    clickInquiry () {
-      // TODO - 설문조사
-      console.log('설문조사')
     }
   },
   filters: {
