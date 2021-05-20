@@ -329,8 +329,12 @@
               <div class="date"><span>4.29</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program33'>도전하라 stage Q</router-link>
+              <router-link class="link" to='/experience/program33'>퀀텀2를 잡아라</router-link>
               <div class="date"><span>5.11</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program34'>6월의 덕콘 | 제8극장</router-link>
+              <div class="date"><span>5.20</span></div>
             </li>
           </ul>
 
