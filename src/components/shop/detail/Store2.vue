@@ -1,11 +1,11 @@
 <template src="../../../assets/html/shop/detail/details2.html"></template>
 
 <script>
-import StoreClass from './StoreClass'
+import CrewClass from './CrewClass'
 export default {
   name: 'Store2',
   components: {
-    StoreClass
+    CrewClass
   }
 }
 </script>

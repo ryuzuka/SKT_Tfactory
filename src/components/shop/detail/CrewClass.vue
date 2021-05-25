@@ -28,7 +28,7 @@ import _ from 'lodash'
 import * as STORE from '../../../js/store.js'
 
 export default {
-  name: 'StoreClass',
+  name: 'CrewClass',
   data () {
     return {
       classList: [],
@@ -46,7 +46,7 @@ export default {
         }
       })
       this.classList.sort(function (a, b) {
-        return a['ORDER_IN_TODAY'] - b['ORDER_IN_TODAY']
+        return b['ORDER_IN_TODAY'] - a['ORDER_IN_TODAY']
       })
       if (this.classList.length > 3) {
         this.isClassMore = true

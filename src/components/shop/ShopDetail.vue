@@ -7,10 +7,13 @@ import ModalImgViewer from '../shop/ModalImgViewer'
 import UiSelect from '../../ui/UiSelect'
 import * as STORE from '../../js/store.js'
 
+import CrewClass from './detail/CrewClass'
+
 export default {
   name: 'ShopDetail',
   components: {
-    UiSelect
+    UiSelect,
+    CrewClass
   },
   data () {
     return {
