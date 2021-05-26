@@ -53,14 +53,15 @@ export default {
     bookProgram () {
       if (this.isLogin) {
         if (this.isApply) {
-          // 이미 신청하신 프로그램입니다.
           this.alertAlreadyApply()
         } else {
-          if (this.bookingType === 'basic') {
-            this.$router.push('/sev/booking/program/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
-          } else if (this.bookingType === 'select') {
-            this.$router.push('/sev/application?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
+          let path = ''
+          if (this.bookingType === 'select') { // 프로그램 신청
+            path = '/sev/application'
+          } else if (this.bookingType === 'basic') { // 프로그램 예약
+            path = '/sev/booking/program/date/shop'
           }
+          this.$router.push(path + '?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classId)
         }
       } else {
         localStorage.setItem('previous_url', this.$route.path + '?classId=' + this.classId)
