@@ -1,0 +1,77 @@
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class36-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details sticky">
+    <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+
+      <h2 class="details-tit">6월의 덕콘<i class="pipe"></i>에이트레인</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">인디밴드</span>
+      </div>
+      <p class="desc type2">
+        <em>[T Factory X FLO 덕콘]</em>
+        찐덕들만 초청하여 진행하는 덕콘.<br>
+        이번 기출영역은 '에이트레인'입니다.
+      </p>
+      <p class="desc type2">
+        <em>6월의 덕콘</em>
+        12. 제8극장<br>
+        13. 데이먼스 이어<br>
+        14. 에이트레인<br>
+        15. 빌리 어코스티
+      </p>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">T Factory x FLO 덕콘</h3>
+      <div class="thumb"><img src="../../../images/program/class34-conts1.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <p>
+        T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다.<br>
+        매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다.<br>
+        본 콘서트 신청 시 아티스트가 직접 낸 덕력고사를 풀어야하며, 덕력고사를 통과한 팬들 중 추첨을 통해 소수의 인원을 선정하여 초청합니다.<br>
+        ※ 본 콘서트는 코로나19 방역 수칙을 준수합니다.
+      </p>
+      <h3 class="subtit">에이트레인 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class36-conts1.jpg" alt=""></div>
+      <p>
+        A.TRAIN(에이트레인)은 인간의 태생적 불안정함을 음악으로 표현하고 고통을 노래하는 음악가이다. <br>
+        모든 트랙을 기획부터 작사/작곡/녹음/편곡/엔지니어링 해내는 그는 아름답고 도 솔직한 표현으로 심연을 짚어낸다. <br>
+        뿐만 아니라 직접 뮤직비디오를 촬영/편집하는 등 총괄 프로듀서이자 플레이어로서의 역할을 부족함 없이 욕심 넘치게 해내고 있다. <br>
+        음악을 만들어내는 작법과 그 안에 담긴 메시지에 있어 통상적인 R&B 뮤지션과는 차별되는 작업물들을 계속해서 선보이며 대한민국의 독보적인 얼터너티브 알앤비 뮤지션으로 자리를 잡아왔다.<br>
+        절대 다수가 기분 좋게 소비할 리 없는 '죽음'과 '고통'에 대해 과감히 담아낸 정규 앨범 [PAINGRE EN]과 타이틀곡 &lt;HURT&gt;는 2021년 한국대중음악상 최우수 알앤비/소울 부문 앨범/노래 상 2개 부문에 노미네이트되며 역량을 증명했을 뿐 아니라 대중음악이 가지는 친절한 스펙트럼의 지붕을 확장 시켰다는 평을 받고있다.
+      </p>
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <ul class="texts-list">
+        <li>일정 : 6월 18일(금) 오후 <span>7</span>시</li>
+        <li>응모기간 : 6월 <span>7</span>일(월) ~ 6월 13일(일)</li>
+        <li>당첨자 발표 : 6월 14일(월)</li>
+        <li>장소 : T Factory 2층, 0 Stage</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 본 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자에게만 개별 연락이 갈 예정입니다.</li>
+          <li>* 당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
+          <li>* 정부의 방역지침 변경이 있을 시 공연의 주요내용도 변경이 있을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //details -->
+
+  <!-- button set -->
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+  <!-- // button set -->
+</div>

@@ -336,6 +336,18 @@
               <router-link class="link" to='/experience/program34'>6월의 덕콘 | 제8극장</router-link>
               <div class="date"><span>5.20</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program34'>6월의 덕콘 | 데이먼스 이어</router-link>
+              <div class="date"><span>5.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program34'>6월의 덕콘 | 에이트레인</router-link>
+              <div class="date"><span>5.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program34'>6월의 덕콘 | 빌리 어코스티</router-link>
+              <div class="date"><span>5.26</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>

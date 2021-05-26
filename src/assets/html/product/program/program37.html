@@ -1,0 +1,76 @@
+<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+  <!-- slide -->
+  <div class="slider-prd">
+    <img src="../../../images/program/class37-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+  </div>
+  <!-- //slide -->
+  <!-- details -->
+  <div class="details sticky">
+    <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+
+      <h2 class="details-tit">6월의 덕콘<i class="pipe"></i>빌리 어코스티</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">인디밴드</span>
+      </div>
+      <p class="desc type2">
+        <em>[T Factory X FLO 덕콘]</em>
+        찐덕들만 초청하여 진행하는 덕콘.<br>
+        이번 기출영역은 '빌리 어코스티'입니다.
+      </p>
+      <p class="desc type2">
+        <em>6월의 덕콘</em>
+        12. 제8극장<br>
+        13. 데이먼스 이어<br>
+        14. 에이트레인<br>
+        15. 빌리 어코스티
+      </p>
+    </div>
+    <div class="details-inner">
+      <h3 class="subtit">T Factory x FLO 덕콘</h3>
+      <div class="thumb"><img src="../../../images/program/class34-conts1.jpg" alt="T Factory x FLO 입덕후콘서트"></div>
+      <p>
+        T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다.<br>
+        매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다.<br>
+        본 콘서트 신청 시 아티스트가 직접 낸 덕력고사를 풀어야하며, 덕력고사를 통과한 팬들 중 추첨을 통해 소수의 인원을 선정하여 초청합니다.<br>
+        ※ 본 콘서트는 코로나19 방역 수칙을 준수합니다.
+      </p>
+      <h3 class="subtit">빌리 어코스티 소개</h3>
+      <div class="thumb"><img src="../../../images/program/class37-conts1.jpg" alt=""></div>
+      <p>
+        보통의 목소리로 보통의 이야기를 전하는 감성 싱어송라이터 '빌리어코스티'<br>
+        소리없이 찾아오는 사랑이나 이유 없이 빠져드는 무기력함처럼 내 기분, 내 마음, 내 감정들을 나조차 정의할 수 없는 그 어떤 날, 빌리어코스티의 음악은 '나의 이야기'가 되어 다가온다. <br>
+        매력적인 허스키 보이스와 팝 감성의 어쿠스틱 음악, 뛰어난 기타 실력이 돋보이는 '빌리어코스티'는 '기타리스트 홍준섭'으로 오랫동안 활동해오다, 2014년 정규 1집 [소란했던 시절에]를 발표하며 완성도 있는 음악을 선보여 그 해 가장 핫한 싱어송라이터로 불렸다. <br>
+        연 이은 단독 공연 매진과 각종 페스티벌의 러브콜로 많은 대중들의 마음을 사로잡은 그는 EP [미세매력주의보]와 2집 [보통의 겨울]을 발표하며 인디 신의 독보적인 감성 뮤지션으로 자리 잡았다.
+      </p>
+      <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
+      <ul class="texts-list">
+        <li>일정 : 6월 25일(금) 오후 <span>7</span>시</li>
+        <li>응모기간 : 6월 14일(월) ~ 6월 20일(일)</li>
+        <li>당첨자 발표 : 6월 21일(월)</li>
+        <li>장소 : T Factory 2층, 0 Stage</li>
+      </ul>
+      <div class="notice">
+        <h4 class="subtit">{{ $t('prd.notice')}}</h4>
+        <ul class="texts-info">
+          <li>* 본 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자에게만 개별 연락이 갈 예정입니다.</li>
+          <li>* 당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
+          <li>* 정부의 방역지침 변경이 있을 시 공연의 주요내용도 변경이 있을 수 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //details -->
+
+  <!-- button set -->
+  <Program
+    :class-id="classId"
+    :booking-type="bookingType"
+    :status-flag="statusFlag"
+    :is-login="isLogin"
+    :is-apply="isApply"
+  ></Program>
+  <!-- // button set -->
+</div>

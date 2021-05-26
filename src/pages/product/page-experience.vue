@@ -36,6 +36,9 @@
     <program32 v-else-if="programId === 'program32'"></program32>
     <program33 v-else-if="programId === 'program33'"></program33>
     <program34 v-else-if="programId === 'program34'"></program34>
+    <program35 v-else-if="programId === 'program35'"></program35>
+    <program36 v-else-if="programId === 'program36'"></program36>
+    <program37 v-else-if="programId === 'program37'"></program37>
     <Experience v-else></Experience>
 
     <modals-container></modals-container>
@@ -81,6 +84,9 @@ import Program31 from '../../components/product/program/Program31'
 import Program32 from '../../components/product/program/Program32'
 import Program33 from '../../components/product/program/Program33'
 import Program34 from '../../components/product/program/Program34'
+import Program35 from '../../components/product/program/Program35'
+import Program36 from '../../components/product/program/Program36'
+import Program37 from '../../components/product/program/Program37'
 
 export default {
   name: 'page-product',
@@ -120,7 +126,10 @@ export default {
     Program31,
     Program32,
     Program33,
-    Program34
+    Program34,
+    Program35,
+    Program36,
+    Program37
   },
   data () {
     return {
