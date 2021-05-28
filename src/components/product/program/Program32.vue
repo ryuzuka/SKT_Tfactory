@@ -21,8 +21,13 @@ export default {
   },
   methods: {
     clickButton () {
+      let mobileOS = this.mobileOS
       let redirectURL = 'https://www.youtube.com/watch?v=qh4cZtE7CU8&t=105s'
-      NATIVE.sysBrowserOpen(this.mobileOS, redirectURL)
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+      } else {
+        window.open(redirectURL)
+      }
     }
   }
 }
