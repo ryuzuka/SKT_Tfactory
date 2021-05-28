@@ -1,6 +1,8 @@
 <template src="../../../assets/html/product/program/program32.html"></template>
 
 <script>
+import * as NATIVE from '../../../js/native'
+
 export default {
   name: 'Program32',
   components: {
@@ -18,6 +20,10 @@ export default {
     })
   },
   methods: {
+    clickButton () {
+      let redirectURL = 'https://www.youtube.com/watch?v=qh4cZtE7CU8&t=105s'
+      NATIVE.sysBrowserOpen(this.mobileOS, redirectURL)
+    }
   }
 }
 </script>
