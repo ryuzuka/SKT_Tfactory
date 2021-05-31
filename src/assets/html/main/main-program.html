@@ -36,7 +36,7 @@
             <template v-if="specialClass.BOOKING_TYPE === 'select'">
               <span v-if="specialClass.APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
               <span v-else-if="specialClass.APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-              <span v-else="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+              <span v-else-if="specialClass.APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
             </template>
 
             <p class="tit">
