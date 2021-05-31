@@ -1,4 +1,4 @@
-<div :class="{'bottom-sticky': bookingType}" class="contents" ref="contents">
+<div class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
     <img src="../../../images/program/class39-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
@@ -38,43 +38,51 @@
               <img src="../../../images/program/class39-conts1.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid8">모집중</span>
+              <span v-if="programClass[0].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="programClass[0].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else-if="programClass[0].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em>6월의 덕콘 | 제8극장</em></p>
               <p class="subtext">6월 4일 오후 7시</p>
             </div>
           </a>
         </li>
         <li>
-          <a href="./program35">
+          <a href="./program35?classId=58">
             <div class="thumb">
               <img src="../../../images/program/class39-conts2.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid10">모집예정</span>
+              <span v-if="programClass[1].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="programClass[1].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else-if="programClass[1].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em>6월의 덕콘 | 데이먼스 이어</em></p>
               <p class="subtext">6월 11일 오후 7시</p>
             </div>
           </a>
         </li>
         <li>
-          <a href="./program36">
+          <a href="./program36?classId=59">
             <div class="thumb">
               <img src="../../../images/program/class39-conts3.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid10">모집예정</span>
+              <span v-if="programClass[2].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="programClass[2].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else-if="programClass[2].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em>6월의 덕콘 | 에이트레인</em></p>
               <p class="subtext">6월 18일 오후 7시</p>
             </div>
           </a>
         </li>
         <li>
-          <a href="./program37">
+          <a href="./program37?classId=60">
             <div class="thumb">
               <img src="../../../images/program/class39-conts4.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid10">모집예정</span>
+              <span v-if="programClass[3].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
+              <span v-else-if="programClass[3].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
+              <span v-else-if="programClass[3].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em>6월의 덕콘 | 빌리어코스티</em></p>
               <p class="subtext">6월 25일 오후 7시</p>
             </div>
@@ -84,14 +92,4 @@
     </div>
   </div>
   <!-- //details -->
-
-  <!-- button set -->
-  <!-- <Program
-    :class-id="classId"
-    :booking-type="bookingType"
-    :status-flag="statusFlag"
-    :is-login="isLogin"
-    :is-apply="isApply"
-  ></Program> -->
-  <!-- // button set -->
 </div>

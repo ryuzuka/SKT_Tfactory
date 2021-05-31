@@ -2,48 +2,29 @@
 
 <script>
 import _ from 'lodash'
-
 import * as STORE from '../../../js/store'
-import Program from './Program'
 
 export default {
   name: 'Program39',
-  components: {
-    Program
-  },
+  components: {},
   data () {
     return {
-      classId: this.$route.query.classId,
-      bookingType: '',
-      statusFlag: '',
-      isLogin: false,
-      isApply: false
+      classIdList: [56, 58, 59, 60],
+      programClass: [{}, {}, {}, {}]
     }
   },
   mounted () {
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
-
-        let status = ''
-        STORE.getProgramClassBook(this.classId).then(result => {
-          if (result['PROGRAM_CLASS'].length === 0) return
-
-          _.forEach(result['PROGRAM_CLASS'], program => {
-            status = program['STATUS']
-          })
-          if (status === 'apply') {
-            this.isApply = true
-          }
-        })
       }
     })
 
-    STORE.getProgramClass(this.classId).then(result => {
-      if (!result['PROGRAM_CLASS']) return
-
-      this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
-      this.statusFlag = result['PROGRAM_CLASS']['APPLY_PROGRESS']
+    _.forEach(this.classIdList, (classId, index) => {
+      STORE.getProgramClass(classId).then(result => {
+        this.programClass[index] = result['PROGRAM_CLASS']
+        this.$forceUpdate()
+      })
     })
   },
   methods: {
