@@ -1,7 +1,8 @@
 import axios from 'axios'
 import * as COMMON from './common.js'
 
-const PAY_URL = 'https://sktps.arumnet.com/sk/payment.do?token=0N3270SKTPS&'
+const PAY_URL = 'https://sktps.arumnet.com/sk/paymentV2.do?'
+// const PAY_URL = 'https://203.229.190.93/sk/paymentV2.do?'
 const STORE_URL = process.env.SERVER_URL + '/store'
 const SECURITY_URL = process.env.SERVER_URL + '/security/vendingMachine/prePayment/callback'
 
@@ -40,5 +41,11 @@ export const getReceiptInfo = (receiptId) => {
 export const getReceiptId = (invNum) => {
   return axios.get(STORE_URL + '/receipt/infoByInvNumber?INV_NUMBER=' + invNum, COMMON.getHeader()).then(response => {
     return response.data
+  })
+}
+
+export const createOrderId = (request) => {
+  return axios.post(STORE_URL + '/receipt/order', request, COMMON.getHeader()).then(response => {
+    return response.data.INV_NUMBER
   })
 }
