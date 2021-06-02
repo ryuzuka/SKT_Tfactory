@@ -30,9 +30,7 @@ export default {
       selectedCoupon: '',
       priceSum: 0,
       priceDiscount: 0,
-      user_ci: '',
       user_type: '',
-      user_id: '',
       pocCode: 'POC_TPA',
       payRate: 100
     }
@@ -100,70 +98,38 @@ export default {
     },
     payButton (type) {
       if (type === 'PG') {
-        this.callPayment('1', '0200')
+        this.callPayment(1)
       } else if (type === 'SKPay') {
-        this.callPayment('2', '0560')
+        this.callPayment(2)
       }
     },
-    callPayment (type, payGb) {
-      // FIXME: QR code와 invoice number 다르게 setting
-      let mobileOS = 0
+    async callPayment (type) {
+      let itemList = []
+      this.productList.forEach((product) => {
+        let item = {
+          ITEM_CODE: product.ACCESSORY_CODE,
+          QUANTITY: product.QUANTITY.toString(),
+          ITEM_TYPE: 'accessory'
+        }
+        itemList.push(item)
+      })
 
-      if (this.$cookies.get('platform') === 'A' || this.$cookies.get('platform') === 'I') {
-        mobileOS = 1
+      this.order = {
+        STORE_ID: parseInt(this.$route.query.storeId),
+        INV_DATE: this.$moment().format('YYYYMMDD').toString(),
+        QR_CODE: this.$route.query.qrCode,
+        POC_CODE: this.pocCode,
+        PAY_TYPE: type,
+        ITEM_LIST: itemList,
+        COUPON_ID: this.selectedCoupon
       }
-
-      let sum = 0
-      let detail = []
-
-      let invNo = (this.$moment().format('YYYYMMDD') + Math.floor(Math.random() * 99999)).toString()
-      this.productList.forEach((product, index) => {
-        sum += product.PRICE
-
-        let detailPrice = product.ORIGIN_PRICE
-        if (this.priceDiscount !== 0) {
-          detailPrice = product.ORIGIN_PRICE * 0.01 * this.payRate
-        }
-
-        let temp = {
-          'inv_no': invNo,
-          'inv_seq': index.toString(),
-          'item_cd': product.ACCESSORY_CODE,
-          'item_nm': encodeURIComponent(product.NAME),
-          'qty': product.QUANTITY.toString(),
-          'price': detailPrice.toString(),
-          'item_type': 'accessory'
-        }
-        detail.push(temp)
-      })
-
-      console.log(detail)
-      sum = sum - this.priceDiscount
-      let master = JSON.stringify({
-        'owner_id': process.env.PAYMENT_OWNER_ID,
-        'cust_id': 'DEFAULT-POS',
-        'inv_no': invNo,
-        'inv_dt': this.$moment().format('YYYYMMDD').toString(),
-        'amount': sum.toString(),
-        'payment': sum.toString(),
-        'type': type,
-        'pay_gb': payGb,
-        'callback_url': window.location.origin + '/pay/complete',
-        'app_yn': mobileOS.toString(),
-        'ci': encodeURIComponent(this.user_ci),
-        'identifier': encodeURIComponent(this.user_ci),
-        'store_id': process.env.FLAGSHIP_STORE_ID,
-        'qr_code': this.$route.query.qrCode,
-        'poc_code': this.pocCode,
-        'work': process.env.PAYMENT_ENV,
-        'coupon_num': this.couponNum,
-        'user_id': this.user_id
-      })
-
-      let masterData = 'master=' + master + '&detail=' + JSON.stringify(detail)
+      const invNum = await PAY.createOrderId(this.order)
+      const mobileOS = (this.$cookies.get('platform') === 'A' || this.$cookies.get('platform') === 'I') ? 1 : 0
+      const work = process.env.NODE_ENV === 'production' ? 'REAL' : 'DEV'
+      const request = `INV_NUMBER=${invNum}&app_yn=${mobileOS}&cust_id=DEFAULT-POS&callback_url=${window.location.origin + '/pay/complete'}&work=${work}`
       localStorage.setItem('pay_url', this.$route.fullPath)
 
-      PAY.callPayment(masterData)
+      PAY.callPayment(request)
     },
     renderAcc (accList) {
       accList.forEach((acc, index) => {
@@ -230,15 +196,11 @@ export default {
     }
   },
   mounted () {
-    if (this.$route.query.type === 'vending') {
-      this.pocCode = 'POC_VEN'
-      PAY.vendingCallback(this.$route.query.qrCode)
-    }
-
     if (!this.$cookies.get('USER_AUTH')) {
       localStorage.setItem('previous_url', this.$route.fullPath)
       this.$router.push('/confirm/paylogin')
     }
+
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
@@ -246,13 +208,16 @@ export default {
         this.isLogin = false
       }
     })
+
+    if (this.$route.query.type === 'vending') {
+      this.pocCode = 'POC_VEN'
+      PAY.vendingCallback(this.$route.query.qrCode)
+    }
   },
   watch: {
     isLogin: function () {
       if (this.isLogin) {
         this.user_type = this.$cookies.get('MY_INFO').USER_TYPE
-        this.user_ci = this.$cookies.get('MY_INFO').CI
-        this.user_id = this.$cookies.get('MY_INFO').USER_ID
         this.renderAcc(JSON.parse(this.$route.query.acc))
         this.getCouponList()
       }
@@ -269,5 +234,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../../assets/css/pay';
+@import '../../assets/css/pay';
 </style>
