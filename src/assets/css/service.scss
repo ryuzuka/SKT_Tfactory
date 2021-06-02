@@ -446,6 +446,7 @@
     border-bottom:1px solid $line-color;
     &:before {
       display:inline-block;
+      margin-right: 3px;
       counter-increment: question-counter;
       content: counter(question-counter)'.';
       @include font-set16;
