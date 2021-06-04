@@ -710,6 +710,11 @@
           }
         }
       }
+      p{
+        margin-top: 20px;
+        color: #787878;
+        @include font-set14;
+      }
     }
     &-tit {
       @include font-set24;
