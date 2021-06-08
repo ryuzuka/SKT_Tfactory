@@ -94,7 +94,7 @@
             <p class="cate"><span>{{crewClass.THUMBNAIL_TITLE}}</span>{{crewClass.THUMBNAIL_SUBTITLE}}</p>
           </div>
           <div class="thumb"><img :src="crewClass.THUMBNAIL_IMAGE_URL" alt=""></div>
-          <p class="tit">{{crewClass.NAME}}</p>
+          <p class="tit" v-html="crewClass.NAME">{{crewClass.NAME}}</p>
           <p class="subtext">{{crewClass.SCHEDULE_GUIDE}}</p>
         </a>
       </li>
