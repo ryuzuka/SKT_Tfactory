@@ -58,18 +58,18 @@
         <h3 class="blind">1F</h3>
         <ul class="list-main" :class="{'ani-obj': tabAniObj[0]}" ref="tabAniObj0">
           <li v-show="tabsList[0][0].isShow">
-            <router-link to="/shop/detail/store2">
-              <div class="thumb"><img src="../../images/tfactory/zone2-top.jpg" alt=""></div>
-              <em>Factory Gate</em>
-              <p class="subtext">눈을 사로잡는 초대형 아트월,<br> T Factory의 입구</p>
+            <router-link to="/shop/detail/store19">
+              <div class="thumb"><img src="../../images/tfactory/zone19-top.jpg" alt=""></div>
+              <em>T Factory 24</em>
+              <p class="subtext">스마트폰을 구매하고 구독형 상품을 언제나 <br>만나볼 수 있는 24시간 무인 매장</p>
             </router-link>
           </li>
           <li v-show="tabsList[0][1].isShow">
-            <router-link to="/shop/detail/store3">
-              <div class="thumb"><img src="../../images/tfactory/zone3-top.jpg" alt=""></div>
-              <em>Flex Stage</em>
-              <p class="subtext">빠르게 변화하는 IT 트렌드를 <br>
-                만나볼 수 있는 메인 공간</p>
+            <router-link to="/shop/detail/store8">
+              <div class="thumb"><img src="../../images/tfactory/zone8-top.jpg" alt=""></div>
+              <em>Media Zone</em>
+              <p class="subtext">영화/드라마/음악/e-book 등 <br>
+                미디어 콘텐츠 무한 감상 공간</p>
             </router-link>
           </li>
           <li v-show="tabsList[0][2].isShow">
@@ -80,6 +80,21 @@
             </router-link>
           </li>
           <li v-show="tabsList[0][3].isShow">
+            <router-link to="/shop/detail/store2">
+              <div class="thumb"><img src="../../images/tfactory/zone2-top.jpg" alt=""></div>
+              <em>Factory Gate</em>
+              <p class="subtext">눈을 사로잡는 초대형 아트월,<br> T Factory의 입구</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][4].isShow">
+            <router-link to="/shop/detail/store3">
+              <div class="thumb"><img src="../../images/tfactory/zone3-top.jpg" alt=""></div>
+              <em>Flex Stage</em>
+              <p class="subtext">빠르게 변화하는 IT 트렌드를 <br>
+                만나볼 수 있는 메인 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[0][5].isShow">
             <router-link to="/shop/detail/store5">
               <div class="thumb"><img src="../../images/tfactory/zone5-top.jpg" alt=""></div>
               <em>Security Pod</em>
@@ -87,7 +102,7 @@
                 디지털 북으로 만날 수 있는 공간</p>
             </router-link>
           </li>
-          <li v-show="tabsList[0][4].isShow">
+          <li v-show="tabsList[0][6].isShow">
             <router-link to="/shop/detail/store6">
               <div class="thumb"><img src="../../images/tfactory/zone6-top.jpg" alt=""></div>
               <em>Media Pod</em>
@@ -95,27 +110,12 @@
                 명대사 카드로 찾아 볼 수 있는 공간</p>
             </router-link>
           </li>
-          <li v-show="tabsList[0][5].isShow">
+          <li v-show="tabsList[0][7].isShow">
             <router-link to="/shop/detail/store7">
               <div class="thumb"><img src="../../images/tfactory/zone7-top.jpg" alt=""></div>
               <em>0 Favorite</em>
               <p class="subtext">0(Young) 피플이 선택한 <br>
                 최신 디지털 제품이 가득한 쇼핑 공간</p>
-            </router-link>
-          </li>
-          <li v-show="tabsList[0][6].isShow">
-            <router-link to="/shop/detail/store8">
-              <div class="thumb"><img src="../../images/tfactory/zone8-top.jpg" alt=""></div>
-              <em>Media Zone</em>
-              <p class="subtext">영화/드라마/음악/e-book 등 <br>
-                미디어 콘텐츠 무한 감상 공간</p>
-            </router-link>
-          </li>
-          <li v-show="tabsList[0][7].isShow">
-            <router-link to="/shop/detail/store19">
-              <div class="thumb"><img src="../../images/tfactory/zone19-top.jpg" alt=""></div>
-              <em>T Factory 24</em>
-              <p class="subtext">스마트폰을 구매하고 구독형 상품을 언제나 <br>만나볼 수 있는 24시간 무인 매장</p>
             </router-link>
           </li>
         </ul>
@@ -144,38 +144,38 @@
         <h3 class="blind">2F</h3>
         <ul class="list-main" :class="{'ani-obj': tabAniObj[2]}" ref="tabAniObj2">
           <li v-show="tabsList[2][0].isShow">
-            <router-link to="/shop/detail/store10">
-              <div class="thumb"><img src="../../images/tfactory/zone10-top.jpg" alt=""></div>
-              <em>Consulting Lounge</em>
-              <p class="subtext">IT전문가를 만나는 1:1 상담 공간</p>
-            </router-link>
-          </li>
-          <li v-show="tabsList[2][1].isShow">
-            <router-link to="/shop/detail/store11">
-              <div class="thumb"><img src="../../images/tfactory/zone11-top.jpg" alt=""></div>
-              <em>11 STREET</em>
-              <p class="subtext">11번가 인기 상품을 구매하고 <br>혜택까지 받는 쇼핑 공간</p>
-            </router-link>
-          </li>
-          <li v-show="tabsList[2][2].isShow">
             <router-link to="/shop/detail/store12">
               <div class="thumb"><img src="../../images/tfactory/zone12-top.jpg" alt=""></div>
               <em>Data Station</em>
               <p class="subtext">0(Young) 피플을 위한 데이터 무료 충전소</p>
             </router-link>
           </li>
-          <li v-show="tabsList[2][3].isShow">
+          <li v-show="tabsList[2][1].isShow">
             <router-link to="/shop/detail/store13">
               <div class="thumb"><img src="../../images/tfactory/zone13-top.jpg" alt=""></div>
               <em>Apple Zone</em>
               <p class="subtext">아시아 최초 샵인샵 애플 스토어</p>
             </router-link>
           </li>
-          <li v-show="tabsList[2][4].isShow">
+          <li v-show="tabsList[2][2].isShow">
             <router-link to="/shop/detail/store14">
               <div class="thumb"><img src="../../images/tfactory/zone14-top.jpg" alt=""></div>
               <em>0 Stage</em>
               <p class="subtext">0(Young) 피플을 위한 AR, VR 체험 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][3].isShow">
+            <router-link to="/shop/detail/store10">
+              <div class="thumb"><img src="../../images/tfactory/zone10-top.jpg" alt=""></div>
+              <em>Consulting Lounge</em>
+              <p class="subtext">IT전문가를 만나는 1:1 상담 공간</p>
+            </router-link>
+          </li>
+          <li v-show="tabsList[2][4].isShow">
+            <router-link to="/shop/detail/store11">
+              <div class="thumb"><img src="../../images/tfactory/zone11-top.jpg" alt=""></div>
+              <em>11 STREET</em>
+              <p class="subtext">11번가 인기 상품을 구매하고 <br>혜택까지 받는 쇼핑 공간</p>
             </router-link>
           </li>
           <li v-show="tabsList[2][5].isShow">
