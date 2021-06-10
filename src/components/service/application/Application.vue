@@ -66,6 +66,8 @@ export default {
     checkProgramBook () {
       STORE.getProgramTimeTable(this.storeId, this.classId).then(result => {
         result = result['SCHEDULE_LIST'][0]
+        if (!result) return
+
         this.scheduleId = result.PROGRAM_SCHEDULE_ID
         for (let i = 0; i < result['MAX_ATTENDEE_PER_APPLY']; ++i) {
           this.attendeeList[i] = {text: String(i + 1), value: i + 1}
