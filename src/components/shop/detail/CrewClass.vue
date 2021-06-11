@@ -42,6 +42,9 @@ export default {
 
       _.forEach(result, (program, index) => {
         if (program['DISPLAY_IN_CLASS'] === 1) {
+          if (program.NAME.indexOf('ㅤ') > -1) {
+            program.NAME = program.NAME.replace(/ㅤ/g, '<br>')
+          }
           this.classList.push(program)
         }
       })

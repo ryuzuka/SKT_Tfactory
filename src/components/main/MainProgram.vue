@@ -98,20 +98,23 @@ export default {
     },
     getProgramList () {
       STORE.getProgramClassList().then(result => {
-        result.CLASSES.forEach(program => {
-          if (program.DISPLAY_IN_CLASS) {
+        result['CLASSES'].forEach(program => {
+          if (program['DISPLAY_IN_CLASS']) {
+            if (program.NAME.indexOf('ㅤ') > -1) {
+              program.NAME = program.NAME.replace(/ㅤ/g, '<br>')
+            }
             this.crewClasses.push(program)
           }
-          if (program.DISPLAY_IN_SPECIAL) {
+          if (program['DISPLAY_IN_SPECIAL']) {
             this.specialClasses.push(program)
           }
-          if (program.DISPLAY_IN_TODAY) {
+          if (program['DISPLAY_IN_TODAY']) {
             this.todayClasses.push(program)
           }
 
           this.mainBannerKor.forEach((banner, bannerIndex) => {
             if (banner === program.NAME) {
-              this.mainBannerUrl[bannerIndex] = program.LINK_URL + '?classId=' + program.PROGRAM_CLASS_ID
+              this.mainBannerUrl[bannerIndex] = program['LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']
             }
           })
         })
