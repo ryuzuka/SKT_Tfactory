@@ -250,7 +250,7 @@ export default {
           // 응모
           bookInfo['ATTENDEE_NUM'] = this.attendeeNum
           STORE.applyProgram(bookInfo).then(result => {
-            this.$router.push('/sev/applicationComplete?&bookId=' + result.BOOK_ID)
+            this.$router.push('/sev/applicationComplete?bookId=' + result.BOOK_ID)
           }).catch(err => {
             if (err.response.data.RET_CODE === 18006) {
               this.alertAlreadyApply()

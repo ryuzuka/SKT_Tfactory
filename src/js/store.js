@@ -190,6 +190,8 @@ export const getStoreProgram = (storeId) => {
 }
 
 export const getProgramTimeTable = (storeId, programId) => {
+  if (!storeId || !programId) return
+
   return axios.get(STORE_URL + '/programBook/check?STORE_ID=' + storeId + '&PROGRAM_CLASS_ID=' + programId, COMMON.getHeader()).then(response => {
     return response.data
   })
