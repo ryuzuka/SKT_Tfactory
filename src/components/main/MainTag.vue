@@ -236,7 +236,7 @@ export default {
 
       STORE.getMyBookingList(0).then(result => {
         result.BOOKING.forEach(booking => {
-          if (booking.STATUS === 'ordered' || booking.STATUS === 'operator_assigned') {
+          if (booking.STATUS === 'selected' || booking.STATUS === 'ordered' || booking.STATUS === 'operator_assigned') {
             this.hasNoti = true
 
             booking.DATE_EXCEPT_TIME = this.$moment(booking.DATE).format('YYYYMMDD')
