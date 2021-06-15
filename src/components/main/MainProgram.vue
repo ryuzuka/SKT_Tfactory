@@ -132,7 +132,7 @@ export default {
 
         this.isAsyncComplete[0] = true
         this.$nextTick(() => {
-          this.scrollToFactoryClass()
+          this.scrollToFactory()
         })
       })
     },
@@ -141,11 +141,11 @@ export default {
         this.mainBannerList = result['CLASSES']
         this.isAsyncComplete[1] = true
         this.$nextTick(() => {
-          this.scrollToFactoryClass()
+          this.scrollToFactory()
         })
       })
     },
-    scrollToFactoryClass () {
+    scrollToFactory () {
       if (!this.isAsyncComplete[0] || !this.isAsyncComplete[1]) return
 
       if (this.scrollQuery === 'special' || this.scrollQuery === 'today' || this.scrollQuery === 'class') {
