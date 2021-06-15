@@ -8,8 +8,8 @@ export default {
   },
   methods: {
     goMain () {
-      sessionStorage.setItem('qrCode', 'true')
-      this.$router.push('/')
+      sessionStorage.setItem('isQrCode', 'true')
+      window.location.href = this.$route.query.prev_url
     }
   },
   created () {
