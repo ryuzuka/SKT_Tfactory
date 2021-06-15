@@ -24,7 +24,7 @@ export default {
       isSpecialMore: true,
       isConcertMore: true,
       isAsyncComplete: [false, false],
-      isFactoryClass: Boolean(this.$route.query.factoryClass),
+      scrollQuery: this.$route.query.scroll,
       programSwiperOption: {
         slidesPerView: 1,
         pagination: {
@@ -148,8 +148,8 @@ export default {
     scrollToFactoryClass () {
       if (!this.isAsyncComplete[0] || !this.isAsyncComplete[1]) return
 
-      if (this.isFactoryClass) {
-        let scrollPosition = document.querySelector('#factory-class').offsetTop
+      if (this.scrollQuery) {
+        let scrollPosition = document.querySelector('#factory-' + this.scrollQuery).offsetTop + 60
         window.scrollTo({top: scrollPosition, behavior: 'smooth'})
       }
     }
