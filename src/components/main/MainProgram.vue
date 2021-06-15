@@ -148,7 +148,7 @@ export default {
     scrollToFactoryClass () {
       if (!this.isAsyncComplete[0] || !this.isAsyncComplete[1]) return
 
-      if (this.scrollQuery) {
+      if (this.scrollQuery === 'special' || this.scrollQuery === 'today' || this.scrollQuery === 'class') {
         let scrollPosition = document.querySelector('#factory-' + this.scrollQuery).offsetTop + 60
         window.scrollTo({top: scrollPosition, behavior: 'smooth'})
       }
