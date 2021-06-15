@@ -23,6 +23,8 @@ export default {
       isClassMore: true,
       isSpecialMore: true,
       isConcertMore: true,
+      isAsyncComplete: [false, false],
+      isFactoryClass: Boolean(this.$route.query.factoryClass),
       programSwiperOption: {
         slidesPerView: 1,
         pagination: {
@@ -127,12 +129,29 @@ export default {
         this.todayClasses.sort(function (a, b) {
           return b['ORDER_IN_TODAY'] - a['ORDER_IN_TODAY']
         })
+
+        this.isAsyncComplete[0] = true
+        this.$nextTick(() => {
+          this.scrollToFactoryClass()
+        })
       })
     },
     getProgramBanner () {
       STORE.getProgramBanner().then(result => {
         this.mainBannerList = result['CLASSES']
+        this.isAsyncComplete[1] = true
+        this.$nextTick(() => {
+          this.scrollToFactoryClass()
+        })
       })
+    },
+    scrollToFactoryClass () {
+      if (!this.isAsyncComplete[0] || !this.isAsyncComplete[1]) return
+
+      if (this.isFactoryClass) {
+        let scrollPosition = document.querySelector('#factory-class').offsetTop
+        window.scrollTo({top: scrollPosition, behavior: 'smooth'})
+      }
     }
   },
   mounted () {
