@@ -35,7 +35,7 @@ export default {
       programList: []
     }
   },
-  created () {
+  mounted () {
     let count = 0
     _.forEach(this.classIdList, (classId, index) => {
       STORE.getProgramClass(classId).then(result => {
