@@ -4,7 +4,7 @@
 import Program from './Program'
 
 export default {
-  name: 'Program37',
+  name: 'Program43',
   components: {
     Program
   },
