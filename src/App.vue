@@ -24,6 +24,7 @@ export default {
           if (response.RET_CODE === 0) {
             this.$store.state.constants.session_alive = true
           } else {
+            this.$cookies.remove('USER_AUTH')
             this.$store.state.constants.session_alive = false
           }
         })
