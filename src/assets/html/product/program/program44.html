@@ -31,6 +31,11 @@
         <span>7</span>월의 덕콘, 한여름 무더위를 잊게해줄 아티스트들과 함께합니다.
         아티스트가 낸 덕력고사 풀고 콘서트 초청의 기회를 잡으세요!
       </p>
+
+      <program-lineup
+        :class-id-list="[62, 63, 64, 65]"
+      ></program-lineup>
+      <!--
       <ul class="list-program wide">
         <li>
           <a href="./program40?classId=62">
@@ -39,8 +44,6 @@
               </div>
             <div class="info">
               <span class="flag-solid8">모집중</span>
-              <span v-else-if="programClass[0].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-              <span v-else-if="programClass[0].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | HippoPotamic</em></p>
               <p class="subtext"><span>7</span>월 9일 오후 8시</p>
             </div>
@@ -53,8 +56,6 @@
               </div>
             <div class="info">
               <span class="flag-solid8">모집중</span>
-              <span v-else-if="programClass[1].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-              <span v-else-if="programClass[1].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 딕펑스</em></p>
               <p class="subtext"><span>7</span>월 16일 오후 8시</p>
             </div>
@@ -67,8 +68,6 @@
               </div>
             <div class="info">
               <span class="flag-solid8">모집중</span>
-              <span v-else-if="programClass[2].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-              <span v-else-if="programClass[2].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 윤현상</em></p>
               <p class="subtext"><span>7</span>월 23일 오후 8시</p>
             </div>
@@ -81,14 +80,13 @@
               </div>
             <div class="info">
               <span class="flag-solid8">모집중</span>
-              <span v-else-if="programClass[3].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
-              <span v-else-if="programClass[3].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 위아더나잇</em></p>
               <p class="subtext"><span>7</span>월 30일 오후 8시</p>
             </div>
           </a>
         </li>
       </ul>
+      -->
     </div>
   </div>
   <!-- //details -->
