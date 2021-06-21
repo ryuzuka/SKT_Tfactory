@@ -1,7 +1,7 @@
 <div class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
-    <img src="../../../images/program/class39-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
+    <img src="../../../images/program/class44-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.04 페퍼톤스">
   </div>
   <!-- //slide -->
   <!-- details -->
@@ -31,14 +31,17 @@
         <span>7</span>월의 덕콘, 한여름 무더위를 잊게해줄 아티스트들과 함께합니다.
         아티스트가 낸 덕력고사 풀고 콘서트 초청의 기회를 잡으세요!
       </p>
-      <ul class="list-program wide">
+      <program-lineup
+        :class-id-list="[62, 63, 64, 65]"
+      ></program-lineup>
+      <!-- <ul class="list-program wide">
         <li>
           <a href="./program40?classId=62">
             <div class="thumb">
               <img src="../../../images/program/class44-conts1.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid8">모집중</span>
+              <span v-if="programClass[0].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
               <span v-else-if="programClass[0].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
               <span v-else-if="programClass[0].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | HippoPotamic</em></p>
@@ -52,7 +55,7 @@
               <img src="../../../images/program/class44-conts2.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid8">모집중</span>
+              <span v-if="programClass[1].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
               <span v-else-if="programClass[1].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
               <span v-else-if="programClass[1].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 딕펑스</em></p>
@@ -66,7 +69,7 @@
               <img src="../../../images/program/class44-conts3.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid8">모집중</span>
+              <span v-if="programClass[2].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
               <span v-else-if="programClass[2].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
               <span v-else-if="programClass[2].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 윤현상</em></p>
@@ -80,7 +83,7 @@
               <img src="../../../images/program/class44-conts4.jpg" alt="">
               </div>
             <div class="info">
-              <span class="flag-solid8">모집중</span>
+              <span v-if="programClass[3].APPLY_PROGRESS === 'ONGOING'" class="flag-solid8">모집중</span>
               <span v-else-if="programClass[3].APPLY_PROGRESS === 'OVER'" class="flag-solid9">모집마감</span>
               <span v-else-if="programClass[3].APPLY_PROGRESS === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
               <p class="tit"><em><span>7</span>월의 덕콘 | 위아더나잇</em></p>
@@ -88,7 +91,7 @@
             </div>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
   <!-- //details -->
