@@ -704,6 +704,9 @@
             display:block;
             margin-bottom:4px;
             color:#000;
+            span {
+              font-family: 'Noto Sans KR';
+            }
           }
           & + .desc {
             margin-top:16px;
@@ -714,6 +717,9 @@
         margin-top: 20px;
         color: #787878;
         @include font-set14;
+        span {
+          font-family: 'Noto Sans KR';
+        }
       }
     }
     &-tit {
@@ -725,6 +731,12 @@
         margin-bottom:4px;
         @include font-set16;
         font-weight:$fw-medium;
+        &.notosans {
+          display: inline;
+          font-family: 'Noto Sans KR';
+          font-size:inherit;
+          font-weight: inherit;
+        }
       }
       .pipe {
         display:inline-block;
@@ -768,6 +780,9 @@
           margin:32px 0 8px;
           color: #000;
           @include font-set16;
+        }
+        span {
+          font-family: 'Noto Sans KR';
         }
       }
       > .subtit:first-child { margin-top:0; }
