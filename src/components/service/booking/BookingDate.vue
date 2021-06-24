@@ -89,7 +89,7 @@ export default {
     },
     // --- program
     getProgramClass (classId) {
-      if (parseInt(this.classId) === 36) {
+      if (parseInt(this.classId) === 36) { // Xbox 컨트롤러 TO-GO
         this.isSelectTime = false
       }
 
