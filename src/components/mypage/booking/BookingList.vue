@@ -56,7 +56,11 @@ export default {
           booking.type = booking.TYPE
           let STATUS = booking['STATUS']
           booking.status = BOOKING_STATUS[STATUS.toString()]
-          booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD HH:mm')
+          if (parseInt(booking['PROGRAM_CLASS_ID']) === 36) { // Xbox 컨트롤러 TO-GO
+            booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD')
+          } else {
+            booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD HH:mm')
+          }
           this.lastIndex = booking.BOOK_ID
         })
         this.listData = this.listData.concat(result['BOOKING'])
