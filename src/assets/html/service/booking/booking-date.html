@@ -58,7 +58,7 @@
       </swiper-slide>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
-    <ul class="list-option col4">
+    <ul class="list-option col4" v-show="isSelectTime">
       <li v-for="(program, index) in programList">
         <input
           type="radio"

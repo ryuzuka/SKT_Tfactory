@@ -57,6 +57,7 @@ export default {
       },
       bookingModify: false,
       isSurvey: false,
+      isSelectTime: true,
       programType: ''
     }
   },
@@ -88,6 +89,10 @@ export default {
     },
     // --- program
     getProgramClass (classId) {
+      if (parseInt(this.classId) === 36) { // Xbox 컨트롤러 TO-GO
+        this.isSelectTime = false
+      }
+
       STORE.getProgramClass(classId).then(result => {
         this.selectedService = result['PROGRAM_CLASS']
         this.isSurvey = this.selectedService['SURVEY_YN']
@@ -114,7 +119,10 @@ export default {
           }
           this.$forceUpdate()
           this.$nextTick(() => {
-            this.changeProgramDate(this.selectedDate)
+            this.setProgramDate(this.selectedDate)
+            if (!this.isSelectTime) {
+              this.selectedProgram = this.programList[0]['PROGRAM_SCHEDULE_ID']
+            }
           })
         } else {
           _.forEach(this.dateList, date => {
@@ -126,7 +134,7 @@ export default {
         }
       })
     },
-    changeProgramDate (date) {
+    setProgramDate (date) {
       let moment = this.$moment(date.replace(/\./g, ''))
       this.selectedDateText = (moment.month() + 1) + this.$t('sev.month') + ' ' + String(moment.date()) + this.$t('sev.date') + ' ' + this.days[moment.day()] + this.$t('sev.day')
 
@@ -142,12 +150,20 @@ export default {
         }
       })
     },
+    changeProgramDate (date) {
+      this.selectedProgram = null
+
+      this.setProgramDate(date)
+      if (!this.isSelectTime) {
+        this.$nextTick(() => {
+          this.selectedProgram = this.programList[0]['PROGRAM_SCHEDULE_ID']
+          this.changeProgram(this.programList[0])
+        })
+      }
+    },
     changeProgram (program) {
       if (program.isBooked) {
         this.alertExperienceOnceToday()
-        this.$nextTick(() => {
-          this.selectedProgram = null
-        })
       }
     },
     // program --- //
@@ -190,11 +206,19 @@ export default {
         this.next(this.bookingType)
       } else if (this.bookingType === 'program') {
         /** program **********************************************************************************/
-
         // 예약 날짜/시간을 선택해주세요.
         if (!this.selectedProgram) {
           this.alertSelectTime()
           return
+        }
+
+        // 해당 시간에 신청 내역이 있습니다.
+        if (!this.bookingModify) {
+          let program = _.find(this.programList, {'PROGRAM_SCHEDULE_ID': this.selectedProgram})
+          if (program && program.isBooked) {
+            this.alertExperienceOnceToday()
+            return
+          }
         }
 
         let bookInfo = {

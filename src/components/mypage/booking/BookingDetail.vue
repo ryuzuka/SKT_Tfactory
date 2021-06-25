@@ -37,7 +37,11 @@ export default {
     STORE.getBookingInfo(this.$route.query.BOOK_ID).then(result => {
       this.bookingDetail = result.BOOK_INFO
       this.programType = this.bookingDetail.BOOKING_TYPE
-      this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD HH:mm')
+      if (parseInt(result.BOOK_INFO['PROGRAM_CLASS_ID']) === 36) { // Xbox 컨트롤러 TO-GO
+        this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD')
+      } else {
+        this.bookingDetail.DATE = this.$moment(this.bookingDetail.DATE).format('YYYY.MM.DD HH:mm')
+      }
       if (!this.bookingDetail.OPERATOR_IMAGE_URL) {
         this.bookingDetail.OPERATOR_IMAGE_URL = require('@/assets/images/service/icon_T.png')
       }
