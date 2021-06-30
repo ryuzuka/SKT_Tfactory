@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import * as STORE from '../../../js/store'
+import * as STORE from '../../../../js/store'
 import _ from 'lodash'
 
 export default {
-  name: 'ProgramBottom',
+  name: 'ProgramButton',
   props: {},
   data () {
     return {

@@ -19,7 +19,7 @@
 
 <script>
 import _ from 'lodash'
-import * as STORE from '../../../js/store'
+import * as STORE from '../../../../js/store'
 
 export default {
   name: 'ProgramLineup',

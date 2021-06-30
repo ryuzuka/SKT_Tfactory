@@ -1,7 +1,7 @@
 <template src="../../../assets/html/product/program/program39.html"></template>
 
 <script>
-import ProgramLineup from './ProgramLineup'
+import ProgramLineup from './components/ProgramLineup'
 
 export default {
   name: 'Program39',
