@@ -1,6 +1,8 @@
 <template src="../../../assets/html/product/program/program38.html"></template>
 
 <script>
+import * as NATIVE from '../../../js/native.js'
+
 export default {
   name: 'Program38',
   components: {},
@@ -16,6 +18,15 @@ export default {
     })
   },
   methods: {
+    clickButton () {
+      const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
+      const mobileOS = this.$cookies.get('platform')
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+      } else {
+        window.open(redirectURL, '_blank')
+      }
+    }
   }
 }
 </script>

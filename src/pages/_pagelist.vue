@@ -356,6 +356,26 @@
               <router-link class="link" to='/experience/program39'>6월의 덕콘</router-link>
               <div class="date"><span>5.26</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program40'>6월의 덕콘</router-link>
+              <div class="date"><span>7.05</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program41'>6월의 덕콘</router-link>
+              <div class="date"><span>7.05</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program42'>6월의 덕콘</router-link>
+              <div class="date"><span>7.05</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program43'>6월의 덕콘</router-link>
+              <div class="date"><span>7.05</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program44'>7월의 덕콘</router-link>
+              <div class="date"><span>7.05</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>

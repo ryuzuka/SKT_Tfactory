@@ -1,12 +1,12 @@
 <template src="../../../assets/html/product/program/program41.html"></template>
 
 <script>
-import Program from './Program'
+import ProgramButton from './components/ProgramButton'
 
 export default {
   name: 'Program41',
   components: {
-    Program
+    ProgramButton
   },
   data () {
     return {
