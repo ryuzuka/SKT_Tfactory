@@ -63,6 +63,7 @@ const store = new Vuex.Store({
 
 Vue.use(VLoading, store)
 Vue.use(Common, store)
+window.Kakao.init('027f9cd60b4e323923c28ebb003dbb59')
 
 window.app = new Vue({
   i18n,

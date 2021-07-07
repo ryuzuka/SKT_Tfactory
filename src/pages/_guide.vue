@@ -17,6 +17,13 @@
       </section> -->
 
       <section class="row">
+        <h2>Kakao link</h2>
+        <div class="btn-wrap">
+          <button id="kakaoShare" class="btn-solid big">카카오 공유하기</button>
+        </div>
+      </section>
+
+      <section class="row">
         <h2>form</h2>
         <h3>checkbox</h3>
         <input type="checkbox" name="chk1" id="chk1-1" checked><label for="chk1-1">CCTV</label>
@@ -565,9 +572,49 @@ export default {
         currentDate = this.$moment(currentDate).add(1, 'days')
       }
       return dateArray
+    },
+    setKakaoShare () {
+      let Kakao = window.Kakao
+      // let shareLink = 'https://www.tfactory.co.kr'
+
+      Kakao.Link.createDefaultButton({
+        container: '#kakaoShare',
+        objectType: 'feed',
+        content: {
+          title: '제목 입력',
+          description: '내용 입력',
+          imageUrl: 'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+          link: {
+            webUrl: 'https://www.tfactory.co.kr',
+            mobileWebUrl: 'https://www.tfactory.co.kr'
+          }
+        },
+        social: {
+          likeCount: 10,
+          commentCount: 20,
+          sharedCount: 30
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              webUrl: 'https://www.tfactory.co.kr',
+              mobileWebUrl: 'https://www.tfactory.co.kr'
+            }
+          },
+          {
+            title: '앱으로 보기',
+            link: {
+              webUrl: 'https://www.tfactory.co.kr',
+              mobileWebUrl: 'https://www.tfactory.co.kr'
+            }
+          }
+        ]
+      })
     }
   },
   mounted () {
+    this.setKakaoShare()
   },
   created () {
     /// get date list
