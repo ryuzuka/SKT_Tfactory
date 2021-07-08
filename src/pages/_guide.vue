@@ -17,9 +17,10 @@
       </section> -->
 
       <section class="row">
-        <h2>Kakao link</h2>
+        <h2></h2>
         <div class="btn-wrap">
-          <button id="kakaoShare" class="btn-solid big">카카오 공유하기</button>
+          <button class="btn-line big" id="kakaoShare">카카오 공유하기</button>
+          <button class="btn-solid big" @click="copyLink">링크 복사</button>
         </div>
       </section>
 
@@ -400,6 +401,11 @@ import UiChart from '../ui/UiChart'
 import booking from './_guide/Modal'
 import Top from '../components/common/Top'
 
+import Vue from 'vue'
+import VueClipboard from 'vue-clipboard2'
+
+Vue.use(VueClipboard)
+
 export default {
   name: 'guide',
   components: {
@@ -482,6 +488,50 @@ export default {
     }
   },
   methods: {
+    kakaoShare () {
+      let Kakao = window.Kakao
+      let shareLink = 'https://www.tfactory.co.kr'
+
+      Kakao.Link.createDefaultButton({
+        container: '#kakaoShare',
+        objectType: 'feed',
+        content: {
+          title: '제목 입력',
+          description: '내용 입력',
+          imageUrl: 'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+          link: {
+            webUrl: shareLink,
+            mobileWebUrl: shareLink
+          }
+        },
+        social: {
+          likeCount: 10,
+          commentCount: 20,
+          sharedCount: 30
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              webUrl: shareLink,
+              mobileWebUrl: shareLink
+            }
+          },
+          {
+            title: '앱으로 보기',
+            link: {
+              webUrl: shareLink,
+              mobileWebUrl: shareLink
+            }
+          }
+        ]
+      })
+    },
+    copyLink () {
+      let linkUrl = window.document.location.href
+      this.$copyText(linkUrl)
+      console.log(window.document.location.href)
+    },
     completeScroll () {
       console.log('complete-scroll')
     },
@@ -497,6 +547,7 @@ export default {
         test: 'test'
       }, {
         // modal props,
+        // clickToClose: true
       }, {
         // event
         'before-open': () => { console.log('before-open') },
@@ -572,49 +623,10 @@ export default {
         currentDate = this.$moment(currentDate).add(1, 'days')
       }
       return dateArray
-    },
-    setKakaoShare () {
-      let Kakao = window.Kakao
-      // let shareLink = 'https://www.tfactory.co.kr'
-
-      Kakao.Link.createDefaultButton({
-        container: '#kakaoShare',
-        objectType: 'feed',
-        content: {
-          title: '제목 입력',
-          description: '내용 입력',
-          imageUrl: 'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-          link: {
-            webUrl: 'https://www.tfactory.co.kr',
-            mobileWebUrl: 'https://www.tfactory.co.kr'
-          }
-        },
-        social: {
-          likeCount: 10,
-          commentCount: 20,
-          sharedCount: 30
-        },
-        buttons: [
-          {
-            title: '웹으로 보기',
-            link: {
-              webUrl: 'https://www.tfactory.co.kr',
-              mobileWebUrl: 'https://www.tfactory.co.kr'
-            }
-          },
-          {
-            title: '앱으로 보기',
-            link: {
-              webUrl: 'https://www.tfactory.co.kr',
-              mobileWebUrl: 'https://www.tfactory.co.kr'
-            }
-          }
-        ]
-      })
     }
   },
   mounted () {
-    this.setKakaoShare()
+    this.kakaoShare()
   },
   created () {
     /// get date list
