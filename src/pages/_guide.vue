@@ -17,6 +17,11 @@
       </section> -->
 
       <section class="row">
+        <h2></h2>
+        <kakao-share></kakao-share>
+      </section>
+
+      <section class="row">
         <h2>form</h2>
         <h3>checkbox</h3>
         <input type="checkbox" name="chk1" id="chk1-1" checked><label for="chk1-1">CCTV</label>
@@ -392,13 +397,15 @@ import UiSelect from '../ui/UiSelect'
 import UiChart from '../ui/UiChart'
 import booking from './_guide/Modal'
 import Top from '../components/common/Top'
+import KakaoShare from '../components/common/KakaoShare'
 
 export default {
   name: 'guide',
   components: {
     UiSelect,
     UiChart,
-    Top
+    Top,
+    KakaoShare
   },
   data () {
     return {
@@ -475,6 +482,13 @@ export default {
     }
   },
   methods: {
+    kakaoShare () {
+    },
+    copyLink () {
+      let linkUrl = window.document.location.href
+      this.$copyText(linkUrl)
+      console.log(window.document.location.href)
+    },
     completeScroll () {
       console.log('complete-scroll')
     },
@@ -490,6 +504,7 @@ export default {
         test: 'test'
       }, {
         // modal props,
+        // clickToClose: true
       }, {
         // event
         'before-open': () => { console.log('before-open') },
@@ -568,6 +583,7 @@ export default {
     }
   },
   mounted () {
+    this.kakaoShare()
   },
   created () {
     /// get date list
