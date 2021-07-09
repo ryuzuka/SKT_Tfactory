@@ -357,19 +357,19 @@
               <div class="date"><span>5.26</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program40'>6월의 덕콘</router-link>
+              <router-link class="link" to='/experience/program40'>7월의 덕콘 | HippoPotamic</router-link>
               <div class="date"><span>7.05</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program41'>6월의 덕콘</router-link>
+              <router-link class="link" to='/experience/program41'>7월의 덕콘 | 딕펑스</router-link>
               <div class="date"><span>7.05</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program42'>6월의 덕콘</router-link>
+              <router-link class="link" to='/experience/program42'>7월의 덕콘 | 윤현상</router-link>
               <div class="date"><span>7.05</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program43'>6월의 덕콘</router-link>
+              <router-link class="link" to='/experience/program43'>7월의 덕콘 | 위아더나잇</router-link>
               <div class="date"><span>7.05</span></div>
             </li>
             <li class="pagelist-item">
