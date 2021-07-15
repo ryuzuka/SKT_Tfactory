@@ -17,7 +17,7 @@
       </section> -->
 
       <section class="row">
-        <h2></h2>
+        <h2>카카오 공유</h2>
         <kakao-share></kakao-share>
       </section>
 
@@ -397,15 +397,16 @@ import UiSelect from '../ui/UiSelect'
 import UiChart from '../ui/UiChart'
 import booking from './_guide/Modal'
 import Top from '../components/common/Top'
+
 import KakaoShare from '../components/common/KakaoShare'
 
 export default {
   name: 'guide',
   components: {
+    KakaoShare,
     UiSelect,
     UiChart,
-    Top,
-    KakaoShare
+    Top
   },
   data () {
     return {
@@ -482,8 +483,6 @@ export default {
     }
   },
   methods: {
-    kakaoShare () {
-    },
     copyLink () {
       let linkUrl = window.document.location.href
       this.$copyText(linkUrl)
@@ -583,7 +582,6 @@ export default {
     }
   },
   mounted () {
-    this.kakaoShare()
   },
   created () {
     /// get date list
