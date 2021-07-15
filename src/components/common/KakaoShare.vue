@@ -1,11 +1,12 @@
 <template>
-  <div class="btn-wrap">
-    <button class="btn-line big" id="kakaoShare">카카오 공유하기</button>
-    <button class="btn-solid big" @click="copyLink">링크 복사</button>
+  <div>
+    <button @click="openShare">카카오 링크 공유</button>
   </div>
 </template>
 
 <script>
+import ModalKakaoShare from './ModalKakaoShare'
+
 export default {
   name: 'KaKaoShare',
   props: {
@@ -19,11 +20,11 @@ export default {
     },
     shareImage: {
       type: String,
-      default: 'https://www.tfactory.co.kr/static/img/main_banner_01.bdfc21c.jpg'
+      default: ''
     },
     shareLink: {
       type: String,
-      default: 'https://www.tfactory.co.kr'
+      default: ''
     }
   },
   data () {
@@ -31,44 +32,23 @@ export default {
     }
   },
   methods: {
-    copyLink () {
-      let linkUrl = window.document.location.href
-      this.$copyText(linkUrl)
-    },
-    setKakaoShare () {
-      let kakao = window.Kakao
-
-      kakao['Link']['createDefaultButton']({
-        container: '#kakaoShare',
-        objectType: 'feed',
-        content: {
-          title: this.title,
-          description: this.description,
-          imageUrl: this.shareImage,
-          link: {
-            webUrl: this.shareLink,
-            mobileWebUrl: this.shareLink
-          }
-        },
-        buttons: [
-          {
-            title: '웹으로 보기',
-            link: {
-              webUrl: this.shareLink,
-              mobileWebUrl: this.shareLink
-            }
-          }
-        ]
-        // social: {
-        //   likeCount: 10,
-        //   commentCount: 20,
-        //   sharedCount: 30
-        // },
+    openShare () {
+      this.$modal.show(ModalKakaoShare, {
+        // component props
+      }, {
+        // modal props,
+        clickToClose: true
+      }, {
+        // event
+        'before-open': () => { console.log('before-open') },
+        'opened': () => { console.log('opened') },
+        'before-close': () => { console.log('before-close') },
+        'closed': () => { console.log('closed') },
+        'event-test': (e) => { console.log('event-test', e) }
       })
     }
   },
   mounted () {
-    this.setKakaoShare()
   },
   created () {
   }
