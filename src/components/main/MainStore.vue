@@ -182,17 +182,17 @@ export default {
         this.$loading.stop()
 
         if (result.RET_CODE === 0) {
-          // 이미 T Factory 회원 (O)
           this.$cookies.set('USER_AUTH', result)
           this.$store.getters.CONSTANTS.session_alive = true
           this.$router.push(localStorage.getItem('previous_url'))
-        } else if (result.RET_CODE === 1) {
-          // T Factory 최초 - 자사
-          this.$router.push('/join?line_list=' + JSON.stringify(result.LINE_LIST))
-        } else if (result.RET_CODE === 2) {
-          // T Factory 최초 - 타사
-          this.$router.push('/join/number')
         }
+        // else if (result.RET_CODE === 1) {
+        //   // T Factory 최초 - 자사
+        //   this.$router.push('/join?line_list=' + JSON.stringify(result.LINE_LIST))
+        // } else if (result.RET_CODE === 2) {
+        //   // T Factory 최초 - 타사
+        //   this.$router.push('/join/number')
+        // }
       }).catch((err) => {
         this.$loading.stop()
         this.loginFailedModal(err.response.data.RET_CODE)
