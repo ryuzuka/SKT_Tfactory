@@ -1,5 +1,8 @@
 <template>
   <div class="popup">
+    <header>
+      <button class="btn-close" @click="$emit('close')"><span class="blind">닫기</span></button>
+    </header>
     <div class="layer-cont">
       <div><button>공유</button></div>
       <div><button>복사</button></div>
