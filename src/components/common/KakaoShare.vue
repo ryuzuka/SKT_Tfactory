@@ -12,35 +12,43 @@ export default {
   props: {
     title: {
       type: String,
-      default: '내일을 만나는 곳 T Factory | T팩토리'
+      default: ''
     },
     description: {
       type: String,
-      default: 'SK텔레콤 플래그십 스토어 T팩토리에서 내일의 문화를 만나보세요.'
+      default: ''
     },
     thumbnail: {
       type: String,
-      default: null
+      default: ''
     }
   },
   data () {
     return {
+      localTitle: this.title,
+      localDescription: this.description,
       localThumbnail: this.thumbnail
     }
   },
   created () {
-    if (this.thumbnail === null) {
-      this.$EventBus.$on('get-class-info', data => {
+    this.$EventBus.$on('get-class-info', data => {
+      if (!this.title) {
+        this.localTitle = data['PROGRAM_CLASS_NAME']
+      }
+      if (!this.description) {
+        this.localDescription = data['PROGRAM_CLASS_SCHEDULE_GUIDE']
+      }
+      if (!this.thumbnail) {
         this.localThumbnail = data['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']
-      })
-    }
+      }
+    })
   },
   methods: {
     openShare () {
       this.$modal.show(ModalKakaoShare, {
         // component props
-        title: this.title,
-        description: this.description,
+        title: this.localTitle,
+        description: this.localDescription,
         thumbnail: this.localThumbnail,
         link: window.document.location.href
       }, {
