@@ -1,12 +1,13 @@
 <template src="../../../assets/html/product/program/program39.html"></template>
 
 <script>
+import KakaoShare from '../../common/KakaoShare'
 import ProgramLineup from './components/ProgramLineup'
 import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program39',
-  components: {ProgramLineup},
+  components: {KakaoShare, ProgramLineup},
   data () {
     return {}
   },

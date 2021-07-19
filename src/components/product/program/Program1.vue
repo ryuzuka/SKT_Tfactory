@@ -2,10 +2,12 @@
 
 <script>
 import ProgramButton from './components/ProgramButton'
+import KakaoShare from '../../common/KakaoShare'
 
 export default {
   name: 'Program1',
   components: {
+    KakaoShare,
     ProgramButton
   },
   data () {
