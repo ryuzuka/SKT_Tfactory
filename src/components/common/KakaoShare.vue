@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button @click="openShare">카카오 링크 공유</button>
+  <div class="share">
+    <button @click="openShare" class="share-btn"><span class="blind">카카오 링크 공유</span></button>
   </div>
 </template>
 

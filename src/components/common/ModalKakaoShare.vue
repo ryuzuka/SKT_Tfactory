@@ -3,9 +3,9 @@
     <header>
       <button class="btn-close" @click="$emit('close')"><span class="blind">닫기</span></button>
     </header>
-    <div class="layer-cont">
-      <div><button>공유</button></div>
-      <div><button>복사</button></div>
+    <div class="layer-cont popup-share">
+      <div class="btn-kakao"><button></button><p>카카오톡</p></div>
+      <div class="btn-share"><button></button><p>공유하기</p></div>
     </div>
   </div>
 </template>
