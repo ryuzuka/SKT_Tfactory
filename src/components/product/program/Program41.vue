@@ -1,11 +1,13 @@
 <template src="../../../assets/html/product/program/program41.html"></template>
 
 <script>
+import KakaoShare from '../../common/KakaoShare'
 import ProgramButton from './components/ProgramButton'
 
 export default {
   name: 'Program41',
   components: {
+    KakaoShare,
     ProgramButton
   },
   data () {
