@@ -46,13 +46,11 @@ export default {
     this.$EventBus.$on('complete-link-copy', e => {
       this.$modal.show('dialog', {
         title: '링크가 복사되었습니다.',
-        buttons: [{
-          title: this.$t('comm.confirm'),
-          handler: () => {
-            this.$modal.hide('dialog')
-          }
-        }]
+        buttons: []
       })
+      setTimeout(() => {
+        this.$modal.hide('dialog')
+      }, 1000)
     })
   },
   methods: {
