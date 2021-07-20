@@ -39,13 +39,14 @@ export default {
     return {
       loading: null,
       isLoading: false,
-      listData: [],
-      lastIndex: 0,
-      isMore: true
+      listData: []
     }
   },
   methods: {
-    clickInquiry () {
+    goDetailBookInfo (data) {
+      if (data.type !== 'twf-counseling') {
+        this.$router.push(`/my/booking/${data.type}/detail/${data.status}?BOOK_ID=${data.BOOK_ID}`)
+      }
     },
     clickMore () {
       this.getBookingList()
@@ -61,12 +62,10 @@ export default {
           } else {
             booking.date = this.$moment(booking.DATE).format('YYYY.MM.DD HH:mm')
           }
-          this.lastIndex = booking.BOOK_ID
         })
-        this.listData = this.listData.concat(result['BOOKING'])
-        if (result['BOOKING'].length < 10) {
-          this.isMore = false
-        }
+        this.listData = result['BOOKING']
+
+        console.log(this.listData)
       })
     },
     clickSatisfaction (bookId) {

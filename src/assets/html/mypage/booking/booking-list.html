@@ -1,68 +1,89 @@
 <div class="contents my-booking" ref="contents">
-  <ul class="my-booking-list">
-    <li v-for="(data, index) in listData" :key="index" :class="{'completed': data.status === 'complete' || data.status === 'not', 'end': data['STATUS'] === 'satisfaction_surveyed'}">
-      <router-link :to="'/my/booking/' + data.type + '/detail/' + data.status + '?BOOK_ID=' + data.BOOK_ID">
-        <p class="list-tit">
-          <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>                         <!-- apply -->
-          <span class="flag-solid2" v-else-if="data.status === 'success'">
-            <template v-if="data.type === 'field_buy' || data.type =='field'">접수대기</template>           <!-- ordered 상담원 배정중 -->
-            <template v-else>예약완료</template>                                                            <!-- ordered 예약완료 -->
+    <ul class="my-booking-list">
+        <li v-for="(data, index) in listData" :key="index"
+            :class="{'completed': data.status === 'complete' || data.status === 'not', 'end': data['STATUS'] === 'satisfaction_surveyed'}">
+            <a @click.prevent="goDetailBookInfo(data)">
+                <p :class="{ 'list-tit': data.type !== 'twf-counseling', 'list-tit2': data.type === 'twf-counseling'}">
+                    <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>
+                    <!-- apply -->
+                    <span class="flag-solid2" v-else-if="data.status === 'success'">
+            <template v-if="data.type === 'field_buy' || data.type =='field'">접수대기</template>
+                        <!-- ordered 상담원 배정중 -->
+            <template v-else>예약완료</template>
+                        <!-- ordered 예약완료 -->
           </span>
-          <span class="flag-solid2" v-else-if="data.status === 'operator_assigned'">접수완료</span>        <!-- operator_assigned -->
-          <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>                 <!-- completed, satisfaction_surveyed -->
-          <span class="flag-solid3" v-else-if="data.status === 'end'">종료</span>                         <!-- end -->
-          <span class="flag-solid5" v-else-if="data.status === 'cancel'">취소</span>                      <!-- canceled: 취소 -->
-          <span class="flag-solid3" v-else-if="data.status === 'counseling'">상담중</span>                 <!-- counseling: 상담중 -->
-          <span class="flag-solid5" v-else-if="data.status === 'not'">미방문</span>                        <!-- no_show: 미방문 -->
-          <span class="flag-solid2" v-else-if="data.status === 'selected'">당첨</span>                    <!-- selected: 당첨 -->
-          <span class="flag-solid5" v-else-if="data.status === 'not_selected'">미당첨</span>               <!-- not_selected: 미당첨 -->
+                    <span class="flag-solid2" v-else-if="data.status === 'operator_assigned'">접수완료</span>
+                    <!-- operator_assigned -->
+                    <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>
+                    <!-- completed, satisfaction_surveyed -->
+                    <span class="flag-solid3" v-else-if="data.status === 'end'">종료</span>
+                    <!-- end -->
+                    <span class="flag-solid5" v-else-if="data.status === 'cancel'">취소</span>
+                    <!-- canceled: 취소 -->
+                    <span class="flag-solid3" v-else-if="data.status === 'counseling'">상담중</span>
+                    <!-- counseling: 상담중 -->
+                    <span class="flag-solid5" v-else-if="data.status === 'not'">미방문</span>
+                    <!-- no_show: 미방문 -->
+                    <span class="flag-solid2" v-else-if="data.status === 'selected'">당첨</span>
+                    <!-- selected: 당첨 -->
+                    <span class="flag-solid5" v-else-if="data.status === 'not_selected'">미당첨</span>
+                    <!-- not_selected: 미당첨 -->
 
-          <template v-if="data.type === 'program'">
-            <template v-if="data.BOOKING_TYPE === 'select'">프로그램 신청<i></i></template>
-            <template v-else>프로그램 예약<i></i></template>
-          </template>
-          <template v-else-if="data.type === 'counseling'">상담 예약<i></i></template>
-          <template v-else-if="data.type === 'field_buy' || data.type =='field'">상담 접수<i></i></template>
-          <template v-else-if="data.type === 'experience'">체험존 예약<i></i></template>
-        </p>
+                    <template v-if="data.type === 'program'">
+                        <template v-if="data.BOOKING_TYPE === 'select'">프로그램 신청<i></i></template>
+                        <template v-else>프로그램 예약<i></i></template>
+                    </template>
+                    <template v-else-if="data.type === 'counseling' || data.type === 'twf-counseling'">상담 예약<i></i>
+                    </template>
+                    <template v-else-if="data.type === 'field_buy' || data.type =='field'">상담 접수<i></i></template>
+                    <template v-else-if="data.type === 'experience'">체험존 예약<i></i></template>
+                </p>
 
-        <dl class="details-info">
-          <dt v-if="data.type === 'program' && data.BOOKING_TYPE === 'select'">신청 번호</dt>
-          <dt v-else-if="data.type === 'field_buy' || data.type =='field'">접수 번호</dt>
-          <dt v-else>예약 번호</dt>
-          <dd>{{data.BOOK_CODE}}</dd>
+                <dl class="details-info">
+                    <dt v-if="data.type === 'program' && data.BOOKING_TYPE === 'select'">신청 번호</dt>
+                    <dt v-else-if="data.type === 'program' && data.BOOKING_TYPE !== 'select'">예약 번호</dt>
+                    <dt v-else-if="data.type === 'field_buy' || data.type =='field'">접수 번호</dt>
+                    <dt v-else-if="data.type === 'counseling'">예약 번호</dt>
 
-          <dt>{{ $t('sev.booking-shop') }}</dt>
-          <dd>{{data.STORE_NAME}}</dd>
+                    <dd v-if="data.type !== 'twf-counseling'">{{ data.BOOK_CODE }}</dd>
 
-          <dt>{{ $t('sev.booking-location') }}</dt>
-          <dd>{{data.ZONE_NAME}}</dd>
+                    <dt>{{ $t('sev.booking-shop') }}</dt>
+                    <dd>{{ data.STORE_NAME }}</dd>
 
-          <template v-if="data.type === 'program'">
-            <dt>프로그램 명</dt>
-            <dd>{{data.PROGRAM_CLASS_NAME}}</dd>
-            <dt>프로그램 일시</dt>
-            <dd>{{data.date}}</dd>
-          </template>
-          <template v-else>
-            <dt v-if="data.type === 'counseling'">상담 유형</dt>
-            <dd v-if="data.type === 'counseling'">{{data.COUNSELING_NAME}}</dd>
-            <dt>상담 일시</dt>
-            <dd>{{data.date}}</dd>
-          </template>
-        </dl>
-      </router-link>
+                    <dt v-if="data.type !== 'twf-counseling'">{{ $t('sev.booking-location') }}</dt>
+                    <dd v-if="data.type !== 'twf-counseling'">{{ data.ZONE_NAME }}</dd>
 
-      <!-- 만족도 조사 -->
-      <template v-if="data.type === 'program'">
-        <button v-if="data.STATUS === 'completed'" class="btn-line medium" @click="clickSatisfaction(data.BOOK_ID)">프로그램 평가하기</button>
-        <button v-else-if="data.STATUS === 'satisfaction_surveyed'" class="btn-line medium disabled">프로그램 평가 완료</button>
-      </template>
-    </li>
-  </ul>
-<!--  <div class="btn-wrap" v-if="isMore">-->
-<!--    <a href="#" class="btn-more" v-if="listData.length > 0" @click.prevent="clickMore">{{ $t('comm.more') }}</a>-->
-<!--  </div>-->
+                    <template v-if="data.type === 'program'">
+                        <dt>프로그램 명</dt>
+                        <dd>{{ data.PROGRAM_CLASS_NAME }}</dd>
+                        <dt>프로그램 일시</dt>
+                        <dd>{{ data.date }}</dd>
+                    </template>
+                    <template v-else>
+                        <dt v-if="data.type === 'counseling' || data.type === 'twf-counseling'">상담 유형</dt>
+                        <dd v-if="data.type === 'counseling' || data.type === 'twf-counseling'">
+                            {{ data.COUNSELING_NAME }}
+                        </dd>
+                        <dt>상담 일시</dt>
+                        <dd>{{ data.date }}</dd>
+                    </template>
+                </dl>
+            </a>
 
-  <p class="no-content" v-if="listData.length === 0">{{ $t('my.booking-list-none') }}</p>
+            <!-- 만족도 조사 -->
+            <template v-if="data.type === 'program'">
+                <button v-if="data.STATUS === 'completed'" class="btn-line medium"
+                        @click="clickSatisfaction(data.BOOK_ID)">프로그램 평가하기
+                </button>
+                <button v-else-if="data.STATUS === 'satisfaction_surveyed'" class="btn-line medium disabled">프로그램 평가
+                    완료
+                </button>
+            </template>
+        </li>
+    </ul>
+    <!--  <div class="btn-wrap" v-if="isMore">-->
+    <!--    <a href="#" class="btn-more" v-if="listData.length > 0" @click.prevent="clickMore">{{ $t('comm.more') }}</a>-->
+    <!--  </div>-->
+
+    <p class="no-content" v-if="listData.length === 0">{{ $t('my.booking-list-none') }}</p>
 </div>
