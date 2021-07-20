@@ -114,13 +114,10 @@ export const cancelCounseling = (bookInfo) => {
   })
 }
 
-export const getMyBookingList = (lastBookId) => {
+export const getMyBookingList = () => {
   let requestURL = ''
 
-  if (lastBookId > 0) {
-    requestURL = '&LAST_BOOK_ID=' + lastBookId
-  }
-  return axios.get(STORE_URL + '/book/list?SIZE=10' + requestURL, COMMON.getHeader()).then(response => {
+  return axios.get(STORE_URL + '/book/list' + requestURL, COMMON.getHeader()).then(response => {
     return response.data
   })
 }
