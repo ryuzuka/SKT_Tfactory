@@ -36,11 +36,23 @@ export default {
         this.localTitle = data['PROGRAM_CLASS_NAME']
       }
       if (!this.description) {
-        this.localDescription = data['PROGRAM_CLASS_SCHEDULE_GUIDE']
+        this.localDescription = ''
       }
       if (!this.thumbnail) {
         this.localThumbnail = data['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']
       }
+    })
+
+    this.$EventBus.$on('complete-link-copy', e => {
+      this.$modal.show('dialog', {
+        title: '링크가 복사되었습니다.',
+        buttons: [{
+          title: this.$t('comm.confirm'),
+          handler: () => {
+            this.$modal.hide('dialog')
+          }
+        }]
+      })
     })
   },
   methods: {
