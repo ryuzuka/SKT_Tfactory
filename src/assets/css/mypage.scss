@@ -444,6 +444,20 @@
         @include iconImg($x:-100px,$y:-100px);
       }
     }
+    .list-tit2 {
+      position:relative;
+      padding-right:32px;
+      @include font-set16;
+      font-weight:$fw-medium;
+      i {
+        position:absolute;
+        top:0;
+        right:0;
+        width:24px;
+        height:24px;
+        opacity:.6;
+      }
+    }
     [class^="btn"] {
       width:100%;
       margin-top:20px;
