@@ -39,6 +39,7 @@ export default {
       let linkUrl = window.document.location.href
       this.$copyText(linkUrl)
       this.$emit('close')
+      this.$EventBus.$emit('complete-link-copy')
     },
     shareLink () {
       let kakao = window.Kakao
