@@ -50,7 +50,7 @@ export default {
       })
       setTimeout(() => {
         this.$modal.hide('dialog')
-      }, 1000)
+      }, 800)
     })
   },
   methods: {
