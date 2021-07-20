@@ -1,11 +1,13 @@
 <template src="../../../assets/html/product/program/program32.html"></template>
 
 <script>
+import KakaoShare from '../../common/KakaoShare'
 import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program32',
   components: {
+    KakaoShare
   },
   data () {
     return {

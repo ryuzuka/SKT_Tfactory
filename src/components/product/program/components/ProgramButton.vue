@@ -51,6 +51,8 @@ export default {
       this.bookingAvailable = result['PROGRAM_CLASS']['PROGRAM_CLASS_BOOKING_YN'] === 1 ? Boolean(true) : Boolean(false)
       this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
       this.applyProgress = result['PROGRAM_CLASS']['APPLY_PROGRESS']
+
+      this.$EventBus.$emit('get-class-info', result['PROGRAM_CLASS'])
     })
   },
   methods: {

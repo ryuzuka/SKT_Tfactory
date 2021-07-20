@@ -1,76 +1,72 @@
 <template>
-  <div class="btn-wrap">
-    <button class="btn-line big" id="kakaoShare">카카오 공유하기</button>
-    <button class="btn-solid big" @click="copyLink">링크 복사</button>
+  <div class="share">
+    <button @click="openShare" class="share-btn"><span class="blind">카카오 링크 공유</span></button>
   </div>
 </template>
 
 <script>
+import ModalKakaoShare from './ModalKakaoShare'
+
 export default {
   name: 'KaKaoShare',
   props: {
     title: {
       type: String,
-      default: 'T Factory'
+      default: ''
     },
     description: {
       type: String,
       default: ''
     },
-    shareImage: {
+    thumbnail: {
       type: String,
-      default: 'https://www.tfactory.co.kr/static/img/main_banner_01.bdfc21c.jpg'
-    },
-    shareLink: {
-      type: String,
-      default: 'https://www.tfactory.co.kr'
+      default: ''
     }
   },
   data () {
     return {
+      localTitle: this.title,
+      localDescription: this.description,
+      localThumbnail: this.thumbnail
     }
-  },
-  methods: {
-    copyLink () {
-      let linkUrl = window.document.location.href
-      this.$copyText(linkUrl)
-    },
-    setKakaoShare () {
-      let kakao = window.Kakao
-
-      kakao['Link']['createDefaultButton']({
-        container: '#kakaoShare',
-        objectType: 'feed',
-        content: {
-          title: this.title,
-          description: this.description,
-          imageUrl: this.shareImage,
-          link: {
-            webUrl: this.shareLink,
-            mobileWebUrl: this.shareLink
-          }
-        },
-        buttons: [
-          {
-            title: '웹으로 보기',
-            link: {
-              webUrl: this.shareLink,
-              mobileWebUrl: this.shareLink
-            }
-          }
-        ]
-        // social: {
-        //   likeCount: 10,
-        //   commentCount: 20,
-        //   sharedCount: 30
-        // },
-      })
-    }
-  },
-  mounted () {
-    this.setKakaoShare()
   },
   created () {
+    this.$EventBus.$on('get-class-info', data => {
+      if (!this.title) {
+        this.localTitle = data['PROGRAM_CLASS_NAME']
+      }
+      if (!this.description) {
+        this.localDescription = ''
+      }
+      if (!this.thumbnail) {
+        this.localThumbnail = data['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']
+      }
+    })
+
+    this.$EventBus.$on('complete-link-copy', e => {
+      this.$modal.show('dialog', {
+        title: '링크가 복사되었습니다.',
+        buttons: []
+      })
+      setTimeout(() => {
+        this.$modal.hide('dialog')
+      }, 800)
+    })
+  },
+  methods: {
+    openShare () {
+      this.$modal.show(ModalKakaoShare, {
+        // component props
+        title: this.localTitle,
+        description: this.localDescription,
+        thumbnail: this.localThumbnail,
+        link: window.document.location.href
+      }, {
+        // modal props
+      }, {
+        // event
+      })
+    }
   }
 }
 </script>
