@@ -390,3 +390,13 @@ export const authCheck = (auth) => {
         })
     })
 }
+
+export const confirmCheckIn = (certKey) => {
+  let request = {
+    CERT_KEY: certKey,
+    NONCE: '123456'
+  }
+  return axios.post(USER_URL + '/confirmCheckIn', request).then(response => {
+    return response.data
+  })
+}
