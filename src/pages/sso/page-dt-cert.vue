@@ -13,6 +13,7 @@ export default {
   methods: {
     async confirmCheckIn (certKey) {
       try {
+        this.$cookies.remove('USER_AUTH')
         const result = await USER.confirmCheckIn(certKey)
         this.$cookies.set('USER_AUTH', result)
         this.$store.getters.CONSTANTS.session_alive = true
