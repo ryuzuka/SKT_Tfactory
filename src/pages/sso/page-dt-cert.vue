@@ -15,6 +15,7 @@ export default {
       try {
         const result = await USER.confirmCheckIn(certKey)
         this.$cookies.set('USER_AUTH', result)
+        this.$store.getters.CONSTANTS.session_alive = true
         this.$router.push('/main/mytag')
       } catch (e) {
         this.$router.push('/main/store')
