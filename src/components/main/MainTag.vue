@@ -305,16 +305,13 @@ export default {
         this.userInfo = this.$cookies.get('MY_INFO')
         this.nickname = this.userInfo.NICKNAME
 
-        alert('1')
         USER.requestOneTimeCert().then(oneTimeCertKey => {
           this.oneTimeCertKey = oneTimeCertKey
         })
-        alert('2')
 
         this.setOneTimeCert()
         setInterval(this.setOneTimeCert, 60000)
 
-        alert('3')
 
         if (this.$route.query.id_token !== undefined) {
           USER.migrateToTID(this.$route.query.id_token).then(result => {
@@ -325,16 +322,12 @@ export default {
             }
           })
         }
-        alert('4')
 
         this.getMyHistory()
-        alert('5')
 
         this.getMyTags()
-        alert('6')
 
         this.getZoneRecommend()
-        alert('7')
 
         this.setNotification()
       } else if (!this.isLogin) {
