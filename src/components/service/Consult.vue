@@ -23,6 +23,7 @@ export default {
       this.requestConsult()
     },
     requestConsult () {
+      console.log(this.contactNumber)
       let bookInfo = {
         POC_DEVICE_ID: process.env.POC_DEVICE_ID,
         PAGE_NAME: '모바일 현장호출',

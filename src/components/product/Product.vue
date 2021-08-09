@@ -162,7 +162,6 @@ export default {
             let bookInfo = {
               POC_DEVICE_ID: process.env.POC_DEVICE_ID,
               PAGE_NAME: '모바일 현장호출',
-              MDN: '010' + this.contactNumber,
               ADDITIONAL_INFO: this.$store.getters.CONSTANTS.ON_SITE_COUNSELING_DETAIL
             }
 
