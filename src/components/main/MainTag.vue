@@ -312,7 +312,6 @@ export default {
         this.setOneTimeCert()
         setInterval(this.setOneTimeCert, 60000)
 
-
         if (this.$route.query.id_token !== undefined) {
           USER.migrateToTID(this.$route.query.id_token).then(result => {
             this.$cookies.remove('USER_AUTH')

@@ -149,15 +149,14 @@ export default {
       }
 
       this.$modal.show('dialog', {
-        title: this.$t('prd.alert-contact-number-guide') + this.mdn,
+        title: '상담 신청하시겠습니까?',
         buttons: [{
-          title: this.$t('prd.change-contact-number'),
+          title: '아니오',
           handler: () => {
             this.$modal.hide('dialog')
-            this.$router.push({path: '/sev/consult'})
           }
         }, {
-          title: this.$t('prd.apply-counseling'),
+          title: '예',
           handler: () => {
             let bookInfo = {
               POC_DEVICE_ID: process.env.POC_DEVICE_ID,

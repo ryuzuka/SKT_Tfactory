@@ -16,7 +16,6 @@ export default {
   },
   created () {
     STORE.getOnSiteCounselingInfo(this.$route.query.BOOK_ID).then(result => {
-      console.log(result)
       this.bookInfo = result
     })
   }

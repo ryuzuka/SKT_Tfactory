@@ -7,11 +7,9 @@
                     <span class="flag-solid2" v-if="data.status === 'apply'">신청완료</span>
                     <!-- apply -->
                     <span class="flag-solid2" v-else-if="data.status === 'success'">
-            <template v-if="data.type === 'field_buy' || data.type =='field'">접수대기</template>
-                        <!-- ordered 상담원 배정중 -->
-            <template v-else>예약완료</template>
-                        <!-- ordered 예약완료 -->
-          </span>
+                        <template v-if="data.type === 'field_buy' || data.type =='field'">신청완료</template>
+                        <template v-else>예약완료</template>
+                    </span>
                     <span class="flag-solid2" v-else-if="data.status === 'operator_assigned'">접수완료</span>
                     <!-- operator_assigned -->
                     <span class="flag-solid3" v-else-if="data.status === 'complete'">참여완료</span>
