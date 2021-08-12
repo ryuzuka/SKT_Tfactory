@@ -102,13 +102,12 @@ export default {
   methods: {
     clickCounselingBtn () {
       if (this.isLogin) {
-        this.onSiteBooking()
-
-        // if (!this.locationAgree || this.distance > 100) {
-        //   this.$router.push('/sev/booking/counseling/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID)
-        // } else {
-        //   this.onSiteBooking()
-        // }
+        // this.onSiteBooking()
+        if (!this.locationAgree || this.distance > 100) {
+          this.$router.push('/sev/booking/counseling/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID)
+        } else {
+          this.onSiteBooking()
+        }
       } else {
         localStorage.setItem('previous_url', this.$route.fullPath)
         this.$router.push({'name': 'Login'})
