@@ -815,6 +815,17 @@
           text-indent:0;
         }
       }
+      .texts-notice {
+        padding-left:16px;
+        word-break:keep-all;
+        &:before {
+          content:'※';
+          display:inline-block;
+          width:16px;
+          margin-left:-16px;
+          vertical-align:top;
+        }
+      }
     }
     .list-program {
       &:after { @include clearer; }
