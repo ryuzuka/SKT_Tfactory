@@ -23,13 +23,12 @@ export default {
       this.requestConsult()
     },
     requestConsult () {
+      console.log(this.contactNumber)
       let bookInfo = {
-        'STORE_ID': process.env.MYTAG_STORE_ID,
-        'BOOK_TYPE': 'field_buy',
-        'POC_CODE': 'POC_TPA',
-        'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-        'USER_PHONE_NUMBER': '010' + this.contactNumber,
-        'ADDITIONAL_INFO': this.$store.getters.CONSTANTS.ON_SITE_COUNSELING_DETAIL
+        POC_DEVICE_ID: process.env.POC_DEVICE_ID,
+        PAGE_NAME: '모바일 현장호출',
+        MDN: '010' + this.contactNumber,
+        ADDITIONAL_INFO: this.$store.getters.CONSTANTS.ON_SITE_COUNSELING_DETAIL
       }
 
       STORE.bookOnSiteCounseling(bookInfo).then(result => {

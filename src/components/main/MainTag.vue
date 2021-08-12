@@ -323,8 +323,11 @@ export default {
         }
 
         this.getMyHistory()
+
         this.getMyTags()
+
         this.getZoneRecommend()
+
         this.setNotification()
       } else if (!this.isLogin) {
         window.location.href = '/main/store'
