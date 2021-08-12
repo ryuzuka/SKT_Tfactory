@@ -85,6 +85,7 @@ import Login from '../pages/sso/page-login'
 import Kiosk from '../pages/sso/page-kiosk'
 import Success from '../pages/sso/page-success'
 import Certify from '../pages/sso/page-certify'
+import DTLogin from '../pages/sso/page-dt-cert'
 
 // shop
 import ShopList from '../pages/shop/page-shop'
@@ -223,6 +224,7 @@ export default new Router({
     {path: '/sso/kiosk', name: 'Kiosk', component: Kiosk}, // kiosk 로그인
     {path: '/sso/success', name: 'Success', component: Success}, // kiosk 로그인 성공
     {path: '/sso/certify', name: 'Certify', component: Certify}, // 빠른 체크인
+    {path: '/sso/dt', name: 'DTLogin', component: DTLogin}, // 빠른 체크인
 
     // shop
     {path: '/shop/list', name: 'Shop', component: ShopList}, // 매장찾기

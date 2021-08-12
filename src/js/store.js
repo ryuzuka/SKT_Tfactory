@@ -135,7 +135,7 @@ export const getCounselingSurveyInfo = (salesGroupId) => {
 }
 
 export const bookOnSiteCounseling = (bookInfo) => {
-  return axios.post(STORE_URL + '/fieldBook/book', bookInfo, COMMON.getHeader()).then(response => {
+  return axios.post(STORE_URL + '/fieldBook/call', bookInfo, COMMON.getHeader()).then(response => {
     return response.data
   })
 }

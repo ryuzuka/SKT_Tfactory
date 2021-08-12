@@ -4,6 +4,7 @@
 import * as TID from '../../js/tid.js'
 import * as NATIVE from '../../js/native.js'
 import * as USER from '../../js/user.js'
+import VueJwtDecode from 'vue-jwt-decode'
 
 export default {
   name: 'Setting',
@@ -11,6 +12,7 @@ export default {
     return {
       isLogin: '',
       myInfo: {},
+      signInType: null,
       mobileOS: '',
       FACE_REGIST_YN: false
     }
@@ -22,8 +24,8 @@ export default {
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive) {
         this.myInfo = this.$cookies.get('MY_INFO')
+        this.signInType = VueJwtDecode.decode(this.$cookies.get('USER_AUTH').ACCESS_TOKEN).SIGNIN_TYPE
         this.isLogin = true
-        this.FACE_REGIST_YN = this.$cookies.get('MY_INFO').FACE_REGIST_YN
       } else if (!this.$store.getters.CONSTANTS.session_alive) {
         this.isLogin = false
       }
@@ -50,7 +52,7 @@ export default {
         TID.tidLogout(callback)
       }
     },
-    mdnLogout () {
+    passLogout () {
       this.$cookies.remove('USER_AUTH')
       document.cookie = encodeURIComponent('MY_INFO') + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
       window.location.href = '/'

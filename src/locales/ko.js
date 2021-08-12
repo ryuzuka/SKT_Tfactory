@@ -764,7 +764,7 @@ export default {
     'combine-text': '기존 임시회원 정보를 가져와 통합할 수 있습니다.',
 
     // T아이디 회원 정보 관리
-    'id-member-info-management': 'T아이디 회원 정보',
+    'id-member-info-management': '회원 정보 관리',
     'id-member-info-management-text': 'T아이디는 T Factory에서 이용할 수 있는<br> 계정 서비스입니다.',
     'change-agree-list': '동의 내역 변경',
     'change-agree-alert': '동의 내역이 변경되었습니다.',
@@ -776,7 +776,7 @@ export default {
     // 회원 탈퇴
     'leave': 'T Factory 회원 탈퇴',
     'leave-setting': '회원 탈퇴',
-    'leave-text': 'T Factory 서비스가 탈퇴 되어도 T아이디는 유지됩니다.',
+    'leave-text': 'T Factory 서비스에 탈퇴하려면 이동해주세요.',
     'leave-title': '회원 탈퇴 전에 꼭 확인하세요.',
     'leave-complete-title': '회원 탈퇴가 <br><strong>완료</strong>되었습니다.',
     'leave-description': '그동안 T Factory 서비스를<br> 이용해주셔서 감사합니다.',

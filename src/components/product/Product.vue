@@ -102,6 +102,7 @@ export default {
   methods: {
     clickCounselingBtn () {
       if (this.isLogin) {
+        // this.onSiteBooking()
         if (!this.locationAgree || this.distance > 100) {
           this.$router.push('/sev/booking/counseling/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID)
         } else {
@@ -147,24 +148,19 @@ export default {
       }
 
       this.$modal.show('dialog', {
-        title: this.$t('prd.alert-contact-number-guide') + this.mdn,
+        title: '상담 신청하시겠습니까?',
         buttons: [{
-          title: this.$t('prd.change-contact-number'),
+          title: '아니오',
           handler: () => {
             this.$modal.hide('dialog')
-            this.$router.push({path: '/sev/consult'})
           }
         }, {
-          title: this.$t('prd.apply-counseling'),
+          title: '예',
           handler: () => {
-            // FIXME: STORE_ID should be flagship store
             let bookInfo = {
-              'STORE_ID': process.env.MYTAG_STORE_ID,
-              'BOOK_TYPE': 'field_buy',
-              'POC_CODE': 'POC_TPA',
-              'USER_NAME': this.$cookies.get('MY_INFO').NAME,
-              'LINE_ID': this.lineID,
-              'ADDITIONAL_INFO': this.$store.getters.CONSTANTS.ON_SITE_COUNSELING_DETAIL
+              POC_DEVICE_ID: process.env.POC_DEVICE_ID,
+              PAGE_NAME: '모바일 현장호출',
+              ADDITIONAL_INFO: this.$store.getters.CONSTANTS.ON_SITE_COUNSELING_DETAIL
             }
 
             STORE.bookOnSiteCounseling(bookInfo).then(result => {

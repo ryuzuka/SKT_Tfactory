@@ -1,13 +1,11 @@
 <div class="contents" ref="contents">
   <div class="member">
-    <p v-html="$t('etc.id-member-info-management-text')">T아이디는 T Factory에서 사용할 수 있는<br> 계정 서비스 입니다.</p>
+<!--    <p></p>-->
     <dl class="details-info">
-      <dt v-if="myInfo.TID_SUBS_ID">{{ $t('comm.id') }}</dt>
-      <dd>{{myInfo.TID_SUBS_ID}}</dd>
+<!--      <dt v-if="myInfo.TID_SUBS_ID">{{ $t('comm.id') }}</dt>-->
+<!--      <dd>{{myInfo.TID_SUBS_ID}}</dd>-->
       <dt v-if="myInfo.MDN">{{ $t('comm.phone-number') }}</dt>
       <dd v-if="myInfo.MDN">{{myInfo.MDN}}</dd>
-<!--      <dt>{{ $t('comm.email') }}</dt>-->
-<!--      <dd>{{}}</dd>-->
       <dt v-if="myInfo.NAME">{{ $t('comm.name') }}</dt>
       <dd>{{myInfo.NAME}}</dd>
     </dl>
