@@ -20,7 +20,7 @@ export default {
     },
     thumbnail: {
       type: String,
-      default: ''
+      default: 'https://www.tfactory.co.kr/static/img/main_banner_01.bdfc21c.jpg'
     }
   },
   data () {
