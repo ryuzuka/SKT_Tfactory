@@ -380,6 +380,10 @@
               <router-link class="link" to='/experience/program45'>Unfold Your Summer</router-link>
               <div class="date"><span>8.11</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program46'>덕콘 Special | ADOY</router-link>
+              <div class="date"><span>8.20</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
