@@ -25,4 +25,6 @@ export default {
 
 <style lang="scss">
   @import 'src/assets/css/product';
+
+  .texts-list li:nth-child(2):before {content: ''; margin-left: -20px}
 </style>
