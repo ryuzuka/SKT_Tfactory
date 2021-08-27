@@ -16,18 +16,8 @@ export default {
     return {}
   },
   created () {
-    STORE.getProgramClass(this.classId).then(result => {
-      if (!result['PROGRAM_CLASS']) return
-
-      console.log(result['PROGRAM_CLASS'])
-    })
   },
   mounted () {
-    this.$store.watch(() => {
-      if (this.$store.getters.CONSTANTS.session_alive === true) {
-        this.isLogin = true
-      }
-    })
   },
   methods: {
     clickButton () {
