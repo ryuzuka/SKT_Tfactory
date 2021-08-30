@@ -4,7 +4,6 @@
 import KakaoShare from '../../common/KakaoShare'
 import ProgramLineup from './components/ProgramLineup'
 import * as NATIVE from '../../../js/native'
-import * as STORE from '../../../js/store'
 
 export default {
   name: 'Program48',
