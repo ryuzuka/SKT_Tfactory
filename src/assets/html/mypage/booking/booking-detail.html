@@ -63,17 +63,17 @@
       <dd v-else-if="!bookingDetail.USER_NICKNAME && !bookingDetail.USER_NAME">({{bookingDetail.USER_PHONE_NUMBER | mdnFilterForBooking}})</dd>
     </dl>
 
-    <dl class="details-info" v-if="bookingType === 'counseling' && (status !== 'cancel')">
-      <dt>{{ $t('my.counselor') }}</dt>
-      <dd v-if="bookingDetail.OPERATOR_ID !== null" class="counselor">
-        <figure>
-          <img :src="bookingDetail.OPERATOR_IMAGE_URL" alt="">
-          <figcaption>{{bookingDetail.OPERATOR_NAME}} 매니저</figcaption>
-        </figure>
-        <p v-if="bookingDetail.OPERATOR_INTRODUCE_MSG">"{{bookingDetail.OPERATOR_INTRODUCE_MSG}}"</p>
-      </dd>
-      <dd v-else>상담원 배정 중입니다.</dd>
-    </dl>
+<!--    <dl class="details-info" v-if="bookingType === 'counseling' && (status !== 'cancel')">-->
+<!--      <dt>{{ $t('my.counselor') }}</dt>-->
+<!--      <dd v-if="bookingDetail.OPERATOR_ID !== null" class="counselor">-->
+<!--        <figure>-->
+<!--          <img :src="bookingDetail.OPERATOR_IMAGE_URL" alt="">-->
+<!--          <figcaption>{{bookingDetail.OPERATOR_NAME}} 매니저</figcaption>-->
+<!--        </figure>-->
+<!--        <p v-if="bookingDetail.OPERATOR_INTRODUCE_MSG">"{{bookingDetail.OPERATOR_INTRODUCE_MSG}}"</p>-->
+<!--      </dd>-->
+<!--      <dd v-else>상담원 배정 중입니다.</dd>-->
+<!--    </dl>-->
 
     <dl class="details-info type2">
       <dt>{{ $t('sev.booking-shop') }}</dt>
