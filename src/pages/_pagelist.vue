@@ -392,6 +392,10 @@
               <router-link class="link" to='/experience/program48'>리얼리티 우주 감각 전시 미퓨의 방</router-link>
               <div class="date"><span>8.20</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program49'>곰손도 가능! 에어팟 가죽케이스 만들기</router-link>
+              <div class="date"><span>9.14</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
