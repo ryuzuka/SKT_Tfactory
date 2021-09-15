@@ -7,10 +7,10 @@
           <div class="thumb"><img src="../../../assets/images/program/class49-slide1.jpg" alt=""></div>
         </swiper-slide>
         <swiper-slide>
-          <div class="thumb"><img src="../../../assets/images/program/class49-slide1.jpg" alt=""></div>
+          <div class="thumb"><img src="../../../assets/images/program/class49-slide2.jpg" alt=""></div>
         </swiper-slide>
         <swiper-slide>
-          <div class="thumb"><img src="../../../assets/images/program/class49-slide1.jpg" alt=""></div>
+          <div class="thumb"><img src="../../../assets/images/program/class49-slide3.jpg" alt=""></div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>

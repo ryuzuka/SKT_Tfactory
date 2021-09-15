@@ -12,6 +12,12 @@ export default {
   },
   data () {
     return {
+      swiperOption: {
+        slidesPerView: 1,
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
     }
   },
   created () {
@@ -24,5 +30,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'src/assets/css/product';
+  @import 'src/assets/css/product';
 </style>

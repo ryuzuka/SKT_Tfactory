@@ -1,9 +1,21 @@
 <div class="contents bottom-sticky" ref="contents">
   <!-- slide -->
-  <div class="slider-prd">
-    <img src="../../../images/program/class4-slide1.jpg" alt="">
+  <div class="slider-prd swiper-top">
+    <swiper :options="swiperOption">
+      <swiper-slide>
+        <div class="thumb"><img src="../../../images/program/class4-slide1.jpg" alt=""></div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="thumb"><img src="../../../images/program/class4-slide2.jpg" alt=""></div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="thumb"><img src="../../../images/program/class4-slide3.jpg" alt=""></div>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </div>
   <!-- //slide -->
+  
   <!-- details -->
   <div class="details">
     <div class="details-header">
