@@ -12,15 +12,15 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: undefined
     },
     description: {
       type: String,
-      default: ''
+      default: undefined
     },
     thumbnail: {
       type: String,
-      default: ''
+      default: undefined
     }
   },
   data () {
@@ -34,9 +34,6 @@ export default {
     this.$EventBus.$on('get-class-info', data => {
       if (!this.title) {
         this.localTitle = data['PROGRAM_CLASS_NAME']
-      }
-      if (!this.description) {
-        this.localDescription = ''
       }
       if (!this.thumbnail) {
         this.localThumbnail = data['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']
