@@ -20,7 +20,7 @@ export default {
     },
     description: {
       type: String,
-      default: 'SK텔레콤 플래그십 스토어 T팩토리에서 내일의 문화를 만나보세요.'
+      default: ''
     },
     thumbnail: {
       type: String,

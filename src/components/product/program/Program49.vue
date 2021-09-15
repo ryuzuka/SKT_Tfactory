@@ -20,8 +20,8 @@
     <div class="details">
       <div class="details-header">
         <kakao-share
-          title="곰손도 가능!에어팟 가죽케이스 만들기"
-          description="크루와 함께하는 원데이 클래스 - 초보자도 곰손도 쉽게 가죽 케이스를 만들 수 있습니다."
+          title="곰손도 가능! 에어팟 가죽케이스 만들기"
+          description="크루와 함께하는 원데이 클래스"
         ></kakao-share>
 
         <em class="flag-solid7">DIY CLASS</em>
