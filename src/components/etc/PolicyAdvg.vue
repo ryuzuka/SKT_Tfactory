@@ -1,4 +1,4 @@
-<template src="../../assets/html/etc/policy-advg.html"></template>
+<template src="../../assets/html/etc/policy-privacy-use.html"></template>
 
 <script>
 export default {
