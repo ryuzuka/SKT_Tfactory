@@ -17,6 +17,7 @@
         </a>
       </li>
       <li><a href="/policy/conflict">{{ $t('comm.conflict-process') }}</a></li>
+      <li><a href="/policy/privacyuse">이용 관련 안내</a></li>
     </ul>
     <p class="copy">@ SK TELECOM., LTD</p>
   </div>

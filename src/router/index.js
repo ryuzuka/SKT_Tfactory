@@ -99,7 +99,7 @@ import Member from '../pages/etc/page-member'
 import Terms from '../pages/etc/page-terms'
 import Leave from '../pages/etc/page-leave'
 import LeaveComplete from '../pages/etc/page-leave-complete'
-import PolicyAdvg from '../pages/etc/page-policy-advg'
+import PolicyPrivacyUse from '../pages/etc/page-policy-use'
 import PolicyBio from '../pages/etc/page-policy-bio'
 import PolicyPrivacy from '../pages/etc/page-policy-privacy'
 import PolicyPrivacyOpt from '../pages/etc/page-policy-privacy-opt'
@@ -239,7 +239,7 @@ export default new Router({
     {path: '/terms', name: 'Terms', component: Terms}, // 약관 상세
     {path: '/leave', name: 'Leave', component: Leave}, // 회원 탈퇴
     {path: '/leave/complete', name: 'LeaveComplete', component: LeaveComplete}, // 회원 탈퇴 완료
-    {path: '/policy/advg', name: 'PolicyAdvg', component: PolicyAdvg}, // 광고성 정보 수신 동의
+    {path: '/policy/privacyuse', name: 'PolicyPrivacyUse', component: PolicyPrivacyUse}, // 이용안내(footer)
     {path: '/policy/bio', name: 'PolicyBio', component: PolicyBio}, // 생체(얼굴)정보 수집이용 동의
     {path: '/policy/privacy', name: 'PolicyPrivacy', component: PolicyPrivacy}, // 임시회원 개인정보 수집이용 동의 (필수동의)
     {path: '/policy/privacyopt', name: 'PolicyPrivacyOpt', component: PolicyPrivacyOpt}, // 개인정보 수집이용 동의 (선택동의)

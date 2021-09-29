@@ -1,6 +1,6 @@
 <template>
 <div class="wrap">
-    <Header type="back" :title="$t('etc.terms') + ' ' + $t('etc.detail-view')"></Header>
+    <Header type="back"></Header>
     <PolicyAdvg></PolicyAdvg>
   </div>
 </template>
