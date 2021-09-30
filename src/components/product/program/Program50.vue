@@ -2,20 +2,15 @@
   <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd swiper-top">
-      <swiper :options="swiperOption">
-        <swiper-slide>
-          <div class="thumb"><img src="../../../assets/images/program/class50-slide1.jpg" alt=""></div>
-        </swiper-slide>
-      </swiper>
+      <div class="thumb"><img src="../../../assets/images/program/class50-slide1.jpg" alt=""></div>
     </div>
     <!-- //slide -->
     <!-- details -->
     <div class="details">
       <div class="details-header">
-        <!-- <kakao-share
-          title="곰손도 가능! 에어팟 가죽케이스 만들기"
-          description="크루와 함께하는 원데이 클래스"
-        ></kakao-share> -->
+        <kakao-share
+          title="JUST PLAY. iPhone13. 활용 꿀팁 마스터 (60min)"
+        ></kakao-share>
 
         <em class="flag-solid7">SPECIAL CLASS</em>
         <h2 class="details-tit">
@@ -113,12 +108,6 @@ export default {
   },
   data () {
     return {
-      swiperOption: {
-        slidesPerView: 1,
-        pagination: {
-          el: '.swiper-pagination'
-        }
-      }
     }
   },
   created () {
