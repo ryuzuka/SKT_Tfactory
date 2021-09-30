@@ -95,14 +95,7 @@
           AMY<br>
           에이미
         </span>
-          <span style="margin-top: 12px;">
-          LISA<br>
-          리사
-        </span>
         </div>
-        <ul class="texts-info" style="margin: 20px 0 27px;">
-          <li>* 본 클래스는 해당 크루가 돌아가며 진행합니다.</li>
-        </ul>
       </div>
     </div>
 
