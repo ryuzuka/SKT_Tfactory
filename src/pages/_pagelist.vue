@@ -396,6 +396,10 @@
               <router-link class="link" to='/experience/program49'>곰손도 가능! 에어팟 가죽케이스 만들기</router-link>
               <div class="date"><span>9.14</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program50'>"JUST PLAY. iPhone13. 활용 꿀팁 마스터 (60min)"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
