@@ -107,7 +107,7 @@ export default {
           _.forEach(this.dateList, date => {
             date.disabled = true
             this.scheduleList.forEach(program => {
-              if (this.$moment(program['START_YMDT']).format('MMDD') === date.month + date.date) {
+              if (this.$moment(program['START_YMDT']).format('MMDD') === String(date.month) + String(date.date)) {
                 date.disabled = false
               }
             })
