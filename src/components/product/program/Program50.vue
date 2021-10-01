@@ -1,5 +1,5 @@
 <template>
-  <div class="contents" ref="contents">
+  <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd swiper-top">
       <div class="thumb"><img src="../../../assets/images/program/class50-slide1.jpg" alt=""></div>
