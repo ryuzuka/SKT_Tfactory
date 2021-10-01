@@ -92,7 +92,7 @@
     </div>
 
     <!-- //details -->
-    <!-- <program-button></program-button> -->
+    <program-button></program-button>
   </div>
 </template>
 
@@ -121,4 +121,8 @@ export default {
 
 <style lang="scss">
   @import 'src/assets/css/product';
+  .texts-list li:nth-child(2):before {
+    content: '-' !important;
+    margin-left: -9px;
+  }
 </style>
