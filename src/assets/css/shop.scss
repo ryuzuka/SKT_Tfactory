@@ -298,6 +298,25 @@
         &.align-type1 {
           margin-left:14.44444444%;
         }
+        &.type2 {
+          font-weight: 500;
+        }
+      }
+      .texts-list {
+        padding: 0 32px;
+        color:#787878;
+        @include font-set14;
+        li {
+          padding-left:9px;
+          word-break:keep-all;
+          &:before {
+            content:'-';
+            display:inline-block;
+            width:9px;
+            margin-left:-9px;
+            vertical-align:top;
+          }
+        }
       }
       //.desc + .thumb { margin-top:60px; }
       .desc + h3 { margin-top:32px; }
