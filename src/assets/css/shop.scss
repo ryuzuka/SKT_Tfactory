@@ -290,6 +290,39 @@
       }
     }
     .details {
+      &.type2{
+        h3 {
+          margin: 48px 20px 0;
+        }
+        .desc {
+        padding:12px 20px 0;
+        }
+        .notice {
+          margin:48px -20px 0;
+          padding:0 20px;
+          border-top:12px solid #f0f0f0;
+          .subtit {
+            margin:0 0 20px;
+            padding:13px 20px 12px;
+            border-bottom:1px solid $line-color;
+            @include font-set14;
+          }
+          .texts-info {
+            color: #949494;
+            padding:0 20px;
+            text-indent:0;
+          }
+        }
+        .texts-list {
+          padding: 12px 20px 0;
+        }
+        .thumb{
+          margin-top: 10px;
+          video{
+            padding: 0 20px;
+          }
+        }
+      }
       .thumb { margin-top:60px; }
       h3 {
         margin:24px 32px 0;

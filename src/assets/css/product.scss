@@ -925,6 +925,13 @@
       margin-top:16px;
       li:nth-of-type(n+2){ margin-top:0; }
     }
+    &.type3 {
+      margin-top: 22px;
+      padding-left:18px;
+      font-size:14px;
+      text-indent:-18px;
+      line-height:22px;
+    }
   }
   .texts-list {
     &.type2 {
