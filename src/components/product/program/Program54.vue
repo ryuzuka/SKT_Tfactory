@@ -8,10 +8,14 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
+        <kakao-share
+          title="Thanks 티팩 Day!"
+          description="소중한 나의 휴대폰, 더 오래 쓰시라고 준비했어요. 지금 T Factory를 방문하시면 휴대폰 액세서리를 최대 80% 할인가에 구매할 수 있습니다."
+        ></kakao-share>
+
         <em class="flag-solid7">Promotion</em>
         <h2 class="details-tit">
-          인스타용<br>
-          느낌있는 사진 찍기
+          Thanks 티팩 Day!
         </h2>
         <div class="tags">
           <span class="flag-basic">폰케이스</span>
@@ -28,7 +32,7 @@
         </p>
         <div class="thumb"><img src="../../../assets/images/program/class54-conts.jpg" alt=""></div>
         <ul class="texts-list">
-          <li>품목 : 휴대폰 케이스(갤럭시 S20/노트20 시리즈, 아이폰 X/11/SE 시리즈), 버즈/에어팟 케이스, 그립톡</li>
+          <li>품목 : 휴대폰 케이스(갤럭시 S20/노트20 시리즈, 아이폰 X/11/SE 시리즈), 버즈/에어팟 케이스, 그립톡</li>
           <li>브랜드 : SK텔레콤 NEWTRO&RETRO, T1, Urban Sophistication, GRAFOLIO, 슈피겐, 아라리, 엘라고, 위글위글 등</li>
           <li>할인율 : 60~80% (브랜드별 상이)</li>
         </ul>

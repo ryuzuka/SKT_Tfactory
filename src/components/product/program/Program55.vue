@@ -8,9 +8,6 @@
     <!-- details -->
     <div class="details">
       <div class="details-header" style="padding:32px 20px 48px;">
-        <!-- <kakao-share
-          title="JUST PLAY. iPhone13. 활용 꿀팁 마스터 (60min)"
-        ></kakao-share> -->
         <p class="desc type2" style="margin:0;">
           부담없이 마음껏 아이폰13을 체험해보세요.<br>
           아이폰13과 함께 만지고, 배우고, 감상하고, 즐길 수 있는 다양한 프로그램이 준비되어 있답니다.<br>
@@ -25,7 +22,7 @@
           T Factory 2층, Apple Zone에서 아이폰13 모든 모델을 자유롭게 만져보고 체험해보세요.
         </p>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <button @click="clickButton" class="btn-line big">Apple Zone 자세히보기</button>
+          <a href="/shop/detail/store13" class="btn-line big">Apple Zone 자세히보기</a>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
@@ -41,7 +38,7 @@
           <li>※ 웹을 통해 예약하신 분만 수강할 수 있습니다.</li>
         </ul>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <button @click="clickButton" class="btn-line big">클래스 예약하기</button>
+          <a href="/experience/program50?classId=75" class="btn-line big">클래스 예약하기</a>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
@@ -56,7 +53,7 @@
           아이폰13과 함께한 포토그래퍼 하시시박의 일주일을 만나보세요
         </p>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <button @click="clickButton" class="btn-line big">Coming Soon</button>
+          <button class="btn-line big">Coming Soon</button>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
@@ -84,7 +81,7 @@
           <li>※ 본 이벤트는 Play.2 클래스 수강자에 한해 참여 가능합니다.</li>
         </ul>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <button @click="clickButton" class="btn-line big">이벤트 자세히 보기</button>
+          <a href="/experience/program50?classId=75" class="btn-line big">이벤트 자세히 보기</a>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
@@ -119,11 +116,11 @@ export default {
     return {
     }
   },
+  methods: {
+  },
   created () {
   },
   mounted () {
-  },
-  methods: {
   }
 }
 </script>

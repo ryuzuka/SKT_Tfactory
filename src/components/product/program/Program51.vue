@@ -8,6 +8,11 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
+        <kakao-share
+          title="촬영부터 편집까지! 스마트폰으로 브이로그 만들기"
+          description="영상 제작 전문 에디와 함께하는 입문자용 원데이 클래스"
+        ></kakao-share>
+
         <em class="flag-solid7">MEDIA CLASS</em>
         <h2 class="details-tit">
           촬영부터 편집까지!<br>

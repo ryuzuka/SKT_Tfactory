@@ -8,6 +8,11 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
+        <kakao-share
+          title="인스타용 느낌있는 사진 찍기"
+          description="셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스"
+        ></kakao-share>
+
         <em class="flag-solid7">MEDIA CLASS</em>
         <h2 class="details-tit">
           인스타용<br>
