@@ -6,6 +6,7 @@
 
   <router-link v-else-if="type==='home'" class="btn-home" to="/"><span class="blind">{{ $t('comm.home') }}</span></router-link>
   <h1 v-else-if="type==='logo'" class="logo"><span class="blind">T Factory</span></h1>
+  <h1 v-else-if="type==='logo_color'" class="logo_color"><span class="blind">T Factory</span></h1>
 
   <template v-if="type === 'shop'">
     <h1 class="blind">{{ $t('comm.find-shop') }}</h1>

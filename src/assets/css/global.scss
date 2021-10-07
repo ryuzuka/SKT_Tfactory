@@ -419,6 +419,12 @@
     margin:60px auto 4px;
     @include logoImg($x:0, $y:-160px, $display:block);
   }
+  .logo_color {
+    width:196px;
+    height:56px;
+    margin:60px auto 4px;
+    background:url(~@/assets/images/common/top_logo.png) no-repeat;
+  }
   .date {
     margin-top:32px;
     color:#505050;
