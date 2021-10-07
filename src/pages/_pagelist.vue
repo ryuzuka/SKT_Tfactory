@@ -400,6 +400,26 @@
               <router-link class="link" to='/experience/program50'>"JUST PLAY. iPhone13. 활용 꿀팁 마스터 (60min)"</router-link>
               <div class="date"><span>9.30</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program51'>"촬영부터 편집까지! 스마트폰으로 브이로그 만들기"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program52'>"IT와 미술의 만남 아이패드로 쉽게 드로잉하기"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program53'>"인스타용 느낌있는 사진 찍기"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program54'>"Thanks 티팩 Day!"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program55'>"just play iphone13"</router-link>
+              <div class="date"><span>9.30</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
