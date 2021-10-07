@@ -110,6 +110,14 @@
     margin:12px 0;
     @include logoImg($x:0, $y:-120px);
   }
+  .logo_color {
+    margin: 20px auto !important;
+    width:80px;
+    height:28px;
+    margin:12px 0;
+    background: url(~@/assets/images/common/top_logo.png) no-repeat;
+    background-size: contain;
+  }
   &.notice{
     padding: 12px 20px;
     height: unset;
