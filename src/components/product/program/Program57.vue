@@ -6,12 +6,12 @@
     </div>
     <!-- //slide -->
     <!-- details -->
-    <div class="details sticky">
+    <div class="details bottom-sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="인스타용 느낌있는 사진 찍기"
-          description="셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스"
-        ></kakao-share> -->
+        <kakao-share
+          title="하시시박의 일주일 Ordinary week, extraordinary iPhone13"
+          description="아이폰13으로 담은 하시시박의 일주일을 들여다보세요"
+        ></kakao-share>
 
         <em class="flag-solid7">Exhibition</em>
         <h2 class="details-tit">
@@ -26,8 +26,8 @@
         <p class="desc type2">
           아이폰13으로 담은 하시시박의 일주일을 들여다보세요.<br>
           &#60;하시시박의 일주일 : Ordinary week, extraordinary iPhone13&#62;은 아이폰13 출시를 기념하여 <br>
-          SK텔레콤 플래그십 스토어 T Factory에서 준비한 
-          특별 사진 전시회입니다. 
+          SK텔레콤 플래그십 스토어 T Factory에서 준비한
+          특별 사진 전시회입니다.
         </p>
       </div>
       <div class="details-inner">
@@ -42,7 +42,7 @@
         </p>
         <p style="margin-top:22px">
           아이폰13의 여러가지 사진 기능을 다루다 보면 ‘빛’을 다루는 세밀한 작업부터 피사체의 흔들림 보정까지 넓은 스펙트럼을 경험할 수 있다.<br>
-          이제 저마다의 하루를 작품으로 담아보자. 
+          이제 저마다의 하루를 작품으로 담아보자.
         </p>
         <h3 class="subtit">작가 소개</h3>
         <p>
@@ -73,6 +73,10 @@
       </div>
     </div>
     <!-- //details -->
+
+    <div class="btn-wrap sticky">
+      <a href="mailto:skt.tfactory@gmail.com?Subject=덕콘ADOY 팬 촬영 지원" class="btn-solid">지원서 응모</a>
+    </div>
   </div>
 </template>
 

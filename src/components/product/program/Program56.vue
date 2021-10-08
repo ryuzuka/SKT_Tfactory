@@ -6,12 +6,12 @@
     </div>
     <!-- //slide -->
     <!-- details -->
-    <div class="details sticky">
+    <div class="details bottom-sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="인스타용 느낌있는 사진 찍기"
-          description="셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스"
-        ></kakao-share> -->
+        <kakao-share
+          title="ADOY를 영화처럼 담아줄 팬분을 찾습니다."
+          description="찐팬이 보는 ADOY의 공연은 어떨까? [덕콘 x 아이폰13 | ADOY]를 영화처럼 담아주실 팬분을 찾습니다."
+        ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
         <h2 class="details-tit">
@@ -86,6 +86,10 @@
       </div>
     </div>
     <!-- //details -->
+
+    <div class="btn-wrap sticky">
+      <a href="mailto:skt.tfactory@gmail.com?Subject=덕콘ADOY 팬 촬영 지원" class="btn-solid">지원서 응모</a>
+    </div>
   </div>
 </template>
 
