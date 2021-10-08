@@ -69,7 +69,7 @@
           <li>※ 본 프로그램은 사회적 거리두기 단계에 따라 변경/취소 될 수 있습니다.</li>
         </ul>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <a href="/experience/program56" class="btn-line big">덕콘 자세히보기</a>
+          <a href="/experience/program46?classId=71" class="btn-line big">덕콘 자세히보기</a>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
