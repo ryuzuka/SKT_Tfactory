@@ -53,7 +53,7 @@
           아이폰13과 함께한 포토그래퍼 하시시박의 일주일을 만나보세요
         </p>
         <div class="btn-wrap" style="margin-top: 24px;">
-          <button class="btn-line big">Coming Soon</button>
+          <a href="/experience/program57" class="btn-line big">사진전 자세히보기</a>
         </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
@@ -68,6 +68,9 @@
         <ul class="texts-info type3">
           <li>※ 본 프로그램은 사회적 거리두기 단계에 따라 변경/취소 될 수 있습니다.</li>
         </ul>
+        <div class="btn-wrap" style="margin-top: 24px;">
+          <a href="/experience/program56" class="btn-line big">덕콘 자세히보기</a>
+        </div>
       </div>
       <div class="details-inner" style="padding:32px 20px 48px;">
         <p class="event">PLAY 5</p>
@@ -96,8 +99,8 @@
         </ul>
       </div>
     </div>
-
     <!-- //details -->
+
     <program-button></program-button>
   </div>
 </template>
