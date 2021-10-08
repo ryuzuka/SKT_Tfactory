@@ -73,10 +73,6 @@
       </div>
     </div>
     <!-- //details -->
-
-    <div class="btn-wrap sticky">
-      <a href="mailto:skt.tfactory@gmail.com?Subject=덕콘ADOY 팬 촬영 지원" class="btn-solid">지원서 응모</a>
-    </div>
   </div>
 </template>
 
