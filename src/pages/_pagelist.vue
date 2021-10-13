@@ -420,6 +420,26 @@
               <router-link class="link" to='/experience/program55'>"just play iphone13"</router-link>
               <div class="date"><span>9.30</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program56'>"ADOY를 영화처럼 담아줄 팬분을 찾습니다."</router-link>
+              <div class="date"><span>10.8</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program57'>"하시시박의 일주일 Ordinary week, extraordinary iPhone13"</router-link>
+              <div class="date"><span>10.8</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program58'>10월의 덕콘 | THAMA</router-link>
+              <div class="date"><span>10.13</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program59'>10월의 덕콘 | 허성현(Huh!)</router-link>
+              <div class="date"><span>10.13</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program60'>10월의 덕콘</router-link>
+              <div class="date"><span>10.13</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
