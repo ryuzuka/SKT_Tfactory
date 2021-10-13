@@ -91,7 +91,7 @@ import KakaoShare from '../../common/KakaoShare'
 import ProgramButton from './components/ProgramButton'
 
 export default {
-  name: 'Program57',
+  name: 'Program60',
   components: {
     KakaoShare,
     ProgramButton
