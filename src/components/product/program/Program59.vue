@@ -27,8 +27,8 @@
         </p>
         <p class="desc type2">
           <em>10월의 덕콘</em>
-          1<span>7</span>. THAMA<br>
-          18. 허성현(Huh!)<br>
+          1<span>7</span>. 허성현(Huh!)<br>
+          18. THAMA<br>
           19. 위아더나잇
         </p>
       </div>
@@ -55,9 +55,9 @@
         </p>
         <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
         <ul class="texts-list">
-          <li>일정 : 10월 23일(토) 오후 8시</li>
-          <li>응모기간 : 10월 14일(목) ~ 10월 18일(월)</li>
-          <li>당첨자 발표 : 10월 19일(화)</li>
+          <li>일정 : 10월 22일(금) 오후 8시</li>
+          <li>응모기간 : 10월 15일(금) ~ 10월 19일(화)</li>
+          <li>당첨자 발표 : 10월 20일(수)</li>
           <li>장소 : T Factory 2층, 0 Stage</li>
         </ul>
         <div class="notice">

@@ -40,11 +40,11 @@
         아티스트가 낸 덕력고사 풀고 콘서트 초청의 기회를 잡으세요!
       </p>
       <program-lineup
-        :class-id-list="[79, 80, 81]"
+        :class-id-list="['84', '85', '86']"
       ></program-lineup>
-      <ul class="list-program wide">
+      <!-- ul class="list-program wide">
         <li>
-          <a href="./program40?classId=62">
+          <a href="./program59?classId=84">
             <div class="thumb">
               <img src="../../../assets/images/program/class60-conts1.jpg" alt="">
               </div>
@@ -56,7 +56,7 @@
           </a>
         </li>
         <li>
-          <a href="./program41?classId=63">
+          <a href="./program58?classId=85">
             <div class="thumb">
               <img src="../../../assets/images/program/class60-conts2.jpg" alt="">
               </div>
@@ -68,7 +68,7 @@
           </a>
         </li>
         <li>
-          <a href="./program42?classId=64">
+          <a href="./program43?classId=86">
             <div class="thumb">
               <img src="../../../assets/images/program/class60-conts3.jpg" alt="">
               </div>
@@ -79,7 +79,7 @@
             </div>
           </a>
         </li>
-      </ul>
+      </ul-->
     </div>
   </div>
   <!-- //details -->
@@ -88,13 +88,13 @@
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
-import ProgramButton from './components/ProgramButton'
+import ProgramLineup from './components/ProgramLineup'
 
 export default {
   name: 'Program60',
   components: {
     KakaoShare,
-    ProgramButton
+    ProgramLineup
   },
   data () {
     return {
