@@ -10,7 +10,7 @@
     <kakao-share
       title="10월의 덕콘"
       description="THAMA, 허성현(Huh!), 위아더나잇"
-      thumbnail="https://tshop-public-image.s3.ap-northeast-2.amazonaws.com/X7Uc32PCOg3t_1624324161132"
+      thumbnail="https://www.tfactory.co.kr/static/img/class60-slide1.f969ffc.jpg"
     ></kakao-share>
 
     <div class="details-header">
