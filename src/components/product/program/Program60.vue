@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
   <!-- slide -->
   <div class="slider-prd">
-      <img src="../../../assets/images/program/class60-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 THAMA">
+      <img src="../../../assets/images/program/class60-slide2.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 THAMA">
     </div>
   <!-- //slide -->
   <!-- details -->
@@ -14,13 +14,6 @@
     ></kakao-share>
 
     <div class="details-header">
-      <em class="flag-solid7">CONCERT</em>
-      <h2 class="details-tit">10월의 덕콘</h2>
-      <div class="tags">
-        <span class="flag-basic">공연관람형</span>
-        <span class="flag-basic">소규모콘서트</span>
-        <span class="flag-basic">덕력고사</span>
-      </div>
     </div>
     <div class="details-inner">
       <h3 class="subtit">T Factory x FLO 덕콘</h3>
