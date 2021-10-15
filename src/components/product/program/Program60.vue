@@ -10,10 +10,17 @@
     <kakao-share
       title="10월의 덕콘"
       description="THAMA, 허성현(Huh!), 위아더나잇"
-      thumbnail="https://www.tfactory.co.kr/static/img/class60-slide1.f969ffc.jpg"
+      thumbnail="https://www.tfactory.co.kr/static/img/class60-slide2.fcab0e3.jpg"
     ></kakao-share>
 
     <div class="details-header">
+      <em class="flag-solid7">CONCERT</em>
+      <h2 class="details-tit">10월의 덕콘</h2>
+      <div class="tags">
+        <span class="flag-basic">공연관람형</span>
+        <span class="flag-basic">소규모콘서트</span>
+        <span class="flag-basic">덕력고사</span>
+      </div>
     </div>
     <div class="details-inner">
       <h3 class="subtit">T Factory x FLO 덕콘</h3>
