@@ -1,5 +1,5 @@
 <template>
-  <div class="contents" ref="contents">
+  <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd swiper-top">
       <swiper :options="swiperOption">
@@ -88,6 +88,10 @@
       </div>
     </div>
     <!-- //details -->
+
+    <!-- button set -->
+    <program-button></program-button>
+    <!-- // button set -->
   </div>
 </template>
 
