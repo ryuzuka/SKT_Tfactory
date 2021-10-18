@@ -62,9 +62,6 @@ export default {
       })
     }
   },
-  mounted () {
-    console.log(this.bookingAvailable && this.visible)
-  },
   methods: {
     alertAlreadyApply () {
       this.$modal.show('dialog', {
