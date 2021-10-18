@@ -1,5 +1,5 @@
 <template>
-  <div class="contents" ref="contents">
+  <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img src="../../../assets/images/program/class58-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 THAMA">
@@ -60,9 +60,8 @@
         <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
         <ul class="texts-list">
           <li>일정 : 10월 23일(토) 오후 8시</li>
-          <li>응모기간 : 10월 15일(금) ~ 10월 19일(화)</li>
-          <li>당첨자 발표 : 10월 20일(수)</li>
-          <li>장소 : T Factory 2층, 0 Stage</li>
+          <li>공식 인스타그램(@tfactory_sampler)에서 라이브로 진행</li>
+          <li>※ 본 공연은 사회적 거리두기 연장으로 인하여, 비대면으로 전환되었습니다.</li>
         </ul>
         <div class="notice">
           <h4 class="subtit">{{ $t('prd.notice')}}</h4>
@@ -77,7 +76,9 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button></program-button>
+    <div class="btn-wrap sticky">
+      <a href="#" @click.prevent="clickButton" class="btn-solid">덕콘 보러가기</a>
+    </div>
     <!-- // button set -->
   </div>
 </template>
@@ -85,6 +86,7 @@
 <script>
 import KakaoShare from '../../common/KakaoShare'
 import ProgramButton from './components/ProgramButton'
+import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program58',
@@ -101,14 +103,27 @@ export default {
   mounted () {
   },
   methods: {
+    clickButton () {
+      const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
+      const mobileOS = this.$cookies.get('platform')
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+      } else {
+        window.open(redirectURL, '_blank')
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
-  @import 'src/assets/css/product';
-  .texts-list li:nth-child(2):before {
-    content: '-' !important;
-    margin-left: -9px;
-  }
+@import 'src/assets/css/product';
+.texts-list li:before {
+  content: '-' !important;
+  margin-left: -9px;
+}
+.texts-list li:nth-child(3):before {
+  content: '' !important;
+  margin-left: -20px;
+}
 </style>

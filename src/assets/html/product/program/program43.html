@@ -54,9 +54,8 @@
       <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
       <ul class="texts-list">
         <li>일정 : 10월 29일(금) 오후 8시</li>
-        <li>응모기간 : 10월 18일(월) ~ 10월 24일(일)</li>
-        <li>당첨자 발표 : 10월 25일(월)</li>
-        <li>장소 : T Factory 2층, 0 Stage</li>
+        <li>공식 인스타그램(@tfactory_sampler)에서 라이브로 진행</li>
+        <li>※ 본 공연은 사회적 거리두기 연장으로 인하여, 비대면으로 전환되었습니다.</li>
       </ul>
       <div class="notice">
         <h4 class="subtit">{{ $t('prd.notice')}}</h4>
@@ -71,6 +70,8 @@
   <!-- //details -->
 
   <!-- button set -->
-  <program-button></program-button>
+  <div class="btn-wrap sticky">
+    <a href="#" @click.prevent="clickButton" class="btn-solid">덕콘 보러가기</a>
+  </div>
   <!-- // button set -->
 </div>
