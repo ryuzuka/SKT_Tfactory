@@ -1,5 +1,5 @@
 <template>
-  <div v-if="bookingAvailable" class="btn-wrap sticky">
+  <div v-if="bookingAvailable && visible" class="btn-wrap sticky">
     <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
     <template v-else-if="bookingType === 'select'">
       <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
@@ -15,7 +15,12 @@ import _ from 'lodash'
 
 export default {
   name: 'ProgramButton',
-  props: {},
+  props: {
+    visible: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
       classId: this.$route.query.classId,
@@ -56,6 +61,9 @@ export default {
         this.$EventBus.$emit('get-class-info', result['PROGRAM_CLASS'])
       })
     }
+  },
+  mounted () {
+    console.log(this.bookingAvailable && this.visible)
   },
   methods: {
     alertAlreadyApply () {

@@ -76,10 +76,10 @@
     <!-- //details -->
 
     <!-- button set -->
+    <program-button :visible="false"></program-button>
     <div class="btn-wrap sticky">
       <a href="#" @click.prevent="clickButton" class="btn-solid">덕콘 보러가기</a>
     </div>
-    <program-button v-show="false"></program-button>
     <!-- // button set -->
   </div>
 </template>
