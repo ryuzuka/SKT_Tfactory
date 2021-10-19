@@ -10,13 +10,18 @@ export default {
       bookId: parseInt(this.$route.query.bookId),
       star: 5,
       comment: '',
-      programName: ''
+      programName: '',
+      buttonDisabled: false
     }
   },
   mounted () {
-    STORE.getPrgramBookInfo(this.bookId).then(result => {
-      this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
-    })
+    if (this.bookId && this.$cookies.get('USER_AUTH') !== null) {
+      STORE.getPrgramBookInfo(this.bookId).then(result => {
+        this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
+      })
+    } else {
+      this.buttonDisabled = true
+    }
   },
   methods: {
     confirmSubmit () {

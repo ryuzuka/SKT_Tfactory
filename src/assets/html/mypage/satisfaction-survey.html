@@ -30,7 +30,7 @@
 
   <!-- button set -->
   <div class="btn-wrap sticky">
-      <a href="" class="btn-solid" target="_blank" @click.prevent="confirmSubmit">제출</a>
+      <button href="" class="btn-solid" :class="{disabled: buttonDisabled}" :disabled="buttonDisabled" target="_blank" @click="confirmSubmit">제출</button>
   </div>
   <!-- //button set -->
 </div>
