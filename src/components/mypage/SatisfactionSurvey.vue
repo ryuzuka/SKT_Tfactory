@@ -18,6 +18,8 @@ export default {
     if (this.bookId && this.$cookies.get('USER_AUTH') !== null) {
       STORE.getPrgramBookInfo(this.bookId).then(result => {
         this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
+      }).catch(() => {
+        this.buttonDisabled = true
       })
     } else {
       this.buttonDisabled = true
