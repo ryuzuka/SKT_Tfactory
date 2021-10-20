@@ -3,8 +3,8 @@
     <i class="ico-notice"></i>
     <p>* 고객님은 로그인 한지 1년 이상이 지나 휴면고객으로 전환 되었습니다.</p>
     <p>* T Factory 서비스를 다시 이용하시려면 <span style="font-weight: bold">본인 확인</span>이 필요합니다.</p>
-    <div class="btn-wrap" style="position: initial; width: 100%; margin-top: 40px; bottom: 360px">
+    <div @click.prevent="unlockInactive" class="btn-wrap" style="position: initial; width: 100%; margin-top: 40px; bottom: 360px">
         <a class="btn-solid big">휴면 계정 해제하기</a>
     </div>
-    <div style="width: 100%; text-align: center; margin-top: 50px;"><span class="btn-later">다음에 할래요</span></div>
+    <div @click.prevent="moveToMain" style="width: 100%; text-align: center; margin-top: 50px;"><span class="btn-later">다음에 할래요</span></div>
 </div>
