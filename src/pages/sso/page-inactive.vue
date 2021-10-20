@@ -2,6 +2,9 @@
   <div class="wrap login">
     <Header style="margin: 0 auto" type="logo_color"></Header>
     <Inactive></Inactive>
+
+    <modals-container></modals-container>
+    <v-dialog></v-dialog>
   </div>
 </template>
 

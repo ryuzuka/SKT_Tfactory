@@ -39,34 +39,20 @@ export const signInOrUpTID = (data) => {
 }
 
 export async function signInTID (ID_TOKEN) {
-  let request = {
-    'ID_TOKEN': ID_TOKEN
+  const request = {
+    ID_TOKEN: ID_TOKEN
   }
 
   if (ID_TOKEN) {
-    let auth = (await axios.post(USER_URL + '/checkInTID', request)).data
-    await setMyInfo(auth.ACCESS_TOKEN)
-    return auth
+    try {
+      const response = (await axios.post(USER_URL + '/checkInTID', request)).data
+      await setMyInfo(response.ACCESS_TOKEN)
+      return response
+    } catch (err) {
+      console.log(err.response.data)
+      return err.response.data
+    }
   }
-  //
-  // if (ID_TOKEN) {
-  //   let checkResult = (await axios.post(USER_URL + '/checkTIDUser', request)).data
-  //   if (checkResult.TID_USER_YN) {
-  //     let auth = (await axios.post(USER_URL + '/signInTID', request)).data
-  //     await setMyInfo(auth.ACCESS_TOKEN)
-  //
-  //     return auth
-  //   } else if (!checkResult.TID_USER_YN) {
-  //     let result = {}
-  //     if (checkResult.LINE_LIST.length > 0) {
-  //       result = {RET_CODE: 1, LINE_LIST: checkResult.LINE_LIST}
-  //     } else {
-  //       result = {RET_CODE: 2}
-  //     }
-  //
-  //     return result
-  //   }
-  // }
 }
 
 export async function signUpTID (certKey, certCode) {
