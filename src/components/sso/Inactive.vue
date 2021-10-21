@@ -15,6 +15,7 @@ export default {
     async recoverAccount (certKey) {
       const auth = await USER.signInMyOneTimeCert(certKey)
       this.$cookies.set('USER_AUTH', auth)
+      await USER.updateMyInfo()
       this.$store.getters.CONSTANTS.session_alive = true
       this.$router.push(localStorage.getItem('previous_url'))
     },
