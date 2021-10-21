@@ -1,9 +1,23 @@
 <template src="../../assets/html/sso/inactive.html"></template>
 
 <script>
+import * as USER from '../../js/user'
+
 export default {
   name: 'Inactive',
+  mounted () {
+    if (this.$route.query.certKey) {
+      this.recoverAccount(this.$route.query.certKey)
+    }
+    console.log('inactive')
+  },
   methods: {
+    async recoverAccount (certKey) {
+      const auth = await USER.signInMyOneTimeCert(certKey)
+      this.$cookies.set('USER_AUTH', auth)
+      this.$store.getters.CONSTANTS.session_alive = true
+      this.$router.push(localStorage.getItem('previous_url'))
+    },
     unlockInactive () {
       window.location.href = process.env.DT_WEB + 'sso/pass-number?inactive=1'
     },

@@ -378,11 +378,21 @@ export const authCheck = (auth) => {
 }
 
 export const confirmCheckIn = (certKey) => {
-  let request = {
+  const request = {
     CERT_KEY: certKey,
     NONCE: '123456'
   }
   return axios.post(USER_URL + '/confirmCheckIn', request).then(response => {
+    return response.data
+  })
+}
+
+export const signInMyOneTimeCert = (certKey) => {
+  const request = {
+    CERT_KEY: certKey,
+    POC_DEVICE_ID: process.env.POC_DEVICE_ID
+  }
+  return axios.post(USER_URL + '/signInMyOneTimeCert', request).then(response => {
     return response.data
   })
 }
