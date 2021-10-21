@@ -11,19 +11,31 @@ export default {
       star: 5,
       comment: '',
       programName: '',
-      buttonDisabled: false
+      buttonDisabled: true
+    }
+  },
+  watch: {
+    comment (val) {
+      if (val !== '') {
+        this.buttonDisabled = false
+      } else {
+        this.buttonDisabled = true
+      }
     }
   },
   mounted () {
-    if (this.bookId && this.$cookies.get('USER_AUTH') !== null) {
-      STORE.getPrgramBookInfo(this.bookId).then(result => {
-        this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
-      }).catch(() => {
-        this.buttonDisabled = true
-      })
-    } else {
-      this.buttonDisabled = true
-    }
+    this.$store.watch(() => {
+      if (this.$store.getters.CONSTANTS.session_alive) {
+        STORE.getPrgramBookInfo(this.bookId).then(result => {
+          this.programName = result['PROGRAM_BOOK']['PROGRAM_CLASS_NAME']
+        }).catch(() => {
+          this.alertError()
+        })
+      } else {
+        localStorage.setItem('previous_url', '/my/satisfaction?' + this.bookId)
+        this.$router.push({'name': 'Login'})
+      }
+    })
   },
   methods: {
     confirmSubmit () {
