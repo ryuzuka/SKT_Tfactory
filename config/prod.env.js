@@ -7,5 +7,6 @@ module.exports = {
   FLAGSHIP_ORG_ID: 1430490665,
   PAYMENT_ENV: "'REAL'",
   PAYMENT_OWNER_ID: "'N3270SKTPS9003'",
-  POC_DEVICE_ID: 10217
+  POC_DEVICE_ID: 10217,
+  DT_WEB: "'https://dt.tworld.co.kr/'"
 }
