@@ -39,34 +39,20 @@ export const signInOrUpTID = (data) => {
 }
 
 export async function signInTID (ID_TOKEN) {
-  let request = {
-    'ID_TOKEN': ID_TOKEN
+  const request = {
+    ID_TOKEN: ID_TOKEN
   }
 
   if (ID_TOKEN) {
-    let auth = (await axios.post(USER_URL + '/checkInTID', request)).data
-    await setMyInfo(auth.ACCESS_TOKEN)
-    return auth
+    try {
+      const response = (await axios.post(USER_URL + '/checkInTID', request)).data
+      await setMyInfo(response.ACCESS_TOKEN)
+      return response
+    } catch (err) {
+      console.log(err.response.data)
+      return err.response.data
+    }
   }
-  //
-  // if (ID_TOKEN) {
-  //   let checkResult = (await axios.post(USER_URL + '/checkTIDUser', request)).data
-  //   if (checkResult.TID_USER_YN) {
-  //     let auth = (await axios.post(USER_URL + '/signInTID', request)).data
-  //     await setMyInfo(auth.ACCESS_TOKEN)
-  //
-  //     return auth
-  //   } else if (!checkResult.TID_USER_YN) {
-  //     let result = {}
-  //     if (checkResult.LINE_LIST.length > 0) {
-  //       result = {RET_CODE: 1, LINE_LIST: checkResult.LINE_LIST}
-  //     } else {
-  //       result = {RET_CODE: 2}
-  //     }
-  //
-  //     return result
-  //   }
-  // }
 }
 
 export async function signUpTID (certKey, certCode) {
@@ -392,11 +378,21 @@ export const authCheck = (auth) => {
 }
 
 export const confirmCheckIn = (certKey) => {
-  let request = {
+  const request = {
     CERT_KEY: certKey,
     NONCE: '123456'
   }
   return axios.post(USER_URL + '/confirmCheckIn', request).then(response => {
+    return response.data
+  })
+}
+
+export const signInMyOneTimeCert = (certKey) => {
+  const request = {
+    CERT_KEY: certKey,
+    POC_DEVICE_ID: process.env.POC_DEVICE_ID
+  }
+  return axios.post(USER_URL + '/signInMyOneTimeCert', request).then(response => {
     return response.data
   })
 }

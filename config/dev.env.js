@@ -10,5 +10,6 @@ module.exports = merge(prodEnv, {
   FLAGSHIP_ORG_ID: 1000245068,
   PAYMENT_ENV: "'DEV'",
   PAYMENT_OWNER_ID: "'N3270SKTPS1000'",
-  POC_DEVICE_ID: 69
+  POC_DEVICE_ID: 69,
+  DT_WEB: "'https://dev-dt.tsharp.io/'"
 })
