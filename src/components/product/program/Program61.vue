@@ -2,7 +2,7 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class61-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 허성현(Huh!)">
+      <img src="../../../assets/images/program/class61-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.11 김제형">
     </div>
     <!-- //slide -->
     <!-- details -->
