@@ -15,9 +15,12 @@ export default {
     }
   },
   watch: {
-    comment (val) {
+    comment (val, prevVal) {
       if (val !== '') {
         this.buttonDisabled = false
+        if (val.length > 300) {
+          this.comment = prevVal
+        }
       } else {
         this.buttonDisabled = true
       }
