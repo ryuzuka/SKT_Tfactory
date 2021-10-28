@@ -10,7 +10,7 @@
       <div class="details-header">
         <kakao-share
           title="11월의 덕콘 | 김제형"
-          description="[T Factory X FLO 덕콘] 찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '김제형'입니다."
+          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '김제형'입니다."
         ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
@@ -73,10 +73,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button :visible="false"></program-button>
-    <div class="btn-wrap sticky">
-      <a href="#" @click.prevent="clickButton" class="btn-solid">덕콘 보러가기</a>
-    </div>
+    <program-button></program-button>
     <!-- // button set -->
   </div>
 </template>

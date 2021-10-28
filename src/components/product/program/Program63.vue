@@ -8,9 +8,8 @@
   <!-- details -->
   <div class="details sticky">
     <kakao-share
-      title="10월의 덕콘"
-      description="THAMA, 허성현(Huh!), 위아더나잇"
-      thumbnail="https://www.tfactory.co.kr/static/img/class60-slide2.fcab0e3.jpg"
+      title="11월의 덕콘"
+      description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다."
     ></kakao-share>
 
     <div class="details-header">
@@ -36,7 +35,7 @@
       </ul>
       <h3 class="subtit">11월의 덕콘 라인업</h3>
       <program-lineup
-        :class-id-list="['84', '85', '86']"
+        :class-id-list="['88', '89', '90', '91']"
       ></program-lineup>
       <!-- <ul class="list-program wide">
         <li>
