@@ -440,6 +440,18 @@
               <router-link class="link" to='/experience/program60'>10월의 덕콘</router-link>
               <div class="date"><span>10.13</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program61'>11월의 덕콘 | 김제형</router-link>
+              <div class="date"><span>10.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program62'>11월의 덕콘 | 너드커넥션</router-link>
+              <div class="date"><span>10.26</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program63'>11월의 덕콘</router-link>
+              <div class="date"><span>10.26</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
