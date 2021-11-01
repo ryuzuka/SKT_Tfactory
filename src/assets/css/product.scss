@@ -1044,3 +1044,12 @@
     background: url(~@/assets/images/common/ico_share.svg) no-repeat center;
   }
 }
+
+.texts-list {
+  li{
+    &::before{
+      content: '-' !important;
+      margin-left: -9px;
+    }
+  }
+}
