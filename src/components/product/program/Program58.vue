@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contents bottom-sticky program58" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img src="../../../assets/images/program/class58-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 THAMA">
@@ -119,11 +119,11 @@ export default {
 
 <style lang="scss">
 @import 'src/assets/css/product';
-.texts-list li:before {
+.program58 .texts-list li:before {
   content: '-' !important;
   margin-left: -9px;
 }
-.texts-list li:nth-child(3):before {
+.program58 .texts-list li:nth-child(3):before {
   content: '' !important;
   margin-left: -20px;
 }

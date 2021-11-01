@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contents bottom-sticky program59" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img src="../../../assets/images/program/class59-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.10 허성현(Huh!)">
@@ -115,11 +115,11 @@ export default {
 
 <style lang="scss">
 @import 'src/assets/css/product';
-.texts-list li:before {
+.program59 .texts-list li:before {
   content: '-' !important;
   margin-left: -9px;
 }
-.texts-list li:nth-child(3):before {
+.program59 .texts-list li:nth-child(3):before {
   content: '' !important;
   margin-left: -20px;
 }
