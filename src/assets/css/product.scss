@@ -1045,7 +1045,7 @@
   }
 }
 
-.texts-list {
+ul.texts-list {
   li{
     &::before{
       content: '-' !important;
