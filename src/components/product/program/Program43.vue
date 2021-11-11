@@ -35,11 +35,11 @@ export default {
 
 <style lang="scss">
   @import 'src/assets/css/product';
-  .texts-list li:before {
+  .program43 .texts-list li:before {
     content: '-' !important;
     margin-left: -9px;
   }
-  .texts-list li:nth-child(3):before {
+  .program43 .texts-list li:nth-child(3):before {
     content: '' !important;
     margin-left: -20px;
   }
