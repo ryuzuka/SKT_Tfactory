@@ -115,7 +115,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       },
-      {from: 'robots.txt', to: '../robots.txt'}
+      {from: 'robots.txt', to: 'robots.txt'}
     ])
   ]
 })
