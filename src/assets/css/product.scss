@@ -818,6 +818,19 @@
         .texts-info {
           padding-left:0;
           text-indent:0;
+          &.type2{
+            li{
+              padding-left: 9px;
+              word-break: keep-all;
+              &::before{
+                content: '*';
+                display: inline-block;
+                margin-left: -9px;
+                width: 9px;
+                vertical-align: top;
+              }
+            }
+          }
         }
       }
       .texts-notice {

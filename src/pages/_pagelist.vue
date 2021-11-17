@@ -452,6 +452,10 @@
               <router-link class="link" to='/experience/program63'>11월의 덕콘</router-link>
               <div class="date"><span>10.26</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program64'>Apple매니아의 완성, SK텔레콤</router-link>
+              <div class="date"><span>11.17</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
