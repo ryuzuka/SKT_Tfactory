@@ -8,10 +8,10 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="11월의 덕콘 | 너드커넥션"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '너드커넥션'입니다."
-        ></kakao-share> -->
+        <kakao-share
+          title="Apple매니아의 완성, SK텔레콤"
+          description="B tv와 손을 잡고 국내에 공식 출시된 애플TV 4K를 기념하여 T팩토리에 특별한 체험 존이 마련되었습니다."
+        ></kakao-share>
 
         <em class="flag-solid7">Exhibition</em>
         <h2 class="details-tit">Apple매니아의 완성, SK텔레콤</h2>
@@ -57,19 +57,21 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button></program-button>
+    <!-- <program-button></program-button> -->
     <!-- // button set -->
   </div>
 </template>
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
+import ProgramButton from './components/ProgramButton'
 import ProgramLineup from './components/ProgramLineup'
 
 export default {
   name: 'Program64',
   components: {
     KakaoShare,
+    ProgramButton,
     ProgramLineup
   },
   data () {
