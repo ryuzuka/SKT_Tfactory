@@ -8,7 +8,7 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <kakao-share
+        <kakao-share style="top: -20px"
           title="Apple매니아의 완성, SK텔레콤"
           description="B tv와 손을 잡고 국내에 공식 출시된 애플TV 4K를 기념하여 T팩토리에 특별한 체험 존이 마련되었습니다."
         ></kakao-share>
