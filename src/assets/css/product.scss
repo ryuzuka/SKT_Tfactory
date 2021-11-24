@@ -712,6 +712,27 @@
             margin-top:16px;
           }
         }
+        &-list {
+          margin-top: 28px;
+          color: #787878;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: -.08px;
+          em{
+            display: block;
+            margin-bottom: 4px;
+            color: #000;
+          }
+          .day{
+            display: inline-block;
+            width: 36px;
+            margin-right: 8px;
+          }
+          strong{
+            color: #3617ce;
+            font-weight: normal;
+          }
+        }
       }
       p{
         margin-top: 20px;
@@ -719,6 +740,20 @@
         @include font-set14;
         span {
           font-family: 'Noto Sans KR';
+        }
+      }
+      .texts{
+        &-notice {
+          margin-top: 24px;
+          padding-left:16px;
+          word-break:keep-all;
+          &:before {
+            content:'※';
+            display:inline-block;
+            width:16px;
+            margin-left:-16px;
+            vertical-align:top;
+          }
         }
       }
     }

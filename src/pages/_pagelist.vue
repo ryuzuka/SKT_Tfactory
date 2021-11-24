@@ -456,6 +456,18 @@
               <router-link class="link" to='/experience/program64'>Apple매니아의 완성, SK텔레콤</router-link>
               <div class="date"><span>11.17</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program65'>12월의 덕콘 | 김오키새턴발라드</router-link>
+              <div class="date"><span>11.24</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program66'>12월의 덕콘 | ADOY</router-link>
+              <div class="date"><span>11.24</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 아메바컬처 (with SOLE, THAMA, Huh!, snzae)</router-link>
+              <div class="date"><span>11.24</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
