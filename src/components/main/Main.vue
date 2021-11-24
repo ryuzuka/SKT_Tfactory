@@ -91,7 +91,7 @@ export default {
       this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
     } else {
       if (!isQrCode) {
-        this.$router.push({name: 'Qrcode', query: {prev_url: this.$route.fullPath}})
+        this.$router.push({name: 'Qrcode'})
       } else {
         this.$EventBus.$emit('toggle-bottom-nav', this.mainIndex)
       }
