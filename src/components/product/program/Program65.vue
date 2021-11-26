@@ -8,10 +8,10 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="11월의 덕콘 | 김제형"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '김제형'입니다."
-        ></kakao-share> -->
+        <kakao-share
+          title="12월의 덕콘 | 김오키새턴발라드"
+          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '김오키새턴발라드'입니다."
+        ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
         <h2 class="details-tit">12월의 덕콘<i class="pipe"></i>김오키새턴발라드</h2>
@@ -48,7 +48,7 @@
           다시보고 싶은 덕콘 1위 아티스트는?<br>
           지금 공식인스타그램에서 확인하세요.
         </p>
-        <div class="btn-wrap" style="margin: 24px 0 18px;"><a href="https://www.instagram.com/tfactory_sampler/" class="btn-line big">공식 인스타그램 방문하기</a></div>
+        <div class="btn-wrap" style="margin: 24px 0 18px;"><button @click="clickButton" class="btn-line big">공식 인스타그램 방문하기</button></div>
       </div>
       <div class="details-inner">
         <h3 class="subtit">T Factory x FLO 덕콘(THECON)</h3>
