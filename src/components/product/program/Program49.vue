@@ -92,9 +92,13 @@
         <div class="profile">
           <em>T FACTORY CREW</em>
           <span>
-          AMY<br>
-          에이미
-        </span>
+            Ellien<br>
+            엘린
+          </span>
+          <span style="margin-top:12px;">
+            누구나 쉽게 가죽케이스를 완성할 수 있도록,<br>
+            엘린이 도와드릴게요.
+          </span>
         </div>
       </div>
     </div>
