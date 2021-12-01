@@ -465,7 +465,7 @@
               <div class="date"><span>11.24</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 아메바컬처 (with SOLE, THAMA, Huh!, snzae)</router-link>
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 아메바컬쳐 (with SOLE, THAMA, Huh!, snzae)</router-link>
               <div class="date"><span>11.24</span></div>
             </li>
           </ul>

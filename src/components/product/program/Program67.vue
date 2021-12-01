@@ -9,13 +9,13 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="11월의 덕콘 | 아메바컬처(with SOLE, THAMA, Huh!, snzae)"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '아메바컬처'입니다."
+          title="11월의 덕콘 | 아메바컬쳐(with SOLE, THAMA, Huh!, snzae)"
+          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '아메바컬쳐'입니다."
         ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
         <h2 class="details-tit">
-          12월의 덕콘<i class="pipe"></i>아메바컬처<br>
+          12월의 덕콘<i class="pipe"></i>아메바컬쳐<br>
           <span>(with SOLE, THAMA, Huh!, snzae)</span>
         </h2>
         <div class="tags">
@@ -26,7 +26,7 @@
         <p class="desc type2">
           <em>[T Factory X FLO 덕콘]</em>
           찐덕들만 초청하여 진행하는 덕콘.<br>
-          이번 기출영역은 '아메바컬처'입니다.
+          이번 기출영역은 '아메바컬쳐'입니다.
         </p>
         <p class="desc type2" style="margin-top:24px">
           <em>12월의 덕콘 - 덕콘 연말정산</em>
