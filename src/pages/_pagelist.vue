@@ -469,42 +469,42 @@
               <div class="date"><span>11.24</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘</router-link>
+              <router-link class="link" to='/experience/program68'>12월의 덕콘</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 불고기디스코</router-link>
+              <router-link class="link" to='/experience/program69'>12월의 덕콘 | 불고기디스코</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 크라잉넛</router-link>
+              <router-link class="link" to='/experience/program70'>12월의 덕콘 | 크라잉넛</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 최엘비</router-link>
+              <router-link class="link" to='/experience/program71'>12월의 덕콘 | 최엘비</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 브로콜리너마저</router-link>
+              <router-link class="link" to='/experience/program72'>12월의 덕콘 | 브로콜리너마저</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 디핵</router-link>
+              <router-link class="link" to='/experience/program73'>12월의 덕콘 | 디핵</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 던밀스</router-link>
+              <router-link class="link" to='/experience/program74'>12월의 덕콘 | 던밀스</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 한올</router-link>
+              <router-link class="link" to='/experience/program75'>12월의 덕콘 | 한올</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 프롬,후추스</router-link>
+              <router-link class="link" to='/experience/program76'>12월의 덕콘 | 프롬,후추스</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
-          </ul>
+          </ul>s
 
           <h2 class="pagelist-title">pay</h2>
           <ul>
