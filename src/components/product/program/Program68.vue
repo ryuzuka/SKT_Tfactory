@@ -54,7 +54,7 @@
       </ul>
       <h3 class="subtit">12월의 덕콘 라인업</h3>
       <program-lineup
-        :class-id-list="['94', '96', '95', '97', '99', '101', '103', '105', '108']"
+        :class-id-list="['94', '96', '95', '98', '100', '102', '104', '105', '108']"
       ></program-lineup>
       <!-- <ul class="list-program wide">
         <li>
