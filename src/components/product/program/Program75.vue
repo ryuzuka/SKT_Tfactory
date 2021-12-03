@@ -8,10 +8,10 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="11월의 덕콘 | 아메바컬쳐(with SOLE, THAMA, Huh!, snzae)"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '아메바컬쳐'입니다."
-        ></kakao-share> -->
+        <kakao-share
+          title="12월의 덕콘 | 한올"
+          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '한올'입니다."
+        ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
         <h2 class="details-tit">

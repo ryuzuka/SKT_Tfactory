@@ -53,9 +53,9 @@
         <li>※ 사회적 거리두기 단계에 따라 비대면으로 전환될 수 있습니다.</li>
       </ul>
       <h3 class="subtit">12월의 덕콘 라인업</h3>
-      <!-- <program-lineup
-        :class-id-list="['88', '89', '90', '91']"
-      ></program-lineup> -->
+      <program-lineup
+        :class-id-list="['94', '96', '95', '97', '99', '101', '103', '105', '108']"
+      ></program-lineup>
       <!-- <ul class="list-program wide">
         <li>
           <a href="./program41?classId=64">
