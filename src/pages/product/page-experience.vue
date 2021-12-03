@@ -69,6 +69,15 @@
     <program65 v-else-if="programId === 'program65'"></program65>
     <program66 v-else-if="programId === 'program66'"></program66>
     <program67 v-else-if="programId === 'program67'"></program67>
+    <program68 v-else-if="programId === 'program68'"></program68>
+    <program69 v-else-if="programId === 'program69'"></program69>
+    <program70 v-else-if="programId === 'program70'"></program70>
+    <program71 v-else-if="programId === 'program71'"></program71>
+    <program72 v-else-if="programId === 'program72'"></program72>
+    <program73 v-else-if="programId === 'program73'"></program73>
+    <program74 v-else-if="programId === 'program74'"></program74>
+    <program75 v-else-if="programId === 'program75'"></program75>
+    <program76 v-else-if="programId === 'program76'"></program76>
     <Experience v-else></Experience>
 
     <modals-container></modals-container>
@@ -147,6 +156,15 @@ import Program64 from '../../components/product/program/Program64'
 import Program65 from '../../components/product/program/Program65'
 import Program66 from '../../components/product/program/Program66'
 import Program67 from '../../components/product/program/Program67'
+import Program68 from '../../components/product/program/Program68'
+import Program69 from '../../components/product/program/Program69'
+import Program70 from '../../components/product/program/Program70'
+import Program71 from '../../components/product/program/Program71'
+import Program72 from '../../components/product/program/Program72'
+import Program73 from '../../components/product/program/Program73'
+import Program74 from '../../components/product/program/Program74'
+import Program75 from '../../components/product/program/Program75'
+import Program76 from '../../components/product/program/Program76'
 
 export default {
   name: 'page-product',
@@ -219,7 +237,16 @@ export default {
     Program64,
     Program65,
     Program66,
-    Program67
+    Program67,
+    Program68,
+    Program69,
+    Program70,
+    Program71,
+    Program72,
+    Program73,
+    Program74,
+    Program75,
+    Program76
   },
   data () {
     return {

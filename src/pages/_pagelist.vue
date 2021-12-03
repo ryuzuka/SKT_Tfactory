@@ -468,6 +468,42 @@
               <router-link class="link" to='/experience/program67'>12월의 덕콘 | 아메바컬쳐 (with SOLE, THAMA, Huh!, snzae)</router-link>
               <div class="date"><span>11.24</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 불고기디스코</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 크라잉넛</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 최엘비</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 브로콜리너마저</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 디핵</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 던밀스</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 한올</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program67'>12월의 덕콘 | 프롬,후추스</router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
