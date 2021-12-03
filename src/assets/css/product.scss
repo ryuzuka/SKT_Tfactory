@@ -1103,3 +1103,30 @@ ul.texts-list {
     }
   }
 }
+
+.step-list{
+  &.blue{
+    li{
+      margin-top: 15px;
+      color: #3617ce;
+    }
+    p{
+      color: #787878;
+      &:first-child{
+        margin-top: 4px;
+      }
+    }
+  }
+  &.underline{
+    li{
+      margin-top: 24px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e8e8e8;
+      &:last-child{
+        padding-bottom: 0;
+        border-bottom: none;
+
+      }
+    }
+  }
+}
