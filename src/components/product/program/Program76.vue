@@ -88,7 +88,7 @@
         </p>
         <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
         <ul class="texts-list">
-          <li>일정 : 12월 19일(토) 오후 8시</li>
+          <li>일정 : 12월 19일(일) 오후 8시</li>
           <li>응모기간 : 12월 3일(금) ~ 12월 12일(일)</li>
           <li>당첨자 발표 : 12월 13일(월)</li>
           <li>장소 : T Factory 2층, 0 Stage</li>
