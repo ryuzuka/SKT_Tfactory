@@ -504,6 +504,26 @@
               <router-link class="link" to='/experience/program76'>12월의 덕콘 | 프롬,후추스</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program77'>12월의 덕콘 | 저드</router-link>
+              <div class="date"><span>12.07</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program78'>12월의 덕콘 | 페퍼톤스</router-link>
+              <div class="date"><span>12.07</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program79'>12월의 덕콘 | PL</router-link>
+              <div class="date"><span>12.07</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program80'>12월의 덕콘 | 나상현씨밴드</router-link>
+              <div class="date"><span>12.07</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program81'></router-link>
+              <div class="date"><span>12.03</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>

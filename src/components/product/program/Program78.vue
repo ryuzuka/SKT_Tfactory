@@ -2,20 +2,20 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class72-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.12 브로콜리너마저">
+      <img src="../../../assets/images/program/class78-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2021.12 페퍼톤스">
     </div>
     <!-- //slide -->
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="12월의 덕콘 | 브로콜리너마저"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '브로콜리너마저'입니다."
+          title="12월의 덕콘 | 페퍼톤스"
+          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '페퍼톤스'입니다."
         ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
         <h2 class="details-tit">
-          12월의 덕콘<i class="pipe"></i>브로콜리너마저
+          12월의 덕콘<i class="pipe"></i>페퍼톤스
         </h2>
         <div class="tags">
           <span class="flag-basic">공연관람형</span>
@@ -25,7 +25,7 @@
         <p class="desc type2">
           <em>[T Factory X FLO 덕콘]</em>
           찐덕들만 초청하여 진행하는 덕콘.<br>
-          이번 기출영역은 '브로콜리너마저'입니다.
+          이번 기출영역은 '페퍼톤스'입니다.
         </p>
         <p class="desc type2" style="margin-top:24px">
           <em>12월의 덕콘 - 덕콘 연말정산</em>
@@ -64,19 +64,19 @@
           <li>※ 본 콘서트는 코로나19 방역 수칙을 준수하여 진행됩니다.</li>
           <li>※ 사회적 거리두기 단계에 따라 비대면으로 전환될 수 있습니다.</li>
         </ul>
-        <h3 class="subtit" style="margin-top: 40px;">브로콜리너마저 소개</h3>
-        <div class="thumb"><img src="../../../assets/images/program/class72-conts1.jpg" alt=""></div>
-        <p>
-          많은 이들에게 ‘청춘을 노래하는 밴드’ 로 널리 알려진 밴드 브로콜리너마저는 2008년 데뷔 이후 1집 ’보편적인 노래’, 2집 ‘졸업’ 으로 많은 사랑을 받았으며 최근 3집 ‘속물들’ 을 발표하며 활발히 활동하고 있다.<br>
-          이제는 ‘청춘’을 넘어서 ‘삶’ 을 이야기하는 밴드로서, 진솔한 메시지를 담은 울림이 있는 가사와 담백한 사운드로 대체 불가능한 감성을 꾸준히 선보이고 있다.<br>
-          2010년과 2011년 연속으로 한국 대중음악상 모던록 노래 부분을 수상하였으며, ‘보편적인 노래’ 는 ‘시인들이 뽑은 가사가 아름다운 노래’ 로 꼽히기도 했다.<br>
-          멤버는 덕원(베이스), 류지(드럼), 잔디(건반).
-        </p>
+        <h3 class="subtit" style="margin-top: 40px;">페퍼톤스 소개</h3>
+        <div class="thumb"><img src="../../../assets/images/program/class78-conts1.jpg" alt=""></div>
+        <p>강렬하고 상쾌한 사운드를 거쳐 이제 묵직한 청춘의 사운드를 들려주는 그룹 페퍼톤스는 신재평과 이장원으로 이루어진 남성 2인조 음악 그룹이자 프로듀싱 유닛이다.</p>
+        <p style="margin-top:22px;">멤버 2명 모두 카이스트 전산학과 출신으로 2003년 "후추처럼 기분 좋은 자극을 주겠다"며 의기투합해 '페퍼톤스'를 결성했다.</p>
+        <p style="margin-top:22px;">홍대 클럽을 중심으로 라이브를 하며 실력을 인정받은 페퍼톤스는 2004년 데뷔 ep &#60;A Preview&#62;를, 2005년 첫 정규 앨범 &#60;Colorful Express&#62;를 발표하며 '우울증을 위한 뉴테라피 2인조'라는 타이틀을 얻게 되었다. 신선하고 청량하게 빛나는 그들의 음악에 새로움에 목 말랐던 사람들은 열광했다.</p>
+        <p style="margin-top:22px;">2008년 발표한 2집 &#60;New Standard&#62;부터 페퍼톤스 두 사람이 보컬 비중이 늘어났고 보컬뿐만 아니라 연주 부분에서도 게스트 뮤지션의 참여가 다양해지면서 페퍼톤스는 그들이 보여줄 수 있는 진심에 집중하기 시작한다.</p>
+        <p style="margin-top:22px;">2009년 겨울, 1집과 2집의 객원 보컬 모두가 참여한 앨범 &#60;SOUNDS GOOD!&#62;을 발매했고 또한 2012년엔 밴드의 색채가 강하고 멤버들의 목소리로 채워진 4집&#60;beginner's luck&#62;, ep &#60;open run&#62;을 발매한다. 그리고 2015년 누구나 한번쯤은 겪어봤을 순간들과 공감할 수 있는 상황에서 느껴지는 감정의 변화들을 진솔하고 세련되면서도, 동시에 흡입력 있게 풀어나간 5집 &#60;HIGH-FIVE&#62;를 발매했으며 그리고 세상을 놀라게 할 그들만의 음악을 서서히 쌓아가고 있다.</p>
+        <p style="margin-top:22px;">진녹색처럼 푸른 청량함, 여름을 닮은 열기와 강렬함을 안고 나날이 깊어지는 그룹 페퍼톤스. 소년은 음악 안에서 청년이 되어간다. 그리고 그들을 닮은 음악 역시 시간이 지날수록 더욱 깊은 맛을 낼 것이다.</p>
         <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
         <ul class="texts-list">
-          <li>일정 : 12월 11일(토) 오후 7시</li>
-          <li>응모기간 : 12월 3일(금) ~ 12월 7일(화)</li>
-          <li>당첨자 발표 : 12월 8일(수)</li>
+          <li>일정 : 12월 25일(토) 오후 8시</li>
+          <li>응모기간 : 12월 14일(화) ~ 12월 19일(일)</li>
+          <li>당첨자 발표 : 12월 20일(월)</li>
           <li>장소 : T Factory 2층, 0 Stage</li>
         </ul>
         <div class="notice">
@@ -114,7 +114,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program72',
+  name: 'Program76',
   components: {
     KakaoShare,
     ProgramButton
