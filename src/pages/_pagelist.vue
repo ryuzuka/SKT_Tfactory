@@ -504,7 +504,7 @@
               <router-link class="link" to='/experience/program76'>12월의 덕콘 | 프롬,후추스</router-link>
               <div class="date"><span>12.03</span></div>
             </li>
-          </ul>s
+          </ul>
 
           <h2 class="pagelist-title">pay</h2>
           <ul>
