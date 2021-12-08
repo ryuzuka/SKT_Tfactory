@@ -9,7 +9,7 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="12월의 덕콘 | 프롬, 후추스"
+          title="12월의 덕콘 | 저드"
           description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '저드'입니다."
         ></kakao-share>
 
