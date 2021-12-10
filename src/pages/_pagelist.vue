@@ -521,8 +521,16 @@
               <div class="date"><span>12.07</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program81'></router-link>
+              <router-link class="link" to='/experience/program81'>체험형 음악전시 음악을 즐기는 N가지 방법</router-link>
               <div class="date"><span>12.03</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program82'>DJ 포퍼먼스 음악을 즐기는 N가지 방법</router-link>
+              <div class="date"><span>12.10</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program83'>메타버스에서 나의 아티스트를 만나다 | 던밀스 X ifland 팬미팅</router-link>
+              <div class="date"><span>12.10</span></div>
             </li>
           </ul>
 

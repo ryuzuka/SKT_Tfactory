@@ -67,8 +67,8 @@
               매주 목요일 밤, 다양한 DJ들의 디제잉 공연이 펼쳐집니다.
             </p>
             <div class="btn-wrap" style="margin-top: 24px;">
-<!--              <button @click="clickButton" class="btn-line big">라인업&공연일정 확인하기</button>-->
-              <button class="btn-line big disabled">라인업&공연일정 확인하기</button>
+<!--              <button @click="clickButton" class="btn-line big">DJ이벤트 페이지로 이동</button>-->
+              <button class="btn-line big disabled">DJ이벤트 페이지로 이동</button>
             </div>
           </li>
           <li>IFLAND 팬미팅
@@ -91,7 +91,7 @@
           <h4 class="subtit">{{ $t('prd.notice')}}</h4>
           <ul class="texts-info">
             <li>* 본 전시는 T Factory 홍대점을 방문하여 스마트폰으로 체크인 한 경우에만 참여 가능합니다. (체크인 가능 연령: 만 14세 이상)</li>
-            <li style="margin-top:12px">* 본 전시는 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
+            <li style="margin-top:12px">* 본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
           </ul>
         </div>
         <div class="notice">
