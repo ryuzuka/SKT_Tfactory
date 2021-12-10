@@ -881,6 +881,20 @@
           vertical-align:top;
         }
       }
+      .desc {
+        &-list {
+          margin-top: 22px;
+          color: #787878;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: -.08px;
+          .day{
+            display: inline-block;
+            width: 64px;
+            margin-right: 2px;
+          }
+        }
+      }
     }
     .list-program {
       &:after { @include clearer; }
