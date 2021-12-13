@@ -8,10 +8,10 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="12월의 덕콘 | PL"
-          description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 'PL'입니다."
-        ></kakao-share> -->
+        <kakao-share
+          title="메타버스에서 나의 아티스트를 만나다 | 던밀스 X ifland 팬미팅"
+          description="덕콘만으로는 부족했던 찐팬들을 위해 ifland 팬미팅을 준비했어요."
+        ></kakao-share>
 
         <em class="flag-solid7">EXHIBITION</em>
         <h2 class="details-tit">

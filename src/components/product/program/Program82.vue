@@ -8,10 +8,10 @@
     <!-- details -->
     <div class="details sticky">
       <div class="details-header">
-        <!-- <kakao-share
-          title="체험형 음악전시 <SOUND Factory> : 음악을 즐기는 N가지 방법"
-          description="음악을 즐기는 취향에 관한 T팩토리만의 9가지 큐레이션"
-        ></kakao-share> -->
+        <kakao-share
+          title="DJ 퍼포먼스 <SOUND Factory> : 음악을 즐기는 N가지 방법"
+          description="음악을 즐기는 N가지 방법"
+        ></kakao-share>
 
         <em class="flag-solid7">EXHIBITION</em>
         <h2 class="details-tit">

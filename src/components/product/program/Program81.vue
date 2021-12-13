@@ -10,7 +10,7 @@
       <div class="details-header">
         <kakao-share
           title="체험형 음악전시 <SOUND Factory> : 음악을 즐기는 N가지 방법"
-          description="음악을 즐기는 취향에 관한 T팩토리만의 9가지 큐레이션"
+          description="음악을 즐기는 N가지 방법"
         ></kakao-share>
 
         <em class="flag-solid7">EXHIBITION</em>
@@ -57,8 +57,7 @@
             <p>매주 다른 &#60;덕콘&#62; 아티스트들을 화려한 라인업을 확인해 보세요!</p>
             <p>찐팬들이 소환하는 인기 뮤지션과 신규 뮤지션들로 풍성하고 다양한 공연을 즐길 수 있어요.</p>
             <div class="btn-wrap" style="margin-top: 24px;">
-<!--              <button @click="clickButton" class="btn-line big">라인업&공연일정 확인하기</button>-->
-              <button class="btn-line big disabled">라인업&공연일정 확인하기</button>
+              <a class="btn-line big" href="/experience/program68?classId=93">라인업&공연일정 확인하기</a>
             </div>
           </li>
           <li>목요일 밤, DJ 퍼포먼스
@@ -67,16 +66,14 @@
               매주 목요일 밤, 다양한 DJ들의 디제잉 공연이 펼쳐집니다.
             </p>
             <div class="btn-wrap" style="margin-top: 24px;">
-<!--              <button @click="clickButton" class="btn-line big">DJ이벤트 페이지로 이동</button>-->
-              <button class="btn-line big disabled">DJ이벤트 페이지로 이동</button>
+              <a class="btn-line big" href="/experience/program82?classId=113">라인업&공연일정 확인하기</a>
             </div>
           </li>
           <li>IFLAND 팬미팅
             <p>오프라인 ‘덕콘’ 에 초청받지 못했어도 괜찮아요! ICT복합 문화공간, T팩토리에서 선보이는 신개념 팬미팅에 참석해보세요. 찐팬들과 뮤지션의 버츄얼 만남!</p>
             <p>SK텔레콤 메타버스 서비스인 ‘IFLAND’에서 특별한 팬미팅이 진행됩니다.</p>
             <div class="btn-wrap" style="margin-top: 24px;">
-<!--              <button @click="clickButton" class="btn-line big">팬밋업 일정 확인하기</button>-->
-              <button class="btn-line big disabled">팬밋업 일정 확인하기</button>
+              <a class="btn-line big" href="/experience/program83?classId=112">팬밋업 일정 확인하기</a>
             </div>
           </li>
         </ol>
