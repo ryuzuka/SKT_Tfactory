@@ -38,7 +38,12 @@
         <li style="margin-top:4px;"><span class="day">12.25</span> 저드&nbsp;&nbsp;&nbsp;페퍼톤스</li>
         <li><span class="day">12.26</span> PL&nbsp;&nbsp;&nbsp;나상현씨밴드</li>
       </ul>
-        <div class="btn-wrap" style="margin: 24px 0 18px;"><button @click="clickButton" class="btn-line big">공식 인스타그램 방문하기</button></div>
+      <p class="texts-notice">
+        12월 25일 크리스마스 선물처럼 함께할<br>
+        다시보고 싶은 덕콘 1위 아티스트는?<br>
+        지금 공식인스타그램에서 확인하세요.
+      </p>
+      <div class="btn-wrap" style="margin: 24px 0 18px;"><button @click="clickButton" class="btn-line big">공식 인스타그램 방문하기</button></div>
     </div>
     <div class="details-inner">
       <h3 class="subtit">T Factory x FLO 덕콘</h3>
