@@ -74,8 +74,9 @@
         <ul class="texts-list">
           <li>일정 : 12월 25일(토) 오후 5시</li>
           <li>응모기간 : 12월 14일(화) ~ 12월 19일(일)</li>
-          <li>당첨자 발표 : 12월 20일(월)</li>
+          <li>당첨자 발표 : 12월 20일(월) 오후 3시</li>
           <li>장소 : T Factory 2층, 0 Stage</li>
+          <li>당첨 인원 : 30명</li>
         </ul>
         <div class="notice">
           <h4 class="subtit">{{ $t('prd.notice')}}</h4>
