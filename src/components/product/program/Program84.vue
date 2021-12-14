@@ -9,8 +9,8 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="메타버스에서 나의 아티스트를 만나다 | 던밀스 X ifland 팬미팅"
-          description="덕콘만으로는 부족했던 찐팬들을 위해 ifland 팬미팅을 준비했어요."
+          title="인기 게임 정복하기"
+          description="[3개월 코스] 프로게이머 팀 코치에게 배우는 LOL"
         ></kakao-share>
 
         <em class="flag-solid7">MEDIA CLASS</em>
