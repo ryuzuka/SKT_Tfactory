@@ -96,6 +96,7 @@
             <li>5. 백신접종 예외자 (보건소 발급소견서)</li>
           </ul>
           <p class="texts-notice" style="margin-top:20px;">본 클래스/투어/덕콘은 방역수칙 준수를 위해<br>방역패스 인증자에 한해 참여가 가능합니다.</p>
+          <p class="texts-notice" style="margin-top:8px;">덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함께 응모에 당첨되어야 하는점 유의부탁드립니다.</p>
         </div>
       </div>
     </div>
