@@ -533,7 +533,7 @@
               <div class="date"><span>12.10</span></div>
             </li>
             <li class="pagelist-item">
-              <router-link class="link" to='/experience/program83'>인기 게임 정복하기</router-link>
+              <router-link class="link" to='/experience/program84'>인기 게임 정복하기</router-link>
               <div class="date"><span>12.14</span></div>
             </li>
           </ul>
