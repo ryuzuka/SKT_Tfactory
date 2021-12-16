@@ -51,8 +51,8 @@
         </ul>
         <h3 class="subtit">소요시간 및 장소</h3>
         <p>
-          1시간<br>
-          T Factory 2층, Consulting Zone
+          매주 월요일 오후 15시, 18시<br>
+          T Factory 2층 Consulting Zone
         </p>
         <h3 class="subtit">{{ $t('prd.leader-introduction')}}</h3>
         <div class="thumb"><img src="../../../assets/images/program/class51-conts1.jpg" alt=""></div>
