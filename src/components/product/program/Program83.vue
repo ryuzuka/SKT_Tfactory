@@ -32,15 +32,16 @@
       <div class="details-inner">
         <h3 class="subtit">12월의 덕콘 - Special Event</h3>
         <p>
-          "덕콘 라이브만으로는 아쉬웠던 찐팬들을 위해 덕콘이<br>
-          깜짝 선물을 준비했습니다.<br>
-          메타버스 플랫폼 ifland에서 진행되는 팬미팅을 통해 무대 뒷얘기 부터 그동안 아티스트에게 궁금했던 점들을 물어보세요.
+          "덕콘 라이브만으로는 아쉬웠던 찐팬들을 위해<br>
+          덕콘이 깜짝 선물을 준비했습니다.<br>
+          메타버스 플랫폼 ifland에서 진행되는 팬미팅을 통해<br>
+          무대 뒷얘기 부터 그동안 아티스트에게 궁금했던 점들을 물어보세요.
         </p>
         <p style="margint-top:22px;">그리고 아티스트와 똑닮은 아바타와 함께 사진도 찍고, 춤추며 색다른 추억을 만들어요.</p>
         <div class="btn-wrap" style="margin: 24px 0 16px;"><button @click="clickButton" class="btn-line big">공식 인스타그램 방문하기</button></div>
         <div class="btn-wrap"><button @click="clickButton" class="btn-line big">ifland 다운로드 하기</button></div>
         <h3 class="subtit" style="margin-top: 48px;">던밀스 소개</h3>
-        <div class="thumb"><img src="../../../assets/images/program/class83-conts1.jpg" alt=""></div>
+        <div class="thumb"><img src="../../../assets/images/program/class83-conts1.png" alt=""></div>
         <p>VMC 소속의 아티스트 던밀스 (Don Mills)는 자신만의 개성있는 랩스타일로 힙합 팬들 뿐만이 아니라 대중들에게도 많은 관심과 사랑을 받고있다. 올해 정규 2집, EP, 여러개의 싱글을 발매하였으며 쇼미더머니10에 참가하여 다양한 모습을 보여주며 꾸준한 행보를 이어가고있다.</p>
       </div>
       <div class="details-inner">
