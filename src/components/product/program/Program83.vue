@@ -26,7 +26,8 @@
         </div>
         <p class="desc type2">
           [ifland X FLO 덕콘]<br>
-          덕콘만으로는 부족했던 찐팬들을 위해 ifland 팬미팅을 준비했어요.
+          덕콘만으로는 부족했던 찐팬들을 위해<br>
+          ifland 팬미팅을 준비했어요.
         </p>
       </div>
       <div class="details-inner">
@@ -53,7 +54,9 @@
         <div class="notice">
           <h4 class="subtit">{{ $t('prd.notice')}}</h4>
           <ul class="texts-info">
+            <li><span style="font-family: 'Noto Sans KR';">*</span> 참여인원 : 선착순 130명</li>
             <li><span style="font-family: 'Noto Sans KR';">*</span> 본 팬미팅으로 선착순 입장으로 진행되며, 정원 마감 시 입장이 제한될 수 있습니다.</li>
+            <li><span style="font-family: 'Noto Sans KR';">*</span> 참석 전 ifland(이프랜드) 앱 미리 다운로드하여 설치 부탁드립니다.</li>
           </ul>
         </div>
         <div class="notice">
