@@ -37,9 +37,6 @@
           2021년 12월 18일(토) ~ 2021년 12월 31일(금)<br>
           홍대 T Factory 2층 (서울 마포구 양화로 144)
         </p>
-        <ul class="texts-info" style="margin-top:8px;">
-          <li>* 덕콘은 12월 4일 부터 시작됩니다.</li>
-        </ul>
         <div class="notice">
           <h4 class="subtit">유의사항</h4>
           <ul class="texts-info">
