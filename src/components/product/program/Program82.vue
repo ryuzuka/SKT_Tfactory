@@ -41,8 +41,8 @@
         <h3 class="subtit" style="margin-top:48px;">DJ 공연일정</h3>
         <p>매주 목요일 저녁 7시</p>
         <ul class="desc-list">
-          <li><span class="day">12월 23일</span> NEEDLE</li>
-          <li><span class="day">12월 30일</span> 전용현</li>
+          <li><span class="day">12월 23일</span> 전용현</li>
+          <li><span class="day">12월 30일</span> NEEDLE</li>
           <li><span class="day">1월 06일</span> CONAN</li>
           <li><span class="day">1월 13일</span> BEEJAY</li>
           <li><span class="day">1월 20일</span> SCHEDULE 1</li>
