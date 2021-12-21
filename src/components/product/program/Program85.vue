@@ -9,8 +9,8 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="인기 게임 정복하기"
-          description="[3개월 코스] 프로게이머 팀 코치에게 배우는 LOL"
+          title="F.Y.i OFFICE : FOR YOUR iNTERNSHIP"
+          description="SKT 1020 브랜드 0(young)와 모베러웍스의 콜라보 팝업"
         ></kakao-share>
 
         <em class="flag-solid7">EXHIBITION</em>
