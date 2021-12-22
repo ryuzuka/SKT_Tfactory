@@ -540,6 +540,18 @@
               <router-link class="link" to='/experience/program85'>F.Y.i OFFICE : FOR YOUR iNTERNSHIP</router-link>
               <div class="date"><span>12.14</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program86'>1월의 덕콘</router-link>
+              <div class="date"><span>12.22</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program87'>1월의 덕콘 | 모브닝</router-link>
+              <div class="date"><span>12.22</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program88'>1월의 덕콘 | 터치드</router-link>
+              <div class="date"><span>12.22</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
