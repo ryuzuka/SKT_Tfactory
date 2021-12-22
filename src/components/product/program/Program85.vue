@@ -30,6 +30,9 @@
         </p>
         <p style="margin-top:22px;">단 하나뿐인, 특별한 제품을 기획하는 iNTERNSHIP을 경험하고, 아이키와 이무진, 모춘의 오피스도 구경하세요!</p>
         <p style="margin-top:22px;">0X모베러웍스 한정판 굿즈도 오직 F.Y.i OFFICE에서만 만나볼 수 있습니다.</p>
+        <div class="btn-wrap" style="margin-top: 24px;">
+          <a class="btn-line big" href="https://www.0handong-fyi.com/iphone13.do">상세보기</a>
+        </div>
       </div>
       <div class="details-inner">
         <h3 class="subtit">일정 및 장소</h3>
