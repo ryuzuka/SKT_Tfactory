@@ -55,7 +55,7 @@
       </ul>
       <h3 class="subtit">1월의 덕콘 라인업</h3>
       <program-lineup
-        :class-id-list="['116', '117']"
+        :class-id-list="['120', '121', '122', '123', '124', '125', '126']"
       ></program-lineup>
       <div class="notice">
         <h4 class="subtit">방역패스 안내사항</h4>
