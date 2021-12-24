@@ -7,10 +7,10 @@
   <!-- //slide -->
   <!-- details -->
   <div class="details sticky">
-    <!-- <kakao-share
-      title="12월의 덕콘"
-      description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트를 소개합니다."
-    ></kakao-share> -->
+    <kakao-share
+      title="1월의 덕콘"
+      description="22년을 여는 1월의 덕콘도 다양한 아티스트와 함께합니다."
+    ></kakao-share>
 
     <div class="details-header">
       <em class="flag-solid7">CONCERT</em>
@@ -53,10 +53,12 @@
         <li>※ 본 콘서트는 코로나19 방역 수칙을 준수하여 진행됩니다.</li>
         <li>※ 사회적 거리두기 단계에 따라 비대면으로 전환될 수 있습니다.</li>
       </ul>
-      <h3 class="subtit">1월의 덕콘 라인업</h3>
-      <program-lineup
-        :class-id-list="['120', '121', '122', '123', '124', '125', '126']"
-      ></program-lineup>
+      <template v-if="!isProgramNull">
+        <h3 class="subtit">1월의 덕콘 라인업</h3>
+        <program-lineup
+          :class-id-list="['120', '121', '122', '123', '124', '125', '126']"
+        ></program-lineup>
+      </template>
       <div class="notice">
         <h4 class="subtit">방역패스 안내사항</h4>
         <ul class="texts-info">
@@ -137,11 +139,15 @@ export default {
   },
   data () {
     return {
+      isProgramNull: false
     }
   },
   created () {
   },
   mounted () {
+    this.$on('program-null', e => {
+      this.isProgramNull = true
+    })
   },
   methods: {
     clickButton () {
