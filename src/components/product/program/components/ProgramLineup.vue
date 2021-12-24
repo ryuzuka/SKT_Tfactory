@@ -32,7 +32,8 @@ export default {
   },
   data () {
     return {
-      programList: []
+      programList: [],
+      isProgramNull: true
     }
   },
   mounted () {
@@ -40,9 +41,15 @@ export default {
     _.forEach(this.classIdList, (classId, index) => {
       STORE.getProgramClass(classId).then(result => {
         count++
-        this.programList[index] = result['PROGRAM_CLASS']
+        if (result['PROGRAM_CLASS']) {
+          this.isProgramNull = false
+          this.programList[index] = result['PROGRAM_CLASS']
+        }
         if (count === this.classIdList.length) {
           this.$forceUpdate()
+          if (this.isProgramNull) {
+            this.$parent.$emit('program-null')
+          }
         }
       })
     })
