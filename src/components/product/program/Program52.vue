@@ -4,10 +4,10 @@
     <div class="slider-prd swiper-top">
       <swiper :options="swiperOption">
         <swiper-slide>
-          <div class="thumb"><img src="../../../assets/images/program/class52-slide1.jpeg" alt=""></div>
+          <div class="thumb"><img src="../../../assets/images/program/class52-slide1.jpg" alt=""></div>
         </swiper-slide>
         <swiper-slide>
-          <div class="thumb"><img src="../../../assets/images/program/class52-slide2.jpeg" alt=""></div>
+          <div class="thumb"><img src="../../../assets/images/program/class52-slide2.jpg" alt=""></div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -39,32 +39,32 @@
       <div class="details-inner">
         <h3 class="subtit">클래스 소개</h3>
         <p>
-          IT와 미술이 만나 탄생한 나의 그림!<br>
-          평소 드로잉에 관심은 있었지만 시작하기 어려우셨던 분들께, 아이패드를 통해 누구나 손쉽게 나만의 드로잉을 완성할 수 있도록 도와드립니다.<br>
-          나만의 작품을 완성해보세요!
+          IT와 ART가 만나 탄생시키는 나만의 ARTWORK<br>
+          평소 드로잉에 관심은 있었지만 시작하기 어려웠던 분들께, iPad를 통해 손쉽게 나만의 부캐를 완성해보는 시간!<br>
+          나만의 ARTWORK를 드로잉해보세요!
         </p>
         <h3 class="subtit">클래스 구성</h3>
         <ol class="step-list" start="margin-top:20px">
-          <li>아이패드및 드로잉 앱 세팅</li>
-          <li>드로잉 주제 선택
-            <ul class="texts-list" style="margin-top:2px;">
-              <li>나만의 스마트폰 배경화면</li>
-              <li>지인에게 선물 할 그림 엽서</li>
-              <li>평소 그리고 싶었던 풍경, 수채화 그림</li>
-              <li>나에게 주는 힐링 그림</li>
-            </ul>
-          </li>
-          <li>스케치 아이디어 선정</li>
-          <li>아이패드를 통해 스케치 및 채색</li>
+          <li>드로잉 앱 세팅</li>
+          <li>컨셉 선택</li>
+          <li>부캐 선택</li>
+          <li>iPad를 통해 스케치 및 채색</li>
+          <li>제출하는 경우 - 미승인 시 꿀팁</li>
         </ol>
+        <p style="margin-top:24px;">클래스에서의 드로잉 활용</p>
+        <ul class="texts-list" style="margin-top:2px;">
+          <li>움직이는 이모티콘 제출하기</li>
+          <li>스마트기기 배경화면 (스마트폰, 탭)</li>
+          <li>나에게 선물하는 나의 부캐로 힐링</li>
+        </ul>
         <h3 class="subtit">준비물</h3>
-        <p>아이패드와 애플 펜슬 (대여 가능)</p>
+        <p>procreate 앱 (애플스토어)</p>
         <h3 class="subtit">추천 대상</h3>
         <ul class="texts-list">
-          <li>아이패드를 활용한 드로잉을 체험하고 싶으신 분</li>
-          <li>그림을 즐겨 그리지만 함께 그리는 친구가 필요하신 분</li>
-          <li>그림에 관심있지만, 곰손이라 겁먹으신 분</li>
-          <li>친구, 연인, 가족에게 그림을 선물하고 싶으신 분</li>
+          <li>그림을 즐기고 싶지만, 곰손일까 겁에 질리신 분</li>
+          <li>나만의 부캐를 만들고 싶으신 분</li>
+          <li>이모티콘을 만들어 제출하고 싶으신 분</li>
+          <li>나의 드로잉에 대해 같이 의견을 나누고 싶으신 분</li>
         </ul>
         <h3 class="subtit">소요시간 및 장소</h3>
         <p>
