@@ -92,7 +92,7 @@
         <div class="profile">
           <em>T FACTORY CREW</em>
           <span>
-            Ellien<br>
+            Elline<br>
             엘린
           </span>
           <span style="margin-top:12px;">
