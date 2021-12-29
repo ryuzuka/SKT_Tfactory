@@ -17,14 +17,14 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="IT와 미술의 만남 아이패드로 쉽게 드로잉하기"
+          title="IT와 미술의 만남 나의 부캐 이모티콘 GIF 만들기"
           description="비아와 함께하는 입문자용 드로잉 원데이 클래스"
         ></kakao-share>
 
         <em class="flag-solid7">ART CLASS</em>
         <h2 class="details-tit">
           IT와 미술의 만남<br>
-          아이패드로 쉽게 드로잉하기
+          나의 부캐 이모티콘 GIF 만들기
         </h2>
         <div class="tags">
           <span class="flag-basic">원데이클래스</span>
