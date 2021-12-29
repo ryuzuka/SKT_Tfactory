@@ -552,6 +552,26 @@
               <router-link class="link" to='/experience/program88'>1월의 덕콘 | 터치드</router-link>
               <div class="date"><span>12.22</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program89'>1월의 덕콘 | 안녕바다</router-link>
+              <div class="date"><span>12.29</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program90'>1월의 덕콘 | W24</router-link>
+              <div class="date"><span>12.29</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program91'>1월의 덕콘 | 언오피셜보이</router-link>
+              <div class="date"><span>12.29</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program92'>1월의 덕콘 | 너드커넥션</router-link>
+              <div class="date"><span>12.29</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program93'>1월의 덕콘 | 데이브레이크</router-link>
+              <div class="date"><span>12.29</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
