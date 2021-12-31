@@ -9,7 +9,7 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="1월의 덕콘 | 터치드"
+          title="1월의 덕콘 | 안녕바다"
           description="찐덕들만 초청하여 진행하는 덕콘. 이번 기출영역은 '안녕바다'입니다."
         ></kakao-share>
 
