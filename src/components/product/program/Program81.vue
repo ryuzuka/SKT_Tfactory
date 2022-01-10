@@ -57,7 +57,7 @@
             <p>매주 다른 &#60;덕콘&#62; 아티스트들을 화려한 라인업을 확인해 보세요!</p>
             <p>찐팬들이 소환하는 인기 뮤지션과 신규 뮤지션들로 풍성하고 다양한 공연을 즐길 수 있어요.</p>
             <div class="btn-wrap" style="margin-top: 24px;">
-              <a class="btn-line big" href="/experience/program68?classId=93">라인업&공연일정 확인하기</a>
+              <a class="btn-line big" href="/experience/program86?classId=119">라인업&공연일정 확인하기</a>
             </div>
           </li>
           <li>목요일 밤, DJ 퍼포먼스
