@@ -73,7 +73,7 @@
             <p>오프라인 ‘덕콘’ 에 초청받지 못했어도 괜찮아요! ICT복합 문화공간, T팩토리에서 선보이는 신개념 팬미팅에 참석해보세요. 찐팬들과 뮤지션의 버츄얼 만남!</p>
             <p>SK텔레콤 메타버스 서비스인 ‘IFLAND’에서 특별한 팬미팅이 진행됩니다.</p>
             <div class="btn-wrap" style="margin-top: 24px;">
-              <a class="btn-line big" href="/experience/program83?classId=112">팬밋업 일정 확인하기</a>
+              <a class="btn-line big" href="/experience/program94?classId=127">팬밋업 일정 확인하기</a>
             </div>
           </li>
         </ol>
