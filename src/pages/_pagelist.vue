@@ -572,6 +572,14 @@
               <router-link class="link" to='/experience/program93'>1월의 덕콘 | 데이브레이크</router-link>
               <div class="date"><span>12.29</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program94'>"메타버스에서 나의 아티스트를 만나다 | W24 X ifland 팬미팅"</router-link>
+              <div class="date"><span>1.10</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program95'>"메타버스에서 나의 아티스트를 만나다 | 언오피셜보이 X ifland 팬미팅"</router-link>
+              <div class="date"><span>1.10</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
