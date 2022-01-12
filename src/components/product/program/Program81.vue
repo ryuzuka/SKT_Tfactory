@@ -80,7 +80,7 @@
       </div>
       <div class="details-inner">
         <h3 class="subtit">{{ $t('prd.schedule-place')}}</h3>
-        <p>2021년 12월 18일(토) ~ 2022년 1월 30일(일)<br>T Factory 홍대</p>
+        <p>2021년 12월 18일(토) ~ 2022년 1월 31일(월)<br>T Factory 홍대</p>
         <ul class="texts-info" style="margin-top:8px;">
           <li>* 덕콘은 12월 4일 부터 시작됩니다.</li>
         </ul>
