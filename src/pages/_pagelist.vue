@@ -580,6 +580,10 @@
               <router-link class="link" to='/experience/program95'>"메타버스에서 나의 아티스트를 만나다 | 언오피셜보이 X ifland 팬미팅"</router-link>
               <div class="date"><span>1.10</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program96'>[T Factory X T1] LoL Class 런칭기념 l 'Piglet' 채광진 코치 초청 Class</router-link>
+              <div class="date"><span>1.14</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
