@@ -35,11 +35,8 @@
           </li>
           <li>
             <span style="margin-left:-1px;">
-              현장 추첨(4명)하여 Piglet과 LoL 한판
+              다함께 플레이 돌려보며 Piglet 의 LoL 꿀팁 전수 및 Q&A
             </span>
-          </li>
-          <li>
-            <span style="margin-left:-1px;">다함께 플레이 돌려보며 Piglet 의 LoL 꿀팁 전수 및 Q&A</span>
           </li>
         </ol>
 
