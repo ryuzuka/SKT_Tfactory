@@ -53,6 +53,13 @@
           '21.12 ~ 현재 T1 Esports Academy Coach
         </p>
 
+        <h3 class="subtit" style="margin-bottom:9px;">응모 기간</h3>
+        <p style="margin-top:0;">
+          1월 18일 (화) ~ 1월 23일(일)<br><br>
+          당첨자발표<br>
+          1월 24일(월) 오후3시
+        </p>
+
         <h3 class="subtit" style="margin-bottom:9px;">일정 및 장소</h3>
         <p style="margin-top:0;">
           1월 28일(금) 18시, T Factory 0 Stage
