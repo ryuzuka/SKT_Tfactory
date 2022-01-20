@@ -61,6 +61,11 @@
         <p style="margin-top:0;">
           1월 28일(금) 18시, T Factory 0 Stage
         </p>
+        <p style="display:flex;">
+          <span style="margin-right:3px;">※</span>
+          본 행사는 T Factory를 방문하여 스마트폰으로 체크인 한 경우에만 참여 가능합니다.<br>
+          (체크인 가능 연령 : 만 14세 이상)
+        </p>
 
         <div class="notice">
           <h4 class="subtit">방역패스 안내사항</h4>
