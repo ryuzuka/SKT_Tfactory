@@ -29,10 +29,13 @@
         <p>
           2022년 wavve 오리지널 콘텐츠 &#60;트레이서&#62;<br>
           누군가에겐 판검사보다 무서운 곳, 국세청. 일명  ‘쓰레기 하치장’이라 불리는 조세5국에 굴러온 독한 놈의 물불 안 가리는 활약을 그린 통쾌한 추적 활극 &#60;트레이서&#62;. 다소 무거울 수 있는 주제를 유쾌하게 그려내며 시즌 1의 마지막까지 시청률 고공 행진을 거듭했습니다. 종영이 아쉬운 분들을 위해 T Factory와 wavve가 특별한 방 탈출 이벤트를 준비했습니다.<br><br>
-
           이제 여러분이 ‘NEXT 트레이서’입니다. 트레이서의 주인공처럼 숨겨진 돈에 대한 단서를 찾아 돈벼락을 맞는 통쾌함을 경험해 보세요!
         </p>
-        <div class="btn-wrap" style="margin: 24px 0 16px;"><button @click="clickButton('instagram')" class="btn-line big">공식 인스타그램 방문하기</button></div>
+        <div class="btn-wrap" style="margin: 24px 0 16px;">
+          <button class="btn-line big" @click="clickButton('https://www.instagram.com/tfactory_sampler/')">
+            공식 인스타그램 방문하기
+          </button>
+        </div>
         <h3 class="subtit" style="margin: 48px 0 9px;">일정 및 장소</h3>
         <p style="margin-top: 9px;">
           2022년 2월 5일(토)~4월 중<br>
@@ -86,8 +89,7 @@ export default {
   mounted () {
   },
   methods: {
-    clickButton () {
-      const redirectURL = 'https://www.0handong-fyi.com/iphone13.do'
+    clickButton (redirectURL) {
       const mobileOS = this.$cookies.get('platform')
       if (mobileOS === 'A' || mobileOS === 'I') {
         NATIVE.sysBrowserOpen(mobileOS, redirectURL)
