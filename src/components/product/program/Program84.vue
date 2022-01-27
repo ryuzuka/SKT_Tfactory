@@ -13,7 +13,7 @@
           description="[원포인트레슨] 프로게이머 팀 코치에게 배우는 LoL"
         ></kakao-share>
 
-        <em class="flag-solid7">MEDIA CLASS</em>
+        <em class="flag-solid7">GAME CLASS</em>
         <h2 class="details-tit">[T Factory X T1] LoL Class</h2>
         <div class="tags">
           <span class="flag-basic">게임</span>
