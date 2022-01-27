@@ -584,6 +584,10 @@
               <router-link class="link" to='/experience/program96'>[T Factory X T1] LoL Class 런칭기념 l 'Piglet' 채광진 코치 초청 Class</router-link>
               <div class="date"><span>1.14</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program97'>&#60;NEXT 트레이서&#62;</router-link>
+              <div class="date"><span>1.27</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
