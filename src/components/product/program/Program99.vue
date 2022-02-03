@@ -141,12 +141,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'src/assets/css/product';
-.texts-list li:before {
-  content: '-' !important;
-  margin-left: -9px;
-}
-.texts-info li:nth-of-type(n+2) {
-    margin-top: 0px;
-}
+  @import 'src/assets/css/product';
+</style>
+<style lang="scss" scoped>
+  .texts-list li:before {
+    content: '-' !important;
+    margin-left: -9px;
+  }
+  .texts-info li:nth-of-type(n+2) {
+      margin-top: 0px;
+  }
 </style>

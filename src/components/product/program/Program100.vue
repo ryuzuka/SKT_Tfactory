@@ -102,12 +102,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'src/assets/css/product';
-.texts-list li:before {
-  content: '-' !important;
-  margin-left: -9px;
-}
-.step-list>li:first-child::before {
-    margin: 3px 6px 0 -22px;
-}
+  @import 'src/assets/css/product';
+</style>
+<style lang="scss" scoped>
+  .texts-list li:before {
+    content: '-' !important;
+    margin-left: -9px;
+  }
+  .step-list>li:first-child::before {
+      margin: 3px 6px 0 -22px;
+  }
 </style>

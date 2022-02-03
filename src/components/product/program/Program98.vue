@@ -57,7 +57,10 @@
           <li>※ 사회적 거리두기 단계에 따라 비대면으로 전환될 수 있습니다.</li>
         </ul>
         <h3 class="subtit" style="margin-top: 40px;">2월의 덕콘 라인업</h3>
-        <ul class="list-program wide" style="margin-top: 12px;">
+        <program-lineup
+            :class-id-list="['129', '131']"
+        ></program-lineup>
+        <!--ul class="list-program wide" style="margin-top: 12px;">
           <li>
             <a href="./program99">
               <div class="thumb">
@@ -82,7 +85,7 @@
               </div>
             </a>
           </li>
-        </ul>
+        </ul-->
         <div class="notice" style="margin-top:40px;">
           <h4 class="subtit">방역패스 안내사항</h4>
           <ul class="texts-info">
@@ -140,6 +143,8 @@ export default {
 
 <style lang="scss">
   @import 'src/assets/css/product';
+</style>
+<style lang="scss" scoped>
   .texts-list li:nth-child(2):before {
     content: '-' !important;
     margin-left: -9px;
