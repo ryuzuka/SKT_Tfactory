@@ -58,7 +58,7 @@
         </ul>
         <h3 class="subtit" style="margin-top: 40px;">2월의 덕콘 라인업</h3>
         <program-lineup
-            :class-id-list="['129', '131']"
+            :class-id-list="['142', '143']"
         ></program-lineup>
         <!--ul class="list-program wide" style="margin-top: 12px;">
           <li>
