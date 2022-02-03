@@ -588,6 +588,18 @@
               <router-link class="link" to='/experience/program97'>&#60;NEXT 트레이서&#62;</router-link>
               <div class="date"><span>1.27</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program98'>2월의 덕콘</router-link>
+              <div class="date"><span>2.3</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program99'>2월의 덕콘 | 안녕하신가영</router-link>
+              <div class="date"><span>2.3</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program100'>2월의 덕콘 | 데자부 그룹</router-link>
+              <div class="date"><span>2.3</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
