@@ -351,6 +351,20 @@
           }
         }
       }
+      .texts-notice {
+        padding: 0 20px 0 36px;
+        word-break: keep-all;
+        font-size: 14px;
+        color: #787878;
+        line-height: 22px;
+          &:before {
+            content: '\203B';
+            display: inline-block;
+            width: 16px;
+            margin-left: -16px;
+            vertical-align: top;
+        }
+      }
       //.desc + .thumb { margin-top:60px; }
       .desc + h3 { margin-top:32px; }
       .step-list { margin:12px 32px 0; }
