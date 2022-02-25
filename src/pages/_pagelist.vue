@@ -600,6 +600,14 @@
               <router-link class="link" to='/experience/program100'>2월의 덕콘 | 데자부 그룹</router-link>
               <div class="date"><span>2.3</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program101'>3월의 덕콘</router-link>
+              <div class="date"><span>2.25</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program102'>3월의 덕콘 | 잭킹콩</router-link>
+              <div class="date"><span>2.25</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
