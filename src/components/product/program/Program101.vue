@@ -49,34 +49,8 @@
         </ul>
         <h3 class="subtit" style="margin-top: 40px;">3월의 덕콘 라인업</h3>
         <program-lineup
-            :class-id-list="['142', '143']"
+            :class-id-list="['150', '151']"
         ></program-lineup>
-        <ul class="list-program wide" style="margin-top: 12px;">
-          <li>
-            <a href="./program102">
-              <div class="thumb">
-                <img src="../../../assets/images/program/class101-conts1.jpg" alt="">
-                </div>
-              <div class="info">
-                <span class="flag-solid8">모집중</span>
-                <p class="tit"><em>잭킹콩</em></p>
-                <p class="subtext">3월 11일(금)</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="./program103">
-              <div class="thumb">
-                <img src="../../../assets/images/program/class101-conts2.jpg" alt="">
-                </div>
-              <div class="info">
-                <span class="flag-solid8">모집중</span>
-                <p class="tit"><em>솔루션스</em></p>
-                <p class="subtext">3월 25일(토)</p>
-              </div>
-            </a>
-          </li>
-        </ul>
         <div class="notice" style="margin-top:40px;">
           <h4 class="subtit">방역패스 안내사항</h4>
           <ul class="texts-info">
@@ -92,11 +66,16 @@
       </div>
     </div>
     <!-- //details -->
+
+	  <!-- button set -->
+	  <program-button style="display: none"></program-button>
+	  <!-- // button set -->
   </div>
 </template>
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
+import ProgramButton from './components/ProgramButton'
 import ProgramLineup from './components/ProgramLineup'
 import * as NATIVE from '../../../js/native'
 
@@ -104,7 +83,8 @@ export default {
   name: 'Program101',
   components: {
     KakaoShare,
-    ProgramLineup
+    ProgramLineup,
+	  ProgramButton
   },
   data () {
     return {
