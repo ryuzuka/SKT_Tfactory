@@ -62,7 +62,7 @@
         <h3 class="subtit" style="margin-top: 40px;">{{ $t('prd.schedule-place')}}</h3>
         <ul class="texts-list">
           <li>일정 : 3월 11일(금) 오후 7시</li>
-          <li>응모기간 : 3월 28일(월) ~ 3월 6일(일)</li>
+          <li>응모기간 : 2월 28일(월) ~ 3월 6일(일)</li>
           <li>당첨자 발표 : 3월 7일(월)</li>
           <li>장소 : T Factory 2층, 0 Stage</li>
         </ul>
