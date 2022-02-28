@@ -1,18 +1,18 @@
 <template>
   <ul class="list-program wide">
     <li v-if="program" v-for="(program, index) in programList" :key="index">
-      <a :href="program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
-        <div class="thumb">
-          <img :src="program['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']" :alt="program['PROGRAM_CLASS_NAME']">
-        </div>
-        <div class="info">
-          <span v-if="program['APPLY_PROGRESS'] === 'ONGOING'" class="flag-solid8">모집중</span>
-          <span v-else-if="program['APPLY_PROGRESS'] === 'OVER'" class="flag-solid9">모집마감</span>
-          <span v-else-if="program['APPLY_PROGRESS'] === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
-          <p class="tit"><em>{{ program['PROGRAM_CLASS_NAME'] }}</em></p>
-          <p class="subtext">{{ program['PROGRAM_CLASS_SCHEDULE_GUIDE'] }}</p>
-        </div>
-      </a>
+	    <a :href="parseInt(program['PROGRAM_CLASS_ID']) === 151 ? '#none' : program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
+		    <div class="thumb">
+			    <img :src="program['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']" :alt="program['PROGRAM_CLASS_NAME']">
+		    </div>
+		    <div class="info">
+			    <span v-if="program['APPLY_PROGRESS'] === 'ONGOING'" class="flag-solid8">모집중</span>
+			    <span v-else-if="program['APPLY_PROGRESS'] === 'OVER'" class="flag-solid9">모집마감</span>
+			    <span v-else-if="program['APPLY_PROGRESS'] === 'NOT_STARTED'" class="flag-solid10">모집예정</span>
+			    <p class="tit"><em>{{ program['PROGRAM_CLASS_NAME'] }}</em></p>
+			    <p class="subtext">{{ program['PROGRAM_CLASS_SCHEDULE_GUIDE'] }}</p>
+		    </div>
+	    </a>
     </li>
   </ul>
 </template>
