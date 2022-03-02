@@ -1,7 +1,7 @@
 <template>
   <ul class="list-program wide">
     <li v-if="program" v-for="(program, index) in programList" :key="index">
-	    <a :href="parseInt(program['PROGRAM_CLASS_ID']) === 151 ? '#none' : program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
+	    <a :href="program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
 		    <div class="thumb">
 			    <img :src="program['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']" :alt="program['PROGRAM_CLASS_NAME']">
 		    </div>
