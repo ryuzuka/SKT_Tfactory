@@ -2,7 +2,7 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class103-slide1.jpg" alt="T Factory X FLO 덕후콘 | 2022.3 솔루션스">
+      <img src="../../../assets/images/program/class103-slide2.jpg" alt="T Factory X FLO 덕후콘 | 2022.3 솔루션스">
     </div>
     <!-- //slide -->
     <!-- details -->
