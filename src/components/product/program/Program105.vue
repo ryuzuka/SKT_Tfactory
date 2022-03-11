@@ -1,7 +1,7 @@
 <template>
   <div class="contentss" ref="contents">
     <!-- slide -->
-    <div class="slider-prd" style="padding-top:56px;">
+    <div class="slider-prd" style="padding-top: 56px;">
       <img src="../../../assets/images/program/class105-slide1.jpg" alt="T Factory POP-UP Exhibition">
     </div>
     <!-- //slide -->
@@ -46,15 +46,15 @@
       </div>
       <div class="details-inner">
         <h3 class="subtit">전시 안내</h3>
-        <ul class="texts-list" style="padding-right: 34px">
+        <ul class="texts-list" style="padding-right: 34px;">
           <li>전시 기간 : 22.4.11(월) ~ 6월말</li>
-          <li style="display:flex;">전시 장소 :<span style="margin-left:4px;"> SK텔레콤 플래그십스토어<br>T Factory POP-UP ZONE</span></li>
+          <li style="display:flex;">전시 장소 :<span style="margin-left: 4px;"> SK텔레콤 플래그십스토어<br>T Factory POP-UP ZONE</span></li>
         </ul>
-        <ul style="padding-right: 34px">
+        <ul style="padding-right: 34px;">
           <li>※ 전시 운영 방식은 미정이며, 추후 재공지 예정</li>
         </ul>
         <h4 class=small-subtit style="margin-bottom: 4px;">참여 해택</h4>
-        <ul class="texts-list" style="padding-right: 34px">
+        <ul class="texts-list" style="padding-right: 34px;">
           <li>전시 공간 무료제공</li>
           <li>전시 홍보지원 : SK텔레콤,<br>T Factory 공식 SNS 채널을 활용한 홍보</li>
           <li>작가 인터뷰 영상 제작</li>
@@ -77,12 +77,12 @@
         <h4 class=small-subtit>제출 자료 (필수)</h4>
         <ul>
           <li>[필수] 작가정보(대학명/학과/이름) 및 작품 포트폴리오</li>
-          <li style="display:flex;">[필수] <span style="margin-left:4px;">전시 원하는 작품 파일 및 작품 소개글<br>
+          <li style="display: flex;">[필수] <span style="margin-left: 4px;">전시 원하는 작품 파일 및 작품 소개글<br>
           ㄴ 작품 규격: A2또는A3 사이즈<br>
           (회화: W420 이하x H594 이하)</span></li>
           <li>[선택] 작가 작품활동 담은 SNS 계정</li>
         </ul>
-        <ul class="texts-list" style="margin-top:0px;">
+        <ul class="texts-list" style="margin-top: 0px;">
           <li>제출 방법</li>
           <li>제출 자료를 skt.tfactory@gmail.com으로<br>이메일 접수</li>
         </ul>

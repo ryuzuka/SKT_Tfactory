@@ -17,7 +17,7 @@
         <h2 class="details-tit" style="margin-top: 11px;">
          T Factory x FLO 덕콘
         </h2>
-        <div class="tags" style="margin-top:1px;">
+        <div class="tags" style="margin-top: 1px;">
           <span class="flag-basic">공연관람형</span>
           <span class="flag-basic">소규모콘서트</span>
           <span class="flag-basic">아티스트</span>
@@ -37,20 +37,20 @@
       </div>
       <div class="details-inner">
         <h3 class="subtit">공연 일정</h3>
-        <ul class="texts-list" style="padding-right: 34px">
+        <ul class="texts-list" style="padding-right: 34px;">
           <li>행사 기간 : 22.4.11 ~ 6월 말</li>
-          <li style="display:flex;">공연 무대 :<span style="margin-left:4px;"> SK텔레콤 플래그십스토어<br>
+          <li style="display: flex;">공연 무대 :<span style="margin-left: 4px;"> SK텔레콤 플래그십스토어<br>
                        T Factory 덕콘 무대</span></li>
           <li>공연 일정 : 행사 기간 매주 수요일~금요일 저녁 중 1회 / 팀당 30분~60분 공연</li>
         </ul>
-        <ul style="padding-right: 34px">
+        <ul style="padding-right: 34px;">
           <li>※ 라인업은 4월의 덕콘, 5월의 덕콘, 6월의 덕콘에 공식 섭외 된 뮤지션 약 10여 팀과 대학생 참여팀으로 구성됩니다.</li>
           <li>※ 관객석 40석 이상 마련되어 있으며 친구, 가족, 지인 등 초대 가능합니다.</li>
           <li>※ T Factory 방문 고객들의 자유 관람이 있을 수 있습니다.</li>
         </ul>
         <h4 class=small-subtit style="margin-bottom: 4px;">참여 해택</h4>
-        <ul style="padding-right: 34px">
-          <li style="display:flex;">1) <span style="margin-left:3px;">SK텔레콤 및 T Factory 공식 SNS 채널 활용한 온라인 홍보 (사전/사후)</span></li>
+        <ul style="padding-right: 34px;">
+          <li style="display: flex;">1) <span style="margin-left: 3px;">SK텔레콤 및 T Factory 공식 SNS 채널 활용한 온라인 홍보 (사전/사후)</span></li>
           <li style="display: flex;">2) <span style="margin-left: 3px;">T Factory 내외부 대형 LED Wall<br>실시간 라이브 송출</span></li>
           <li>3) 팀별 무대 Customizing 지원</li>
           <li>4) 소정의 참가비</li>
@@ -58,7 +58,7 @@
       </div>
       <div class="details-inner">
         <h3 class="subtit">이벤트 접수 방법</h3>
-        <span sytle="margin: 12px 0 24px">- 접수 기간 3.11(금) ~ 3.24(목)</span>
+        <span sytle="margin: 12px 0 24px;">- 접수 기간 3.11(금) ~ 3.24(목)</span>
         <h4 class=small-subtit>제출 정보 1 (필수)</h4>
         <ul class="texts-list">
           <li>밴드 소개가 포함된 포트폴리오 (대학명, 밴드명)</li>
