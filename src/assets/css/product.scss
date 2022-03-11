@@ -1095,6 +1095,15 @@
     }
   }
 }
+
+
+.small-subtit{
+  @include font-set14;
+  margin: 24px 0 12px 0;
+  font-weight: 500;
+  color:#787878;
+}
+
 // 공유 버튼
 .share {
   position: relative;

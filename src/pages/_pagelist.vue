@@ -612,6 +612,14 @@
               <router-link class="link" to='/experience/program103'>3월의 덕콘 | 솔루션스</router-link>
               <div class="date"><span>2.28</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program104'>T Factory x FLO 덕콘</router-link>
+              <div class="date"><span>3.10</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program105'>T Factory POP-UP Exhibition</router-link>
+              <div class="date"><span>3.10</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
