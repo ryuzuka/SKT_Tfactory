@@ -10,8 +10,7 @@
       <div class="details-header" style="padding: 32px 20px 40px;">
         <kakao-share
           title="T Factory x FLO 덕콘"
-          description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트!
-          홍대 인디문화를 응원하고 일상의 작은 위로를 전하고자 매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다. 아트스트가 직접 낸 덕력고사를 통과하신 팬 중 추첨을 통해 콘서트 초청의 기회를 드립니다."
+          description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트!"
         ></kakao-share>
 
         <em class="flag-solid7">CONCERT</em>
@@ -86,8 +85,8 @@
          <h4 class=small-subtit>제출 방법</h4>
         <span>- 제출 서류를 포함해 skt.tfactory@gmail.com으로<br><em style="padding-left: 8px;"> 이메일 접수</em></span>
         <h3 class="subtit" style="margin-top: 40px;">다른 프로그램도 있어요!</h3>
-        <div class="btn-wrap" style="margin: 12px 0;"><button class="btn-line big">3월의 덕콘</button></div>
-        <div class="btn-wrap" style="margin: 12px 0px 0px;"><button class="btn-line big">next트레이서</button></div>
+        <div class="btn-wrap" style="margin: 12px 0;"><a href="/experience/program101?classId=149" class="btn-line big">3월의 덕콘</a></div>
+        <div class="btn-wrap" style="margin: 12px 0px 0px;"><a href="/experience/program97?classId=131" class="btn-line big">next트레이서</a></div>
       </div>
     </div>
     <!-- //details -->

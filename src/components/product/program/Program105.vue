@@ -87,8 +87,8 @@
           <li>제출 자료를 skt.tfactory@gmail.com으로<br>이메일 접수</li>
         </ul>
         <h3 class="subtit" style="margin-top: 40px;">다른 프로그램도 있어요!</h3>
-        <div class="btn-wrap" style="margin: 12px 0;"><button class="btn-line big">3월의 덕콘</button></div>
-        <div class="btn-wrap" style="margin: 12px 0px 0px;"><button class="btn-line big">하시시박 사진전</button></div>
+        <div class="btn-wrap" style="margin: 12px 0;"><a href="/experience/program101?classId=149" class="btn-line big">3월의 덕콘</a></div>
+        <div class="btn-wrap" style="margin: 12px 0px 0px;"><a href="/experience/program57?classId=77" class="btn-line big">하시시박 사진전</a></div>
       </div>
     </div>
     <!-- //details -->
