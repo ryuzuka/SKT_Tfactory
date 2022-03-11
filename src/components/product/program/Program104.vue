@@ -57,19 +57,6 @@
         </ul>
       </div>
       <div class="details-inner">
-        <h3 class="subtit">이벤트 접수 방법</h3>
-        <span sytle="margin: 12px 0 24px;">- 접수 기간 3.11(금) ~ 3.24(목)</span>
-        <h4 class=small-subtit>제출 정보 1 (필수)</h4>
-        <ul class="texts-list">
-          <li>밴드 소개가 포함된 포트폴리오 (대학명, 밴드명)</li>
-          <li>공연을 촬영한 영상 최소 1개 이상</li>
-        </ul>
-        <h4 class=small-subtit>제출 정보 2 (필수)</h4>
-        <span>- 동아리 인스타그램 혹은 기타 SNS 아이디</span>
-        <h4 class=small-subtit>제출 방법</h4>
-        <span>- 제출 서류를 포함해 skt.tfactory@gmail.com으로<br><em style="padding-left: 8px;"> 이메일 접수</em></span>
-      </div>
-      <div class="details-inner">
         <h3 class="subtit">참여 신청 방법</h3>
         <ul class="texts-list">
           <li>모집 대상 : 2인이상으로 구성된 전국 대학교 밴드, 댄스, 보컬, 랩 등 음악 퍼포먼스 관련 동아리/팀</li>

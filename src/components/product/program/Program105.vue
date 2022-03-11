@@ -74,7 +74,7 @@
           <li>인원: 00명</li>
           <li>주제: ‘축제(Festival)’ 또는 ‘나의 우주(Universe)’</li>
         </ul>
-        <h4 class=small-subtit>제출 자료 (필수)</h4>
+        <h4 class=small-subtit>제출 자료</h4>
         <ul>
           <li>[필수] 작가정보(대학명/학과/이름) 및 작품 포트폴리오</li>
           <li style="display: flex;">[필수] <span style="margin-left: 4px;">전시 원하는 작품 파일 및 작품 소개글<br>
@@ -82,8 +82,8 @@
           (회화: W420 이하x H594 이하)</span></li>
           <li>[선택] 작가 작품활동 담은 SNS 계정</li>
         </ul>
+        <h4 class=small-subtit style="margin: 12px 0;">제출 방법</h4>
         <ul class="texts-list" style="margin-top: 0px;">
-          <li>제출 방법</li>
           <li>제출 자료를 skt.tfactory@gmail.com으로<br>이메일 접수</li>
         </ul>
         <h3 class="subtit" style="margin-top: 40px;">다른 프로그램도 있어요!</h3>
