@@ -135,7 +135,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button style="display: none"></program-button>
+    <program-button :visible="false"></program-button>
     <!-- // button set -->
   </div>
 </template>

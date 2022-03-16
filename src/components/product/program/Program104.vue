@@ -101,7 +101,9 @@
           <div class="desc">
             <p>매주 다양한 아티스트의<br>
             콘서트를 만나보세요!</p>
-            <span>3월의 덕콘</span>
+	          <a href="/experience/program101?classId=149">
+              <span>3월의 덕콘</span>
+	          </a>
           </div>
           <div class="images">
             <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
@@ -109,7 +111,9 @@
         </div>
         <div class="programs">
           <div class="desc" style="top: 131px;">
-            <span>NEXT 트레이서</span>
+	          <a href="/experience/program97?classId=131">
+              <span>NEXT 트레이서</span>
+	          </a>
           </div>
           <div class="images">
             <img src="../../../assets/images/program/class104-conts2.jpg" alt="NEXT 트레이서">
@@ -120,7 +124,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button style="display: none"></program-button>
+    <program-button :visible="false"></program-button>
     <!-- // button set -->
   </div>
 </template>
