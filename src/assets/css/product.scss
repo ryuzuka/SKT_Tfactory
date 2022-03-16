@@ -736,6 +736,11 @@
           }
         }
       }
+      .desc2{
+        font-size: 14px;
+        line-height: 20px;
+        color: #3617ce;
+      }
       p{
         margin-top: 20px;
         color: #787878;
@@ -757,6 +762,69 @@
             vertical-align:top;
           }
         }
+      }
+      .main-subtitle{
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: normal;
+        line-height: normal;
+        color: #3617ce;
+      }       
+    }
+    &-bottom {
+      padding:32px 0 40px;
+      .title{
+        margin: 0 20px 16px 20px;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 36px;
+        color: #000;
+       }
+      .programs{
+        position: relative;
+        .desc{
+          position: absolute; 
+          display: inline-block;
+          top: 52px;
+          left: 20px;
+          z-index: 1;
+          line-height: 26px;
+          color: #fff;
+          p{
+            margin-bottom: 27px;
+            font-size: 21px;
+          }
+          span{
+            position: relative;
+            font-size: 28px;
+            font-weight: bold;
+            &:after{
+              content: "";
+              display: inline-block;
+              position: absolute;
+              width: 48px;
+              height: 48px;
+              background: url(~@/assets/images/program/leftarrow-bk-1.png) no-repeat 0 0;
+              right: -32px;
+              bottom: -8px;  
+            }
+          }
+          img{
+            width: 48px;
+            height: 48px;
+          }
+        }
+       }
+    } 
+    .line{
+      position: relative;
+      span{
+        position:absolute;
+        margin: 1px 1px 0 14px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+        color: #fff;
       }
     }
     &-tit {
@@ -892,6 +960,49 @@
             display: inline-block;
             width: 64px;
             margin-right: 2px;
+          }
+        }
+      }
+      dl{
+        dd{
+          display: flex; 
+          font-size: 12px; 
+          line-height: 24px;
+          .sub_title{
+            margin: 0;
+          }
+          .desc{
+            margin-left: 21px;
+          }
+        }
+      }
+      .sub_title{
+        margin: 20px 0  2px 0;
+        font-size: 12px; 
+        line-height: 24px;
+        font-weight: bold;
+        color: #000;
+      }
+      .step-list {
+        margin-top: 0;
+        .benefit {
+          padding-left: 22px;
+          &:before {
+            content: counter(step);
+            counter-increment: step;
+            display: inline-block;
+            min-width: 16px;
+            height: 16px;
+            margin: -2px 6px 0 -22px;
+            border-radius: 100%;
+            background-color: $primary;
+            color: $fc-invert;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 16px;
+            box-sizing: border-box;
+            text-align: center;
+            vertical-align: middle;
           }
         }
       }
@@ -1050,6 +1161,11 @@
         }
       }
     }
+    .benefit{
+      margin-top: 0;
+      font-size: 12px;
+      line-height: 19px;     
+    }
   }
   .smr-list {
     dt {
@@ -1095,7 +1211,14 @@
     }
   }
 }
-
+.main-title{
+  margin-bottom: 16px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+  letter-spacing: normal;
+  color: #3617ce;
+}
 
 .small-subtit{
   @include font-set14;
@@ -1103,6 +1226,7 @@
   font-weight: 500;
   color:#787878;
 }
+
 
 // 공유 버튼
 .share {
