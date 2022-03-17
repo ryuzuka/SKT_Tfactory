@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class104-2-slide1.jpg" alt="T Factory x FLO 덕콘">
+      <img src="../../../assets/images/program/class104-slide1.jpg" alt="T Factory x FLO 덕콘">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -20,11 +20,7 @@
           홍대 인디문화를 응원하고 일상의 작은 위로를 전하고자 매월 다양한 아티스트를 선정하여 무료 콘서트를 진행합니다. 아트스트가 직접 낸 덕력고사를 통과하신 팬 중 추첨을 통해 콘서트 초청의 기회를 드립니다.
         </p>
       </div>
-      <div class="line">
-        <span>THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THE</span>
-        <img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
-      </div>
-      <div class="details-header" style="padding: 32px 20px 40px;">
+      <div class="details-header" style="padding: 16px 20px 48px;">
         <em class="main-subtitle">THECON X University</em>
         <h2 class="main-title" style="margin-top: 2px; line-height: 40px;">덕콘에서<br>우리학교를 만나다</h2>
         <p style="line-height: 20px;">
@@ -33,7 +29,7 @@
         </p>
       </div>
       <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 14px;">공연 일정</h2>
+        <h2 class="main-title" style="margin-bottom: 12px;">공연 일정</h2>
         <dl>
           <dd>
             <span class="sub_title">행사 기간</span>
@@ -49,7 +45,7 @@
           </dd>
         </dl>
         <h4 class="sub_title">참여 혜택</h4>
-         <ol class="step-list">
+        <ol class="step-list" style="margin-bottom: 40px;">
           <li class="benefit">
             SK텔레콤 및 T Factory 공식 SNS 채널 활용한<br>
             온라인 홍보 (사전/사후)
@@ -65,21 +61,19 @@
             소정의 참가비
           </li>
         </ol>
-      </div>
-      <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 14px;">참여 신청 방법</h2>
+        <h2 class="main-title" style="margin-bottom: 12px;">참여 신청 방법</h2>
         <dl>
           <dd>
-            <span class="sub_title" style="width: 83px;">모집 대상</span>
-            <span class="desc" style="margin-left: 13px;">2인이상으로 구성된 전국 대학교 밴드, 댄스,<br>보컬, 랩 등 음악 퍼포먼스 관련 동아리/팀</span>
+            <span class="sub_title">모집 대상</span>
+            <span class="desc">2인이상으로 구성된 전국 대학교 밴드, 댄스,<br>보컬, 랩 등 음악 퍼포먼스 관련 동아리/팀</span>
           </dd>
           <dd>
-            <span class="sub_title" style="width: 83px;">접수 기간</span>
-            <span class="desc" style="margin-left: 13px;">22.3.11(금) ~ 3.24(목)</span>
+            <span class="sub_title">접수 기간</span>
+            <span class="desc">22.3.11(금) ~ 3.24(목)</span>
           </dd>
           <dd>
             <span class="sub_title">대상자 결과 발표</span>
-            <span class="desc" style="margin-left: 13px;">22.3.28(월)</span>
+            <span class="desc">22.3.28(월)</span>
           </dd>
         </dl>
         <h4 class="sub_title">제출 자료</h4>
@@ -97,26 +91,28 @@
       </div>
       <div class="details-bottom">
         <h2 class="title">다른 프로그램도 있어요!</h2>
-        <div class="programs" style="margin-bottom: 10px;">
-          <div class="desc">
-            <p>매주 다양한 아티스트의<br>
-            콘서트를 만나보세요!</p>
-	          <a href="/experience/program101?classId=149">
-              <span>3월의 덕콘</span>
-	          </a>
+        <div class="other-programs">
+          <div class="program">
+            <div class="desc">
+              <a href="/experience/program101?classId=149">
+                <span class="topic">3월의 덕콘</span>
+              </a>
+              <span class="date">2022.03</span>
+            </div>
+            <div class="images">
+              <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
+            </div>
           </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
-          </div>
-        </div>
-        <div class="programs">
-          <div class="desc" style="top: 131px;">
-	          <a href="/experience/program97?classId=131">
-              <span>NEXT 트레이서</span>
-	          </a>
-          </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class104-conts2.jpg" alt="NEXT 트레이서">
+          <div class="program">
+            <div class="desc">
+              <a href="/experience/program97?classId=131">
+                <span class="topic">NEXT트레이서</span>
+              </a>
+              <span class="date">2022.02~04</span>
+            </div>
+            <div class="images">
+              <img src="../../../assets/images/program/class104-conts2.jpg" alt="NEXT 트레이서">
+            </div>
           </div>
         </div>
       </div>
@@ -168,8 +164,7 @@ export default {
 <style lang="scss" scoped>
 .details{
   &-inner {
-  padding:32px 20px 40px;
-  font-size: 12px;
+  padding:48px 20px;
   line-height: 19px;
   }
 }

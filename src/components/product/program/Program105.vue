@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class105-2-slide1.jpg" alt="T Factory POP-UP Exhibition">
+      <img src="../../../assets/images/program/class105-slide1.jpg" alt="T Factory POP-UP Exhibition">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -14,19 +14,19 @@
         ></kakao-share>
 
         <em class="main-subtitle">T Factory</em>
-        <h2 class="main-title" style="margin-top:4px;">POP-UP Exhibition</h2>
+        <h2 class="main-title" style="margin-top: 4px;">POP-UP Exhibition</h2>
         <p class="desc2">
           SK텔레콤 플래그십스토어 T Factory 2층 POP-UP Zone에서는 트렌디한 팝업전시가 펼쳐집니다.<br>
           iPhone13출시기념 하시시박 사진전, Apple TV 미디어아트전, 출시기념 단말전시부터 브랜드 콜라보레이션까지!<br>
           늘 변화하는 팝업전시를 기대해주세요.
         </p>
       </div>
-      <div class="details-header" style="padding: 41px 20px 32px; border-top: 12px solid #f0f0f0;">
+      <div class="details-header" style="padding: 16px 20px 48px;">
         <em class="main-subtitle">POP-UP Exhibition x University</em>
         <h2 class="main-title" style="margin-top:2px;line-height: 40px;">대학생 일러스트<br>
         팝업전시 참가자를<br>모집합니다.
         </h2>
-        <p style="line-height: 20px; margin-bottom: 22px;">
+        <p style="line-height: 20px; margin: 16px 0 22px;">
         작품 전시 기회가 줄어든 요즘,<br>
         미술 전공 대학생들을 응원하고자 T Factory에서<br>
         팝업 전시 공간을 무료로 제공해드립니다.
@@ -36,7 +36,7 @@
         </p>
       </div>
       <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 14px;">전시 안내</h2>
+        <h2 class="main-title" style="margin-bottom: 13px;">전시 안내</h2>
         <dl>
           <dd>
             <span class="sub_title">전시 기간</span>
@@ -51,7 +51,7 @@
           </dd>
         </dl>
         <h4 class="sub_title">참여 혜택</h4>
-         <ol class="step-list" style="margin-bottom: 4px">
+         <ol class="step-list" style="margin-bottom: 2px">
           <li class="benefit">
             전시 공간 무료제공
           </li>
@@ -66,35 +66,31 @@
             전시 작품 판매 기회 제공
           </li>
         </ol>
-        <span>* 전시 작품 수익금은 전액 작가에게 지급되며,<br>T Factory는 판매대 업무만 담당합니다.</span>
-      </div>
-      <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 14px;">전시 접수 방법</h2>
+        <p style="line-height: 24px; margin: 2px 0 40px; display: flex;">* <span style="margin-left: 4px;">전시 작품 수익금은 전액 작가에게 지급되며,<br>T Factory는 판매대 업무만 담당합니다.</span></p>
+        <h2 class="main-title" style="margin-bottom: 13px;">전시 접수 방법</h2>
         <dl style="margin-bottom: 20px;">
           <dd>
             <span class="sub_title">모집 기간</span>
-            <span class="desc" style="margin-left: 49px;">22. 3.14(월)~3.27(일)</span>
+            <span class="desc" style="margin-left: 17px;">22. 3.14(월)~3.27(일)</span>
           </dd>
           <dd>
             <span class="sub_title">결과 발표</span>
-            <span class="desc" style="margin-left: 49px;">22. 3.30(수), 개별연락</span>
+            <span class="desc" style="margin-left: 17px;">22. 3.30(수), 개별연락</span>
           </dd>
-          <dd>
-            <span>※ T Factory 내부 기준에 따른 선발 방식</span>
-          </dd>
+          <span>※ T Factory 내부 기준에 따른 선발 방식</span>
         </dl>
         <dl>
           <dd>
             <span class="sub_title">대상</span>
-            <span class="desc" style="margin-left: 73px;">전국 대학교 재학생 및 휴학생</span>
+            <span class="desc" style="margin-left: 46px;">전국 대학교 재학생 및 휴학생</span>
           </dd>
           <dd>
             <span class="sub_title">인원</span>
-            <span class="desc" style="margin-left: 73px;">00명</span>
+            <span class="desc" style="margin-left: 46px;">00명</span>
           </dd>
           <dd>
             <span class="sub_title">주제</span>
-            <span class="desc" style="margin-left: 73px;">‘축제(Festival)’ 또는 ‘나의 우주(Universe)’</span>
+            <span class="desc" style="margin-left: 46px;">‘축제(Festival)’ 또는 ‘나의 우주(Universe)’</span>
           </dd>
         </dl>
         <h4 class="sub_title">제출 자료</h4>
@@ -108,26 +104,30 @@
          <h4 class="sub_title">제출 방법</h4>
         <span>제출 서류를 포함해 skt.tfactory@gmail.com으로 이메일 접수</span>
       </div>
-      <div class="details-bottom" style="border-top: 12px solid #f0f0f0;">
+      <div class="line">
+        <span>THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THE</span>
+        <img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
+      </div>
+      <div class="details-bottom">
         <h2 class="title">다른 프로그램도 있어요!</h2>
-        <div class="programs" style="margin-bottom: 10px;">
-          <div class="desc">
-            <p>매주 다양한 아티스트의<br>
-            콘서트를 만나보세요!</p>
-            <span>3월의 덕콘</span>
+        <div class="other-programs">
+          <div class="program">
+            <div class="desc">
+              <p class="topic">3월의 덕콘</p>
+              <span class="date">2022.03</span>
+            </div>
+            <div class="images">
+              <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
+            </div>
           </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
-          </div>
-        </div>
-        <div class="programs">
-           <div class="desc">
-            <p>Ordinary week,<br>
-            extraordinary iPhone13</p>
-            <span>하시시박 사진전</span>
-          </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class105-conts2.jpg" alt="하시시박 사진전">
+          <div class="program">
+            <div class="desc">
+              <p class="topic">하시시박<br>사진전</p>
+              <span class="date">2021.10~11</span>
+            </div>
+            <div class="images">
+              <img src="../../../assets/images/program/class105-conts2.jpg" alt="하시시박 사진전">
+            </div>
           </div>
         </div>
       </div>
@@ -179,8 +179,7 @@ export default {
 <style lang="scss" scoped>
 .details{
   &-inner {
-  padding:32px 20px;
-  font-size: 12px;
+  padding:48px 20px;
   line-height: 19px;
   }
 }

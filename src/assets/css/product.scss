@@ -772,49 +772,51 @@
       }       
     }
     &-bottom {
-      padding:32px 0 40px;
+      padding:24px 36px 40px 20px;
       .title{
-        margin: 0 20px 16px 20px;
-        font-size: 32px;
+        margin-bottom: 12px;
+        font-size: 21px;
         font-weight: bold;
         line-height: 36px;
         color: #000;
        }
-      .programs{
-        position: relative;
-        .desc{
-          position: absolute; 
-          display: inline-block;
-          top: 52px;
-          left: 20px;
-          z-index: 1;
-          line-height: 26px;
-          color: #fff;
-          p{
-            margin-bottom: 27px;
-            font-size: 21px;
+      .other-programs{
+        &:after{
+          content: ""; 
+          clear: both; 
+          display: block;
+        }
+        .program{
+          &:first-child{
+            margin-left: 4px;
           }
-          span{
-            position: relative;
-            font-size: 28px;
-            font-weight: bold;
-            &:after{
-              content: "";
-              display: inline-block;
-              position: absolute;
-              width: 48px;
-              height: 48px;
-              background: url(~@/assets/images/program/leftarrow-bk-1.png) no-repeat 0 0;
-              right: -32px;
-              bottom: -8px;  
+          position: relative;
+          float: left;
+          margin-left: 12px;
+          .desc{
+            position: absolute; 
+            display: inline-block;
+            bottom: 13px;
+            left: 8px;
+            z-index: 1;
+            color: #fff;
+            .topic{
+              font-size: 21px;
+              font-weight: bold;
+              line-height: 24px;
+            }
+            .date{
+              font-size: 12px;
             }
           }
-          img{
-            width: 48px;
-            height: 48px;
+          .images{
+            img{
+              width: 144px;
+              height: 144px;
+            }
           }
         }
-       }
+      }
     } 
     .line{
       position: relative;
@@ -966,19 +968,17 @@
       dl{
         dd{
           display: flex; 
-          font-size: 12px; 
           line-height: 24px;
           .sub_title{
             margin: 0;
           }
           .desc{
-            margin-left: 21px;
+            margin-left: 13px;
           }
         }
       }
       .sub_title{
-        margin: 20px 0  2px 0;
-        font-size: 12px; 
+        margin: 20px 0  4px 0; 
         line-height: 24px;
         font-weight: bold;
         color: #000;
@@ -986,7 +986,7 @@
       .step-list {
         margin-top: 0;
         .benefit {
-          padding-left: 22px;
+          padding-left: 24px;
           &:before {
             content: counter(step);
             counter-increment: step;
@@ -1163,8 +1163,7 @@
     }
     .benefit{
       margin-top: 0;
-      font-size: 12px;
-      line-height: 19px;     
+      line-height: 24px;     
     }
   }
   .smr-list {
