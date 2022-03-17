@@ -93,26 +93,26 @@
         <h2 class="title">다른 프로그램도 있어요!</h2>
         <div class="other-programs">
           <div class="program">
-            <div class="desc">
-              <a href="/experience/program101?classId=149">
-                <span class="topic">3월의 덕콘</span>
-              </a>
-              <span class="date">2022.03</span>
-            </div>
-            <div class="images">
-              <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
-            </div>
+            <a href="/experience/program101?classId=149">
+	            <div class="desc">
+	              <span class="topic">3월의 덕콘</span>
+	              <span class="date">2022.03</span>
+	            </div>
+	            <div class="images">
+	                <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
+	            </div>
+            </a>
           </div>
           <div class="program">
-            <div class="desc">
-              <a href="/experience/program97?classId=131">
-                <span class="topic">NEXT트레이서</span>
-              </a>
-              <span class="date">2022.02~04</span>
-            </div>
-            <div class="images">
-              <img src="../../../assets/images/program/class104-conts2.jpg" alt="NEXT 트레이서">
-            </div>
+            <a href="/experience/program97?classId=131">
+	            <div class="desc">
+	                <span class="topic">NEXT트레이서</span>
+	              <span class="date">2022.02~04</span>
+	            </div>
+	            <div class="images">
+	              <img src="../../../assets/images/program/class104-conts2.jpg" alt="NEXT 트레이서">
+	            </div>
+            </a>
           </div>
         </div>
       </div>

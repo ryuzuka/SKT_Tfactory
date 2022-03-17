@@ -112,22 +112,26 @@
         <h2 class="title">다른 프로그램도 있어요!</h2>
         <div class="other-programs">
           <div class="program">
-            <div class="desc">
-              <p class="topic">3월의 덕콘</p>
-              <span class="date">2022.03</span>
-            </div>
-            <div class="images">
-              <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
-            </div>
+	          <a href="/experience/program101?classId=149">
+	            <div class="desc">
+	              <p class="topic">3월의 덕콘</p>
+	              <span class="date">2022.03</span>
+	            </div>
+	            <div class="images">
+	              <img src="../../../assets/images/program/class104-conts1.jpg" alt="3월의 덕콘">
+	            </div>
+	          </a>
           </div>
           <div class="program">
-            <div class="desc">
-              <p class="topic">하시시박<br>사진전</p>
-              <span class="date">2021.10~11</span>
-            </div>
-            <div class="images">
-              <img src="../../../assets/images/program/class105-conts2.jpg" alt="하시시박 사진전">
-            </div>
+	          <a href="/experience/program57?classId=77">
+	            <div class="desc">
+	              <p class="topic">하시시박<br>사진전</p>
+	              <span class="date">2021.10~11</span>
+	            </div>
+	            <div class="images">
+	              <img src="../../../assets/images/program/class105-conts2.jpg" alt="하시시박 사진전">
+	            </div>
+	          </a>
           </div>
         </div>
       </div>
