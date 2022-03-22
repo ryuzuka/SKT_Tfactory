@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img src="../../../assets/images/program/class97-slide1.jpg" alt="<NEXT 트레이서>">
@@ -41,13 +41,23 @@
           2022년 2월 5일(토)~4월 중<br>
           T Factory 홍대
         </p>
-        <div class="notice">
-          <h4 class="subtit">유의사항</h4>
-          <ul class="texts-info">
-            <li>* 이 전시는 T Factory 홍대점을 방문하여 스마트폰으로 체크인할 경우에만 참여하실 수 있습니다. (체크인 가능 연령: 만 14세 이상)</li>
-            <li style="margin-top:12px">* 이 전시의 자세한 사항은 업체 사정에 따라 안내 없이 중단되거나 변경될 수 있습니다.</li>
-          </ul>
-        </div>
+      </div>
+      <div class="details-inner">
+        <h3 class="subtit">트레이서 주연배우<br>사인포스터 깜짝 증정 이벤트</h3>
+        <p>
+         T Factory에 방문해 &#60;NEXT 트레이서&#62;를 즐긴 후 아래 필수 해시태그와 함께 인증샷을 SNS에 업로드해주세요. 추첨을 통해 트레이서 출연 배우 3인의 사인 포스터, 트레이서 OST CD를 드립니다.<br>필수 해시태그: <span style="color: #3c1ddc;">#T팩토리 #트레이서 #찐팬 #wavve</span><br>@tfactory_sampler를 팔로우하면 당첨확률이 더 높아집니다!
+        </p>
+        <h3 class="subtit" style="margin: 32px 0 9px;">이벤트 기간</h3>
+        <p style="margin-top: 9px;">
+          3월 22일(화)~체험존 종료일
+        </p>
+      </div>
+      <div class="notice">
+        <h4 class="subtit">유의사항</h4>
+        <ul class="texts-info">
+          <li>* 이 전시는 T Factory 홍대점을 방문하여 스마트폰으로 체크인할 경우에만 참여하실 수 있습니다. (체크인 가능 연령: 만 14세 이상)</li>
+          <li style="margin-top:12px">* 이 전시의 자세한 사항은 업체 사정에 따라 안내 없이 중단되거나 변경될 수 있습니다.</li>
+        </ul>
       </div>
     </div>
     <!-- //details -->
@@ -98,5 +108,8 @@ export default {
 }
 .step-list>li:first-child::before {
     margin: 3px 6px 0 -22px;
+}
+.experience .details-inner {
+    padding: 30px 20px 40px;
 }
 </style>
