@@ -69,7 +69,7 @@
           </dd>
           <dd>
             <span class="sub_title">접수 기간</span>
-            <span class="desc">22.3.11(금) ~ 3.24(목)</span>
+            <span class="desc">22.3.11(금) ~ 3.27(일)</span>
           </dd>
           <dd>
             <span class="sub_title">대상자 결과 발표</span>
