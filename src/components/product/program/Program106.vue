@@ -16,7 +16,7 @@
         <em class="main-subtitle">T Factory X T1</em>
         <h2 class="main-title" style="margin-top: 4px;">LCK 스프링<br>결승전 응원전</h2>
         <p class="desc2">
-          'Piglet' 채광진님과 함께하는 LCK 스프링 결승전 응원 Event가 진행됩니다.
+          'Piglet' 채광진님과 함께하는<br>LCK 스프링 결승전 응원 Event가 진행됩니다.
         </p>
       </div>
       <div class="details-inner">
@@ -30,20 +30,19 @@
         </p>
       </div>
       <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 13px;">응모기간</h2>
-        <p style="line-height: 24px; margin-bottom: 39px;">
-          22.3.27(일) ~ 22.3.31(목)
-        </p>
-        <h2 class="main-title" style="margin-bottom: 13px;">당첨자 발표</h2>
-        <p style="line-height: 24px;">
-          22.4.1(금) 오후 3시
-        </p>
+        <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
+        <dl>
+          <dd>
+            <span class="sub_title" style="width: 65px;">응모기간</span>
+            <span class="desc"> 22.3.27(일) ~ 22.3.31(목)</span>
+          </dd>
+           <dd>
+            <span class="sub_title" style="width: 65px;">당첨자발표</span>
+            <span class="desc">22.4.1(금) 오후 3시</span>
+          </dd>
+        </dl>
       </div>
-      <div class="line">
-        <span>THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THE</span>
-        <img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
-      </div>
-      <div class="details-bottom" style="padding: 25px 36px 48px 20px;">
+      <div class="details-bottom" style="border-top:12px solid #f0f0f0; padding: 40px 36px 48px 20px;">
         <h2 class="title">다른 프로그램도 있어요!</h2>
         <div class="other-programs">
           <div class="program">
