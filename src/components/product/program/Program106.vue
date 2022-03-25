@@ -46,7 +46,7 @@
         <h2 class="title">다른 프로그램도 있어요!</h2>
         <div class="other-programs">
           <div class="program">
-	          <a href="/experience/program101?classId=149">
+	          <a href="/experience/program84?classId=138">
 	            <div class="desc">
 	              <p class="topic">LOL클래스</p>
 	              <span class="date">주2회</span>
@@ -57,7 +57,7 @@
 	          </a>
           </div>
           <div class="program">
-	          <a href="/experience/program57?classId=77">
+	          <a href="/experience/program96?classId=130">
 	            <div class="desc">
 	              <p class="topic">채광진코치초청</p>
 	              <span class="date">2022.01</span>
