@@ -29,16 +29,19 @@
           '21.12 ~ 현재 T1 Esports Academy Coach
         </p>
       </div>
-      <div class="details-inner">
+      <div class="details-inner" style="padding: 40px 11px 40px 20px;">
         <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
         <dl>
           <dd>
             <span class="sub_title" style="width: 65px;">응모기간</span>
             <span class="desc"> 22.3.27(일) ~ 22.3.31(목)</span>
           </dd>
-           <dd>
+          <dd>
             <span class="sub_title" style="width: 65px;">당첨자발표</span>
             <span class="desc">22.4.1(금) 오후 3시</span>
+          </dd>
+          <dd>
+            <span style="margin-top: 4px;">※ T1 Membership 회원 대상 1차 당첨 선정 후, 취소자(잔여석) 발생시 일반고객 대상으로 추가 당첨 선정합니다.</span>
           </dd>
         </dl>
       </div>
