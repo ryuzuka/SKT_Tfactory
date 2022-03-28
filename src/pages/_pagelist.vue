@@ -624,6 +624,18 @@
               <router-link class="link" to='/experience/program106'>LCK 스프링결승전 응원전</router-link>
               <div class="date"><span>3.24</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program107'>4월의 덕콘</router-link>
+              <div class="date"><span>3.25</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program108'>4월의 덕콘 | 손태진</router-link>
+              <div class="date"><span>3.25</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program109'>4월의 덕콘 | 전진희</router-link>
+              <div class="date"><span>3.25</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
