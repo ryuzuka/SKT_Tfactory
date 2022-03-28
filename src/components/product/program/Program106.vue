@@ -46,11 +46,6 @@
             <span class="sub_title" style="width: 65px;">당첨자발표</span>
             <span class="desc">22.4.1(금) 오후 3시</span>
           </dd>
-          <dd>
-            <span style="margin-top: 4px;">※ T1 Membership 회원 대상 1차 당첨 선정 후, 취소자(잔여석) 발생시 일반고객 대상으로 추가 당첨 선정합니다.<br>
-            ※ 안내사항 : 'Piglet'피글렛님 확진으로 인해<br>
-            'Untara'운타라님으로 교체되었습니다.</span>
-          </dd>
         </dl>
       </div>
       <div class="details-bottom" style="border-top:12px solid #f0f0f0; padding: 40px 36px 48px 20px;">
