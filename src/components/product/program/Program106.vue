@@ -2,7 +2,7 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class106-slide2.jpg" alt="LCK 스프링 결승전 응원전">
+      <img src="../../../assets/images/program/class106-slide2.png" alt="LCK 스프링 결승전 응원전">
     </div>
     <!-- //slide -->
     <!-- details -->
