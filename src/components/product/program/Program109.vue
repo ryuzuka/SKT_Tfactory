@@ -49,7 +49,9 @@
           </dd>
           <dd>
             <span class="sub_title" style="width: 65px;">장소</span>
-            <span class="desc">T Factory 2층 O Stage<em class="flag-basic">공간보기</em></span>
+	          <span class="desc">
+	            <a href="/shop/detail/store14 ">T Factory 2층 O Stage<em class="flag-basic">공간보기</em></a>
+            </span>
           </dd>
         </dl>
       </div>
@@ -71,40 +73,23 @@
         <em class="main-subtitle">4월의 덕콘</em>
         <h2 class="main-title" style="margin:4px 0 0;">라인업</h2>
       </div>
-      <div class="lineup" style="padding: 0 18px 36px 24px;">
-        <ul>
-          <li>
-            <div class="date">
-              <span>4.15<br>FRI</span>
-            </div>
-            <div class="card">
-              <div class="text">
-                <p class="name">손태진</p>
-                <em class="flag-solid10">모집예정</em>
-                <p class="time">PM 7:00</p>
-              </div>
-              <div class="image">
-                <img src="../../../assets/images/program/class108-card1.jpg" alt="손태진">
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="date">
-              <span>4.29<br>FRI</span>
-            </div>
-            <div class="card">
-              <div class="text">
-                <p class="name">전진희</p>
-                <em class="flag-solid10">모집예정</em>
-                <p class="time">PM 7:00</p>
-              </div>
-              <div class="image">
-                <img src="../../../assets/images/program/class108-card2.jpg" alt="전진희">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+	    <program-lineup-new style="padding: 0 18px 36px 24px;"
+        :line-list="[
+					{
+						classId: 145,
+						date: '4.15',
+						day: 'FRI',
+						name: '손태진',
+						time: 'PM 7:00'
+					},
+					{
+						classId: 144,
+						date: '4.29',
+						day: 'FRI',
+						name: '전진희',
+						time: 'PM 7:00'
+					}]">
+	    </program-lineup-new>
     </div>
     <!-- //details -->
 
@@ -117,13 +102,15 @@
 <script>
 import KakaoShare from '../../common/KakaoShare'
 import ProgramButton from './components/ProgramButton'
+import programLineupNew from './components/ProgramLineupNew'
 import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program109',
   components: {
     KakaoShare,
-    ProgramButton
+    ProgramButton,
+	  programLineupNew
   },
   data () {
     return {
