@@ -5,8 +5,8 @@
 				<div class="date">
 					<span>{{ program.date }}<br>{{ program.day }}</span>
 				</div>
-				<div class="card">
-					<a :href="program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
+				<a :href="program['PROGRAM_CLASS_LINK_URL'] + '?classId=' + program['PROGRAM_CLASS_ID']">
+					<div class="card">
 						<div class="text">
 							<p class="name">{{ program.name }}</p>
 							<em v-if="program['APPLY_PROGRESS'] === 'ONGOING'" class="flag-solid8">모집중</em>
@@ -17,8 +17,8 @@
 						<div class="image">
 							<img :src="program['PROGRAM_CLASS_THUMBNAIL_IMAGE_URL']" :alt="program.name">
 						</div>
-					</a>
-				</div>
+					</div>
+				</a>
 			</li>
 		</ul>
 	</div>
