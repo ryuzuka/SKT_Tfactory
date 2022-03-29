@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 20px 40px;">
         <kakao-share
           title="4월의 덕콘"
-          description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트!"
+          description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트! - 손태진"
         ></kakao-share>
 
         <em class="main-subtitle">T Factory x FLO</em>
