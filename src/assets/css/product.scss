@@ -1012,6 +1012,37 @@
         border: 1px solid #787878;
         font-size: 9px;
         color: #787878;
+      }
+      .program{
+      position: relative;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
+      .desc{
+        position: absolute; 
+        display: inline-block;
+        bottom: 24px;
+        left: 20px;
+        color: #fff;
+        .detail{
+          margin-bottom: 27px;
+          font-size: 21px;
+          line-height: 26px;
+        }
+        .topic{
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 26px;
+        }
+        img{
+          position: absolute;
+          width:48px;
+          height:48px;
+          bottom: -11px;
+          right: -44px;
+        }
+      }
      }
     }
     .notice {

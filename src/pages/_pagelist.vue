@@ -636,6 +636,18 @@
               <router-link class="link" to='/experience/program109'>4월의 덕콘 | 전진희</router-link>
               <div class="date"><span>3.25</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program110'>T대학 우주 축제</router-link>
+              <div class="date"><span>3.28</span></div>
+            </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/experience/program111'>THECON X University</router-link>
+              <div class="date"><span>3.28</span></div>
+            </li>
+             <li class="pagelist-item">
+              <router-link class="link" to='/experience/program112'>POP-UP Exhibition X University</router-link>
+              <div class="date"><span>3.28</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
