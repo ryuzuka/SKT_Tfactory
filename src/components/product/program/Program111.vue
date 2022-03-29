@@ -28,7 +28,11 @@
           </dd>
           <dd>
             <span class="sub_title" style="width: 52px;">장소</span>
-            <span class="desc" style="margin-left: 24px;">SK텔레콤 플래그십스토어<br>T Factory 2층 0 stage<em class="flag-basic" style="margin: 0 11px;">공간보기</em><br>(홍대입구역 9번 출구)</span>
+            <span class="desc" style="margin-left: 24px;">
+	            SK텔레콤 플래그십스토어
+	            <br>T Factory 2층 0 stage<a href="/shop/detail/store14"><em class="flag-basic" style="margin: 0 11px;">공간보기</em></a>
+	            <br>(홍대입구역 9번 출구)
+            </span>
           </dd>
           <dd style="margin-top: 16px">
             <span>※대학생 뮤지션 라인업은 추가 공지될 예정입니다.</span>
@@ -45,24 +49,28 @@
       <div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
-          <div class="desc">
-            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
-            <span class="topic">T대학 우주 축제, TUF</span>
-            <img style="right: -61px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-          </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class111-conts1.jpg" alt="T대학 우주 축제, TUF">
-          </div>
+	        <a href="/experience/program110?classId=156">
+	          <div class="desc">
+	            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
+	            <span class="topic">T대학 우주 축제, TUF</span>
+	            <img style="right: -61px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
+	          </div>
+	          <div class="images">
+	            <img src="../../../assets/images/program/class111-conts1.jpg" alt="T대학 우주 축제, TUF">
+	          </div>
+	        </a>
         </div>
         <div class="program">
-          <div class="desc">
-            <p class="detail" style="margin-bottom: 16px;">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시</p>
-            <span class="topic">POP-UP Exhibition<br>X University</span>
-            <img style="bottom: 2px; right: -42px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-          </div>
-          <div class="images">
-            <img src="../../../assets/images/program/class110-conts2.jpg" alt="POP-UP Exhibition X University">
-          </div>
+	        <a href="/experience/program112?classId=155">
+	          <div class="desc">
+	            <p class="detail" style="margin-bottom: 16px;">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시</p>
+	            <span class="topic">POP-UP Exhibition<br>X University</span>
+	            <img style="bottom: 2px; right: -42px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
+	          </div>
+	          <div class="images">
+	            <img src="../../../assets/images/program/class110-conts2.jpg" alt="POP-UP Exhibition X University">
+	          </div>
+	        </a>
         </div>
       </div>
     </div>
