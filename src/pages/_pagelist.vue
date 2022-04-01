@@ -940,6 +940,10 @@
               <router-link class="link" to='/shop/detail/store19'>T Factory 24</router-link>
               <div class="date"><span>01.15</span><span>01.18</span></div>
             </li>
+            <li class="pagelist-item">
+              <router-link class="link" to='/shop/detail/store20'>크루 투어</router-link>
+              <div class="date"><span>01.15</span><span>01.18</span></div>
+            </li>
           </ul>
 
           <h2 class="pagelist-title">event</h2>
