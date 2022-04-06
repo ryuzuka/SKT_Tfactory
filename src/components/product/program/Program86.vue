@@ -59,18 +59,6 @@
           :class-id-list="['120', '121', '122', '123', '124', '125', '126']"
         ></program-lineup>
       </template>
-      <div class="notice">
-        <h4 class="subtit">방역패스 안내사항</h4>
-        <ul class="texts-info">
-          <li style="display:flex;">1. 백신 접종 완료자 :<span style="margin-left:4px;">COOV / 카카오톡 /<br>네이버 동의 증명서 / 예방접종 스티커</span></li>
-          <li>2. PCR 음성 확인서 (48시간 이내)</li>
-          <li>3. 만 18세 이하 청소년</li>
-          <li>4. 확진 후 완치자 (격리해제 확인서)</li>
-          <li>5. 백신접종 예외자 (보건소 발급소견서)</li>
-        </ul>
-        <p class="texts-notice" style="margin-top:20px;">본 클래스/투어/덕콘은 방역수칙 준수를 위해<br>방역패스 인증자에 한해 참여가 가능합니다.</p>
-        <p class="texts-notice" style="margin-top:8px;">덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함께 응모에 당첨되어야 하는점 유의부탁드립니다.</p>
-      </div>
       <!-- <ul class="list-program wide">
         <li>
           <a href="./program41?classId=64">

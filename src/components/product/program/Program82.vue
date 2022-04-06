@@ -63,17 +63,6 @@
             <li style="margin-top:12px">* 본 이벤트 프로그램 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
           </ul>
         </div>
-        <div class="notice">
-          <h4 class="subtit">방역패스 안내사항</h4>
-          <ul class="texts-info">
-            <li style="display:flex;">1. 백신 접종 완료자 :<span style="margin-left:4px;">COOV / 카카오톡 /<br>네이버 동의 증명서 / 예방접종 스티커</span></li>
-            <li>2. PCR 음성 확인서 (48시간 이내)</li>
-            <li>3. 만 18세 이하 청소년</li>
-            <li>4. 확진 후 완치자 (격리해제 확인서)</li>
-            <li>5. 백신접종 예외자 (보건소 발급소견서)</li>
-          </ul>
-          <p class="texts-notice" style="margin-top:20px;">본 클래스/투어/덕콘은 방역수칙 준수를 위해<br>방역패스 인증자에 한해 참여가 가능합니다.</p>
-        </div>
       </div>
     </div>
     <!-- //details -->
