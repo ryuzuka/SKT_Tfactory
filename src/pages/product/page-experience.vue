@@ -114,6 +114,9 @@
     <program110 v-else-if="programId === 'program110'"></program110>
     <program111 v-else-if="programId === 'program111'"></program111>
     <program112 v-else-if="programId === 'program112'"></program112>
+
+	  <catalogue v-else-if="programId === 'program115'"></catalogue> <!-- 웹도록 Index -->
+
     <Experience v-else></Experience>
 
     <modals-container></modals-container>
@@ -124,6 +127,8 @@
 <script>
 import Header from '../../components/common/Header'
 import Experience from '../../components/product/Experience'
+
+import Catalogue from '../../components/product/catalogue/Index'
 
 import Program1 from '../../components/product/program/Program1'
 import Program2 from '../../components/product/program/Program2'
@@ -241,6 +246,7 @@ import Program112 from '../../components/product/program/Program112'
 export default {
   name: 'page-product',
   components: {
+	  Catalogue,
     Header,
     Experience,
     Program1,
