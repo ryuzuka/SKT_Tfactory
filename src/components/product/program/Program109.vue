@@ -41,7 +41,7 @@
           </dd>
            <dd>
             <span class="sub_title" style="width: 65px;">신청기간</span>
-            <span class="desc">4월 18일(월) ~4월 24일(일)</span>
+            <span class="desc">4월 7일(목) ~4월 24일(일)</span>
           </dd>
            <dd>
             <span class="sub_title" style="width: 65px;">당첨자발표</span>
