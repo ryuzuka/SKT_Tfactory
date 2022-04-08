@@ -9,29 +9,203 @@
     <div class="details sticky">
       <div class="details-header" style="padding: 28px 12px 40px 20px;">
         <kakao-share
-         title="THECON X University"
+         title="T University Music Festival "
           description="대학생 뮤지션이 꾸미는 덕콘의 스페셜 무대"
         ></kakao-share>
 
         <em class="main-subtitle">대학생 뮤지션이 꾸미는 덕콘의 스페셜 무대</em>
-        <h2 class="main-title" style="margin-top: 5px;">THECON X University</h2>
+        <h2 class="main-title" style="margin-top: 5px;">T University<br>Music Festival</h2>
         <p class="desc2" style="margin-top: 0px;">
-          무대에 설 기회를 잃은 대학생 뮤지션들을 위해 T Factory가 올봄 선물을 준비했습니다. T대학 우주 축제 기간 동안 T Factory에서 만든 콘서트 무대 '덕콘'를 대학생 뮤지션도 함께 채워 줄 예정입니다. 대학 뮤지션만의 열정적인 무대를 함께 즐겨주세요.
+          무대에 설 기회가 적어진 대학생 뮤지션들에게 T Factory의 덕콘 무대를 오픈합니다.<br>T대학 우주 축제 기간 동안 진행되는 '덕콘'은 인기 뮤지션과 대학생 뮤지션으로 라인업이 풍성하게 구성됩니다!<br>보다 더 특별하고 열정적인 덕콘을 기대하세요!
         </p>
+      </div>
+      <div class="details-inner" style="padding: 40px 20px 24px;">
+        <h2 class="main-title" style="margin-bottom: 0px;">참여 뮤지션 보기</h2>
+      </div>
+      <div class="lineup" style="padding: 0px 18px 36px 24px;">
+        <ul>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program116?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">리퍼블릭</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program117?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">마린시티</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program118?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">Push Boundaries</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program119?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">ReleAse</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program120?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">다하다</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program121?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">환상문학청년</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program122?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">당신의 취향을 담는, 취향상점</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program123?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">IDLER</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program124?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">릴재우×디비젼</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program125?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">KlaFF</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program126?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">사이버 파크 게임랜드</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program127?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">크래늄</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="date"></div>
+            <a href="/experience/program128?classId=">
+              <div class="card">
+                <div class="text">
+                  <p class="name">크림슨</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="details-inner">
         <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
         <dl>
           <dd>
             <span class="sub_title" style="width: 52px;">전시기간</span>
-            <span class="desc" style="margin-left: 24px;">2022년 4월 중</span>
+            <span class="desc" style="margin-left: 24px;">2022년 5월 중 *일정 추후 공지 예정</span>
           </dd>
           <dd>
             <span class="sub_title" style="width: 52px;">장소</span>
             <span class="desc" style="margin-left: 24px;">
-	            SK텔레콤 플래그십스토어
-	            <br>T Factory 2층 0 stage<a href="/shop/detail/store14"><em class="flag-basic" style="margin: 0 11px;">공간보기</em></a>
-	            <br>(홍대입구역 9번 출구)
+	            SK텔레콤 플래그십스토어<br>T Factory<br>(홍대입구역 9번 출구)
             </span>
           </dd>
           <dd style="margin-top: 16px">
@@ -56,19 +230,31 @@
 	            <img style="right: -61px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
 	          </div>
 	          <div class="images">
-	            <img src="../../../assets/images/program/class111-conts1.jpg" alt="T대학 우주 축제, TUF">
+	            <img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
 	          </div>
 	        </a>
         </div>
         <div class="program">
 	        <a href="/experience/program112?classId=155">
 	          <div class="desc">
-	            <p class="detail" style="margin-bottom: 16px;">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시</p>
-	            <span class="topic">POP-UP Exhibition<br>X University</span>
-	            <img style="bottom: 2px; right: -42px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
+	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
+	            <span class="topic">TUAF</span>
+	            <img style="bottom: -7px; right: 165px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
 	          </div>
 	          <div class="images">
-	            <img src="../../../assets/images/program/class110-conts2.jpg" alt="POP-UP Exhibition X University">
+	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
+	          </div>
+	        </a>
+        </div>
+        <div class="program">
+	        <a href="/experience/program4?classId=63">
+	          <div class="desc">
+	            <p class="detail">나도 작곡가!<br>아이패드로 곡 만들기</p>
+	            <span class="topic">크루 클래스-음악</span>
+	            <img style="bottom: -7px; right: -48px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
+	          </div>
+	          <div class="images">
+	            <img src="../../../assets/images/program/class111-conts3.jpg" alt="크루 클래스-음악">
 	          </div>
 	        </a>
         </div>
@@ -126,6 +312,23 @@ export default {
     font-size: 12px;
     line-height: 19px;
     color: #787878;
+    }
+  }
+}
+.lineup{
+  ul{
+    li{
+      .card{
+        position: relative;
+        margin-left: 9px;
+        background: url(~@/assets/images/program/L_background-card.png) no-repeat 0px 0px;
+        width: 304px;
+        height: 78px;
+        background-size: cover;
+        .text{
+          padding: 27px 16px;
+        }
+      }
     }
   }
 }
