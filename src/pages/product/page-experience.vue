@@ -246,8 +246,8 @@ import Program112 from '../../components/product/program/Program112'
 export default {
   name: 'page-product',
   components: {
-	  Catalogue,
     Header,
+	  Catalogue,
     Experience,
     Program1,
     Program2,
@@ -364,10 +364,16 @@ export default {
   },
   data () {
     return {
-      headerScrolled: false,
-      productName: '',
-      programId: this.$route.params.programId
+      programId: ''
     }
+  },
+  watch: {
+    $route (to) {
+      this.programId = to.params.programId
+    }
+  },
+  created () {
+    this.programId = this.$route.params.programId
   }
 }
 </script>
