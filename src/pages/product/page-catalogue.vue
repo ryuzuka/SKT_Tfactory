@@ -43,7 +43,6 @@ export default {
   watch: {
     $route (to) {
       this.catalogueId = to.params.catalogueId
-	    console.log(this.catalogueId)
     }
   },
   created () {
