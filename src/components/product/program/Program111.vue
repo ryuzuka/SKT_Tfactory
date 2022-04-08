@@ -26,7 +26,7 @@
         <ul>
           <li>
             <div class="date"></div>
-            <a href="/experience/program116?classId=">
+            <router-link to="/experience/tua/tumf1">
               <div class="card">
                 <div class="text">
                   <p class="name">리퍼블릭</p>
@@ -35,11 +35,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program117?classId=">
+            <router-link to="/experience/tua/tumf2">
               <div class="card">
                 <div class="text">
                   <p class="name">마린시티</p>
@@ -48,11 +48,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program118?classId=">
+            <router-link to="/experience/tua/tumf3">
               <div class="card">
                 <div class="text">
                   <p class="name">Push Boundaries</p>
@@ -61,11 +61,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program119?classId=">
+            <router-link to="/experience/tua/tumf4">
               <div class="card">
                 <div class="text">
                   <p class="name">ReleAse</p>
@@ -74,11 +74,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program120?classId=">
+            <router-link to="/experience/tua/tumf5">
               <div class="card">
                 <div class="text">
                   <p class="name">다하다</p>
@@ -87,11 +87,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program121?classId=">
+            <router-link to="/experience/tua/tumf6">
               <div class="card">
                 <div class="text">
                   <p class="name">환상문학청년</p>
@@ -100,11 +100,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program122?classId=">
+            <router-link to="/experience/tua/tumf7">
               <div class="card">
                 <div class="text">
                   <p class="name">당신의 취향을 담는, 취향상점</p>
@@ -113,11 +113,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program123?classId=">
+            <router-link to="/experience/tua/tumf8">
               <div class="card">
                 <div class="text">
                   <p class="name">IDLER</p>
@@ -126,11 +126,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program124?classId=">
+            <router-link to="/experience/tua/tumf9">
               <div class="card">
                 <div class="text">
                   <p class="name">릴재우×디비젼</p>
@@ -139,11 +139,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program125?classId=">
+            <router-link to="/experience/tua/tumf10">
               <div class="card">
                 <div class="text">
                   <p class="name">KlaFF</p>
@@ -152,11 +152,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program126?classId=">
+            <router-link to="/experience/tua/tumf11">
               <div class="card">
                 <div class="text">
                   <p class="name">사이버 파크 게임랜드</p>
@@ -165,11 +165,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program127?classId=">
+            <router-link to="/experience/tua/tumf12">
               <div class="card">
                 <div class="text">
                   <p class="name">크래늄</p>
@@ -178,11 +178,11 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-            <a href="/experience/program128?classId=">
+            <router-link to="/experience/tua/tumf13">
               <div class="card">
                 <div class="text">
                   <p class="name">크림슨</p>
@@ -191,7 +191,7 @@
                   <img src="../../../assets/images/program/musician.jpg" alt="musician">
                 </div>
               </div>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
