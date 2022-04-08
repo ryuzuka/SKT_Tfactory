@@ -1,6 +1,6 @@
 <template>
   <div class="contents" ref="contents">
-	  TUAF2
+	  TUMF1
   </div>
 </template>
 

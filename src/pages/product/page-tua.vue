@@ -3,8 +3,7 @@
     <Header type="back"></Header>
 
 	  <!-- TUAF -->
-	  <tuaf v-if="tuaId === 'tuaf'"></tuaf>
-	  <Part1 v-else-if="tuaId === 'tuaf_part1'"></Part1>
+	  <Part1 v-if="tuaId === 'tuaf_part1'"></Part1>
 	  <Part2 v-else-if="tuaId === 'tuaf_part2'"></Part2>
 	  <tuaf1 v-else-if="tuaId === 'tuaf1'"></tuaf1>
 
@@ -19,7 +18,6 @@
 <script>
 import Header from '../../components/common/Header'
 
-import Tuaf from '../../components/product/tuf/tuaf/List'
 import Part1 from '../../components/product/tuf/tuaf/Part1'
 import Part2 from '../../components/product/tuf/tuaf/Part2'
 import Tuaf1 from '../../components/product/tuf/tuaf/Tuaf1'
@@ -30,7 +28,6 @@ export default {
   name: 'TUA',
   components: {
     Header,
-	  Tuaf,
 	  Part1,
 	  Part2,
 	  Tuaf1,
