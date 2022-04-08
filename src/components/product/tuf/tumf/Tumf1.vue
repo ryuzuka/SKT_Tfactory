@@ -1,6 +1,6 @@
 <template>
   <div class="contents" ref="contents">
-	  artwork1
+	  TUAF2
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Artwork1',
+  name: 'Tumf1',
   components: {
   },
   data () {

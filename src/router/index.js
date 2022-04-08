@@ -39,7 +39,7 @@ import MyTagAdditional from '../pages/mytag/page-tag-additional'
 // prd
 import Product from '../pages/product/page-product'
 import Experience from '../pages/product/page-experience'
-import Catalogue from '../pages/product/page-catalogue'
+import Tua from '../pages/product/page-tua'
 
 // pay
 import PayLogin from '../components/pay/ModalPayLogin'
@@ -180,7 +180,7 @@ export default new Router({
     {path: '/prd/:productId?', name: 'Product', component: Product}, // 상품상세
     {path: '/experience', name: 'Experience', component: Experience}, // 상품상세 - 체험존
     {path: '/experience/:programId', name: 'InProgressProgram', component: Experience}, // 진행중인 프로그램
-    {path: '/experience/catalogue/:catalogueId', name: 'Catalogue', component: Catalogue}, // 웹도록
+    {path: '/experience/tua/:tuaId', name: 'Tua', component: Tua}, // TUA
 
     // pay
     {path: '/pay', name: 'Pay', component: Pay}, // 구매 상세

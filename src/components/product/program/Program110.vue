@@ -51,7 +51,7 @@
       <div class="details-inner" style="padding: 40px 0">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
-          <a href="/experience/program111?classId=154">
+<!--          <a href="/experience/program111?classId=154">-->
             <div class="desc">
               <p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
               <span class="topic">TUMF</span>
@@ -60,10 +60,10 @@
             <div class="images">
               <img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
             </div>
-          </a>
+<!--          </a>-->
         </div>
         <div class="program">
-	        <a href="/experience/program112?classId=155">
+<!--	        <a href="/experience/program112?classId=155">-->
 	          <div class="desc">
 	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
 	            <span class="topic">TUAF</span>
@@ -72,7 +72,7 @@
 	          <div class="images">
 	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
 	          </div>
-	        </a>
+<!--	        </a>-->
         </div>
       </div>
     </div>

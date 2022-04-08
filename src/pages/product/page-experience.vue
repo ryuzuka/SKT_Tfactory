@@ -115,7 +115,7 @@
     <program111 v-else-if="programId === 'program111'"></program111>
     <program112 v-else-if="programId === 'program112'"></program112>
 
-	  <catalogue v-else-if="programId === 'program115'"></catalogue> <!-- 웹도록 Index -->
+	  <tuaf v-else-if="programId === 'program115'"></tuaf> <!-- TUAF(웹도록) Index -->
 
     <Experience v-else></Experience>
 
@@ -128,7 +128,7 @@
 import Header from '../../components/common/Header'
 import Experience from '../../components/product/Experience'
 
-import Catalogue from '../../components/product/catalogue/Index'
+import Tuaf from '../../components/product/tuf/tuaf/List'
 
 import Program1 from '../../components/product/program/Program1'
 import Program2 from '../../components/product/program/Program2'
@@ -247,7 +247,7 @@ export default {
   name: 'page-product',
   components: {
     Header,
-	  Catalogue,
+	  Tuaf,
     Experience,
     Program1,
     Program2,

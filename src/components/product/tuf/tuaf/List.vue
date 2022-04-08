@@ -1,15 +1,15 @@
 <template>
 	<div class="contents" ref="contents">
-		<router-link to="/experience/catalogue/part1">part1</router-link>
-		<router-link to="/experience/catalogue/part2">part2</router-link>
+		<router-link to="/experience/tua/tuaf_part1">part1</router-link>
+		<router-link to="/experience/tua/tuaf_part2">part2</router-link>
 	</div>
 </template>
 
 <script>
-import Header from '../../../components/common/Header'
+import Header from '../../../common/Header'
 
 export default {
-  name: 'Catalogue',
+  name: 'TUAF',
   components: {
 	  Header
   },

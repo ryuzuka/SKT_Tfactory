@@ -1,11 +1,11 @@
 <template>
 	<div class="contents" ref="contents">
-		list part1
+		list part2
 	</div>
 </template>
 
 <script>
-import Header from '../../../components/common/Header'
+import Header from '../../../common/Header'
 
 export default {
   name: 'Part2',
