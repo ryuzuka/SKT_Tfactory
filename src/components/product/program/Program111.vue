@@ -263,7 +263,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button></program-button>
+<!--    <program-button></program-button>-->
     <!-- // button set -->
   </div>
 </template>
