@@ -32,7 +32,7 @@
                   <p class="name">리퍼블릭</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician1.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -45,7 +45,7 @@
                   <p class="name">마린시티</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician2.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -58,7 +58,7 @@
                   <p class="name">Push Boundaries</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician3.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -71,7 +71,7 @@
                   <p class="name">ReleAse</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician4.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -84,7 +84,7 @@
                   <p class="name">다하다</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician5.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -97,7 +97,7 @@
                   <p class="name">환상문학청년</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician6.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -110,7 +110,7 @@
                   <p class="name">당신의 취향을 담는, 취향상점</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician7.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -123,7 +123,7 @@
                   <p class="name">IDLER</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician8.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -136,7 +136,7 @@
                   <p class="name">릴재우×디비젼</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician9.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -149,7 +149,7 @@
                   <p class="name">KlaFF</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician10.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -162,7 +162,7 @@
                   <p class="name">사이버 파크 게임랜드</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician11.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -175,7 +175,7 @@
                   <p class="name">크래늄</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician12.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -188,7 +188,7 @@
                   <p class="name">크림슨</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician13.jpg" alt="musician">
                 </div>
               </div>
             </router-link>
