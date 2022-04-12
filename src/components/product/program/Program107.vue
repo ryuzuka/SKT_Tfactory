@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class107-slide1.jpg" alt="T Factory x FLO 덕콘">
+      <img src="../../../assets/images/program/class107-slide1.jpg" alt="T University Music Festival">
     </div>
     <!-- //slide -->
     <!-- details -->
