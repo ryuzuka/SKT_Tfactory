@@ -21,169 +21,67 @@
         <p class="desc2" style="margin-top: 22px;">전시는 총 두 번에 나누어 진행됩니다.</p>
         <p class="desc2" style="margin-top: 20px;">TUAF Part 1.  : 2022.04.11 ~ 5.06 (4주)<br>TUAF Part 2.  : 2022.05.07 ~ 5.31 (4주)</p>
       </div>
-      <div class="details-inner" style="padding: 40px 20px 12px">
+      <div class="details-inner" style="padding: 40px 20px">
         <h2 class="main-title" style="margin-bottom: 0;">참여 작가 보기</h2>
-      </div>
-      <div class="details-artlist">
         <p class="sub-title">TUAF Part 1. 참여 작가</p>
-        <ul>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art1.jpg" alt="part1-art1">
-            <span>강민주</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art2.jpg" alt="part1-art2">
-            <span>강태린</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art3.jpg" alt="part1-art3">
-            <span>김경준</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art4.jpg" alt="part1-art4">
-            <span>김기윤</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art5.jpg" alt="part1-art5">
-            <span>김동준</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art6.jpg" alt="part1-art6">
-            <span>김미효</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art7.jpg" alt="part1-art7">
-            <span>김민정</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art8.jpg" alt="part1-art8">
-            <span>김서영</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art9.jpg" alt="part1-art9">
-            <span>김우진</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art10.jpg" alt="part1-art10">
-            <span>김지구</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art11.jpg" alt="part1-art11">
-            <span>김진우</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art12.jpg" alt="part1-art12">
-            <span>김하늘</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art13.jpg" alt="part1-art13">
-            <span>김현호</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art14.jpg" alt="part1-art14">
-            <span>박소현</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art15.jpg" alt="part1-art15">
-            <span>박주홍</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art16.jpg" alt="part1-art16">
-            <span>박준민</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art17.jpg" alt="part1-art17">
-            <span>박지원</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art18.jpg" alt="part1-art18">
-            <span>반효경</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part1-art19.jpg" alt="part1-art19">
-            <span>배세아</span>
-          </li>
-        </ul>
-        <p class="sub-title" style="margin-top: 40px">TUAF Part 2. 참여 작가</p>
-        <ul>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art1.jpg" alt="part2-art1">
-            <span>김지수</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art2.jpg" alt="part2-art2">
-            <span>서우경</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art3.jpg" alt="part2-art3">
-            <span>손현주</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art4.jpg" alt="part2-art4">
-            <span>심유리</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art5.jpg" alt="part2-art5">
-            <span>유민진</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art6.jpg" alt="part2-art6">
-            <span>윤석원</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art7.jpg" alt="part2-art7">
-            <span>윤여송</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art8.jpg" alt="part2-art8">
-            <span>윤지민</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art9.jpg" alt="part2-art9">
-            <span>이상우, 조은서</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art10.jpg" alt="part2-art10">
-            <span>이세현</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art11.jpg" alt="part2-art11">
-            <span>이재은</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art12.jpg" alt="part2-art12">
-            <span>이진주</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art13.jpg" alt="part2-art13">
-            <span>정민성</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art14.jpg" alt="part2-art14">
-            <span>정세윤</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art15.jpg" alt="part2-art15">
-            <span>정유빈</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art16.jpg" alt="part2-art16">
-            <span>조영인</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art17.jpg" alt="part2-art17">
-            <span>지유신</span>
-          </li>
-          <li>
-            <img src="../../../assets/images/program/class112-part2-art18.jpg" alt="part2-art18">
-            <span>한국소년</span>
-          </li>
-        </ul>
-        <div class="btn-wrap" style="margin: 40px 20px;">
-          <button class="btn-line big">
-            웹도록보기
-          </button>
+        <div class="details-artlist">
+          <ul>
+            <li>강태린</li>
+            <li>김경준</li>
+            <li>김기윤</li>
+            <li>김동준</li>
+            <li>김미효</li>
+            <li>김민정</li>
+          </ul>
+          <ul style="padding-right: 65px;">
+            <li>김서영</li>
+            <li>김우진</li>
+            <li>김지구</li>
+            <li>김진우</li>
+            <li>김하늘</li>
+            <li>김현호</li>
+          </ul>
+          <ul>
+            <li>박소현</li>
+            <li>박주홍</li>
+            <li>박준민</li>
+            <li>박지원</li>
+            <li>반효경</li>
+            <li>배세아</li>
+          </ul>
         </div>
+        <p class="sub-title" style="margin-top: 32px">TUAF Part 2. 참여 작가</p>
+        <div class="details-artlist">
+          <ul>
+            <li>김지수</li>
+            <li>서우경</li>
+            <li>손현주</li>
+            <li>심유리</li>
+            <li>유민진</li>
+            <li>윤석원</li>
+          </ul>
+          <ul style="padding-right: 22px;">
+            <li>윤여송</li>
+            <li>윤지민</li>
+            <li>이상우, 조은서</li>
+            <li>이세현</li>
+            <li>이재은</li>
+            <li>이진주</li>
+          </ul>
+          <ul style="padding-right: 44px;">
+            <li>정민성</li>
+            <li>정세윤</li>
+            <li>정유빈</li>
+            <li>조영인</li>
+            <li>지유신</li>
+            <li>한국소년</li>
+          </ul>
+        </div>
+        <router-link to="/experience/program115">
+          <div class="btn-wrap" style="margin-top: 40px; padding: 0px 12px;" >
+            <button class="btn-line big">웹도록보기</button>
+          </div>
+        </router-link>
       </div>
       <div class="details-inner">
         <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
@@ -301,37 +199,20 @@ export default {
     line-height: 19px;
     color: #787878;
     }
+    .sub-title{
+    margin-bottom: 12px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #000;
+    }
   }
 }
 .details-artlist{
-  color: #000;
-  font-size: 14px;
-  .sub-title{
-    margin: 0 20px;
-    line-height: 24px;
-    font-weight: bold;
-  }
+  display: flex;
   ul{
-    padding: 0 30px;
-    &:after{
-    content: "";
-    display: block;
-    clear: both;
-    }
-    li{
-      float:left;
-      width: 50%;
-      margin-top: 12px;
-      &:nth-child(even){
-        padding-left: 6px;
-      }
-      &:nth-child(odd){
-        padding-right: 6px;
-      }
-      img{
-        margin-bottom: 6px;
-      }
-    }
+    padding-right: 68px;
+    line-height: normal;
+    font-size: 14px;
   }
 }
 </style>
