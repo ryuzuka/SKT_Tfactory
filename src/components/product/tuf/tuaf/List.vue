@@ -12,16 +12,12 @@
         </p>
       </div>
       <div class="button_area">
-        <router-link to="/experience/tua/tuaf_part1">
           <div class="btn-wrap">
-            <button class="btn-line big">part 1</button>
+	          <router-link class="btn-line big" to="/experience/tua/tuaf_part1">part 1</router-link>
           </div>
-        </router-link>
-        <router-link to="/experience/tua/tuaf_part2">
           <div class="btn-wrap">
-            <button class="btn-line big">part 2</button>
+            <router-link class="btn-line big" to="/experience/tua/tuaf_part2">part 2</router-link>
           </div>
-        </router-link>
       </div>
     </div>
 	</div>

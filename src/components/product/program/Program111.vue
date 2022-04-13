@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img src="../../../assets/images/program/class111-slide1.jpg" alt="THECON X University">
@@ -223,7 +223,7 @@
       <div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
-	        <a href="/experience/program110?classId=156">
+	        <router-link to="/experience/program110?classId=156">
 	          <div class="desc">
 	            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
 	            <span class="topic">T대학 우주 축제, TUF</span>
@@ -232,10 +232,10 @@
 	          <div class="images">
 	            <img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
 	          </div>
-	        </a>
+	        </router-link>
         </div>
         <div class="program">
-	        <a href="/experience/program112?classId=155">
+	        <router-link to="/experience/program112?classId=155">
 	          <div class="desc">
 	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
 	            <span class="topic">TUAF</span>
@@ -244,10 +244,10 @@
 	          <div class="images">
 	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
 	          </div>
-	        </a>
+	        </router-link>
         </div>
         <div class="program">
-	        <a href="/experience/program4?classId=63">
+	        <router-link to="/experience/program4?classId=63">
 	          <div class="desc">
 	            <p class="detail">나도 작곡가!<br>아이패드로 곡 만들기</p>
 	            <span class="topic">크루 클래스-음악</span>
@@ -256,28 +256,22 @@
 	          <div class="images">
 	            <img src="../../../assets/images/program/class111-conts3.jpg" alt="크루 클래스-음악">
 	          </div>
-	        </a>
+	        </router-link>
         </div>
       </div>
     </div>
     <!-- //details -->
-
-    <!-- button set -->
-<!--    <program-button></program-button>-->
-    <!-- // button set -->
   </div>
 </template>
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
-import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program111',
   components: {
-    KakaoShare,
-    ProgramButton
+    KakaoShare
   },
   data () {
     return {

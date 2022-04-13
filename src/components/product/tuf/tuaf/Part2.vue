@@ -160,7 +160,7 @@
       <div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
-          <a href="/experience/program111?classId=154">
+          <router-link to="/experience/program111?classId=154">
             <div class="desc">
               <p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
               <span class="topic">TUMF</span>
@@ -169,10 +169,10 @@
             <div class="images">
               <img src="../../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
             </div>
-          </a>
+          </router-link>
         </div>
         <div class="program">
-	        <a href="/experience/program112?classId=155">
+	        <router-link to="/experience/program112?classId=155">
 	          <div class="desc">
 	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
 	            <span class="topic">TUAF</span>
@@ -181,10 +181,10 @@
 	          <div class="images">
 	            <img src="../../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
 	          </div>
-	        </a>
+	        </router-link>
         </div>
         <div class="program">
-	        <a href="/experience/program52?classId=81">
+	        <router-link to="/experience/program52?classId=81">
 	          <div class="desc">
 	            <p class="detail">IT와 미술의 만남<br>아이패드로 쉽게 드로잉하기</p>
 	            <span class="topic">크루클래스-아이패드로<br>이모티콘 만들기</span>
@@ -193,7 +193,7 @@
 	          <div class="images">
 	            <img src="../../../../assets/images/program/class112-conts3.jpg" alt="크루클래스-아이패드로 이모티콘 만들기">
 	          </div>
-	        </a>
+	        </router-link>
         </div>
       </div>
     </div>
@@ -207,11 +207,13 @@
 
 <script>
 import Header from '../../../common/Header'
+import KakaoShare from '../../../common/KakaoShare'
 
 export default {
   name: 'Part2',
   components: {
-	  Header
+	  Header,
+	  KakaoShare
   },
   data () {
     return {
