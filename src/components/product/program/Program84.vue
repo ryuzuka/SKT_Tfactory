@@ -49,6 +49,10 @@
             <span style="margin-left:-1px;">난 잘한다고 생각하는데 왜 티어가 안오르는지 궁금하신 분</span>
           </li>
         </ol>
+        <h3 class="subtit">클래스 신청 자격</h3>
+        <p>
+          레벨 30이상인 고객님에 한하여 참여 가능합니다.<br>※ 클래스 시작 이전에 확인하여 레벨이 맞지 않는 경우 클래스 참여에 제한이 있습니다.
+        </p>
         <h3 class="subtit">일정 및 장소</h3>
         <p>
           주 2회, T Factory 2층 T1 Zone
