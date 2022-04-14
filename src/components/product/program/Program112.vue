@@ -108,6 +108,18 @@
       </div>
       <div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
+	      <div class="program">
+		      <router-link to="/experience/program110?classId=156">
+			      <div class="desc">
+				      <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
+				      <span class="topic">T대학 우주 축제, TUF</span>
+				      <img style="right: -61px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
+			      </div>
+			      <div class="images">
+				      <img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
+			      </div>
+		      </router-link>
+	      </div>
         <div class="program">
           <router-link to="/experience/program111?classId=154">
             <div class="desc">
@@ -119,18 +131,6 @@
               <img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
             </div>
           </router-link>
-        </div>
-        <div class="program">
-	        <router-link to="/experience/program112?classId=155">
-	          <div class="desc">
-	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
-	            <span class="topic">TUAF</span>
-	            <img style="bottom: -7px; right: 165px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-	          </div>
-	          <div class="images">
-	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
-	          </div>
-	        </router-link>
         </div>
         <div class="program">
 	        <router-link to="/experience/program52?classId=81">

@@ -1,6 +1,6 @@
 <template>
   <div class="wrap experience">
-    <Header type="backToProgram"></Header>
+    <Header :type="isProgram ? 'backToProgram' : 'back'"></Header>
 
     <program1 v-if="programId === 'program1'"></program1>
     <program2 v-else-if="programId === 'program2'"></program2>
@@ -128,7 +128,7 @@
 import Header from '../../components/common/Header'
 import Experience from '../../components/product/Experience'
 
-import Tuaf from '../../components/product/tuf/tuaf/List'
+import Tuaf from '../../components/product/tuf/tuaf'
 
 import Program1 from '../../components/product/program/Program1'
 import Program2 from '../../components/product/program/Program2'
@@ -364,16 +364,24 @@ export default {
   },
   data () {
     return {
-      programId: ''
+      programId: '',
+	    isProgram: true
     }
   },
   watch: {
     $route (to) {
       this.programId = to.params.programId
+	    if (this.programId === 'program115') {
+		    this.isProgram = false
+	    }
     }
   },
+  methods: {},
   created () {
     this.programId = this.$route.params.programId
+	  if (this.programId === 'program115') {
+		  this.isProgram = false
+	  }
   }
 }
 </script>
