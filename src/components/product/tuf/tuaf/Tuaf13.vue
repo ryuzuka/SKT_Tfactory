@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf1-slide1.jpg" alt="tuf-tuaf1-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf13-slide1.jpg" alt="tuf-tuaf13-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,22 +10,26 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART1"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 강민주"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김현호"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
-        <h2 class="main-title" style="margin-top: 4px;">강돌맹이 이야기</h2>
+        <h2 class="main-title" style="margin-top: 4px;">나의 우주 : 토성</h2>
         <p class="introduce">
-          강민주(姜玟珠)는 진주, 옥돌, 구슬이라는 아름다운 이름을 갖고 있지만 평범한 사람이다.<br>
-          오히려 이리저리 치이고, 사람들의 시선을 피해다니는 모습은 돌맹이와 다름없다.<br>
-          그래서 그는 바다로 도망쳤다.<br>
-          강민주를 제한하는 글자, 숫자는 분해되고 부유한다, 동시에 강민주는 아무도 없는 바다속에서 '무(無)'의 상태로 돌아간다.<br>
-          돌맹이는 이제야 빛을 받아 진주처럼 반짝인다.
+          토성을 실제로 본적이 있다.<br>
+          고성능 망원경을 통해 본 토성의 고리는 10년이 지난 지금도 생생히 떠오른다.<br>
+          지구 밖 우주의 모습과 신비로운 토성의 모습,<br>
+          내가 보았던 나의 경이로웠던 우주이다<br>
+          나의 우주에 초대하고 싶다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce"><b>강민주 작가</b>는 홍익대학교 디자인컨버전스학부에 재학중인 학생이다.</p>
+        <p class="introduce">
+          <b>며농/김현호 작가</b>는 다양한 이유로 여러 도형들은 각기 다른 이미지를 갖는다.<br>
+          도형을 감정적으로 바라본 순간 나의 생각을 담기에 좋은 그릇이라는 것을 깨달았다.<br>
+          이러한 도형들을 나만의 언어로 재해석해 내 생각을 상징하는 물체로 만드는 작업을 하고 있다.<br>
+        </p>
       </div>
     </div>
     <!-- //details -->
@@ -36,7 +40,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf1',
+  name: 'Tuaf13',
   components: {
   },
   data () {
@@ -67,7 +71,7 @@ export default {
 <style lang="scss" scoped>
 .details{
   &-inner {
-  padding:40px 20px;
+  padding: 40px 20px;
   }
   .introduce{
     margin-top: 0;

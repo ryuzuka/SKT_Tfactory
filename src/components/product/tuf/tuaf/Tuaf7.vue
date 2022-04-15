@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf1-slide1.jpg" alt="tuf-tuaf1-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf7-slide1.jpg" alt="tuf-tuaf7-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,22 +10,20 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART1"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 강민주"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김민정"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
-        <h2 class="main-title" style="margin-top: 4px;">강돌맹이 이야기</h2>
+        <h2 class="main-title" style="margin-top: 4px;">mine</h2>
         <p class="introduce">
-          강민주(姜玟珠)는 진주, 옥돌, 구슬이라는 아름다운 이름을 갖고 있지만 평범한 사람이다.<br>
-          오히려 이리저리 치이고, 사람들의 시선을 피해다니는 모습은 돌맹이와 다름없다.<br>
-          그래서 그는 바다로 도망쳤다.<br>
-          강민주를 제한하는 글자, 숫자는 분해되고 부유한다, 동시에 강민주는 아무도 없는 바다속에서 '무(無)'의 상태로 돌아간다.<br>
-          돌맹이는 이제야 빛을 받아 진주처럼 반짝인다.
+          일상 속 학교 생활을 하며 매 순간 양자택일을 해야 하는 상황이 생기는데 어떠한 선택이 맞는 것인지, 머리 속에서 생각들이 끊임없이 충돌하고 고민하며 끝내 어떠한 선택을 고를지 올바른 정답을 추구하고자 하는 본인의 모습이 표현되어 있다.
        </p>
       </div>
-      <div class="details-inner">
+      <div class="details-inner" style="padding: 40px 20px 60px;">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce"><b>강민주 작가</b>는 홍익대학교 디자인컨버전스학부에 재학중인 학생이다.</p>
+        <p class="introduce">
+          <b>김민정 작가</b>는 독특한 색채 배열과 자유분방한 선들을 통해 방대한 시각 이미지를 풀어내고자 하며, 일상 속에서 흔하게 보이는 오브제들을 그래피티적이고 회화적인 표현으로 재탄생시켜 본인만의 개성적인 시선을 보여주고 있다.
+        </p>
       </div>
     </div>
     <!-- //details -->
@@ -36,7 +34,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf1',
+  name: 'Tuaf7',
   components: {
   },
   data () {
@@ -67,7 +65,7 @@ export default {
 <style lang="scss" scoped>
 .details{
   &-inner {
-  padding:40px 20px;
+  padding: 40px 20px;
   }
   .introduce{
     margin-top: 0;
