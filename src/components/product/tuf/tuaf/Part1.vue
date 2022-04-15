@@ -80,7 +80,7 @@
             <li>
               <router-link to="/experience/tua/tuaf10">
                 <img src="../../../../assets/images/program/class112-part1-art10.jpg" alt="part1-art10">
-                <p>강지구<br><em>1-2PM, 2-3PM, 5-6PM</em></p>
+                <p>김지구<br><em>1-2PM, 2-3PM, 5-6PM</em></p>
               </router-link>
             </li>
             <li>
