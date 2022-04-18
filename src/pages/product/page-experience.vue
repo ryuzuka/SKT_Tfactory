@@ -128,7 +128,7 @@
 import Header from '../../components/common/Header'
 import Experience from '../../components/product/Experience'
 
-import Tuaf from '../../components/product/tuf/tuaf'
+import Tuaf from '../../components/product/tuf/tuaf/Tuaf'
 
 import Program1 from '../../components/product/program/Program1'
 import Program2 from '../../components/product/program/Program2'
