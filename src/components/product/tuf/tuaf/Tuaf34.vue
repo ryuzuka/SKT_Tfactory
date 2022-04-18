@@ -28,7 +28,7 @@
         </p>
         <div class="instagram">
           <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/i_ko_ikoko">www.instagram.com/i_ko_ikoko</a>
+          <a href="#" @click.prevent="snsLink('https://www.instagram.com/i_ko_ikoko')">www.instagram.com/i_ko_ikoko</a>
         </div>
       </div>
     </div>
@@ -54,6 +54,14 @@ export default {
   mounted () {
   },
   methods: {
+    snsLink (snsUrl) {
+      const mobileOS = this.$cookies.get('platform')
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, snsUrl)
+      } else {
+        window.open(snsUrl, '_blank')
+      }
+    },
     clickButton () {
       const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
       const mobileOS = this.$cookies.get('platform')
