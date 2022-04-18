@@ -31,6 +31,9 @@ export default {
     }
   },
   created () {
+    this.$parent.$on('kakao-share-image', src => {
+      this.localThumbnail = src
+    })
     this.$EventBus.$on('get-class-info', data => {
       if (!this.title) {
         this.localTitle = data['PROGRAM_CLASS_NAME']
@@ -52,6 +55,7 @@ export default {
   },
   methods: {
     openShare () {
+      console.log(this.localThumbnail)
       this.$modal.show(ModalKakaoShare, {
         // component props
         title: this.localTitle,
