@@ -24,112 +24,112 @@
         <div class="details-artlist">
           <ul>
             <li>
-<!--              <router-link to="/experience/tua/tuaf20">-->
+              <router-link to="/experience/tua/tuaf20">
                 <img src="../../../../assets/images/program/class112-part2-art1.jpg" alt="part2-art1">
                 <p>김지수<br><em>나를 위한 불꽃축제</em></p>
-<!--              </router-link>-->
+              </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf21">-->
+             <router-link to="/experience/tua/tuaf21">
                 <img src="../../../../assets/images/program/class112-part2-art2.jpg" alt="part2-art2">
                 <p>서우경<br><em>탐험</em></p>
-<!--               </router-link>-->
+              </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf22">-->
+             <router-link to="/experience/tua/tuaf22">
                 <img src="../../../../assets/images/program/class112-part2-art3.jpg" alt="part2-art3">
                 <p>손현주<br><em>우린, 매일이 축제</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf23">-->
+             <router-link to="/experience/tua/tuaf23">
                 <img src="../../../../assets/images/program/class112-part2-art4.jpg" alt="part2-art4">
                 <p>심유리<br><em>나의 우주(나의 머릿속)</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf24">-->
+             <router-link to="/experience/tua/tuaf24">
                 <img src="../../../../assets/images/program/class112-part2-art5.jpg" alt="part2-art5">
                 <p>유민진<br><em>태초의 우주</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf25">-->
+             <router-link to="/experience/tua/tuaf25">
                 <img src="../../../../assets/images/program/class112-part2-art6.jpg" alt="part2-art6">
                 <p>윤석원<br><em>가장 깊은 밤에 더 빛나는<br>별빛, 서로가 본 서로의 빛</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf26">-->
+             <router-link to="/experience/tua/tuaf26">
                 <img src="../../../../assets/images/program/class112-part2-art7.jpg" alt="part2-art7">
                 <p>윤여송<br><em>페토의 역설 / Peto’s<br>Paradox (3연작)</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf27">-->
+             <router-link to="/experience/tua/tuaf27">
                 <img src="../../../../assets/images/program/class112-part2-art8.jpg" alt="part2-art8">
                 <p>윤지민<br><em>우주유영</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf28">-->
+             <router-link to="/experience/tua/tuaf28">
                 <img src="../../../../assets/images/program/class112-part2-art9.jpg" alt="part2-art9">
                 <p>이상우, 조은서<br><em>muzu - 우주돌</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf29">-->
+             <router-link to="/experience/tua/tuaf29">
                 <img src="../../../../assets/images/program/class112-part2-art10.jpg" alt="part2-art10">
                 <p>이세현<br><em>사랑받기</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf30">-->
+             <router-link to="/experience/tua/tuaf30">
                 <img src="../../../../assets/images/program/class112-part2-art11.jpg" alt="part2-art11">
                 <p>이재은<br><em>네가 빛나는 건 너무나<br>자연스러운 일이다.</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf31">-->
+             <router-link to="/experience/tua/tuaf31">
                 <img src="../../../../assets/images/program/class112-part2-art12.jpg" alt="part2-art12">
                 <p>이진주<br><em>메＇찰나의＇ ( 그순간<br>찰나의 기록 시리즈 중)</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf32">-->
+             <router-link to="/experience/tua/tuaf32">
                 <img src="../../../../assets/images/program/class112-part2-art13.jpg" alt="part2-art13">
                 <p>정민성<br><em>Love is drowning me</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf33">-->
+             <router-link to="/experience/tua/tuaf33">
                 <img src="../../../../assets/images/program/class112-part2-art14.jpg" alt="part2-art14">
                 <p>정세윤<br><em>질서, 파란만장<br>(波瀾萬丈)></em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf34">-->
+             <router-link to="/experience/tua/tuaf34">
                 <img src="../../../../assets/images/program/class112-part2-art15.jpg" alt="part2-art15">
                 <p>정유빈<br><em>나는 이미 우주 속에<br>살고 있는지도 몰라</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf35">-->
+             <router-link to="/experience/tua/tuaf35">
                 <img src="../../../../assets/images/program/class112-part2-art16.jpg" alt="part2-art16">
                 <p>조영인<br><em>피어나는 우리의 우주</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf36">-->
+             <router-link to="/experience/tua/tuaf36">
                 <img src="../../../../assets/images/program/class112-part2-art17.jpg" alt="part2-art17">
                 <p>지유신<br><em>Lonely Journey</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
             <li>
-<!--              <router-link to="/experience/tua/tuaf37">-->
+             <router-link to="/experience/tua/tuaf37">
                 <img src="../../../../assets/images/program/class112-part2-art18.jpg" alt="part2-art18">
                 <p>한국소년<br><em>행운을 주는 비니를 쓴<br>소녀 (Lucky Beanie Girl)</em></p>
-<!--              </router-link>-->
+             </router-link>
             </li>
           </ul>
         </div>

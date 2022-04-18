@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf28-slide1.jpg" alt="tuf-tuaf28-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,29 +10,22 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 이상우 x 조은서"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          muzu – 우주돌
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          사무실을 들어섰을 때, 모습을 바꾼 그가 나타났다. 검은 모자와 조끼 차림의 배달원 같은 모습으로 있어서 처음에는 못 알아봤지만, 옅은 회색의 눈동자를 보자마자 그임을 알 수 있었다. 웬걸, 나를 보자마자 다급한 목소리로 어깨를 붙잡고, 손에 무언가를 쥐여준다. 다시 모험을 시작하려는 소년의 목소리가 들린다. ‘지켜줘’. 그 한마디가<br> 누군가에게는 움츠러든 어깨를 펴고, 가슴을 뛰게 만든다. 나에게, 돌은 안중에도 없다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+        <p class="introduce">
+          <b>이상우 x 조은서. 작가</b>는 무주(muzu)라는 세계관에 기반해 조그맣고 다양한 오브제를 만든다. 사람들은 오브제에 입혀진 이야기를 읽고 저마다의 방식으로 무주를 상상하고 탐험하게 된다.
         </p>
-        <div class="instagram">
-          <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
-        </div>
       </div>
     </div>
     <!-- //details -->
@@ -43,7 +36,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf28',
   components: {
   },
   data () {
@@ -79,14 +72,6 @@ export default {
   .introduce{
     margin-top: 0;
     line-height: 20px;
-  }
-  .instagram{
-    line-height: 24px;
-    .sns{
-      margin-right: 19px;
-      font-weight: bold;
-      color: #000;
-    }
   }
 }
 </style>

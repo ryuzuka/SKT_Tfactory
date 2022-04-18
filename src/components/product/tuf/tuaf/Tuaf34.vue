@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf34-slide1.jpg" alt="tuf-tuaf34-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,28 +10,25 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 정유빈"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          나는 이미 우주속에<br>살고 있는지 몰라
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          팬데믹이라는 낯선 현실 속에서 마스크로 무장하고 거리두기를 했던 시간들이 있다. 꽁꽁 감싸서 턱 막히던 숨, 모일 수 없었던 생각과 몸, 언제 끝날지 모르던 일상들은 어둡고 아무것도 알 수 었었다. 어쩌면 나는 이미 어지러운 우주 속에 살고 있었는지도 모른다. 끝없이 펼쳐지는 우주 속을 벗어날 수 있을까? 여전히 바이러스가 없는 평범한 평행우주를 기다리고 있다는 이야기를 일러스트에 담아냈다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
         <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+          <b>정유빈 작가</b>는 한국예술종합학교에 재학중인 디자이너이며, 재미있고 어려운 현상을 시각적으로 선명히 드러내는 것을 좋아한다.
         </p>
         <div class="instagram">
           <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
+          <a href="www.instagram.com/i_ko_ikoko">www.instagram.com/i_ko_ikoko</a>
         </div>
       </div>
     </div>
@@ -43,7 +40,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf34',
   components: {
   },
   data () {

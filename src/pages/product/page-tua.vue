@@ -24,6 +24,24 @@
     <tuaf17 v-else-if="tuaId === 'tuaf17'"></tuaf17>
     <tuaf18 v-else-if="tuaId === 'tuaf18'"></tuaf18>
     <tuaf19 v-else-if="tuaId === 'tuaf19'"></tuaf19>
+    <tuaf20 v-else-if="tuaId === 'tuaf20'"></tuaf20>
+    <tuaf21 v-else-if="tuaId === 'tuaf21'"></tuaf21>
+    <tuaf22 v-else-if="tuaId === 'tuaf22'"></tuaf22>
+    <tuaf23 v-else-if="tuaId === 'tuaf23'"></tuaf23>
+    <tuaf24 v-else-if="tuaId === 'tuaf24'"></tuaf24>
+    <tuaf25 v-else-if="tuaId === 'tuaf25'"></tuaf25>
+    <tuaf26 v-else-if="tuaId === 'tuaf26'"></tuaf26>
+    <tuaf27 v-else-if="tuaId === 'tuaf27'"></tuaf27>
+    <tuaf28 v-else-if="tuaId === 'tuaf28'"></tuaf28>
+    <tuaf29 v-else-if="tuaId === 'tuaf29'"></tuaf29>
+    <tuaf30 v-else-if="tuaId === 'tuaf30'"></tuaf30>
+    <tuaf31 v-else-if="tuaId === 'tuaf31'"></tuaf31>
+    <tuaf32 v-else-if="tuaId === 'tuaf32'"></tuaf32>
+    <tuaf33 v-else-if="tuaId === 'tuaf33'"></tuaf33>
+    <tuaf34 v-else-if="tuaId === 'tuaf34'"></tuaf34>
+    <tuaf35 v-else-if="tuaId === 'tuaf35'"></tuaf35>
+    <tuaf36 v-else-if="tuaId === 'tuaf36'"></tuaf36>
+    <tuaf37 v-else-if="tuaId === 'tuaf37'"></tuaf37>
 
 	  <!-- TUMF -->
     <tumf1 v-else-if="tuaId === 'tumf1'"></tumf1>
@@ -57,6 +75,24 @@ import Tuaf16 from '../../components/product/tuf/tuaf/Tuaf16'
 import Tuaf17 from '../../components/product/tuf/tuaf/Tuaf17'
 import Tuaf18 from '../../components/product/tuf/tuaf/Tuaf18'
 import Tuaf19 from '../../components/product/tuf/tuaf/Tuaf19'
+import Tuaf20 from '../../components/product/tuf/tuaf/Tuaf20'
+import Tuaf21 from '../../components/product/tuf/tuaf/Tuaf21'
+import Tuaf22 from '../../components/product/tuf/tuaf/Tuaf22'
+import Tuaf23 from '../../components/product/tuf/tuaf/Tuaf23'
+import Tuaf24 from '../../components/product/tuf/tuaf/Tuaf24'
+import Tuaf25 from '../../components/product/tuf/tuaf/Tuaf25'
+import Tuaf26 from '../../components/product/tuf/tuaf/Tuaf26'
+import Tuaf27 from '../../components/product/tuf/tuaf/Tuaf27'
+import Tuaf28 from '../../components/product/tuf/tuaf/Tuaf28'
+import Tuaf29 from '../../components/product/tuf/tuaf/Tuaf29'
+import Tuaf30 from '../../components/product/tuf/tuaf/Tuaf30'
+import Tuaf31 from '../../components/product/tuf/tuaf/Tuaf31'
+import Tuaf32 from '../../components/product/tuf/tuaf/Tuaf32'
+import Tuaf33 from '../../components/product/tuf/tuaf/Tuaf33'
+import Tuaf34 from '../../components/product/tuf/tuaf/Tuaf34'
+import Tuaf35 from '../../components/product/tuf/tuaf/Tuaf35'
+import Tuaf36 from '../../components/product/tuf/tuaf/Tuaf36'
+import Tuaf37 from '../../components/product/tuf/tuaf/Tuaf37'
 
 import Tumf1 from '../../components/product/tuf/tumf/Tumf1'
 
@@ -85,6 +121,24 @@ export default {
     Tuaf17,
     Tuaf18,
     Tuaf19,
+    Tuaf20,
+    Tuaf21,
+    Tuaf22,
+    Tuaf23,
+    Tuaf24,
+    Tuaf25,
+    Tuaf26,
+    Tuaf27,
+    Tuaf28,
+    Tuaf29,
+    Tuaf30,
+    Tuaf31,
+    Tuaf32,
+    Tuaf33,
+    Tuaf34,
+    Tuaf35,
+    Tuaf36,
+    Tuaf37,
 	  Tumf1
   },
   data () {

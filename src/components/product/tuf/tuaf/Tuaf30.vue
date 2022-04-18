@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf30-slide1.jpg" alt="tuf-tuaf30-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,29 +10,22 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 이재은"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          네가 빛나는 건 너무나<br>자연스러운 일이다.
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          온 우주 속 내가 아무리 작은 존재여도, 온전히 나로서 존재할 때 빛이 남을 표현했다. 사랑하는, 혹은 사랑했던 그대를 부르고 있지만 사실은 사랑하는, 사랑했던, 사랑하고 싶은 나를 노래하고 있다. 나의 우주. 내 우주는 너무 작지만, 나는 꽉 찬 존재가 되고 싶으니까. 나의 우주는 온통 너니까. 네가, 그리고 내가 빛나는 건 너무나 자연스러운 일이다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+        <p class="introduce">
+          벅찬 글자의 나열, 벅찬 그림의 호흡에 청춘의 감정과 인생을 담았다. 문학과 미술은 강한 시너지를 불러온다. 그림에 한 층 더 몰입할 수 있도록, 나의 그림은 문학적 제목과 하나의 몸을 이룬다. 이 세상의 주인공이 내가 아니더라도, 그대가 주인공이 되는 그림을 그리고자 한다. 청춘의 사랑과 감정을 그리는 아티스트 <b>이재은(Lees) 작가</b>이다.
         </p>
-        <div class="instagram">
-          <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
-        </div>
       </div>
     </div>
     <!-- //details -->
@@ -43,7 +36,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf30',
   components: {
   },
   data () {
@@ -79,14 +72,6 @@ export default {
   .introduce{
     margin-top: 0;
     line-height: 20px;
-  }
-  .instagram{
-    line-height: 24px;
-    .sns{
-      margin-right: 19px;
-      font-weight: bold;
-      color: #000;
-    }
   }
 }
 </style>

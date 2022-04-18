@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf24-slide1.jpg" alt="tuf-tuaf24-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,28 +10,27 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 유민진"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          태초의 우주
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          우주인의 안전 끈과 아기의 탯줄, 우주 속과 양수 속 서로 같은 듯 다른 세계. 엄마의 뱃속에서부터 시작된 '나의 우주'<br>
+          악동뮤지션 이수현의 &lt;ALIEN&gt; 中 "My mama told me I'm ALIEN", "따뜻한 물에서 수영하는 걸 좋아했던 널 내가 데려온 거야"
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
         <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+          숭실대학교 글로벌미디어학부 2학년에 재학 중인 21살 <b>유민진 작가</b>는 디자이너를 꿈꾸고 있다.<br>
+          노래와 작품을 연결 짓는 것을 좋아하며, 이번 전시작인<br>&lt;태초의 우주&gt; 또한 악동뮤지션 이수현의 &lt;ALIEN&gt; 이라는 노래를 함께 들으시면 작품을 더 공감하면서 감상할 수 있다고 한다.
         </p>
         <div class="instagram">
           <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
+          <a href="www.instagram.com/yum_mydesign">www.instagram.com/yum_mydesign</a>
         </div>
       </div>
     </div>
@@ -43,7 +42,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf24',
   components: {
   },
   data () {

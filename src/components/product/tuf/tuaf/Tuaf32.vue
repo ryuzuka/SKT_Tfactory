@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf32-slide1.jpg" alt="tuf-tuaf32-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,28 +10,25 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 정민성"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          Love is drowning me
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          사랑은 물에 빠지는것 같은 느낌을 줍니다. 물속에서 헤엄을 치면 중력을 못 느끼는것 처럼 기분이 좋아지지만, 그것이 도를 넘어 수면(사랑)위로 올라가지 못하고 그곳에 지체되면 고통을 느끼는 것처럼,<br>사랑을 하면서 행복 할때도 있지만, 서로 간의 서로를 배려하지못하면 상처, 고통을 줄수도 있다는 것을 표현했다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
         <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+          대부분의 사람들은 익숙한 것에 적응 되어있으며, 그것이 당연한것 이라고 생각하고 있다. 하지만 저는 익숙한 것, 평범한 것에서 특별한 무언가를 찾는 것을 추구한다. (기존의 것에서 조금만 수정하여 특별함을 주는 것.) 작가는 ‘사랑’을 가지고 작품을 제작한다. ‘사랑’은 대부분 밝은<br> 면 만 보고 싶어하면 밝고 행복한 것 이라고 생각하지만 ‘사랑’ 이라는 단어는 항상 이별,고통, 그리고 슬픔이 따라오기 마련이다.<br><b>정민성 작가</b>는 작품을 통해 사랑을 표현한 것 같지만 사랑 뒷면에 있는 감정들을 색감과 디자인를 통해 사람들에게 알려주려 한다.
         </p>
         <div class="instagram">
           <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
+          <a href="www.instagram.com/mmmmmmmmmmsc">www.instagram.com<br>/mmmmmmmmmmsc</a>
         </div>
       </div>
     </div>
@@ -43,7 +40,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf32',
   components: {
   },
   data () {
@@ -81,6 +78,7 @@ export default {
     line-height: 20px;
   }
   .instagram{
+    display: flex;
     line-height: 24px;
     .sns{
       margin-right: 19px;

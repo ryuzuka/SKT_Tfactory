@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf20-slide1.jpg" alt="tuf-tuaf20-slide1">
+      <img src="../../../../assets/images/program/tuf-tuaf21-slide1.jpg" alt="tuf-tuaf21-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,29 +10,24 @@
       <div class="details-header" style="padding: 40px 20px;">
         <kakao-share
          title="T University Art Festival - PART2"
-          description="대학생들의 작품으로 꾸며진 팝업 전시 - 김지수"
+          description="대학생들의 작품으로 꾸며진 팝업 전시 - 서우경"
         ></kakao-share>
 
         <em class="main-subtitle">작품소개</em>
         <h2 class="main-title" style="margin-top: 4px;">
-          나를 위한 불꽃축제
+          탐험
         </h2>
         <p class="introduce">
-          이 그림은 사람이 없는 한적한 뒷산 공원에서 피크닉 중에 먼 곳에서 하는 축제의 불꽃놀이를 보면서 축제를 즐기는 장면을 담았다.<br>
-          축제라는 단어를 듣고 떠올리는 시끌벅적한, 복잡함 보다는 모두를 위한 축제였지만 ‘내가 있는 이 곳에서만은 나를 위해 쏘아 올린 불꽃축제’를 보여주고 싶었다.
+          미지의 공간을 탐험하며 나의 세계를 넓혀 나갈때 느껴지는 즐거움을 우주복을 입은 인물을 통해 표현하였다.<br>
+          동화적인 감성을 한층 더 담아 낼수 있도록 디지털 페인팅기법으로 화려한 색상의 원단과 바느질 선들을 구현했다.<br>
+          비현실적인 서사가 담긴 이미지를 바라보며 잠시나마 일상에서 벗어난 즐거움을 선사하고자 한다.
        </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce" style="margin-bottom: 24px;">
-          SADI에서 communication design을 전공하고 있는<br>
-          <b>김지수 작가</b>는 간직하고 싶은 순간과 그 순간의 감정을 여러 색감으로 아이패드를 사용하여 한 장의 그림으로 기록하고 있다.<br>
-          장소와 시간에 따라 다채로워지는 하늘이 담겨있는 추억을 주로 표현하고 있다.
+        <p class="introduce">
+          <b>서우경 작가</b>는 일상에서 볼 수 있는 평범한 소재에 동화적인 서사를 담아 전달한다. 퀼팅 기법을 통해 작품에 서정적인 분위기를 부여하고, 관람의 흥미를 유발한다.
         </p>
-        <div class="instagram">
-          <span class="sns">작가 SNS</span>
-          <a href="www.instagram.com/hap_py.uu">www.instagram.com/hap_py.uu</a>
-        </div>
       </div>
     </div>
     <!-- //details -->
@@ -43,7 +38,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tuaf20',
+  name: 'Tuaf21',
   components: {
   },
   data () {
@@ -79,14 +74,6 @@ export default {
   .introduce{
     margin-top: 0;
     line-height: 20px;
-  }
-  .instagram{
-    line-height: 24px;
-    .sns{
-      margin-right: 19px;
-      font-weight: bold;
-      color: #000;
-    }
   }
 }
 </style>
