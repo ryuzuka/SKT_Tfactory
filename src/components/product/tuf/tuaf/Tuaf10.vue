@@ -53,10 +53,12 @@
 
 <script>
 import * as NATIVE from '../../../../js/native'
+import KakaoShare from '../../../common/KakaoShare'
 
 export default {
   name: 'Tuaf10',
   components: {
+    KakaoShare
   },
   data () {
     return {
