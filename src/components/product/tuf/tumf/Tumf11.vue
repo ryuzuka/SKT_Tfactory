@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 사이버 파크 게임랜드"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,13 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">사이버 파크 게임랜드</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf11_musician.jpg" alt="tuf_tumf11_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          오락실이 꽤 남아 있던 시대, 우리 동네 어디엔가 있었을 법한 오락실을 떠올리며 지은 이름이다.
+        </p>
+        <p style="margin-top: 22px;">
+          청소년들의 살롱을 들락날락하던 시절의 눈높이에서 보던 풍경들을 추억하며 노래하는 밴드이다.
         </p>
       </div>
       <div class="details-inner">
@@ -51,7 +54,7 @@
           <li>※ 본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
         </ul>
       </div>
-      <div class="details-inner" style="padding: 40px 0 20px">
+<div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
 	        <router-link to="/experience/program110?classId=156">
@@ -98,7 +101,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf11',
   components: {
   },
   data () {
@@ -147,8 +150,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

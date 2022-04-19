@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 환상문학청년"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,16 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">환상문학청년</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf6_musician.jpg" alt="tuf_tumf6_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          환상문학청년은 고려대학교 미디어학부 소속 n인조 밴드이다. 환상문학청년의 음악은 꽤 높은 확률로 집가는 길에 흥얼거릴 것이며 좀 되는 확률로 멜*에 검색하게 될 것이다.
+        </p>
+        <p style="margin-top: 22px;">
+          Music<br>from the river of infinite forking branches.
+        </p>
+        <p style="margin-top: 22px;">
+          환상, 문학, 청년!
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +104,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf6',
   components: {
   },
   data () {
@@ -147,8 +153,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

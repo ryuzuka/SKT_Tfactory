@@ -45,6 +45,18 @@
 
 	  <!-- TUMF -->
     <tumf1 v-else-if="tuaId === 'tumf1'"></tumf1>
+    <tumf2 v-else-if="tuaId === 'tumf2'"></tumf2>
+    <tumf3 v-else-if="tuaId === 'tumf3'"></tumf3>
+    <tumf4 v-else-if="tuaId === 'tumf4'"></tumf4>
+    <tumf5 v-else-if="tuaId === 'tumf5'"></tumf5>
+    <tumf6 v-else-if="tuaId === 'tumf6'"></tumf6>
+    <tumf7 v-else-if="tuaId === 'tumf7'"></tumf7>
+    <tumf8 v-else-if="tuaId === 'tumf8'"></tumf8>
+    <tumf9 v-else-if="tuaId === 'tumf9'"></tumf9>
+    <tumf10 v-else-if="tuaId === 'tumf10'"></tumf10>
+    <tumf11 v-else-if="tuaId === 'tumf11'"></tumf11>
+    <tumf12 v-else-if="tuaId === 'tumf12'"></tumf12>
+    <tumf13 v-else-if="tuaId === 'tumf13'"></tumf13>
 
     <modals-container></modals-container>
     <v-dialog></v-dialog>
@@ -95,6 +107,18 @@ import Tuaf36 from '../../components/product/tuf/tuaf/Tuaf36'
 import Tuaf37 from '../../components/product/tuf/tuaf/Tuaf37'
 
 import Tumf1 from '../../components/product/tuf/tumf/Tumf1'
+import Tumf2 from '../../components/product/tuf/tumf/Tumf2'
+import Tumf3 from '../../components/product/tuf/tumf/Tumf3'
+import Tumf4 from '../../components/product/tuf/tumf/Tumf4'
+import Tumf5 from '../../components/product/tuf/tumf/Tumf5'
+import Tumf6 from '../../components/product/tuf/tumf/Tumf6'
+import Tumf7 from '../../components/product/tuf/tumf/Tumf7'
+import Tumf8 from '../../components/product/tuf/tumf/Tumf8'
+import Tumf9 from '../../components/product/tuf/tumf/Tumf9'
+import Tumf10 from '../../components/product/tuf/tumf/Tumf10'
+import Tumf11 from '../../components/product/tuf/tumf/Tumf11'
+import Tumf12 from '../../components/product/tuf/tumf/Tumf12'
+import Tumf13 from '../../components/product/tuf/tumf/Tumf13'
 
 export default {
   name: 'TUA',
@@ -139,7 +163,19 @@ export default {
     Tuaf35,
     Tuaf36,
     Tuaf37,
-	  Tumf1
+	  Tumf1,
+	  Tumf2,
+	  Tumf3,
+	  Tumf4,
+	  Tumf5,
+	  Tumf6,
+	  Tumf7,
+	  Tumf8,
+	  Tumf9,
+	  Tumf10,
+	  Tumf11,
+	  Tumf12,
+	  Tumf13
   },
   data () {
     return {

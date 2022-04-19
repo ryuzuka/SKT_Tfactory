@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - KlaFF"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,17 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">KlaFF</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf10_musician.jpg" alt="tuf_tumf10_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          자칭 타칭 우주최강밴드 KlaFF.<br>
+          KlaFF는 2015년 고등학생 연합에서 시작한 밴드 KlaFF는 쭉 우주최강이라는 목표의식과 함께 달려왔다.
+        </p>
+        <p style="margin-top: 22px;">
+          KlaFF 클라프는 밴드 장르 소개 할때 락과 KlaFF 그 자체다.
+        </p>
+        <p style="margin-top: 22px;">
+          KlaFF 그 자체가 장르가 되고 메인스트림이 되는 음악. 이 개성있는 특징은 아무도 따라 올 수 없을 것이다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +105,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf10',
   components: {
   },
   data () {
@@ -147,8 +154,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

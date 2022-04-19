@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - ReleAse"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,10 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">ReleAse</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf4_musician.jpg" alt="tuf_tumf4_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          이화여자대학교 중앙 락밴드 동아리 밴드 &lt;ReleAse&gt;는 이화여자대학교의 “해방 이화”정신에서 비롯되어 2002년부터 시작된 이화여자대학교 중앙 락밴드 동아리로 기본적으로 록의 범주 안에서 메이저 락밴드, 포스트모던 인디락, 하드락, 얼터너티브, 메탈, 록큰롤, 및 다양한 대중적인 노래 등의 넓은 스펙트럼의 노래를 커버하는 밴드다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +98,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf4',
   components: {
   },
   data () {
@@ -147,8 +147,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

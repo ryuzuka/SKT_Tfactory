@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - IDLER"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,16 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">IDLER</h2>
+        <div class="thumnail"><img src="../../../../assets/images/program/tuf_tumf8_musician.jpg" alt="tuf_tumf8_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          좋아하는 것을 포기하고 싶지 않은 친구들이 모여 만든 밴드 IDLER
+        </p>
+        <p style="margin-top: 22px;">
+          밴드 IDLER은 젊은 날들을 살다 보니 세상은 우리에게 <br>포기를 종용하고 그냥 남들처럼 살라는 말들이 싫어 밴드를 결성했고, 좋아하는 구닥다리 음악을 연주한다.
+        </p>
+        <p style="margin-top: 22px;">
+          누군가는 밴드 IDLER을 보고 시대에 뒤떨어진 아마추어라 할 수 있지만, 어떤 한 사람의 마음에 닿을수 있다면 너무도 행복할 것 같은 밴드다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +104,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf8',
   components: {
   },
   data () {
@@ -147,8 +153,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

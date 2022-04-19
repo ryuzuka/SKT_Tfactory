@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - Push Boundaries"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,13 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">Push Boundaries</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf3_musician.jpg" alt="tuf_tumf3_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          저희는 장르, 세션을 구분하지 않고 자유롭게 음악 활동을 하기 위해 만들어졌다. 전국에 있는 음악을 사랑하는 사람들이 모여있는 동아리이다. 다들 혼자만의 음악을 열심히 하다가 다양한 사람들과의 협업을 위해서 이 곳에 모였습다. 이름의 Push Boundaries처럼 저희가 각자 가지고 있는 경계선을 넘어 새롭고 멋진 음악을 하기 위해 모인 사람들이다. 연합 동아리인 만큼 다양한 학교에 사람들과 다양한 장르의 사람들이 모이다 보니 힙합음악을 하다가도 사람들과 밴드 음악을 하기도 하고, 밴드음악을 하다가도 미디음악을 하기도 합니다. 또한 때로는 각자의 자작곡 뿐만 아니라 다양한 음악을 도전하는 동아리이다.
+        </p>
+        <p style="margin-top: 22px;">
+          한마디로 요약한다면, 꿈을 꾸는 예술가들이다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +101,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf3',
   components: {
   },
   data () {
@@ -147,8 +150,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

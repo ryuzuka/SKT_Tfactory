@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 릴재우×디비젼"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,16 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">릴재우×디비젼</h2>
+        <div class="thumbnail" style="margin-bottom: 8px;"><img src="../../../../assets/images/program/tuf_tumf9_musician1.jpg" alt="tuf_tumf9_musician1.jpg"></div>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf9_musician2.jpg" alt="tuf_tumf9_musician2.jpg"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          동국대학교 힙합동아리 AJAX에서 만난 두 래퍼 릴재우와 디비젼이 유닛을 결성하여 T팩토리 덕콘에 참여한다.
+          이번 공연에서는 그들의 기존 솔로곡들과 미공개 콜라보곡들을 감상할 수 있다.<br>
+          2021년 싱글 '동국대'로 데뷔한 릴재우는 빠른 시간 안에 뮤비 조회수 5.5천회를 돌파하며 동국대생들의 큰 지지를 얻고 있다.<br>
+          이후 '뮤비 찍으려고 만든 노래', '언젠가 특별해질 사나이' 등 수차례의 싱글과 뮤비를 지속적으로 발매하며 그만의 영역을 구축하고 있다.<br>
+          디비젼은 사운드클라우드를 통해 현재까지 6개의 믹스테잎을 발매하며, 진솔한 가사와 감성적인 노래로 많은 리스너들의 공감을 불러일으켰다.<br>
+          힙합플레이야 주관 대회 '선비의 향기'에서 준우승을 하기도 하였으며, 현재는 일곱 번째 믹스테잎 및 공식 데뷔 음원을 준비중이다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +104,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf9',
   components: {
   },
   data () {
@@ -147,8 +153,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }

@@ -10,7 +10,7 @@
       <div class="details-header" style="padding: 31px 12px 40px 20px;">
         <kakao-share
           title="T University Music Festival"
-          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 리퍼블릭"
+          description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대! - 크림슨"
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
@@ -25,10 +25,16 @@
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
-        <h2 class="main-title" style="margin-top:4px;">리퍼블릭</h2>
-        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf1_musician.jpg" alt="tuf_tumf1_musician"></div>
+        <h2 class="main-title" style="margin-top:4px;">크림슨</h2>
+        <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf13_musician.jpg" alt="tuf_tumf13_musician"></div>
         <p style="margin-top: 8px;">
-          힙합동아리 리퍼블릭은 랩팀과 춤팀으로 나누어져 있으며 랩팀에서는 직접 쓴 가사로 랩을하고 춤팀에서는 힙합장르의 춤을 주로 공연한다.
+          크림슨은 1988년 12월 설립된 고려대학교 실력지향 락밴드로 다양한 음악 취향의 사람들이 만나 함께 합을 맞추고 어울리며 음악을 즐기고 공유하는 동아리다.
+        </p>
+        <p style="margin-top: 22px;">
+          음악에 대한 열정과 사랑으로 뭉친 구성원들은 정기공연과 타대학 밴드와의 연합 공연 등을 준비하며 악기를 연습하고 실력을 다지고 있다. 특히, 크림슨은 다양한 구성원들의 취향을 존중하고 그 취향을 실제로 공연에 반영하는 과정에서 타 동아리에서보다 많은 시간의 연습을 하게 된다. 이를 통해 회원들은 이전보다 월등히 높은 연주 실력을 함양하게 되고, 그들의 경험이 아래 기수에게 전해져 실력 향상의 선순환을 이루는 것이 크림슨의 궁극적 목표 중 하나이다.
+        </p>
+        <p style="margin-top: 22px;">
+          또한, 음악을 좋아하는 사람들이 한 곳에 모여 다양한 종류의, 음악적인 공감대를 형성할 수 있는 곳이 크림슨이며 이러한 보금자리를 계속 유지하는 것이 크림슨의 두 번째 궁극적 목표라 할 수 있다. 크림슨의 회원들은 항상 각자의 취향을 존중하고, 이해하려 노력하고 공유하며 그 과정에서 서로 간의 화합을 다지고 있다. 현재 활동 중인 33기는 작년과 올해 유니브 페스티벌 공연, 고려대 총학생회 OT 공연, 고려대 동아리 박람회 공연, 대학 밴드 연합공연에 참가해오며 실력을 쌓아가고 있다.
         </p>
       </div>
       <div class="details-inner">
@@ -98,7 +104,7 @@
 import * as NATIVE from '../../../../js/native'
 
 export default {
-  name: 'Tumf1',
+  name: 'Tumf13',
   components: {
   },
   data () {
@@ -147,8 +153,8 @@ export default {
       }
       ul{
         font-size: 12px;
-      line-height: 19px;
-      color: #787878;
+        line-height: 19px;
+        color: #787878;
       }
     }
   }
