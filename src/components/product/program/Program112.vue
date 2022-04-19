@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class112-slide1.jpg" alt="POP-UP Exhibition X University">
+      <img ref="shareImage" src="../../../assets/images/program/class112-slide1.jpg" alt="POP-UP Exhibition X University">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -166,6 +166,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/tuf-tuaf31-slide1.jpg" alt="tuf-tuaf31-slide1">
+      <img ref="shareImage" src="../../../../assets/images/program/tuf-tuaf31-slide1.jpg" alt="tuf-tuaf31-slide1">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -48,6 +48,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

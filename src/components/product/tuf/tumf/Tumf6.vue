@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/class111-slide1.jpg" alt="T University Music Festival">
+      <img ref="shareImage" src="../../../../assets/images/program/class111-slide1.jpg" alt="T University Music Festival">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -102,10 +102,12 @@
 
 <script>
 import * as NATIVE from '../../../../js/native'
+import KakaoShare from '../../../common/KakaoShare'
 
 export default {
   name: 'Tumf6',
   components: {
+	  KakaoShare
   },
   data () {
     return {
@@ -114,6 +116,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     openShare () {
-      console.log(this.localThumbnail)
       this.$modal.show(ModalKakaoShare, {
         // component props
         title: this.localTitle,

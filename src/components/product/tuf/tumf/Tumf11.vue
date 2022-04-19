@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
 	  <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../../assets/images/program/class111-slide1.jpg" alt="T University Music Festival">
+      <img ref="shareImage" src="../../../../assets/images/program/class111-slide1.jpg" alt="T University Music Festival">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -54,7 +54,7 @@
           <li>※ 본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
         </ul>
       </div>
-<div class="details-inner" style="padding: 40px 0 20px">
+			<div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
 	        <router-link to="/experience/program110?classId=156">
@@ -99,10 +99,12 @@
 
 <script>
 import * as NATIVE from '../../../../js/native'
+import KakaoShare from '../../../common/KakaoShare'
 
 export default {
   name: 'Tumf11',
   components: {
+	  KakaoShare
   },
   data () {
     return {
@@ -111,6 +113,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

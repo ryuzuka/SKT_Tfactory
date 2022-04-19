@@ -4,7 +4,7 @@
     <div class="slider-prd swiper-top">
       <swiper :options="swiperOption">
         <swiper-slide>
-          <div class="thumb"><img src="../../../../assets/images/program/tuf-tuaf26-slide1.jpg" alt=""></div>
+          <div class="thumb"><img ref="shareImage" src="../../../../assets/images/program/tuf-tuaf26-slide1.jpg" alt=""></div>
         </swiper-slide>
         <swiper-slide>
           <div class="thumb"><img src="../../../../assets/images/program/tuf-tuaf26-slide2.jpg" alt=""></div>
@@ -75,6 +75,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

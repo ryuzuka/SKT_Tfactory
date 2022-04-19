@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class111-slide1.jpg" alt="THECON X University">
+      <img ref="shareImage" src="../../../assets/images/program/class111-slide1.jpg" alt="THECON X University">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -26,7 +26,7 @@
         <ul>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf1">-->
+            <router-link to="/experience/tua/tumf1">
               <div class="card">
                 <div class="text">
                   <p class="name">리퍼블릭</p>
@@ -35,11 +35,11 @@
                   <img src="../../../assets/images/program/musician1.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf2">-->
+            <router-link to="/experience/tua/tumf2">
               <div class="card">
                 <div class="text">
                   <p class="name">마린시티</p>
@@ -48,11 +48,11 @@
                   <img src="../../../assets/images/program/musician2.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf3">-->
+            <router-link to="/experience/tua/tumf3">
               <div class="card">
                 <div class="text">
                   <p class="name">Push Boundaries</p>
@@ -61,11 +61,11 @@
                   <img src="../../../assets/images/program/musician3.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf4">-->
+            <router-link to="/experience/tua/tumf4">
               <div class="card">
                 <div class="text">
                   <p class="name">ReleAse</p>
@@ -74,11 +74,11 @@
                   <img src="../../../assets/images/program/musician4.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf5">-->
+            <router-link to="/experience/tua/tumf5">
               <div class="card">
                 <div class="text">
                   <p class="name">다하다</p>
@@ -87,11 +87,11 @@
                   <img src="../../../assets/images/program/musician5.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf6">-->
+            <router-link to="/experience/tua/tumf6">
               <div class="card">
                 <div class="text">
                   <p class="name">환상문학청년</p>
@@ -100,11 +100,11 @@
                   <img src="../../../assets/images/program/musician6.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf7">-->
+            <router-link to="/experience/tua/tumf7">
               <div class="card">
                 <div class="text">
                   <p class="name">당신의 취향을 담는, 취향상점</p>
@@ -113,11 +113,11 @@
                   <img src="../../../assets/images/program/musician7.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf8">-->
+            <router-link to="/experience/tua/tumf8">
               <div class="card">
                 <div class="text">
                   <p class="name">IDLER</p>
@@ -126,11 +126,11 @@
                   <img src="../../../assets/images/program/musician8.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf9">-->
+            <router-link to="/experience/tua/tumf9">
               <div class="card">
                 <div class="text">
                   <p class="name">릴재우×디비젼</p>
@@ -139,11 +139,11 @@
                   <img src="../../../assets/images/program/musician9.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf10">-->
+            <router-link to="/experience/tua/tumf10">
               <div class="card">
                 <div class="text">
                   <p class="name">KlaFF</p>
@@ -152,11 +152,11 @@
                   <img src="../../../assets/images/program/musician10.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf11">-->
+            <router-link to="/experience/tua/tumf11">
               <div class="card">
                 <div class="text">
                   <p class="name">사이버 파크 게임랜드</p>
@@ -165,11 +165,11 @@
                   <img src="../../../assets/images/program/musician11.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf12">-->
+            <router-link to="/experience/tua/tumf12">
               <div class="card">
                 <div class="text">
                   <p class="name">크래늄</p>
@@ -178,11 +178,11 @@
                   <img src="../../../assets/images/program/musician12.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
           <li>
             <div class="date"></div>
-<!--            <router-link to="/experience/tua/tumf13">-->
+            <router-link to="/experience/tua/tumf13">
               <div class="card">
                 <div class="text">
                   <p class="name">크림슨</p>
@@ -191,7 +191,7 @@
                   <img src="../../../assets/images/program/musician13.jpg" alt="musician">
                 </div>
               </div>
-<!--            </router-link>-->
+            </router-link>
           </li>
         </ul>
       </div>
@@ -280,6 +280,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {
