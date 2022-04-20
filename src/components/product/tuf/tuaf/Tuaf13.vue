@@ -25,11 +25,15 @@
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce">
+        <p class="introduce" style="margin-bottom: 24px;">
           <b>며농/김현호 작가</b>는 다양한 이유로 여러 도형들은 각기 다른 이미지를 갖는다.<br>
           도형을 감정적으로 바라본 순간 나의 생각을 담기에 좋은 그릇이라는 것을 깨달았다.<br>
           이러한 도형들을 나만의 언어로 재해석해 내 생각을 상징하는 물체로 만드는 작업을 하고 있다.<br>
         </p>
+        <div class="instagram">
+          <span class="sns">작가 SNS</span>
+          <a href="#" @click.prevent="snsLink('www.instagram.com/myeo.nong')">www.instagram.com/myeo.nong</a>
+        </div>
       </div>
     </div>
     <!-- //details -->
@@ -79,6 +83,14 @@ export default {
   .introduce{
     margin-top: 0;
     line-height: 20px;
+  }
+  .instagram{
+    line-height: 24px;
+    .sns{
+      margin-right: 19px;
+      font-weight: bold;
+      color: #000;
+    }
   }
 }
 </style>

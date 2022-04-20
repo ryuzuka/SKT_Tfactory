@@ -23,9 +23,13 @@
       </div>
       <div class="details-inner">
         <h2 class="main-title">작가소개</h2>
-        <p class="introduce">
+        <p class="introduce" style="margin-bottom: 24px;">
           벅찬 글자의 나열, 벅찬 그림의 호흡에 청춘의 감정과 인생을 담았다. 문학과 미술은 강한 시너지를 불러온다. 그림에 한 층 더 몰입할 수 있도록, 나의 그림은 문학적 제목과 하나의 몸을 이룬다. 이 세상의 주인공이 내가 아니더라도, 그대가 주인공이 되는 그림을 그리고자 한다. 청춘의 사랑과 감정을 그리는 아티스트 <b>이재은(Lees) 작가</b>이다.
         </p>
+        <div class="instagram">
+          <span class="sns">작가 SNS</span>
+          <a href="#" @click.prevent="snsLink('www.instagram.com/itleesme')">www.instagram.com/itleesme</a>
+        </div>
       </div>
     </div>
     <!-- //details -->
@@ -75,6 +79,14 @@ export default {
   .introduce{
     margin-top: 0;
     line-height: 20px;
+  }
+  .instagram{
+    line-height: 24px;
+    .sns{
+      margin-right: 19px;
+      font-weight: bold;
+      color: #000;
+    }
   }
 }
 </style>

@@ -94,9 +94,6 @@
             <span class="sub_title" style="width: 52px;">장소</span>
             <span class="desc" style="margin-left: 24px;">SK텔레콤 플래그십스토어<br>T Factory 2층 POP-UP 전시존<br>(홍대입구역 9번 출구)</span>
           </dd>
-          <dd style="margin-top: 16px">
-            <span>※전시 작품은 추가 공지될 예정입니다.</span>
-          </dd>
         </dl>
       </div>
       <div class="details-inner">
