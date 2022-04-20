@@ -32,7 +32,7 @@
         </p>
         <div class="instagram">
           <span class="sns">작가 SNS</span>
-          <a href="#" @click.prevent="snsLink('www.instagram.com/myeo.nong')">www.instagram.com/myeo.nong</a>
+          <a href="#" @click.prevent="snsLink('https://www.instagram.com/myeo.nong')">www.instagram.com/myeo.nong</a>
         </div>
       </div>
     </div>
@@ -59,6 +59,14 @@ export default {
 	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
+	  snsLink (snsUrl) {
+		  const mobileOS = this.$cookies.get('platform')
+		  if (mobileOS === 'A' || mobileOS === 'I') {
+			  NATIVE.sysBrowserOpen(mobileOS, snsUrl)
+		  } else {
+			  window.open(snsUrl, '_blank')
+		  }
+	  },
     clickButton () {
       const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
       const mobileOS = this.$cookies.get('platform')
