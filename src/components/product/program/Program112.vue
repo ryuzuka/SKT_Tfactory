@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img ref="shareImage" src="../../../assets/images/program/class112-slide1.jpg" alt="POP-UP Exhibition X University">
+      <img ref="shareImage" src="../../../assets/images/program/class112-slide2.jpg" alt="POP-UP Exhibition X University">
     </div>
     <!-- //slide -->
     <!-- details -->
