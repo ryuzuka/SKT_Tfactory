@@ -43,7 +43,7 @@
         <dl>
           <dd>
             <span class="sub_title" style="width: 55px;">공연 기간</span>
-            <span class="desc">5월 중 <em>*일정 추후 공지 예정</em></span>
+            <span class="desc">2022년 5월 20일 (토) PM 7:00</span>
           </dd>
            <dd>
             <span class="sub_title" style="width: 55px;">장소</span>

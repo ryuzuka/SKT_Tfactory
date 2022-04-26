@@ -28,10 +28,10 @@
         <h2 class="main-title" style="margin-top:4px;">다하다</h2>
         <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf5_musician.jpg" alt="tuf_tumf5_musician"></div>
         <p style="margin-top: 8px;">
-          성균관대학교 밴드팀 다하다는 성균관대학교의 중앙음악창작동아리 소리사랑에서 만나 이제는 하나의 팀을 결성해 활동 중이다.
+          ‘다 같이 하고 싶은 거 다 하자’며 결성된 성균관대학교 출신 밴드 다하다는 장르를 가리지 않습니다. 관객이 원하는 음악, 우리가 즐거운 음악이라면 어떤 음악이든 좋습니다.
         </p>
         <p style="margin-top: 22px;">
-          '다하다'는 '다같이 하고싶은 것 다하자'의 의미를 담고 있다. 지난 1월 첫번째 디지털 싱글 앨범 '내리실 문은'을 발매했으며, 총 5명으로 이루어져 있다.
+          2022년 1월 발매된 디지털 싱글 ‘내리실 문을’은 모든 사람이 거쳐가는 인생의 한 부분을 노래합니다. 앞으로도 많은 사람이 공감할 수 있는 이야기, 편안하게 들을 수 있는 멜로디를 노래하고자 합니다.
         </p>
       </div>
       <div class="details-inner">
@@ -39,7 +39,7 @@
         <dl>
           <dd>
             <span class="sub_title" style="width: 55px;">공연 기간</span>
-            <span class="desc">5월 중 <em>*일정 추후 공지 예정</em></span>
+            <span class="desc">2022년 5월 21일 (토) PM 7:00</span>
           </dd>
            <dd>
             <span class="sub_title" style="width: 55px;">장소</span>

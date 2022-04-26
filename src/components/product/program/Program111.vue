@@ -2,7 +2,7 @@
   <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img ref="shareImage" src="../../../assets/images/program/class111-slide1.jpg" alt="THECON X University">
+      <img ref="shareImage" src="../../../assets/images/program/class111-slide2.jpg" alt="THECON X University">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -25,170 +25,209 @@
       <div class="lineup" style="padding: 0px 18px 36px 24px;">
         <ul>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf1">
-              <div class="card">
+            <div class="date">
+              <span>5.6<br>FRI</span>
+            </div>
+            <router-link to="/experience/tua/tumf12">
+              <div class="card" Style="margin-left: 27px;">
                 <div class="text">
-                  <p class="name">리퍼블릭</p>
+                  <p class="name">크래늄</p>
+                  <p class="time">PM 6:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician1.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician12.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf2">
-              <div class="card">
-                <div class="text">
-                  <p class="name">마린시티</p>
+            <div class="date">
+              <span>5.6<br>FRI</span>
+            </div>
+            <router-link to="/experience/tua/tumf7">
+              <div class="card" Style="margin-left: 27px;">
+                <div class="text" style="padding: 6px 19px;">
+                  <p class="name" style="font-family:Noto Sans KR">당신의 취향을 담는,<br>취향상점</p>
+                  <p class="time">PM 8:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician2.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician7.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf3">
-              <div class="card">
-                <div class="text">
-                  <p class="name">Push Boundaries</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician3.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
+            <div class="date">
+              <span>5.7<br>SAT</span>
+            </div>
             <router-link to="/experience/tua/tumf4">
-              <div class="card">
+              <div class="card" Style="margin-left: 21px;">
                 <div class="text">
                   <p class="name">ReleAse</p>
+                  <p class="time">PM 4:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician4.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician4.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
-          <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf5">
-              <div class="card">
+           <li>
+            <div class="date">
+              <span>5.7<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf13">
+              <div class="card" Style="margin-left: 21px;">
                 <div class="text">
-                  <p class="name">다하다</p>
+                  <p class="name">크림슨</p>
+                  <p class="time">PM 6:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician5.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician13.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf6">
-              <div class="card">
-                <div class="text">
-                  <p class="name">환상문학청년</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician6.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf7">
-              <div class="card">
-                <div class="text">
-                  <p class="name">당신의 취향을 담는, 취향상점</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician7.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf8">
-              <div class="card">
-                <div class="text">
-                  <p class="name">IDLER</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician8.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf9">
-              <div class="card">
-                <div class="text">
-                  <p class="name">릴재우×디비젼</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician9.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf10">
-              <div class="card">
-                <div class="text">
-                  <p class="name">KlaFF</p>
-                </div>
-                <div class="image">
-                  <img src="../../../assets/images/program/musician10.jpg" alt="musician">
-                </div>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <div class="date"></div>
+            <div class="date">
+              <span>5.14<br>SAT</span>
+            </div>
             <router-link to="/experience/tua/tumf11">
               <div class="card">
                 <div class="text">
                   <p class="name">사이버 파크 게임랜드</p>
+                  <p class="time">PM 3:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician11.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician11.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf12">
+            <div class="date">
+              <span>5.14<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf3">
               <div class="card">
                 <div class="text">
-                  <p class="name">크래늄</p>
+                  <p class="name">Push Boundaries</p>
+                  <p class="time">PM 4:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician12.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician3.png" alt="musician">
                 </div>
               </div>
             </router-link>
           </li>
           <li>
-            <div class="date"></div>
-            <router-link to="/experience/tua/tumf13">
+            <div class="date">
+              <span>5.20<br>FRI</span>
+            </div>
+            <router-link to="/experience/tua/tumf6">
               <div class="card">
                 <div class="text">
-                  <p class="name">크림슨</p>
+                  <p class="name">환상문학청년</p>
+                  <p class="time">PM 6:00</p>
                 </div>
                 <div class="image">
-                  <img src="../../../assets/images/program/musician13.jpg" alt="musician">
+                  <img src="../../../assets/images/program/musician6.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.20<br>FRI</span>
+            </div>
+            <router-link to="/experience/tua/tumf2">
+              <div class="card">
+                <div class="text">
+                  <p class="name">마린시티</p>
+                  <p class="time">PM 7:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician2.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.20<br>FRI</span>
+            </div>
+            <router-link to="/experience/tua/tumf10">
+              <div class="card">
+                <div class="text">
+                  <p class="name">KlaFF</p>
+                  <p class="time">PM 8:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician10.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.21<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf1">
+              <div class="card">
+                <div class="text">
+                  <p class="name">리퍼블릭</p>
+                  <p class="time">PM 4:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician1.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.21<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf9">
+              <div class="card">
+                <div class="text">
+                  <p class="name">릴재우×디비젼</p>
+                  <p class="time">PM 5:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician9.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.21<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf5">
+              <div class="card">
+                <div class="text">
+                  <p class="name">다하다</p>
+                  <p class="time">PM 7:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician5.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date">
+              <span>5.21<br>SAT</span>
+            </div>
+            <router-link to="/experience/tua/tumf8">
+              <div class="card">
+                <div class="text">
+                  <p class="name">IDLER</p>
+                  <p class="time">PM 8:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/musician8.png" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -199,17 +238,14 @@
         <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
         <dl>
           <dd>
-            <span class="sub_title" style="width: 52px;">전시기간</span>
-            <span class="desc" style="margin-left: 24px;">2022년 5월 중 *일정 추후 공지 예정</span>
+            <span class="sub_title" style="width: 52px; margin-bottom: 14px;">전시기간</span>
+            <span class="desc" style="margin-left: 24px;">2022년 5월 6일 (금) ~ 5월 21일 (토)</span>
           </dd>
           <dd>
             <span class="sub_title" style="width: 52px;">장소</span>
             <span class="desc" style="margin-left: 24px;">
-	            SK텔레콤 플래그십스토어<br>T Factory<br>(홍대입구역 9번 출구)
+	            SK텔레콤 플래그십스토어 T Factory<br>(홍대입구역 9번 출구)
             </span>
-          </dd>
-          <dd style="margin-top: 16px">
-            <span>※대학생 뮤지션 라인업은 추가 공지될 예정입니다.</span>
           </dd>
         </dl>
       </div>
@@ -314,15 +350,12 @@ export default {
   ul{
     li{
       .card{
-        position: relative;
-        margin-left: 9px;
-        background: url(~@/assets/images/program/L_background-card.png) no-repeat 0px 0px;
-        width: 304px;
-        height: 78px;
-        background-size: cover;
-        .text{
-          padding: 27px 16px;
-        }
+        margin-left: 19px;
+        // position: relative;
+        // background: url(~@/assets/images/program/L_background-card.png) no-repeat 0px 0px;
+        // width: 304px;
+        // height: 78px;
+        // background-size: cover;
       }
     }
   }
