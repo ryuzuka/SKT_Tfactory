@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class110-slide2.jpg" alt="T대학 우주 축제">
+      <img ref="shareImage" src="../../../assets/images/program/class110-slide2.jpg" alt="T대학 우주 축제">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -180,6 +180,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {
