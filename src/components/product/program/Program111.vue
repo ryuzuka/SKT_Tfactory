@@ -13,8 +13,8 @@
           description="대학생 뮤지션이 꾸미는 덕콘의 스페셜 무대"
         ></kakao-share>
 
-        <em class="main-subtitle">대학생 뮤지션이 꾸미는 덕콘의 스페셜 무대</em>
-        <h2 class="main-title" style="margin-top: 5px;">T University<br>Music Festival</h2>
+        <em class="main-subtitle">T University Music Festival</em>
+        <h2 class="main-title" style="margin-top: 5px;">TFU 기간 열리는<br>스페셜 덕콘</h2>
         <p class="desc2" style="margin-top: 0px;">
           무대에 설 기회가 적어진 대학생 뮤지션들에게 T Factory의 덕콘 무대를 오픈합니다.<br>T대학 우주 축제 기간 동안 진행되는 '덕콘'은 인기 뮤지션과 대학생 뮤지션으로 라인업이 풍성하게 구성됩니다!<br>보다 더 특별하고 열정적인 덕콘을 기대하세요!
         </p>
@@ -41,11 +41,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.6<br>FRI</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf7">
-              <div class="card" Style="margin-left: 27px;">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text" style="padding: 6px 19px;">
                   <p class="name" style="font-family:Noto Sans KR">당신의 취향을 담는,<br>취향상점</p>
                   <p class="time">PM 8:00</p>
@@ -73,17 +71,30 @@
             </router-link>
           </li>
            <li>
-            <div class="date">
-              <span>5.7<br>SAT</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf13">
-              <div class="card" Style="margin-left: 21px;">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">크림슨</p>
                   <p class="time">PM 6:00</p>
                 </div>
                 <div class="image">
                   <img src="../../../assets/images/program/musician13.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <div class="date"><span>5.13<br>FRI</span></div>
+            <router-link to="">
+              <div class="card">
+                <div class="text">
+                  <p class="name">장희원</p>
+                  <span class="flag-solid10">MUSICIAN</span>
+                  <p class="time">PM 7:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/special_musician1.png" alt="musician">
                 </div>
               </div>
             </router-link>
@@ -105,11 +116,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.14<br>SAT</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf3">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">Push Boundaries</p>
                   <p class="time">PM 4:00</p>
@@ -137,11 +146,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.20<br>FRI</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf2">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">마린시티</p>
                   <p class="time">PM 7:00</p>
@@ -153,11 +160,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.20<br>FRI</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf10">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">KlaFF</p>
                   <p class="time">PM 8:00</p>
@@ -169,11 +174,39 @@
             </router-link>
           </li>
           <li>
+            <div class="date"><span>5.21<br>SAT</span></div>
+            <router-link to="">
+              <div class="card">
+                <div class="text">
+                  <p class="name">브랜뉴차일드</p>
+                  <span class="flag-solid10">DANCER</span>
+                  <p class="time">PM 2:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/special_musician2.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="">
+              <div class="card" Style="margin-left: 61px;">
+                <div class="text">
+                  <p class="name">미스몰리</p>
+                  <span class="flag-solid10">DANCER</span>
+                  <p class="time">PM 3:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/special_musician3.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
+          <li>
             <div class="date">
-              <span>5.21<br>SAT</span>
             </div>
             <router-link to="/experience/tua/tumf1">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">리퍼블릭</p>
                   <p class="time">PM 4:00</p>
@@ -185,11 +218,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.21<br>SAT</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf9">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">릴재우×디비젼</p>
                   <p class="time">PM 5:00</p>
@@ -201,11 +232,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.21<br>SAT</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf5">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">다하다</p>
                   <p class="time">PM 7:00</p>
@@ -217,11 +246,9 @@
             </router-link>
           </li>
           <li>
-            <div class="date">
-              <span>5.21<br>SAT</span>
-            </div>
+            <div class="date"></div>
             <router-link to="/experience/tua/tumf8">
-              <div class="card">
+              <div class="card" Style="margin-left: 61px;">
                 <div class="text">
                   <p class="name">IDLER</p>
                   <p class="time">PM 8:00</p>
@@ -232,17 +259,32 @@
               </div>
             </router-link>
           </li>
+          <li>
+            <div class="date"><span>5.27<br>FRI</span></div>
+            <router-link to="">
+              <div class="card">
+                <div class="text">
+                  <p class="name">라쿠나</p>
+                  <span class="flag-solid10">MUSICIAN</span>
+                  <p class="time">PM 7:00</p>
+                </div>
+                <div class="image">
+                  <img src="../../../assets/images/program/special_musician4.png" alt="musician">
+                </div>
+              </div>
+            </router-link>
+          </li>
         </ul>
       </div>
       <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 13px;">일정</h2>
+        <h2 class="main-title">일정</h2>
         <dl>
           <dd>
-            <span class="sub_title" style="width: 52px; margin-bottom: 14px;">전시기간</span>
-            <span class="desc" style="margin-left: 24px;">2022년 5월 6일 (금) ~ 5월 21일 (토)</span>
+            <span class="sub_title" style="width: 55px; margin-bottom: 14px;">공연 기간</span>
+            <span class="desc" style="margin-left: 24px;">2022년 5월 6일 (금) ~ 5월 27일 (금)</span>
           </dd>
           <dd>
-            <span class="sub_title" style="width: 52px;">장소</span>
+            <span class="sub_title" style="width: 55px;">장소</span>
             <span class="desc" style="margin-left: 24px;">
 	            SK텔레콤 플래그십스토어 T Factory<br>(홍대입구역 9번 출구)
             </span>
@@ -350,14 +392,15 @@ export default {
   ul{
     li{
       .card{
-        margin-left: 19px;
-        // position: relative;
-        // background: url(~@/assets/images/program/L_background-card.png) no-repeat 0px 0px;
-        // width: 304px;
-        // height: 78px;
-        // background-size: cover;
+      margin-left: 19px;
+        .text{
+          .flag-solid10{
+            padding: 1px 5px;
+            margin: 3px 4px;
+          }
+         }
+        }
       }
     }
   }
-}
 </style>
