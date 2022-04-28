@@ -9,54 +9,53 @@
     <div class="details sticky">
       <div class="details-header">
         <kakao-share
-          title="인스타그램 200프로 활용법&나만의 감각 있는 피드꾸미기!"
+          title="[1DAY 릴스 제작] 요즘 유행하는 릴스의 모든 것!"
           description="셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스"
         ></kakao-share>
 
         <em class="flag-solid7">MEDIA CLASS</em>
         <h2 class="details-tit">
-          인스타그램 200프로 활용법&<br>
-          나만의 감각 있는 피드꾸미기!
+          [1DAY 릴스 제작]<br>요즘 유행하는 릴스의 모든 것!
         </h2>
         <div class="tags">
           <span class="flag-basic">원데이클래스</span>
           <span class="flag-basic">초보용</span>
-          <span class="flag-basic">사진</span>
+          <span class="flag-basic">릴스</span>
+          <span class="flag-basic">SNS</span>
         </div>
-        <p class="desc type2">셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스</p>
-        <ul class="texts-info" style="margin-top: 8px; padding-left: 18px; font-size:14px; text-indent: -18px; line-height:22px;">
+        <p class="desc type2">인스타그램 200% 활용법<br>감각있는 릴스 만들기!</p>
+        <p class="desc type2">셀린&루나와 함께하는 릴스 만들기 원데이 클래스</p>
+        <ul class="texts-info" style="padding-left: 13px; text-indent: -13.4px;">
           <li>※ 본 프로그램은 SKT의 IT/문화체험 증진 프로그램의 일환으로 무료로 진행됩니다.</li>
         </ul>
       </div>
       <div class="details-inner">
         <h3 class="subtit">클래스 소개</h3>
         <p>
-          스마트폰 카메라로도 느낌있게~<br>
-          나만의 감성있는 인스타그램 피드 꾸미는 방법.
-        </p>
-        <p>
-          기초적인 카메라 설정부터 피드꾸미는 꿀팁까지!<br>
-          감각있는 사진으로 인스타그램 피드를 마음껏 꾸며보세요
+          이제 피드만 있는 인스타그램은 그만!<br>
+          남들 다 하는 릴스, 나도 해보고 싶다면?<br>
+          요즘 유행하는 릴스의 기초부터 심화과정까지 초보자분<br>들을 위한 맞춤 클래스를 준비했습니다.
         </p>
         <h3 class="subtit">클래스 구성</h3>
         <ol class="step-list" start="margin-top:20px">
-          <li>스마트폰 기본셋팅</li>
-          <li>인물사진 모드 활용</li>
-          <li>기본카메라 편집 활용</li>
-          <li>보정어플 활용</li>
-          <li>인스타그램 피드 꾸미는 어플 추천</li>
+          <li>릴스 알아보기</li>
+          <li>미리 찍은 사진/영상으로 릴스 만들어보기</li>
+          <li>요새 유행하는 릴스 챌린지 알아보기</li>
+          <li>릴스 편집기능 활용해보기</li>
+          <li>실습</li>
         </ol>
         <h3 class="subtit">준비물</h3>
-        <p>스마트폰</p>
+        <ol class="step-list" start="margin-top:20px">
+          <li>스마트폰</li>
+          <li>인스타그램 계정</li>
+          <li>열정과 적극적인 참여!</li>
+        </ol>
         <h3 class="subtit">추천 대상</h3>
-        <ul class="texts-list">
-          <li>스마트폰 내 기본카메라 기능을 잘 모르셨던 분</li>
-          <li>사진 좀 잘 찍으라는 친구의 구박에서<br>
-            벗어나고 싶으신 분
-          </li>
-          <li>인스타그램 피드를 예쁘게 꾸미고 싶으신 분</li>
-          <li>사진을 감각있게 편집하고 싶으신 분</li>
-        </ul>
+        <ol class="step-list" start="margin-top:20px">
+          <li>인스타그램 입문자</li>
+          <li>릴스를 한번도 해본 적 없지만 사용해보고 싶은 분</li>
+          <li>유행하는 챌린지 참여하고 싶은데 혼자서 하기 힘드신 분</li>
+        </ol>
         <h3 class="subtit">소요시간 및 장소</h3>
         <p>
           1시간<br>
@@ -112,5 +111,12 @@ export default {
   .texts-list li:nth-child(2):before {
     content: '-' !important;
     margin-left: -9px;
+  }
+  .texts-info{
+    margin-top: 3px;
+    padding-left: 12px;
+    font-size: 12px;
+    line-height: 18px;
+    text-indent: -13.4px;
   }
 </style>
