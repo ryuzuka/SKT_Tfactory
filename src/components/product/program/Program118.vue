@@ -2,7 +2,7 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class118-slide1.jpg" alt="T Factory x FLO 덕콘 | 2022.5 라쿠나">
+      <img ref="shareImage" src="../../../assets/images/program/class118-slide1.jpg" alt="T Factory x FLO 덕콘 | 2022.5 라쿠나">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -201,6 +201,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {

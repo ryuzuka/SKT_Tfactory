@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class114_slide1.jpg" alt="T University Music Festival">
+      <img ref="shareImage" src="../../../assets/images/program/class114_slide1.jpg" alt="T University Music Festival">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -111,7 +111,7 @@
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
 	        <div class="program">
-            <a href="/experience/program111?classId=154">
+            <router-link to="/experience/program111?classId=154">
               <div class="desc">
                 <p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
                 <span class="topic">TUMF</span>
@@ -120,7 +120,7 @@
               <div class="images">
                 <img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
               </div>
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="program">
@@ -177,6 +177,7 @@ export default {
   created () {
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
     clickButton () {
