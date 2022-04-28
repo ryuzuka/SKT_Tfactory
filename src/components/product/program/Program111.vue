@@ -189,6 +189,8 @@
             </router-link>
           </li>
           <li>
+	          <div class="date">
+	          </div>
             <router-link to="">
               <div class="card" Style="margin-left: 61px;">
                 <div class="text">

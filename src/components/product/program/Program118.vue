@@ -75,7 +75,7 @@
         <ul>
           <li>
             <div class="date"><span>5.13<br>FRI</span></div>
-            <router-link to="/experience/program116?classId=114">
+            <router-link to="/experience/program116?classId=160">
               <div class="card">
                 <div class="text">
                   <p class="name">장희원</p>
@@ -89,7 +89,7 @@
           </li>
           <li>
             <div class="date"><span>5.21<br>SAT</span></div>
-            <router-link to="/experience/program117?classId=115">
+            <router-link to="/experience/program117?classId=161">
               <div class="card">
                 <div class="text">
                   <p class="name">브랜뉴차일드</p>
@@ -102,7 +102,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/experience/program117?classId=115">
+            <router-link to="/experience/program117?classId=161">
               <div class="date"></div>
               <div class="card" Style="margin-left: 61px;">
                 <div class="text">
@@ -117,7 +117,7 @@
           </li>
           <li>
             <div class="date"><span>5.27<br>FRI</span></div>
-            <router-link to="/experience/program118?classId=116">
+            <router-link to="/experience/program118?classId=162">
               <div class="card">
                 <div class="text">
                   <p class="name">라쿠나</p>
