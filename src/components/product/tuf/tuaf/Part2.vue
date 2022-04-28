@@ -68,7 +68,7 @@
             <li>
              <router-link to="/experience/tua/tuaf27">
                 <img src="../../../../assets/images/program/class112-part2-art8.jpg" alt="part2-art8">
-                <p>윤지민<br><em>우주유영</em></p>
+                <p>지세 Zi-se<br><em>우주유영</em></p>
              </router-link>
             </li>
             <li>

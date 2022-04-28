@@ -62,7 +62,7 @@
           </ul>
           <ul style="padding-right: 22px;">
             <li>윤여송</li>
-            <li>윤지민</li>
+            <li>지세 Zi-se</li>
             <li>이상우, 조은서</li>
             <li>이세현</li>
             <li>이재은</li>
