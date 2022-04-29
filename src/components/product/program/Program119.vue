@@ -2,7 +2,7 @@
   <div class="contentss" ref="contents">
     <!-- slide -->
     <div class="slider-prd" style="padding-top:56px;">
-      <img src="../../../assets/images/program/class119_crew_class_slide1.jpg" alt="어린이날 스페셜 프로그램">
+      <img ref="shareImage" src="../../../assets/images/program/class119_crew_class_slide1.jpg" alt="어린이날 스페셜 프로그램">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -76,8 +76,8 @@
           </dl>
           <p style= "line-height: 24px; margin-top: 16px;">* 없을 시 크루의 아이패드 화면을 함께 보며 진행합니다.<br>*가족의 이야기를 사전에 수집하기 위하여 음악 클래스 신청 고객 대상 사전에 연락을 드릴 예정입니다.</p>
           <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px; 40px;">
-              <router-link class="btn-line big" to="">우리 가족 노래 만들기 예약하기</router-link>
+            <div class="btn-wrap" style="margin: 22px 12px 40px;">
+              <button class="btn-line big" @click="bookProgram(0)">우리 가족 노래 만들기 예약하기</button>
             </div>
           </div>
         </div>
@@ -96,8 +96,8 @@
           </dl>
           <p style= "line-height: 24px; margin-top: 16px;">* 없을 시 현장 대여 가능합니다.</p>
           <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px; 40px;">
-              <router-link class="btn-line big" to="">우리가족 얼굴 서로 그려주기 예약하기</router-link>
+            <div class="btn-wrap" style="margin: 22px 12px 40px;">
+              <button class="btn-line big" @click="bookProgram(1)">우리가족 얼굴 서로 그려주기 예약하기</button>
             </div>
           </div>
         </div>
@@ -115,8 +115,8 @@
             </dd>
           </dl>
           <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px; 40px;">
-              <router-link class="btn-line big" to="">우리 가족 첫 릴스 만들기 예약하기</router-link>
+            <div class="btn-wrap" style="margin: 22px 12px 40px;">
+              <button class="btn-line big" @click="bookProgram(2)">우리 가족 첫 릴스 만들기 예약하기</button>
             </div>
           </div>
         </div>
@@ -135,8 +135,8 @@
           </dl>
           <p style= "line-height: 24px;">* 없을 시 현장 대여 가능합니다.</p>
           <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px; 0 0;">
-              <router-link class="btn-line big" to="">우리 가족 첫 브이로그 만들기 예약하기</router-link>
+            <div class="btn-wrap" style="margin: 22px 12px 0 0;">
+              <button class="btn-line big" @click="bookProgram(3)">우리 가족 첫 브이로그 만들기 예약하기</button>
             </div>
           </div>
         </div>
@@ -180,8 +180,8 @@
           </dd>
         </dl>
         <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px; 0 0;">
-              <router-link class="btn-line big" to="">우리가족 모바일라이프 컨설팅 예약하기</router-link>
+            <div class="btn-wrap" style="margin: 22px 12px 0 0;">
+              <button @click="bookProgram(4)" class="btn-line big">우리가족 모바일라이프 컨설팅 예약하기</button>
             </div>
           </div>
       </div>
@@ -196,7 +196,6 @@
               <div class="desc">
                 <p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
                 <span class="topic">TUMF</span>
-                <!-- <img style= "bottom: -7px; right: 85px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow"> -->
               </div>
               <div class="images">
                 <img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
@@ -209,7 +208,6 @@
 	          <div class="desc">
 	            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
 	            <span class="topic">T대학 우주 축제, TUF</span>
-	            <!-- <img style="right: -61px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow"> -->
 	          </div>
 	          <div class="images">
 	            <img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
@@ -221,7 +219,6 @@
 	          <div class="desc">
 	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
 	            <span class="topic">TUAF</span>
-	            <!-- <img style="bottom: -7px; right: 165px;" src="../../../assets/images/program/leftarrow-bk.png" alt="leftarrow"> -->
 	          </div>
 	          <div class="images">
 	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
@@ -231,44 +228,79 @@
       </div>
     </div>
     <!-- //details -->
-
-    <!-- button set -->
-    <program-button :visible="false"></program-button>
-    <!-- // button set -->
   </div>
 </template>
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
-import ProgramButton from './components/ProgramButton'
-import programLineupNew from './components/ProgramLineupNew'
-import * as NATIVE from '../../../js/native'
+import * as STORE from '../../../js/store'
+import _ from 'lodash'
 
 export default {
   name: 'Program119',
   components: {
-    KakaoShare,
-    ProgramButton,
-	  programLineupNew
+    KakaoShare
   },
   data () {
     return {
+      isLogin: false,
+	    classIdList: [157, 158, 159, 163, 164],
+	    isApply: [false, false, false, false, false]
     }
   },
   created () {
+	  this.$store.watch(() => {
+		  if (this.$store.getters.CONSTANTS.session_alive === true) {
+			  this.isLogin = true
+
+			  for (let i = 0; i < this.classIdList.length; ++i) {
+          this.checkApply(i)
+			  }
+		  }
+	  })
   },
   mounted () {
+	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
-    clickButton () {
-      const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
-      const mobileOS = this.$cookies.get('platform')
-      if (mobileOS === 'A' || mobileOS === 'I') {
-        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
-      } else {
-        window.open(redirectURL, '_blank')
-      }
-    }
+	  bookProgram (index) {
+		  if (this.isLogin) {
+			  if (this.isApply[index]) {
+				  this.alertAlreadyApply()
+			  } else {
+				  let path = '/sev/booking/program/date/shop'
+				  this.$router.push(path + '?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classIdList[index])
+			  }
+		  } else {
+			  localStorage.setItem('previous_url', this.$route.fullPath)
+			  this.$router.push({'name': 'Login'})
+		  }
+	  },
+    checkApply (index) {
+      let status = ''
+      STORE.getProgramClassBook(this.classIdList[index]).then(result => {
+        if (result['PROGRAM_CLASS'].length === 0) return
+
+        _.forEach(result['PROGRAM_CLASS'], program => {
+          status = program['STATUS']
+        })
+        if (status === 'apply') {
+          this.isApply[index] = true
+        }
+      })
+    },
+	  alertAlreadyApply () {
+		  this.$modal.show('dialog', {
+			  title: `이미 신청하신 프로그램입니다.`,
+			  text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
+			  buttons: [{
+				  title: '확인',
+				  handler: () => {
+					  this.$modal.hide('dialog')
+				  }
+			  }]
+		  })
+	  }
   }
 }
 </script>
