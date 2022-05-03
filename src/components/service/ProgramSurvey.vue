@@ -73,8 +73,11 @@ export default {
       } else if (type === 1) {
         this.crewName = this.prevCrewName
       }
-      this.attendance = this.prevAttendance[type]
-      this.setAttendanceData(type)
+	    this.setAttendanceData(type)
+      this.attendance = ''
+      this.$nextTick(() => {
+	      this.attendance = this.prevAttendance[type]
+      })
     },
     changeCrewName () {
       this.prevCrewName = this.crewName
@@ -92,11 +95,13 @@ export default {
         maxAttendance = this.questionList[2]['CHOICE'].length
       }
       for (let i = 0; i < maxAttendance; ++i) {
-        if (i === 0) {
-          data[i] = {text: String(i + 1), value: String(i), selected: true}
-        } else {
-          data[i] = {text: String(i + 1), value: String(i)}
-        }
+	      if (i === 0) {
+		      data[i] = {text: (type === 0 ? String(i + 1) : '5명 미만'), value: String(i)}
+	      } else if (i === 1) {
+		      data[i] = {text: (type === 0 ? String(i + 1) : '5명~10명 미만'), value: String(i)}
+	      } else {
+		      data[i] = {text: (type === 0 ? String(i + 1) : '10명 이상'), value: String(i)}
+	      }
       }
       this.attendanceData = data
     },
