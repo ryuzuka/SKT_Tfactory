@@ -2,7 +2,7 @@
   <div class="contents bottom-sticky" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
-      <img src="../../../assets/images/program/class53-slide1.jpg" alt="">
+      <img src="../../../assets/images/program/class53-slide1.jpg" alt="셀린&루나와 함께하는 릴스 만들기 원데이 클래스">
     </div>
     <!-- //slide -->
     <!-- details -->
@@ -10,7 +10,7 @@
       <div class="details-header">
         <kakao-share
           title="[1DAY 릴스 제작] 요즘 유행하는 릴스의 모든 것!"
-          description="셀린&루나와 함께하는 입문자용 사진 촬영/편집 원데이 클래스"
+          description="셀린&루나와 함께하는 릴스 만들기 원데이 클래스"
         ></kakao-share>
 
         <em class="flag-solid7">MEDIA CLASS</em>
