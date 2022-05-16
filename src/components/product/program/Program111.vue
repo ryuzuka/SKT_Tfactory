@@ -14,7 +14,7 @@
         ></kakao-share>
 
         <em class="main-subtitle">T University Music Festival</em>
-        <h2 class="main-title" style="margin-top: 5px;">TFU 기간 열리는<br>스페셜 덕콘</h2>
+        <h2 class="main-title" style="margin-top: 5px;">TUF 기간 열리는<br>스페셜 덕콘</h2>
         <p class="desc2" style="margin-top: 0px;">
           무대에 설 기회가 적어진 대학생 뮤지션들에게 T Factory의 덕콘 무대를 오픈합니다.<br>T대학 우주 축제 기간 동안 진행되는 '덕콘'은 인기 뮤지션과 대학생 뮤지션으로 라인업이 풍성하게 구성됩니다!<br>보다 더 특별하고 열정적인 덕콘을 기대하세요!
         </p>
