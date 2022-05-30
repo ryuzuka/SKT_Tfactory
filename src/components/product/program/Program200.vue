@@ -1,261 +1,135 @@
 <template>
-  <div class="contentss" ref="contents">
-    <!-- slide -->
-    <div class="slider-prd" style="padding-top:56px;">
-      <img ref="shareImage" src="../../../assets/images/program/class119_crew_class_slide1.jpg" alt="어린이날 스페셜 프로그램">
-    </div>
-    <!-- //slide -->
-    <!-- details -->
-    <div class="details sticky">
-      <div class="details-header" style="padding: 31px 12px 27px 20px;">
-        <kakao-share
-          title="어린이날 스페셜 프로그램"
-          description="T Factory에서 최고의 어린이날을 보내세요!"
-        ></kakao-share>
+	<div class="contents bottom-sticky" ref="contents">
+		<!-- slide -->
+		<div class="slider-prd">
+			<img ref="shareImage" src="../../../assets/images/program/class200-slide1.jpg" alt="T Factory x FLO 덕콘 | 2022.6 세이수미">
+		</div>
+		<!-- //slide -->
+		<!-- details -->
+		<div class="details sticky">
+			<div class="details-header" style="padding: 31px 12px 40px 20px;">
+				<kakao-share
+					title="6월의 덕콘"
+					description="인기 뮤지션과 대학생 뮤지션이 꾸미는 스페셜 무대 - 2022.6 세이수미"
+				></kakao-share>
+				<em class="main-subtitle">T University Music Festival</em>
+				<h2 class="main-title" style="margin-top:4px;">인기 뮤지션과<br>대학생 뮤지션이 꾸미는<br>스페셜 무대</h2>
+				<p class="desc2" style="padding: 0;">
+					6월 덕콘에서는 인기뮤지션과 대학생 뮤지션들이<br>함께 합니다.<br>더욱 풍성해진 THECON의 무대 기대해 주세요.<br>T Factory에 방문하고 나의 뮤지션들의 소중한 관객이 되어 축제를 즐겨주세요.
+				</p>
+			</div>
+			<div class="line">
+				<span style="margin: 1px 56px;">2022. 06. 17 PM 7:00<em style="margin-left:11px;">SAYSUEME</em></span>
+				<img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
+			</div>
+			<div class="details-header" style="padding: 40px 20px;">
+				<em class="main-subtitle">아티스트 소개</em>
+				<h2 class="main-title" style="margin-top:4px;">세이수미</h2>
+				<div class="thumbnail"><img src="../../../assets/images/program/class200-conts1.jpg" alt=""></div>
+				<p style="margin-top: 8px;">
+					세이수미는 2012년 가을, 부산 광안리 해변 불꽃축제가 있던 어느 날 "심심하면 우리 같이 밴드나 하자"라는 말로 시작된 밴드이다.
+				</p>
+				<p style="margin-top: 22px;">
+					인디록, 서프록, 서프게이즈, 록큰롤 등 여러 가지 이름을 붙일 수 있는 음악을 하지만 공통적으로 떠오르는 심상은 바다이다.
+				</p>
+			</div>
+			<div class="details-inner">
+				<h2 class="main-title">일정</h2>
+				<dl>
+					<dd>
+						<span class="sub_title" style="width: 52px;">공연일</span>
+						<span class="desc">6월 17일 (금) 오후 7시</span>
+					</dd>
+					<dd>
+						<span class="sub_title" style="width: 52px;">신청기간</span>
+						<span class="desc">5월 30일 (월) ~ 6월 12일 (일)</span>
+					</dd>
+					<dd>
+						<span class="sub_title" style="width: 52px;">장소</span>
+						<span class="desc">T Factory 2층, 0 Stage</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="line">
+				<span style="margin: 1px 56px;">2022. 06. 17 PM 7:00<em style="margin-left:11px;">SAYSUEME</em></span>
+				<img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
+			</div>
+			<div class="details-bottom" style="padding: 40px 20px;">
+				<h2 class="main-title">안내사항</h2>
+				<ul>
+					<li>※대학생 뮤지션이 아닌 인기 뮤지션 공연은 덕력고사를 완료하신 분들 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
+					<li>※당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
+					<li>※정부의 방역지침 변경이 있을 시 공연의 주요 내용도 변경이 있을 수 있습니다.</li>
+					<li>※덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함꼐 응모에 당첨되어야 하는 점 유의 부탁드립니다.</li>
+				</ul>
+			</div>
+			<div class="details-inner" style="padding: 40px 0 20px">
+				<h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
+				<div class="program">
+					<div class="program">
+						<router-link to="/experience/program111?classId=154">
+							<div class="desc">
+								<p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
+								<span class="topic">TUMF</span>
+							</div>
+							<div class="images">
+								<img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
+							</div>
+						</router-link>
+					</div>
+				</div>
+				<div class="program">
+					<router-link to="/experience/program110?classId=156">
+						<div class="desc">
+							<p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
+							<span class="topic">T대학 우주 축제, TUF</span>
+						</div>
+						<div class="images">
+							<img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
+						</div>
+					</router-link>
+				</div>
+				<div class="program">
+					<router-link to="/experience/program112?classId=155">
+						<div class="desc">
+							<p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
+							<span class="topic">TUAF</span>
+						</div>
+						<div class="images">
+							<img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
+						</div>
+					</router-link>
+				</div>
+			</div>
+		</div>
+		<!-- //details -->
 
-        <em class="main-subtitle">어린이날 스페셜 프로그램</em>
-        <h2 class="main-title" style="margin-top:3px;">T Factory에서 최고의<br>어린이날을 보내세요!</h2>
-      </div>
-      <div class="details-inner">
-        <p class="desc3">
-          어린이날을 맞아 T Factory에서 온 가족이 함께 즐길 수 있는 다양한 프로그램을 준비했습니다.<br>특별한 체험으로 가족의 소중한 추억을 만들어보세요!
-        </p>
-        <ul class="desc3" style="margin-top:22px; letter-spacing:-0.3px;">
-          <li>1. 어린이를 위한 숲 속 피아노 음악회</li>
-          <li>2. 온가족이 함께하는 크루 클래스 4가지 (사전 예약 필수)
-            <ul class="crew_class" style="padding-left:27px;">
-              <li>1 - [음악] 우리가족 노래 만들기</li>
-              <li>2 - [드로잉] 우리가족 얼굴 서로 그려주기</li>
-              <li>3 - [릴스] 우리가족 첫 릴스 만들기</li>
-              <li>4 - [영상] 우리가족 첫 브이로그 만들기</li>
-            </ul>
-          </li>
-          <li>3. MS Xbox 게임 토너먼트 가족 대항전!</li>
-          <li>4. 우리가족 모바일라이프 컨설팅 받기</li>
-        </ul>
-      </div>
-      <div class="details-inner">
-        <em class="main-subtitle">프로그램 1.</em>
-        <h2 class="main-title" style="margin-top:3px; letter-spacing:-0.5px;">어린이를 위한<br>숲 속 피아노 음악회<em class="main-subtitle"> (현장참여)</em></h2>
-        <p class="desc4" style="margin-bottom: 22px;">진짜 숲, Factory Garden에서 피아니스트가 직접 동요, 재즈, 뮤지컬 음악을 연주합니다. 한시간 동안 도심 속 힐링 연주회를 즐겨보세요.</p>
-        <dl>
-          <dd>
-            <span class="sub_title" style="width: 39px;">시간</span>
-            <span class="desc">5월 5일 (목) 15시, 18시 (60분)</span>
-          </dd>
-           <dd>
-            <span class="sub_title" style="width: 39px;">장소</span>
-            <span class="desc">1.5층 Factory Garden</span>
-          </dd>
-           <dd>
-            <span class="sub_title" style="width: 39px;">연주자</span>
-            <span class="desc">재즈 피아니스트 백혜은 (혜니스윗)</span>
-          </dd>
-        </dl>
-      </div>
-      <div class="details-inner">
-        <em class="main-subtitle">프로그램 2.</em>
-        <h2 class="main-title" style="margin-top:3px; letter-spacing:-0.1px;">온가족이 함께하는<br>크루클래스<em class="main-subtitle">&nbsp; (사전예약 필수)</em></h2>
-        <ul class="desc4" style="margin-bottom: 32px;">
-          <li>※ 신청방법 : 클래스 시간 확인 후 하단 ‘프로그램 예약’ 에서 해당 시간 선택</li>
-          <li>※ 가족 대표 1인만 예약하면 되며, 어린이 포함 동반가족 4인까지 참석 가능합니다.</li>
-          <li>※ 클래스는 선착순 마감이며, 1회에 한하여 신청 가능합니다.</li>
-        </ul>
-        <div class="children_program">
-          <em class="main-subtitle">1 - [음악] 우리 가족 노래 만들기</em>
-          <p class="desc4" style="margin-bottom:16px;">우리 가족 이야기를 노래로 만들어 보세요.</p>
-          <dl>
-            <dd>
-              <span class="sub_title" style="width: 39px;">시간</span>
-              <span class="desc">5월 5일 (목) 15시, 18시 (50분)</span>
-            </dd>
-            <dd>
-              <span class="sub_title" style="width: 39px;">준비물</span>
-              <span class="desc">아이패드 또는 아이폰, 이어폰 (유선 권장)</span>
-            </dd>
-          </dl>
-          <p style= "line-height: 24px; margin-top: 16px;">* 없을 시 크루의 아이패드 화면을 함께 보며 진행합니다.<br>*가족의 이야기를 사전에 수집하기 위하여 음악 클래스 신청 고객 대상 사전에 연락을 드릴 예정입니다.</p>
-          <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px 40px;">
-              <button class="btn-line big" @click="bookProgram(0)">우리 가족 노래 만들기 예약하기</button>
-            </div>
-          </div>
-        </div>
-        <div class="children_program">
-          <em class="main-subtitle">2 - [드로잉] 우리 가족 얼굴 서로 그려주기</em>
-          <p class="desc4" style="margin-bottom:16px;">아이패드로 우리 가족의 얼굴을 서로 그리며 추억을 만들어보세요.</p>
-          <dl>
-            <dd>
-              <span class="sub_title" style="width: 39px;">시간</span>
-              <span class="desc">5월 5일 (목) 14시, 17시 (50분)</span>
-            </dd>
-            <dd>
-              <span class="sub_title" style="width: 39px;">준비물</span>
-              <span class="desc">가족사진(이미지파일), Procreate 앱이 설<br>치된 아이패드와 펜슬</span>
-            </dd>
-          </dl>
-          <p style= "line-height: 24px; margin-top: 16px;">* 없을 시 현장 대여 가능합니다.</p>
-          <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px 40px;">
-              <button class="btn-line big" @click="bookProgram(1)">우리가족 얼굴 서로 그려주기 예약하기</button>
-            </div>
-          </div>
-        </div>
-        <div class="children_program">
-          <em class="main-subtitle">3 - [릴스] 우리 가족 첫 릴스 만들기</em>
-          <p class="desc4" style="margin-bottom:16px;">T Factory의 모든 공간이 릴스의 배경이 됩니다. 가족들과 함께 첫 릴스 촬영에 도전해보세요.<p>
-          <dl>
-            <dd>
-              <span class="sub_title" style="width: 39px;">시간</span>
-              <span class="desc">5월 5일 (목) 13시, 16시 (50분)</span>
-            </dd>
-            <dd>
-              <span class="sub_title" style="width: 39px;">준비물</span>
-              <span class="desc">인스타그램 app이 설치된 휴대폰</span>
-            </dd>
-          </dl>
-          <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px 40px;">
-              <button class="btn-line big" @click="bookProgram(2)">우리 가족 첫 릴스 만들기 예약하기</button>
-            </div>
-          </div>
-        </div>
-        <div class="children_program">
-          <em class="main-subtitle">4 - [영상] 우리 가족 첫 브이로그 만들기</em>
-          <p class="desc4" style="margin-bottom:16px;">휴대폰 하나로 가장 쉽고 빠르게 우리 가족 추억의 첫 브이로그를 만들어 보세요!</p>
-          <dl>
-            <dd>
-              <span class="sub_title" style="width: 39px;">시간</span>
-              <span class="desc">5월 5일 (목) 12시, 15시 (50분)</span>
-            </dd>
-            <dd>
-              <span class="sub_title" style="width: 39px;">준비물</span>
-              <span class="desc">휴대폰</span>
-            </dd>
-          </dl>
-          <p style= "line-height: 24px;">* 없을 시 현장 대여 가능합니다.</p>
-          <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px 0 0;">
-              <button class="btn-line big" @click="bookProgram(3)">우리 가족 첫 브이로그 만들기 예약하기</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="details-inner">
-        <em class="main-subtitle">프로그램 3.</em>
-        <h2 class="main-title" style="margin-top:3px; letter-spacing:-0.1px;">MS Xbox 게임 토너먼트<br>가족 대항전!<em class="main-subtitle">&nbsp; (현장참여)</em></h2>
-        <p class="desc4" style="margin-bottom:16px;">게임을 좋아하는 가족이라면 Xbox 게임에 도전해보세요. 토너먼트 형식으로 2:2 가족 대전이 펼쳐집니다.</p>
-        <dl>
-          <dd>
-            <span class="sub_title" style="width: 55px;">시간</span>
-            <span class="desc" style="margin-left: 21px;">5월 5일 (목) 13시, 15시, 17시</span>
-          </dd>
-           <dd>
-            <span class="sub_title" style="width: 55px;">게임 종목</span>
-            <span class="desc" style="margin-left: 21px;">FOOTBALL (13시, 17시)<br>MELEE (15시)</span>
-          </dd>
-           <dd>
-            <span class="sub_title" style="width: 55px;">참여 방법</span>
-            <span class="desc" style="margin-left: 21px;">시간에 맞춰 현장 신청</span>
-          </dd>
-          <dd>
-            <span class="sub_title" style="width: 55px;">선물</span>
-            <span class="desc" style="margin-left: 36px;">1등 - RC카 혹은 케어베어 중 선택 (어린이 고객에게만 증정)<br>참가상 - 웰컴 키트</span>
-          </dd>
-        </dl>
-      </div>
-      <div class="details-inner">
-        <em class="main-subtitle">프로그램 4.</em>
-        <h2 class="main-title" style="margin-top:3px; letter-spacing:-0.1px;">우리가족 모바일라이프<br>컨설팅받기<em class="main-subtitle">&nbsp; (사전예약 필수)</em></h2>
-        <p class="desc4" style="margin-bottom:16px;">※ 신청방법 : 컨설팅 시간 확인 후 하단 ‘프로그램 예약’에서 해당 시간 선택<br>※ 가족 대표 1인만 예약하면 되며, 어린이 포함 동반가족 4인까지 참석 가능합니다.</p>
-        <p class="desc4" style="margin-bottom:16px;">우리 가족의 모바일라이프는 똑똑하게 설계되어 있을까요? 전문크루와 함께 우리 가족 모바일라이프를 체크하고 통신비 컨설팅도 받아보세요!</p>
-        <dl>
-          <dd>
-            <span class="sub_title" style="width: 55px;">시간</span>
-            <span class="desc" style="margin-left: 21px;">10시 30분 ~ 18시 30분, 매시 30분</span>
-          </dd>
-           <dd>
-            <span class="sub_title" style="width: 55px;">상담 장소</span>
-            <span class="desc" style="margin-left: 21px;">2층 CS존</span>
-          </dd>
-        </dl>
-        <div class="button_area">
-            <div class="btn-wrap" style="margin: 22px 12px 0 0;">
-              <button @click="bookProgram(4)" class="btn-line big">우리가족 모바일라이프 컨설팅 예약하기</button>
-            </div>
-          </div>
-      </div>
-      <div class="details-inner">
-        <p style="line-height: 24px">* 본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</p>
-      </div>
-      <div class="details-inner" style="padding: 40px 0">
-        <h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
-        <div class="program">
-	        <div class="program">
-            <router-link to="/experience/program111?classId=154">
-              <div class="desc">
-                <p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
-                <span class="topic">TUMF</span>
-              </div>
-              <div class="images">
-                <img src="../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
-              </div>
-            </router-link>
-          </div>
-        </div>
-        <div class="program">
-	        <router-link to="/experience/program110?classId=156">
-	          <div class="desc">
-	            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
-	            <span class="topic">T대학 우주 축제, TUF</span>
-	          </div>
-	          <div class="images">
-	            <img src="../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
-	          </div>
-	        </router-link>
-        </div>
-        <div class="program">
-	        <router-link to="/experience/program112?classId=155">
-	          <div class="desc">
-	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
-	            <span class="topic">TUAF</span>
-	          </div>
-	          <div class="images">
-	            <img src="../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
-	          </div>
-	        </router-link>
-        </div>
-      </div>
-    </div>
-    <!-- //details -->
-  </div>
+		<!-- button set -->
+		<program-button></program-button>
+		<!-- // button set -->
+	</div>
 </template>
 
 <script>
 import KakaoShare from '../../common/KakaoShare'
-import * as STORE from '../../../js/store'
-import _ from 'lodash'
+import ProgramButton from './components/ProgramButton'
+import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program200',
   components: {
-    KakaoShare
+    KakaoShare,
+	  ProgramButton
   },
   data () {
     return {
-      isLogin: false,
-	    classIdList: [157, 158, 159, 163, 164],
-	    isApply: [false, false, false, false, false]
+      isLogin: false
     }
   },
   created () {
 	  this.$store.watch(() => {
 		  if (this.$store.getters.CONSTANTS.session_alive === true) {
 			  this.isLogin = true
-
-			  for (let i = 0; i < this.classIdList.length; ++i) {
-          this.checkApply(i)
-			  }
 		  }
 	  })
   },
@@ -263,43 +137,14 @@ export default {
 	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
   },
   methods: {
-	  bookProgram (index) {
-		  if (this.isLogin) {
-			  if (this.isApply[index]) {
-				  this.alertAlreadyApply()
-			  } else {
-				  let path = '/sev/booking/program/date/shop'
-				  this.$router.push(path + '?store_id=' + process.env.FLAGSHIP_STORE_ID + '&classId=' + this.classIdList[index])
-			  }
+	  clickButton () {
+		  const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
+		  const mobileOS = this.$cookies.get('platform')
+		  if (mobileOS === 'A' || mobileOS === 'I') {
+			  NATIVE.sysBrowserOpen(mobileOS, redirectURL)
 		  } else {
-			  localStorage.setItem('previous_url', this.$route.fullPath)
-			  this.$router.push({'name': 'Login'})
+			  window.open(redirectURL, '_blank')
 		  }
-	  },
-    checkApply (index) {
-      let status = ''
-      STORE.getProgramClassBook(this.classIdList[index]).then(result => {
-        if (result['PROGRAM_CLASS'].length === 0) return
-
-        _.forEach(result['PROGRAM_CLASS'], program => {
-          status = program['STATUS']
-        })
-        if (status === 'apply') {
-          this.isApply[index] = true
-        }
-      })
-    },
-	  alertAlreadyApply () {
-		  this.$modal.show('dialog', {
-			  title: `이미 신청하신 프로그램입니다.`,
-			  text: `신청 내용 수정은 [MENU > 예약/신청내역]<br>에서 가능합니다.`,
-			  buttons: [{
-				  title: '확인',
-				  handler: () => {
-					  this.$modal.hide('dialog')
-				  }
-			  }]
-		  })
 	  }
   }
 }
@@ -310,26 +155,25 @@ export default {
 </style>
 <style lang="scss" scoped>
 .details{
-  &-header {
-    p{
-      line-height: 20px;
-    }
-  }
-  &-inner {
-  padding:40px 20px;
-    dl{
-      dd{
-        .desc{margin-left: 37px;}
-      }
-    }
-    .desc4{
-      line-height: 19px;
-    }
-  }
-  &-bottom {
-    font-size: 12px;
-    line-height: 19px;
-    color: #787878;
-  }
+	&-header {
+		p{
+			line-height: 20px;
+		}
+	}
+	&-inner {
+		padding:40px 20px;
+		dl{
+			dd{
+				.desc{
+					margin-left: 24px;
+				}
+			}
+		}
+	}
+	&-bottom {
+		font-size: 12px;
+		line-height: 19px;
+		color: #787878;
+	}
 }
 </style>
