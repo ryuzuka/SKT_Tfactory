@@ -62,7 +62,7 @@
 	          <div class="date">
 		          <span>6.17<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program200">
+	          <router-link to="/experience/program200?classId=39">
 		          <div class="card" Style="margin-left: 27px;">
 			          <div class="text">
 				          <p class="name">세이수미</p>
@@ -79,7 +79,7 @@
 	           <div class="date">
 		           <span>6.24<br>FRI</span>
 	           </div>
-	           <router-link to="/experience/program201">
+	           <router-link to="/experience/program201?classId=41">
 		           <div class="card" Style="margin-left: 27px;">
 			           <div class="text">
 				           <p class="name">요조</p>
