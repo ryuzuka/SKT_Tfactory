@@ -96,7 +96,7 @@
 	          <div class="date">
 		          <span>6.25<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program117">
+	          <router-link to="/experience/program117?classId=44">
 		          <div class="card" Style="margin-left: 27px;">
 			          <div class="text">
 				          <p class="name">미스몰리</p>
