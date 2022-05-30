@@ -664,6 +664,14 @@
               <router-link class="link" to='/experience/program116'>5월의 덕콘 | 라쿠나</router-link>
               <div class="date"><span>4.27</span></div>
             </li>
+	          <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program200'>6월의 덕콘 | 세이수미</router-link>
+		          <div class="date"><span>5.26</span></div>
+	          </li>
+	          <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program201'>5월의 덕콘 | 요조</router-link>
+		          <div class="date"><span>5.26</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
