@@ -7,34 +7,11 @@ export default {
   data () {
     return {
       isActive: [false, false, false, false, false],
-      isLogin: '',
-      isClickNav: false
-    }
-  },
-  watch: {
-    $route (to) {
-      switch (to.params['menu']) {
-        case 'store':
-          this.clickNav(0)
-          break
-        case 'program':
-          this.clickNav(1)
-          break
-        case 'mytag':
-          this.clickNav(3)
-          break
-        case 'menu':
-          this.clickNav(4)
-          break
-      }
-      this.isClickNav = false
+      isLogin: ''
     }
   },
   methods: {
     toggleBottomNav (idx) {
-      if (idx === 2) {
-        return
-      }
       this.isActive = this.isActive.map((val, i) => {
         val = false
         if (idx === i) {
@@ -44,9 +21,6 @@ export default {
       })
     },
     clickNav (idx) {
-      if (this.isClickNav) return
-
-      this.isClickNav = true
       this.toggleBottomNav(idx)
       if (idx === 0) {
         this.$EventBus.$emit('change-main-menu', 'store')

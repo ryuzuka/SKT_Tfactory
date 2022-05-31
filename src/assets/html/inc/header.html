@@ -1,8 +1,8 @@
 <header class="header">
   <a v-if="type==='back' || type === 'shop'" class="btn-back" href="#" @click.prevent="goBack(routeName, routeParams)"><span class="blind">{{ $t('comm.back') }}</span></a>
   <a v-if="type==='native'" class="btn-back" @click.prevent="callNativeBack()"><span class="blind">{{ $t('comm.back') }}</span></a>
-  <router-link to="/main/store" v-if="type==='backToStore'" class="btn-back"><span class="blind">{{ $t('comm.back') }}</span></router-link>
-  <router-link to="/main/program" v-if="type==='backToProgram'" class="btn-back"><span class="blind">{{ $t('comm.back') }}</span></router-link>
+  <a v-if="type==='backToStore'" class="btn-back" href="/main/store"><span class="blind">{{ $t('comm.back') }}</span></a>
+  <a v-if="type==='backToProgram'" class="btn-back" href="/main/program"><span class="blind">{{ $t('comm.back') }}</span></a>
 
   <router-link v-else-if="type==='home'" class="btn-home" to="/"><span class="blind">{{ $t('comm.home') }}</span></router-link>
   <h1 v-else-if="type==='logo'" class="logo"><span class="blind">T Factory</span></h1>
