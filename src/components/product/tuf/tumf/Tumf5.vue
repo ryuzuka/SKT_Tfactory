@@ -16,83 +16,87 @@
         <em class="main-subtitle">T University Music Festival</em>
         <h2 class="main-title" style="margin-top:4px;">인기 뮤지션과<br>대학생 뮤지션이 꾸미는<br>스페셜 무대</h2>
         <p class="desc2">
-          대학생 뮤지션들이 꾸미는 THECON의 무대.<br>T Factory에 방문하셔서 대학생 뮤지션들과 함께 축제를 즐겨주세요.
+          6월 덕콘에서는 인기뮤지션과 대학생 뮤지션들이 함께 합니다.<br>더욱 풍성해진 THECON의 무대 기대해 주세요.<br>T Factory에 방문하고 나의 뮤지션들의 소중한 관객이 되어 축제를 즐겨주세요.
         </p>
       </div>
       <div class="line">
-        <span>THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THE</span>
+        <span style="margin: 1px 63px;">2022. 06. 10 PM 8:00 <em style="margin-left:10px;">DAHADA</em></span>
         <img src="../../../../assets/images/program/line-bg.png" alt="THECON line-bg">
       </div>
       <div class="details-header" style="padding: 40px 20px;">
         <em class="main-subtitle">대학생 뮤지션 소개</em>
         <h2 class="main-title" style="margin-top:4px;">다하다</h2>
         <div class="thumbnail"><img src="../../../../assets/images/program/tuf_tumf5_musician.jpg" alt="tuf_tumf5_musician"></div>
-        <p style="margin-top: 8px;">
-          ‘다 같이 하고 싶은 거 다 하자’며 결성된 성균관대학교 출신 밴드 다하다는 장르를 가리지 않습니다. 관객이 원하는 음악, 우리가 즐거운 음악이라면 어떤 음악이든 좋습니다.
+        <p style="margin-top: 8px; line-height: 20px;">
+          지난 5월 공연의 뜨거운 반응에 힘입어 앵콜 무대로 돌아온 밴드 ‘다하다’의 앵콜 공연
         </p>
-        <p style="margin-top: 22px;">
-          2022년 1월 발매된 디지털 싱글 ‘내리실 문을’은 모든 사람이 거쳐가는 인생의 한 부분을 노래합니다. 앞으로도 많은 사람이 공감할 수 있는 이야기, 편안하게 들을 수 있는 멜로디를 노래하고자 합니다.
+        <p style="margin-top: 22px; line-height: 20px;">
+          성균관대학교 밴드팀 ‘다하다’는 성균관대학교의 중앙음악창작동아리 소리사랑에서 만나 이제는 하나의 팀을 결성해 활동 중이다.
+        </p>
+        <p style="margin-top: 22px; line-height: 20px;">
+          ‘다하다’는 ‘다같이 하고싶은 것 다하자’의 의미를 담고 있다. 지난 1월 첫번째 디지털 싱글 앨범 ‘내리실 문은’을 발매했으며, 총 5명으로 이루어져 있다.
         </p>
       </div>
       <div class="details-inner">
         <h2 class="main-title">일정</h2>
         <dl>
           <dd>
-            <span class="sub_title" style="width: 55px;">공연 기간</span>
-            <span class="desc">2022년 5월 21일 (토) PM 7:00</span>
+            <span class="sub_title" style="width: 63px;">공연 기간</span>
+            <span class="desc">6월 10일 (금) 오후 8:00</span>
           </dd>
            <dd>
-            <span class="sub_title" style="width: 55px;">장소</span>
-            <span class="desc">SK텔레콤 플래그십스토어 T Factory<br>(홍대입구역 9번 출구)</span>
+            <span class="sub_title" style="width: 63px;">장소</span>
+            <span class="desc">T Factory 2층, 0 Stage</span>
           </dd>
         </dl>
       </div>
-      <div class="details-inner" style="padding: 40px 20px;">
+      <div class="details-inner notification">
         <h2 class="main-title">안내사항</h2>
         <ul>
-          <li>※ 본 전시는 T Factory 홍대점을 방문하여 스마트폰으로 체크인 한 경우에만 참여 가능합니다. (체크인 가능 연령: 만 14세 이상)</li>
-          <li>※ 본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
+          <li>※ 대학생 뮤지션이 아닌 인기 뮤지션 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
+          <li>※ 당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
+          <li>※ 정부의 방역지침 변경이 있을 시 공연의 주요내용도 변경이 있을 수 있습니다</li>
+          <li>※ 덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함께 응모에 당첨되어야 하는점 유의부탁드립니다.</li>
         </ul>
       </div>
-      <div class="details-inner" style="padding: 40px 0 20px">
-        <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
-        <div class="program">
-	        <router-link to="/experience/program110?classId=156">
-	          <div class="desc">
-	            <p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
-	            <span class="topic">T대학 우주 축제, TUF</span>
-              <img style="right: -61px;" src="../../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-	          </div>
-	          <div class="images">
-	            <img src="../../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
-	          </div>
-	        </router-link>
-        </div>
-        <div class="program">
-	        <router-link to="/experience/program112?classId=155">
-	          <div class="desc">
-	            <p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
-	            <span class="topic">TUAF</span>
-              <img style="bottom: -7px; right: 165px;" src="../../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-	          </div>
-	          <div class="images">
-	            <img src="../../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
-	          </div>
-	        </router-link>
-        </div>
-        <div class="program">
-	        <router-link to="/experience/program4?classId=63">
-	          <div class="desc">
-	            <p class="detail">나도 작곡가!<br>아이패드로 곡 만들기</p>
-	            <span class="topic">크루 클래스-음악</span>
-              <img style="bottom: -7px; right: -48px;" src="../../../../assets/images/program/leftarrow-bk.png" alt="leftarrow">
-	          </div>
-	          <div class="images">
-	            <img src="../../../../assets/images/program/class111-conts3.jpg" alt="크루 클래스-음악">
-	          </div>
-	        </router-link>
-        </div>
-      </div>
+      <div class="details-inner" style="padding: 40px 0 59px">
+				<h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
+				<div class="program">
+					<div class="program">
+						<router-link to="/experience/program111?classId=154">
+							<div class="desc">
+								<p class="detail">대학생 뮤지션이 꾸미는<br>덕콘의 스페셜 무대<br>THECON X University</p>
+								<span class="topic">TUMF</span>
+							</div>
+							<div class="images">
+								<img src="../../../../assets/images/program/class107-conts1.jpg" alt="TUMF">
+							</div>
+						</router-link>
+					</div>
+				</div>
+				<div class="program">
+					<router-link to="/experience/program110?classId=156">
+						<div class="desc">
+							<p class="detail" style="margin-bottom: 25px;">Woluld you, 우주?</p>
+							<span class="topic">T대학 우주 축제, TUF</span>
+						</div>
+						<div class="images">
+							<img src="../../../../assets/images/program/class107-conts2.jpg" alt="T대학 우주 축제, TUF">
+						</div>
+					</router-link>
+				</div>
+				<div class="program">
+					<router-link to="/experience/program112?classId=155">
+						<div class="desc">
+							<p class="detail">미술 전공 대학생들의<br>일러스트로 꾸며진 팝업전시<br>POP-UP Exhibition X University</p>
+							<span class="topic">TUAF</span>
+						</div>
+						<div class="images">
+							<img src="../../../../assets/images/program/class107-conts3.jpg" alt="POP-UP Exhibition X University">
+						</div>
+					</router-link>
+				</div>
+			</div>
     </div>
   </div>
 </template>
@@ -133,29 +137,9 @@ export default {
   @import 'src/assets/css/product';
 </style>
 <style lang="scss" scoped>
-  .details{
-    &-header {
+  .details-header{
       .thumbnail img {
         height: 340px;
       }
-      p{
-        margin-top: 0;
-        line-height: 20px;
-      }
     }
-    &-inner {
-      padding:40px 20px;
-      dl dd .desc{
-        margin-left: 21px;
-      }
-      dl dd .desc em{
-        color: #3617ce;
-      }
-      ul{
-        font-size: 12px;
-        line-height: 19px;
-        color: #787878;
-      }
-    }
-  }
 </style>

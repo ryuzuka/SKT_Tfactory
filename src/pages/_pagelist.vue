@@ -669,8 +669,12 @@
 		          <div class="date"><span>5.26</span></div>
 	          </li>
 	          <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program201'>5월의 덕콘 | 요조</router-link>
+		          <router-link class="link" to='/experience/program201'>6월의 덕콘 | 요조</router-link>
 		          <div class="date"><span>5.26</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program202'>6월의 덕콘</router-link>
+		          <div class="date"><span>5.30</span></div>
 	          </li>
           </ul>
 
