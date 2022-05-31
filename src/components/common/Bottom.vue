@@ -12,20 +12,23 @@ export default {
   },
   watch: {
     $route (to) {
-      let idx = -1
-      if (to.params['menu'] === 'store') {
-        idx = 0
-      } else if (to.params['menu'] === 'program') {
-        idx = 1
-      } else if (to.params['menu'] === 'mytag') {
-        idx = 3
-      } else if (to.params['menu'] === 'menu') {
-        idx = 4
-      }
-      this.toggleBottomNav(idx)
+      this.activeNav(to.params['menu'])
     }
   },
   methods: {
+    activeNav (menu) {
+      let idx = -1
+      if (menu === 'store') {
+        idx = 0
+      } else if (menu === 'program') {
+        idx = 1
+      } else if (menu === 'mytag') {
+        idx = 3
+      } else if (menu === 'menu') {
+        idx = 4
+      }
+      this.toggleBottomNav(idx)
+    },
     toggleBottomNav (idx) {
       this.isActive = this.isActive.map((val, i) => {
         val = false
@@ -60,6 +63,7 @@ export default {
     })
   },
   mounted () {
+	  this.activeNav(this.$route.params['menu'])
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
