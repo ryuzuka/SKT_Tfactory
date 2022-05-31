@@ -36,12 +36,20 @@
         <h2 class="main-title">일정</h2>
         <dl>
           <dd>
-            <span class="sub_title" style="width: 63px;">공연일</span>
+            <span class="sub_title" style="width: 65px;">공연일</span>
             <span class="desc">6월 25일 (토) 오후 3시</span>
           </dd>
+          <dd>
+            <span class="sub_title" style="width: 65px;">응모기간</span>
+            <span class="desc">5월 31일(화) ~ 6월 19일(일)</span>
+          </dd>
+          <dd>
+            <span class="sub_title" style="width: 65px;">당첨자발표</span>
+            <span class="desc">6월 20일(월) 오후 3시</span>
+          </dd>
            <dd>
-            <span class="sub_title" style="width: 63px;">장소</span>
-            <span class="desc">SK텔레콤 플래그십스토어 T Factory<br>(홍대입구역 9번 출구)</span>
+            <span class="sub_title" style="width: 65px;">장소</span>
+            <span class="desc">T Factory 2층, 0 Stage</span>
           </dd>
         </dl>
       </div>
