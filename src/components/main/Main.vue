@@ -41,6 +41,11 @@ export default {
       isMobile: this.$store.state.isMobile
     }
   },
+  watch: {
+	  $route (to) {
+	    this.menuName = to.params['menu']
+	  }
+  },
   methods: {
     changeMenu (menu) {
       if (menu === 'store') {

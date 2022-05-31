@@ -10,6 +10,21 @@ export default {
       isLogin: ''
     }
   },
+  watch: {
+    $route (to) {
+      let idx = -1
+      if (to.params['menu'] === 'store') {
+        idx = 0
+      } else if (to.params['menu'] === 'program') {
+        idx = 1
+      } else if (to.params['menu'] === 'mytag') {
+        idx = 3
+      } else if (to.params['menu'] === 'menu') {
+        idx = 4
+      }
+      this.toggleBottomNav(idx)
+    }
+  },
   methods: {
     toggleBottomNav (idx) {
       this.isActive = this.isActive.map((val, i) => {
