@@ -222,7 +222,7 @@
   <div class="row">
     <ul class="list-main-service">
       <li class="item2">
-        <a href="/shop/detail/store20">
+        <router-link to="/shop/detail/store20">
           <h3 class="subtit" ref="aniObj4" :class="{'ani-obj': aniObj[4]}">
             <span>
               큐레이터<br>
@@ -232,7 +232,7 @@
           </h3>
           <span class="subtext">공간 투어 예약하기</span>
           <div class="thumb" ref="aniObj5" :class="{'ani-obj': aniObj[5]}"><img src="../../images/main/store-tour1.png" alt=""></div>
-        </a>
+        </router-link>
       </li>
       <li class="item3">
         <a @click.prevent="clickFlagshipBook">

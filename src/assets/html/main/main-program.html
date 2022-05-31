@@ -29,7 +29,7 @@
     </h2>
     <ul class="list-program wide" ref="listAniObj0" :class="{'all': !isConcertMore, 'ani-obj': listAniObj[0]}">
       <li v-for="specialClass in specialClasses">
-        <a :href="specialClass.LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
+        <router-link :to="specialClass.LINK_URL + '?classId=' + specialClass.PROGRAM_CLASS_ID">
           <div class="thumb"><img :src="specialClass.THUMBNAIL_IMAGE_URL" alt=""></div>
           <div class="info">
 
@@ -44,7 +44,7 @@
             </p>
             <p class="subtext">{{specialClass.SCHEDULE_GUIDE}}</p>
           </div>
-        </a>
+        </router-link>
       </li>
     </ul>
     <div v-if="specialClasses.length > 3" class="btn-wrap" v-show="isConcertMore">
@@ -59,7 +59,7 @@
     </h2>
     <ul class="list-program" ref="listAniObj1" :class="{'all': !isSpecialMore, 'ani-obj': listAniObj[1]}">
       <li v-for="today in todayClasses">
-        <a :href="today.LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
+        <router-link :to="today.LINK_URL + '?classId=' + today.PROGRAM_CLASS_ID">
           <div class="thumb">
             <img :src="today.THUMBNAIL_IMAGE_URL" alt="">
 
@@ -73,7 +73,7 @@
             <br>{{today.THUMBNAIL_SUBTITLE}}</p>
           <p class="tit">{{today.NAME}}</p>
           <p class="subtext">{{today.SCHEDULE_GUIDE}}</p>
-        </a>
+        </router-link>
       </li>
     </ul>
     <div v-if="todayClasses.length > 4" class="btn-wrap" v-show="isSpecialMore">
@@ -88,7 +88,7 @@
     </h2>
     <ul class="list-program" ref="listAniObj2" :class="{'all': !isClassMore, 'ani-obj': listAniObj[2]}">
       <li v-for="crewClass in crewClasses">
-        <a :href="crewClass.LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
+        <router-link :to="crewClass.LINK_URL + '?classId=' + crewClass.PROGRAM_CLASS_ID">
           <div class="lector">
             <span class="img"><img :src="crewClass.PROGRAM_TUTOR_IMAGE_URL" alt=""></span>
             <p class="cate"><span>{{crewClass.THUMBNAIL_TITLE}}</span>{{crewClass.THUMBNAIL_SUBTITLE}}</p>
@@ -96,7 +96,7 @@
           <div class="thumb"><img :src="crewClass.THUMBNAIL_IMAGE_URL" alt=""></div>
           <p class="tit" v-html="crewClass.NAME">{{crewClass.NAME}}</p>
           <p class="subtext">{{crewClass.SCHEDULE_GUIDE}}</p>
-        </a>
+        </router-link>
       </li>
     </ul>
     <div v-if="crewClasses.length > 4" class="btn-wrap" v-show="isClassMore">
