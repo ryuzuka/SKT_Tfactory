@@ -107,11 +107,11 @@
             <h3 class="blind">{{ $t('main.tab-title1') }}</h3>
             <ul class="list-main">
                 <li v-for="recommend in recommendList">
-                    <a :href="recommend.ZONE_LANDING_URL">
+                    <router-link :to="recommend.ZONE_LANDING_URL">
                         <div class="thumb"><img :src="recommend.ZONE_IMAGE_URL" alt=""></div>
                         <em>{{ recommend.ZONE_NAME }}</em>
                         <p class="subtext">{{ recommend.RECOMMEND }}</p>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </section>
@@ -242,7 +242,7 @@
             <p v-if="JSON.stringify(historyList) === '{}'" class="no-content" v-html="$t('main.history-none')">
             </p>
             <div class="btn-wrap">
-                <a href="/shop/detail?store_id=19868" class="btn-basic small">{{ $t('main.store-information') }}</a>
+                <router-link to="/shop/detail?store_id=19868" class="btn-basic small">{{ $t('main.store-information') }}</router-link>
             </div>
         </section>
     </div>
