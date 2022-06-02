@@ -9,7 +9,7 @@ export default {
   methods: {
     goMain () {
       sessionStorage.setItem('isQrCode', 'true')
-      this.$router.push({name: 'Main'})
+      this.$router.push('/main/store')
     }
   },
   created () {
