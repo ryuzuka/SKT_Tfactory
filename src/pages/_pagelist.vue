@@ -676,6 +676,11 @@
 		          <router-link class="link" to='/experience/program202'>6월의 덕콘</router-link>
 		          <div class="date"><span>5.30</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program203'>POP-UP Exhibition
+X You</router-link>
+		          <div class="date"><span>6.02</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
