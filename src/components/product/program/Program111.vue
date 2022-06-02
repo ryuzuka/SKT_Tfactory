@@ -65,7 +65,7 @@
 	          <router-link to="/experience/program118?classId=">
 		          <div class="card" Style="margin-left: 27px;">
 			          <div class="text">
-				          <p class="name">라쿠타</p>
+				          <p class="name">라쿠나</p>
 				          <span class="flag-solid10">MUSICIAN</span>
 				          <p class="time">PM 7:00</p>
 			          </div>
