@@ -136,7 +136,7 @@ export default new Router({
     }
   },
   routes: [
-    {path: '/', redirect: {name: 'Main'}},
+    {path: '/', redirect: '/main/store'},
 
     {path: '/pagelist', name: 'pagelist', component: pagelist},
     {path: '/guide', name: 'guide', component: guide},
