@@ -23,10 +23,10 @@
 		    <span>THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THECON&nbsp;&nbsp;&nbsp; THE</span>
 		    <img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
 	    </div>
-	    <div class="details-inner" style="padding: 40px 20px 12px; border-top: none;">
+	    <div class="details-bottom" style="padding: 40px 20px 12px;">
         <h2 class="main-title" style="margin-bottom: 0px;">참여 뮤지션 보기</h2>
       </div>
-      <div class="lineup" style="padding: 0px 18px 36px 24px;">
+      <div class="lineup" style="padding: 0px 18px 12px 24px;">
         <ul>
           <li>
             <div class="date">
@@ -57,6 +57,23 @@
 		            </div>
 	            </div>
             </router-link>
+          </li>
+          <li>
+	          <div class="date">
+		          <span>6.11<br>SAT</span>
+	          </div>
+	          <router-link to="/experience/program118?classId=">
+		          <div class="card" Style="margin-left: 27px;">
+			          <div class="text">
+				          <p class="name">라쿠타</p>
+				          <span class="flag-solid10">MUSICIAN</span>
+				          <p class="time">PM 7:00</p>
+			          </div>
+			          <div class="image">
+				          <img src="../../../assets/images/program/class111-musician611.png" alt="musician">
+			          </div>
+		          </div>
+	          </router-link>
           </li>
           <li>
 	          <div class="date">
@@ -126,15 +143,19 @@
           </dd>
         </dl>
       </div>
-      <div class="details-inner">
-        <h2 class="main-title">안내사항</h2>
-        <ul>
-	        <li>※대학생 뮤지션이 아닌 인기 뮤지션 공연은 덕력고사를 완료하신 분들 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
-	        <li>※ 당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
-	        <li>※정부의 방역지침 변경이 있을 시 공연의 주요 내용도 변경이 있을 수 있습니다.</li>
-	        <li>※덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함꼐 응모에 당첨되어야 하는 점 유의 부탁드립니다.</li>
-        </ul>
-      </div>
+      <div class="details-inner notification">
+				<h2 class="main-title">안내사항</h2>
+				<ul>
+					<li>※대학생 뮤지션이 아닌 인기 뮤지션 공연은 덕력고사를 완료하신 분들 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
+					<li>※당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외됩니다.</li>
+					<li>※선착순 스탠딩<br>
+					- 스탠딩은 별도 대기 없이 T팩토리 방문 후 덕콘 스탠딩으로 방문하셨다고 말씀하시면, 번호표를 부여합니다.<br>
+					- 번호표는 3시 이후 방문하신 선착순 50분께 배정됩니다.<br>
+					- 번호표를 받으신 분은 6시 이후에 2층의 공연장 입구에서 번호표를 보여주시면 스탠딩 입장이 가능 합니다.</li>
+					<li>※정부의 방역지침 변경이 있을 시 공연의 주요 내용도 변경이 있을 수 있습니다.</li>
+					<li>※덕콘은 14세 미만의 고객도 보호자 동반 하에 당첨 및 참여가 가능하나, 보호자도 함꼐 응모에 당첨되어야 하는 점 유의 부탁드립니다.</li>
+				</ul>
+			</div>
       <div class="details-inner" style="padding: 40px 0 20px">
         <h2 class="main-title" style="padding: 0 20px; color: #000;">함께즐겨요!</h2>
         <div class="program">
@@ -212,19 +233,8 @@ export default {
   @import 'src/assets/css/product';
 </style>
 <style lang="scss" scoped>
-.details{
-  &-inner {
-  padding:40px 20px;
-  ul{
-    font-size: 12px;
-    line-height: 19px;
-    color: #787878;
-    }
-  }
-}
 .lineup{
-  ul{
-    li{
+  ul li{
       .card{
       margin-left: 19px;
         .text{
@@ -236,5 +246,4 @@ export default {
         }
       }
     }
-  }
 </style>
