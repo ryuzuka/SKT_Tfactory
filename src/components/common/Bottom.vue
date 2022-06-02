@@ -18,7 +18,7 @@ export default {
   methods: {
     activeNav (menu) {
       let idx = -1
-      if (menu === 'store') {
+      if (!menu || menu === 'store') {
         idx = 0
       } else if (menu === 'program') {
         idx = 1
