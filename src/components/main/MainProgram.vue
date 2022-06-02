@@ -19,6 +19,7 @@ export default {
   },
   data () {
     return {
+      isLogin: false,
       BOTTOM_HEIGHT: 64,
       isClassMore: true,
       isSpecialMore: true,
@@ -152,9 +153,23 @@ export default {
         let scrollPosition = document.querySelector('#factory-' + this.scrollQuery).offsetTop + 60
         window.scrollTo({top: scrollPosition, behavior: 'smooth'})
       }
-    }
+    },
+	  clickFlagshipBook () {
+		  if (!this.isLogin) {
+			  localStorage.setItem('previous_url', '/sev/booking/counseling/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID)
+			  this.$router.push({'name': 'Login'})
+		  } else {
+			  this.$router.push('/sev/booking/counseling/date/shop?store_id=' + process.env.FLAGSHIP_STORE_ID)
+		  }
+	  }
   },
   mounted () {
+	  this.$store.watch(() => {
+		  if (this.$store.getters.CONSTANTS.session_alive === true) {
+			  this.isLogin = true
+		  }
+	  })
+
     this.scroll()
     this.getProgramBanner()
     this.getProgramList()

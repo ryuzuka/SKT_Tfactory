@@ -42,7 +42,8 @@ export default {
       location: {
         lat: 37.55547231,
         long: 126.92233948
-      }
+      },
+	    isLogin: false
     }
   },
   watch: {
@@ -170,8 +171,6 @@ export default {
     this.$store.watch(() => {
       if (this.$store.getters.CONSTANTS.session_alive === true) {
         this.isLogin = true
-      } else if (this.$store.getters.CONSTANTS.session_alive === false) {
-        this.isLogin = false
       }
     })
 

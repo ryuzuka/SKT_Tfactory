@@ -8,7 +8,15 @@
     <div class="swiper-top">
       <swiper :options="programSwiperOption">
         <swiper-slide v-for="(banner, index) in mainBannerList" :key="index">
-          <router-link :to="String(banner['LINK_URL'])">
+          <a v-if="String(banner['ROLLING_BANNER_ID']) === '34'" href="#" @click.prevent="clickFlagshipBook">
+            <div class="thumb"><img :src="banner['IMAGE_URL']" alt=""></div>
+            <div class="texts">
+              <span class="flag-solid7">{{ banner['CHIP_TEXT'] }}</span>
+              <strong class="tit" v-html="banner['MAIN_TEXT']"></strong>
+              <p class="desc">{{ banner['SUB_TEXT'] }}</p>
+            </div>
+          </a>
+          <router-link v-else :to="String(banner['LINK_URL'])">
             <div class="thumb"><img :src="banner['IMAGE_URL']" alt=""></div>
             <div class="texts">
               <span class="flag-solid7">{{ banner['CHIP_TEXT'] }}</span>
