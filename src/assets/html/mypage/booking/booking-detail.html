@@ -38,15 +38,18 @@
 
     <!-- 프로그램 -->
     <dl class="details-info" v-if="bookingType === 'program'">
+      <!-- -->
+      <dt>참여자</dt>
       <template v-if="bookingDetail['BOOKING_TYPE'] === 'basic'">
-        <dt>참여자</dt>
         <dd>{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}})</dd>
       </template>
       <template v-else-if="bookingDetail['BOOKING_TYPE'] === 'select'">
-        <dt>참여자</dt>
         <dd v-if="parseInt(bookingDetail['ATTENDEE_NUM']) > 1">{{bookingDetail.USER_NAME}}({{bookingDetail.USER_PHONE_NUMBER | mdnFilter}}) 외 {{ parseInt(bookingDetail['ATTENDEE_NUM']) - 1 }}인</dd>
         <dd v-else>{{bookingDetail.USER_NAME}}</dd>
       </template>
+      <!-- -->
+      <dt>참여인원</dt>
+      <dd>{{bookingDetail.ATTENDEE_NUM}}</dd>
     </dl>
 
     <!-- 체험존 -->

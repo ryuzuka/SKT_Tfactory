@@ -64,8 +64,6 @@ export default {
           }
         })
         this.listData = result['BOOKING']
-
-        console.log(this.listData)
       })
     },
     clickSatisfaction (bookId) {
