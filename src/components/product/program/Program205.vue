@@ -9,15 +9,15 @@
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          		title="7월의 덕콘"
-         		description="TUMF 마지막 라인업의 피날레 무대"
-        		></kakao-share>
+          title="7월의 덕콘"
+          description="TUMF 마지막 라인업의 피날레 무대"
+        ></kakao-share>
 
-        		<em class="main-subtitle">T University Music Festival</em>
-	        	<h2 class="main-title" style="margin-top:4px;">TUMF 마지막 라인업의 피날레 무대</h2>
-    	    	<p class="desc2">
-        	  		7월의 덕콘 무대는 인기 뮤지션과 함께 합니다. <br>핫한 뮤지션이 꾸며줄 마지막 THECON 무대와 함께 하세요. <br>T Factory에 방문하고 나의 뮤지션들의 소중한 관객이 되어 축제를 즐겨주세요.
-        		</p>
+        <em class="main-subtitle">T University Music Festival</em>
+        <h2 class="main-title" style="margin-top:4px;">TUMF 마지막 라인업의 피날레 무대</h2>
+        <p class="desc2">
+          7월의 덕콘 무대는 인기 뮤지션과 함께 합니다. <br>핫한 뮤지션이 꾸며줄 마지막 THECON 무대와 함께 하세요. <br>T Factory에 방문하고 나의 뮤지션들의 소중한 관객이 되어 축제를 즐겨주세요.
+        </p>
 			</div>
 			<div class="line">
 				<span style="margin: 0px 53px;">2022. 07. 01 PM 7:00<em style="margin-left:12px;">HATHAW9Y</em></span>
@@ -58,7 +58,7 @@
 						<span class="desc">T Factory 2층, 0 Stage</span>
 					</dd>
 				</dl>
-			</div>			
+			</div>
 			<div class="details-inner notification">
 				<h2 class="main-title">안내사항</h2>
 				<ul>
@@ -95,7 +95,7 @@
 	          		<div class="date">
 		          		<span>7.15<br>FRI</span>
 	          		</div>
-	          		<router-link to="/experience/program206?classId=39">
+	          		<router-link to="/experience/program206?classId=">
 		          		<div class="card" Style="margin-left: 19px;">
 			          		<div class="text">
 				          		<p class="name">소수빈</p>

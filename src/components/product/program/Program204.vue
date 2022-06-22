@@ -55,7 +55,7 @@
 	          <div class="date">
 		          <span>7.15<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program206?classId=39">
+	          <router-link to="/experience/program206?classId=">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">소수빈</p>
