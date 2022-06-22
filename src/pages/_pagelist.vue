@@ -677,9 +677,20 @@
 		          <div class="date"><span>5.30</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program203'>POP-UP Exhibition
-X You</router-link>
+		          <router-link class="link" to='/experience/program203'>POP-UP Exhibition X You</router-link>
 		          <div class="date"><span>6.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program204'>7월의 덕콘</router-link>
+		          <div class="date"><span>6.22</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program205'>7월의 덕콘 | 해서웨이</router-link>
+		          <div class="date"><span>6.22</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program206'>7월의 덕콘 | 소수빈</router-link>
+		          <div class="date"><span>6.22</span></div>
 	          </li>
           </ul>
 

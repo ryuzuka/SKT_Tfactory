@@ -985,7 +985,7 @@
             margin: 0;
           }
           .desc{
-            margin-left: 13px;
+            margin-left: 11px;
           }
         }
       }
@@ -1327,6 +1327,7 @@
       display: flex;
       position: relative;
       padding-top: 12px;
+      justify-content: space-between;
       &:before{
         content: "";  
         display: inline-block;
