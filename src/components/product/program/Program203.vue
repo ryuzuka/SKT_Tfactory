@@ -31,9 +31,9 @@
 					<dd>
 						<span class="sub_title" style="width: 55px;">전시 일정</span>
 						<span class="desc">
-							TUAF Part 1 : 2022.04.11 ~ 05.06<br>
-							TUAF Part 2 : 2022.05.07 ~ 05.31<br>
-							<em style="color: #000;">TUAF Part 3 : 2022.06.01 ~ 07.18</em>
+							TUAF Part 1 : 2022.04.11 ~ 05.06 (4주)<br>
+							TUAF Part 2 : 2022.05.07 ~ 05.31 (4주)<br>
+							<em style="color: #000;">TUAF Part 3 : 2022.06.01 ~ 07.18 (6주)</em>
 						</span>
 					</dd>
 					<dd>
