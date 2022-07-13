@@ -10,22 +10,22 @@
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
           title="T Factory X FLO"
-          description="랄랄&김진주의 과몰입 연애톡 공개방송 LIVE 방청 신청"
+          description="랄랄&김진주의 과몰입 연애톡 공개방송 방청 신청"
         ></kakao-share>
 
         <em class="main-subtitle">T Factory X FLO</em>
-        <h2 class="main-title" style="margin-top:4px; letter-spacing: -1px;">랄랄&김진주의<br>과몰입 연애톡<br>공개방송 LIVE 방청 신청</h2>
+        <h2 class="main-title" style="margin-top:4px; letter-spacing: -1px;">랄랄&김진주의<br>과몰입 연애톡<br>공개방송 방청 신청</h2>
 			</div>
 			<div class="details-inner">
 				<p class="desc2" style="color: #3617ce;">
-          랄랄&김진주의 과몰입 연애톡이 T Factory에서 공개방송 LIVE를 진행합니다. <br>저세상 텐션, 사이다 연애상담으로 사랑받는 연애톡 공개방송 LIVE 방청을 원하는 조카둥이들이 있다면 지금 바로 신청해주세요!
+          랄랄&김진주의 과몰입 연애톡이 T Factory에서 공개방송을 진행합니다. <br>저세상 텐션, 사이다 연애상담으로 사랑받는 연애톡 공개방송 방청을 원하는 조카둥이들이 있다면 지금 바로 신청해주세요!
         </p>
 			</div>
 			<div class="details-inner">
 				<h2 class="main-title">일정</h2>
 				<dl>
 					<dd>
-						<span class="sub_title" style="width: 113px;">공개방송 LIVE 일정</span>
+						<span class="sub_title" style="width: 113px;">공개방송 일정</span>
 						<span class="desc">7월 31일 (일) 오후 2시</span>
 					</dd>
 					<dd>

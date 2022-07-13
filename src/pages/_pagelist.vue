@@ -693,7 +693,7 @@
 		          <div class="date"><span>6.22</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program206'>공개방송 LIVE 방청 | 랄랄,김진주</router-link>
+		          <router-link class="link" to='/experience/program207'>공개방송 방청 | 랄랄,김진주</router-link>
 		          <div class="date"><span>7.15</span></div>
 	          </li>
           </ul>
