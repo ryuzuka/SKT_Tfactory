@@ -30,7 +30,7 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 113px;">방청 신청기간</span>
-						<span class="desc">7월 15일 (금) ~ 7월 22일 (금)</span>
+						<span class="desc">7월 13일 (수) ~ 7월 22일 (금)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 113px;">당첨자발표</span>
