@@ -1,5 +1,5 @@
 <template>
-	<div class="contents bottom-sticky" ref="contents">
+	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class207-slide1.jpg" alt="T Factory x FLO 과몰입 연애톡 | 2022.7 랄랄,김진주">
@@ -110,7 +110,8 @@ export default {
   },
   data () {
     return {
-      isLogin: false
+      isLogin: false,
+	    isBookingYn: false
     }
   },
   created () {
@@ -122,6 +123,11 @@ export default {
   },
   mounted () {
 	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
+	  this.$EventBus.$on('get-class-info', data => {
+      if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+        this.isBookingYn = true
+      }
+	  })
   },
   methods: {
 	  clickButton () {
