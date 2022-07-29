@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img ref="shareImage" src="../../../assets/images/program/class208-slide1.jpg" alt="T Factory x FLO 8월의 덕콘">
@@ -124,7 +124,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button></program-button>
+    <!-- <program-button></program-button> -->
     <!-- // button set -->
   </div>
 </template>
