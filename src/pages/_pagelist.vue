@@ -708,6 +708,10 @@
 		          <router-link class="link" to='/experience/program210'>8월의 덕콘 | 차세대</router-link>
 		          <div class="date"><span>8.26</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program211'>공개방송 방청 | 플로리다 프로젝트</router-link>
+		          <div class="date"><span>8.13</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
