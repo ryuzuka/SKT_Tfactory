@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+  <div class="contents" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img ref="shareImage" src="../../../assets/images/program/class208-slide1.jpg" alt="T Factory x FLO 8월의 덕콘">
@@ -42,7 +42,7 @@
 	          <div class="date">
 		          <span>8.19<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program205?classId=166">
+	          <router-link to="/experience/program209?classId=172">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">실리카겔</p>
@@ -58,7 +58,7 @@
 	          <div class="date">
 		          <span>8.26<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program206?classId=167">
+	          <router-link to="/experience/program210?classId=171">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">차세대</p>
@@ -124,7 +124,7 @@
     <!-- //details -->
 
     <!-- button set -->
-    <program-button></program-button>
+    <!-- <program-button></program-button> -->
     <!-- // button set -->
   </div>
 </template>

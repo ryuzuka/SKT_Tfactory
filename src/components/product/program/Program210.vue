@@ -30,7 +30,7 @@
 				<h2 class="main-title" style="margin-top:4px;">차세대</h2>
 				<div class="thumbnail"><img style="height: 340px;" src="../../../assets/images/program/class210-conts1.jpg" alt=""></div>
 				<p class="desc_20" style="margin-top: 8px;">
-					'사랑의 마음으로 로큰롤을 노래하는 그룹사운드, 차세대
+					사랑의 마음으로 로큰롤을 노래하는 그룹사운드, 차세대
 				</p>
 			</div>
 			<div class="details-inner">
@@ -74,7 +74,7 @@
 	          <div class="date">
 		          <span>8.19<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program205?classId=166">
+	          <router-link to="/experience/program209?classId=172">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">실리카겔</p>
@@ -90,7 +90,7 @@
 	          <div class="date">
 		          <span>8.26<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program206?classId=167">
+	          <router-link to="/experience/program210?classId=171">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">차세대</p>
