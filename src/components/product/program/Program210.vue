@@ -157,7 +157,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program201',
+  name: 'Program210',
   components: {
     KakaoShare,
 	  ProgramButton

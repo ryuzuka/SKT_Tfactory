@@ -119,7 +119,7 @@ import programLineupNew from './components/ProgramLineupNew'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program108',
+  name: 'Program118',
   components: {
     KakaoShare,
     ProgramButton,
