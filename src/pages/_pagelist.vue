@@ -712,6 +712,18 @@
 		          <router-link class="link" to='/experience/program211'>공개방송 방청 | 플로리다 프로젝트</router-link>
 		          <div class="date"><span>8.13</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program212'>Z Flip 4와 함께하는 나의 빛나는 순간들</router-link>
+		          <div class="date"><span>8.13</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program213'>With Z Flip 4 & XEXYMIX</router-link>
+		          <div class="date"><span>8.16</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 윤채형&윤원형</router-link>
+		          <div class="date"><span>8.20</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
