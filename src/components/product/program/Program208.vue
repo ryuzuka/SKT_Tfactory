@@ -1,5 +1,5 @@
 <template>
-  <div class="contents" ref="contents">
+  <div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
       <img ref="shareImage" src="../../../assets/images/program/class208-slide1.jpg" alt="T Factory x FLO 8월의 덕콘">
@@ -136,7 +136,7 @@ import programLineupNew from './components/ProgramLineupNew'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program202',
+  name: 'Program208',
   components: {
     KakaoShare,
     ProgramButton,
@@ -144,12 +144,18 @@ export default {
   },
   data () {
     return {
+	    isBookingYn: false
     }
   },
   created () {
   },
   mounted () {
 	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
+	  this.$EventBus.$on('get-class-info', data => {
+		  if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+			  this.isBookingYn = true
+		  }
+	  })
   },
   methods: {
     clickButton () {
