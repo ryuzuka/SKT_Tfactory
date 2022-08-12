@@ -2,7 +2,7 @@
   <div v-if="bookingAvailable && visible" class="btn-wrap sticky">
     <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid">프로그램 예약</a>
     <template v-else-if="bookingType === 'select'">
-      <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid">프로그램 신청</a>
+      <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree}">프로그램 신청</a>
       <button v-else-if="applyProgress === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
       <button v-else-if="applyProgress === 'NOT_STARTED'" class="btn-solid disabled" disabled>오픈 예정</button>
     </template>
@@ -19,7 +19,11 @@ export default {
     visible: {
       type: Boolean,
       default: true
-    }
+    },
+	  checkAgree: {
+      type: Boolean,
+		  default: false
+	  }
   },
   data () {
     return {
@@ -76,6 +80,8 @@ export default {
       })
     },
     bookProgram () {
+      if (this.checkAgree === false) return
+
       if (this.isLogin) {
         if (this.isApply) {
           this.alertAlreadyApply()
