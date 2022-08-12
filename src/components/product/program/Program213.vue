@@ -31,7 +31,7 @@
 	          <div class="date">
 		          <span>8.20<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program209?classId=172">
+	          <router-link to="/experience/program214?classId=177">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">윤채형, 윤원형</p>
@@ -47,7 +47,7 @@
 	          <div class="date">
 		          <span>8.27<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program210?classId=171">
+	          <router-link to="/experience/program215?classId=178">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">신지수</p>
@@ -63,7 +63,7 @@
 	          <div class="date">
 		          <span>9.03<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program209?classId=172">
+	          <router-link to="/experience/program216?classId=179">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">오윤하</p>
@@ -79,7 +79,7 @@
 	          <div class="date">
 		          <span>9.10<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program210?classId=171">
+	          <router-link to="/experience/program217?classId=180">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">고유라</p>
@@ -95,7 +95,7 @@
 	          <div class="date">
 		          <span>9.17<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program209?classId=172">
+	          <router-link to="/experience/program218?classId=181">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">박소리</p>
@@ -111,7 +111,7 @@
 	          <div class="date">
 		          <span>9.24<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program210?classId=171">
+	          <router-link to="/experience/program219?classId=182">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">최유진</p>
@@ -127,7 +127,7 @@
 	          <div class="date">
 		          <span>9.29<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program210?classId=171">
+	          <router-link to="/experience/program220?classId=183">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">서홍</p>
@@ -185,7 +185,7 @@ import programLineupNew from './components/ProgramLineupNew'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program202',
+  name: 'Program213',
   components: {
     KakaoShare,
     ProgramButton,
