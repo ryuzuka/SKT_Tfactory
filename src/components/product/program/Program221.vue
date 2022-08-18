@@ -71,7 +71,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="btn-wrap sticky"><a href="#" class="btn-solid">응원전 예약</a></div>
 		<!-- //details -->
 
 		<!-- button set -->
@@ -86,7 +85,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program203',
+  name: 'Program221',
   components: {
     KakaoShare,
 	  ProgramButton
