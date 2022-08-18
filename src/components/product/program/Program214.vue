@@ -61,44 +61,34 @@
 				<div class="input-box">
 					<p style="margin-bottom: 20px;">
 						<input type="checkbox" id="info1" v-model="checkAgree">
-						<label for="info1" style="font-size: 20px; color: #000; font-weight: bold;">개인정보 취급 방침 및 제 3자 동의</label>
+						<label for="info1" style="font-size: 16px; color: #000;">개인정보 취급 방침 및 제 3자 동의</label>
 					</p>
+					<p style="font-size: 20px; font-weight: bold; color: #000;">개인정보 취급 방침 및 위탁 동의 안내</p>
 					<ol>
 						<li>
-							<p>1. 수집하는 개인정보 항목 및 수집방법</p>
-							<p style="margin-left: 15px; margin-top: 0;">
-								회사는 제품 배송 및 업무상 커뮤니케이션 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
-								개인 정보 수집방법 : T Factory 웹사이트 (참여자 직접 입력)<br>
-								<span style="font-size: 9px;">■</span> 수집항목 : 이름, 휴대전화번호<br>
-								<span style="font-size: 9px;">■</span> 개인정보 수집 방법 : T Factory 웹사이트
+							<p style="font-size: 14px; color: #787878;">
+								1. 개인정보 수집∙이용 동의 안내문<br>
+								Workout Class With Z Flip4 & XEXYMIX 참가 <br>관련하여, 본인의 개인정보를 SK텔레콤 주식회사가 수집 및 이용하는 것에 대해 동의합니다.<br>
+								<span class="square-char">수집/이용 목적 : 본인 확인, 이벤트 당첨 경품 배송 안내 </span><br/>
+								<span class="square-char">수집 항목 : 이름, 휴대전화 번호 </span><br/>
+								<span class="square-char">보유 기간 : 이벤트 종료 후, VOC 목적으로 일주일 보관 후 파기 </span><br/>
+								※ 본 동의는 이벤트 응모를 위한 개인정보 수집/이용에 대한 동의로서, 동의를 거부할 권리가 있으나, 동의하지 않으실 경우 이벤트에 응모하실 수 없습니다.<br>
+								※ 본 이벤트는 (주)잘함과 넥스트유포리아에 처리 위탁하여 이벤트 시스템 운영, 당첨자 확인, 고객 상담 및 배송 업무를 처리합니다.<br>
+								※ 법령에 따른 개인정보의 수집/이용, 계약의 이행/편의증진을 위한 개인정보 처리 위탁 및 개인정보처리와 관련된 일반사항은 서비스의 개인정보처리 방침에 따릅니다.
 							</p>
-						</li>
-						<li>
-							<p>2. 개인정보의 수집 및 이용목적</p>
-							<p style="margin-left: 15px; margin-top: 0;">회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
-							<p style="margin-top: 20px; margin-bottom: 20px;"><span style="margin-left: 15px; font-size: 9px; ">■</span> 공지사항 및 절차 안내, 이벤트 당첨자 선정</p>
-						</li>
-						<li>
-							<p>3. 개인정보의 보유 및 이용 기간</p>
-							<p style="margin-left: 15px; margin-top: 0;">
-									개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 파기합니다.<br/>
-									단. 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.
+							<p style="font-size: 14px; color: #787878;">
+								2. 개인정보 처리 위탁 동의 안내문<br>
+								Workout Class With Z Flip 4 & XEXYMIX 참가와 관련하여, 본인의 개인정보처리 업무를 하기 수탁사에 위탁합니다.
 							</p>
-							<p style="margin-top: 20px;"><span style="margin-left: 15px; font-size: 9px;">■</span> 보존항목: 이름, 휴대전화번호</p>
-							<p style="margin-top: 0px;margin-bottom: 20px; text-indent: -15px; padding-left: 15px;"><span style="margin-left: 15px; font-size: 9px;">■</span> 보존근거 및 기간: 진행 이력에 관한 기록 : 이벤트 공지 후, 60일 이내 폐기</p>
-						</li>
-						<li>
-							<p>4. 개인정보 보호</p>
-							<p style="margin-left: 15px; margin-top: 0;">
-								개인정보는 진행이력 및 명시되어 있는 업무상의 커뮤니케이션 외에는 사용되지 않으며,<br>
-								취합된 정보는 12개월 이내 모두 폐기 합니다
+							<p style="font-size: 14px; color: #787878;">
+								수탁사 및 업무내용<br>
+								<span class="square-char">(주)잘함 : 고객 추첨, 이벤트 공지 및 당첨자 발표 안내, 인스타그램 이벤트 운영, 경품 배송 </span><br/>
+								<span class="square-char">넥스트유포리아 : 현장 이벤트 운영 </span>
 							</p>
-						</li>
-						<li>
-							<p>개인정보 제 3자 이용에 대한 동의</p>
-							<p style="margin-top: 20px; margin-bottom: 20px;">[ 개인정보 취급 및 위탁사 ]</p>
-							<p>본 이벤트 관련 커뮤니케이션 및 진행이력 취합, 공지 업무는 위탁 업체인 ㈜잘함에서 진행합니다.</p>
-							<p>1. 수탁업체 : ㈜잘함, 넥스트유포리아    2. 처리위탁 업무 내용 : T Factory 인스타그램 운영대행, 이벤트 당첨 및 배송</p>
+							<p style="font-size: 14px; color: #787878;">
+								3. 응모자 만 14세 미만 참여 가능 여부<br>
+								만 14세 이상만 참여 가능하며, 만 14세 미만은 당첨이 취소될 수 있습니다.
+							</p>
 						</li>
 					</ol>
 				</div>
