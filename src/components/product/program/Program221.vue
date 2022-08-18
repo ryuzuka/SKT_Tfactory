@@ -1,5 +1,5 @@
 <template>
-	<div class="contents bottom-sticky" ref="contents">
+	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class221-slide1.jpg" alt="T Factory X T1 | LCK 서머 플레이오프 응원전">
@@ -92,7 +92,8 @@ export default {
   },
   data () {
     return {
-      isLogin: false
+      isLogin: false,
+	    isBookingYn: false
     }
   },
   created () {
@@ -104,6 +105,11 @@ export default {
   },
   mounted () {
 	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
+	  this.$EventBus.$on('get-class-info', data => {
+		  if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+			  this.isBookingYn = true
+		  }
+	  })
   },
   methods: {
 	  clickButton () {
