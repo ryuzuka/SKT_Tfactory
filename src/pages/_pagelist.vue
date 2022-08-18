@@ -725,28 +725,32 @@
 		          <div class="date"><span>8.20</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 신지수</router-link>
+		          <router-link class="link" to='/experience/program215'>With Z Flip 4 & XEXYMIX | 신지수</router-link>
 		          <div class="date"><span>8.27</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 오윤하</router-link>
+		          <router-link class="link" to='/experience/program216'>With Z Flip 4 & XEXYMIX | 오윤하</router-link>
 		          <div class="date"><span>9.03</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 고유라</router-link>
+		          <router-link class="link" to='/experience/program217'>With Z Flip 4 & XEXYMIX | 고유라</router-link>
 		          <div class="date"><span>9.10</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 박소리</router-link>
+		          <router-link class="link" to='/experience/program218'>With Z Flip 4 & XEXYMIX | 박소리</router-link>
 		          <div class="date"><span>9.17</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 최유진</router-link>
+		          <router-link class="link" to='/experience/program219'>With Z Flip 4 & XEXYMIX | 최유진</router-link>
 		          <div class="date"><span>9.24</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program214'>With Z Flip 4 & XEXYMIX | 서홍</router-link>
+		          <router-link class="link" to='/experience/program220'>With Z Flip 4 & XEXYMIX | 서홍</router-link>
 		          <div class="date"><span>9.29</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program221'>LCK 서머 플레이오프 응원전</router-link>
+		          <div class="date"><span>8.21</span></div>
 	          </li>
           </ul>
 
