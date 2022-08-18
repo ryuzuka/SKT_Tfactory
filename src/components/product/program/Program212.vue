@@ -66,7 +66,9 @@
 				<p style="color: #000;">유명 운동 인플루언서들을 강사로 만날 수 있는 WONDER MOMENT!<br>7주간 애슬래저 브랜드 젝시믹스(XEXYMIX)와 함께 운동 클래스를 진행합니다.</p>
 				<p class="desc">하단 클래스 자세히 보기를 클릭하여 내가 원하는 강사의 클래스를 신청해주세요. 매 회 사전 신청자 중 15명을 초청하여 함께합니다. </p>
 				<p class="desc" style="font-size: 12px;">※ 참여 고객분들에게는 7만원 상당의 젝시믹스 제품을 드립니다.<br>※ 클래스 일정과 신청 기간은 상세페이지를 확인해주세요. </p>
-				<div class="btn-wrap" style="margin-top: 24px;"><a href="/experience/program213?classId=213" class="btn-line big">클래스 자세히 보기</a></div>
+				<div class="btn-wrap" style="margin-top: 24px;">
+					<router-link to="/experience/program213?classId=176" class="btn-line big">클래스 자세히 보기</router-link>
+				</div>
 			</div>
 			<div class="details-inner">
 				<h2 class="main-title">Z Flip 경품 이벤트</h2>
@@ -97,13 +99,13 @@
 				<h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
 				<div class="program">
 					<div class="program">
-						<router-link to="/experience/program213?classId=213">
+						<router-link to="/experience/program213?classId=176">
 							<div class="desc">
 								<p class="detail" style="margin-bottom: 48px;">Wonder Workout Class<br>with Z Flip 4 & XEXYMIX</p>
 								<span class="topic">Workout Class</span>
 							</div>
 							<div class="images">
-								<img src="../../../assets/images/program/class213-conts1.jpg" alt="TUMF">
+								<img src="../../../assets/images/program/class213-conts1.jpg" alt="Workout Class">
 							</div>
 						</router-link>
 					</div>
@@ -113,7 +115,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
-		<program-button></program-button>
+		<!--<program-button></program-button>-->
 		<!-- // button set -->
 	</div>
 </template>
@@ -124,7 +126,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program201',
+  name: 'Program212',
   components: {
     KakaoShare,
 	  ProgramButton

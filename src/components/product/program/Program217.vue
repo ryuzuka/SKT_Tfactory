@@ -54,7 +54,10 @@
 			</div>
 			<div class="details-inner">
 				<div class="input-box">
-					<p style="margin-bottom: 20px;"><input type="checkbox" id="info1"><label for="info1" style="font-size: 20px; color: #000; font-weight: bold;">개인정보 취급 방침 및 제 3자 동의</label></p>
+					<p style="margin-bottom: 20px;">
+						<input type="checkbox" id="info1" v-model="checkAgree">
+						<label for="info1" style="font-size: 20px; color: #000; font-weight: bold;">개인정보 취급 방침 및 제 3자 동의</label>
+					</p>
 					<ol>
 						<li>
 							<p>1. 수집하는 개인정보 항목 및 수집방법</p>
@@ -96,11 +99,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="btn-wrap sticky"><a href="#" class="btn-solid">프로그램 예약</a></div>
 		<!-- //details -->
 
 		<!-- button set -->
-		<program-button></program-button>
+		<program-button :check-agree="checkAgree"></program-button>
 		<!-- // button set -->
 	</div>
 </template>
@@ -111,14 +113,15 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program201',
+  name: 'Program217',
   components: {
     KakaoShare,
 	  ProgramButton
   },
   data () {
     return {
-      isLogin: false
+	    isLogin: false,
+	    checkAgree: false
     }
   },
   created () {
