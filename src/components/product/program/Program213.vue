@@ -125,7 +125,7 @@
           </li>
           <li>
 	          <div class="date">
-		          <span>9.29<br>SAT</span>
+		          <span>9.29<br>THU</span>
 	          </div>
 	          <router-link to="/experience/program220?classId=183">
 		          <div class="card" Style="margin-left: 19px;">
