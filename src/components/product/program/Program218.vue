@@ -2,7 +2,7 @@
 	<div class="contents bottom-sticky" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class213-slide1.jpg" alt="With Z Flip 4 & XEXYMIX | 박소리">
+			<img ref="shareImage" src="../../../assets/images/program/class218-slide1.jpg" alt="With Z Flip 4 & XEXYMIX | 박소리">
 		</div>
 		<!-- //slide -->
 		<!-- details -->
