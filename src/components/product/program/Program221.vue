@@ -13,19 +13,16 @@
 					description="LCK 서머 플레이오프 응원전"
 				></kakao-share>
 				<em class="main-subtitle">T Factory X T1</em>
-				<h2 class="main-title" style="margin-top: 4px;">LCK 서머 <br>플레이오프 응원전</h2>
-				<p class="desc2" style="margin-top: 16px;; line-height: 20px;">TEA 강사 스카이 김하늘 코치와 함께하는 LCK 스프링 플레이오프 응원전 EVENT가 진행됩니다. </p>
+				<h2 class="main-title" style="margin-top: 4px;">LCK 서머 <br>파이널 응원전</h2>
+				<p class="desc2" style="margin-top: 16px;; line-height: 20px;">TEA 강사 피글렛 채광진 코치와 함께하는 LCK 서머 파이널 응원전 EVENT가 진행됩니다. </p>
 			</div>
 			<div class="details-inner">
-				<h2 class="main-title">TEA 김하늘 코치 소개</h2>
+				<h2 class="main-title">TEA 채광진 코치 소개</h2>
 				<ul>
-					<li>- CJ Entus (2015.12 ~ 2016.11)</li>
-					<li>- SK telecom T1 (2016.12 ~ 2017.11)</li>
-					<li>- RED Canids (2017.12 ~2018.10)</li>
-					<li>- XTEN Esports (2019.05 ~ 2019.11)</li>
-					<li>- RED Canids (2019.12 ~ 2020.04)</li>
-					<li>- XTEN Esports (2020.07 ~ 2021.01)</li>
-					<li>- T1 Esports Academy 코치 (2021.08 ~ 현재)</li>
+					<li>- SK Telecom T1 K (2013.02 ~ 2014.09) </li>
+					<li>- Team Liquid (2014.10 ~ 2017.11) </li>
+					<li>- Clutch Gaming (2018.01 ~ 2019.06) </li>
+					<li>- T1 Esports Academy Coach (2021.12 ~ 현재) </li>
 				</ul>
 			</div>
 			<div class="details-inner">
@@ -34,16 +31,16 @@
 					<dd>
 						<span class="sub_title" style="width: 100px;">웅원일정 및 장소</span>
 						<span class="desc">
-							8월 21일 (일) 오후 3시 ,<br>T Factory 0 stage
+							8월 28일 (일) 오후 2시 ,<br>T Factory 0 stage
 						</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 100px;">응모기간</span>
-						<span class="desc">8월 18일 (목) ~ 8월 19일 (금)</span>
+						<span class="desc">8월 24일 (수) ~ 8월 25일 (금)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 100px;">당첨자발표</span>
-						<span class="desc">8월 20일 (토) 오후 3시 </span>
+						<span class="desc">8월 26일 (금) 오후 3시 </span>
 					</dd>
 				</dl>
 			</div>
