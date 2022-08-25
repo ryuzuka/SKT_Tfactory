@@ -29,9 +29,9 @@
 				<h2 class="main-title">일정</h2>
 				<dl>
 					<dd>
-						<span class="sub_title" style="width: 100px;">웅원일정 및 장소</span>
+						<span class="sub_title" style="width: 100px;">응원일정 및 장소</span>
 						<span class="desc">
-							8월 28일 (일) 오후 2시 ,<br>T Factory 0 stage
+							8월 28일 (일) 오후 2시<br>T Factory 0 stage
 						</span>
 					</dd>
 					<dd>
