@@ -33,7 +33,8 @@
 	          </div>
 	          <router-link to="/experience/program214?classId=177">
 		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
+								<div class="text">
+									<p class="flag-solid10">다이어트댄스</p>
 				          <p class="name">윤채형, 윤원형</p>
 				          <p class="time">PM 8:00</p>
 			          </div>
@@ -50,6 +51,7 @@
 	          <router-link to="/experience/program215?classId=178">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">필라테스</p>
 				          <p class="name">신지수</p>
 				          <p class="time">AM 9:30</p>
 			          </div>
@@ -66,6 +68,7 @@
 	          <router-link to="/experience/program216?classId=179">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">발레핏</p>
 				          <p class="name">오윤하</p>
 				          <p class="time">AM 9:30</p>
 			          </div>
@@ -82,6 +85,7 @@
 	          <router-link to="/experience/program217?classId=180">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">호흡요가</p>
 				          <p class="name">고유라</p>
 				          <p class="time">AM 9:30</p>
 			          </div>
@@ -98,6 +102,7 @@
 	          <router-link to="/experience/program218?classId=181">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">요가</p>
 				          <p class="name">박소리</p>
 				          <p class="time">AM 9:30</p>
 			          </div>
@@ -114,6 +119,7 @@
 	          <router-link to="/experience/program219?classId=182">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">아프로댄스</p>
 				          <p class="name">최유진</p>
 				          <p class="time">PM 8:00</p>
 			          </div>
@@ -130,6 +136,7 @@
 	          <router-link to="/experience/program220?classId=183">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
+									<p class="flag-solid10">싱잉볼명상</p>
 				          <p class="name">서홍</p>
 				          <p class="time">PM 8:00</p>
 			          </div>
@@ -218,4 +225,7 @@ export default {
   @import 'src/assets/css/product';
 </style>
 <style lang="scss" scoped>
+	.lineup ul li .card .text{padding: 5px 19px 0px;}
+	.lineup ul li .card .text [class^="flag"]{margin: 3px 0px;}
+	.lineup ul li .card .text .name{display: block;}
 </style>

@@ -33,11 +33,11 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 70px;">응모기간</span>
-						<span class="desc">9월 15일 (목) ~ 9월 26일 (월)</span>
+						<span class="desc">9월 15일 (목) ~ 9월 22일 (목)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 70px;">당첨자발표</span>
-						<span class="desc">9월 27일 (화) *당첨자 한해 개별 연락</span>
+						<span class="desc">9월 26일 (월) *당첨자 한해 개별 연락</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 70px;">장소</span>
