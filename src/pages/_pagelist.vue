@@ -752,6 +752,18 @@
 		          <router-link class="link" to='/experience/program221'>LCK 서머 플레이오프 응원전</router-link>
 		          <div class="date"><span>8.21</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program222'>9월의 덕콘</router-link>
+		          <div class="date"><span>9.16</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program223'>9월의 덕콘 | PATZ</router-link>
+		          <div class="date"><span>9.16</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program224'>9월의 덕콘 | 유키카</router-link>
+		          <div class="date"><span>9.23</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
