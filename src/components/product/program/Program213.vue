@@ -121,7 +121,7 @@
 			          <div class="text">
 									<p class="flag-solid10">아프로댄스</p>
 				          <p class="name">최유진</p>
-				          <p class="time">PM 8:00</p>
+				          <p class="time">AM 9:30</p>
 			          </div>
 			          <div class="image">
 				          <img src="../../../assets/images/program/class213-musician6.png" alt="musician">
@@ -131,7 +131,7 @@
           </li>
           <li>
 	          <div class="date">
-		          <span>9.29<br>THU</span>
+		          <span>9.28<br>WED</span>
 	          </div>
 	          <router-link to="/experience/program220?classId=183">
 		          <div class="card" Style="margin-left: 19px;">

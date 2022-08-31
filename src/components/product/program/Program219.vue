@@ -29,7 +29,7 @@
 				<dl>
 					<dd>
 						<span class="sub_title" style="width: 70px;">클래스 일정</span>
-						<span class="desc">9월 24일 (토) 오후 8시</span>
+						<span class="desc">9월 24일 (토) 오전 9시30분</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 70px;">응모기간</span>
