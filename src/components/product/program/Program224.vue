@@ -1,5 +1,5 @@
 <template>
-	<div class="contents bottom-sticky" ref="contents">
+	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class224-slide1.jpg" alt="T Factory x FLO 덕콘 | 2022.9 유키카">
@@ -77,7 +77,7 @@
 	          <div class="date">
 		          <span>9.16<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program209?classId=172">
+	          <router-link to="/experience/program223?classId=">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">PATZ</p>
@@ -93,7 +93,7 @@
 	          <div class="date">
 		          <span>9.23<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program210?classId=171">
+	          <router-link to="/experience/program224?classId=">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">유키카</p>
@@ -111,7 +111,7 @@
 				<h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
         <div class="program">
 	        <div class="program">
-            <router-link to="/experience/program111?classId=213">
+            <router-link to="/experience/program213?classId=176">
               <div class="desc">
                 <p class="detail" style="margin-bottom: 45px;">Wonder Workout Class<br/>with Z Flip 4 & XEXYMIX</p>
                 <span class="topic">Workout Class</span>
