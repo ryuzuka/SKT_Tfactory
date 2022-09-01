@@ -42,7 +42,7 @@
 	          <div class="date">
 		          <span>9.16<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program223?classId=">
+	          <router-link to="/experience/program223?classId=185">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">PATZ</p>
@@ -58,7 +58,7 @@
 	          <div class="date">
 		          <span>9.23<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program224?classId=">
+	          <router-link to="/experience/program224?classId=186">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">유키카</p>
