@@ -764,6 +764,10 @@
 		          <router-link class="link" to='/experience/program224'>9월의 덕콘 | 유키카</router-link>
 		          <div class="date"><span>9.23</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program225'>T Factory X ifland | 메타홍대 뮤직투어 :후추스의 인디벌스</router-link>
+		          <div class="date"><span>9.14</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
