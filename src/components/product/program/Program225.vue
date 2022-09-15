@@ -51,7 +51,7 @@
 				<h2 class="main-title" style="padding: 0 20px; color: #000;">다른 프로그램도 있어요!</h2>
         <div class="program">
 	        <div class="program">
-            <router-link to="/experience/program212?">
+            <router-link to="/experience/program212?classId=175">
               <div class="desc" style="bottom: 12px;">
                 <p class="detail" style="margin-bottom: 30px;">Z Filp 4와 함께하는 <br>나의 빛나는 순간들</p>
                 <span class="topic">What a<br>WONDER MOMENT</span>
@@ -108,12 +108,14 @@ export default {
 	  })
   },
   mounted () {
-	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
-	  this.$EventBus.$on('get-class-info', data => {
-		  if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
-			  this.isBookingYn = true
-		  }
-	  })
+    if (this.$refs.shareImage) {
+      this.$emit('kakao-share-image', this.$refs.shareImage['src'])
+      this.$EventBus.$on('get-class-info', data => {
+        if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+          this.isBookingYn = true
+        }
+      })
+	  }
   },
   methods: {
 	  clickButton () {
