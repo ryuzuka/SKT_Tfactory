@@ -1,9 +1,9 @@
 <template>
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
-		<div class="slider-prd">
+		<!-- <div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class225-slide1.png" alt="T Factory X ifland | 메타홍대 뮤직투어 :후추스의 인디벌스">
-		</div>
+		</div> -->
 		<!-- //slide -->
 		<!-- details -->
 		<div class="details sticky">
