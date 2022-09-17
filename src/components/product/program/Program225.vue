@@ -110,12 +110,12 @@ export default {
   mounted () {
     if (this.$refs.shareImage) {
       this.$emit('kakao-share-image', this.$refs.shareImage['src'])
-      this.$EventBus.$on('get-class-info', data => {
-        if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
-          this.isBookingYn = true
-        }
-      })
 	  }
+	  this.$EventBus.$on('get-class-info', data => {
+		  if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+			  this.isBookingYn = true
+		  }
+	  })
   },
   methods: {
 	  clickButton () {
