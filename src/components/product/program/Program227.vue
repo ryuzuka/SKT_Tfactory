@@ -1,5 +1,5 @@
 <template>
-	<div class="contents bottom-sticky" ref="contents">
+	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class227-slide1.jpg" alt="T Factory x FLO 덕콘 | 2022.10 맥거핀">
@@ -80,7 +80,7 @@
 	          <div class="date">
 		          <span>10.14<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program223?classId=185">
+	          <router-link to="/experience/program227?classId=188">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">맥거핀</p>
@@ -96,7 +96,7 @@
 	          <div class="date">
 		          <span>10.28<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program224?classId=186">
+	          <router-link to="/experience/program228?classId=189">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">Youth Hostel</p>
@@ -132,7 +132,8 @@ export default {
   },
   data () {
     return {
-      isLogin: false
+	    isLogin: false,
+	    isBookingYn: false
     }
   },
   created () {
@@ -143,7 +144,14 @@ export default {
 	  })
   },
   mounted () {
-	  this.$emit('kakao-share-image', this.$refs.shareImage.src)
+	  if (this.$refs.shareImage) {
+		  this.$emit('kakao-share-image', this.$refs.shareImage['src'])
+	  }
+	  this.$EventBus.$on('get-class-info', data => {
+		  if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+			  this.isBookingYn = true
+		  }
+	  })
   },
   methods: {
 	  clickButton () {
