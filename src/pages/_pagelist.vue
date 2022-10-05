@@ -780,6 +780,18 @@
 		          <router-link class="link" to='/experience/program228'>10월의 덕콘 | Youth Hostel</router-link>
 		          <div class="date"><span>10.04</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program229'>[Crew Class for New 0’s] iPhone 14/Pro 완전정복</router-link>
+		          <div class="date"><span>10.05</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program230'>[Crew Class for New 0’s] VLOG 만들기 (feat.시네마틱모드)</router-link>
+		          <div class="date"><span>10.05</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program231'>[Crew Class for New 0’s] 릴스 만들기 (feat.액션모드)</router-link>
+		          <div class="date"><span>10.05</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
