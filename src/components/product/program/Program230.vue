@@ -1,5 +1,5 @@
 <template>
-  <div class="contents bottom-sticky" ref="contents">
+	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
     <!-- slide -->
     <div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class230-slide1.jpg" alt="VLOG 만들기 (feat.시네마틱모드)">
@@ -69,6 +69,7 @@
 <script>
 import KakaoShare from '../../common/KakaoShare'
 import ProgramButton from './components/ProgramButton'
+import * as NATIVE from '../../../js/native'
 
 export default {
   name: 'Program230',
@@ -78,6 +79,8 @@ export default {
   },
   data () {
     return {
+	    isLogin: false,
+	    isBookingYn: false,
       swiperOption: {
         slidesPerView: 1,
         pagination: {
@@ -87,14 +90,38 @@ export default {
     }
   },
   created () {
+    this.$store.watch(() => {
+      if (this.$store.getters.CONSTANTS.session_alive === true) {
+        this.isLogin = true
+      }
+    })
   },
   mounted () {
+    if (this.$refs.shareImage) {
+      this.$emit('kakao-share-image', this.$refs.shareImage['src'])
+    }
+    this.$EventBus.$on('get-class-info', data => {
+      if (data['PROGRAM_CLASS_BOOKING_YN'] === 1) {
+        this.isBookingYn = true
+      }
+    })
   },
   methods: {
+    clickButton () {
+      const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
+      const mobileOS = this.$cookies.get('platform')
+      if (mobileOS === 'A' || mobileOS === 'I') {
+        NATIVE.sysBrowserOpen(mobileOS, redirectURL)
+      } else {
+        window.open(redirectURL, '_blank')
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
-  @import 'src/assets/css/product';
+@import 'src/assets/css/product';
+</style>
+<style lang="scss" scoped>
 </style>
