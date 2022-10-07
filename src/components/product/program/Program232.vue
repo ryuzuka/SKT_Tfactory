@@ -91,7 +91,7 @@
         </ul>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 00px;">
-            <button class="btn-line big" style="padding:0;" @click="bookProgram(0)">iPhone14 완전정복<br>크루클래스 예약하러 가기</button>
+            <router-link class="btn-line big" style="padding:3px 0 0 0;" to="/experience/program229?classId=140">iPhone14 완전정복<br>크루클래스 예약하러 가기</router-link>
           </div>
         </div>
 			</div>
@@ -104,7 +104,7 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-            <button class="btn-line big" @click="bookProgram(0)">게임 이벤트 보러가기</button>
+	          <router-link class="btn-line big" style="padding:15px 0 0 0;" to="/experience/program233?classId=191">게임 이벤트 보러가기</router-link>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-            <button class="btn-line big" @click="bookProgram(0)">제품 리스트 보러가기</button>
+	          <router-link class="btn-line big" style="padding:15px 0 0 0;" to="/experience/program234?classId=192">제품 리스트 보러가기</router-link>
           </div>
         </div>
       </div>

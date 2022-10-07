@@ -10,7 +10,7 @@
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
           title="Arcade for NEW 0s"
-          description="iPhone14와 함께 대형 스크린에 미러링 되는 다양한 게임을 0답게 즐겨보세요!"
+          description="게임에 도전해봐! 두려울 거 없잖아!"
         ></kakao-share>
 
         <em class="main-subtitle">Arcade for NEW 0s</em>

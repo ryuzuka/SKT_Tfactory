@@ -10,7 +10,7 @@
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
           title="Untact Shop for NEW 0s"
-          description="T Factory의 무인매장 T Factory 24를 아이폰14 전용 매장으로 운영합니다"
+          description="대면보다 비대면이 편한 NEW 0s를 위한"
         ></kakao-share>
 
         <em class="main-subtitle">Untact Shop for NEW 0s</em>
