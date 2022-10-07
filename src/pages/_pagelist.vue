@@ -792,6 +792,18 @@
 		          <router-link class="link" to='/experience/program231'>[Crew Class for New 0’s] 릴스 만들기 (feat.액션모드)</router-link>
 		          <div class="date"><span>10.05</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program232'>T Factory for NEW 0s | T Factory의 모든 것을 NEW 0s답게 즐겨보세요!</router-link>
+		          <div class="date"><span>10.07</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program233'>Arcade for NEW 0s | 게임에 도전해봐! 두려울 거 없잖아!</router-link>
+		          <div class="date"><span>10.07</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program234'>Untact Shop for NEW 0s | 대면보다 비대면이 편한 NEW 0s를 위한</router-link>
+		          <div class="date"><span>10.07</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
