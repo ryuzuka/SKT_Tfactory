@@ -2,7 +2,7 @@
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class203-slide1.jpg" alt="Untact Shop for NEW 0s">
+<!--			<img ref="shareImage" src="../../../assets/images/program/class203-slide1.jpg" alt="Untact Shop for NEW 0s">-->
 		</div>
 		<!-- //slide -->
 		<!-- details -->
