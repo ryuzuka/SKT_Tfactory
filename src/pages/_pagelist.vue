@@ -804,6 +804,10 @@
 		          <router-link class="link" to='/experience/program234'>Untact Shop for NEW 0s | 대면보다 비대면이 편한 NEW 0s를 위한</router-link>
 		          <div class="date"><span>10.07</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program235'>T Factory x FLO | 최애 플레이리스트 첫 공개방송 방청 신청</router-link>
+		          <div class="date"><span>10.12</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
