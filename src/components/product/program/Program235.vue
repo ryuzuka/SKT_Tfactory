@@ -73,7 +73,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
-		<!--<program-button></program-button>-->
+		<program-button></program-button>
 		<!-- // button set -->
 	</div>
 </template>
@@ -84,7 +84,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program212',
+  name: 'Program235',
   components: {
     KakaoShare,
 	  ProgramButton
