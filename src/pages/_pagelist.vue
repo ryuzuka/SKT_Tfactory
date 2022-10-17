@@ -808,6 +808,10 @@
 		          <router-link class="link" to='/experience/program235'>T Factory x FLO | 최애 플레이리스트 첫 공개방송 방청 신청</router-link>
 		          <div class="date"><span>10.12</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program236'>T Factory X T1 | 롤드컵 8강 응원전</router-link>
+		          <div class="date"><span>10.17</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
