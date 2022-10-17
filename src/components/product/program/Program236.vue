@@ -24,6 +24,10 @@
 				<h2 class="main-title">일정</h2>
 				<dl>
 					<dd>
+						<span class="sub_title" style="width: 65px;">응원 일정</span>
+						<span class="desc">10월 22일 (토) 오전 6시</span>
+					</dd>
+					<dd>
 						<span class="sub_title" style="width: 65px;">응모기간</span>
 						<span class="desc">10월 17일 (월) ~ 10월 19일 (수)</span>
 					</dd>
@@ -61,7 +65,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
-		<!--<program-button></program-button>-->
+		<program-button></program-button>
 		<!-- // button set -->
 	</div>
 </template>
@@ -72,7 +76,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program212',
+  name: 'Program236',
   components: {
     KakaoShare,
 	  ProgramButton
