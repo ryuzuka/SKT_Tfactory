@@ -58,14 +58,14 @@
 				<h2 class="main-title">T Factory x<br>무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(선수 신청)</span></h2>
 				<p class="desc">철권7 대회 선수 신청하고 총 우승 상품 300만원 상당의 주인공의 기회도 노려보세요!</p>
 				<div class="btn-wrap" style="margin-top: 24px;">
-					<router-link to="/experience/program238?classId=176" class="btn-line big">대회 참가 선수 신청 하러 가기</router-link>
+					<router-link to="/experience/program238?classId=197" class="btn-line big">대회 참가 선수 신청 하러 가기</router-link>
 				</div>
 			</div>
 			<div class="details-inner">
 				<h2 class="main-title">T Factory x<br>무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(본선 관람 신청)</span></h2>
 				<p class="desc">철권 대결 관람과 무릎 선수의 해설도 직관하고<br>다양한 현장 이벤트에 참여해보세요!</p>
 				<div class="btn-wrap" style="margin-top: 24px;">
-					<router-link to="/experience/program239?classId=176" class="btn-line big">본선 관람 신청 하러 가기</router-link>
+					<router-link to="/experience/program239?classId=198" class="btn-line big">본선 관람 신청 하러 가기</router-link>
 				</div>
 			</div>
 			<div class="details-inner notification">
@@ -135,7 +135,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program228',
+  name: 'Program237',
   components: {
     KakaoShare,
 	  ProgramButton

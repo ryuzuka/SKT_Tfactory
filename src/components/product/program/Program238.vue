@@ -133,10 +133,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
-    <program-button :visible="false"></program-button>
-    <div class="btn-wrap sticky">
-      <a href="#" @click.prevent="clickButton" class="btn-solid">프로그램 예약</a>
-    </div>
+    <program-button></program-button>
     <!-- // button set -->
 	</div>
 </template>
@@ -147,7 +144,7 @@ import ProgramButton from './components/ProgramButton'
 import * as NATIVE from '../../../js/native'
 
 export default {
-  name: 'Program228',
+  name: 'Program238',
   components: {
     KakaoShare,
 	  ProgramButton
