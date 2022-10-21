@@ -812,6 +812,18 @@
 		          <router-link class="link" to='/experience/program236'>T Factory X T1 | 롤드컵 8강 응원전</router-link>
 		          <div class="date"><span>10.17</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program237'>T Factory | 무릎 철권7 for NEW 0s</router-link>
+		          <div class="date"><span>10.21</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program238'>T Factory | 무릎 철권7 for NEW 0s 대회 참가 선수 신청</router-link>
+		          <div class="date"><span>10.21</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program239'>T Factory | 무릎 철권7 for NEW 0s 대회 직관 신청</router-link>
+		          <div class="date"><span>10.21</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
