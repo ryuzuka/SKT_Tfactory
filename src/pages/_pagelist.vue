@@ -813,15 +813,15 @@
 		          <div class="date"><span>10.17</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program237'>T Factory | 무릎 철권7 for NEW 0s</router-link>
+		          <router-link class="link" to='/experience/program237'>T Factory | DRX 무릎 철권7 for NEW 0s</router-link>
 		          <div class="date"><span>10.21</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program238'>T Factory | 무릎 철권7 for NEW 0s 대회 참가 선수 신청</router-link>
+		          <router-link class="link" to='/experience/program238'>T Factory | DRX 무릎 철권7 for NEW 0s 대회 참가 선수 신청</router-link>
 		          <div class="date"><span>10.21</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program239'>T Factory | 무릎 철권7 for NEW 0s 대회 직관 신청</router-link>
+		          <router-link class="link" to='/experience/program239'>T Factory | DRX 무릎 철권7 for NEW 0s 대회 직관 신청</router-link>
 		          <div class="date"><span>10.21</span></div>
 	          </li>
             <li class="pagelist-item">

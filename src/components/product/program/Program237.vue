@@ -2,23 +2,23 @@
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class237-slide1.jpg" alt="T Factory x 무릎 철권7 for NEW 0s">
+			<img ref="shareImage" src="../../../assets/images/program/class237-slide1.jpg" alt="T Factory x DRX 무릎 철권7 for NEW 0s">
 		</div>
 		<!-- //slide -->
 		<!-- details -->
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="T Factory x 무릎 철권7 for NEW 0s"
+          title="T Factory x DRX 무릎 철권7 for NEW 0s"
           description="T Factory에서 NEW 0s를 위한 철권대회가 열립니다."
         ></kakao-share>
 
         <em class="main-subtitle">T Factory for NEW 0s</em>
-        <h2 class="main-title" style="margin-top:4px;">T Factory x<br>무릎 철권7 for NEW 0s</h2>
-        <p class="desc2">
+        <h2 class="main-title" style="margin-top:4px;">T Factory x DRX 무릎<br>철권7 for NEW 0s</h2>
+        <p class="desc2" style="word-break:keep-all;">
           T Factory에서 NEW 0s를 위한 철권대회가 열립니다.<br>
 					총 우승 상품 300만원 상당의 애플 제품을 받게 될 우승자는 누가 될까요? <br>
-					철권계의 명실상부 1위 무릎 선수의 해설과 직접 대결을 해볼 수 있는 기회까지!<br>
+					철권계의 명실상부 1위 DRX 무릎 선수의 해설과 직접 대결을 해볼 수 있는 기회까지!<br>
         </p>
         <p class="desc2" style="margin-top:12px;">
           직관 관객분들을 위한 스페셜한 이벤트와 경품이<br>
@@ -46,7 +46,7 @@
 					<dd style="flex-direction: column;">
 						<span class="sub_title" style="width: 100%; font-size:16px; margin-bottom: 4px;">본선 일정</span>
 						<span class="desc" style="margin-left: 0; margin-bottom: 4px; font-weight: 500; color: #000;">11월 2일(수) 오후 6시</span>
-						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">예선을 통과한 본선 진출 8명의 선수들의 대회가<br> 진행됩니다.<br>본선에서는 무릎 선수의 해설과 아프리카tv 생중계가<br>함께 진행됩니다.</span>
+						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">예선을 통과한 본선 진출 8명의 선수들의 대회가<br>진행됩니다. 본선에서는 DRX 무릎 선수의 해설과<br>아프리카tv 생중계가 함께 진행됩니다.</span>
 					</dd>
 					<dd style="flex-direction: column;">
 						<span class="sub_title" style="width: 100%; color: #787878;">※ 우승상품 안내</span>
@@ -55,15 +55,15 @@
 				</dl>
 			</div>
 			<div class="details-inner">
-				<h2 class="main-title">T Factory x<br>무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(선수 신청)</span></h2>
+				<h2 class="main-title">T Factory x<br>DRX 무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(선수 신청)</span></h2>
 				<p class="desc">철권7 대회 선수 신청하고 총 우승 상품 300만원 상당의 주인공의 기회도 노려보세요!</p>
 				<div class="btn-wrap" style="margin-top: 24px;">
 					<router-link to="/experience/program238?classId=197" class="btn-line big">대회 참가 선수 신청 하러 가기</router-link>
 				</div>
 			</div>
 			<div class="details-inner">
-				<h2 class="main-title">T Factory x<br>무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(본선 관람 신청)</span></h2>
-				<p class="desc">철권 대결 관람과 무릎 선수의 해설도 직관하고<br>다양한 현장 이벤트에 참여해보세요!</p>
+				<h2 class="main-title">T Factory x<br>DRX 무릎 철권7<br>for NEW 0s<span style="font-size:14px;">&nbsp;(본선 관람 신청)</span></h2>
+				<p class="desc">철권 대결 관람과 DRX 무릎 선수의 해설도 직관하고<br>다양한 현장 이벤트에 참여해보세요!</p>
 				<div class="btn-wrap" style="margin-top: 24px;">
 					<router-link to="/experience/program239?classId=198" class="btn-line big">본선 관람 신청 하러 가기</router-link>
 				</div>

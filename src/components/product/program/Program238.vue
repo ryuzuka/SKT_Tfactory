@@ -2,19 +2,19 @@
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class238-slide1.jpg" alt="T Factory x 무릎 철권7 for NEW 0s 대회 참가 선수 신청">
+			<img ref="shareImage" src="../../../assets/images/program/class238-slide1.jpg" alt="T Factory x DRX 무릎 철권7 for NEW 0s 대회 참가 선수 신청">
 		</div>
 		<!-- //slide -->
 		<!-- details -->
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="T Factory x 무릎 철권7 for NEW 0s 대회 참가 선수 신청"
+          title="T Factory x DRX 무릎 철권7 for NEW 0s 대회 참가 선수 신청"
           description="T Factory에서 준비한 철권7 대회 선수 신청하고 프로 선수와 대결도 하고 총 우승 상품 300만원 상당의 주인공의 기회도 노려보세요!"
         ></kakao-share>
 
         <em class="main-subtitle">T Factory for NEW 0s</em>
-        <h2 class="main-title" style="margin-top:4px;">T Factory x<br>무릎 철권7 for NEW 0s 대회 참가 선수 신청</h2>
+        <h2 class="main-title" style="margin-top:4px;">T Factory x DRX 무릎<br>철권7 for NEW 0s 대회 참가 선수 신청</h2>
         <p class="desc2">
           T Factory에서 준비한 철권7 대회 선수 신청하고 프로<br>선수와 대결도 하고 총 우승 상품 300만원 상당의<br>주인공의 기회도 노려보세요!<br>
         </p>
@@ -70,7 +70,7 @@
             <span class="sub_title">본선 일정</span><br>
 						<div style="margin:4px 0 0 -22px; line-height: 1.71;">
 							<span class="desc" style="color: #000; display: inline-block; margin-bottom: 4px;">11월 2일(수) 오후 6시</span><br>
-							<span class="desc">예선을 통과한 본선 진출 8명의 선수들의 대회가<br>진행됩니다.<br>본선에서는 무릎 선수의 해설과 아프리카tv 생중계가<br>함께 진행됩니다.</span>
+							<span class="desc">예선을 통과한 본선 진출 8명의 선수들의 대회가<br>진행됩니다.<br>본선에서는 DRX 무릎 선수의 해설과 아프리카tv 생중계가 함께 진행됩니다.</span>
 						</div>
 					</li>
           <li>
