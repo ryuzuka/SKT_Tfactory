@@ -29,11 +29,11 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px;">응모기간</span>
-						<span class="desc">10월 24일 ~ 10월 25일</span>
+						<span class="desc">10월 24일 ~ 10월 26일</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px;">당첨자발표</span>
-						<span class="desc">26일 오후 3시</span>
+						<span class="desc">27일 오후 3시</span>
 					</dd>
 				</dl>
 			</div>
