@@ -828,6 +828,18 @@
 		          <router-link class="link" to='/experience/program240'>T Factory X T1 | 롤드컵 4강 응원전</router-link>
 		          <div class="date"><span>10.24</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program241'>11월의 덕콘</router-link>
+		          <div class="date"><span>10.27</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program242'>11월의 덕콘 | 크리스탈티</router-link>
+		          <div class="date"><span>10.27</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program243'>11월의 덕콘 | 미스피츠</router-link>
+		          <div class="date"><span>10.27</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
