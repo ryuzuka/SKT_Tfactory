@@ -43,7 +43,7 @@
 	          <div class="date">
 		          <span style="width:36.2px;">11.4<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program242?classId=188">
+	          <router-link to="/experience/program242?classId=202">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">크리스탈티</p>
@@ -59,7 +59,7 @@
 	          <div class="date">
 		          <span>11.18<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program243?classId=189">
+	          <router-link to="/experience/program243?classId=203">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">미스피츠</p>
@@ -85,10 +85,6 @@
 			</div>
 		</div>
 		<!-- //details -->
-
-		<!-- button set -->
-		<program-button></program-button>
-		<!-- // button set -->
 	</div>
 </template>
 
