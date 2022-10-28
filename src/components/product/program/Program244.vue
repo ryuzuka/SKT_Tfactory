@@ -2,7 +2,7 @@
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class240-slide1.jpg" alt="롤드컵 파이널 응원전">
+			<img ref="shareImage" src="../../../assets/images/program/class244-slide1.jpg" alt="롤드컵 파이널 응원전">
 		</div>
 		<!-- //slide -->
 		<!-- details -->
