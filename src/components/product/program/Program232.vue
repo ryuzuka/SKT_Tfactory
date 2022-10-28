@@ -91,7 +91,7 @@
         </ul>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 00px;">
-            <router-link class="btn-line big" style="padding:3px 0 0 0;" to="/experience/program229?classId=140">iPhone14 완전정복<br>크루클래스 예약하러 가기</router-link>
+            <button class="btn-line big" @click.prevent="bookingClass">클래스 예약하기</button>
           </div>
         </div>
 			</div>
@@ -146,7 +146,6 @@
 		<!-- //details -->
 
 		<!-- button set -->
-		<program-button></program-button>
 		<!-- // button set -->
 	</div>
 </template>
@@ -186,6 +185,9 @@ export default {
 	  })
   },
   methods: {
+	  bookingClass () {
+		  this.$router.push('/main/program?anchor=factory-class')
+	  },
 	  clickButton () {
 		  const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
 		  const mobileOS = this.$cookies.get('platform')

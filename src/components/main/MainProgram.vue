@@ -2,6 +2,7 @@
 
 <script>
 import _ from 'lodash'
+import gsap from 'gsap'
 import ModalMain from '../main/ModalMain'
 
 import * as STORE from '../../js/store.js'
@@ -40,13 +41,22 @@ export default {
       specialClasses: [],
       mainBannerKor: ['Welcome to ⓥStudio!', '갤럭시로 한 곡 뚝딱'],
       mainBannerUrl: [],
-      mainBannerList: []
+      mainBannerList: [],
+	    loadFlag: 0
     }
   },
   watch: {
     scrollTop () {
       this.scroll()
-    }
+    },
+	  loadFlag (val) {
+		  // anchor
+		  if (val > 1) {
+        if (this.$route.query.anchor) {
+          gsap.to(window, {duration: 0.5, scrollTo: '#' + this.$route.query.anchor})
+        }
+		  }
+	  }
   },
   methods: {
     openPopup (POPUP_LIST) {
@@ -135,6 +145,8 @@ export default {
         this.$nextTick(() => {
           this.scrollToFactory()
         })
+
+	      this.loadFlag++
       })
     },
     getProgramBanner () {
@@ -144,6 +156,7 @@ export default {
         this.$nextTick(() => {
           this.scrollToFactory()
         })
+	      this.loadFlag++
       })
     },
     scrollToFactory () {
