@@ -29,24 +29,24 @@
 				<h2 class="main-title">운영일정</h2>
 				<dl>
 					<dd style="flex-direction: column;">
-						<span class="sub_title" style="width: 100%; font-size:16px; margin-bottom: 4px;">대회 출전 선수 모집</span>
+						<span class="sub_title" style="width: 100%; font-size:20px; margin-bottom: 8px;">대회 출전 선수 모집</span>
 						<span class="desc" style="margin-left: 0; margin-bottom: 4px; font-weight: 500; color:#000;">총 32명<br>32명 중 24명 선착순 모집</span>
-						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">*추가 8명은 프로급 선수로 구성되며 대진표 발표날<br>공개됩니다.</span>
+						<span class="desc" style="margin-left: 0; margin-bottom: 48px;">*추가 8명은 프로급 선수로 구성되며 대진표 발표날<br>공개됩니다.</span>
 					</dd>
 					<dd style="flex-direction: column;">
-						<span class="sub_title" style="width: 100%; font-size:16px; margin-bottom: 4px;">대회 진행 방식</span>
+						<span class="sub_title" style="width: 100%; font-size:20px; margin-bottom: 8px;">대회 진행 방식</span>
 						<span class="desc" style="margin-left: 0; margin-bottom: 4px; font-weight: 500; color: #000;">4명 8개조</span>
-						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">*조별로 프로급 선수 1명씩 시드배정<br>예선 = 싱글 엘리미네이션<br>본선 = 더블 엘리미네이션</span>
+						<span class="desc" style="margin-left: 0; margin-bottom: 48px;">*조별로 프로급 선수 1명씩 시드배정<br>예선 = 싱글 엘리미네이션<br>본선 = 더블 엘리미네이션</span>
 					</dd>
 					<dd style="flex-direction: column;">
-						<span class="sub_title" style="width: 100%; font-size:16px; margin-bottom: 4px;">예선 일정</span>
+						<span class="sub_title" style="width: 100%; font-size:20px; margin-bottom: 8px;">예선 일정</span>
 						<span class="desc" style="margin-left: 0; margin-bottom: 4px; font-weight: 500; color: #000;">11월 1일(화) 오후 5시</span>
-						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">사전 참가 신청한 일반인 선수 24명과 프로급 선수 8명이 예선전을 치르게 됩니다.<br>싱글 토너먼트 방식으로 8강 진출자 8명이 결정됩니다.</span>
+						<span class="desc" style="margin-left: 0; margin-bottom: 48px;">사전 참가 신청한 일반인 선수 24명과 프로급 선수 8명이 예선전을 치르게 됩니다.<br>싱글 토너먼트 방식으로 8강 진출자 8명이 결정됩니다.</span>
 					</dd>
 					<dd style="flex-direction: column;">
-						<span class="sub_title" style="width: 100%; font-size:16px; margin-bottom: 4px;">본선 일정</span>
+						<span class="sub_title" style="width: 100%; font-size:20px; margin-bottom: 8px;">본선 일정</span>
 						<span class="desc" style="margin-left: 0; margin-bottom: 4px; font-weight: 500; color: #000;">11월 2일(수) 오후 6시</span>
-						<span class="desc" style="margin-left: 0; margin-bottom: 32px;">예선을 통과한 본선 진출 8명의 선수들의 대회가<br>진행됩니다. 본선에서는 DRX 무릎 선수의 해설과<br>아프리카tv 생중계가 함께 진행됩니다.</span>
+						<span class="desc" style="margin-left: 0; margin-bottom: 48px;">예선을 통과한 본선 진출 8명의 선수들의 대회가<br>진행됩니다. 본선에서는 DRX 무릎 선수의 해설과<br>아프리카tv 생중계가 함께 진행됩니다.</span>
 					</dd>
 					<dd style="flex-direction: column;">
 						<span class="sub_title" style="width: 100%; color: #787878;">※ 우승상품 안내</span>
