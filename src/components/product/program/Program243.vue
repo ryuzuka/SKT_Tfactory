@@ -24,7 +24,7 @@
         </p>
 			</div>
 			<div class="line">
-				<span style="margin: 0px 38px;">2022. 11. 18 PM 7:00<em style="margin-left:12px;">MSFTZ</em></span>
+				<span style="margin: 0px 38px;">2022. 11. 18 PM 7:00<em style="margin-left:12px;">msftz</em></span>
 				<img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
 			</div>
 			<div class="details-header" style="padding: 40px 20px;">
