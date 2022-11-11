@@ -59,7 +59,7 @@
 	          <div class="date">
 		          <span style="width:36.2px;">11.25<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program248?classId=202">
+<!--	          <router-link to="/experience/program248?classId=207">-->
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">옥상달빛</p>
@@ -69,13 +69,13 @@
 				          <img src="../../../assets/images/program/class247-musician1.png" alt="musician">
 			          </div>
 		          </div>
-	          </router-link>
+<!--	          </router-link>-->
           </li>
           <li>
 	          <div class="date">
 		          <span style="width:36.2px;">11.26<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program249?classId=202">
+<!--	          <router-link to="/experience/program249?classId=208">-->
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">데자부그룹</p>
@@ -85,13 +85,13 @@
 				          <img src="../../../assets/images/program/class247-musician2.png" alt="musician">
 			          </div>
 		          </div>
-	          </router-link>
+<!--	          </router-link>-->
           </li>
 					<li>
 	          <div class="date">
 		          <span style="width:36.2px;">11.27<br>SUN</span>
 	          </div>
-	          <router-link to="/experience/program250?classId=202">
+<!--	          <router-link to="/experience/program250?classId=209">-->
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">구만</p>
@@ -101,13 +101,13 @@
 				          <img src="../../../assets/images/program/class247-musician3.png" alt="musician">
 			          </div>
 		          </div>
-	          </router-link>
+<!--	          </router-link>-->
           </li>
           <li>
 	          <div>
 		          <span style="display: inline-block; width:50.2px;"><br></span>
 	          </div>
-	          <router-link to="/experience/program251?classId=202">
+<!--	          <router-link to="/experience/program251?classId=210">-->
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">소란</p>
@@ -117,13 +117,13 @@
 				          <img src="../../../assets/images/program/class247-musician4.png" alt="musician">
 			          </div>
 		          </div>
-	          </router-link>
+<!--	          </router-link>-->
           </li>
           <li>
 	          <div class="date">
 		          <span>11.28<br>MON</span>
 	          </div>
-	          <router-link to="/experience/program252?classId=203">
+<!--	          <router-link to="/experience/program252?classId=211">-->
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">치즈</p>
@@ -133,7 +133,7 @@
 				          <img src="../../../assets/images/program/class247-musician5.png" alt="musician">
 			          </div>
 		          </div>
-	          </router-link>
+<!--	          </router-link>-->
           </li>
         </ul>
       </div>
@@ -141,7 +141,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
-		<program-button></program-button>
+		<!--program-button></program-button-->
 		<!-- // button set -->
 	</div>
 </template>

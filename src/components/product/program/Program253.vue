@@ -30,7 +30,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 14일부터 예약 가능합니다</button>
+<!--	          <router-link class="btn-line big" to="/experience/program254?classId=214">-->
+	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
+<!--	          </router-link>-->
           </div>
         </div>
         <p class="desc2">
@@ -38,7 +40,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 14일부터 예약 가능합니다</button>
+<!--	          <router-link class="btn-line big" to="/experience/program255?classId=215">-->
+	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
+<!--	          </router-link>-->
           </div>
         </div>
         <p class="desc2">
@@ -46,7 +50,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 14일부터 예약 가능합니다</button>
+<!--	          <router-link class="btn-line big" to="/experience/program256?classId=216">-->
+	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
+<!--	          </router-link>-->
           </div>
         </div>
 			</div>
@@ -58,7 +64,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 16일부터 신청 가능합니다</button>
+<!--	          <router-link class="btn-line big" to="/experience/program257?classId=217">-->
+	          <button class="btn-line big" disabled>11월 16일부터 신청 가능합니다</button>
+<!--	          </router-link>-->
           </div>
         </div>
 			</div>
@@ -91,6 +99,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
+		<!--program-button></program-button-->
 		<!-- // button set -->
   </div>
 </template>
@@ -130,9 +139,6 @@ export default {
 	  })
   },
   methods: {
-	  bookingClass () {
-		  this.$router.push('/main/program?anchor=factory-class')
-	  },
 	  clickButton () {
 		  const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
 		  const mobileOS = this.$cookies.get('platform')

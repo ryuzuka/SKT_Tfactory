@@ -36,7 +36,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 32px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 17일부터 신청 가능합니다</button>
+	          <router-link class="btn-line big" to="/experience/program247?classId=205">
+		          11월 17일부터 신청 가능합니다
+	          </router-link>
           </div>
         </div>
         <p class="desc2">
@@ -50,7 +52,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 32px;">
-            <button class="btn-line big" @click.prevent="bookingClass">11월 14일부터 예약 가능합니다</button>
+	          <router-link class="btn-line big" to="/experience/program253?classId=206">
+		          11월 14일부터 신청 가능합니다
+	          </router-link>
           </div>
         </div>
         <p class="desc2">
@@ -63,7 +67,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 00px;">
-            <button class="btn-line big" @click.prevent="bookingClass">애플 정품 특별할인 보러가기</button>
+	          <router-link class="btn-line big" to="/experience/program258?classId=218">
+		          애플 정품 특별할인 보러가기
+	          </router-link>
           </div>
         </div>
 			</div>
@@ -75,7 +81,7 @@
 						<span class="desc" style="width: 255px;">
               11월 22일 ~ 11월 28일
               <ul style="font-size: 12px; line-height: 1.5; word-break: keep-all;">
-                <li>*각 프로그램마다 시간이 상이하니 클래스별 상세 &nbsp;일정 확인 부탁드립니다.</li>
+                <li>*각 프로그램마다 시간이 상이하니 클래스별 상세 일정 확인 부탁드립니다.</li>
               </ul>
             </span>
 					</dd>
@@ -96,6 +102,7 @@
 		<!-- //details -->
 
 		<!-- button set -->
+		<!--program-button></program-button-->
 		<!-- // button set -->
 	</div>
 </template>
@@ -135,9 +142,6 @@ export default {
 	  })
   },
   methods: {
-	  bookingClass () {
-		  this.$router.push('/main/program?anchor=factory-class')
-	  },
 	  clickButton () {
 		  const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
 		  const mobileOS = this.$cookies.get('platform')
