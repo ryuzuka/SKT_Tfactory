@@ -15,6 +15,10 @@
 
         <em class="main-subtitle">[수능 이벤트]<br>얘드라 새로 바꿔야지, 애플 할인 챙겨!</em>
         <h2 class="main-title" style="margin-top:4px;">T Factory에서 만나는<br>애플 정품 특별 할인</h2>
+        <p class="desc2" style="margin-top: 16px;">
+          오직 T Factory에서 만날 수 있는 애플 정품 특별 할인!<br>
+          대학생 새내기 준비도 T Factory에서 시작하세요.
+        </p>
         <h3 class="subtit" style="font-size: 16px; font-weight: bold;">[할인판매 구성]</h3>
         <ol class="step-list" style="margin-top:12px; line-height: 1.71;">
           <li style="margin-bottom:12px;">
