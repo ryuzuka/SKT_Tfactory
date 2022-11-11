@@ -842,7 +842,27 @@
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program244'>T Factory X T1 | 롤드컵 파이널 응원전</router-link>
-		          <div class="date"><span>10.28</span></div>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program245'>나만의 디지털 메이트를 만나는 곳 A. Factory</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program246'>수능 이벤트 | 수능 끝! 얘드라 혜택 챙겨!</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program247'>수능 이벤트 | 얘드라 콘서트 챙겨!</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program253'>수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program258'>수능 이벤트 | 얘드라 새로 바꿔야지, 애플 할인 챙겨!</router-link>
+		          <div class="date"><span>11.11</span></div>
 	          </li>
           </ul>
 
