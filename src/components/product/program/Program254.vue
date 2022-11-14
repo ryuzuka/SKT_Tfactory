@@ -48,7 +48,7 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">장소</span>
-						<span class="desc">T Factory 3층 Apple Zone</span>
+						<span class="desc">T Factory 2층 Apple Zone</span>
 					</dd>
 				</dl>
 			</div>
