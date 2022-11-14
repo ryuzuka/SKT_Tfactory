@@ -27,13 +27,21 @@
 			<div class="details-inner">
 				<h2 class="main-title">일정 및 장소</h2>
 				<dl>
-					<dd>
-						<span class="sub_title" style="width: 97px;">클래스 신청 오픈</span>
-						<span class="desc">11월 14일 (월)</span>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">클래스 신청 기간</span>
+						<span class="desc">11월 14일 (월) ~ 11월 16일 (수)</span>
 					</dd>
-					<dd>
-						<span class="sub_title" style="width: 97px;">일정</span>
-						<span class="desc">11월 23일 (수) 오후 4시,6시</span>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">당첨자 발표</span>
+						<span class="desc">11월 18일 (금)</span>
+					</dd>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">당첨 인원</span>
+						<span class="desc">시간대별로 8명씩</span>
+					</dd>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">클래스 데이</span>
+						<span class="desc">11월 23일 (수) 오후 4시, 6시</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">장소</span>

@@ -30,17 +30,25 @@
 			<div class="details-inner">
 				<h2 class="main-title">일정 및 장소</h2>
 				<dl>
-					<dd>
-						<span class="sub_title" style="width: 97px;">클래스 신청 오픈</span>
-						<span class="desc">11월 14일 (월)</span>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">클래스 신청 기간</span>
+						<span class="desc">11월 14일 (월) ~ 11월 16일 (수)</span>
 					</dd>
-					<dd>
-						<span class="sub_title" style="width: 97px;">일정</span>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">당첨자 발표</span>
+						<span class="desc">11월 18일 (금)</span>
+					</dd>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">당첨 인원</span>
+						<span class="desc">8명</span>
+					</dd>
+					<dd style="margin-bottom: 6px;">
+						<span class="sub_title" style="width: 97px;">클래스 데이</span>
 						<span class="desc">11월 22일 (화) 오후 4시</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">장소</span>
-						<span class="desc">T Factory 2층 Apple Zone</span>
+						<span class="desc">T Factory 3층 Apple Zone</span>
 					</dd>
 				</dl>
 			</div>

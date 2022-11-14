@@ -19,7 +19,10 @@
 					50만 인기 뷰티 유튜브 크리에이터, 재유님과 함께 하는 원데이 뷰티클래스.디테일 장인 뷰티 유튜버 재유님이<br />수험생 여러분들의 아름다운 날들을 응원해요!
 				</p>
         <p class="desc2" style="margin-top: 12px;">
-					재유님의 메이크업 강의, 메이크오버, Q&A 시간까지!<br />알차게 준비했어요.원데이 클래스 신청하고 뷰티 꿀팁도<br />가져가세요!
+					재유님의 메이크업 강의, 메이크오버, Q&A 시간까지!<br />알차게 준비했어요.
+				</p>
+        <p class="desc2" style="margin-top: 12px;">
+					메이크오버 당첨자에겐 서프라이즈 선물까지 준비<br />했다는 사실! 원데이 클래스 신청하고 뷰티 꿀팁도<br />가져가세요♥
 				</p>
 			</div>
 			<div class="details-inner">
@@ -41,11 +44,15 @@
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">신청기간</span><br>
 						<span class="desc" style="color: #000;">11/16 (수)~11/20 (일)</span>
           </li>
-          <li>
+          <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">당첨자 발표</span><br>
 						<span class="desc" style="color: #000;">11/21 (월) *신청자 중 80명 선정</span>
           </li>
-          <li>
+          <li style="margin-bottom:12px;">
+						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">메이크오버 당첨자 발표</span><br>
+						<span class="desc" style="color: #000;">11/23 (수) *신청자 중 1명 선정</span>
+          </li>
+          <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">클래스 소요 시간</span><br>
 						<span class="desc" style="color: #000;">60분</span>
           </li>
@@ -90,6 +97,56 @@
 					<li>※본 전시는 T Factory를 방문하여 스마트폰으로 본인인증 한<br>경우에만 참여 가능합니다. (본인인증 가능 연령: 만 14세 이상)</li>
 					<li>※본 전시 세부 사항들은 업체 사정에 따라 별도의 안내 없이 중단 또는 변경될 수 있습니다.</li>
 				</ul>
+			</div>
+			<div class="details-inner">
+				<div class="input-box">
+					<p style="margin-bottom: 20px;">
+						<input type="checkbox" id="info1" v-model="checkAgree">
+						<label for="info1" style="font-size: 16px; color: #000;">개인정보 취급 방침 및 제 6자 동의</label>
+					</p>
+					<p style="font-size: 20px; font-weight: bold; color: #000;">개인정보 취급 방침 및 위탁 동의 안내</p>
+					<ol>
+						<li>
+							<p style="font-size: 14px; color: #787878;">
+								1. 수집하는 개인정보 항목 및 수집방법<br>
+								회사는 제품 배송 및 업무상 커뮤니케이션 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br/>
+								개인 정보 수집방법 : T Factory 웹사이트 (참여자 직접 입력)<br/>
+								<span class="square-char">수집항목 : 이름, 휴대전화번호</span><br/>
+								<span class="square-char">개인정보 수집 방법 : T Factory 웹사이트</span><br/>
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px; width: 361px;">
+								2. 개인정보의 수집 및 이용목적<br>
+								회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br/>
+								<span class="square-char">공지사항 및 절차 안내, 이벤트 당첨자 선정</span><br/>
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								3. 개인정보의 보유 및 이용 기간<br/>
+								개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 파기합니다.<br/>
+								단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br/>
+								<span class="square-char">보존항목: 이름, 휴대전화번호</span><br/>
+								<span class="square-char">보존근거 및 기간: 진행 이력에 관한 기록 : 이벤트 공지 후, 60일 이내 폐기</span><br/>
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								4. 개인정보 보호<br/>
+								개인정보는 진행이력 및 명시되어 있는 업무상의 커뮤니케이션 외에는 사용되지 않으며, 취합된 정보는 12개월 이내 모두 폐기 합니다<br/>
+								<span class="square-char">보존항목: 이름, 휴대전화번호</span><br/>
+								<span class="square-char">보존근거 및 기간: 진행 이력에 관한 기록 : 이벤트 공지 후, 60일 이내 폐기</span><br/>
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								개인정보 제 3자 이용에 대한 동의
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								[ 개인정보 취급 및 위탁사 ]
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								본 이벤트 관련 커뮤니케이션 및 진행이력 취합, 공지 업무는 위탁 업체인 ㈜잘함에서 진행합니다.
+							</p>
+							<p style="font-size: 14px; color: #787878; margin-top: 24px;">
+								1. 수탁업체 : (주)잘함    5. 처리위탁 업무 내용 : T Factory<br />인스타그램 운영대행, 이벤트 당첨 및 배송
+							</p>
+						</li>
+					</ol>
+				</div>
 			</div>
       <div class="details-bottom details-inner" style="padding: 40px 20px 12px;">
         <h2 class="main-title" style="margin:4px 0 0;">프로그램 예약</h2>
