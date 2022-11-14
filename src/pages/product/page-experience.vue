@@ -167,7 +167,16 @@
     <program245 v-else-if="programId === 'program245'"></program245>
     <program246 v-else-if="programId === 'program246'"></program246>
     <program247 v-else-if="programId === 'program247'"></program247>
+    <program248 v-else-if="programId === 'program248'"></program248>
+    <program249 v-else-if="programId === 'program249'"></program249>
+    <program250 v-else-if="programId === 'program250'"></program250>
+    <program251 v-else-if="programId === 'program251'"></program251>
+    <program252 v-else-if="programId === 'program252'"></program252>
     <program253 v-else-if="programId === 'program253'"></program253>
+    <program254 v-else-if="programId === 'program254'"></program254>
+    <program255 v-else-if="programId === 'program255'"></program255>
+    <program256 v-else-if="programId === 'program256'"></program256>
+    <program257 v-else-if="programId === 'program257'"></program257>
     <program258 v-else-if="programId === 'program258'"></program258>
 
 	  <tuaf v-else-if="programId === 'program115'"></tuaf> <!-- TUAF(웹도록) Index -->
@@ -350,7 +359,16 @@ import Program244 from '../../components/product/program/Program244'
 import Program245 from '../../components/product/program/Program245'
 import Program246 from '../../components/product/program/Program246'
 import Program247 from '../../components/product/program/Program247'
+import Program248 from '../../components/product/program/Program248'
+import Program249 from '../../components/product/program/Program249'
+import Program250 from '../../components/product/program/Program250'
+import Program251 from '../../components/product/program/Program251'
+import Program252 from '../../components/product/program/Program252'
 import Program253 from '../../components/product/program/Program253'
+import Program254 from '../../components/product/program/Program254'
+import Program255 from '../../components/product/program/Program255'
+import Program256 from '../../components/product/program/Program256'
+import Program257 from '../../components/product/program/Program257'
 import Program258 from '../../components/product/program/Program258'
 
 export default {
@@ -524,7 +542,16 @@ export default {
     Program245,
     Program246,
     Program247,
+    Program248,
+    Program249,
+    Program250,
+    Program251,
+    Program252,
     Program253,
+    Program254,
+    Program255,
+    Program256,
+    Program257,
     Program258
   },
   data () {

@@ -857,7 +857,43 @@
 		          <div class="date"><span>11.11</span></div>
 	          </li>
             <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program248'>수험생을 위한 &lt;스페셜 덕콘&gt; | 옥상달빛</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program249'>수험생을 위한 &lt;스페셜 덕콘&gt; | 데자부그룹</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program250'>수험생을 위한 &lt;스페셜 덕콘&gt; | 구만</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program251'>수험생을 위한 &lt;스페셜 덕콘&gt; | 소란</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program252'>수험생을 위한 &lt;스페셜 덕콘&gt; | 치즈</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program253'>수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program254'>수능 이벤트 | 펀칭니들 클래스</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program255'>수능 이벤트 | 자이언트 얀 가방 클래스</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program256'>수능 이벤트 | 크리스마스 리스 클래스</router-link>
+		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program257'>수능 이벤트 | 뷰티클래스</router-link>
 		          <div class="date"><span>11.11</span></div>
 	          </li>
             <li class="pagelist-item">
