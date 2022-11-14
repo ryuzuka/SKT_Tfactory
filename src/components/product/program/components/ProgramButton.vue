@@ -1,8 +1,8 @@
 <template>
   <div v-if="bookingAvailable && visible" class="btn-wrap sticky">
-    <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree}">프로그램 예약</a>
+    <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree || !applyStartDate}">프로그램 예약</a>
     <template v-else-if="bookingType === 'select'">
-      <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree}">프로그램 신청</a>
+      <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree || !applyStartDate}">프로그램 신청</a>
       <button v-else-if="applyProgress === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
       <button v-else-if="applyProgress === 'NOT_STARTED'" class="btn-solid disabled" disabled>오픈 예정</button>
     </template>
@@ -32,6 +32,7 @@ export default {
       isApply: false,
       bookingType: '',
       bookingAvailable: true,
+	    applyStartDate: false,
       applyProgress: ''
     }
   },
@@ -58,6 +59,7 @@ export default {
       STORE.getProgramClass(this.classId).then(result => {
         if (!result['PROGRAM_CLASS']) return
 
+        this.applyStartDate = result['PROGRAM_CLASS']['APPLY_START_YMD']
         this.bookingAvailable = result['PROGRAM_CLASS']['PROGRAM_CLASS_BOOKING_YN'] === 1 ? Boolean(true) : Boolean(false)
         this.bookingType = result['PROGRAM_CLASS']['BOOKING_TYPE']
         this.applyProgress = result['PROGRAM_CLASS']['APPLY_PROGRESS']
