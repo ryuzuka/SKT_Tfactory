@@ -74,88 +74,88 @@
         <h2 class="main-title" style="margin:4px 0 0;">라인업</h2>
       </div>
 	    <div class="lineup" style="padding: 0px 18px 12px 24px; margin-bottom: 20px;">
-        <ul>
-          <li>
-	          <div class="date">
-		          <span style="width:36.2px;">11.25<br>FRI</span>
-	          </div>
-<!--	          <router-link to="/experience/program248?classId=207">-->
-		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
-				          <p class="name">옥상달빛</p>
-				          <p class="time">PM 7:00</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class247-musician1.png" alt="musician">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-          <li>
-	          <div class="date">
-		          <span style="width:36.2px;">11.26<br>SAT</span>
-	          </div>
-<!--	          <router-link to="/experience/program249?classId=208">-->
-		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
-				          <p class="name">데자부그룹</p>
-				          <p class="time">PM 6:00</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class247-musician2.png" alt="musician">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-					<li>
-	          <div class="date">
-		          <span style="width:36.2px;">11.27<br>SUN</span>
-	          </div>
-<!--	          <router-link to="/experience/program250?classId=209">-->
-		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
-				          <p class="name">구만</p>
-				          <p class="time">PM 3:00</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class247-musician3.png" alt="musician">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-          <li>
-	          <div>
-		          <span style="display: inline-block; width:50.2px;"><br></span>
-	          </div>
-<!--	          <router-link to="/experience/program251?classId=210">-->
-		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
-				          <p class="name">소란</p>
-				          <p class="time">PM 7:00</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class247-musician4.png" alt="musician">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-          <li>
-	          <div class="date">
-		          <span>11.28<br>MON</span>
-	          </div>
-<!--	          <router-link to="/experience/program252?classId=211">-->
-		          <div class="card" Style="margin-left: 19px;">
-			          <div class="text">
-				          <p class="name">치즈</p>
-				          <p class="time">PM 7:00</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class247-musician5.png" alt="musician">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-        </ul>
+		    <ul>
+			    <li>
+				    <div class="date">
+					    <span style="width:36.2px;">11.25<br>FRI</span>
+				    </div>
+				    <router-link to="/experience/program248?classId=207">
+					    <div class="card" Style="margin-left: 19px;">
+						    <div class="text">
+							    <p class="name">옥상달빛</p>
+							    <p class="time">PM 7:00</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class247-musician1.png" alt="musician">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div class="date">
+					    <span style="width:36.2px;">11.26<br>SAT</span>
+				    </div>
+				    <router-link to="/experience/program249?classId=208">
+					    <div class="card" Style="margin-left: 19px;">
+						    <div class="text">
+							    <p class="name">데자부그룹</p>
+							    <p class="time">PM 6:00</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class247-musician2.png" alt="musician">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div class="date">
+					    <span style="width:36.2px;">11.27<br>SUN</span>
+				    </div>
+				    <router-link to="/experience/program250?classId=209">
+					    <div class="card" Style="margin-left: 19px;">
+						    <div class="text">
+							    <p class="name">구만</p>
+							    <p class="time">PM 3:00</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class247-musician3.png" alt="musician">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div>
+					    <span style="display: inline-block; width:50.2px;"><br></span>
+				    </div>
+				    <router-link to="/experience/program251?classId=210">
+					    <div class="card" Style="margin-left: 19px;">
+						    <div class="text">
+							    <p class="name">소란</p>
+							    <p class="time">PM 7:00</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class247-musician4.png" alt="musician">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div class="date">
+					    <span>11.28<br>MON</span>
+				    </div>
+				    <router-link to="/experience/program252?classId=211">
+					    <div class="card" Style="margin-left: 19px;">
+						    <div class="text">
+							    <p class="name">치즈</p>
+							    <p class="time">PM 7:00</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class247-musician5.png" alt="musician">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+		    </ul>
       </div>
 		</div>
 		<!-- //details -->
