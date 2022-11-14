@@ -9,8 +9,8 @@
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!"
-          description="수험생을 위한 <스페셜 덕콘>"
+          title="수험생들의 버킷리스트를 이루어 줄 원데이 클래스"
+          description="수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!"
         ></kakao-share>
 
         <em class="main-subtitle">[수능 이벤트] 얘드라 책 덮고 클래스 챙겨!</em>
@@ -30,9 +30,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
-<!--	          <router-link class="btn-line big" to="/experience/program254?classId=214">-->
-	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
-<!--	          </router-link>-->
+	          <router-link class="btn-line big" to="/experience/program254?classId=198">
+	          11월 14일부터 예약 가능합니다.
+	          </router-link>
           </div>
         </div>
         <p class="desc2">
@@ -40,9 +40,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
-<!--	          <router-link class="btn-line big" to="/experience/program255?classId=215">-->
-	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
-<!--	          </router-link>-->
+	          <router-link class="btn-line big" to="/experience/program255?classId=212">
+	          11월 14일부터 예약 가능합니다.
+	          </router-link>
           </div>
         </div>
         <p class="desc2">
@@ -50,9 +50,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-<!--	          <router-link class="btn-line big" to="/experience/program256?classId=216">-->
-	          <button class="btn-line big" disabled>11월 14일부터 예약 가능합니다</button>
-<!--	          </router-link>-->
+	          <router-link class="btn-line big" to="/experience/program256?classId=213">
+	          11월 14일부터 예약 가능합니다.
+	          </router-link>
           </div>
         </div>
 			</div>
@@ -64,9 +64,9 @@
         </p>
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
-<!--	          <router-link class="btn-line big" to="/experience/program257?classId=217">-->
-	          <button class="btn-line big" disabled>11월 16일부터 신청 가능합니다</button>
-<!--	          </router-link>-->
+	          <router-link class="btn-line big" to="/experience/program257?classId=220">
+	          11월 16일부터 신청 가능합니다
+	          </router-link>
           </div>
         </div>
 			</div>

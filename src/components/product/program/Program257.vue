@@ -9,8 +9,8 @@
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!"
-          description="수험생들의 버킷리스트를 이루어 줄 원데이 클래스"
+          title="뷰티클래스"
+          description="수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!"
         ></kakao-share>
 
         <em class="main-subtitle">[수능 이벤트] 얘드라 책 덮고 클래스 챙겨!</em>
@@ -152,59 +152,59 @@
         <h2 class="main-title" style="margin:4px 0 0;">프로그램 예약</h2>
       </div>
 	    <div class="lineup" style="padding: 0px 18px 12px 24px; margin-bottom: 20px;">
-        <ul>
-          <li>
-	          <div class="date">
-		          <span>11.22<br>TUE</span>
-	          </div>
-<!--	          <router-link to="/experience/program248?classId=207">-->
-		          <div class="card">
-			          <div class="text">
-				          <p class="name">펀칭니들 클래스</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class254-class1.png" alt="class">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-          <li>
-	          <div class="date">
-		          <span>11.23<br>WED</span>
-	          </div>
-<!--	          <router-link to="/experience/program249?classId=208">-->
-		          <div class="card">
-			          <div class="text">
-				          <p class="name">자이언트 얀 가방 클래스</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class254-class2.png" alt="class">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-					<li>
-	          <div class="date">
-		          <span>11.24<br>THU</span>
-	          </div>
-<!--	          <router-link to="/experience/program250?classId=209">-->
-		          <div class="card">
-			          <div class="text">
-				          <p class="name">크리스마스 리스 클래스</p>
-			          </div>
-			          <div class="image">
-				          <img src="../../../assets/images/program/class254-class3.png" alt="class">
-			          </div>
-		          </div>
-<!--	          </router-link>-->
-          </li>
-        </ul>
+		    <ul>
+			    <li>
+				    <div class="date" style="margin-right: -2px;">
+					    <span>11.22<br>TUE</span>
+				    </div>
+				    <router-link to="/experience/program254?classId=198">
+					    <div class="card">
+						    <div class="text">
+							    <p class="name">펀칭니들 클래스</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class254-class1.png" alt="class">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div class="date">
+					    <span>11.23<br>WED</span>
+				    </div>
+				    <router-link to="/experience/program255?classId=212">
+					    <div class="card">
+						    <div class="text">
+							    <p class="name">자이언트 얀 가방 클래스</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class254-class2.png" alt="class">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+			    <li>
+				    <div class="date">
+					    <span>11.24<br>THU</span>
+				    </div>
+				    <router-link to="/experience/program256?classId=213">
+					    <div class="card">
+						    <div class="text">
+							    <p class="name">크리스마스 리스 클래스</p>
+						    </div>
+						    <div class="image">
+							    <img src="../../../assets/images/program/class254-class3.png" alt="class">
+						    </div>
+					    </div>
+				    </router-link>
+			    </li>
+		    </ul>
       </div>
 		</div>
 		<!-- //details -->
 
 		<!-- button set -->
-		<!--program-button></program-button-->
+		<program-button :check-agree="checkAgree"></program-button>
 		<!-- // button set -->
 	</div>
 </template>
@@ -223,7 +223,8 @@ export default {
   data () {
     return {
 	    isLogin: false,
-	    isBookingYn: false
+	    isBookingYn: false,
+	    checkAgree: false
     }
   },
   created () {

@@ -9,8 +9,8 @@
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="수능 이벤트 | 얘드라 새로 바꿔야지, 애플 할인 챙겨!<"
-          description="T Factory에서 만나는 애플 정품 특별 할인"
+          title="T Factory에서 만나는 애플 정품 특별 할인"
+          description="수능 이벤트 | 얘드라 새로 바꿔야지, 애플 할인 챙겨!"
         ></kakao-share>
 
         <em class="main-subtitle">[수능 이벤트]<br>얘드라 새로 바꿔야지, 애플 할인 챙겨!</em>
