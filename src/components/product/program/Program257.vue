@@ -42,15 +42,15 @@
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">신청기간</span><br>
-						<span class="desc" style="color: #000;">11/16 (수)~11/20 (일)</span>
+						<span class="desc" style="color: #000;">11/16 (수) ~ 11/23 (수)</span>
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">당첨자 발표</span><br>
-						<span class="desc" style="color: #000;">11/21 (월) *신청자 중 80명 선정</span>
+						<span class="desc" style="color: #000;">11/25 (금) *신청자 중 80명 선정</span>
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">메이크오버 당첨자 발표</span><br>
-						<span class="desc" style="color: #000;">11/23 (수) *신청자 중 1명 선정</span>
+						<span class="desc" style="color: #000;">11/28 (월) *신청자 중 1명 선정</span>
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">클래스 소요 시간</span><br>
@@ -75,11 +75,11 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">클래스 신청 기간</span>
-						<span class="desc" style="margin-bottom: 8px;">11월 16일 (수) ~ 11월 20일 (일)</span>
+						<span class="desc" style="margin-bottom: 8px;">11월 16일 (수) ~ 11월 23일 (수)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">당첨자 발표</span>
-						<span class="desc">11월 21일 (월)
+						<span class="desc">11월 25일 (금)
 							<ul style="font-size: 12px; line-height: 1.5; word-break: keep-all; margin-bottom: 8px;">
                 <li>*신청자중 80명 선정</li>
               </ul>
