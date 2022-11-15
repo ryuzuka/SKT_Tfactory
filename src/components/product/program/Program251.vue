@@ -47,8 +47,8 @@
 				<h2 class="main-title">일정 및 장소</h2>
 				<dl>
 					<dd>
-						<span class="sub_title" style="width: 65px;">공연일</span>
-						<span class="desc">11월 27일 (금) 오후 7시</span>
+ㅇ						<span class="sub_title" style="width: 65px;">공연일</span>일
+						<span class="desc">11월 27일 (일) 오후 7시</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px;">신청기간</span>
