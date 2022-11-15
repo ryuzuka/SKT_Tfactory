@@ -32,11 +32,11 @@
 				<dl>
 					<dd style="margin-bottom: 6px;">
 						<span class="sub_title" style="width: 97px;">클래스 신청 기간</span>
-						<span class="desc">11월 14일 (월) ~ 11월 18일 (금)</span>
+						<span class="desc">11월 14일 (월) ~ 11월 16일 (수)</span>
 					</dd>
 					<dd style="margin-bottom: 6px;">
 						<span class="sub_title" style="width: 97px;">당첨자 발표</span>
-						<span class="desc">11월 19일 (토)</span>
+						<span class="desc">11월 18일 (금)</span>
 					</dd>
 					<dd style="margin-bottom: 6px;">
 						<span class="sub_title" style="width: 97px;">당첨 인원</span>
