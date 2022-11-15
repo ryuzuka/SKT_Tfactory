@@ -53,7 +53,7 @@
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 32px;">
 	          <router-link class="btn-line big" to="/experience/program253?classId=206">
-		          11월 14일부터 신청 가능합니다
+		          클래스 신청하러가기
 	          </router-link>
           </div>
         </div>

@@ -31,7 +31,7 @@
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
 	          <router-link class="btn-line big" to="/experience/program254?classId=198">
-	          11월 14일부터 예약 가능합니다.
+		          클래스 신청하러가기
 	          </router-link>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 40px;">
 	          <router-link class="btn-line big" to="/experience/program255?classId=212">
-	          11월 14일부터 예약 가능합니다.
+		          클래스 신청하러가기
 	          </router-link>
           </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 0px;">
 	          <router-link class="btn-line big" to="/experience/program256?classId=213">
-	          11월 14일부터 예약 가능합니다.
+		          클래스 신청하러가기
 	          </router-link>
           </div>
         </div>
