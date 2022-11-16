@@ -9,16 +9,16 @@
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="수험생들의 버킷리스트를 이루어 줄 원데이 클래스"
+          title="수험생들의 위시리스트를 이루어 줄 원데이 클래스"
           description="수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!"
         ></kakao-share>
 
         <em class="main-subtitle">[수능 이벤트] 얘드라 책 덮고 클래스 챙겨!</em>
-        <h2 class="main-title" style="margin-top:4px;">수험생들의<br>버킷리스트를 이루어<br>줄 원데이 클래스</h2>
+        <h2 class="main-title" style="margin-top:4px;">수험생들의<br>위시리스트를 이루어<br>줄 원데이 클래스</h2>
         <p class="desc2" style="margin-top: 16px;">
           수능 끝! 이제 새로운 취미에 도전해보세요.<br>
           수능이 끝난 수험생들을 위한 T Factory에서<br>
-          수험생들의 버킷리스트를 이루어줄 원데이 클래스를<br>
+          수험생들의 위시리스트를 이루어줄 원데이 클래스를<br>
           준비했습니다.
         </p>
       </div>
