@@ -37,7 +37,7 @@
         <div class="button_area">
           <div class="btn-wrap" style="margin: 22px 12px 32px;">
 	          <router-link class="btn-line big" to="/experience/program247?classId=205">
-		          11월 17일부터 신청 가능합니다
+		          수험생 스페셜 덕콘 신청하러 가기
 	          </router-link>
           </div>
         </div>
