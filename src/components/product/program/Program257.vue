@@ -30,9 +30,9 @@
         <ol class="step-list" style="margin-top:12px; line-height: 1.71;">
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">클래스 내용</span><br>
-						<span class="desc" style="color: #000;">
-							-예비 대학생을 위한 메이크업 기초 강의뷰티 고민 Q&A<br />
-							-메이크오버 및 메이크업 클래스<br />
+						<span class="desc" style="color: #000; word-break: keep-all;">
+							-예비 대학생을 위한 뷰티 고민 Q&A 및 메이크업 클래스<br />
+							-메이크업 클래스 참석자와 메이크오버 진행<br />
 							(사전 신청자에 한해 1명 추첨)<br />
             </span>
           </li>

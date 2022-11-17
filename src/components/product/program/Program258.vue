@@ -41,7 +41,7 @@
           </li>
           <li>
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">20만원 할인판매</span><br>
-						<span class="desc">스마트 워치 : Apple Watch S7, SE, 갤럭시 워치5</span>
+						<span class="desc">스마트 워치 : Apple Watch 7, SE, 갤럭시 워치5</span>
           </li>
         </ol>
 			</div>
