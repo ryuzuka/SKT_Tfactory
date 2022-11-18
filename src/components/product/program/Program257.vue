@@ -42,7 +42,7 @@
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">신청기간</span><br>
-						<span class="desc" style="color: #000;">11/16 (수) ~ 11/23 (수)</span>
+						<span class="desc" style="color: #000;">11/16 (수) ~ 11/24 (목)</span>
           </li>
           <li style="margin-bottom:12px;">
 						<span class="sub_title" style="font-weight: bold; color: #0b0a0a;">당첨자 발표</span><br>
@@ -75,7 +75,7 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">클래스 신청 기간</span>
-						<span class="desc" style="margin-bottom: 8px;">11월 16일 (수) ~ 11월 23일 (수)</span>
+						<span class="desc" style="margin-bottom: 8px;">11월 16일 (수) ~ 11월 24일 (목)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 97px;">당첨자 발표</span>
