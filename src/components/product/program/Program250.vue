@@ -56,7 +56,7 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px;">당첨자발표</span>
-						<span class="desc">11월 22일 (화) 오후 3시</span>
+						<span class="desc">11월 23일 (수) 오후 3시</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px;">장소</span>
