@@ -1,8 +1,10 @@
 <nav class="nav-bottom">
-  <a :class="{'active': isActive[0]}" @click.prevent="clickNav(0)"><i class="ico-tshop"></i>SPACE</a>
-  <a :class="{'active': isActive[1]}" @click.prevent="clickNav(1)"><i class="ico-reserv"></i>EVENT</a>
-  <a v-if="this.$cookies.get('platform') == 'A' || this.$cookies.get('platform') == 'I'"
-     :class="{'active': isActive[2]}" @click.prevent="clickNav(2)" class="bottom-qr"><i class="ico-qr"></i></a>
-  <a :class="{'active': isActive[3]}" @click.prevent="clickNav(3)"><i class="ico-tag"></i>MY TAG</a>
-  <a :class="{'active': isActive[4]}" @click.prevent="clickNav(4)"><i class="ico-menu"></i>MENU</a>
-</nav>
+    <a :class="{'active': isActive[0]}" @click.prevent="clickNav(0)"><i class="ico-tshop"></i>SPACE</a>
+    <a :class="{'active': isActive[1]}" @click.prevent="clickNav(1)"><i class="ico-reserv"></i>EVENT</a>
+    <a v-if="this.$cookies.get('platform') == 'A' || this.$cookies.get('platform') == 'I'"
+       :class="{'active': isActive[2]}" @click.prevent="clickNav(2)" class="bottom-qr"><i class="ico-qr"></i></a>
+    <!-- 20221123 QVOSS / 윤영대 매니저님 요청사항 MY TAG 메뉴 삭제
+      <a :class="{'active': isActive[3]}" @click.prevent="clickNav(3)"><i class="ico-tag"></i>MY TAG</a>
+    -->
+      <a :class="{'active': isActive[4]}" @click.prevent="clickNav(4)"><i class="ico-menu"></i>MENU</a>
+    </nav>
