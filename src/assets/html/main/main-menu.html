@@ -18,14 +18,16 @@
   </div>
 
   <div class="nav-contents">
-    <ul class="list-utils" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
-      <li><a @click.prevent="clickPurchaseList">{{ $t('comm.order') }}</a></li>
-      <li><a @click.prevent="clickMyWish">{{ $t('comm.wish') }}</a></li>
-      <li><a @click.prevent="clickCouponList">{{ $t('comm.coupon-management') }}</a></li>
-      <li><a @click.prevent="clickMyReservation">{{ $t('comm.reservation-list') }}</a></li>
-<!--      <li><a @click.prevent="clickFaceRegist">{{ $t('comm.quick-checkin') }}</a></li>-->
-      <li><a @click.prevent="clickSetting">{{ $t('comm.setting') }}</a></li>
-    </ul>
+      <ul class="list-utils" ref="aniObj1" :class="{'ani-obj': aniObj[1]}">
+          <!-- 20221123 QVOSS / 윤영대 매니저님 요청사항 MY TAG 메뉴 삭제
+          <li><a @click.prevent="clickPurchaseList">{{ $t('comm.order') }}</a></li>
+          <li><a @click.prevent="clickMyWish">{{ $t('comm.wish') }}</a></li>
+          -->
+          <li><a @click.prevent="clickCouponList">{{ $t('comm.coupon-management') }}</a></li>
+          <li><a @click.prevent="clickMyReservation">{{ $t('comm.reservation-list') }}</a></li>
+    <!--      <li><a @click.prevent="clickFaceRegist">{{ $t('comm.quick-checkin') }}</a></li>-->
+          <li><a @click.prevent="clickSetting">{{ $t('comm.setting') }}</a></li>
+      </ul>
 <!--    <div class="banner type-img">-->
 <!--      <a href="#"><img src="../../images/dummy/@banner-event.jpg" alt="iPhone 12 출시 특별 혜택 이벤트 응모하고 iPhone 12 받자!"></a>-->
 <!--    </div>-->
