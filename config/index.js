@@ -39,7 +39,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     devtool: '#source-map',
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
