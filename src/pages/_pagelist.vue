@@ -842,7 +842,7 @@
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program244'>T Factory X T1 | 롤드컵 파이널 응원전</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>10.28</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program245'>나만의 디지털 메이트를 만나는 곳 A. Factory</router-link>
@@ -858,23 +858,23 @@
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program248'>수험생을 위한 &lt;스페셜 덕콘&gt; | 옥상달빛</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program249'>수험생을 위한 &lt;스페셜 덕콘&gt; | 데자부그룹</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program250'>수험생을 위한 &lt;스페셜 덕콘&gt; | 구만</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program251'>수험생을 위한 &lt;스페셜 덕콘&gt; | 소란</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program252'>수험생을 위한 &lt;스페셜 덕콘&gt; | 치즈</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program253'>수능 이벤트 | 얘드라 책 덮고 클래스 챙겨!</router-link>
@@ -882,23 +882,63 @@
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program254'>수능 이벤트 | 펀칭니들 클래스</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program255'>수능 이벤트 | 자이언트 얀 가방 클래스</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program256'>수능 이벤트 | 크리스마스 리스 클래스</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program257'>수능 이벤트 | 뷰티클래스</router-link>
-		          <div class="date"><span>11.11</span></div>
+		          <div class="date"><span>11.14</span></div>
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program258'>수능 이벤트 | 얘드라 새로 바꿔야지, 애플 할인 챙겨!</router-link>
 		          <div class="date"><span>11.11</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program259'>12월의 덕콘</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program260'>12월의 덕콘 | 쏜애플</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 데이브레이크</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program260'>12월의 덕콘 | 유다빈밴드</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program260'>12월의 덕콘 | SURL</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | LUCY</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | ADOY</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 홍이삭</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 크리스탈티</router-link>
+		          <div class="date"><span>12.02</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 윤석철트리오</router-link>
+		          <div class="date"><span>12.02</span></div>
 	          </li>
           </ul>
 
