@@ -46,7 +46,7 @@
 	          <div class="date">
 		          <span style="width:36.2px;">12.10<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program260?classId=202">
+	          <router-link to="/experience/program260?classId=221">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">쏜애플</p>
@@ -62,7 +62,7 @@
 	          <div class="date">
 		          <span>12.11<br>SUN</span>
 	          </div>
-	          <router-link to="/experience/program261?classId=203">
+	          <router-link to="/experience/program261?classId=222">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">데이브레이크</p>
@@ -78,7 +78,7 @@
 	          <div class="date">
 		          <span>12.16<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program262?classId=203">
+	          <router-link to="/experience/program262?classId=223">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">유다빈밴드</p>
@@ -94,7 +94,7 @@
 	          <div class="date">
 		          <span>12.17<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program263?classId=203">
+	          <router-link to="/experience/program263?classId=224">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">SURL</p>
@@ -110,7 +110,7 @@
 	          <div class="date">
 		          <span>12.23<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program264?classId=203">
+	          <router-link to="/experience/program264?classId=225">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">LUCY</p>
@@ -126,7 +126,7 @@
 	          <div class="date">
 		          <span>12.24<br>SAT</span>
 	          </div>
-	          <router-link to="/experience/program265?classId=203">
+	          <router-link to="/experience/program265?classId=226">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">ADOY</p>
@@ -142,7 +142,7 @@
 	          <div class="date">
 		          <span>12.30<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program266?classId=203">
+	          <router-link to="/experience/program266?classId=227">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">홍이삭</p>
@@ -159,7 +159,7 @@
 		          <span>12.31<br>SAT</span>
 	          </div>
 						<div>
-							<router-link to="/experience/program267?classId=203">
+							<router-link to="/experience/program267?classId=228">
 								<div class="card" Style="margin-left: 19px;">
 									<div class="text">
 										<p class="name">크리스탈티</p>
@@ -170,7 +170,7 @@
 									</div>
 								</div>
 							</router-link>
-							<router-link to="/experience/program268?classId=210">
+							<router-link to="/experience/program268?classId=229">
 								<div class="card" Style="margin-left: 19px; margin-top:12px;">
 									<div class="text">
 										<p class="name">윤석철트리오</p>
