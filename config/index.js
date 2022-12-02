@@ -23,7 +23,8 @@ module.exports = {
      * Source Maps
      */
 
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
+    devtool: false,
     cacheBusting: true,
     cssSourceMap: true
   },
@@ -40,7 +41,8 @@ module.exports = {
      */
 
     productionSourceMap: false,
-    devtool: '#source-map',
+    //devtool: '#source-map',
+    devtool: false,
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
     bundleAnalyzerReport: process.env.npm_config_report
