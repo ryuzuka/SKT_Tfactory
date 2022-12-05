@@ -21,8 +21,6 @@
         <p class="desc2" style="margin-top:8px;">
 					T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트!<br />
 					지친 일상 속 힐링을 선사하기 위해 매월 다양한 아티스트의 무료 콘서트를 진행합니다.<br />
-					아티스트가 낸 덕력고사를 풀고 콘서트 초청의 기회를<br />
-					잡아보세요.
         </p>
 			</div>
 			<div class="line">
@@ -44,6 +42,9 @@
 				</p>
 				<p class="desc_20" style="margin-top: 24px;">
 					거시적이고 통찰력 있는 주제의식보다는 파편적인<br />에피소드가 더욱 사실적이며 강한 호소를 지니고 있다<br />믿으며, 이를 바탕으로 음악을 창작하는 아티스트이다.
+				</p>
+				<p class="desc_20" style="margin-top: 24px;">
+					이번 덕콘 winter 스페셜을 위해 어쿠스틱 편성을 새롭게 준비하였다.
 				</p>
 			</div>
 			<div class="details-inner">
@@ -70,7 +71,6 @@
 			<div class="details-inner notification">
 				<h2 class="main-title">안내사항</h2>
 				<ul>
-					<li>※본 공연은 덕력고사를 완료하신 분들 중 추첨을 통해 선정되며, 선정자는 개별 연락드립니다.</li>
 					<li>※당첨자 중 무단 노쇼하시는 경우, 추후 콘서트 당첨에서 제외<br />됩니다.</li>
 					<li>※안전한 공연 관람을 위해 스탠딩 좌석은 운영하지 않습니다.</li>
 					<li>※정부의 방역지침 변경이 있을 시 공연의 주요 내용도 변경이<br />있을 수 있습니다.</li>

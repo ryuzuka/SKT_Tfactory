@@ -913,31 +913,31 @@
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program260'>12월의 덕콘 | 유다빈밴드</router-link>
+		          <router-link class="link" to='/experience/program262'>12월의 덕콘 | 유다빈밴드</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program260'>12월의 덕콘 | SURL</router-link>
+		          <router-link class="link" to='/experience/program263'>12월의 덕콘 | SURL</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | LUCY</router-link>
+		          <router-link class="link" to='/experience/program264'>12월의 덕콘 | LUCY</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | ADOY</router-link>
+		          <router-link class="link" to='/experience/program265'>12월의 덕콘 | ADOY</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 홍이삭</router-link>
+		          <router-link class="link" to='/experience/program266'>12월의 덕콘 | 홍이삭</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 크리스탈티</router-link>
+		          <router-link class="link" to='/experience/program267'>12월의 덕콘 | 크리스탈티</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program261'>12월의 덕콘 | 윤석철트리오</router-link>
+		          <router-link class="link" to='/experience/program268'>12월의 덕콘 | 윤석철트리오</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
           </ul>
