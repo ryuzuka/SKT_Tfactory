@@ -123,6 +123,28 @@ export default {
         ITEM_LIST: itemList,
         COUPON_ID: this.selectedCoupon
       }
+
+      //const checkNum = await PAY.checkOrderItem(this.order)
+      
+      const checkNum = 1;
+      console.log("바뀜");
+      if(checkNum > 0){
+          console.log("들어옴 if문");
+          this.$modal.show('dialog', {
+          title: '상품은 1품목당 1인 1개 구매가능합니다.',
+          buttons: [
+            {
+              title: '확인',
+              handler: () => {
+                this.$modal.hide('dialog')
+              }
+            }
+          ]
+        })
+        return
+      }
+      console.log("나옴");
+      
       const invNum = await PAY.createOrderId(this.order)
       const mobileOS = (this.$cookies.get('platform') === 'A' || this.$cookies.get('platform') === 'I') ? 1 : 0
       const work = process.env.NODE_ENV === 'production' ? 'REAL' : 'DEV'

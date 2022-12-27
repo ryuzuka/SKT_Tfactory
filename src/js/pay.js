@@ -49,3 +49,9 @@ export const createOrderId = (request) => {
     return response.data.INV_NUMBER
   })
 }
+
+export const checkOrderItem = (request) => {
+  return axios.post(STORE_URL + '/receipt/checkOrderItem', request, COMMON.getHeader()).then(response => {
+    return response.data.ITEM_CHECK_COUNT
+  })
+}
