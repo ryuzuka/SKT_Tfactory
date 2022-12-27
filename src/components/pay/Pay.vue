@@ -123,13 +123,9 @@ export default {
         ITEM_LIST: itemList,
         COUPON_ID: this.selectedCoupon
       }
-
-      //const checkNum = await PAY.checkOrderItem(this.order)
       
-      const checkNum = 1;
-      console.log("바뀜");
+      const checkNum = await PAY.checkOrderItem(this.order)
       if(checkNum > 0){
-          console.log("들어옴 if문");
           this.$modal.show('dialog', {
           title: '상품은 1품목당 1인 1개 구매가능합니다.',
           buttons: [
@@ -143,7 +139,6 @@ export default {
         })
         return
       }
-      console.log("나옴");
       
       const invNum = await PAY.createOrderId(this.order)
       const mobileOS = (this.$cookies.get('platform') === 'A' || this.$cookies.get('platform') === 'I') ? 1 : 0
