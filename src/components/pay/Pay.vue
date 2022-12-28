@@ -104,7 +104,7 @@ export default {
       }
     },
     async callPayment (type) {
-      /*
+      
       let itemList = []
       
       this.productList.forEach((product) => {
@@ -115,26 +115,15 @@ export default {
         }
         itemList.push(item)
       })
-      */
-      let itemList = []
-      let item = {
-          ITEM_CODE: 160592802,
-          QUANTITY: '',
-          ITEM_TYPE: 'accessory'
-        }
-        itemList.push(item)
-
       
       this.order = {
-        /*
         STORE_ID: parseInt(this.$route.query.storeId),
         INV_DATE: this.$moment().format('YYYYMMDD').toString(),
         QR_CODE: this.$route.query.qrCode,
         POC_CODE: this.pocCode,
         PAY_TYPE: type,
-        */
         ITEM_LIST: itemList,
-        //COUPON_ID: this.selectedCoupon
+        COUPON_ID: this.selectedCoupon
       }
 
       const checkNum = await PAY.checkOrderItem(this.order)
