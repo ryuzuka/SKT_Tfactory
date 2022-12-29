@@ -104,7 +104,9 @@ export default {
       }
     },
     async callPayment (type) {
+      
       let itemList = []
+      
       this.productList.forEach((product) => {
         let item = {
           ITEM_CODE: product.ACCESSORY_CODE,
@@ -113,7 +115,7 @@ export default {
         }
         itemList.push(item)
       })
-
+      
       this.order = {
         STORE_ID: parseInt(this.$route.query.storeId),
         INV_DATE: this.$moment().format('YYYYMMDD').toString(),
@@ -123,6 +125,23 @@ export default {
         ITEM_LIST: itemList,
         COUPON_ID: this.selectedCoupon
       }
+
+      const checkNum = await PAY.checkOrderItem(this.order)
+      if(checkNum > 0){
+          this.$modal.show('dialog', {
+          title: '상품은 1품목당 1인 1개 구매가능합니다.',
+          buttons: [
+            {
+              title: '확인',
+              handler: () => {
+                this.$modal.hide('dialog')
+              }
+            }
+          ]
+        })
+        return
+      }
+      
       const invNum = await PAY.createOrderId(this.order)
       const mobileOS = (this.$cookies.get('platform') === 'A' || this.$cookies.get('platform') === 'I') ? 1 : 0
       const work = process.env.NODE_ENV === 'production' ? 'REAL' : 'DEV'
