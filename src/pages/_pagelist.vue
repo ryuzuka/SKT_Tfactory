@@ -940,6 +940,22 @@
 		          <router-link class="link" to='/experience/program268'>12월의 덕콘 | 윤석철트리오</router-link>
 		          <div class="date"><span>12.02</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program268'>1월의 덕콘</router-link>
+		          <div class="date"><span>01.13</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 김수영</router-link>
+		          <div class="date"><span>01.13</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 후추스 X SOFIA MILLS  </router-link>
+		          <div class="date"><span>01.20</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 맥거핀</router-link>
+		          <div class="date"><span>01.27</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
