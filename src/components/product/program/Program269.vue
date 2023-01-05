@@ -41,7 +41,7 @@
 	          <div class="date">
 		          <span style="width:36.2px;">1.13<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program270?classId=221">
+	          <router-link to="/experience/program270?classId=231">
 		          <div class="card" Style="margin-left: 0px;">
 			          <div class="text">
 				          <p class="name">김수영</p>
@@ -57,7 +57,7 @@
 	          <div class="date">
 		          <span>1.20<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program271?classId=222">
+	          <router-link to="/experience/program271?classId=232">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text" Style="padding: 10px 19px 17px;">
 				          <p class="name">후추스 <br />X SOFIA MILLS  </p>
@@ -73,7 +73,7 @@
 	          <div class="date">
 		          <span>1.27<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program272?classId=223">
+	          <router-link to="/experience/program272?classId=233">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">맥거핀</p>
