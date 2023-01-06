@@ -60,7 +60,7 @@
 	          <router-link to="/experience/program271?classId=232">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text" Style="padding: 10px 19px 17px;">
-				          <p class="name">후추스 <br />X SOFIA MILLS  </p>
+				          <p class="name">후추스 <br />X Sofia Mills  </p>
 				          <p class="time">PM 7:00</p>
 			          </div>
 			          <div class="image">

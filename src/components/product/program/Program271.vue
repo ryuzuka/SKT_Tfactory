@@ -2,14 +2,14 @@
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
 		<!-- slide -->
 		<div class="slider-prd">
-			<img ref="shareImage" src="../../../assets/images/program/class271-slide1.jpg" alt="T Factory x FLO 덕콘 | 2023.1 후추스 X SOFIA MILLS">
+			<img ref="shareImage" src="../../../assets/images/program/class271-slide1.jpg" alt="T Factory x FLO 덕콘 | 2023.1 후추스 X Sofia Mills">
 		</div>
 		<!-- //slide -->
 		<!-- details -->
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
 				<kakao-share
-          title="1월의 덕콘 | 후추스 X SOFIA MILLS"
+          title="1월의 덕콘 | 후추스 X Sofia Mills"
           description="T Factory와 FLO가 함께 만드는 팬 초청 소규모 콘서트"
         ></kakao-share>
 
@@ -22,12 +22,12 @@
         </p>
 			</div>
 			<div class="line">
-				<span style="margin: 0px 6px;">2023. 1. 20 PM 7:00<em style="margin-left:12px;">HOOCHUS X SOFIA MILLS</em></span>
+				<span style="margin: 0px 6px;">2023. 1. 20 PM 7:00<em style="margin-left:12px;">HOOCHUS X Sofia Mills</em></span>
 				<img src="../../../assets/images/program/line-bg.png" alt="THECON line-bg">
 			</div>
 			<div class="details-header" style="padding: 40px 20px;">
 				<em class="main-subtitle">아티스트 소개</em>
-				<h2 class="main-title" style="margin-top:4px;">후추스 X SOFIA MILLS</h2>
+				<h2 class="main-title" style="margin-top:4px;">후추스 X Sofia Mills</h2>
 				<div class="thumbnail"><img style="height: 340px;" src="../../../assets/images/program/class271-conts1-1.jpg" alt=""></div>
 				<p class="desc_20" style="margin-top: 8px; margin-bottom: 30px;">
 					후추스는 <br />민트페이어 Bright#1 사춘기를 통해 데뷔하였고 정규 1집 ‘우리는’, 정규 2집 ‘너의 일부’를 발매하였습니다. 팝과 록, 레트토의 경계에서 익숙한 듯 새로운 음악을 들려주고 있습니다.
@@ -101,7 +101,7 @@
 	          <router-link to="/experience/program271?classId=232">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text" Style="padding: 10px 19px 17px;">
-				          <p class="name">후추스 <br />X SOFIA MILLS  </p>
+				          <p class="name">후추스 <br />X Sofia Mills  </p>
 				          <p class="time">PM 7:00</p>
 			          </div>
 			          <div class="image">

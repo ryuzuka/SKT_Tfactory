@@ -949,7 +949,7 @@
 		          <div class="date"><span>01.13</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 후추스 X SOFIA MILLS  </router-link>
+		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 후추스 X Sofia Mills  </router-link>
 		          <div class="date"><span>01.20</span></div>
 	          </li>
             <li class="pagelist-item">
