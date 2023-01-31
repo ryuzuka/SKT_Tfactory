@@ -77,7 +77,7 @@
 	          <div class="date">
 		          <span style="width:36.2px;">2.1<br />WED<br />~2.5<br />SUN</span>
 	          </div>
-	          <router-link to="/experience/program274?classId=231">
+	          <router-link to="/experience/program274?classId=235">
 		          <div class="card" Style="margin-left: 0px;">
 			          <div class="text">
 				          <p class="name">MPMG WEEK</p>
@@ -93,7 +93,7 @@
 	          <div class="date">
 		          <span>2.17<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program275?classId=232">
+	          <router-link to="/experience/program275?classId=236">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">노리플라이</p>
@@ -109,7 +109,7 @@
 	          <div class="date">
 		          <span>2.24<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program276?classId=233">
+	          <router-link to="/experience/program276?classId=237">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">제이유나</p>
