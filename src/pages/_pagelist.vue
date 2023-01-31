@@ -941,20 +941,36 @@
 		          <div class="date"><span>12.02</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program268'>1월의 덕콘</router-link>
+		          <router-link class="link" to='/experience/program269'>1월의 덕콘</router-link>
 		          <div class="date"><span>01.13</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 김수영</router-link>
+		          <router-link class="link" to='/experience/program270'>1월의 덕콘 | 김수영</router-link>
 		          <div class="date"><span>01.13</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 후추스 X Sofia Mills  </router-link>
+		          <router-link class="link" to='/experience/program271'>1월의 덕콘 | 후추스 X Sofia Mills  </router-link>
 		          <div class="date"><span>01.20</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program268'>1월의 덕콘 | 맥거핀</router-link>
+		          <router-link class="link" to='/experience/program272'>1월의 덕콘 | 맥거핀</router-link>
 		          <div class="date"><span>01.27</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program273'>2월의 덕콘 with MPMG</router-link>
+		          <div class="date"><span>01.31</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program274'>2월의 덕콘 | MPMG WEEK</router-link>
+		          <div class="date"><span>01.31</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program275'>2월의 덕콘 | 노리플라이</router-link>
+		          <div class="date"><span>01.31</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program276'>2월의 덕콘 | 제이유나</router-link>
+		          <div class="date"><span>01.31</span></div>
 	          </li>
           </ul>
 
