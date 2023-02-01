@@ -972,6 +972,10 @@
 		          <router-link class="link" to='/experience/program276'>2월의 덕콘 | 제이유나</router-link>
 		          <div class="date"><span>01.31</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program277'>T Factory x T1 Will to Win 스프링시즌 Event</router-link>
+		          <div class="date"><span>02.07</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
