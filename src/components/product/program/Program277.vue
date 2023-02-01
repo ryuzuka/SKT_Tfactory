@@ -38,7 +38,7 @@
           </li>
           <li>
             <div class="btn-wrap" style="margin-top: 20px;">
-              <a href="" class="btn-line big">굿즈, 피규어 라인업 확인하기</a>
+              <button class="btn-line big" @click="clickButton">굿즈, 피규어 라인업 확인하기</button>
             </div>
           </li>
           <li>
@@ -71,7 +71,7 @@
           </li>
           <li>
             <div class="btn-wrap" style="margin-top: 24px;">
-              <a class="btn-line big" style="color: #787878; border: 1px solid #f0f0f0; background-color: #f0f0f0;"  >뷰잉파티 응모하기</a>
+	            <router-link to="" class="btn-line big disabled">뷰잉파티 응모하기</router-link>
             </div>
           </li>
         </ul>
@@ -141,7 +141,7 @@ export default {
   },
   methods: {
 	  clickButton () {
-		  const redirectURL = 'https://www.instagram.com/tfactory_sampler/'
+		  const redirectURL = 'https://www.instagram.com/tfactory_official/'
 		  const mobileOS = this.$cookies.get('platform')
 		  if (mobileOS === 'A' || mobileOS === 'I') {
 			  NATIVE.sysBrowserOpen(mobileOS, redirectURL)
