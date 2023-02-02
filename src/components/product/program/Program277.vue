@@ -71,7 +71,7 @@
           </li>
           <li>
             <div class="btn-wrap" style="margin-top: 24px;">
-	            <router-link :to="$route.fullPath" class="btn-line big disabled">뷰잉파티 응모하기</router-link>
+	            <router-link to="/experience/program278?classId=239" class="btn-line big">뷰잉파티 응모하기</router-link>
             </div>
           </li>
         </ul>

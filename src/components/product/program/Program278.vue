@@ -38,9 +38,11 @@
             <span class="desc" style="margin-left: 12px;">2/9(목) 15시 당첨자 개별 문자 안내</span>
           </dd>
         </dl>
+	      <!--
         <div class="btn-wrap" style="margin-top: 24px;">
           <a class="btn-line big" style="color: #787878; border: 1px solid #f0f0f0; background-color: #f0f0f0;"  >뷰잉파티 응모하기</a>
         </div>
+        -->
       </div>
     </div>
     <!-- //details -->
