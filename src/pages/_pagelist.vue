@@ -976,6 +976,10 @@
 		          <router-link class="link" to='/experience/program277'>T Factory x T1 Will to Win 스프링시즌 Event</router-link>
 		          <div class="date"><span>02.07</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program278'>Will to Win T1 티게더 뷰잉파티 Event</router-link>
+		          <div class="date"><span>02.07</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
