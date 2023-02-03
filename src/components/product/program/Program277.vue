@@ -59,7 +59,7 @@
           <li>
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응모기간</p>
             <span>
-              2월 티게더 : 2/8(수)<br/>
+              2월 티게더 : 2/7(화)<br/>
               3월 티게더 : 3/6(월) ~ 3/7(화)
             </span>
           </li>
@@ -81,7 +81,7 @@
         <dl>
           <dd>
             <span class="sub_title">일정</span>
-            <span class="desc" style="margin-left: 12px;">2월 7일(화) ~ </span>
+            <span class="desc" style="margin-left: 12px;">2월 8일(수) ~ </span>
           </dd>
           <dd>
             <span class="sub_title">장소</span>
