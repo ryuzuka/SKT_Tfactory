@@ -59,7 +59,7 @@
           <li>
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응모기간</p>
             <span>
-              2월 티게더 : 2/7(화) ~ 2/8(수)<br/>
+              2월 티게더 : 2/8(수)<br/>
               3월 티게더 : 3/6(월) ~ 3/7(화)
             </span>
           </li>
