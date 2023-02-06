@@ -17,7 +17,7 @@
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">T Factory x T1 <br/>Will to Win 스프링시즌 Event</h2>
         <p class="desc2" style="margin-top:8px;">
 					LCK 2023 스프링시즌 개막 기념 왕좌 탈환을 위한 T1 <br/>의 여정에 함께할 T1 에 진심인 여러분을 초대합니다.<br/>
-          T Factory 에서 펼쳐지는 T1 LCK 스프링시즌 한정 이벤<br/>트에 참여해보세요!
+          T1의 승리를 기원하며 오직 T Factory에서 펼쳐지는<br/>다양한 이벤트에 참여해보세요!
         </p>
       </div>
       <div class="details-inner" style="border-top: none; padding: 0 20px 40px;">
@@ -30,11 +30,41 @@
             </span>
           </li>
           <li>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px;">판매기간</p>
+            <span>2/8(수)~3/5(일)</span>
+          </li>
+          <li>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px;">판매품목</p>
+            <span>- 포토카드+틴케이스 7,900원<br/></span>
+            <span>- 미니캐리어 46,000원<br/></span>
+            <span>- 레디백 41,000원<br/></span>
+            <span>- 아이폰 14 Pro/Max 케이스 9,000원<br/></span>
+            <span>- 선수단 키링(2022 월즈에디션) 9,900원<br/></span>
+            <span>- 노트북 파우치 25,900원<br/></span>
+            <span>- 텀블러 36,900원<br/></span>
+            <span>- 무선충전 마우스패드 37,000원<br/></span>
+            <span>- 보조배터리 24,900원<br/></span>
+            <span>※ 한정수량으로 조기소진 가능성 있음<br/></span>
+            <span>※ 주차별 굿즈는 매주 월요일<br/></span>
+            <span style="margin-left: 20px">T Factory 인스타그램 스토리에서 공개 예정</span>
+          </li>
+          <li>
             <p class="sub_event" style="color: #2617ce; font-weight: bold; margin-bottom: 12px; margin-top: 32px;">2. Will to Win T1 선수단 레고 피규어 득템 이벤트</p>
             <span>
               한정판 굿즈를 구매하신 고객에 한해 T1 선수단 레고 피규어를 선물로 드립니다.<br/>
               각 주마다 증정되는 선수의 피규어가 다르니 매주 T Factory에 방문하여 한정판 굿즈도 득템하고 T1 선수단 완전체 피규어를 완성해보세요. (T1 한정판 굿즈 10,000 원 이상 구매 고객 대상, 200 명 선착순 증정)
             </span>
+          </li>
+          <li>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px;">증정 일정</p>
+            <span>2/8(수)~3/5(일)</span>
+          </li>
+          <li>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px;">대상</p>
+            <span>T1 한정판 굿즈 10,000원 이상 구매 고객 선착순 200명<br/></span>
+            <span>※ 한정수량으로 조기소진 가능성 있음<br/></span>
+            <span>※ 주차별 증정 레고 피규어는<br/></span>
+            <span style="margin-left: 20px">T Factory T1존 현장에서  확인 가능</span>
           </li>
           <li>
             <div class="btn-wrap" style="margin-top: 20px;">
@@ -52,21 +82,20 @@
             <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응원전 일정</p>
             <span>
               2 월 12 일 (일) 17:30~ [T1 vs DRX]<br/>
-              3 월 11 일 (토) 17:30~ [T1 vs HLE]<br/>
+              3 월 16 일 (목) 17:00~ [T1 vs DK]<br/>
               4 월 플레이오프 여부에 따라 추후 일정 공개
             </span>
           </li>
           <li>
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응모기간</p>
             <span>
-              2월 티게더 : 2/7(화)<br/>
-              3월 티게더 : 3/6(월) ~ 3/7(화)
+              2/7(화) ~ 2/8(수), 3/11(토) ~ 3/12(일)
             </span>
           </li>
           <li style="margin-bottom:0;">
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">당첨자 발표</p>
             <span>
-              2/9(목), 3/8(수) 당첨자 개별 문자 안내
+              2/9(목), 3/13(월) 당첨자 개별 문자 안내
             </span>
           </li>
           <li>
