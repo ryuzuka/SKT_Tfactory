@@ -198,6 +198,8 @@
     <program276 v-else-if="programId === 'program276'"></program276>
     <program277 v-else-if="programId === 'program277'"></program277>
     <program278 v-else-if="programId === 'program278'"></program278>
+    <program279 v-else-if="programId === 'program279'"></program279>
+    <program280 v-else-if="programId === 'program280'"></program280>
 
 	  <tuaf v-else-if="programId === 'program115'"></tuaf> <!-- TUAF(웹도록) Index -->
 
@@ -410,6 +412,8 @@ import Program275 from '../../components/product/program/Program275'
 import Program276 from '../../components/product/program/Program276'
 import Program277 from '../../components/product/program/Program277'
 import Program278 from '../../components/product/program/Program278'
+import Program279 from '../../components/product/program/Program279'
+import Program280 from '../../components/product/program/Program280'
 
 export default {
   name: 'page-product',
@@ -612,7 +616,9 @@ export default {
     Program275,
     Program276,
     Program277,
-    Program278
+    Program278,
+    Program279,
+    Program280
   },
   data () {
     return {

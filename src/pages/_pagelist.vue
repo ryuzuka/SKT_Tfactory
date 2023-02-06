@@ -980,6 +980,14 @@
 		          <router-link class="link" to='/experience/program278'>Will to Win T1 티게더 뷰잉파티 Event</router-link>
 		          <div class="date"><span>02.07</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program279'>Galaxy S23 POP UP Store</router-link>
+		          <div class="date"><span>02.08</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program280'>Galaxy S23 POP UP Store 현장 이벤트</router-link>
+		          <div class="date"><span>02.08</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
