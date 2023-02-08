@@ -7,7 +7,7 @@
     <!-- //slide -->
     <!-- details -->
     <div class="details sticky">
-      <div class="details-header" style="padding: 28px 12px 40px 20px;">
+      <div class="details-header" style="padding: 28px 12px 0 20px;">
         <kakao-share
          title="Galaxy S23 POP UP Store"
           description="Galaxy S23 POP UP Store"
@@ -15,52 +15,44 @@
 
         <em class="main-subtitle">[EVENT]</em>
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">Galaxy S23 POP UP Store</h2>
-        <p class="desc2" style="margin-top:8px;">Galaxy S23 POP UP Store T Factory에서 더 새로워진 <br/>갤럭시를 만나보세요!</p>
-        <p class="desc2" style="margin-top:25px;">신상폰에 누구보다 진심인 당신을 위해 T Factory가 준<br/>비했어요.<br/>
-          2억 화소 카메라로 찍는 셀피부터 게임, 내 취향 가득 담<br/>은 폰꾸까지 마음껏 갤럭시S23을 씹고 뜯고<br/>
-          맛보고 즐기는 체험공간.</p>
-        <p class="desc2" style="margin-top:25px;">새로워진 갤럭시S23을 만나는 새로운 방식.<br/>T Factory에서 경험해보세요.</p>
+        <p class="desc2" style="margin-top:8px;">
+            T Factory와 함께하는 더 새로워진 갤럭시!<br/>
+            설렘을 안고 갤럭시 S23를 기다려 온 모든 분들을 위해<br/>
+            T Factory가 준비했어요.<br/>
+            2억 화소 카메라로 찍는 셀피부터, 게임, 폰 꾸미기까지!<br/>
+            이 모든 걸 T Factory에서 만나볼 수 있답니다.
+          </p>
       </div>
-      <div class="details-inner">
-        <h2 class="main-title" style="margin-bottom: 13px;">갤럭시 S23을<br/>만끽하는 6가지 Zone</h2>
+      <div class="details-inner" style="border-top: none; padding: 20px 20px 40px;">
         <ul class="festival_events">
           <li>
-            <p class="main_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 32px;">1. [체험 zone]</p>
+            <p class="main_event" style="color: #000; font-weight: bold; margin-bottom: 10px;">셀카에 진심인 셀카장인이라면,</p>
             <span>
-              누구보다 빠르게 갤럭시 S23을 만나보고 싶은 얼리어답터를 위한 공간. 갤럭시 S23 기기를 대여해 T Factory 안에서 마음껏 경험해보세요.
+              업그레이드된 갤럭시 S23의 카메라 기능에 걸맞는 봄내음 가득한 셀피존이 반가울지도 몰라요.
             </span>
           </li>
           <li>
-            <p class="sub_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 20px;">2. [Selfie zone]</p>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 20px;">요즘 핫한 게임을 가장 쿨하게 즐기는 방법</p>
             <span>
-              셀카에 진심인 요즘 인스타그래머를 위한 공간.
-              업그레이드된 갤럭시 S23의 카메라 기능으로 포토존에서 인증샷을 남겨보세요.
+              갤럭시 S23의 향상된 성능으로 고사양 게임들을 더욱 실감나게 즐길 수 있어요.
             </span>
           </li>
           <li>
-            <p class="sub_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 20px;">3. [Gaming zone]</p>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 20px;">나만의 룩을 즐길 줄 아시는 분인가요?</p>
             <span>
-              요즘 가장 핫한 게임을 가장 쿨하게 하고싶은 게이머를 위한 공간. 갤럭시 S23의 향상된 성능으로 고사양 게임들을 더욱 실감나게 즐겨보세요.
+              콜라보 악세서리로 하드웨어부터 굿락 어플로 배경화면까지, 나만의 갤럭시 S23을 꾸밀 수 있어요.
             </span>
           </li>
           <li>
-            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">4. [폰꾸 zone]</p>
+            <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">스타벅스 에디션을 체험할 수 있는 유일한 공간</p>
             <span>
-              세상에서 하나뿐인 갤럭시S23을 위한 공간.
-              콜라보 악세서리로 하드웨어부터 굿락 어플로 배경화면까지, 나만의 갤럭시 S23을 꾸며보세요.
+              오직 T Factory에서만 갤럭시X스타벅스 한정판 패키지가 있는 특별한 스타벅스를 체험할 수 있어요.
             </span>
           </li>
           <li>
-            <p class="main_event" style="color: #000; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">5. [스타벅스 체험 zone]</p>
+            <p class="main_event" style="color: #000; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">소중한 추억을 만드실 수 있도록,</p>
             <span>
-              한정판이라면 일단 솔깃하는 굿즈 콜렉터를 위한 공간
-              갤럭시X스타벅스 한정판 패키지가 있는 특별한 스타벅스로 놀러오세요.
-            </span>
-          </li>
-          <li style="margin-bottom:0;">
-            <p class="main_event" style="color: #000; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">6. [Photo&Event zone]</p>
-            <span>
-              T factory에서 갤럭시 S23과 함께했던 특별한 체험을 기념하기 위한 공간. 셀피존 사진도 인화하고 현장 이벤트로 추억을 남겨보세요.
+              T factory에서 갤럭시 S23 셀피존에서 찍은 사진을 인화할 수 있는 체험을 준비했어요!
             </span>
           </li>
         </ul>
@@ -70,7 +62,7 @@
         <dl>
           <dd>
             <span class="sub_title">일정</span>
-            <span class="desc" style="margin-left: 12px;">2월 8일(수) ~ 2월 말</span>
+            <span class="desc" style="margin-left: 12px;">2월 8일(수) ~ 3월 5일(일)</span>
           </dd>
           <dd>
             <span class="sub_title">장소</span>
