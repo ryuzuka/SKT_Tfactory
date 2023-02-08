@@ -56,6 +56,15 @@
             </span>
           </li>
         </ul>
+	      <br>
+	      <ul class="info_text">
+		      <li>※ 각 체험존 참여 후 특별한 선물도 받아가실 수 있습니다.</li>
+	      </ul>
+	      <div class="btn-wrap" style="margin-top: 20px">
+		      <router-link class="btn-line big" to="/experience/program280?classId=241">
+			      이벤트 확인하러 가기
+		      </router-link>
+	      </div>
       </div>
       <div class="details-inner">
         <h2 class="main-title" style="margin-bottom: 13px;">일정 및 장소</h2>
