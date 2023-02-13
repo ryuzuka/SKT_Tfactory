@@ -82,20 +82,21 @@
             <p class="sub_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응원전 일정</p>
             <span>
               2 월 12 일 (일) 17:30~ [T1 vs DRX]<br/>
-              3 월 16 일 (목) 17:00~ [T1 vs DK]<br/>
+              3 월 11 일 (토) 17:30~ [T1 vs HLE]<br/>
               4 월 플레이오프 여부에 따라 추후 일정 공개
             </span>
           </li>
           <li>
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응모기간</p>
             <span>
-              2/7(화) ~ 2/8(수), 3/11(토) ~ 3/12(일)
+              2월 티게더 : 2/7(화) ~ 2/8(수)<br/>
+              3월 티게더 : 3/6(월) ~ 3/7(화)
             </span>
           </li>
           <li style="margin-bottom:0;">
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">당첨자 발표</p>
             <span>
-              2/9(목), 3/13(월) 당첨자 개별 문자 안내
+              2/9(목), 3/8(수) 당첨자 개별 문자 안내
             </span>
           </li>
           <li>
