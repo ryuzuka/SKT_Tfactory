@@ -96,7 +96,7 @@
           <li style="margin-bottom:0;">
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">당첨자 발표</p>
             <span>
-              2/9(목), 3/8(수) 당첨자 개별 문자 안내
+              2/9(목), 3/8(수) 15시 당첨자 개별 문자 안내
             </span>
           </li>
           <li>
