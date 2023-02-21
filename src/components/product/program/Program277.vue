@@ -90,13 +90,13 @@
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">응모기간</p>
             <span>
               2월 티게더 : 2/7(화) ~ 2/8(수)<br/>
-              3월 티게더 : 3/6(월) ~ 3/7(화)
+              3월 티게더 : 3/3(금) ~ 3/5(일)
             </span>
           </li>
           <li style="margin-bottom:0;">
             <p class="main_event" style="color: #000; font-weight: bold; margin-top: 16px; margin-bottom: 4px;">당첨자 발표</p>
             <span>
-              2/9(목), 3/8(수) 15시 당첨자 개별 문자 안내
+              2/9(목), 3/6(월) 15시 당첨자 개별 문자 안내
             </span>
           </li>
           <li>
