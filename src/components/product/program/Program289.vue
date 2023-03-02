@@ -78,7 +78,7 @@
 	          <div class="date" style="color: #000;">
 		          <span style="color: #000;">3.17<br />FRI</span>
 	          </div>
-	          <router-link to="/experience/program288?classId=238">
+	          <router-link to="/experience/program288?classId=242">
 		          <div class="card" Style="margin-left: 0px;">
 			          <div class="text">
 				          <p class="name">한로로</p>
@@ -94,7 +94,7 @@
 	          <div class="date" style="color: #000;">
 		          <span style="color: #000;">3.31<br>FRI</span>
 	          </div>
-	          <router-link to="/experience/program289?classId=239">
+	          <router-link to="/experience/program289?classId=243">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">신인류</p>
