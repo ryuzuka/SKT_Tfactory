@@ -988,6 +988,18 @@
 		          <router-link class="link" to='/experience/program280'>Galaxy S23 POP UP Store 현장 이벤트</router-link>
 		          <div class="date"><span>02.08</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program287'>3월의 덕콘</router-link>
+		          <div class="date"><span>03.17</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program288'>3월의 덕콘 | 한로로</router-link>
+		          <div class="date"><span>03.17</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program289'>3월의 덕콘 | 신인류</router-link>
+		          <div class="date"><span>03.31</span></div>
+	          </li>
           </ul>
 
           <h2 class="pagelist-title">pay</h2>
