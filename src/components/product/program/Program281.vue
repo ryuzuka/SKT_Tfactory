@@ -13,7 +13,7 @@
           description="Galaxy S23 POP UP Store"
         ></kakao-share>
 
-        <em class="main-subtitle">[EVENT]</em>
+        <em class="main-subtitle">[EXHIBITION]</em>
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">Just paused, <br />우리가 담긴 순간들</h2>
         <p class="desc2" style="margin-top:24px;">
           시간이 흘러도 선명한 기억들이 있습니다.<br />
