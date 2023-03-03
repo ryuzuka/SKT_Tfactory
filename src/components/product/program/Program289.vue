@@ -46,7 +46,7 @@
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px; margin-bottom: 6px;color: #000;">신청기간</span>
-						<span class="desc">3월 13일(월) ~ 3월26일(일)</span>
+						<span class="desc">3월 3일(금) ~ 3월26일(일)</span>
 					</dd>
 					<dd>
 						<span class="sub_title" style="width: 65px; margin-bottom: 6px;color: #000;">당첨자발표</span>
