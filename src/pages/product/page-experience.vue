@@ -200,6 +200,7 @@
     <program278 v-else-if="programId === 'program278'"></program278>
     <program279 v-else-if="programId === 'program279'"></program279>
     <program280 v-else-if="programId === 'program280'"></program280>
+    <program281 v-else-if="programId === 'program281'"></program281>
     <program287 v-else-if="programId === 'program287'"></program287>
     <program288 v-else-if="programId === 'program288'"></program288>
     <program289 v-else-if="programId === 'program289'"></program289>
@@ -417,6 +418,7 @@ import Program277 from '../../components/product/program/Program277'
 import Program278 from '../../components/product/program/Program278'
 import Program279 from '../../components/product/program/Program279'
 import Program280 from '../../components/product/program/Program280'
+import Program281 from '../../components/product/program/Program281'
 import Program287 from '../../components/product/program/Program287'
 import Program288 from '../../components/product/program/Program288'
 import Program289 from '../../components/product/program/Program289'
@@ -625,6 +627,7 @@ export default {
     Program278,
     Program279,
     Program280,
+    Program281,
     Program287,
     Program288,
     Program289

@@ -989,6 +989,10 @@
 		          <div class="date"><span>02.08</span></div>
 	          </li>
             <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program289'>Just paused, 우리가 담긴 순간들</router-link>
+		          <div class="date"><span>03.08</span></div>
+	          </li>
+            <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program287'>3월의 덕콘</router-link>
 		          <div class="date"><span>03.17</span></div>
 	          </li>
