@@ -989,7 +989,7 @@
 		          <div class="date"><span>02.08</span></div>
 	          </li>
             <li class="pagelist-item">
-		          <router-link class="link" to='/experience/program289'>Just paused, 우리가 담긴 순간들</router-link>
+		          <router-link class="link" to='/experience/program281'>Just paused, 우리가 담긴 순간들</router-link>
 		          <div class="date"><span>03.08</span></div>
 	          </li>
             <li class="pagelist-item">
@@ -1002,6 +1002,10 @@
 	          </li>
             <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program289'>3월의 덕콘 | 신인류</router-link>
+		          <div class="date"><span>03.31</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program284'>Film Camera</router-link>
 		          <div class="date"><span>03.31</span></div>
 	          </li>
           </ul>
