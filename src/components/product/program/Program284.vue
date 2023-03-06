@@ -16,12 +16,12 @@
         <em class="main-subtitle">[EXHIBITION]</em>
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">Film Camera</h2>
         <p class="desc2" style="margin-top:24px;">
-          기존의 필름을 소장하고 계시면 카메라만 대여 하실 수<br /> 있고, 필름이 없다고 하더라도 현장에서 구매 가능합니<br />다.
+          기존의 필름을 소장하고 계시면 카메라만 대여 하실 수 있고, 필름이 없다고 하더라도 현장에서 구매 가능합니다.
         </p>
       </div>
-      <div class="details-inner" style="padding: 20px 20px 40px;">
+      <div class="details-inner" style="padding: 20px 0 40px 20px;">
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">필름카메라 원스톱 서비스</h2>
-        <p class="desc2" style="color: #3617ce; margin-bottom: 40px;">
+        <p class="desc2" style="color: #3617ce; margin-bottom: 40px; padding-right: 20px;">
           필름카메라 대여하시면
           필름 현상, 스캔 서비스를 무료로 진행해드려요. <br />
           디지털 스캔은 7~10일정도 소요되며,<br />
@@ -268,7 +268,7 @@
 
         </ul>
 
-        <div class="btn-wrap" style="margin-top: 20px">
+        <div class="btn-wrap" style="margin-top: 20px; padding-right: 20px;">
 		      <a class="btn-line big" to="/experience/program282?classId=247" href="https://booking.naver.com/booking/12/bizes/855366">
 			      예약하기
 		      </a>
@@ -343,6 +343,5 @@ export default {
   @import 'src/assets/css/product';
 </style>
 <style lang="scss" scoped>
-.slider-contents{width: 340px;}
-ol li{text-indent: -9px; padding-left: 9px;}
+  ol li{text-indent: -9px; padding-left: 9px;}
 </style>
