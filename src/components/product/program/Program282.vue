@@ -44,25 +44,25 @@
         </ul>
 
         <div class="btn-wrap" style="margin-top: 12px">
-		      <router-link class="btn-line big" to="/experience/program284?classId=245">
+		      <router-link class="btn-line big" to="/experience/program284?classId=247">
 			      Film Camera 살펴보기
 		      </router-link>
 	      </div>
 
         <div class="btn-wrap" style="margin-top: 12px">
-		      <router-link  class="btn-line big" to="/experience/program285?classId=245">
+		      <router-link  class="btn-line big" to="/experience/program285?classId=248">
 			      Retro Camcorder 살펴보기
 		      </router-link>
 	      </div>
 
         <div class="btn-wrap" style="margin-top: 12px">
-		      <router-link  class="btn-line big" to="/experience/program286?classId=245">
+		      <router-link  class="btn-line big" to="/experience/program286?classId=249">
 			      Vintage Digital Camera 살펴보기
 		      </router-link>
 	      </div>
 
         <div class="btn-wrap" style="margin-top: 12px">
-		      <a class="btn-line big" to="/experience/program282?classId=245" href="https://booking.naver.com/booking/12/bizes/855366">
+		      <a class="btn-line big" href="#" @click.prevent="clickButton('https://booking.naver.com/booking/12/bizes/855366')">
 			      예약하기
 		      </a>
 	      </div>
@@ -93,7 +93,7 @@
     <!-- //details -->
 
     <!-- button set -->
-		<program-button></program-button>
+<!--		<program-button></program-button>-->
 		<!-- // button set -->
   </div>
 </template>
@@ -133,8 +133,7 @@ export default {
 	  })
   },
   methods: {
-	  clickButton () {
-		  const redirectURL = 'https://www.instagram.com/tfactory_official/'
+	  clickButton (redirectURL) {
 		  const mobileOS = this.$cookies.get('platform')
 		  if (mobileOS === 'A' || mobileOS === 'I') {
 			  NATIVE.sysBrowserOpen(mobileOS, redirectURL)

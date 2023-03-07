@@ -85,9 +85,9 @@
 		      <li>- 대여 서비스는 사전 예약자에 한하며, 예약은 아래 링크를 통해 가능합니다.</li>
 	      </ul>
         <div class="btn-wrap" style="margin-top: 20px">
-		      <a class="btn-line big disabled" disabled to="/experience/program282?classId=245">
+		      <router-link class="btn-line big" to="/experience/program282?classId=245">
 			      Photo Class 예약하기
-		      </a>
+		      </router-link>
 	      </div>
       </div>
       <div class="details-inner" style="padding: 40px 20px 40px;">
@@ -107,9 +107,9 @@
           두 작가가 순간을 담는 방법과 시선, 그 속에 담긴 생각을 T Factory에서 함께 만나요.
         </p>
         <div class="btn-wrap" style="margin-top: 20px">
-		      <a class="btn-line big disabled" disabled to="/experience/program283?classId=246">
+		      <router-link class="btn-line big" to="/experience/program283?classId=246">
 			      Photo Class 예약하기
-		      </a>
+		      </router-link>
 	      </div>
       </div>
       <div class="details-inner">
