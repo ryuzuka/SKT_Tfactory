@@ -1,10 +1,10 @@
 <template>
 	<div class="contents" :class="{'bottom-sticky': isBookingYn}" ref="contents">
-		<!-- slide -->
+		<!-- // slide -->
 		<div class="slider-prd">
 			<img ref="shareImage" src="../../../assets/images/program/class293-slide1.jpg" alt="3월의 콘썰트">
 		</div>
-		<!-- //slide -->
+		<!-- slide // -->
 		<!-- details -->
 		<div class="details sticky">
 			<div class="details-header" style="padding: 31px 20px 40px 20px;">
@@ -57,7 +57,7 @@
 	          <div class="date">
 		          <span>3.25<br />SAT</span>
 	          </div>
-	          <router-link to="/experience/program295?classId=256">
+	          <router-link to="/experience/program295?classId=255">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">십개월의 미래</p>
@@ -73,7 +73,7 @@
 	          <div class="date">
 		          <span>4.01<br />SAT</span>
 	          </div>
-	          <router-link to="/experience/program296?classId=257">
+	          <router-link to="/experience/program296?classId=256">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">성덕</p>

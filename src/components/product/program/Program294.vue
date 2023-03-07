@@ -90,7 +90,7 @@
 	          <div class="date">
 		          <span>3.25<br />SAT</span>
 	          </div>
-	          <router-link to="/experience/program295?classId=256">
+	          <router-link to="/experience/program295?classId=255">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">십개월의 미래</p>
@@ -106,7 +106,7 @@
 	          <div class="date">
 		          <span>4.01<br />SAT</span>
 	          </div>
-	          <router-link to="/experience/program296?classId=257">
+	          <router-link to="/experience/program296?classId=256">
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">성덕</p>
