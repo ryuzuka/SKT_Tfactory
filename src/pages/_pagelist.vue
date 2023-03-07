@@ -1024,6 +1024,22 @@
 		          <router-link class="link" to='/experience/program289'>3월의 덕콘 | 신인류</router-link>
 		          <div class="date"><span>03.31</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program293'>3월의 콘썰트</router-link>
+		          <div class="date"><span>03.18</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program294'>3월의 콘썰트 | 성적표의 김민영</router-link>
+		          <div class="date"><span>03.18</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program295'>3월의 콘썰트 | 십개월의 미래</router-link>
+		          <div class="date"><span>03.25</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program296'>3월의 콘썰트 | 성덕</router-link>
+		          <div class="date"><span>04.01</span></div>
+	          </li>
 
           </ul>
 
