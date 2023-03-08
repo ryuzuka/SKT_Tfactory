@@ -14,9 +14,13 @@
         ></kakao-share>
 
         <em class="main-subtitle">T Factory x B tv</em>
-        <h2 class="main-title" style="margin-top:9px;">3월의 콘썰트</h2>
+        <h2 class="main-title" style="margin-top:9px;">3월의 콘썰트 상영작</h2>
         <p class="desc2" style="margin-top:8px;">
-					T Factory와 B tv가 함께 만드는 콘텐츠와 이야기가 가득한 콘썰트! 무료 상영회, 토크쇼처럼 일상을 새롭게 볼 수 있는 콘텐츠가 가득하니 친구와 함께 신청하고 무료 초청의 기회를 잡아보세요!
+					‘임신’, 여성에게 있어서 큰 변화의 순간이 아닐까요? ‘십개월의 미래’는 어느날 갑자기 예고없이 ‘임산부’가 된 29살 프로그램 개발자 ‘미래’의 이야기입니다.<br />
+					‘임신’이라는 주제가 담긴 영화는 그간 많았지만,<br />
+					임산부 당사자의 성장이나 10개월간의 임신 과정을 담은 내용은 흔치 않은데요,<br />
+					여성이라면 남 일 같지 않은 ‘미래’의 이야기,<br />
+					T Factory x B tv 콘썰트에서 함께 공감해볼까요?
         </p>
 			</div>
 			<div class="line">
