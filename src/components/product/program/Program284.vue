@@ -265,22 +265,16 @@
               <li>•  세련된 외관 디자인</li>
             </ol>
           </li>
-
         </ul>
-
-        <div class="btn-wrap" style="margin-top: 20px; padding-right: 20px;">
-		      <a class="btn-line big" to="/experience/program282?classId=247" href="https://booking.naver.com/booking/12/bizes/855366">
-			      예약하기
-		      </a>
-	      </div>
-
       </div>
-
     </div>
     <!-- //details -->
 
     <!-- button set -->
-		<program-button></program-button>
+		<program-button v-show="false"></program-button>
+		<div class="btn-wrap sticky">
+			<a href="#" @click.prevent="clickButton('https://booking.naver.com/booking/12/bizes/855366')" class="btn-solid">예약하기</a>
+		</div>
 		<!-- // button set -->
   </div>
 </template>
@@ -326,8 +320,7 @@ export default {
 	  })
   },
   methods: {
-	  clickButton () {
-		  const redirectURL = 'https://www.instagram.com/tfactory_official/'
+	  clickButton (redirectURL) {
 		  const mobileOS = this.$cookies.get('platform')
 		  if (mobileOS === 'A' || mobileOS === 'I') {
 			  NATIVE.sysBrowserOpen(mobileOS, redirectURL)
