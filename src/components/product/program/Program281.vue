@@ -86,7 +86,7 @@
 	      </ul>
         <div class="btn-wrap" style="margin-top: 20px">
 		      <router-link class="btn-line big" to="/experience/program282?classId=245">
-			      Photo Class 예약하기
+			      카메라 대여하기
 		      </router-link>
 	      </div>
       </div>
