@@ -1025,6 +1025,18 @@
 		          <div class="date"><span>03.31</span></div>
 	          </li>
             <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program290'>Photo Class | 한기재 작가</router-link>
+		          <div class="date"><span>03.28</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program291'>Photo Class | 동원 작가</router-link>
+		          <div class="date"><span>04.28</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program292'>Photo Class | 동원 작가</router-link>
+		          <div class="date"><span>05.12</span></div>
+	          </li>
+            <li class="pagelist-item">
 		          <router-link class="link" to='/experience/program293'>3월의 콘썰트</router-link>
 		          <div class="date"><span>03.18</span></div>
 	          </li>
