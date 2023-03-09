@@ -99,7 +99,7 @@
 		          <div class="card" Style="margin-left: 19px;">
 			          <div class="text">
 				          <p class="name">십개월의 미래</p>
-				          <p class="time">감독: 남궁선<br />배우: 최성은, 백현진<br />PM 6:30</p>
+				          <p class="time">감독: 남궁선<br />배우: 유이든, 권아름<br />PM 6:30</p>
 			          </div>
 			          <div class="image">
 				          <img src="../../../assets/images/program/class293-musician2.png" alt="musician">
