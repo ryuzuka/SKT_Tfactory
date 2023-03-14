@@ -24,9 +24,9 @@
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">일정 및 장소</h2>
 
         <ul>
-          <li style="margin-bottom: 32px;">
+          <li>
             <p class="sub-title" style="margin-top:9px; margin-bottom: 16px; font-size: 20px; color: #000; font-weight: 500;">동원 작가</p>
-            <dl style="margin-bottom: 24px;">
+            <dl>
               <dd>
                 <span class="sub_title">클래스 일정</span>
                 <span class="desc" style="margin-left: 12px;">4/28(금) 오후 7시</span>
@@ -39,15 +39,6 @@
                 <span class="sub_title">당첨자 발표</span>
                 <span class="desc" style="margin-left: 12px;">4/21(금) 발표</span>
               </dd>
-            </dl>
-            <div class="btn-wrap" style="margin-top: 12px">
-              <a class="btn-line big disabled" disabled to="/experience/program291?classId=251">
-                클래스 예약하기
-              </a>
-            </div>
-          </li>
-          <li>
-            <dl>
               <dd>
                 <span class="sub_title">장소</span>
                 <span class="desc" style="margin-left: 12px;">T Factory 2층 O Stage</span>
@@ -55,7 +46,6 @@
             </dl>
           </li>
         </ul>
-
       </div>
 
       <div class="details-inner notification">
@@ -71,7 +61,7 @@
     <!-- //details -->
 
     <!-- button set -->
-		<program-button v-show="false"></program-button>
+		<program-button v-show="true"></program-button>
 		<!-- // button set -->
   </div>
 </template>

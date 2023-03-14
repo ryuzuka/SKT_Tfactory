@@ -41,9 +41,9 @@
               </dd>
             </dl>
             <div class="btn-wrap" style="margin-top: 12px">
-              <a class="btn-line big disabled" disabled to="/experience/program290?classId=250">
+              <router-link class="btn-line big" to="/experience/program290?classId=250">
                 클래스 예약하기
-              </a>
+              </router-link>
             </div>
           </li>
           <li style="margin-bottom: 32px;">
@@ -63,9 +63,10 @@
               </dd>
             </dl>
             <div class="btn-wrap" style="margin-top: 12px">
-              <a class="btn-line big disabled" disabled to="/experience/program291?classId=251">
+              <router-link class="btn-line big" to="/experience/program291?classId=251">
+              <!--router-link class="btn-line big" to="/experience/program292?classId=252"-->
                 클래스 예약하기
-              </a>
+              </router-link>
             </div>
           </li>
           <li>

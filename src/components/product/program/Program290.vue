@@ -24,9 +24,9 @@
         <h2 class="main-title" style="margin-top:9px; font-size: 24px;">일정 및 장소</h2>
 
         <ul>
-          <li style="margin-bottom: 32px;">
+          <li>
             <p class="sub-title" style="margin-top:9px; margin-bottom: 16px; font-size: 20px; color: #000; font-weight: 500;">한기재 작가</p>
-            <dl style="margin-bottom: 24px;">
+            <dl>
               <dd>
                 <span class="sub_title">클래스 일정</span>
                 <span class="desc" style="margin-left: 12px;">3/28(화) 오후 7시</span>
@@ -40,13 +40,6 @@
                 <span class="desc" style="margin-left: 12px;">3/21(화) 발표</span>
               </dd>
             </dl>
-            <div class="btn-wrap" style="margin-top: 12px">
-              <a class="btn-line big disabled" disabled to="/experience/program290?classId=250">
-                클래스 예약하기
-              </a>
-            </div>
-          </li>
-          <li>
             <dl>
               <dd>
                 <span class="sub_title">장소</span>
@@ -55,7 +48,6 @@
             </dl>
           </li>
         </ul>
-
       </div>
 
       <div class="details-inner notification">
@@ -71,7 +63,7 @@
     <!-- //details -->
 
     <!-- button set -->
-		<program-button v-show="false"></program-button>
+		<program-button v-show="true"></program-button>
 		<!-- // button set -->
   </div>
 </template>
