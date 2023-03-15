@@ -1052,6 +1052,38 @@
 		          <router-link class="link" to='/experience/program296'>3월의 콘썰트 | 성덕</router-link>
 		          <div class="date"><span>04.01</span></div>
 	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program297'>홈레코딩 입문</router-link>
+		          <div class="date"><span>03.21</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program298'>LP 청음 입문</router-link>
+		          <div class="date"><span>03.23</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program299'>기타 프레이즈 데일리 클래스</router-link>
+		          <div class="date"><span>03.22,03.28</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program300'>나만의 커스텀 휴대폰 만들기</router-link>
+		          <div class="date"><span>03.21,03.22,03.29</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program301'>에이닷으로 사진편집하기</router-link>
+		          <div class="date"><span>03.22</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program302'>아이폰으로 gif만들기</router-link>
+		          <div class="date"><span>03.21,03.29</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program304'>애플워치 100% 활용하기 꿀팁</router-link>
+		          <div class="date"><span>03.21,03.28</span></div>
+	          </li>
+            <li class="pagelist-item">
+		          <router-link class="link" to='/experience/program305'>갤럭시 & 아이폰 비하인드</router-link>
+		          <div class="date"><span>03.22,03.27</span></div>
+	          </li>
 
           </ul>
 
