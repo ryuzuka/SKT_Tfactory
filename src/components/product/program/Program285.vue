@@ -110,14 +110,15 @@
           </li>
 
           <li>
-            <p class="main_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 32px;">8. JVC GZ-MG435BKR</p>
+            <p class="main_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 32px;">8. HP-CW450</p>
             <div class="slider-prd slider-contents">
               <img ref="shareImage" src="../../../assets/images/program/class285-conts8.jpg" alt="">
             </div>
             <ol>
-              <li>•  69만 화소 </li>
-              <li>•  광학 21배 줌 </li>
-              <li>•  손떨림 방지</li>
+              <li>•  1200만 화소 </li>
+              <li>•  28mm F/2.8 - 110mm F/6.3의 4배줌 렌즈 </li>
+              <li>•  동영상은 최대 640 x 480 해상도 </li>
+              <li>•  포인트되는 레드 컬러의 세련된 디자인</li>
             </ol>
           </li>
 
