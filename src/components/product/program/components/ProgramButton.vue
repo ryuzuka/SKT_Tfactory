@@ -1,6 +1,6 @@
 <template>
   <div v-if="bookingAvailable && visible" class="btn-wrap sticky">
-    <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree || !applyStartDate}">프로그램 예약</a>
+    <a href="#" v-if="bookingType === 'basic'" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree}">프로그램 예약</a>
     <template v-else-if="bookingType === 'select'">
       <a v-if="applyProgress === 'ONGOING'" href="#none" @click.prevent="bookProgram" class="btn-solid" :class="{'disabled': !checkAgree || !applyStartDate}">프로그램 신청</a>
       <button v-else-if="applyProgress === 'OVER'" class="btn-solid disabled" disabled>프로그램 신청 마감</button>
