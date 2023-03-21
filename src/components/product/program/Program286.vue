@@ -139,6 +139,19 @@
               <li>•  동영상은 최대 1280 x 720 해상도 지원</li>
             </ol>
           </li>
+
+          <li style="margin-bottom: 60px">
+            <p class="main_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 32px;">6. HP-CW450</p>
+            <div class="slider-prd slider-contents">
+              <img ref="shareImage" src="../../../assets/images/program/class285-conts8.jpg" alt="">
+            </div>
+            <ol style="margin-top: 10px">
+              <li>•  1200만 화소 </li>
+              <li>•  28mm F/2.8 - 110mm F/6.3의 4배줌 렌즈 </li>
+              <li>•  동영상은 최대 640 x 480 해상도 </li>
+              <li>•  포인트되는 레드 컬러의 세련된 디자인</li>
+            </ol>
+          </li>
         </ul>
       </div>
     </div>
