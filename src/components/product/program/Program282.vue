@@ -36,8 +36,8 @@
           <li>
             <p class="sub_event" style="color: #000; font-weight: bold; margin-bottom: 10px; margin-top: 20px;">요금</p>
             <span>
-              필름카메라만 대여 + 현상,스캔 :  5,000원 <br />
-              필름카메라 대여 + 필름 구매 + 현상, 스캔  : 25,000원<br />
+              필름카메라만 대여 : 5,000원 <br />
+              필름카메라 대여 + 필름 구매 + 현상, 스캔 : 25,000원<br />
               캠코더, 디지털 카메라 : 5,000원
             </span>
           </li>
